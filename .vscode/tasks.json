@@ -4,7 +4,7 @@
     {
       "label": "Git Auto Commit & Push",
       "type": "shell",
-      "command": "git add .; git commit -m \"Auto update\"; git push",
+      "command": "git add .; git commit -m 'ACE-CERT Update'; git push origin main",
       "problemMatcher": []
     }
   ]

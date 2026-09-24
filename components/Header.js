@@ -6,6 +6,7 @@ import { navItems, serviceGroups } from "./siteData";
 
 const icons = { badge: BadgeCheck, lock: Lock, package: Package, file: FileText };
 
+
 function ServiceIcon({ type }) {
   const Icon = icons[type] || ShieldCheck;
   return <Icon size={20} className="text-blue-600 shrink-0" aria-hidden="true" />;
