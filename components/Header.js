@@ -1,11 +1,11 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Link from "next/link";
 import { BadgeCheck, ChevronDown, FileText, Lock, Menu, Package, ShieldCheck, X } from "lucide-react";
 import { navItems, serviceGroups } from "./siteData";
 
 const icons = { badge: BadgeCheck, lock: Lock, package: Package, file: FileText };
-
 
 function ServiceIcon({ type }) {
   const Icon = icons[type] || ShieldCheck;
@@ -62,15 +62,15 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-4 lg:gap-6">
         
         {/* LOGO */}
-        <a href="#" aria-label="ACE-CERT home" className="flex shrink-0 items-center group">
+        <Link href="/" aria-label="ACE-CERT home" className="flex shrink-0 items-center group">
           <img
             src="/acecert-logo.png"
             alt="ACE-CERT Logo"
             className="h-14 sm:h-16 md:h-20 w-auto object-contain transition-all"
           />
-        </a>
+        </Link>
 
- 
+        {/* DESKTOP NAVIGATION */}
         <nav className="hidden lg:flex min-w-0 flex-1 items-center justify-center gap-5 xl:gap-8" aria-label="Main navigation">
           {navItems.map((item) =>
             item.hasDropdown ? (
@@ -80,7 +80,7 @@ export default function Header() {
                   onClick={() => setServicesOpen((open) => !open)}
                   aria-expanded={servicesOpen}
                   aria-haspopup="true"
-                  className={`flex items-center gap-1.5 font-bold text-sm xl:text-base transition-colors py-2 ${
+                  className={`flex items-center gap-1.5 font-bold text-sm xl:text-base transition-colors py-2 cursor-pointer ${
                     servicesOpen ? "text-blue-700" : "text-slate-800 hover:text-blue-700"
                   }`}
                 >
@@ -118,16 +118,16 @@ export default function Header() {
                         <ul className="space-y-1">
                           {group.items.map((service) => (
                             <li key={service}>
-                              <a
-                                href="#services"
+                              <Link
+                                href={typeof service === 'object' ? service.href : "#services"}
                                 onClick={() => setServicesOpen(false)}
                                 className="group/item flex items-center justify-between px-3 py-2 rounded-xl text-xs sm:text-sm font-semibold text-slate-700 hover:text-blue-700 hover:bg-blue-50/80 transition-all duration-200"
                               >
-                                <span className="line-clamp-1">{service}</span>
+                                <span className="line-clamp-1">{typeof service === 'object' ? service.name : service}</span>
                                 <span className="opacity-0 -translate-x-1 group-hover/item:opacity-100 group-hover/item:translate-x-0 transition-all duration-200 text-blue-600 text-base font-bold">
                                   →
                                 </span>
-                              </a>
+                              </Link>
                             </li>
                           ))}
                         </ul>
@@ -146,37 +146,37 @@ export default function Header() {
                         Our experts provide tailored compliance strategies for your business.
                       </p>
                     </div>
-                    <a
+                    <Link
                       href="#contact"
                       onClick={() => setServicesOpen(false)}
                       className="bg-blue-600 text-white px-6 py-2.5 sm:py-3 rounded-xl text-sm font-bold hover:bg-blue-700 shadow-md shadow-blue-600/20 active:scale-[0.98] transition-all shrink-0"
                     >
                       Get Free Quote
-                    </a>
+                    </Link>
                   </div>
 
                 </div>
               </div>
             ) : (
-              <a
+              <Link
                 key={item.name}
-                href={item.href}
+                href={item.href || "/"}
                 className="font-bold text-sm xl:text-base text-slate-800 hover:text-blue-700 transition-colors"
               >
                 {item.name}
-              </a>
+              </Link>
             )
           )}
         </nav>
 
         {/* CTA BUTTON */}
         <div className="hidden lg:flex shrink-0">
-          <a
+          <Link
             href="#contact"
             className="bg-slate-900 text-white px-6 py-2.5 sm:py-3 rounded-full font-bold text-sm xl:text-base hover:bg-blue-700 hover:shadow-lg hover:shadow-blue-700/20 transition-all whitespace-nowrap"
           >
             CONTACT TODAY
-          </a>
+          </Link>
         </div>
 
         {/* MOBILE TOGGLE BUTTON */}
@@ -184,7 +184,7 @@ export default function Header() {
           type="button"
           aria-label={mobileMenuOpen ? "Close navigation menu" : "Open navigation menu"}
           aria-expanded={mobileMenuOpen}
-          className="lg:hidden p-2 text-slate-800 hover:bg-slate-100 rounded-lg transition-colors"
+          className="lg:hidden p-2 text-slate-800 hover:bg-slate-100 rounded-lg transition-colors cursor-pointer"
           onClick={() => setMobileMenuOpen((open) => !open)}
         >
           {mobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
@@ -192,7 +192,7 @@ export default function Header() {
 
       </div>
 
-      {/* MOBILE MENU ACCORDION WITH THIN BLUE SCROLLBAR */}
+      {/* MOBILE MENU ACCORDION */}
       {mobileMenuOpen && (
         <div className="lg:hidden absolute top-full left-0 w-full bg-white border-t border-slate-100 shadow-2xl p-4 sm:p-6 flex flex-col gap-2 max-h-[82vh] overflow-y-auto [scrollbar-width:thin] [scrollbar-color:#2563eb_#f1f5f9] [&::-webkit-scrollbar]:w-1.5 [&::-webkit-scrollbar-track]:bg-slate-100 [&::-webkit-scrollbar-track]:rounded-full [&::-webkit-scrollbar-thumb]:bg-blue-600 [&::-webkit-scrollbar-thumb]:rounded-full animate-in slide-in-from-top-2 duration-200">
           {navItems.map((item) =>
@@ -202,7 +202,7 @@ export default function Header() {
                   type="button"
                   aria-expanded={mobileServicesOpen}
                   onClick={() => setMobileServicesOpen((open) => !open)}
-                  className="w-full flex items-center justify-between text-base sm:text-lg font-bold text-slate-800 py-3 px-2"
+                  className="w-full flex items-center justify-between text-base sm:text-lg font-bold text-slate-800 py-3 px-2 cursor-pointer"
                 >
                   <span>{item.name}</span>
                   <ChevronDown
@@ -220,15 +220,15 @@ export default function Header() {
                         </p>
                         <div className="space-y-1">
                           {group.items.map((service) => (
-                            <a
-                              key={service}
-                              href="#services"
+                            <Link
+                              key={typeof service === 'object' ? service.name : service}
+                              href={typeof service === 'object' ? service.href : "#services"}
                               onClick={closeMobile}
                               className="flex items-center justify-between text-sm sm:text-base font-semibold text-slate-700 py-2 px-3 rounded-lg hover:text-blue-600 hover:bg-white transition-all"
                             >
-                              <span>{service}</span>
+                              <span>{typeof service === 'object' ? service.name : service}</span>
                               <span className="text-sm text-blue-500 font-bold">→</span>
-                            </a>
+                            </Link>
                           ))}
                         </div>
                       </div>
@@ -237,24 +237,24 @@ export default function Header() {
                 )}
               </div>
             ) : (
-              <a
+              <Link
                 key={item.name}
-                href={item.href || "#"}
+                href={item.href || "/"}
                 onClick={closeMobile}
                 className="text-base sm:text-lg font-bold text-slate-800 py-3 px-2 border-b border-slate-100 block hover:bg-slate-50 rounded-lg"
               >
                 {item.name}
-              </a>
+              </Link>
             )
           )}
           
-          <a
+          <Link
             href="#contact"
             onClick={closeMobile}
             className="bg-blue-600 text-white text-center block w-full py-3.5 rounded-xl font-bold text-base mt-3 shadow-lg shadow-blue-600/20 active:scale-[0.99] transition-all"
           >
             Contact Us Today
-          </a>
+          </Link>
         </div>
       )}
     </header>
