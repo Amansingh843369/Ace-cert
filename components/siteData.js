@@ -3,7 +3,7 @@ export const navItems = [
   { name: "About Us", href: "/about" },
   { name: "Services", hasDropdown: true },
   { name: "Our Presence", href: "#presence" },
-  { name: "Verify Certificate", href: "#verify" },
+  { name: "Verify Certificate", href: "/verify_certificate" },
   { name: "Contact", href: "/contact" },
 ];
 
