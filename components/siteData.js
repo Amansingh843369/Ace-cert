@@ -1,6 +1,6 @@
 export const navItems = [
   { name: "Home", href: "#" },
-  { name: "About Us", href: "#about" },
+  { name: "About Us", href: "/about" },
   { name: "Services", hasDropdown: true },
   { name: "Our Presence", href: "#presence" },
   { name: "Verify Certificate", href: "#verify" },
