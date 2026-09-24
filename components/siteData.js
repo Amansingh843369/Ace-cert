@@ -4,7 +4,7 @@ export const navItems = [
   { name: "Services", hasDropdown: true },
   { name: "Our Presence", href: "#presence" },
   { name: "Verify Certificate", href: "#verify" },
-  { name: "Contact", href: "#contact" },
+  { name: "Contact", href: "/contact" },
 ];
 
 export const serviceGroups = [
