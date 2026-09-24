@@ -144,8 +144,6 @@ export default function FaqSection() {
           </div>
         </div>
       </div>
-      
-       
 
     </section>
   );

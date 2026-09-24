@@ -89,6 +89,7 @@ export default function HeroSection() {
         </svg>
       </div>
       
+      
       {/* Mobile Fallback Shape (Simpler circle/blob behind text) */}
       <div className="md:hidden absolute top-[-10%] left-[-10%] w-[80vw] h-[80vw] bg-white rounded-full blur-3xl opacity-90 z-0"></div>
 
