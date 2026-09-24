@@ -79,8 +79,7 @@ export default function HeroSection() {
         <div className="absolute inset-0 bg-gradient-to-r from-white via-white/80 to-transparent md:w-[60%]" />
         <div className="absolute inset-0 bg-gradient-to-l from-indigo-900/90 via-indigo-900/40 to-transparent md:w-[40%] right-0" />
       </div>
-
-      {/* --- DECORATIVE SHAPES (SVG/CSS) --- */}
+ 
       
       {/* 1. The Big White Curve on the Left (Desktop Only mostly) */}
       <div className="hidden md:block absolute top-0 left-0 h-full w-[55%] z-10 pointer-events-none">
