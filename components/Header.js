@@ -70,7 +70,7 @@ export default function Header() {
           />
         </a>
 
-        {/* DESKTOP NAVIGATION */}
+ 
         <nav className="hidden lg:flex min-w-0 flex-1 items-center justify-center gap-5 xl:gap-8" aria-label="Main navigation">
           {navItems.map((item) =>
             item.hasDropdown ? (

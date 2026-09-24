@@ -13,7 +13,7 @@ const features = [
     title: "Clarity and Simplicity",
     text: "We believe that standards are the foundation of market trust. By helping organizations implement consistent, world-class benchmarks, we protect consumers and empower businesses to lead with confidence. ",
     icon: Presentation,
-    blobColor: "bg-yellow-300", // Yellow
+    blobColor: "bg-yellow-300", 
     iconColor: "text-slate-900",
   },
   {
