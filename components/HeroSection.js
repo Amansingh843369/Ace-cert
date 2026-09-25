@@ -81,7 +81,7 @@ export default function HeroSection() {
       </div>
  
       
-      {/* 1. The Big White Curve on the Left (Desktop Only mostly) */}
+     
       <div className="hidden md:block absolute top-0 left-0 h-full w-[55%] z-10 pointer-events-none">
         <svg viewBox="0 0 100 100" preserveAspectRatio="none" className="w-full h-full fill-white drop-shadow-xl">
        
