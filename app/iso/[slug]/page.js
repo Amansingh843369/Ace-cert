@@ -1,17 +1,17 @@
 import { notFound } from "next/navigation";
-import { isoData } from "@/data/isoData";
+import { isoPages } from "@/data/isodata";
 import ISOPage from "@/components/ISOPage";
 
 export function generateStaticParams() {
-  return Object.keys(isoData).map((slug) => ({
+  return Object.keys(isoPages).map((slug) => ({
     slug,
   }));
 }
 
-
 export async function generateMetadata({ params }) {
   const { slug } = await params;
-  const iso = isoData[slug];
+
+  const iso = isoPages[slug];
 
   if (!iso) {
     return {
@@ -20,15 +20,15 @@ export async function generateMetadata({ params }) {
   }
 
   return {
-    title: `${iso.shortTitle} | ACE-CERT`,
-    description: iso.description,
+    title: `${iso.name} | ACE-CERT`,
+    description: iso.heroDescription,
   };
 }
 
 export default async function Page({ params }) {
   const { slug } = await params;
 
-  const iso = isoData[slug];
+  const iso = isoPages[slug];
 
   if (!iso) {
     notFound();
