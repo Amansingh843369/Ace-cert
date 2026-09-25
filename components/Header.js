@@ -3,7 +3,11 @@
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { BadgeCheck, ChevronDown, FileText, Lock, Menu, Package, ShieldCheck, X } from "lucide-react";
-import { navItems, serviceGroups } from "./siteData";
+import {
+  navItems,
+  serviceGroups,
+ 
+} from "./siteData";
 
 // Theme Colors
 const THEME = {
@@ -157,25 +161,16 @@ export default function Header() {
                   </div>
 
                   {/* Dropdown CTA Banner - Themed */}
-                  <div className="mt-8 pt-6 border-t border-gray-100">
-                    <div className="bg-[#201f44] rounded-xl p-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 shadow-lg shadow-[#201f44]/20">
-                      <div>
-                        <p className="text-lg font-bold text-white">
-                          Need a custom certification solution?
-                        </p>
-                        <p className="text-sm text-gray-300 mt-1">
-                          Our experts provide tailored compliance strategies for your business.
-                        </p>
-                      </div>
-                      <Link
-                        href="#contact"
-                        onClick={() => setServicesOpen(false)}
-                        className="bg-[#df9a62] text-white px-6 py-3 rounded-lg text-sm font-bold hover:bg-[#c58b55] shadow-md transition-all shrink-0 whitespace-nowrap"
-                      >
-                        Get Free Quote
-                      </Link>
-                    </div>
-                  </div>
+{serviceGroups[0]?.items.map((iso) => (
+  <Link
+    key={iso.href}
+    href={iso.href}
+    onClick={() => setServicesOpen(false)}
+    className="block px-4 py-2 text-sm transition hover:bg-black/5"
+  >
+    {iso.name}
+  </Link>
+))}
 
                 </div>
               </div>
