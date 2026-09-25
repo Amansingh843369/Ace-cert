@@ -6,7 +6,7 @@ const features = [
     title: "The ACE Name",
     text: "The name ACE stands for their core promise to help our clients Achieve Compliance & Excellence",
     icon: TrendingUp,
-    blobColor: "bg-sky-300", // Light Blue
+    blobColor: "bg-sky-300",  
     iconColor: "text-slate-900",
   },
   {
