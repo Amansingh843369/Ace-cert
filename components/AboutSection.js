@@ -50,7 +50,7 @@ export default function AboutSection() {
             {/* Main Image Container */}
             <div className={`relative rounded-3xl overflow-hidden shadow-2xl transition-all duration-700 ease-out transform ${isHovered ? 'scale-[1.02] rotate-1' : 'scale-100 rotate-0'}`}>
               <img 
-                src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1632&q=80" 
+                src="https://img.magnific.com/free-photo/compliance-rules-regulations-policies-codes-concept_53876-138510.jpg?semt=ais_hybrid&w=740&q=80" 
                 alt="Team meeting discussing ISO certification" 
                 className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-110"
               />

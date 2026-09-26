@@ -67,11 +67,11 @@ export default function HeroSection() {
     >
       
       {/* --- BACKGROUND IMAGE LAYER --- */}
-      <div className="absolute inset-0 z-0">
+      <div className="absolute inset-{-1} ">
         <img 
           src="/your_success.jpg" 
           alt="Team Meeting Professional" 
-          className="w-full h-full object-cover object-top sm:object-center lg:object-right opacity-90"
+          className="w-[1700px] h-full object-contain  lg:object-right "
         />
         
         
@@ -81,18 +81,14 @@ export default function HeroSection() {
         {/* Tablet / Small Laptop (md to lg): Gradient overlay from l
         
          eft to right */}
-        <div className="hidden md:block lg:hidden absolute inset-0 bg-gradient-to-r from-white via-white/95 to-white/30" />
+        <div className="hidden md:block lg:hidden absolute inset-0 bg-gradient-to-r from-white via-white/95 to-white/10" />
         
         {/* Desktop / Large Screen (lg+): Soft background gradient */}
         <div className="hidden lg:block absolute inset-0 bg-gradient-to-r from-white via-white/90 to-transparent w-3/4" />
       </div>
 
       {/* --- SVG SHAPE (Desktop / Large Screens Only) --- */}
-      <div className="hidden lg:block absolute top-0 left-0 h-full w-[55%] xl:w-[50%] z-10 pointer-events-none">
-        <svg viewBox="0 0 100 100" preserveAspectRatio="none" className="w-full h-full fill-white drop-shadow-2xl">
-          <path d="M0,0 L0,0 Q0,50 80,100 L0,100 Z" />
-        </svg>
-      </div>
+       
 
       {/* Decorative Elements */}
       <div className="absolute top-10 left-8 w-3 h-3 sm:w-4 sm:h-4 border-2 border-orange-400 rotate-45 z-20 hidden sm:block animate-spin-slow"></div>
@@ -140,13 +136,7 @@ export default function HeroSection() {
               <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 ml-2 group-hover:translate-x-1 transition-transform" />
             </a>
 
-            <a 
-              href="#services" 
-              className="inline-flex items-center justify-center px-6 sm:px-8 py-3.5 sm:py-4 bg-white/80 hover:bg-white text-slate-700 hover:text-indigo-600 border border-slate-200/80 font-semibold text-sm sm:text-base rounded-xl shadow-sm transition-all duration-300 active:scale-95 w-full sm:w-auto text-center backdrop-blur-sm"
-            >
-              <PhoneCall className="w-4 h-4 sm:w-5 sm:h-5 mr-2 text-indigo-600" />
-              <span>Our Services</span>
-            </a>
+         
           </div>
  
 
