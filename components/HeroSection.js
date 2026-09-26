@@ -1,9 +1,9 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { ArrowRight, ShieldCheck, Award } from "lucide-react";
+import { ArrowRight, CheckCircle2, PhoneCall } from "lucide-react";
 
-// --- Typewriter Component (Same Logic, Updated Style) ---
+// --- Typewriter Component ---
 const typewriterPhrases = ["For Security", "For Trust", "For Excellence"];
 
 function TypewriterText() {
@@ -32,10 +32,10 @@ function TypewriterText() {
         }, pauseTime);
       }
     } else if (isPaused) {
-       timer = window.setTimeout(() => {
-         setIsPaused(false);
-         setDeleting(true);
-       }, 100);
+      timer = window.setTimeout(() => {
+        setIsPaused(false);
+        setDeleting(true);
+      }, 100);
     } else {
       if (visibleText !== "") {
         timer = window.setTimeout(() => {
@@ -51,20 +51,19 @@ function TypewriterText() {
   }, [deleting, phraseIndex, visibleText, isPaused]);
 
   return (
-    <span className="text-indigo-900 font-bold inline-block">
+    <span className="text-indigo-600 font-bold inline-block min-w-[140px] xs:min-w-[180px] sm:min-w-[240px] md:min-w-[300px] lg:min-w-[380px] align-bottom"> 
+      {/* min-w breakpoint based to prevent layout shifts across devices */}
       {visibleText}
-      {/* Cursor blinking effect */}
-      <span className="animate-pulse border-r-[3px] border-indigo-600 h-[0.8em] inline-block align-middle ml-1"></span>
+      <span className="animate-pulse border-r-2 sm:border-r-[3px] border-indigo-600 h-[0.85em] inline-block align-middle ml-1"></span>
     </span>
   );
 }
 
 export default function HeroSection() {
   return (
-    // Main Container: Full width, min height, relative positioning for absolute shapes
     <section 
       id="hero" 
-      className="relative w-full min-h-[90vh] md:min-h-[88vh] flex items-center overflow-hidden bg-slate-50  pb-10"
+      className="relative w-full min-h-[100dvh] flex items-center justify-center overflow-hidden bg-slate-50 py-12 sm:py-16 md:py-20 lg:py-0"
     >
       
       {/* --- BACKGROUND IMAGE LAYER --- */}
@@ -72,85 +71,111 @@ export default function HeroSection() {
         <img 
           src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1920&q=80" 
           alt="Team Meeting Professional" 
-          className="w-full h-full object-cover opacity-90"
+          className="w-full h-full object-cover object-top sm:object-center lg:object-right opacity-90"
         />
         
-        {/* Gradient Overlay to blend left side into white shape */}
-        <div className="absolute inset-0 bg-gradient-to-r from-white via-white/80 to-transparent md:w-[60%]" />
-        <div className="absolute inset-0 bg-gradient-to-l from-indigo-900/90 via-indigo-900/40 to-transparent md:w-[40%] right-0" />
+        
+        {/* Mobile (Below md): Semi-transparent white layer for crisp mobile readability */}
+        <div className="absolute inset-0 bg-white/90 sm:bg-white/85 md:hidden" />
+        
+        {/* Tablet / Small Laptop (md to lg): Gradient overlay from l
+        
+         eft to right */}
+        <div className="hidden md:block lg:hidden absolute inset-0 bg-gradient-to-r from-white via-white/95 to-white/30" />
+        
+        {/* Desktop / Large Screen (lg+): Soft background gradient */}
+        <div className="hidden lg:block absolute inset-0 bg-gradient-to-r from-white via-white/90 to-transparent w-3/4" />
       </div>
- 
-      
-     
-      <div className="hidden md:block absolute top-0 left-0 h-full w-[55%] z-10 pointer-events-none">
-        <svg viewBox="0 0 100 100" preserveAspectRatio="none" className="w-full h-full fill-white drop-shadow-xl">
-       
-           <path d="M0,0 L70,0 Q108,50 70,100 L0,100 Z" />
+
+      {/* --- SVG SHAPE (Desktop / Large Screens Only) --- */}
+      <div className="hidden lg:block absolute top-0 left-0 h-full w-[55%] xl:w-[50%] z-10 pointer-events-none">
+        <svg viewBox="0 0 100 100" preserveAspectRatio="none" className="w-full h-full fill-white drop-shadow-2xl">
+          <path d="M0,0 L80,0 Q105,50 80,100 L0,100 Z" />
         </svg>
       </div>
-      
-      
-      {/* Mobile Fallback Shape (Simpler circle/blob behind text) */}
-      <div className="md:hidden absolute top-[-10%] left-[-10%] w-[80vw] h-[80vw] bg-white rounded-full blur-3xl opacity-90 z-0"></div>
 
-
-      {/* 2. Top Right Diagonal Cut (Dark Blue/Purple) */}
-      <div className="absolute top-0 right-0 w-0 h-0 border-t-[150px] border-t-indigo-950 border-l-[150px] border-l-transparent z-20 hidden lg:block"></div>
-      <div className="absolute bottom-0 right-0 w-0 h-0 border-b-[100px] border-b-indigo-900 border-l-[100px] border-l-transparent z-20 hidden lg:block"></div>
-
-      {/* Small Floating Geometric Accents (Triangles/Dots) */}
-      <div className="absolute top-20 left-1/4 w-4 h-4 border-2 border-orange-400 rotate-45 z-20 hidden md:block animate-spin-slow"></div>
-      <div className="absolute top-40 right-1/3 w-3 h-3 bg-teal-400 rounded-full z-20 hidden md:block"></div>
-
+      {/* Decorative Elements */}
+      <div className="absolute top-10 left-8 w-3 h-3 sm:w-4 sm:h-4 border-2 border-orange-400 rotate-45 z-20 hidden sm:block animate-spin-slow"></div>
+      <div className="absolute top-28 right-12 w-2.5 h-2.5 sm:w-3 sm:h-3 bg-teal-400 rounded-full z-20 hidden md:block"></div>
+      <div className="absolute bottom-12 right-1/4 w-3 h-3 bg-indigo-400 rounded-full z-20 hidden lg:block opacity-60"></div>
 
       {/* --- CONTENT CONTAINER --- */}
-      <div className="container mx-auto px-4 sm:px-6 lg:px-10 relative z-30">
-        <div className="max-w-2xl lg:max-w-3xl xl:max-w-4xl">
+      <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 max-w-7xl relative z-30">
+        <div className="max-w-xl sm:max-w-2xl md:max-w-2xl lg:max-w-2xl xl:max-w-3xl">
           
-          {/* Welcome Text */}
-          <div className="flex items-center gap-2 mb-4">
-            <span className="w-2 h-2 bg-green-400 rounded-full animate-ping"></span>
-            <span className="text-xs font-bold tracking-[0.2em] uppercase text-gray-500">Welcome</span>
+          {/* Badge / Welcome Text */}
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-indigo-50 border border-indigo-100 mb-4 sm:mb-6 shadow-sm">
+            <span className="relative flex h-2 w-2 sm:h-2.5 sm:w-2.5">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 sm:h-2.5 w-2 sm:w-2.5 bg-emerald-500"></span>
+            </span>
+            <span className="text-xs sm:text-sm font-bold tracking-wider uppercase text-indigo-950">
+              Welcome to ACE
+            </span>
           </div>
 
           {/* Main Headline */}
-          <h1 className="text-5xl md:text-6xl lg:text-6xl font-extrabold text-indigo-950 leading-[1.1] mb-6">
-            ACE <br/>
-            Certification <br/>
-            <span className="block mt-2 text-4xl md:text-5xl lg:text-6xl">
+          <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-6xl xl:text-7xl font-black text-slate-900 tracking-tight leading-[1.15] mb-4 sm:mb-6">
+            ACE <br className="hidden sm:inline" />
+            <span className="inline-block sm:block text-slate-900 mt-1">
+              Certification
+            </span>
+            <span className="block mt-1 sm:mt-2 text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl text-indigo-900">
               <TypewriterText />
             </span>
           </h1>
 
           {/* Subheadline / Description */}
-          <p className="text-lg md:text-xl text-gray-600 mb-6 max-w-xl leading-relaxed font-medium">
+          <p className="text-sm sm:text-base md:text-lg lg:text-xl text-slate-600 sm:text-slate-700 mb-6 sm:mb-8 max-w-lg md:max-w-xl leading-relaxed font-normal sm:font-medium">
             Provider of ISO Management System Certification, Training, and Advisory Services. We empower organizations to achieve global standards with confidence.
           </p>
 
-          {/* CTA Button */}
-          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
+          {/* CTA Buttons */}
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 sm:gap-4 w-full sm:w-auto">
             <a 
               href="#contact" 
-              className="group inline-flex items-center justify-center px-8 py-4 bg-indigo-600 hover:bg-indigo-700 text-white font-bold rounded-lg shadow-lg shadow-indigo-500/30 transition-all duration-300 transform hover:-translate-y-1"
+              className="group inline-flex items-center justify-center px-6 sm:px-8 py-3.5 sm:py-4 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold text-sm sm:text-base rounded-xl shadow-lg shadow-indigo-600/25 hover:shadow-indigo-600/35 transition-all duration-300 transform active:scale-95 sm:hover:-translate-y-0.5 w-full sm:w-auto text-center"
             >
-              CONTACT TODAY
-              <ArrowRight size={20} className="ml-2 group-hover:translate-x-1 transition-transform" />
+              <span>CONTACT TODAY</span>
+              <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 ml-2 group-hover:translate-x-1 transition-transform" />
             </a>
-            
-            
+
+            <a 
+              href="#services" 
+              className="inline-flex items-center justify-center px-6 sm:px-8 py-3.5 sm:py-4 bg-white/80 hover:bg-white text-slate-700 hover:text-indigo-600 border border-slate-200/80 font-semibold text-sm sm:text-base rounded-xl shadow-sm transition-all duration-300 active:scale-95 w-full sm:w-auto text-center backdrop-blur-sm"
+            >
+              <PhoneCall className="w-4 h-4 sm:w-5 sm:h-5 mr-2 text-indigo-600" />
+              <span>Our Services</span>
+            </a>
+          </div>
+
+          {/* Feature Highlights / Badges */}
+          <div className="mt-8 sm:mt-10 pt-6 sm:pt-8 border-t border-slate-200/80 flex flex-wrap items-center gap-y-2.5 gap-x-6 text-xs sm:text-sm text-slate-600 font-medium">
+            <div className="flex items-center gap-1.5">
+              <CheckCircle2 className="w-4 h-4 text-emerald-500 flex-shrink-0" />
+              <span>ISO Certified</span>
+            </div>
+            <div className="flex items-center gap-1.5">
+              <CheckCircle2 className="w-4 h-4 text-emerald-500 flex-shrink-0" />
+              <span>Global Recognition</span>
+            </div>
+            <div className="flex items-center gap-1.5">
+              <CheckCircle2 className="w-4 h-4 text-emerald-500 flex-shrink-0" />
+              <span>24/7 Expert Support</span>
+            </div>
           </div>
 
         </div>
       </div>
 
-      {/* Custom Animation Class for Spinner */}
+      {/* Custom Keyframe Animation */}
       <style jsx>{`
         @keyframes spin-slow {
-          from { transform: rotate(45deg); }
-          to { transform: rotate(405deg); }
+          from { transform: rotate(0deg); }
+          to { transform: rotate(360deg); }
         }
         .animate-spin-slow {
-          animation: spin-slow 10s linear infinite;
+          animation: spin-slow 12s linear infinite;
         }
       `}</style>
     </section>
