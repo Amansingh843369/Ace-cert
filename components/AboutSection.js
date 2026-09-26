@@ -38,7 +38,6 @@ export default function AboutSection() {
               </p>
             </div>
 
-         
              
           </div>
 
@@ -60,9 +59,6 @@ export default function AboutSection() {
               <div className="absolute inset-0 bg-gradient-to-t from-blue-900/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             </div>
 
-            
-
-     
           </div>
 
         </div>

@@ -69,7 +69,7 @@ export default function HeroSection() {
       {/* --- BACKGROUND IMAGE LAYER --- */}
       <div className="absolute inset-0 z-0">
         <img 
-          src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1920&q=80" 
+          src="/your_success.jpg" 
           alt="Team Meeting Professional" 
           className="w-full h-full object-cover object-top sm:object-center lg:object-right opacity-90"
         />
@@ -90,7 +90,7 @@ export default function HeroSection() {
       {/* --- SVG SHAPE (Desktop / Large Screens Only) --- */}
       <div className="hidden lg:block absolute top-0 left-0 h-full w-[55%] xl:w-[50%] z-10 pointer-events-none">
         <svg viewBox="0 0 100 100" preserveAspectRatio="none" className="w-full h-full fill-white drop-shadow-2xl">
-          <path d="M0,0 L80,0 Q105,50 80,100 L0,100 Z" />
+          <path d="M0,0 L0,0 Q0,50 80,100 L0,100 Z" />
         </svg>
       </div>
 
@@ -148,22 +148,7 @@ export default function HeroSection() {
               <span>Our Services</span>
             </a>
           </div>
-
-          {/* Feature Highlights / Badges */}
-          <div className="mt-8 sm:mt-10 pt-6 sm:pt-8 border-t border-slate-200/80 flex flex-wrap items-center gap-y-2.5 gap-x-6 text-xs sm:text-sm text-slate-600 font-medium">
-            <div className="flex items-center gap-1.5">
-              <CheckCircle2 className="w-4 h-4 text-emerald-500 flex-shrink-0" />
-              <span>ISO Certified</span>
-            </div>
-            <div className="flex items-center gap-1.5">
-              <CheckCircle2 className="w-4 h-4 text-emerald-500 flex-shrink-0" />
-              <span>Global Recognition</span>
-            </div>
-            <div className="flex items-center gap-1.5">
-              <CheckCircle2 className="w-4 h-4 text-emerald-500 flex-shrink-0" />
-              <span>24/7 Expert Support</span>
-            </div>
-          </div>
+ 
 
         </div>
       </div>
