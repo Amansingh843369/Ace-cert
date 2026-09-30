@@ -55,7 +55,7 @@ export default function AboutSection() {
                 className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-110"
               />
               
-              {/* Gradient Overlay on Hover */}
+           
               <div className="absolute inset-0 bg-gradient-to-t from-blue-900/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             </div>
 
