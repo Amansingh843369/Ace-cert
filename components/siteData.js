@@ -94,35 +94,7 @@ export const serviceGroups = [
     ],
   },
 
-  {
-    title: "Product Certification",
-    icon: "package",
-    items: [
-      "Halal Certification",
-      "Kosher Certification",
-      "FSSAI",
-      "FDA",
-      "CE (European Conformity)",
-      "Bureau of Indian Standards (BIS)",
-      "GMP",
-      "GHP",
-      "HACCP",
-      "ZED Certification",
-      "BIFMA",
-      "ROHS",
-    ],
-  },
-
-  {
-    title: "Other Certification",
-    icon: "file",
-    items: [
-      "SA 8000",
-      "Trademark",
-      "Green Certification",
-      "CSR Compliance",
-    ],
-  },
+ 
 ];
 
 

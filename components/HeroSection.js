@@ -123,7 +123,7 @@ export default function HeroSection() {
 
           {/* Subheadline / Description */}
           <p className="text-sm sm:text-base md:text-lg lg:text-xl text-slate-600 sm:text-slate-700 mb-6 sm:mb-8 max-w-lg md:max-w-xl leading-relaxed font-normal sm:font-medium">
-            Provider of ISO Management System Certification, Training, and Advisory Services. We empower organizations to achieve global standards with confidence.
+            Your trusted partner for Certification, Inspection and training Services. We simplify complex standards to power your business growth.
           </p>
 
           {/* CTA Buttons */}
