@@ -19,51 +19,51 @@ export const navItems = [
 export const isoLinks = [
   {
     name: "ISO 9001:2015 (QMS)",
-    href: "/iso/iso-9001",
+    href: "/iso/iso-9001-2015-certification",
   },
   {
     name: "ISO 14001:2015 (EMS)",
-    href: "/iso/iso-14001",
+    href: "/iso/iso-14001-2015-certification",
   },
   {
     name: "ISO 45001:2018 (OH&S)",
-    href: "/iso/iso-45001",
+    href: "/iso/iso-45001-2018-certification",
   },
   {
     name: "ISO/IEC 20000-1:2018 (ITSMS)",
-    href: "/iso/iso-20000-1",
+    href: "/iso/iso-20000-1-2018-certification",
   },
   {
     name: "ISO 27001:2022 (ISMS)",
-    href: "/iso/iso-27001",
+    href: "/iso/iso-27001-2022-certification",
   },
   {
     name: "ISO 42001:2023 (AIMS)",
-    href: "/iso/iso-42001",
+    href: "/iso/iso-42001-2023-certification",
   },
   {
     name: "ISO 27701:2025 (PIMS)",
-    href: "/iso/iso-27701",
+    href: "/iso/iso-27701-2025-certification",
   },
   {
     name: "ISO 37001:2016 (ABMS)",
-    href: "/iso/iso-37001",
+    href: "/iso/iso-37001-2016-certification",
   },
   {
     name: "ISO 22301:2019 (BCMS)",
-    href: "/iso/iso-22301",
+    href: "/iso/iso-22301-2019-certification",
   },
   {
     name: "ISO 22000:2018 (FSMS)",
-    href: "/iso/iso-22000",
+    href: "/iso/iso-22000-2018-certification",
   },
   {
     name: "ISO 50001:2018 (EnMS)",
-    href: "/iso/iso-50001",
+    href: "/iso/iso-50001-2018-certification",
   },
   {
     name: "ISO 13485:2016 (MDQMS)",
-    href: "/iso/iso-13485",
+    href: "/iso/iso-13485-2016-certification",
   },
 ];
 
