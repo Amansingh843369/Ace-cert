@@ -18,31 +18,31 @@ export const navItems = [
 
 export const isoLinks = [
   {
-    name: "ISO 9001:2015 (QMS)",
-    href: "/iso/iso-9001-2015-certification",
+    name: "ISO 9001 (QMS)",
+    href: "/iso/iso-9001-certification",
   },
   {
-    name: "ISO 14001:2015 (EMS)",
-    href: "/iso/iso-14001-2015-certification",
+    name: "ISO 14001(EMS)",
+    href: "/iso/iso-14001-certification",
   },
   {
-    name: "ISO 45001:2018 (OH&S)",
+    name: "ISO 45001 (OH&S)",
     href: "/iso/iso-45001-2018-certification",
   },
   {
-    name: "ISO/IEC 20000-1:2018 (ITSMS)",
+    name: "ISO/IEC 20000-1 (ITSMS)",
     href: "/iso/iso-20000-1-2018-certification",
   },
   {
-    name: "ISO 27001:2022 (ISMS)",
+    name: "ISO 27001 (ISMS)",
     href: "/iso/iso-27001-2022-certification",
   },
   {
-    name: "ISO 42001:2023 (AIMS)",
+    name: "ISO 42001 (AIMS)",
     href: "/iso/iso-42001-2023-certification",
   },
   {
-    name: "ISO 27701:2025 (PIMS)",
+    name: "ISO 27701 (PIMS)",
     href: "/iso/iso-27701-2025-certification",
   },
   {
@@ -50,19 +50,19 @@ export const isoLinks = [
     href: "/iso/iso-37001-2016-certification",
   },
   {
-    name: "ISO 22301:2019 (BCMS)",
+    name: "ISO 22301 (BCMS)",
     href: "/iso/iso-22301-2019-certification",
   },
   {
-    name: "ISO 22000:2018 (FSMS)",
+    name: "ISO 22000 (FSMS)",
     href: "/iso/iso-22000-2018-certification",
   },
   {
-    name: "ISO 50001:2018 (EnMS)",
+    name: "ISO 50001 (EnMS)",
     href: "/iso/iso-50001-2018-certification",
   },
   {
-    name: "ISO 13485:2016 (MDQMS)",
+    name: "ISO 13485(MDQMS)",
     href: "/iso/iso-13485-2016-certification",
   },
 ];

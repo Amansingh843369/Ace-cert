@@ -105,64 +105,92 @@ export default function Header() {
                   )}
                 </button>
 
-                {/* --- PREMIUM MEGA MENU --- */}
-                <div
-                  className={`fixed top-[72px] left-1/2 -translate-x-1/2 w-[min(1100px,calc(100vw-40px))] max-h-[80vh] overflow-y-auto 
-                    bg-white rounded-2xl shadow-2xl border border-gray-100 p-8 
-                    transition-all duration-300 origin-top z-50
-                    /* Custom Scrollbar for Theme */
-                    [scrollbar-width:thin] [scrollbar-color:#df9a62_#f3f4f6] 
-                    [&::-webkit-scrollbar]:w-2 
-                    [&::-webkit-scrollbar-track]:bg-gray-100 [&::-webkit-scrollbar-track]:rounded-full 
-                    [&::-webkit-scrollbar-thumb]:bg-[#df9a62] [&::-webkit-scrollbar-thumb]:rounded-full 
-                    hover:[&::-webkit-scrollbar-thumb]:bg-[#c58b55]
-                    ${
-                      servicesOpen
-                        ? "opacity-100 scale-100 visible pointer-events-auto translate-y-0"
-                        : "opacity-0 scale-95 invisible pointer-events-none -translate-y-2"
-                    }`}
+               {/* --- ISO CERTIFICATION DROPDOWN --- */}
+<div
+  className={`fixed top-[72px] left-1/2 -translate-x-1/2
+    w-[320px] max-w-[calc(100vw-32px)]
+    max-h-[75vh] overflow-y-auto
+    bg-white rounded-2xl shadow-2xl border border-gray-100
+    p-6
+    transition-all duration-300 origin-top z-50
+    [scrollbar-width:thin]
+    [scrollbar-color:#df9a62_#f3f4f6]
+    [&::-webkit-scrollbar]:w-2
+    [&::-webkit-scrollbar-track]:bg-gray-100
+    [&::-webkit-scrollbar-track]:rounded-full
+    [&::-webkit-scrollbar-thumb]:bg-[#df9a62]
+    [&::-webkit-scrollbar-thumb]:rounded-full
+    hover:[&::-webkit-scrollbar-thumb]:bg-[#c58b55]
+    ${
+      servicesOpen
+        ? "opacity-100 scale-100 visible pointer-events-auto translate-y-0"
+        : "opacity-0 scale-95 invisible pointer-events-none -translate-y-2"
+    }`}
+>
+  {/* Only ISO Certification */}
+  {serviceGroups
+    .filter((group) => group.title === "ISO Certification")
+    .map((group) => (
+      <div key={group.title} className="space-y-4">
+
+        {/* Group Header */}
+        <div className="flex items-center gap-3 pb-4 border-b border-gray-100">
+          <div className="p-2.5 rounded-xl bg-[#201f44]/5 flex items-center justify-center">
+            <ServiceIcon type={group.icon} />
+          </div>
+
+          <h4 className="text-[#201f44] font-bold text-lg tracking-tight">
+            {group.title}
+          </h4>
+        </div>
+
+        {/* ISO Items */}
+        <ul className="space-y-1">
+          {group.items.map((service) => (
+            <li
+              key={
+                typeof service === "object"
+                  ? service.name
+                  : service
+              }
+            >
+              <Link
+                href={
+                  typeof service === "object"
+                    ? service.href
+                    : "#services"
+                }
+                onClick={() => setServicesOpen(false)}
+                className="group/item flex items-center justify-between
+                  px-4 py-3 rounded-xl
+                  text-sm font-medium text-slate-600
+                  hover:text-[#201f44]
+                  hover:bg-[#201f44]/5
+                  transition-all duration-200"
+              >
+                <span>
+                  {typeof service === "object"
+                    ? service.name
+                    : service}
+                </span>
+
+                <span
+                  className="opacity-0 -translate-x-2
+                    group-hover/item:opacity-100
+                    group-hover/item:translate-x-0
+                    transition-all duration-200
+                    text-[#df9a62] text-lg font-bold"
                 >
-                  {/* Service Groups Grid */}
-                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10">
-                    {serviceGroups.map((group) => (
-                      <div key={group.title} className="space-y-4">
-                        
-                        {/* Group Header with Icon */}
-                        <div className="flex items-center gap-3 pb-3 border-b border-gray-100">
-                          <div className="p-2 rounded-lg bg-[#201f44]/5 flex items-center justify-center">
-                            <ServiceIcon type={group.icon} />
-                          </div>
-                          <h4 className="text-[#201f44] font-bold text-base tracking-tight">
-                            {group.title}
-                          </h4>
-                        </div>
+                  →
+                </span>
+              </Link>
+            </li>
+          ))}
+        </ul>
 
-                        {/* Service Item Links */}
-                        <ul className="space-y-2">
-                          {group.items.map((service) => (
-                            <li key={typeof service === 'object' ? service.name : service}>
-                              <Link
-                                href={typeof service === 'object' ? service.href : "#services"}
-                                onClick={() => setServicesOpen(false)}
-                                className="group/item flex items-center justify-between px-3 py-2.5 rounded-lg text-sm font-medium text-slate-600 hover:text-[#201f44] hover:bg-[#201f44]/5 transition-all duration-200"
-                              >
-                                <span className="line-clamp-1">{typeof service === 'object' ? service.name : service}</span>
-                                {/* Arrow appears on hover with Gold color */}
-                                <span className="opacity-0 -translate-x-2 group-hover/item:opacity-100 group-hover/item:translate-x-0 transition-all duration-200 text-[#df9a62] text-lg font-bold">
-                                  →
-                                </span>
-                              </Link>
-                            </li>
-                          ))}
-                        </ul>
-
-                      </div>
-                    ))}
-                  </div>
-
- 
-
-                </div>
+      </div>
+    ))}
+</div>
               </div>
             ) : (
               <Link
@@ -221,7 +249,7 @@ export default function Header() {
 
                 {mobileServicesOpen && (
                   <div className="pl-2 mt-1 space-y-4 bg-gray-50 p-4 rounded-xl border border-gray-100">
-                    {serviceGroups.map((group) => (
+                    {serviceGroups.filter((group) => group.title === "ISO Certification").map((group) => (
                       <div key={group.title}>
                         <p className="text-xs font-bold text-[#df9a62] uppercase tracking-wider mb-2 px-1">
                           {group.title}
