@@ -78,21 +78,7 @@ export const serviceGroups = [
     icon: "badge",
     items: isoLinks,
   },
-
-  {
-    title: "Cybersecurity",
-    icon: "lock",
-    items: [
-      "CMMI Level 3 & 5",
-      "SOC 1 & SOC 2",
-      "VAPT",
-      "PCI DSS",
-      "Cybersecurity Gap Review",
-      "Security Documentation",
-      "GDPR",
-      "Digital Personal Data Protection",
-    ],
-  },
+ 
 
  
 ];
@@ -133,17 +119,7 @@ export const features = [
 // STANDARDS
 // ======================================================
 
-export const standards = [
-  "ISO 9001",
-  "ISO 14001",
-  "ISO 45001",
-  "ISO 27001",
-  "ISO 22000",
-  "ISO 50001",
-  "HACCP",
-  "CE Marking",
-];
-
+ 
 
 // ======================================================
 // BLOG POSTS

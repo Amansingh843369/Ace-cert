@@ -160,17 +160,7 @@ export default function Header() {
                     ))}
                   </div>
 
-                  {/* Dropdown CTA Banner - Themed */}
-{serviceGroups[0]?.items.map((iso) => (
-  <Link
-    key={iso.href}
-    href={iso.href}
-    onClick={() => setServicesOpen(false)}
-    className="block px-4 py-2 text-sm transition hover:bg-black/5"
-  >
-    {iso.name}
-  </Link>
-))}
+ 
 
                 </div>
               </div>
