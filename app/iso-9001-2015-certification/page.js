@@ -1,8 +1,10 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 
 export default function IsoCertificationLayout() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   // Data Arrays
   const benefitsList = [
     "Improve customer satisfaction",
@@ -37,12 +39,11 @@ export default function IsoCertificationLayout() {
   return (
     <div className="min-h-screen bg-slate-50 text-slate-900 relative overflow-hidden font-sans selection:bg-blue-200 selection:text-blue-900">
       
-      {/* --- Optimized Background Glows (Reduced Blur/Size for Performance) --- */}
+      {/* --- Optimized Background Glows --- */}
       <div className="absolute top-0 left-0 w-[400px] h-[400px] bg-blue-400/15 rounded-full blur-[100px] pointer-events-none" />
       <div className="absolute top-[30%] right-0 w-[500px] h-[500px] bg-teal-300/15 rounded-full blur-[120px] pointer-events-none" />
       <div className="absolute bottom-0 left-[10%] w-[600px] h-[600px] bg-indigo-400/10 rounded-full blur-[120px] pointer-events-none" />
 
-      {/* Reduced vertical padding on mobile, standard on desktop */}
       <div className="max-w-7xl mx-auto px-4 py-12 md:px-6 lg:px-12 lg:py-20 space-y-20 md:space-y-28 relative z-10">
         
         {/* --- SECTION 1: Hero & Definition --- */}
@@ -68,7 +69,7 @@ export default function IsoCertificationLayout() {
             </h2>
           </div>
 
-          {/* Glassmorphism Container - Tighter Padding */}
+          {/* Glassmorphism Container */}
           <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-16 bg-white/60 backdrop-blur-xl p-6 md:p-10 lg:p-12 rounded-3xl md:rounded-[2.5rem] border border-white/80 shadow-xl">
             
             {/* Left: Image */}
@@ -98,6 +99,22 @@ export default function IsoCertificationLayout() {
                   The standard is published by the International Organization for Standardization and is applicable to organizations of all sizes and sectors globally.
                 </p>
               </div>
+              
+              {/* --- NEW ENQUIRE BUTTON --- */}
+              <div className="mt-6 flex justify-center lg:justify-start">
+                <button 
+                  onClick={() => setIsModalOpen(true)}
+                  className="group relative inline-flex items-center justify-center px-8 py-3.5 text-base font-bold text-white transition-all duration-200 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-full hover:from-blue-700 hover:to-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-600 shadow-lg shadow-blue-500/30 hover:shadow-blue-500/50 hover:-translate-y-1"
+                >
+                  <span>Get Certified Today</span>
+                  <svg className="w-5 h-5 ml-2 -mr-1 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                  </svg>
+                  {/* Shine Effect */}
+                  <div className="absolute inset-0 rounded-full ring-2 ring-white/20 group-hover:ring-white/40 transition-all"></div>
+                </button>
+              </div>
+
             </div>
           </div>
         </section>
@@ -130,7 +147,7 @@ export default function IsoCertificationLayout() {
                 </p>
               </div>
 
-              {/* Interactive Grid - Tighter Gap */}
+              {/* Interactive Grid */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4">
                 {benefitsList.map((benefit, index) => (
                   <div 
@@ -212,7 +229,6 @@ export default function IsoCertificationLayout() {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-7">
-              {/* Card Component Reused Inline for Cleaner Code */}
               {[
                 { color: "blue", icon: "🏢", label: "Organization", title: "For Your Business", items: ["Improved business performance", "Better process control", "Reduced operational costs", "Increased productivity", "Enhanced risk management", "Greater consistency", "Improved supplier performance"] },
                 { color: "teal", icon: "🤝", label: "Customer Value", title: "For Your Customers", items: ["Consistent product quality", "Increased confidence", "Better customer experience", "Faster response times", "High satisfaction rates"] },
@@ -287,6 +303,71 @@ export default function IsoCertificationLayout() {
 
         </section>
       </div>
+
+      {/* --- MODAL POPUP FORM --- */}
+      {isModalOpen && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6">
+          {/* Backdrop Blur */}
+          <div 
+            className="absolute inset-0 bg-slate-900/60 backdrop-blur-sm transition-opacity" 
+            onClick={() => setIsModalOpen(false)}
+          ></div>
+
+          {/* Modal Content */}
+          <div className="relative w-full max-w-lg bg-white rounded-3xl shadow-2xl overflow-hidden animate-in fade-in zoom-in duration-300">
+            
+            {/* Decorative Header */}
+            <div className="relative h-32 bg-gradient-to-r from-blue-600 to-indigo-600 flex items-center justify-center">
+               <div className="absolute top-0 left-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
+               <button 
+                 onClick={() => setIsModalOpen(false)}
+                 className="absolute top-4 right-4 p-2 bg-white/20 hover:bg-white/30 rounded-full text-white transition-colors"
+               >
+                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+               </button>
+               <div className="text-center text-white z-10">
+                 <h3 className="text-2xl font-bold">Get Certified</h3>
+                 <p className="text-blue-100 text-sm">Fill the form below</p>
+               </div>
+            </div>
+
+            {/* Form Body */}
+            <div className="p-8">
+              <form className="space-y-5">
+                <div>
+                  <label className="block text-sm font-medium text-slate-700 mb-1">Full Name</label>
+                  <input type="text" className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition-all bg-slate-50 focus:bg-white" placeholder="John Doe" />
+                </div>
+                
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                  <div>
+                    <label className="block text-sm font-medium text-slate-700 mb-1">Email Address</label>
+                    <input type="email" className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition-all bg-slate-50 focus:bg-white" placeholder="john@company.com" />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-slate-700 mb-1">Phone Number</label>
+                    <input type="tel" className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition-all bg-slate-50 focus:bg-white" placeholder="+91 98765 43210" />
+                  </div>
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium text-slate-700 mb-1">Company Name</label>
+                  <input type="text" className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition-all bg-slate-50 focus:bg-white" placeholder="Your Company Ltd." />
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium text-slate-700 mb-1">Message (Optional)</label>
+                  <textarea rows="3" className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition-all bg-slate-50 focus:bg-white resize-none" placeholder="Tell us about your requirements..."></textarea>
+                </div>
+
+                <button type="button" className="w-full py-3.5 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-bold rounded-xl shadow-lg shadow-blue-500/30 hover:shadow-blue-500/50 hover:-translate-y-0.5 transition-all duration-200">
+                  Submit Enquiry
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Animation Styles */}
       <style jsx>{`
