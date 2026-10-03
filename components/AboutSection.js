@@ -6,7 +6,7 @@ export default function AboutSection() {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
-    <section id="about" className="py-20 lg:py-28 bg-white relative overflow-hidden">
+    <section id="about" className="py-20 lg:py-18 bg-white relative overflow-hidden">
       
       {/* Background Decorative Blobs - Red & Blue Theme */}
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-red-50 rounded-full mix-blend-multiply filter blur-3xl opacity-70 -translate-y-1/2 translate-x-1/4"></div>
@@ -95,18 +95,7 @@ export default function AboutSection() {
               {/* Overlay Gradient */}
               <div className="absolute inset-0 bg-gradient-to-t from-blue-950/60 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity duration-500"></div>
               
-              {/* Floating Card on Image */}
-              <div className="absolute bottom-6 left-6 right-6 bg-white/90 backdrop-blur-md p-4 rounded-xl border border-white/20 shadow-lg transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 delay-100">
-                <div className="flex items-center gap-3">
-                  <div className="bg-red-100 p-2 rounded-full">
-                    <CheckCircle2 className="w-5 h-5 text-red-600" />
-                  </div>
-                  <div>
-                    <p className="text-sm font-bold text-slate-900">ISO Certified Experts</p>
-                    <p className="text-xs text-slate-500">Trusted by industry leaders</p>
-                  </div>
-                </div>
-              </div>
+              
             </div>
 
           </div>

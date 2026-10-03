@@ -5,7 +5,7 @@ import FeaturesSection from "../components/FeaturesSection";
 import HeroSection from "../components/HeroSection";
  import ExperienceSection  from "../components/exp";
  import  ContactSection  from "../components/contact";
- 
+ import ServiceSection from "../components/services";
 
 export default function HomePage() {
   return (
@@ -14,6 +14,7 @@ export default function HomePage() {
     
        
       <AboutSection />
+      <ServiceSection />
      <ExperienceSection />  
      <FeaturesSection />
       <FaqSection />
