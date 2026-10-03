@@ -15,11 +15,11 @@ export default function HomePage() {
        
       <AboutSection />
       <ServiceSection />
-     <ExperienceSection />  
+     {/* <ExperienceSection />   */}
      <FeaturesSection />
       <FaqSection />
       <BlogSection />
-      <ContactSection />
+      {/* <ContactSection /> */}
     </main>
   );
 }

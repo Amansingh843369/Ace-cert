@@ -1,39 +1,115 @@
 "use client";
-import { Trophy, ClipboardCheck, ShieldCheck, ArrowRight, CheckCircle2, Users, Globe } from "lucide-react";
-import { useState } from "react";
+
+import React from "react";
+import { Trophy, Users, Globe, ShieldCheck, Play, ArrowRight } from "lucide-react";
+
+const stats = [
+  {
+    id: 1,
+    icon: Trophy,
+    number: "10+ Years",
+    label: "Industry Experience",
+    iconColor: "text-red-600",
+  },
+  {
+    id: 2,
+    icon: Users,
+    number: "500+",
+    label: "Happy Clients",
+    iconColor: "text-blue-900",
+  },
+  {
+    id: 3,
+    icon: Globe,
+    number: "Global",
+    label: "Standards Coverage",
+    iconColor: "text-red-600",
+  },
+];
 
 export default function AboutSection() {
-  const [isHovered, setIsHovered] = useState(false);
-
   return (
-    <section id="about" className="py-20 lg:py-18 bg-white relative overflow-hidden">
-      
-      {/* Background Decorative Blobs - Red & Blue Theme */}
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-red-50 rounded-full mix-blend-multiply filter blur-3xl opacity-70 -translate-y-1/2 translate-x-1/4"></div>
-      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-blue-50 rounded-full mix-blend-multiply filter blur-3xl opacity-70 translate-y-1/2 -translate-x-1/4"></div>
-
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+    <section id="about" className="py-16 md:py-24 bg-white overflow-hidden font-sans">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+        <div className="flex flex-col lg:flex-row gap-12 lg:gap-8 items-center">
           
-          {/* LEFT COLUMN: Content */}
-          <div className="space-y-8 animate-fade-in-up order-2 lg:order-1">
+          {/* --- COLUMN 1: STATS (Left Side) --- */}
+          <div className="w-full lg:w-2/12 flex flex-row lg:flex-col justify-center sm:justify-around lg:justify-center gap-8 lg:gap-16 border-b lg:border-b-0 lg:border-r border-slate-100 pb-8 lg:pb-0 pr-0 lg:pr-4">
+            {stats.map((stat) => {
+              const Icon = stat.icon;
+              return (
+                <div key={stat.id} className="flex flex-col items-center text-center group cursor-default">
+                  <div className="mb-4 p-3 bg-slate-50 rounded-xl group-hover:bg-red-50 transform group-hover:-translate-y-1 transition-all duration-300">
+                    <Icon className={`w-7 h-7 ${stat.iconColor}`} strokeWidth={1.5} />
+                  </div>
+                  <h4 className="text-xl md:text-2xl font-bold text-slate-900 mb-1 tracking-tight group-hover:text-red-600 transition-colors">
+                    {stat.number}
+                  </h4>
+                  <p className="text-xs md:text-sm text-slate-500 font-semibold uppercase tracking-wide">
+                    {stat.label}
+                  </p>
+                </div>
+              );
+            })}
+          </div>
+
+          {/* --- COLUMN 2: IMAGE COLLAGE (Middle) --- */}
+          <div className="w-full lg:w-5/12 relative h-[500px] md:h-[600px] flex items-center justify-center">
+            
+            {/* Background Accent Shapes (Blue & Red Theme) */}
+            <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-0">
+              {/* Vertical Blue Block */}
+              <div className="w-32 md:w-48 h-full bg-blue-900/5 absolute rounded-3xl transform -rotate-3"></div>
+              {/* Horizontal Red Block */}
+              <div className="w-full h-40 md:h-56 bg-red-600/5 absolute rounded-3xl transform rotate-2"></div>
+            </div>
+
+            {/* Top Right Image */}
+            <img
+              src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+              alt="Professional team discussing compliance strategies"
+              className="absolute top-0 right-0 w-[60%] h-[240px] md:h-[280px] object-cover rounded-xl shadow-lg z-10 hover:scale-105 transition-transform duration-500"
+            />
+            
+            {/* Middle Left Image */}
+            <img
+              src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+              alt="Consulting meeting"
+              className="absolute top-[25%] left-0 w-[55%] h-[220px] md:h-[260px] object-cover rounded-xl shadow-lg z-20 hover:scale-105 transition-transform duration-500"
+            />
+            
+            {/* Bottom Right Image */}
+            <img
+              src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+              alt="Global certification standards"
+              className="absolute bottom-4 right-[10%] w-[50%] h-[200px] md:h-[240px] object-cover rounded-xl shadow-lg z-10 hover:scale-105 transition-transform duration-500"
+            />
+
+            {/* Central Play Button */}
+            <button className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-30 w-20 h-20 md:w-24 md:h-24 bg-white rounded-full flex items-center justify-center shadow-[0_8px_30px_rgba(0,0,0,0.15)] hover:scale-110 hover:shadow-[0_15px_40px_rgba(220,38,38,0.2)] transition-all duration-300 group">
+              <Play className="w-8 h-8 md:w-10 md:h-10 text-red-600 ml-2 group-hover:text-blue-900 transition-colors" fill="currentColor" />
+            </button>
+          </div>
+
+          {/* --- COLUMN 3: TEXT CONTENT (Right Side) --- */}
+          <div className="w-full lg:w-5/12 pl-0 lg:pl-8 mt-10 lg:mt-0">
             
             {/* Badge */}
-            <div className="inline-flex items-center space-x-2 bg-blue-950 text-white px-4 py-2 rounded-full text-sm font-bold tracking-wider uppercase shadow-lg shadow-blue-900/20">
+            <div className="inline-flex items-center space-x-2 bg-blue-950 text-white px-4 py-2 rounded-full text-xs font-bold tracking-wider uppercase shadow-lg shadow-blue-900/20 mb-6">
               <ShieldCheck className="w-4 h-4 text-red-500" />
               <span>About ACE Certification</span>
             </div>
-
+            
             {/* Heading */}
-            <h2 className="text-4xl lg:text-5xl font-extrabold text-slate-900 leading-tight">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-slate-900 mb-6 leading-tight">
               Achieve Compliance & <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-red-500">
-                 Excellence. 
+                Excellence.
               </span>
             </h2>
-
-            {/* Description */}
-            <div className="space-y-6 text-slate-600 text-lg leading-relaxed text-justify">
+            
+            {/* Description (Text Justify applied here) */}
+            <div className="space-y-5 text-slate-600 text-sm md:text-base leading-relaxed text-justify">
               <p>
                 <strong className="text-slate-900">ACE Certification Ltd.</strong> is a dedicated and client-centric professional services firm established to empower organizations of all sizes to achieve international standards of quality, safety, and efficiency.
               </p>
@@ -44,88 +120,19 @@ export default function AboutSection() {
                 Our team comprises highly experienced Lead Auditors who bring practical insights to every engagement. We believe certification is not just a trophy, but a strategic tool for <span className="font-semibold text-red-600">tangible business improvement</span>.
               </p>
             </div>
-
-            {/* Stats Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4">
-              <StatCard 
-                icon={<Trophy className="w-6 h-6 text-red-600" />} 
-                title="10+ Years" 
-                desc="Industry Experience" 
-              />
-              <StatCard 
-                icon={<Users className="w-6 h-6 text-blue-900" />} 
-                title="500+" 
-                desc="Happy Clients" 
-              />
-              <StatCard 
-                icon={<Globe className="w-6 h-6 text-red-600" />} 
-                title="Global" 
-                desc="Standards Coverage" 
-              />
-            </div>
-
+            
             {/* CTA Button */}
-            <div className="pt-4">
-               <button className="group flex items-center gap-2 bg-blue-950 text-white px-8 py-4 rounded-xl font-bold hover:bg-red-600 transition-all duration-300 shadow-lg hover:shadow-red-500/30">
-                  Know More About Us
-                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-               </button>
+            <div className="pt-8">
+              <button className="group flex items-center justify-center gap-2 bg-blue-950 text-white px-8 py-4 rounded-xl font-bold hover:bg-red-600 transition-all duration-300 shadow-lg hover:shadow-red-500/30">
+                Know More About Us
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </button>
             </div>
-             
+            
           </div>
-
-          {/* RIGHT COLUMN: Interactive Image */}
-          <div 
-            className="relative group perspective-1000 order-1 lg:order-2"
-            onMouseEnter={() => setIsHovered(true)}
-            onMouseLeave={() => setIsHovered(false)}
-          >
-            {/* Decorative Border/Frame behind image */}
-            <div className={`absolute inset-0 border-2 border-red-100 rounded-3xl transform translate-x-4 translate-y-4 transition-transform duration-500 ${isHovered ? 'translate-x-2 translate-y-2 border-red-200' : ''}`}></div>
-
-            {/* Main Image Container */}
-            <div className={`relative rounded-3xl overflow-hidden shadow-2xl shadow-blue-900/10 transition-all duration-700 ease-out transform ${isHovered ? 'scale-[1.01] -rotate-1' : 'scale-100 rotate-0'}`}>
-              {/* NEW IMAGE: Professional Corporate Team/Consulting */}
-              <img 
-                src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
-                alt="Professional team discussing compliance strategies" 
-                className="w-full h-[400px] lg:h-[500px] object-cover transition-transform duration-700 group-hover:scale-105"
-              />
-              
-              {/* Overlay Gradient */}
-              <div className="absolute inset-0 bg-gradient-to-t from-blue-950/60 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity duration-500"></div>
-              
-              
-            </div>
-
-          </div>
-
+          
         </div>
       </div>
-
-      {/* Custom Styles for Animations */}
-      <style jsx>{`
-        @keyframes fade-in-up {
-          from { opacity: 0; transform: translateY(20px); }
-          to { opacity: 1; transform: translateY(0); }
-        }
-        .animate-fade-in-up {
-          animation: fade-in-up 0.8s ease-out forwards;
-        }
-      `}</style>
     </section>
-  );
-}
-
-// Reusable Stat Card Component
-function StatCard({ icon, title, desc }) {
-  return (
-    <div className="bg-white p-4 rounded-xl border border-slate-100 shadow-sm hover:shadow-md hover:border-red-100 transition-all duration-300 cursor-default group flex flex-col items-center text-center">
-      <div className="mb-2 p-2 bg-slate-50 rounded-lg group-hover:bg-red-50 transition-colors duration-300">
-        {icon}
-      </div>
-      <h4 className="text-lg font-bold text-slate-900 group-hover:text-red-600 transition-colors">{title}</h4>
-      <p className="text-xs text-slate-500 mt-1 uppercase tracking-wide">{desc}</p>
-    </div>
   );
 }
