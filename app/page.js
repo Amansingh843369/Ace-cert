@@ -12,9 +12,10 @@ export default function HomePage() {
     <main className="min-h-screen bg-slate-50 font-sans text-slate-800 selection:bg-blue-100">
       <HeroSection />
     
-      <FeaturesSection />
+       
       <AboutSection />
      <ExperienceSection />  
+     <FeaturesSection />
       <FaqSection />
       <BlogSection />
       <ContactSection />

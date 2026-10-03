@@ -1,105 +1,89 @@
-import { Globe, TrendingUp, Presentation, Layers } from "lucide-react";
+import { Globe, TrendingUp, Presentation, Layers, ArrowRight } from "lucide-react";
 
-// Data updated to match Image 3 exactly
 const features = [
   {
-    title: "The ACE Name",
-    text: "The name ACE stands for their core promise to help our clients Achieve Compliance & Excellence",
+    title: "The ACE-CERT",
+    text: "The name ACE stands for our core promise: helping clients Achieve Compliance & Excellence at every level.",
     icon: TrendingUp,
-    blobColor: "bg-sky-300",  
-    iconColor: "text-slate-900",
+    iconBg: "bg-blue-100",
+    iconColor: "text-blue-600",
   },
   {
-    title: "Clarity and Simplicity",
-    text: "We believe that standards are the foundation of market trust. By helping organizations implement consistent, world-class benchmarks, we protect consumers and empower businesses to lead with confidence. ",
+    title: "Clarity & Simplicity",
+    text: "Standards are the foundation of market trust. We implement consistent benchmarks to protect consumers and empower your business.",
     icon: Presentation,
-    blobColor: "bg-yellow-300", 
-    iconColor: "text-slate-900",
+    iconBg: "bg-amber-100",
+    iconColor: "text-amber-600",
   },
   {
     title: "Practical Focus",
-    text: "Our auditors and trainers are seasoned, hands-on industry professionals who deliver realistic, high-impact solutions designed to work seamlessly in your day-to-day operations.",
-    icon: Layers, // Overlapping circles look
-    blobColor: "bg-orange-500", // Orange
-    iconColor: "text-slate-900",
-    hasSpecialMarkers: true, // For the red dot and plus sign
+    text: "Our auditors are seasoned industry professionals delivering realistic, high-impact solutions for your day-to-day operations.",
+    icon: Layers,
+    iconBg: "bg-emerald-100",
+    iconColor: "text-emerald-600",
   },
   {
-    title: "Global Recognition, Local Service",
-    text: "Our certificates open doors worldwide, but our daily focus is close to home. We deliver world-class ISO compliance through adaptive, fast-acting, and highly attentive client care.",
+    title: "Global Recognition",
+    text: "Certificates that open doors worldwide, delivered through adaptive, fast-acting, and highly attentive local client care.",
     icon: Globe,
-    blobColor: "bg-teal-200", // Mint/Teal
-    iconColor: "text-slate-900",
+    iconBg: "bg-violet-100",
+    iconColor: "text-violet-600",
   },
 ];
 
 export default function FeaturesSection() {
   return (
-    <section id="features" className="py-20 bg-slate-50 relative overflow-hidden font-sans" aria-labelledby="features-title">
+    <section className="py-20 md:py-28 bg-white relative overflow-hidden" aria-labelledby="features-title">
       
-      {/* Background Decorative Elements */}
-      <div className="absolute top-0 left-0 w-96 h-96 bg-teal-50 rounded-full mix-blend-multiply filter blur-3xl opacity-50 -translate-x-1/2 -translate-y-1/2"></div>
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-blue-50 rounded-full mix-blend-multiply filter blur-3xl opacity-50 translate-x-1/2 translate-y-1/2"></div>
-      
-      {/* Left Side Dot Pattern (Subtle) */}
-      <div className="absolute top-1/2 left-2 transform -translate-y-1/2 opacity-30 hidden xl:block">
-         <div className="grid grid-cols-4 gap-3">
-            {[...Array(20)].map((_, i) => <div key={i} className="w-1 h-1 bg-slate-400 rounded-full"></div>)}
-         </div>
-      </div>
+      {/* Subtle Background Elements */}
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-slate-50 rounded-full blur-3xl opacity-60 translate-x-1/3 -translate-y-1/4 pointer-events-none"></div>
 
-      <div className="container mx-auto px-4 relative z-10">
-        
-        {/* Header Section */}
-        <div className="text-center max-w-4xl mx-auto mb-16">
-         
-          <h2 id="features-title" className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-slate-800 mb-2">
-            Why Choose ACE Certification Ltd.?
-          </h2>
-        </div>
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 max-w-7xl">
+        <div className="lg:grid lg:grid-cols-12 lg:gap-16 items-center">
+          
+          {/* Left Side: Sticky Title Area */}
+          <div className="lg:col-span-5 mb-12 lg:mb-0 lg:sticky lg:top-32 self-start">
+            <div className="inline-block px-4 py-1.5 rounded-full bg-blue-50 text-blue-600 font-semibold text-sm tracking-wide mb-6">
+              Why ACE Certification?
+            </div>
+            <h2 id="features-title" className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-slate-900 mb-6 leading-[1.15]">
+              Elevating Standards, <br className="hidden lg:block"/> Empowering Business.
+            </h2>
+            <p className="text-lg text-slate-600 mb-8 leading-relaxed max-w-2xl">
+              We don't just provide certificates; we partner with you to build a foundation of trust, operational excellence, and global compliance that drives real growth.
+            </p>
+            <a href="#contact" className="inline-flex items-center gap-2 font-bold text-blue-600 hover:text-blue-700 transition-colors group">
+              Speak with our experts
+              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            </a>
+          </div>
 
-        {/* Cards Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-4">
-          {features.map((feature, index) => {
-            const Icon = feature.icon;
-            return (
-              <article 
-                key={feature.title} 
-                className="group p-6 lg:p-8 rounded-[20px] bg-white border border-slate-100 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col items-start relative h-full"
-              >
-                {/* Title */}
-                <h3 className="text-xl lg:text-2xl font-bold text-slate-800 mb-8 leading-tight min-h-[3.5rem]">
-                  {feature.title}
-                </h3>
+          {/* Right Side: Features 2x2 Grid */}
+          <div className="lg:col-span-7 grid sm:grid-cols-2 gap-6 md:gap-8">
+            {features.map((feature) => {
+              const Icon = feature.icon;
+              return (
+                <article 
+                  key={feature.title} 
+                  className="group p-8 rounded-3xl bg-slate-50 border border-slate-100 hover:bg-white hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all duration-300"
+                >
+                  {/* Icon Box */}
+                  <div className={`w-14 h-14 rounded-2xl ${feature.iconBg} flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-300`}>
+                    <Icon className={`w-7 h-7 ${feature.iconColor}`} strokeWidth={2} aria-hidden="true" />
+                  </div>
 
-                {/* Icon with Organic Blob */}
-                <div className="relative w-16 h-16 mb-8 flex items-center justify-center">
-                  {/* The Blob Shape */}
-                  <div className={`absolute inset-0 ${feature.blobColor} rounded-[40%_60%_70%_30%/40%_50%_60%_50%] transform group-hover:rotate-6 transition-transform duration-500 scale-110`}></div>
-                  {/* The Icon */}
-                  <Icon className={`w-8 h-8 ${feature.iconColor} relative z-10`} strokeWidth={1.75} aria-hidden="true" />
-                </div>
-
-                {/* Divider Line */}
-                <div className="w-8 h-[2px] bg-slate-300 mb-6"></div>
-
-                {/* Description Text - Uppercase & Bold like image */}
-                <p className="text-slate-700 text-xs lg:text-sm leading-relaxed font-bold uppercase tracking-wide">
-                  {feature.text}
-                </p>
-
-                {/* Special Markers for "Practical Focus" Card (Index 2) */}
-                {feature.hasSpecialMarkers && (
-                  <>
-                    {/* Red Dot */}
-                    <div className="absolute bottom-[4.5rem] left-8 w-1.5 h-1.5 bg-red-500 rounded-full"></div>
-                    {/* Teal Plus Sign */}
-                    <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 text-teal-400 font-bold text-2xl leading-none">+</div>
-                  </>
-                )}
-              </article>
-            );
-          })}
+                  {/* Content */}
+                  <h3 className="text-xl font-bold text-slate-900 mb-4">
+                    {feature.title}
+                  </h3>
+                  <p className="text-slate-600 text-sm md:text-base leading-relaxed">
+                    {feature.text}
+                  </p>
+                </article>
+              );
+            })}
+          </div>
+          
         </div>
       </div>
     </section>
