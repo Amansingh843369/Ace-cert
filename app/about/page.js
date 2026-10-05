@@ -12,14 +12,14 @@ export default function AboutPage() {
           <img 
             src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1920&q=80" 
             alt="ISO Certification Background" 
-            className="w-full h-full object-cover opacity-10 mix-blend-multiply"
+            className="w-full h-full object-cover opacity-30 "
           />
           {/* Gradient Overlay for better text readability */}
           <div className="absolute inset-0 bg-gradient-to-b from-white/40 via-transparent to-white/80"></div>
         </div>
         
         <div className="relative z-10 max-w-4xl mx-auto space-y-4">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-gray-900 tracking-tight drop-shadow-sm">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-red-600 tracking-tight drop-shadow-sm">
             About Company
           </h1>
           
