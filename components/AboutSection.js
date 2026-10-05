@@ -7,14 +7,14 @@ const stats = [
   {
     id: 1,
     icon: Trophy,
-    number: "10+ Years",
+    number: "3+ Years",
     label: "Industry Experience",
     iconColor: "text-red-600",
   },
   {
     id: 2,
     icon: Users,
-    number: "500+",
+    number: "240+",
     label: "Happy Clients",
     iconColor: "text-blue-900",
   },

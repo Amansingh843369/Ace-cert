@@ -1,10 +1,10 @@
 import AboutSection from "../components/AboutSection";
 import BlogSection from "../components/BlogSection";
 import FaqSection from "../components/FaqSection";
-import FeaturesSection from "../components/FeaturesSection";
+import FeaturesSection from '../components/FeaturesSection'; // Apna exact file path yahan daalein
 import HeroSection from "../components/HeroSection";
- import ExperienceSection  from "../components/exp";
- import  ContactSection  from "../components/contact";
+//  import ExperienceSection  from "../components/exp";
+//  import  ContactSection  from "../components/contact";
  import ServiceSection from "../components/services";
 
 export default function HomePage() {
