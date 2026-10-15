@@ -31,6 +31,8 @@ export default function Header() {
     const onDocumentClick = (event) => {
       if (headerRef.current && !headerRef.current.contains(event.target)) {
         setServicesOpen(false);
+        setMobileMenuOpen(false);
+        setMobileServicesOpen(false);
       }
     };
 
@@ -102,20 +104,9 @@ export default function Header() {
                 {/* ISO CERTIFICATION DROPDOWN */}
                 <div
                   id="desktop-services-dropdown"
-                  className={`fixed top-[72px] left-1/2 -translate-x-1/2
-                    w-[340px] max-w-[calc(100vw-32px)]
-                    max-h-[75vh] overflow-y-auto
-                    bg-white rounded-2xl shadow-2xl border border-slate-200
-                    p-6
-                    transition-all duration-300 origin-top z-50
-                    [scrollbar-width:thin]
-                    [scrollbar-color:#dc2626_#f1f5f9]
-                    [&::-webkit-scrollbar]:w-2
-                    [&::-webkit-scrollbar-track]:bg-slate-100
-                    [&::-webkit-scrollbar-track]:rounded-full
-                    [&::-webkit-scrollbar-thumb]:bg-red-600
-                    [&::-webkit-scrollbar-thumb]:rounded-full
-                    hover:[&::-webkit-scrollbar-thumb]:bg-red-700
+                  className={`fixed left-1/2 top-[72px] z-50 w-[calc(100vw-2rem)] max-w-6xl -translate-x-1/2
+                    rounded-2xl border border-slate-200 bg-white p-5 shadow-[0_24px_70px_rgba(15,23,42,0.18)] sm:p-6
+                    transition-all duration-300 origin-top
                     ${
                       servicesOpen
                         ? "opacity-100 scale-100 visible pointer-events-auto translate-y-0"
@@ -139,7 +130,7 @@ export default function Header() {
                         </div>
 
                         {/* ISO Items */}
-                        <ul className="space-y-1">
+                        <ul className="grid grid-cols-2 gap-1 sm:grid-cols-3 xl:grid-cols-4">
                           {group.items.map((service) => {
                             const serviceName = typeof service === "object" ? service.name : service;
                             const serviceHref = typeof service === "object" ? service.href : "#services";
@@ -148,11 +139,7 @@ export default function Header() {
                                 <Link
                                   href={serviceHref}
                                   onClick={() => setServicesOpen(false)}
-                                  className="group/item flex items-center justify-between
-                                    px-3.5 py-2.5 rounded-xl
-                                    text-sm font-semibold text-slate-700
-                                    hover:text-red-600 hover:bg-red-50/60
-                                    transition-all duration-200"
+                                  className="group/item flex min-h-10 items-center justify-between gap-2 rounded-xl px-3 py-2 text-xs font-semibold text-slate-700 transition-all duration-200 hover:bg-red-50 hover:text-red-700 sm:px-3.5 sm:text-sm"
                                 >
                                   <span>{serviceName}</span>
 
@@ -217,7 +204,7 @@ export default function Header() {
       {mobileMenuOpen && (
         <div 
           id="mobile-navigation-menu"
-          className="lg:hidden absolute top-full left-0 w-full bg-white border-t border-slate-200 shadow-2xl p-4 sm:p-6 flex flex-col gap-2 max-h-[82vh] overflow-y-auto [scrollbar-width:thin] [scrollbar-color:#dc2626_#f1f5f9] [&::-webkit-scrollbar]:w-1.5 [&::-webkit-scrollbar-track]:bg-slate-100 [&::-webkit-scrollbar-thumb]:bg-red-600 animate-in slide-in-from-top-2 duration-200"
+          className="lg:hidden absolute top-full left-0 w-full bg-white border-t border-slate-200 shadow-2xl p-4 sm:p-6 flex flex-col gap-2 max-h-[82vh] overflow-y-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden animate-in slide-in-from-top-2 duration-200"
         >
           <nav aria-label="Mobile Navigation" className="flex flex-col gap-1">
             {navItems.map((item) =>

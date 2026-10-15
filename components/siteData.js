@@ -2,6 +2,8 @@
 // NAVIGATION
 // ======================================================
 
+import { isoStandards } from "../data/isoStandards";
+
 export const navItems = [
   { name: "Home", href: "#" },
   { name: "About Us", href: "/about" },
@@ -16,56 +18,10 @@ export const navItems = [
 // ISO CERTIFICATION LINKS
 // ======================================================
 
-export const isoLinks = [
-  {
-    name: "ISO 9001 (QMS)",
-    href: "/iso-9001-2015-certification",
-  },
-  {
-    name: "ISO 14001(EMS)",
-    href: "/iso-14001-certification",
-  },
-  {
-    name: "ISO 45001 (OH&S)",
-    href: "/iso-45001-certification",
-  },
-  {
-    name: "ISO/IEC 20000-1 (ITSMS)",
-    href: "/iso-20000-1-certification",
-  },
-  {
-    name: "ISO 27001 (ISMS)",
-    href: "/iso-27001-certification",
-  },
-  {
-    name: "ISO 42001 (AIMS)",
-    href: "/iso-42001-certification",
-  },
-  {
-    name: "ISO 27701 (PIMS)",
-    href: "/iso-27701-certification",
-  },
-  {
-    name: "ISO 37001:2016 (ABMS)",
-    href: "/iso-37001-certification",
-  },
-  {
-    name: "ISO 22301 (BCMS)",
-    href: "/iso-22301-certification",
-  },
-  {
-    name: "ISO 22000 (FSMS)",
-    href: "/iso-22000-certification",
-  },
-  {
-    name: "ISO 50001 (EnMS)",
-    href: "/iso-50001-certification",
-  },
-  {
-    name: "ISO 13485(MDQMS)",
-    href: "/iso-13485-certification",
-  },
-];
+export const isoLinks = isoStandards.map(({ code, href }) => ({
+  name: code,
+  href,
+}));
 
 
 // ======================================================
