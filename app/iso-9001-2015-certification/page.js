@@ -2,6 +2,18 @@
 
 import React, { useState } from 'react';
 import Image from 'next/image';
+import {
+  ArrowUpRight,
+  Award,
+  BarChart3,
+  Building2,
+  CircleCheck,
+  Handshake,
+  Target,
+  TrendingUp,
+  UsersRound,
+  Workflow,
+} from 'lucide-react';
 
 export default function IsoCertificationLayout() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -21,13 +33,13 @@ export default function IsoCertificationLayout() {
   ];
 
   const principles = [
-    { id: "01", title: "Customer Focus", desc: "Prioritizing customer needs & expectations." },
-    { id: "02", title: "Leadership", desc: "Establishing unity of purpose and direction." },
-    { id: "03", title: "Engagement of People", desc: "Empowering and involving employees." },
-    { id: "04", title: "Process Approach", desc: "Managing activities as interrelated processes." },
-    { id: "05", title: "Improvement", desc: "Ongoing focus on enhancing performance." },
-    { id: "06", title: "Evidence-Based Decision", desc: "Decisions based on data and information." },
-    { id: "07", title: "Relationship Management", desc: "Managing relationships with interested parties." },
+    { id: "01", title: "Customer Focus", desc: "Prioritizing customer needs & expectations.", icon: Target },
+    { id: "02", title: "Leadership", desc: "Establishing unity of purpose and direction.", icon: Award },
+    { id: "03", title: "Engagement of People", desc: "Empowering and involving employees.", icon: UsersRound },
+    { id: "04", title: "Process Approach", desc: "Managing activities as interrelated processes.", icon: Workflow },
+    { id: "05", title: "Improvement", desc: "Ongoing focus on enhancing performance.", icon: TrendingUp },
+    { id: "06", title: "Evidence-Based Decision", desc: "Decisions based on data and information.", icon: BarChart3 },
+    { id: "07", title: "Relationship Management", desc: "Managing relationships with interested parties.", icon: Handshake },
   ];
 
   const industries = [
@@ -38,48 +50,46 @@ export default function IsoCertificationLayout() {
   ];
 
   return (
-    <div className="min-h-screen bg-white text-slate-900 relative overflow-hidden font-sans selection:bg-red-200 selection:text-red-900">
+    <main className="relative min-h-screen overflow-hidden bg-[#fffdfd] font-sans text-slate-900 selection:bg-red-200 selection:text-red-900">
       
-      <div className="absolute top-0 left-0 w-[400px] h-[400px] bg-red-200/30 rounded-full blur-[100px] pointer-events-none" />
-      <div className="absolute top-[30%] right-0 w-[500px] h-[500px] bg-rose-100/50 rounded-full blur-[120px] pointer-events-none" />
-      <div className="absolute bottom-0 left-[10%] w-[600px] h-[600px] bg-red-100/50 rounded-full blur-[120px] pointer-events-none" />
+      <div aria-hidden="true" className="pointer-events-none absolute -left-40 -top-40 h-[480px] w-[480px] rounded-full bg-red-100/50 blur-[120px]" />
+      <div aria-hidden="true" className="pointer-events-none absolute right-0 top-[28%] h-[460px] w-[460px] rounded-full bg-rose-100/40 blur-[130px]" />
+      <div aria-hidden="true" className="pointer-events-none absolute bottom-0 left-[10%] h-[520px] w-[520px] rounded-full bg-red-50 blur-[130px]" />
 
-      <div className="max-w-7xl mx-auto px-4 py-12 md:px-6 lg:px-12 lg:py-20 space-y-20 md:space-y-28 relative z-10">
+      <div className="relative z-10 mx-auto max-w-7xl space-y-20 px-4 py-8 md:space-y-24 md:px-6 md:py-12 lg:space-y-28 lg:px-12 lg:py-16">
         
         {/* --- SECTION 1: Hero & Definition --- */}
-        <section>
-          <div className="text-center mb-10 md:mb-14 flex flex-col items-center">
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 md:px-4 md:py-2 rounded-full bg-white border border-red-100 shadow-sm text-red-700 font-semibold text-xs md:text-sm mb-6 hover:scale-105 transition-transform cursor-default">
-              <span className="relative flex h-2 w-2 md:h-2.5 md:w-2.5">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-full w-full bg-red-600"></span>
+        <section aria-labelledby="iso9001-title">
+          <div className="mb-8 flex flex-col items-center text-center md:mb-10">
+            <div className="mb-5 inline-flex items-center gap-2.5 rounded-full border border-red-100 bg-white/90 px-4 py-2 text-xs font-semibold text-red-800 shadow-[0_4px_16px_rgba(127,29,29,0.06)] md:mb-6 md:text-sm">
+              <span className="relative flex h-2.5 w-2.5">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-red-500 opacity-40"></span>
+                <span className="relative inline-flex h-full w-full rounded-full bg-[#E30613]"></span>
               </span>
               Global Quality Standard
             </div>
 
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold mb-4 tracking-tight text-slate-900 leading-[1.1]">
-              ISO 9001{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-700 to-red-500">
-                Certification
-              </span>
+            <h1 id="iso9001-title" className="mb-4 max-w-4xl text-balance text-4xl font-extrabold leading-[1.08] tracking-[-0.045em] text-[#111827] sm:text-5xl md:text-6xl lg:text-[4.25rem]">
+              ISO 9001 <span className="text-[#E30613]">Certification</span>
             </h1>
             
-            <h2 className="text-base sm:text-lg md:text-xl font-medium text-slate-500 max-w-2xl px-2">
+            <h2 className="max-w-2xl px-2 text-pretty text-base font-medium leading-relaxed text-[#526581] sm:text-lg md:text-xl">
               Elevate your business with the ultimate Quality Management System (QMS) framework.
             </h2>
           </div>
 
-          <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-16 bg-white p-6 md:p-10 lg:p-12 rounded-3xl md:rounded-[2.5rem] border border-red-100 shadow-[0_24px_80px_rgba(127,29,29,0.10)]">
+          <div className="relative flex flex-col items-center gap-7 overflow-hidden rounded-[1.75rem] border border-red-100/90 bg-white/95 p-5 shadow-[0_18px_60px_rgba(17,24,39,0.07)] sm:rounded-[2rem] sm:p-7 md:gap-10 md:p-9 lg:flex-row lg:gap-12 lg:rounded-[2.25rem] lg:p-11">
+            <div aria-hidden="true" className="absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent via-red-200 to-transparent" />
             
-            <div className="w-full lg:w-5/12 flex justify-center order-1 lg:order-1">
-              <div className="relative w-full max-w-[460px] aspect-[4/3] overflow-hidden rounded-[2rem] border-[6px] border-white shadow-[0_20px_55px_rgba(127,29,29,0.18)] ring-1 ring-red-100">
+            <div className="order-1 flex w-full justify-center lg:w-[46%]">
+              <div className="relative aspect-[4/3] w-full max-w-[520px] overflow-hidden rounded-2xl bg-red-50 ring-1 ring-black/5 sm:rounded-[1.5rem]">
                 <Image
                   src="/your_success.jpg"
                   alt="Business professionals collaborating on quality improvement"
                   fill
                   priority
-                  sizes="(max-width: 1024px) 100vw, 460px"
-                  className="object-cover transition-transform duration-700 hover:scale-105"
+                  sizes="(max-width: 1024px) 100vw, 520px"
+                  className="object-cover transition-transform duration-700 hover:scale-[1.03]"
                 />
                 <div className="absolute bottom-4 left-4 rounded-xl border border-white/70 bg-white/95 px-4 py-3 shadow-lg backdrop-blur-sm">
                   <p className="text-xs font-semibold uppercase tracking-wider text-red-700">Quality in action</p>
@@ -88,14 +98,14 @@ export default function IsoCertificationLayout() {
               </div>
             </div>
 
-            <div className="w-full lg:w-7/12 flex flex-col gap-4 md:gap-6 justify-center order-2 lg:order-2 text-center lg:text-left">
-              <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-slate-900 relative inline-block mx-auto lg:mx-0">
+            <div className="order-2 flex w-full flex-col justify-center gap-4 text-center sm:gap-5 lg:w-[54%] lg:gap-6 lg:text-left">
+              <h3 id="iso9001-introduction" className="relative mx-auto inline-block text-2xl font-bold tracking-tight text-[#111827] sm:text-3xl md:text-[2rem] lg:mx-0 lg:text-4xl">
                 What is ISO 9001?
-                <div className="absolute -bottom-2 left-1/2 lg:left-0 transform -translate-x-1/2 lg:translate-x-0 w-20 h-1.5 bg-gradient-to-r from-red-700 to-red-500 rounded-full"></div>
+                <span aria-hidden="true" className="absolute -bottom-3 left-1/2 h-1 w-14 -translate-x-1/2 rounded-full bg-[#E30613] lg:left-0 lg:translate-x-0" />
               </h3>
-              <div className="space-y-3 md:space-y-4 text-slate-600 text-sm md:text-base lg:text-lg leading-relaxed text-justify md:text-left mt-2">
+              <div className="mt-2 space-y-4 text-left text-sm leading-7 text-[#526581] sm:text-base md:text-[17px] md:leading-8">
                 <p>
-                  ISO 9001 is the world&apos;s most recognized standard for <strong className="text-slate-900">Quality Management Systems (QMS)</strong>. It provides a robust framework for organizations to consistently deliver products and services that meet customer requirements as well as applicable statutory and regulatory demands.
+                  ISO 9001 is the world&apos;s most recognized standard for <strong className="font-semibold text-[#111827]">Quality Management Systems (QMS)</strong>. It provides a robust framework for organizations to consistently deliver products and services that meet customer requirements as well as applicable statutory and regulatory demands.
                 </p>
                 <p>
                   The standard is published by the International Organization for Standardization and is applicable to organizations of all sizes and sectors globally.
@@ -103,10 +113,10 @@ export default function IsoCertificationLayout() {
               </div>
               
               {/* --- NEW ENQUIRE BUTTON --- */}
-              <div className="mt-6 flex justify-center lg:justify-start">
+              <div className="mt-2 flex justify-center lg:justify-start">
                 <button 
                   onClick={() => setIsModalOpen(true)}
-                  className="group relative inline-flex items-center justify-center px-8 py-3.5 text-base font-bold text-white transition-all duration-200 bg-gradient-to-r from-red-700 to-red-600 rounded-full hover:from-red-800 hover:to-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-600 shadow-lg shadow-red-700/25 hover:shadow-red-700/40 hover:-translate-y-1"
+                  className="group relative inline-flex min-h-12 w-full items-center justify-center rounded-xl bg-[#E30613] px-7 py-3.5 text-sm font-bold text-white shadow-[0_8px_22px_rgba(227,6,19,0.2)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-red-800 hover:shadow-[0_12px_28px_rgba(227,6,19,0.26)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-700 focus-visible:ring-offset-2 active:translate-y-0 sm:w-auto sm:text-base"
                 >
                   <span>Get Certified Today</span>
                   <svg className="w-5 h-5 ml-2 -mr-1 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -122,16 +132,16 @@ export default function IsoCertificationLayout() {
         </section>
 
         {/* --- SECTION 2: Importance & Benefits Grid --- */}
-        <section>
+        <section aria-labelledby="iso9001-importance">
           <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-16 relative z-20">
             
-            <div className="w-full lg:w-5/12 flex justify-center order-2 lg:order-1 relative">
-              <div className="relative w-full max-w-[480px] aspect-[4/3] overflow-hidden rounded-[2rem] border-[6px] border-white shadow-[0_20px_55px_rgba(127,29,29,0.15)] ring-1 ring-red-100">
+            <div className="relative order-2 flex w-full justify-center lg:order-1 lg:w-[42%]">
+              <div className="relative aspect-[4/3] w-full max-w-[500px] overflow-hidden rounded-2xl bg-red-50 ring-1 ring-black/5 shadow-[0_16px_45px_rgba(17,24,39,0.10)] sm:rounded-[1.5rem]">
                 <Image
                   src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1200&q=85"
                   alt="A professional team working together in a modern office"
                   fill
-                  sizes="(max-width: 1024px) 100vw, 480px"
+                  sizes="(max-width: 1024px) 100vw, 500px"
                   className="object-cover"
                   loading="lazy"
                 />
@@ -142,12 +152,12 @@ export default function IsoCertificationLayout() {
             </div>
 
             {/* Right: Content */}
-            <div className="w-full lg:w-7/12 flex flex-col gap-6 md:gap-8 order-1 lg:order-2">
+            <div className="order-1 flex w-full flex-col gap-6 md:gap-8 lg:order-2 lg:w-[58%]">
               <div className="text-center lg:text-left">
-                <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-slate-900 leading-tight">
-                  Why is <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-700 to-red-500">ISO 9001</span> Important?
+                <h3 id="iso9001-importance" className="text-balance text-2xl font-extrabold leading-tight tracking-tight text-[#111827] sm:text-3xl md:text-4xl lg:text-5xl">
+                  Why is <span className="text-[#E30613]">ISO 9001</span> Important?
                 </h3>
-                <p className="mt-3 md:mt-4 text-slate-600 text-sm md:text-base lg:text-lg text-justify md:text-left">
+                <p className="mt-4 text-left text-sm leading-7 text-[#526581] sm:text-base md:text-lg md:leading-8">
                   Unlock global quality standards, build unbreakable customer trust, and scale your business operations efficiently. Certification is more than a badge—it&apos;s a commitment to excellence.
                 </p>
               </div>
@@ -157,16 +167,19 @@ export default function IsoCertificationLayout() {
                 {benefitsList.map((benefit, index) => (
                   <div 
                     key={index} 
-                    className="group flex items-center gap-3 p-3 md:p-4 rounded-xl md:rounded-2xl bg-white border border-slate-200/60 shadow-sm hover:shadow-md hover:border-red-200 hover:bg-red-50/60 transition-all duration-300 cursor-default"
+                    className="group relative flex min-h-[78px] items-center gap-3 overflow-hidden rounded-2xl border border-slate-200/80 bg-white p-3.5 md:p-4 shadow-[0_4px_18px_rgba(15,23,42,0.04)] transition-all duration-300 hover:-translate-y-1 hover:border-red-200 hover:shadow-[0_14px_30px_rgba(127,29,29,0.10)] cursor-default"
                   >
-                    <div className="flex-shrink-0 w-8 h-8 md:w-10 md:h-10 rounded-full bg-red-100 flex items-center justify-center group-hover:bg-red-600 group-hover:scale-110 transition-all duration-300 shadow-inner">
-                      <svg className="w-4 h-4 md:w-5 md:h-5 text-red-600 group-hover:text-white transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M5 13l4 4L19 7"></path>
-                      </svg>
+                    <span className="absolute inset-y-3 left-0 w-1 rounded-r-full bg-red-600 scale-y-0 transition-transform duration-300 group-hover:scale-y-100" />
+                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-red-50 text-red-700 ring-1 ring-red-100 transition-all duration-300 group-hover:bg-red-700 group-hover:text-white group-hover:ring-red-700">
+                      <CircleCheck className="h-5 w-5" strokeWidth={2} />
                     </div>
-                    <span className="text-slate-700 group-hover:text-slate-900 font-semibold text-xs sm:text-sm md:text-[15px] transition-colors duration-300 leading-snug">
-                      {benefit}
-                    </span>
+                    <div className="min-w-0">
+                      <span className="mb-0.5 block text-[10px] font-bold uppercase tracking-[0.16em] text-red-500">Benefit {String(index + 1).padStart(2, '0')}</span>
+                      <span className="block text-sm font-semibold leading-snug text-slate-700 transition-colors group-hover:text-slate-950 md:text-[15px]">
+                        {benefit}
+                      </span>
+                    </div>
+                    <ArrowUpRight className="ml-auto h-4 w-4 shrink-0 text-slate-300 transition-all duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-red-600" />
                   </div>
                 ))}
               </div>
@@ -193,20 +206,26 @@ export default function IsoCertificationLayout() {
               {principles.map((principle, index) => (
                 <div 
                   key={index}
-                  className={`group relative p-5 md:p-6 bg-white rounded-2xl md:rounded-3xl border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden ${index === 6 ? 'sm:col-span-2 lg:col-span-2 lg:col-start-2' : ''}`}
+                  className={`group relative min-h-[218px] rounded-3xl border border-slate-200/80 bg-white p-6 md:p-7 shadow-[0_8px_30px_rgba(15,23,42,0.045)] transition-all duration-300 hover:-translate-y-1.5 hover:border-red-200 hover:shadow-[0_22px_50px_rgba(127,29,29,0.11)] overflow-hidden ${index === 6 ? 'sm:col-span-2 lg:col-span-1' : ''}`}
                 >
-                  <div className="absolute -right-4 -top-6 text-6xl md:text-8xl font-black text-slate-50 group-hover:text-red-50 transition-colors duration-300 pointer-events-none select-none">
-                    {principle.id}
+                  <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-red-700 via-red-500 to-rose-300 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                  <div className="pointer-events-none absolute -right-5 -top-8 select-none text-[112px] font-black leading-none text-slate-50 transition-colors duration-300 group-hover:text-red-50">
+                    {principle.id.slice(1)}
                   </div>
                   
-                  <div className="relative z-0 flex flex-col gap-2 md:gap-3">
-                    <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl md:rounded-2xl bg-gradient-to-br from-red-100 to-red-50 text-red-700 flex items-center justify-center font-bold text-lg md:text-xl shadow-sm border border-white">
-                      {parseInt(principle.id)}
+                  <div className="relative z-0 flex h-full flex-col">
+                    <div className="mb-7 flex items-center justify-between">
+                      <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-red-50 to-white text-red-700 shadow-sm ring-1 ring-red-100 transition-all duration-300 group-hover:bg-red-700 group-hover:text-white group-hover:ring-red-700">
+                        <principle.icon className="h-5 w-5" strokeWidth={1.8} />
+                      </div>
+                      <span className="rounded-full border border-slate-100 bg-slate-50 px-3 py-1 text-[10px] font-bold tracking-[0.18em] text-slate-400 transition-colors group-hover:border-red-100 group-hover:bg-red-50 group-hover:text-red-600">
+                        PRINCIPLE {principle.id}
+                      </span>
                     </div>
-                    <h4 className="text-slate-800 font-bold text-lg md:text-xl group-hover:text-red-700 transition-colors">
+                    <h4 className="text-lg font-bold tracking-tight text-slate-900 transition-colors group-hover:text-red-700 md:text-xl">
                       {principle.title}
                     </h4>
-                    <p className="text-xs md:text-sm text-slate-500 text-justify leading-relaxed">
+                    <p className="mt-2 text-sm leading-relaxed text-slate-500">
                       {principle.desc}
                     </p>
                    </div>
@@ -235,70 +254,70 @@ export default function IsoCertificationLayout() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-7">
               {[
-                { icon: "🏢", label: "Organization", title: "For Your Business", items: ["Improved business performance", "Better process control", "Reduced operational costs", "Increased productivity", "Enhanced risk management", "Greater consistency", "Improved supplier performance"] },
-                { icon: "🤝", label: "Customer Value", title: "For Your Customers", items: ["Consistent product quality", "Increased confidence", "Better customer experience", "Faster response times", "High satisfaction rates"] },
-                { icon: "🚀", label: "Growth", title: "For Market Growth", items: ["Competitive advantage", "Eligibility for tenders", "Increased opportunities", "Enhanced brand image", "International market access"] }
+                { icon: Building2, label: "Organization", title: "For Your Business", items: ["Improved business performance", "Better process control", "Reduced operational costs", "Increased productivity", "Enhanced risk management", "Greater consistency", "Improved supplier performance"] },
+                { icon: Handshake, label: "Customer Value", title: "For Your Customers", items: ["Consistent product quality", "Increased confidence", "Better customer experience", "Faster response times", "High satisfaction rates"] },
+                { icon: TrendingUp, label: "Growth", title: "For Market Growth", items: ["Competitive advantage", "Eligibility for tenders", "Increased opportunities", "Enhanced brand image", "International market access"] }
               ].map((card, idx) => (
-                <div key={idx} className="group relative overflow-hidden rounded-2xl md:rounded-[2rem] border border-red-100 bg-white p-6 md:p-8 shadow-[0_10px_40px_rgba(15,23,42,0.05)] transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_20px_60px_rgba(15,23,42,0.1)] flex flex-col">
+                <div key={idx} className="group relative flex flex-col overflow-hidden rounded-[1.75rem] border border-slate-200/80 bg-white p-6 shadow-[0_12px_36px_rgba(15,23,42,0.055)] transition-all duration-300 hover:-translate-y-2 hover:border-red-200 hover:shadow-[0_26px_65px_rgba(127,29,29,0.13)] md:rounded-[2rem] md:p-8">
                   
-                  <div className="absolute -right-16 -top-16 h-40 w-40 rounded-full bg-red-100/60 blur-3xl transition-all duration-300 group-hover:bg-red-200/70" />
+                  <div className="absolute -right-16 -top-16 h-44 w-44 rounded-full bg-red-50 blur-3xl transition-all duration-300 group-hover:bg-red-100" />
                   
-                  <div className="relative z-10 flex items-center justify-between mb-6 md:mb-8">
-                    <div className="flex h-12 w-12 md:h-16 md:w-16 items-center justify-center rounded-xl md:rounded-2xl bg-gradient-to-br from-red-600 to-red-800 text-2xl md:text-3xl shadow-lg shadow-red-600/20 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3">
-                      {card.icon}
+                  <div className="relative z-10 mb-7 flex items-start justify-between">
+                    <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-red-700 text-white shadow-lg shadow-red-700/20 transition-transform duration-300 group-hover:scale-105 group-hover:-rotate-3 md:h-16 md:w-16">
+                      <card.icon className="h-7 w-7" strokeWidth={1.8} />
                     </div>
-                    <span className="text-4xl md:text-5xl font-black text-red-50 group-hover:text-red-100 transition-colors">
-                      0{idx + 1}
+                    <span className="rounded-full border border-red-100 bg-red-50 px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.16em] text-red-700">
+                      0{idx + 1} / 03
                     </span>
                   </div>
 
                   <div className="relative z-10 flex-grow">
-                    <p className="mb-1 md:mb-2 text-[10px] md:text-xs font-bold uppercase tracking-[0.15em] md:tracking-[0.2em] text-red-700">
+                    <p className="mb-2 text-[10px] font-bold uppercase tracking-[0.2em] text-red-700 md:text-xs">
                       {card.label}
                     </p>
-                    <h3 className="text-xl md:text-2xl font-extrabold text-slate-900 mb-4 md:mb-6">
+                    <h3 className="mb-5 text-xl font-extrabold tracking-tight text-slate-900 md:text-2xl">
                       {card.title}
                     </h3>
                     
-                    <div className="h-px w-full bg-gradient-to-r from-red-200 via-red-100 to-transparent mb-5 md:mb-6" />
+                    <div className="mb-5 h-px w-full bg-gradient-to-r from-red-200 via-red-100 to-transparent md:mb-6" />
                     
-                    <ul className="space-y-2.5 md:space-y-3">
+                    <ul className="space-y-3">
                       {card.items.map((item, i) => (
-                        <li key={i} className="flex items-start gap-2.5 text-xs md:text-sm lg:text-base text-slate-600">
-                          <span className="mt-0.5 flex h-4 w-4 md:h-5 md:w-5 shrink-0 items-center justify-center rounded-full bg-red-50 text-red-700 text-[10px] font-bold transition-colors group-hover:bg-red-600 group-hover:text-white">
-                            ✓
+                        <li key={i} className="flex items-start gap-3 text-sm text-slate-600">
+                          <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-red-50 text-red-700 transition-colors group-hover:bg-red-100">
+                            <CircleCheck className="h-3.5 w-3.5" strokeWidth={2.5} />
                           </span>
-                          <span className="leading-snug md:leading-6">{item}</span>
+                          <span className="leading-6">{item}</span>
                         </li>
                       ))}
                     </ul>
                   </div>
 
-                  <div className="absolute bottom-0 left-0 h-1 w-0 bg-gradient-to-r from-red-700 to-red-500 transition-all duration-300 group-hover:w-full" />
+                  <div className="absolute bottom-0 left-0 h-1 w-full origin-left scale-x-0 bg-gradient-to-r from-red-800 to-red-500 transition-transform duration-300 group-hover:scale-x-100" />
                 </div>
               ))}
             </div>
           </div>
 
           {/* Sub-section 3: Who Can Implement? */}
-          <div className="relative rounded-2xl md:rounded-[3rem] overflow-hidden bg-red-950 shadow-2xl p-8 md:p-12 lg:p-16">
-            <div className="absolute top-0 right-0 w-[300px] md:w-[500px] h-[300px] md:h-[500px] bg-gradient-to-br from-red-600/25 to-rose-500/20 rounded-full blur-[80px] md:blur-[100px] pointer-events-none transform translate-x-1/3 -translate-y-1/3"></div>
-            <div className="absolute bottom-0 left-0 w-[250px] md:w-[400px] h-[250px] md:h-[400px] bg-gradient-to-tr from-red-500/20 to-rose-400/15 rounded-full blur-[80px] md:blur-[100px] pointer-events-none transform -translate-x-1/3 translate-y-1/3"></div>
+          <div className="relative overflow-hidden rounded-2xl border border-red-100 bg-gradient-to-br from-white via-white to-red-50/70 p-7 shadow-[0_16px_50px_rgba(17,24,39,0.06)] sm:rounded-[2rem] sm:p-9 md:p-12 lg:rounded-[2.5rem] lg:p-16">
+            <div aria-hidden="true" className="pointer-events-none absolute -right-24 -top-28 h-80 w-80 rounded-full bg-red-100/60 blur-[90px]" />
+            <div aria-hidden="true" className="pointer-events-none absolute -bottom-32 -left-20 h-72 w-72 rounded-full bg-rose-100/50 blur-[90px]" />
             
             <div className="text-center max-w-2xl mx-auto mb-8 md:mb-12 relative z-10 flex flex-col items-center">
-              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold mb-3 md:mb-4 text-white leading-tight">
+              <h2 className="mb-3 text-2xl font-extrabold leading-tight tracking-tight text-[#111827] sm:text-3xl md:mb-4 md:text-4xl lg:text-5xl">
                 Who Can Implement It?
               </h2>
-              <p className="text-red-100/90 text-sm md:text-base lg:text-lg text-justify md:text-center px-2">
+              <p className="px-2 text-center text-sm leading-7 text-[#526581] md:text-base lg:text-lg">
                 ISO 9001 is universal. It adapts flawlessly to organizations of any size, sector, or industry globally.
               </p>
             </div>
 
-            <div className="flex flex-wrap justify-center gap-2 md:gap-3 lg:gap-4 relative z-10 max-w-5xl mx-auto">
+            <div className="flex flex-wrap justify-center gap-2.5 md:gap-3 lg:gap-4 relative z-10 max-w-5xl mx-auto">
               {industries.map((industry, index) => (
                 <span 
                   key={index} 
-                  className="px-3 py-1.5 md:px-5 md:py-2.5 bg-white/5 backdrop-blur-md border border-white/10 rounded-full text-white text-xs md:text-sm lg:text-base font-medium hover:bg-white hover:text-slate-900 transition-all duration-200 cursor-default hover:scale-105 active:scale-95 shadow-lg"
+                  className="rounded-xl border border-red-100 bg-white/90 px-4 py-2 text-xs font-semibold text-slate-700 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-red-300 hover:bg-white hover:text-red-800 hover:shadow-md md:px-5 md:py-2.5 md:text-sm lg:text-base"
                 >
                   {industry}
                 </span>
@@ -322,8 +341,7 @@ export default function IsoCertificationLayout() {
           <div className="relative w-full max-w-lg bg-white rounded-3xl shadow-2xl overflow-hidden animate-in fade-in zoom-in duration-300">
             
             {/* Decorative Header */}
-            <div className="relative h-32 bg-gradient-to-r from-red-800 to-red-600 flex items-center justify-center">
-               <div className="absolute top-0 left-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
+            <div className="relative flex h-32 items-center justify-center bg-gradient-to-r from-red-800 to-[#E30613]">
                <button 
                  onClick={() => setIsModalOpen(false)}
                  className="absolute top-4 right-4 p-2 bg-white/20 hover:bg-white/30 rounded-full text-white transition-colors"
@@ -374,6 +392,6 @@ export default function IsoCertificationLayout() {
         </div>
       )}
 
-    </div>
+    </main>
   );
 }
