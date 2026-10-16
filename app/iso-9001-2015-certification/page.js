@@ -78,11 +78,11 @@ export default function IsoCertificationLayout() {
             </h2>
           </div>
 
-          <div className="relative flex flex-col items-center gap-7 overflow-hidden rounded-[1.75rem] border border-red-100/90 bg-white/95 p-5 shadow-[0_18px_60px_rgba(17,24,39,0.07)] sm:rounded-[2rem] sm:p-7 md:gap-10 md:p-9 lg:flex-row lg:gap-12 lg:rounded-[2.25rem] lg:p-11">
+          <div className="relative flex flex-col items-center gap-7 overflow-hidden rounded-[1.75rem] border border-red-100/90 bg-white/95 p-5 shadow-[0_18px_60px_rgba(17,24,39,0.07)] sm:rounded-[2rem] sm:p-7 md:gap-10 md:p-9 lg:flex-row lg:items-stretch lg:gap-12 lg:rounded-[2.25rem] lg:p-11">
             <div aria-hidden="true" className="absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent via-red-200 to-transparent" />
             
             <div className="order-1 flex w-full justify-center lg:w-[46%]">
-              <div className="relative aspect-[4/3] w-full max-w-[520px] overflow-hidden rounded-2xl bg-red-50 ring-1 ring-black/5 sm:rounded-[1.5rem]">
+              <div className="relative aspect-[4/3] w-full max-w-[520px] overflow-hidden rounded-2xl bg-red-50 ring-1 ring-black/5 sm:rounded-[1.5rem] lg:h-full lg:aspect-auto">
                 <Image
                   src="/your_success.jpg"
                   alt="Business professionals collaborating on quality improvement"
@@ -133,10 +133,9 @@ export default function IsoCertificationLayout() {
 
         {/* --- SECTION 2: Importance & Benefits Grid --- */}
         <section aria-labelledby="iso9001-importance">
-          <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-16 relative z-20">
-            
+          <div className="relative z-20 flex flex-col items-center gap-10 lg:flex-row lg:items-stretch lg:gap-16">
             <div className="relative order-2 flex w-full justify-center lg:order-1 lg:w-[42%]">
-              <div className="relative aspect-[4/3] w-full max-w-[500px] overflow-hidden rounded-2xl bg-red-50 ring-1 ring-black/5 shadow-[0_16px_45px_rgba(17,24,39,0.10)] sm:rounded-[1.5rem]">
+              <div className="relative aspect-[4/3] w-full max-w-[500px] overflow-hidden rounded-2xl bg-red-50 ring-1 ring-black/5 shadow-[0_16px_45px_rgba(17,24,39,0.10)] sm:rounded-[1.5rem] lg:h-full lg:aspect-auto">
                 <Image
                   src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1200&q=85"
                   alt="A professional team working together in a modern office"
@@ -151,7 +150,6 @@ export default function IsoCertificationLayout() {
               </div>
             </div>
 
-            {/* Right: Content */}
             <div className="order-1 flex w-full flex-col gap-6 md:gap-8 lg:order-2 lg:w-[58%]">
               <div className="text-center lg:text-left">
                 <h3 id="iso9001-importance" className="text-balance text-2xl font-extrabold leading-tight tracking-tight text-[#111827] sm:text-3xl md:text-4xl lg:text-5xl">
@@ -163,7 +161,7 @@ export default function IsoCertificationLayout() {
               </div>
 
               {/* Interactive Grid */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4">
+              <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 md:gap-4">
                 {benefitsList.map((benefit, index) => (
                   <div 
                     key={index} 
