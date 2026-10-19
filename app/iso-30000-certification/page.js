@@ -89,7 +89,7 @@ export default function IsoCertificationLayout() {
               <figure className="relative aspect-[4/3] w-full max-w-[520px] overflow-hidden rounded-2xl bg-red-50 ring-1 ring-black/5 sm:rounded-[1.5rem] lg:h-full lg:aspect-auto">
                 {/* Ship Recycling / Shipyard Image */}
                 <Image
-                  src="https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?auto=format&fit=crop&w=1200&q=85"
+                  src="/9001-removebg.png"
                   alt="Large cargo ship at a port facility ready for marine operations"
                   fill
                   priority
