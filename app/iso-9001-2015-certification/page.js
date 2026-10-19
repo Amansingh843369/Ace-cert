@@ -74,7 +74,7 @@ export default function IsoCertificationLayout() {
             </h1>
             
             <h2 className="max-w-2xl px-2 text-pretty text-base font-medium leading-relaxed text-[#526581] sm:text-lg md:text-xl">
-              Elevate your business with the ultimate Quality Management System (QMS) framework.
+              Elevate your business with the ultimate Quality Management System.
             </h2>
           </div>
 
@@ -137,7 +137,7 @@ export default function IsoCertificationLayout() {
             <div className="relative order-2 flex w-full justify-center lg:order-1 lg:w-[42%]">
               <div className="relative aspect-[4/3] w-full max-w-[500px] overflow-hidden rounded-2xl bg-red-50 ring-1 ring-black/5 shadow-[0_16px_45px_rgba(17,24,39,0.10)] sm:rounded-[1.5rem] lg:h-full lg:aspect-auto">
                 <Image
-                  src="/img/9001.png"
+                  src="/35.png"
                   alt="A professional team working together in a modern office"
                   fill
                   sizes="(max-width: 1024px) 100vw, 500px"

@@ -85,7 +85,7 @@ export default function IsoCertificationLayout() {
             <div className="order-1 flex w-full justify-center lg:w-[46%]">
               <div className="relative aspect-[4/3] w-full max-w-[520px] overflow-hidden rounded-2xl bg-red-50 ring-1 ring-black/5 sm:rounded-[1.5rem] lg:h-full lg:aspect-auto">
                 <Image
-                  src="/your_success.jpg" 
+                  src="/37.1.png" 
                   alt="Customer support team helping clients"
                   fill
                   priority
@@ -138,7 +138,7 @@ export default function IsoCertificationLayout() {
             <div className="relative order-2 flex w-full justify-center lg:order-1 lg:w-[42%]">
               <div className="relative aspect-[4/3] w-full max-w-[500px] overflow-hidden rounded-2xl bg-red-50 ring-1 ring-black/5 shadow-[0_16px_45px_rgba(17,24,39,0.10)] sm:rounded-[1.5rem] lg:h-full lg:aspect-auto">
                 <Image
-                  src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=1200&q=85"
+                  src="/37.png"
                   alt="Customer service representative assisting a client"
                   fill
                   sizes="(max-width: 1024px) 100vw, 500px"
