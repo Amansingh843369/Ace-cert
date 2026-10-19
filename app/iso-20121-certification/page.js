@@ -111,7 +111,7 @@ export default function IsoCertificationLayout() {
               </h3>
               
               {/* TEXT JUSTIFY APPLIED HERE */}
-              <div className="mt-2 space-y-4 text-left text-sm leading-7 text-[#526581] sm:text-base md:text-[17px] md:leading-8 text-justify">
+              <div className="mt-2 space-y-4 text-justify text-sm leading-7 text-[#526581] sm:text-base md:text-[17px] md:leading-8">
                 <p>
                   ISO 20121 is an internationally recognized standard for <strong className="font-semibold text-[#111827]">Event Sustainability Management Systems (ESMS)</strong>. It provides a framework for organizations involved in planning, managing, and delivering events to identify, control, and improve their environmental, social, and economic impacts.
                 </p>

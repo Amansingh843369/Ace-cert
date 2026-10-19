@@ -110,7 +110,7 @@ export default function IsoCertificationLayout() {
               </h3>
               
               {/* TEXT JUSTIFY APPLIED HERE */}
-              <div className="mt-2 space-y-4 text-left text-sm leading-7 text-[#526581] sm:text-base md:text-[17px] md:leading-8 text-justify">
+              <div className="mt-2 space-y-4 text-justify text-sm leading-7 text-[#526581] sm:text-base md:text-[17px] md:leading-8">
                 <p>
                   ISO 20000-1 is an internationally recognized standard for <strong className="font-semibold text-[#111827]">Information Technology Service Management Systems (ITSMS)</strong>. It provides a framework for organizations to establish, implement, maintain, and continually improve IT service management processes, ensuring the delivery of high-quality and reliable IT services.
                 </p>
