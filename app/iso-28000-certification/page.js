@@ -110,7 +110,7 @@ export default function IsoCertificationLayout() {
               </h3>
               
               {/* Content exactly from the image */}
-              <div className="mt-2 space-y-3 text-left text-sm leading-6 text-[#526581] sm:text-base md:text-[16px] md:leading-7">
+              <div className="mt-2 space-y-3 text-justify text-sm leading-6 text-[#526581] sm:text-base md:text-[16px] md:leading-7">
                 <p>
                   ISO 28000 is an internationally recognized standard for <strong className="font-semibold text-[#111827]">Supply Chain Security Management Systems (SCSMS)</strong>. It provides a framework for organizations to identify and mitigate security risks throughout the supply chain, ensuring the safe and secure movement of goods, services, and information.
                 </p>

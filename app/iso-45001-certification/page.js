@@ -1,169 +1,188 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
+import Image from 'next/image';
+import {
+  ArrowUpRight,
+  CircleCheck,
+  HardHat,
+  Lock,
+  ShieldCheck,
+  Target,
+  TrendingUp,
+  Eye,
+  Scale,
+  Activity,
+  UsersRound,
+} from 'lucide-react';
 
-export default function Iso45001Layout() {
-  // Data Arrays based on your content
+export default function IsoCertificationLayout() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  // Data Arrays - Updated for ISO 45001 (OH&SMS) based on the provided image
   const benefitsList = [
-    "Improve workplace health & safety",
-    "Prevent work-related injuries",
-    "Reduce workplace hazards & risks",
-    "Strengthen legal compliance",
-    "Enhance employee well-being",
+    "Improve workplace health and safety performance",
+    "Prevent work-related injuries and illnesses",
+    "Reduce workplace hazards and risks",
+    "Strengthen legal and regulatory compliance",
+    "Enhance employee well-being and morale",
     "Improve operational efficiency",
-    "Reduce accident-related costs",
+    "Reduce downtime and accident-related costs",
     "Increase stakeholder confidence",
-    "Strengthen corporate reputation",
+    "Strengthen organizational reputation",
     "Promote continual improvement"
   ];
 
+  // Principles mapped to Occupational Health & Safety / ISO 45001 context
   const principles = [
-    { id: "01", title: "Worker Participation", desc: "Engaging employees in OHS decision-making and consultation." },
-    { id: "02", title: "Leadership Commitment", desc: "Top management accountability for a safe workplace." },
-    { id: "03", title: "Hazard Identification", desc: "Proactively finding potential sources of workplace harm." },
-    { id: "04", title: "Risk Assessment", desc: "Evaluating and implementing controls to mitigate risks." },
-    { id: "05", title: "Legal Compliance", desc: "Adhering strictly to statutory and regulatory safety laws." },
-    { id: "06", title: "Emergency Preparedness", desc: "Planning for and responding effectively to crisis situations." },
-    { id: "07", title: "Performance Evaluation", desc: "Monitoring, measuring, and analyzing safety outcomes." },
-    { id: "08", title: "Continual Improvement", desc: "Ongoing enhancement of the occupational health & safety system." },
+    { id: "01", title: "Leadership", desc: "Top management commitment to preventing work-related injuries and ill health.", icon: ShieldCheck },
+    { id: "02", title: "Worker Participation", desc: "Actively involving employees in hazard identification and safety decision-making.", icon: UsersRound },
+    { id: "03", title: "Hazard Identification", desc: "Proactively finding and assessing physical, chemical, and ergonomic workplace risks.", icon: Target },
+    { id: "04", title: "Risk-Based Thinking", desc: "Implementing controls to eliminate hazards and minimize occupational safety risks.", icon: Scale },
+    { id: "05", title: "Legal Compliance", desc: "Meeting all national and international occupational health and safety regulations.", icon: Activity },
+    { id: "06", title: "Emergency Preparedness", desc: "Planning and testing responses to potential workplace accidents and incidents.", icon: HardHat },
+    { id: "07", title: "Continual Improvement", desc: "Regularly enhancing the OH&SMS to achieve better safety performance over time.", icon: TrendingUp },
   ];
 
   const industries = [
-    "Manufacturing Companies", "Construction Companies", "Engineering Firms",
-    "Logistics & Transportation", "Healthcare Organizations", "Educational Institutions",
-    "Energy & Utility Providers", "Government Organizations", "Service Providers",
-    "Startups and SMEs", "Large Enterprises"
+    "Construction & Engineering", "Manufacturing & Industrial", "Oil & Gas / Energy",
+    "Healthcare & Hospitals", "Logistics & Warehousing", "Mining & Metals",
+    "Government & Public Sector", "Automotive", "Chemical & Pharmaceuticals",
+    "Telecommunications", "Facility Management"
   ];
 
   return (
-    <div className="min-h-screen bg-slate-50 text-slate-900 relative overflow-hidden font-sans selection:bg-blue-200 selection:text-blue-900">
+    <main className="relative min-h-screen overflow-hidden bg-[#fffdfd] font-sans text-slate-900 selection:bg-red-200 selection:text-red-900">
       
-      {/* --- Premium Background Glowing Orbs (Blue/Indigo/Cyan Theme) --- */}
-      <div className="absolute top-0 left-0 w-[400px] h-[400px] bg-blue-500/15 rounded-full blur-[100px] pointer-events-none" />
-      <div className="absolute top-[30%] right-0 w-[500px] h-[500px] bg-indigo-400/15 rounded-full blur-[120px] pointer-events-none" />
-      <div className="absolute bottom-0 left-[10%] w-[600px] h-[600px] bg-cyan-400/10 rounded-full blur-[120px] pointer-events-none" />
+      {/* Background Blobs - RED & WHITE Theme */}
+      <div aria-hidden="true" className="pointer-events-none absolute -left-40 -top-40 h-[480px] w-[480px] rounded-full bg-red-100/50 blur-[120px]" />
+      <div aria-hidden="true" className="pointer-events-none absolute right-0 top-[28%] h-[460px] w-[460px] rounded-full bg-rose-100/40 blur-[130px]" />
+      <div aria-hidden="true" className="pointer-events-none absolute bottom-0 left-[10%] h-[520px] w-[520px] rounded-full bg-red-50 blur-[130px]" />
 
-      {/* Reduced vertical padding on mobile, standard on desktop */}
-      <div className="max-w-7xl mx-auto px-4 py-12 md:px-6 lg:px-12 lg:py-20 space-y-20 md:space-y-28 relative z-10">
+      {/* Spacing reduced for compact layout */}
+      <div className="relative z-10 mx-auto max-w-7xl space-y-12 px-4 py-8 md:space-y-16 md:px-6 md:py-10 lg:space-y-20 lg:px-12 lg:py-12">
         
         {/* --- SECTION 1: Hero & Definition --- */}
-        <section>
-          <div className="text-center mb-10 md:mb-14 flex flex-col items-center">
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 md:px-4 md:py-2 rounded-full bg-white border border-blue-100 shadow-sm text-blue-700 font-semibold text-xs md:text-sm mb-6 hover:scale-105 transition-transform cursor-default">
-              <span className="relative flex h-2 w-2 md:h-2.5 md:w-2.5">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-full w-full bg-blue-500"></span>
+        <section aria-labelledby="iso45001-title">
+          <div className="mb-6 flex flex-col items-center text-center md:mb-8">
+            <div className="mb-4 inline-flex items-center gap-2.5 rounded-full border border-red-100 bg-white/90 px-4 py-1.5 text-xs font-semibold text-red-800 shadow-[0_4px_16px_rgba(127,29,29,0.06)] md:text-sm">
+              <span className="relative flex h-2.5 w-2.5">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-red-500 opacity-40"></span>
+                <span className="relative inline-flex h-full w-full rounded-full bg-[#E30613]"></span>
               </span>
-              Occupational Health & Safety Standard
+              Global Workplace Safety Standard
             </div>
 
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold mb-4 tracking-tight text-slate-900 leading-[1.1]">
-              ISO 45001{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-indigo-600 to-cyan-500">
-                Certification
-              </span>
+            <h1 id="iso45001-title" className="mb-3 max-w-4xl text-balance text-4xl font-extrabold leading-[1.08] tracking-[-0.045em] text-[#111827] sm:text-5xl md:text-6xl lg:text-[4.25rem]">
+              ISO 45001 <span className="text-[#E30613]">Certification</span>
             </h1>
             
-            <h2 className="text-base sm:text-lg md:text-xl font-medium text-slate-500 max-w-2xl px-2">
-              Create a safer working environment and reduce workplace risks with a robust OH&S Management System.
+            <h2 className="max-w-3xl px-2 text-pretty text-base font-medium leading-relaxed text-[#526581] sm:text-lg md:text-xl">
+              Protect your workforce with the international standard for Occupational Health & Safety Management Systems (OH&SMS).
             </h2>
           </div>
 
-          {/* Glassmorphism Container */}
-          <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-16 bg-white/60 backdrop-blur-xl p-6 md:p-10 lg:p-12 rounded-3xl md:rounded-[2.5rem] border border-white/80 shadow-xl">
+          <article className="relative flex flex-col items-center gap-6 overflow-hidden rounded-[1.75rem] border border-red-100/90 bg-white/95 p-5 shadow-[0_18px_60px_rgba(17,24,39,0.07)] sm:rounded-[2rem] sm:p-6 md:gap-8 md:p-8 lg:flex-row lg:items-stretch lg:gap-10 lg:rounded-[2.25rem] lg:p-10">
+            <div aria-hidden="true" className="absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent via-red-200 to-transparent" />
             
-            {/* Left: Image Placeholder */}
-            <div className="w-full lg:w-5/12 flex justify-center order-1 lg:order-1">
-              <div className="relative group p-2 md:p-4">
-                <div className="absolute inset-0 bg-gradient-to-tr from-blue-200 to-indigo-100 rounded-[2rem] md:rounded-[3rem] blur-2xl opacity-50 group-hover:opacity-70 transition-opacity duration-500"></div>
-                <img
-                  src="/45001-removebg.png" 
-                  alt="ISO 45001 Illustration"
-                  className="relative w-full max-w-[280px] md:max-w-sm object-contain drop-shadow-2xl transition-transform duration-700 hover:scale-[1.03] hover:-rotate-1"
-                  loading="lazy"
-                  onError={(e) => {
-                    e.target.onerror = null; 
-                    e.target.style.display='none';
-                    e.target.nextSibling.style.display='flex';
-                  }}
+            <div className="order-1 flex w-full justify-center lg:w-[46%]">
+              <figure className="relative aspect-[4/3] w-full max-w-[520px] overflow-hidden rounded-2xl bg-red-50 ring-1 ring-black/5 sm:rounded-[1.5rem] lg:h-full lg:aspect-auto">
+                {/* Workplace Safety / Industrial Worker Image */}
+                <Image
+                  src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&w=1200&q=85"
+                  alt="Industrial worker wearing safety helmet and protective gear"
+                  fill
+                  priority
+                  sizes="(max-width: 1024px) 100vw, 520px"
+                  className="object-cover transition-transform duration-700 hover:scale-[1.03]"
                 />
-                 {/* Fallback Icon */}
-                <div className="hidden relative w-full max-w-[280px] md:max-w-sm h-[280px] md:h-[320px] bg-gradient-to-br from-blue-100 to-indigo-50 rounded-3xl items-center justify-center text-9xl text-blue-200 shadow-inner">
-                  🛡️
-                </div>
-              </div>
+                <figcaption className="absolute bottom-4 left-4 rounded-xl border border-white/70 bg-white/95 px-4 py-2.5 shadow-lg backdrop-blur-sm">
+                  <p className="text-xs font-semibold uppercase tracking-wider text-red-700">Safety First</p>
+                  <p className="mt-0.5 text-sm font-bold text-slate-900">Zero Harm Culture</p>
+                </figcaption>
+              </figure>
             </div>
 
-            {/* Right: Text */}
-            <div className="w-full lg:w-7/12 flex flex-col gap-4 md:gap-6 justify-center order-2 lg:order-2 text-center lg:text-left">
-              <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-slate-900 relative inline-block mx-auto lg:mx-0">
+            <div className="order-2 flex w-full flex-col justify-center gap-4 text-center sm:gap-4 lg:w-[54%] lg:gap-5 lg:text-left">
+              <h3 id="iso45001-introduction" className="relative mx-auto inline-block text-2xl font-bold tracking-tight text-[#111827] sm:text-3xl md:text-[2rem] lg:mx-0 lg:text-4xl">
                 What is ISO 45001?
-                <div className="absolute -bottom-2 left-1/2 lg:left-0 transform -translate-x-1/2 lg:translate-x-0 w-20 h-1.5 bg-gradient-to-r from-blue-600 to-cyan-400 rounded-full"></div>
+                <span aria-hidden="true" className="absolute -bottom-2 left-1/2 h-1 w-14 -translate-x-1/2 rounded-full bg-[#E30613] lg:left-0 lg:translate-x-0" />
               </h3>
-              <div className="space-y-3 md:space-y-4 text-slate-600 text-sm md:text-base lg:text-lg leading-relaxed text-justify md:text-left mt-2">
+              
+              {/* Content exactly from the image */}
+              <div className="mt-2 space-y-3 text-justify text-sm leading-6 text-[#526581] sm:text-base md:text-[16px] md:leading-7">
                 <p>
-                  ISO 45001 is an internationally recognized standard for <strong className="text-slate-900">Occupational Health and Safety Management Systems (OH&SMS)</strong>. It provides a framework for organizations to identify, manage, and reduce workplace health and safety risks while creating safer working environments for employees, contractors, and visitors.
+                  ISO 45001 is an internationally recognized standard for <strong className="font-semibold text-[#111827]">Occupational Health and Safety Management Systems (OH&SMS)</strong>. It provides a framework for organizations to identify, manage, and reduce workplace health and safety risks while creating safer working environments for employees, contractors, and visitors.
                 </p>
                 <p>
                   The standard is published by the International Organization for Standardization and is applicable to organizations of all sizes and sectors committed to preventing work-related injuries, illnesses, and incidents.
                 </p>
               </div>
+              
+              <div className="mt-2 flex justify-center lg:justify-start">
+                <button 
+                  onClick={() => setIsModalOpen(true)}
+                  className="group relative inline-flex min-h-11 w-full items-center justify-center rounded-xl bg-[#E30613] px-6 py-3 text-sm font-bold text-white shadow-[0_8px_22px_rgba(227,6,19,0.2)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-red-800 hover:shadow-[0_12px_28px_rgba(227,6,19,0.26)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-700 focus-visible:ring-offset-2 active:translate-y-0 sm:w-auto sm:text-base"
+                >
+                  <span>Get Certified Today</span>
+                  <svg className="w-4 h-4 ml-2 -mr-1 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                  </svg>
+                  <div className="absolute inset-0 rounded-full ring-2 ring-white/20 group-hover:ring-white/40 transition-all"></div>
+                </button>
+              </div>
+
             </div>
-          </div>
+          </article>
         </section>
 
         {/* --- SECTION 2: Importance & Benefits Grid --- */}
-        <section>
-          <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-16 relative z-20">
-            
-            {/* Left: Floating Image */}
-            <div className="w-full lg:w-5/12 flex justify-center order-2 lg:order-1 relative">
-              <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                <div className="w-64 h-64 bg-gradient-to-tr from-indigo-200 to-blue-200 rounded-full blur-3xl opacity-60"></div>
-              </div>
-               <img
-                src="/45001.png"
-                alt="Why ISO 45001 is Important"
-                className="w-full max-w-[260px] md:max-w-[320px] lg:max-w-[380px] object-contain drop-shadow-[0_20px_50px_rgba(0,0,0,0.12)] relative z-10 floating-img"
-                loading="lazy"
-                onError={(e) => {
-                    e.target.onerror = null; 
-                    e.target.style.display='none';
-                    e.target.nextSibling.style.display='flex';
-                  }}
-              />
-               {/* Fallback Icon */}
-               <div className="hidden relative w-full max-w-[260px] md:max-w-[320px] lg:max-w-[380px] h-[300px] md:h-[350px] bg-white rounded-3xl items-center justify-center text-8xl text-indigo-200 shadow-xl border border-indigo-100">
-                  👷
-                </div>
+        <section aria-labelledby="iso45001-importance">
+          <div className="relative z-20 flex flex-col items-center gap-8 lg:flex-row lg:items-stretch lg:gap-12">
+            <div className="relative order-2 flex w-full justify-center lg:order-1 lg:w-[42%]">
+              <figure className="relative aspect-[4/3] w-full max-w-[500px] overflow-hidden rounded-2xl bg-red-50 ring-1 ring-black/5 shadow-[0_16px_45px_rgba(17,24,39,0.10)] sm:rounded-[1.5rem] lg:h-full lg:aspect-auto">
+                {/* Safety Inspection / Team Meeting Image */}
+                <Image
+                  src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=1200&q=85"
+                  alt="Safety inspection and team meeting in an industrial facility"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 500px"
+                  className="object-cover"
+                  loading="lazy"
+                />
+                <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-950/75 to-transparent px-5 pb-4 pt-12">
+                  <p className="text-sm font-semibold text-white">Securing every workspace.</p>
+                </figcaption>
+              </figure>
             </div>
 
-            {/* Right: Content */}
-            <div className="w-full lg:w-7/12 flex flex-col gap-6 md:gap-8 order-1 lg:order-2">
+            <div className="order-1 flex w-full flex-col gap-5 md:gap-6 lg:order-2 lg:w-[58%]">
               <div className="text-center lg:text-left">
-                <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-slate-900 leading-tight">
-                  Why is <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500">ISO 45001</span> Important?
+                <h3 id="iso45001-importance" className="text-balance text-2xl font-extrabold leading-tight tracking-tight text-[#111827] sm:text-3xl md:text-4xl lg:text-4xl">
+                  Why is <span className="text-[#E30613]">ISO 45001</span> Important?
                 </h3>
-                <p className="mt-3 md:mt-4 text-slate-600 text-sm md:text-base lg:text-lg text-justify md:text-left">
-                  Implementing ISO 45001 helps organizations protect their most valuable asset—their people. It ensures regulatory compliance, significantly reduces accident-related downtime, and builds a culture of proactive health and safety.
+                
+                <p className="mt-3 text-left text-sm leading-6 text-[#526581] sm:text-base md:text-[16px] md:leading-7">
+                  Implementing ISO 45001 helps organizations proactively prevent workplace accidents, ensure strict legal compliance, boost employee morale, and significantly reduce downtime and compensation costs.
                 </p>
               </div>
 
-              {/* Interactive Grid */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4">
+              <div className="grid grid-cols-1 gap-2.5 sm:grid-cols-2 md:gap-3">
                 {benefitsList.map((benefit, index) => (
                   <div 
                     key={index} 
-                    className="group flex items-center gap-3 p-3 md:p-4 rounded-xl md:rounded-2xl bg-white/80 backdrop-blur-sm border border-slate-200/60 shadow-sm hover:shadow-md hover:border-blue-300 hover:bg-blue-50/30 transition-all duration-300 cursor-default"
+                    className="group relative flex min-h-[68px] items-center gap-3 overflow-hidden rounded-xl border border-slate-200/80 bg-white p-3 md:p-3.5 shadow-[0_4px_18px_rgba(15,23,42,0.04)] transition-all duration-300 hover:-translate-y-0.5 hover:border-red-200 hover:shadow-[0_14px_30px_rgba(127,29,29,0.10)] cursor-default"
                   >
-                    <div className="flex-shrink-0 w-8 h-8 md:w-10 md:h-10 rounded-full bg-blue-100 flex items-center justify-center group-hover:bg-blue-600 group-hover:scale-110 transition-all duration-300 shadow-inner">
-                      <svg className="w-4 h-4 md:w-5 md:h-5 text-blue-600 group-hover:text-white transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M5 13l4 4L19 7"></path>
-                      </svg>
+                    <span className="absolute inset-y-2 left-0 w-1 rounded-r-full bg-red-600 scale-y-0 transition-transform duration-300 group-hover:scale-y-100" />
+                    <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-red-50 text-red-700 ring-1 ring-red-100 transition-all duration-300 group-hover:bg-red-700 group-hover:text-white group-hover:ring-red-700">
+                      <CircleCheck className="h-4 w-4" strokeWidth={2.5} />
                     </div>
-                    <span className="text-slate-700 group-hover:text-slate-900 font-semibold text-xs sm:text-sm md:text-[15px] transition-colors duration-300 leading-snug">
-                      {benefit}
-                    </span>
+                    <div className="min-w-0">
+                      <span className="block text-[13px] font-semibold leading-snug text-slate-700 transition-colors group-hover:text-slate-950 md:text-sm">
+                        {benefit}
+                      </span>
+                    </div>
+                    <ArrowUpRight className="ml-auto h-3.5 w-3.5 shrink-0 text-slate-300 transition-all duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-red-600" />
                   </div>
                 ))}
               </div>
@@ -172,129 +191,138 @@ export default function Iso45001Layout() {
         </section>
 
         {/* --- SECTION 3: Principles, Detailed Benefits & Scope --- */}
-        <section className="space-y-20 md:space-y-28">
+        <section className="space-y-12 md:space-y-16">
           
-          {/* Sub-section 1: Key Principles */}
+          {/* Sub-section 1: 7 Principles */}
           <div>
-            <div className="text-center max-w-3xl mx-auto mb-10 md:mb-14">
-              <span className="inline-block py-1 px-4 md:py-1.5 md:px-5 rounded-full bg-indigo-100 text-indigo-700 text-xs md:text-sm font-bold tracking-widest uppercase mb-3 md:mb-4 shadow-sm border border-indigo-200">
+            <div className="text-center max-w-3xl mx-auto mb-8 md:mb-10">
+              <span className="inline-block py-1 px-4 rounded-full bg-red-50 text-red-700 text-[10px] font-bold tracking-[0.15em] uppercase mb-3 shadow-sm border border-red-100">
                 Core Pillars
               </span>
-              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-slate-900 leading-tight">
-                Key Health & Safety <br className="hidden md:block"/>
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-500">Principles</span>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-slate-900 leading-tight">
+                Key Principles of <br className="hidden md:block"/>
+                <span className="text-[#E30613]">ISO 45001</span>
               </h2>
+              <p className="mt-3 text-sm md:text-base text-slate-500 px-4 max-w-2xl mx-auto">
+                ISO 45001 is based on specialized occupational health and safety principles designed to eliminate hazards, minimize risks, and foster a proactive safety culture.
+              </p>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
               {principles.map((principle, index) => (
-                <div 
+                <article 
                   key={index}
-                  className={`group relative p-5 md:p-6 bg-white rounded-2xl md:rounded-3xl border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden ${index === 7 ? 'sm:col-span-2 lg:col-span-2 lg:col-start-2' : ''}`}
+                  className={`group relative rounded-2xl border border-slate-100 bg-white p-6 shadow-[0_8px_30px_rgba(15,23,42,0.03)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_40px_rgba(127,29,29,0.08)] overflow-hidden ${index === 6 ? 'sm:col-span-2 lg:col-span-1' : ''}`}
                 >
-                  <div className="absolute -right-4 -top-6 text-6xl md:text-8xl font-black text-slate-50 group-hover:text-blue-50 transition-colors duration-300 pointer-events-none select-none">
-                    {principle.id}
+                  <div className="absolute top-5 right-5">
+                    <span className="inline-flex items-center rounded-full border border-slate-100 bg-slate-50 px-2.5 py-1 text-[9px] font-bold tracking-[0.1em] text-slate-500 group-hover:border-red-100 group-hover:bg-red-50 group-hover:text-red-700 transition-colors">
+                      {principle.id}
+                    </span>
                   </div>
                   
-                  <div className="relative z-0 flex flex-col gap-2 md:gap-3">
-                    <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl md:rounded-2xl bg-gradient-to-br from-blue-100 to-indigo-50 text-blue-600 flex items-center justify-center font-bold text-lg md:text-xl shadow-sm border border-white">
-                      {parseInt(principle.id)}
+                  <div className="relative z-0 flex flex-col h-full">
+                    <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-red-50 text-red-600 ring-1 ring-red-100 transition-all duration-300 group-hover:bg-red-600 group-hover:text-white group-hover:ring-red-600">
+                      <principle.icon className="h-5 w-5" strokeWidth={1.8} />
                     </div>
-                    <h4 className="text-slate-800 font-bold text-lg md:text-xl group-hover:text-blue-600 transition-colors">
+                    
+                    <h4 className="text-lg font-bold tracking-tight text-slate-900 mb-2 group-hover:text-red-700 transition-colors">
                       {principle.title}
                     </h4>
-                    <p className="text-xs md:text-sm text-slate-500 text-justify leading-relaxed">
+                    
+                    <p className="text-[13px] leading-relaxed text-slate-500">
                       {principle.desc}
                     </p>
                    </div>
-                </div>
+                </article>
               ))}
             </div>
           </div>
 
           {/* Sub-section 2: Detailed Benefits Cards */}
           <div>
-            <div className="text-center max-w-3xl mx-auto mb-10 md:mb-14">
-              <span className="inline-flex items-center py-1.5 px-4 md:py-2 md:px-5 rounded-full bg-cyan-50 text-cyan-700 text-[10px] md:text-sm font-bold tracking-[0.15em] md:tracking-[0.2em] uppercase mb-4 md:mb-5 border border-cyan-200 shadow-sm">
+            <div className="text-center max-w-3xl mx-auto mb-8 md:mb-10">
+              <span className="inline-flex items-center py-1 px-4 md:py-1.5 md:px-5 rounded-full bg-red-50 text-red-700 text-[10px] md:text-xs font-bold tracking-[0.15em] md:tracking-[0.2em] uppercase mb-3 md:mb-4 border border-red-100 shadow-sm">
                 Value Proposition
               </span>
-              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-900 leading-tight">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-tight text-slate-900 leading-tight">
                 Benefits of{" "}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-indigo-500 to-cyan-600">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-700 to-red-500">
                   Certification
                 </span>
               </h2>
-              <p className="mt-3 md:mt-4 text-sm md:text-base lg:text-lg leading-relaxed text-slate-500 max-w-2xl mx-auto px-2">
-                Certification proves your commitment to employee safety, mitigates operational risks, and unlocks competitive advantages in global markets.
+              
+              <p className="mt-3 text-sm md:text-base leading-relaxed text-slate-500 max-w-2xl mx-auto px-2 text-center">
+                Achieving ISO 45001 certification acts as a powerful differentiator, proving to clients, regulators, and employees that your organization is deeply committed to providing a safe and healthy workplace.
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-7">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
               {[
-                { color: "blue", icon: "🏢", label: "Organization", title: "For Your Business", items: ["Improved health & safety management", "Reduced workplace incidents", "Enhanced legal compliance", "Lower disruptions & compensation costs", "Improved productivity & efficiency", "Better risk management", "Enhanced organizational reputation"] },
-                { color: "indigo", icon: "👥", label: "Workforce Value", title: "For Your Employees", items: ["Safer & healthier work environments", "Reduced risk of injuries/illnesses", "Improved engagement & morale", "Greater confidence in safety", "Enhanced well-being & satisfaction"] },
-                { color: "cyan", icon: "🚀", label: "Growth", title: "For Business Growth", items: ["Competitive market advantage", "Improved eligibility for tenders", "Enhanced stakeholder confidence", "Stronger corporate credibility", "Increased business opportunities"] }
+                { icon: HardHat, label: "Safety", title: "For Operations", items: ["Hazard elimination", "PPE compliance", "Incident investigation", "Safe work procedures", "Equipment safety checks", "Ergonomic assessments", "Contractor safety management"] },
+                { icon: ShieldCheck, label: "Compliance", title: "For Regulations", items: ["OSHA / Local law alignment", "Audit trail maintenance", "Legal requirement fulfillment", "Workers' comp optimization", "Regulatory reporting"] },
+                { icon: TrendingUp, label: "Business", title: "For Growth", items: ["Reduced accident costs", "Lower insurance premiums", "Enhanced brand reputation", "Operational continuity", "Stakeholder trust"] }
               ].map((card, idx) => (
-                <div key={idx} className={`group relative overflow-hidden rounded-2xl md:rounded-[2rem] border border-${card.color}-100 bg-white p-6 md:p-8 shadow-[0_10px_40px_rgba(15,23,42,0.05)] transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_20px_60px_rgba(15,23,42,0.1)] flex flex-col`}>
+                <article key={idx} className="group relative flex flex-col overflow-hidden rounded-2xl border border-slate-200/80 bg-white p-5 shadow-[0_12px_36px_rgba(15,23,42,0.055)] transition-all duration-300 hover:-translate-y-1 hover:border-red-200 hover:shadow-[0_26px_65px_rgba(127,29,29,0.13)] md:rounded-[1.75rem] md:p-6">
                   
-                  <div className={`absolute -right-16 -top-16 h-40 w-40 rounded-full bg-${card.color}-100/50 blur-3xl transition-all duration-300 group-hover:bg-${card.color}-200/60`} />
+                  <div className="absolute -right-16 -top-16 h-40 w-40 rounded-full bg-red-50 blur-3xl transition-all duration-300 group-hover:bg-red-100" />
                   
-                  <div className="relative z-10 flex items-center justify-between mb-6 md:mb-8">
-                    <div className={`flex h-12 w-12 md:h-16 md:w-16 items-center justify-center rounded-xl md:rounded-2xl bg-gradient-to-br from-${card.color}-500 to-${card.color}-600 text-2xl md:text-3xl shadow-lg shadow-${card.color}-500/20 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3`}>
-                      {card.icon}
+                  <div className="relative z-10 mb-5 flex items-start justify-between">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-red-700 text-white shadow-lg shadow-red-700/20 transition-transform duration-300 group-hover:scale-105 group-hover:-rotate-3 md:h-14 md:w-14">
+                      <card.icon className="h-6 w-6" strokeWidth={1.8} />
                     </div>
-                    <span className={`text-4xl md:text-5xl font-black text-${card.color}-50 group-hover:text-${card.color}-100 transition-colors`}>
-                      0{idx + 1}
+                    <span className="rounded-full border border-red-100 bg-red-50 px-2.5 py-1 text-[9px] font-bold uppercase tracking-[0.16em] text-red-700">
+                      0{idx + 1} / 03
                     </span>
                   </div>
 
                   <div className="relative z-10 flex-grow">
-                    <p className={`mb-1 md:mb-2 text-[10px] md:text-xs font-bold uppercase tracking-[0.15em] md:tracking-[0.2em] text-${card.color}-500`}>
+                    <p className="mb-1.5 text-[10px] font-bold uppercase tracking-[0.2em] text-red-700 md:text-xs">
                       {card.label}
                     </p>
-                    <h3 className="text-xl md:text-2xl font-extrabold text-slate-900 mb-4 md:mb-6">
+                    <h3 className="mb-4 text-lg font-extrabold tracking-tight text-slate-900 md:text-xl">
                       {card.title}
                     </h3>
                     
-                    <div className={`h-px w-full bg-gradient-to-r from-${card.color}-200 via-${card.color}-100 to-transparent mb-5 md:mb-6`} />
+                    <div className="mb-4 h-px w-full bg-gradient-to-r from-red-200 via-red-100 to-transparent md:mb-5" />
                     
-                    <ul className="space-y-2.5 md:space-y-3">
+                    <ul className="space-y-2.5">
                       {card.items.map((item, i) => (
-                        <li key={i} className="flex items-start gap-2.5 text-xs md:text-sm lg:text-base text-slate-600">
-                          <span className={`mt-0.5 flex h-4 w-4 md:h-5 md:w-5 shrink-0 items-center justify-center rounded-full bg-${card.color}-50 text-${card.color}-600 text-[10px] font-bold transition-colors group-hover:bg-${card.color}-500 group-hover:text-white`}>
-                            ✓
+                        <li key={i} className="flex items-start gap-2.5 text-[13px] text-slate-600">
+                          <span className="mt-0.5 flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-red-50 text-red-700 transition-colors group-hover:bg-red-100">
+                            <CircleCheck className="h-3 w-3" strokeWidth={3} />
                           </span>
-                          <span className="leading-snug md:leading-6">{item}</span>
+                          <span className="leading-5">{item}</span>
                         </li>
                       ))}
                     </ul>
                   </div>
 
-                  <div className={`absolute bottom-0 left-0 h-1 w-0 bg-gradient-to-r from-${card.color}-500 to-indigo-500 transition-all duration-300 group-hover:w-full`} />
-                </div>
+                  <div className="absolute bottom-0 left-0 h-1 w-full origin-left scale-x-0 bg-gradient-to-r from-red-800 to-red-500 transition-transform duration-300 group-hover:scale-x-100" />
+                </article>
               ))}
             </div>
           </div>
 
           {/* Sub-section 3: Who Can Implement? */}
-          <div className="relative rounded-2xl md:rounded-[3rem] overflow-hidden bg-slate-900 shadow-2xl p-8 md:p-12 lg:p-16">
-            <div className="absolute top-0 right-0 w-[300px] md:w-[500px] h-[300px] md:h-[500px] bg-gradient-to-br from-blue-600/20 to-indigo-600/20 rounded-full blur-[80px] md:blur-[100px] pointer-events-none transform translate-x-1/3 -translate-y-1/3"></div>
-            <div className="absolute bottom-0 left-0 w-[250px] md:w-[400px] h-[250px] md:h-[400px] bg-gradient-to-tr from-cyan-500/15 to-blue-500/15 rounded-full blur-[80px] md:blur-[100px] pointer-events-none transform -translate-x-1/3 translate-y-1/3"></div>
+          <div className="relative overflow-hidden rounded-2xl border border-red-100 bg-gradient-to-br from-white via-white to-red-50/70 p-6 shadow-[0_16px_50px_rgba(17,24,39,0.06)] sm:rounded-[1.75rem] sm:p-8 md:p-10 lg:rounded-3xl lg:p-12">
+            <div aria-hidden="true" className="pointer-events-none absolute -right-24 -top-28 h-80 w-80 rounded-full bg-red-100/60 blur-[90px]" />
+            <div aria-hidden="true" className="pointer-events-none absolute -bottom-32 -left-20 h-72 w-72 rounded-full bg-rose-100/50 blur-[90px]" />
             
-            <div className="text-center max-w-2xl mx-auto mb-8 md:mb-12 relative z-10 flex flex-col items-center">
-              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold mb-3 md:mb-4 text-white leading-tight">
+            <div className="text-center max-w-2xl mx-auto mb-6 md:mb-8 relative z-10 flex flex-col items-center">
+              <h2 className="mb-2 text-2xl font-extrabold leading-tight tracking-tight text-[#111827] sm:text-3xl md:text-4xl">
                 Who Can Implement It?
               </h2>
-              <p className="text-blue-100/80 text-sm md:text-base lg:text-lg text-justify md:text-center px-2">
-                ISO 45001 is flexible and applicable to organizations of all sizes, from small startups to large multinational enterprises across diverse sectors.
+              
+              <p className="px-2 text-center text-sm leading-6 text-[#526581] md:text-base">
+                ISO 45001 is essential for any organization committed to preventing work-related injuries and ill health. From heavy manufacturing and construction sites to corporate offices, healthcare facilities, and logistics warehouses.
               </p>
             </div>
 
-            <div className="flex flex-wrap justify-center gap-2 md:gap-3 lg:gap-4 relative z-10 max-w-5xl mx-auto">
+            <div className="flex flex-wrap justify-center gap-2 md:gap-2.5 relative z-10 max-w-5xl mx-auto">
               {industries.map((industry, index) => (
                 <span 
                   key={index} 
-                  className="px-3 py-1.5 md:px-5 md:py-2.5 bg-white/5 backdrop-blur-md border border-white/10 rounded-full text-white text-xs md:text-sm lg:text-base font-medium hover:bg-white hover:text-slate-900 transition-all duration-200 cursor-default hover:scale-105 active:scale-95 shadow-lg"
+                  className="rounded-lg border border-red-100 bg-white/90 px-3 py-1.5 text-xs font-semibold text-slate-700 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-red-300 hover:bg-white hover:text-red-800 hover:shadow-md md:px-4 md:py-2 md:text-sm"
                 >
                   {industry}
                 </span>
@@ -305,16 +333,67 @@ export default function Iso45001Layout() {
         </section>
       </div>
 
-      {/* Animation Styles */}
-      <style jsx>{`
-        .floating-img {
-          animation: floatImage 6s ease-in-out infinite;
-        }
-        @keyframes floatImage {
-          0%, 100% { transform: translateY(0px) rotate(0deg); }
-          50% { transform: translateY(-12px) rotate(1deg); }
-        }
-      `}</style>
-    </div>
+      {/* --- MODAL POPUP FORM --- */}
+      {isModalOpen && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+          <div 
+            className="absolute inset-0 bg-slate-950/60 backdrop-blur-sm transition-opacity"
+            onClick={() => setIsModalOpen(false)}
+          ></div>
+
+          <div className="relative w-full max-w-lg bg-white rounded-3xl shadow-2xl overflow-hidden animate-in fade-in zoom-in duration-300">
+            
+            <div className="relative flex h-28 items-center justify-center bg-gradient-to-r from-red-800 to-[#E30613]">
+               <button 
+                 onClick={() => setIsModalOpen(false)}
+                 className="absolute top-4 right-4 p-1.5 bg-white/20 hover:bg-white/30 rounded-full text-white transition-colors"
+                 aria-label="Close modal"
+               >
+                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+               </button>
+               <div className="text-center text-white z-10">
+                 <h3 id="modal-title" className="text-xl font-bold">Get Certified</h3>
+                 <p className="text-red-100 text-xs">Fill the form below</p>
+               </div>
+            </div>
+
+            <div className="p-6 md:p-8">
+              <form className="space-y-4">
+                <div>
+                  <label htmlFor="name" className="block text-sm font-medium text-slate-700 mb-1">Full Name</label>
+                  <input type="text" id="name" className="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:border-red-500 focus:ring-2 focus:ring-red-200 outline-none transition-all bg-slate-50 focus:bg-white text-sm" placeholder="John Doe" />
+                </div>
+                
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label htmlFor="email" className="block text-sm font-medium text-slate-700 mb-1">Email Address</label>
+                    <input type="email" id="email" className="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:border-red-500 focus:ring-2 focus:ring-red-200 outline-none transition-all bg-slate-50 focus:bg-white text-sm" placeholder="john@company.com" />
+                  </div>
+                  <div>
+                    <label htmlFor="phone" className="block text-sm font-medium text-slate-700 mb-1">Phone Number</label>
+                    <input type="tel" id="phone" className="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:border-red-500 focus:ring-2 focus:ring-red-200 outline-none transition-all bg-slate-50 focus:bg-white text-sm" placeholder="+91 98765 43210" />
+                  </div>
+                </div>
+
+                <div>
+                  <label htmlFor="org" className="block text-sm font-medium text-slate-700 mb-1">Organization Name</label>
+                  <input type="text" id="org" className="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:border-red-500 focus:ring-2 focus:ring-red-200 outline-none transition-all bg-slate-50 focus:bg-white text-sm" placeholder="SafeBuild Industries" />
+                </div>
+
+                <div>
+                  <label htmlFor="message" className="block text-sm font-medium text-slate-700 mb-1">Message (Optional)</label>
+                  <textarea id="message" rows="3" className="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:border-red-500 focus:ring-2 focus:ring-red-200 outline-none transition-all bg-slate-50 focus:bg-white resize-none text-sm" placeholder="Tell us about your workplace safety needs..."></textarea>
+                </div>
+
+                <button type="button" className="w-full py-3 bg-gradient-to-r from-red-700 to-red-600 text-white font-bold rounded-xl shadow-lg shadow-red-700/25 hover:shadow-red-700/40 hover:-translate-y-0.5 transition-all duration-200 text-sm">
+                  Submit Enquiry
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      )}
+
+    </main>
   );
 }
