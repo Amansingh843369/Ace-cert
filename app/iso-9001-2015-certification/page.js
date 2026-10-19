@@ -103,7 +103,7 @@ export default function IsoCertificationLayout() {
                 What is ISO 9001?
                 <span aria-hidden="true" className="absolute -bottom-3 left-1/2 h-1 w-14 -translate-x-1/2 rounded-full bg-[#E30613] lg:left-0 lg:translate-x-0" />
               </h3>
-              <div className="mt-2 space-y-4 text-left text-sm leading-7 text-[#526581] sm:text-base md:text-[17px] md:leading-8">
+              <div className="mt-2 space-y-4 text-justify text-sm leading-7 text-[#526581] sm:text-base md:text-[17px] md:leading-8">
                 <p>
                   ISO 9001 is the world&apos;s most recognized standard for <strong className="font-semibold text-[#111827]">Quality Management Systems (QMS)</strong>. It provides a robust framework for organizations to consistently deliver products and services that meet customer requirements as well as applicable statutory and regulatory demands.
                 </p>
