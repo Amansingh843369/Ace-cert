@@ -30,7 +30,7 @@ export const isoLinks = isoStandards.map(({ code, href }) => ({
 
 export const serviceGroups = [
   {
-    title: "ISO Certification",
+    title: "Management Certification",
     icon: "badge",
     items: isoLinks,
   },

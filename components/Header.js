@@ -101,7 +101,7 @@ export default function Header() {
                   )}
                 </button>
 
-                {/* ISO CERTIFICATION DROPDOWN */}
+                {/* MANAGEMENT CERTIFICATION DROPDOWN */}
                 <div
                   id="desktop-services-dropdown"
                   className={`fixed left-1/2 top-[72px] z-50 w-[calc(100vw-2rem)] max-w-6xl -translate-x-1/2
@@ -114,7 +114,7 @@ export default function Header() {
                     }`}
                 >
                   {serviceGroups
-                    .filter((group) => group.title === "ISO Certification")
+                    .filter((group) => group.title === "Management Certification")
                     .map((group) => (
                       <div key={group.title} className="space-y-4">
 
@@ -227,7 +227,7 @@ export default function Header() {
 
                   {mobileServicesOpen && (
                     <div id="mobile-iso-dropdown" className="pl-2 mt-1 space-y-3 bg-slate-50 p-3.5 rounded-xl border border-slate-100">
-                      {serviceGroups.filter((group) => group.title === "ISO Certification").map((group) => (
+                      {serviceGroups.filter((group) => group.title === "Management Certification").map((group) => (
                         <div key={group.title}>
                           <p className="text-xs font-bold text-red-600 uppercase tracking-wider mb-2 px-1">
                             {group.title}
