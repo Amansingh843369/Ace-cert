@@ -136,7 +136,11 @@ export default function IsoCertificationLayout() {
           </article>
         </section>
 
-        {/* --- SECTION 2: Importance & Benefits Grid --- */}
+       
+
+        {/* --- SECTION 3: Principles, Detailed Benefits & Scope --- */}
+        <section className="space-y-12 md:space-y-16">
+           {/* --- SECTION 2: Importance & Benefits Grid --- */}
         <section aria-labelledby="iso50001-importance">
           <div className="relative z-20 flex flex-col items-center gap-8 lg:flex-row lg:items-stretch lg:gap-12">
             <div className="relative order-2 flex w-full justify-center lg:order-1 lg:w-[42%]">
@@ -189,10 +193,6 @@ export default function IsoCertificationLayout() {
             </div>
           </div>
         </section>
-
-        {/* --- SECTION 3: Principles, Detailed Benefits & Scope --- */}
-        <section className="space-y-12 md:space-y-16">
-          
           {/* Sub-section 1: 7 Principles */}
           <div>
             <div className="text-center max-w-3xl mx-auto mb-8 md:mb-10">
