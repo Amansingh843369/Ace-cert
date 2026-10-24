@@ -163,7 +163,7 @@ export default function Iso21001CertificationLayout() {
             {/* TEXT SECTION */}
             <div className="order-1 flex w-full flex-col gap-6 md:gap-8 lg:order-1 lg:w-[58%]">
               <div className="text-center lg:text-left">
-                <h3 id="iso21001-importance" className="text-balance text-2xl font-extrabold leading-tight tracking-tight text-[#111827] sm:text-3xl md:text-4xl lg:text-5xl">
+                <h3 id="iso21001-importance" className=" text-2xl font-extrabold leading-tight tracking-tight text-[#111827] sm:text-3xl md:text-4xl lg:text-5xl">
                   Why is <span className="text-[#E30613]">ISO 21001</span> Important?
                 </h3>
 
@@ -257,7 +257,7 @@ export default function Iso21001CertificationLayout() {
                 </span>
               </h2>
 
-              <p className="mt-3 md:mt-4 text-sm md:text-base lg:text-lg leading-relaxed text-slate-500 max-w-2xl mx-auto px-2 text-justify">
+              <p className="mt-3 md:mt-4 text-sm md:text-base lg:text-lg leading-relaxed text-slate-500 max-w-2xl mx-auto px-2 text-center ">
                 Certification distinguishes your institution globally, appealing to students, parents, and sponsors who prioritize quality education, ethical practices, and measurable academic success.
               </p>
             </div>
@@ -319,7 +319,7 @@ export default function Iso21001CertificationLayout() {
                 Who Can Implement It?
               </h2>
 
-              <p className="px-2 text-center text-sm leading-7 text-[#526581] md:text-base lg:text-lg text-justify">
+              <p className="px-2 text-center text-sm leading-7 text-[#526581] md:text-base lg:text-lg text-center">
                 ISO 21001 is applicable to any organization that uses a curriculum to support the development of competence through teaching, learning, or research—regardless of its size, type, or delivery method.
               </p>
             </div>
