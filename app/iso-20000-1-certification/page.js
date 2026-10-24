@@ -137,62 +137,63 @@ export default function IsoCertificationLayout() {
           </article>
         </section>
 
-        {/* --- SECTION 2: Importance & Benefits Grid --- */}
-        <section aria-labelledby="iso20000-importance">
-          <div className="relative z-20 flex flex-col items-center gap-10 lg:flex-row lg:items-stretch lg:gap-16">
-            <div className="relative order-2 flex w-full justify-center lg:order-1 lg:w-[42%]">
-              <figure className="relative aspect-[4/3] w-full max-w-[500px] overflow-hidden rounded-2xl bg-red-50 ring-1 ring-black/5 shadow-[0_16px_45px_rgba(17,24,39,0.10)] sm:rounded-[1.5rem] lg:h-full lg:aspect-auto">
-                <Image
-                  src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=85"
-                  alt="Data analytics dashboard representing IT service performance"
-                  fill
-                  sizes="(max-width: 1024px) 100vw, 500px"
-                  className="object-cover"
-                  loading="lazy"
-                />
-                <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-950/75 to-transparent px-5 pb-5 pt-16">
-                  <p className="text-sm font-semibold text-white">Optimized IT operations.</p>
-                </figcaption>
-              </figure>
-            </div>
+    {/* --- SECTION 2: Importance & Benefits Grid --- */}
+    <section aria-labelledby="iso20000-importance">
+      <div className="relative z-20 flex flex-col items-center gap-10 lg:flex-row lg:items-stretch lg:gap-16">
+        
+        {/* IMAGE SECTION (Now lg:order-2 so it appears on the right) */}
+        <div className="relative order-2 flex w-full justify-center lg:order-2 lg:w-[42%]">
+          <figure className="relative aspect-[4/3] w-full max-w-[500px] overflow-hidden rounded-2xl bg-red-50 ring-1 ring-black/5 shadow-[0_16px_45px_rgba(17,24,39,0.10)] sm:rounded-[1.5rem] lg:h-full lg:aspect-auto">
+            <Image
+              src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=85"
+              alt="Data analytics dashboard representing IT service performance"
+              fill
+              sizes="(max-width: 1024px) 100vw, 500px"
+              className="object-cover"
+              loading="lazy"
+            />
+            <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-950/75 to-transparent px-5 pb-5 pt-16">
+              <p className="text-sm font-semibold text-white">Optimized IT operations.</p>
+            </figcaption>
+          </figure>
+        </div>
 
-            <div className="order-1 flex w-full flex-col gap-6 md:gap-8 lg:order-2 lg:w-[58%]">
-              <div className="text-center lg:text-left">
-                <h3 id="iso20000-importance" className="text-balance text-2xl font-extrabold leading-tight tracking-tight text-[#111827] sm:text-3xl md:text-4xl lg:text-5xl">
-                  Why is <span className="text-[#E30613]">ISO 20000-1</span> Important?
-                </h3>
-                
-                {/* TEXT JUSTIFY APPLIED HERE */}
-                <p className="mt-4 text-left text-sm leading-7 text-[#526581] sm:text-base md:text-lg md:leading-8 text-justify">
-                  Implementing ISO 20000-1 helps organizations align their IT services with business goals, reduce costs through efficient processes, and build trust with clients through certified service quality.
-                </p>
-              </div>
-
-              {/* Interactive Grid */}
-              <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 md:gap-4">
-                {benefitsList.map((benefit, index) => (
-                  <div 
-                    key={index} 
-                    className="group relative flex min-h-[78px] items-center gap-3 overflow-hidden rounded-2xl border border-slate-200/80 bg-white p-3.5 md:p-4 shadow-[0_4px_18px_rgba(15,23,42,0.04)] transition-all duration-300 hover:-translate-y-1 hover:border-red-200 hover:shadow-[0_14px_30px_rgba(127,29,29,0.10)] cursor-default"
-                  >
-                    <span className="absolute inset-y-3 left-0 w-1 rounded-r-full bg-red-600 scale-y-0 transition-transform duration-300 group-hover:scale-y-100" />
-                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-red-50 text-red-700 ring-1 ring-red-100 transition-all duration-300 group-hover:bg-red-700 group-hover:text-white group-hover:ring-red-700">
-                      <CircleCheck className="h-5 w-5" strokeWidth={2} />
-                    </div>
-                    <div className="min-w-0">
-                      <span className="mb-0.5 block text-[10px] font-bold uppercase tracking-[0.16em] text-red-500">Benefit {String(index + 1).padStart(2, '0')}</span>
-                      <span className="block text-sm font-semibold leading-snug text-slate-700 transition-colors group-hover:text-slate-950 md:text-[15px]">
-                        {benefit}
-                      </span>
-                    </div>
-                    <ArrowUpRight className="ml-auto h-4 w-4 shrink-0 text-slate-300 transition-all duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-red-600" />
-                  </div>
-                ))}
-              </div>
-            </div>
+        {/* TEXT SECTION (Now lg:order-1 so it appears on the left) */}
+        <div className="order-1 flex w-full flex-col gap-6 md:gap-8 lg:order-1 lg:w-[58%]">
+          <div className="text-center lg:text-left">
+            <h3 id="iso20000-importance" className=" text-2xl font-extrabold leading-tight tracking-tight text-[#111827] sm:text-3xl md:text-4xl lg:text-5xl">
+              Why is <span className="text-[#E30613]">ISO 20000-1</span> Important?
+            </h3>
+            
+            <p className="mt-4 text-left text-sm leading-7 text-[#526581] sm:text-base md:text-lg md:leading-8 text-justify">
+              Implementing ISO 20000-1 helps organizations align their IT services with business goals, reduce costs through efficient processes, and build trust with clients through certified service quality.
+            </p>
           </div>
-        </section>
 
+          {/* Interactive Grid */}
+          <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 md:gap-4">
+            {benefitsList.map((benefit, index) => (
+              <div 
+                key={index} 
+                className="group relative flex min-h-[78px] items-center gap-3 overflow-hidden rounded-2xl border border-slate-200/80 bg-white p-3.5 md:p-4 shadow-[0_4px_18px_rgba(15,23,42,0.04)] transition-all duration-300 hover:-translate-y-1 hover:border-red-200 hover:shadow-[0_14px_30px_rgba(127,29,29,0.10)] cursor-default"
+              >
+                <span className="absolute inset-y-3 left-0 w-1 rounded-r-full bg-red-600 scale-y-0 transition-transform duration-300 group-hover:scale-y-100" />
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-red-50 text-red-700 ring-1 ring-red-100 transition-all duration-300 group-hover:bg-red-700 group-hover:text-white group-hover:ring-red-700">
+                  <CircleCheck className="h-5 w-5" strokeWidth={2} />
+                </div>
+                <div className="min-w-0">
+                  <span className="mb-0.5 block text-[10px] font-bold uppercase tracking-[0.16em] text-red-500">Benefit {String(index + 1).padStart(2, '0')}</span>
+                  <span className="block text-sm font-semibold leading-snug text-slate-700 transition-colors group-hover:text-slate-950 md:text-[15px]">
+                    {benefit}
+                  </span>
+                </div>
+                <ArrowUpRight className="ml-auto h-4 w-4 shrink-0 text-slate-300 transition-all duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-red-600" />
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
         {/* --- SECTION 3: Principles, Detailed Benefits & Scope --- */}
         <section className="space-y-20 md:space-y-28">
           
@@ -255,7 +256,7 @@ export default function IsoCertificationLayout() {
               </h2>
               
               {/* TEXT JUSTIFY APPLIED HERE */}
-              <p className="mt-3 md:mt-4 text-sm md:text-base lg:text-lg leading-relaxed text-slate-500 max-w-2xl mx-auto px-2 text-justify">
+              <p className="mt-3 md:mt-4 text-sm md:text-base lg:text-lg leading-relaxed text-slate-500 max-w-2xl mx-auto px-2 text-center">
                 Certification demonstrates your ability to deliver managed IT services that meet customer requirements, helping you win tenders and retain clients in a competitive market.
               </p>
             </div>
@@ -318,7 +319,7 @@ export default function IsoCertificationLayout() {
               </h2>
               
               {/* TEXT JUSTIFY APPLIED HERE */}
-              <p className="px-2 text-center text-sm leading-7 text-[#526581] md:text-base lg:text-lg text-justify">
+              <p className="px-2 text-center text-sm leading-7 text-[#526581] md:text-base lg:text-lg text-center">
                 ISO 20000-1 is designed for any organization that delivers IT services, from internal IT departments supporting employees to external MSPs serving global clients.
               </p>
             </div>
