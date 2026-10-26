@@ -78,7 +78,8 @@ export default function IsoCertificationLayout() {
             </h1>
 
             <h2 className="max-w-3xl px-2 text-pretty text-base font-medium leading-relaxed text-[#526581] sm:text-lg md:text-xl">
-              Govern your AI responsibly with the world's first international standard for Artificial Intelligence Management Systems (AIMS).
+              Govern your AI responsibly with the world&apos;s first international 
+standard for Artificial Intelligence Management Systems (AIMS).
             </h2>
           </div>
 
@@ -112,7 +113,11 @@ export default function IsoCertificationLayout() {
               {/* Content exactly from the image */}
               <div className="mt-2 space-y-3 text-justify text-sm leading-6 text-[#526581] sm:text-base md:text-[16px] md:leading-7">
                 <p>
-                  ISO 42001 is the world's first internationally recognized standard for <strong className="font-semibold text-[#111827]">Artificial Intelligence Management Systems (AIMS)</strong>. It provides a framework for organizations to establish, implement, maintain, and continually improve the governance and management of Artificial Intelligence (AI) systems, ensuring their responsible, ethical, transparent, and secure use.
+                  ISO 42001 is the world&apos;s first internationally recognized 
+standard for <strong className="font-semibold text-[#111827]">Artificial Intelligence Management Systems 
+(AIMS)</strong>. It provides a framework for organizations to establish, implement, maintain, and continually improve 
+the governance and management of Artificial Intelligence (AI) systems, ensuring their responsible, ethical, 
+transparent, and secure use.
                 </p>
                 <p>
                   The standard is jointly published by the International Organization for Standardization (ISO) and the International Electrotechnical Commission (IEC) and is applicable to organizations of all sizes and sectors that develop, provide, or use AI-based products, services, and solutions.

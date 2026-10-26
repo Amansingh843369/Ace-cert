@@ -1,6 +1,7 @@
 
 "use client";   
  import React, { useState } from 'react';
+ import Link from 'next/link';
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -54,7 +55,7 @@ export default function ContactPage() {
           
           {/* Breadcrumbs */}
           <div className="mt-4 flex items-center justify-center gap-2 text-xs sm:text-sm font-medium text-gray-300">
-            <a href="/" className="hover:text-white transition-colors">Home</a>
+            <Link href="/" className="hover:text-white transition-colors">Home</Link>
             <span className="text-red-500">/</span>
             <span className="text-white font-semibold">Contact Us</span>
           </div>

@@ -79,7 +79,7 @@ export default function IsoCertificationLayout() {
             </h1>
 
             <h2 className="max-w-2xl px-2 text-pretty text-base font-medium leading-relaxed text-[#526581] sm:text-lg md:text-xl">
-              Manage your environmental responsibilities and boost sustainability with the world's leading EMS framework.
+              Manage your environmental responsibilities and boost sustainability with the world&apos;s leading EMS framework.
             </h2>
           </div>
 
