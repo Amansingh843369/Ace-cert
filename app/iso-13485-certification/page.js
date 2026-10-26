@@ -196,7 +196,7 @@ export default function IsoCertificationLayout() {
         {/* --- SECTION 3: Principles, Detailed Benefits & Scope --- */}
         <section className="space-y-20 md:space-y-28">
 
-          {/* Sub-section 1: 7 Principles */}
+          {/* Sub-section 1: 7 Principles - IMPROVED LAYOUT */}
           <div>
             <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
               <span className="inline-block py-1.5 px-5 rounded-full bg-red-50 text-red-700 text-xs font-bold tracking-[0.15em] uppercase mb-4 shadow-sm border border-red-100">
@@ -212,29 +212,35 @@ export default function IsoCertificationLayout() {
               {principles.map((principle, index) => (
                 <article
                   key={index}
-                  className={`group relative rounded-[2rem] border border-slate-100 bg-white p-8 shadow-[0_8px_30px_rgba(15,23,42,0.03)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_40px_rgba(127,29,29,0.08)] overflow-hidden ${index === 6 ? 'sm:col-span-2 lg:col-span-1' : ''}`}
+                  className={`group relative flex flex-col rounded-[1.5rem] border border-slate-100 bg-white p-6 shadow-[0_8px_30px_rgba(15,23,42,0.03)] transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(127,29,29,0.12)] overflow-hidden ${index === 6 ? 'sm:col-span-2 lg:col-span-1' : ''}`}
                 >
-                  {/* Top Right Badge */}
-                  <div className="absolute top-8 right-8">
-                    <span className="inline-flex items-center rounded-full border border-slate-100 bg-slate-50 px-3 py-1.5 text-[10px] font-bold tracking-[0.1em] text-slate-500 group-hover:border-red-100 group-hover:bg-red-50 group-hover:text-red-700 transition-colors">
-                      PRINCIPLE {principle.id}
-                    </span>
-                  </div>
+                  {/* Decorative Background Blob inside Card */}
+                  <div className="absolute -right-10 -top-10 h-32 w-32 rounded-full bg-red-50/50 blur-2xl transition-all duration-500 group-hover:bg-red-100/60" />
 
-                  <div className="relative z-0 flex flex-col h-full">
-                    {/* Icon Container */}
-                    <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-red-50 text-red-600 ring-1 ring-red-100 transition-all duration-300 group-hover:bg-red-600 group-hover:text-white group-hover:ring-red-600">
-                      <principle.icon className="h-6 w-6" strokeWidth={1.8} />
+                  <div className="relative z-10 flex flex-col h-full">
+                    
+                    {/* Header: Icon + Badge */}
+                    <div className="flex items-start justify-between mb-5">
+                      <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-red-50 text-red-600 ring-1 ring-red-100 transition-all duration-300 group-hover:bg-red-600 group-hover:text-white group-hover:ring-red-600 group-hover:scale-110">
+                        <principle.icon className="h-6 w-6" strokeWidth={1.8} />
+                      </div>
+                      <span className="inline-flex items-center rounded-full border border-slate-100 bg-slate-50 px-2.5 py-1 text-[10px] font-bold tracking-[0.1em] text-slate-500 group-hover:border-red-100 group-hover:bg-red-50 group-hover:text-red-700 transition-colors">
+                        {principle.id}
+                      </span>
                     </div>
 
-                    <h4 className="text-xl font-bold tracking-tight text-slate-900 mb-3 group-hover:text-red-700 transition-colors">
+                    {/* Content */}
+                    <h4 className="text-lg font-bold tracking-tight text-slate-900 mb-3 group-hover:text-red-700 transition-colors">
                       {principle.title}
                     </h4>
 
                     {/* TEXT JUSTIFY APPLIED HERE */}
-                    <p className="text-sm leading-relaxed text-slate-500 text-justify">
+                    <p className="text-sm leading-relaxed text-slate-500 text-justify flex-grow">
                       {principle.desc}
                     </p>
+                    
+                    {/* Bottom Accent Line */}
+                    <div className="mt-4 h-0.5 w-12 bg-red-100 rounded-full transition-all duration-300 group-hover:w-full group-hover:bg-red-200" />
                   </div>
                 </article>
               ))}
