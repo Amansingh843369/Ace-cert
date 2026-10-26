@@ -62,7 +62,7 @@ export default function FeaturesSection() {
           
           <div className="w-full lg:w-1/2 lg:pt-10">
             <p className="text-base sm:text-lg md:text-xl text-slate-600 leading-relaxed font-normal sm:font-medium">
-              We don't just provide ISO certificates; we partner with you to build a foundation of trust, operational excellence, and global compliance that drives sustainable enterprise growth.
+              We don&apos;t just provide ISO certificates; we partner with you to build a foundation of trust, operational excellence, and global compliance that drives sustainable enterprise growth.
             </p>
           </div>
         </div>

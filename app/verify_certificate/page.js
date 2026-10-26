@@ -125,7 +125,7 @@ export default function CertificateVerificationPage() {
               /* NOT FOUND STATE */
               <div className="bg-white rounded-2xl border border-red-100 p-6 text-center shadow-md">
                 <p className="text-sm font-semibold text-red-600">
-                  No certification record found for "{certNumber}".
+                  No certification record found for &quot;{certNumber}&quot;.
                 </p>
                 <p className="text-xs text-gray-400 mt-1">
                   Please verify the certificate number and try again.

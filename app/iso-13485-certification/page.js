@@ -1,5 +1,4 @@
 'use client';
-
 import React, { useState } from 'react';
 import Image from 'next/image';
 import {
@@ -53,14 +52,12 @@ export default function IsoCertificationLayout() {
 
   return (
     <main className="relative min-h-screen overflow-hidden bg-[#fffdfd] font-sans text-slate-900 selection:bg-red-200 selection:text-red-900">
-
       {/* Background Blobs - RED & WHITE Theme */}
       <div aria-hidden="true" className="pointer-events-none absolute -left-40 -top-40 h-[480px] w-[480px] rounded-full bg-red-100/50 blur-[120px]" />
       <div aria-hidden="true" className="pointer-events-none absolute right-0 top-[28%] h-[460px] w-[460px] rounded-full bg-rose-100/40 blur-[130px]" />
       <div aria-hidden="true" className="pointer-events-none absolute bottom-0 left-[10%] h-[520px] w-[520px] rounded-full bg-red-50 blur-[130px]" />
 
       <div className="relative z-10 mx-auto max-w-7xl space-y-20 px-4 py-8 md:space-y-24 md:px-6 md:py-12 lg:space-y-28 lg:px-12 lg:py-16">
-
         {/* --- SECTION 1: Hero & Definition --- */}
         <section aria-labelledby="iso13485-title">
           <div className="mb-8 flex flex-col items-center text-center md:mb-10">
@@ -71,11 +68,9 @@ export default function IsoCertificationLayout() {
               </span>
               Medical Device Standard
             </div>
-
             <h1 id="iso13485-title" className="mb-4 max-w-4xl text-balance text-4xl font-extrabold leading-[1.08] tracking-[-0.045em] text-[#111827] sm:text-5xl md:text-6xl lg:text-[4.25rem]">
               ISO 13485 <span className="text-[#E30613]">Certification</span>
             </h1>
-
             <h2 className="max-w-2xl px-2 text-pretty text-base font-medium leading-relaxed text-[#526581] sm:text-lg md:text-xl">
               Ensure patient safety and regulatory compliance with the global standard for Medical Device Quality Management Systems (MDQMS).
             </h2>
@@ -83,7 +78,6 @@ export default function IsoCertificationLayout() {
 
           <article className="relative flex flex-col items-center gap-7 overflow-hidden rounded-[1.75rem] border border-red-100/90 bg-white/95 p-5 shadow-[0_18px_60px_rgba(17,24,39,0.07)] sm:rounded-[2rem] sm:p-7 md:gap-10 md:p-9 lg:flex-row lg:items-stretch lg:gap-12 lg:rounded-[2.25rem] lg:p-11">
             <div aria-hidden="true" className="absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent via-red-200 to-transparent" />
-
             <div className="order-1 flex w-full justify-center lg:w-[46%]">
               <figure className="relative aspect-[4/3] w-full max-w-[520px] overflow-hidden rounded-2xl bg-red-50 ring-1 ring-black/5 sm:rounded-[1.5rem] lg:h-full lg:aspect-auto">
                 <Image
@@ -107,7 +101,6 @@ export default function IsoCertificationLayout() {
                 <span aria-hidden="true" className="absolute -bottom-3 left-1/2 h-1 w-14 -translate-x-1/2 rounded-full bg-[#E30613] lg:left-0 lg:translate-x-0" />
               </h3>
 
-              {/* TEXT JUSTIFY APPLIED HERE */}
               <div className="mt-2 space-y-4 text-justify text-sm leading-7 text-[#526581] sm:text-base md:text-[17px] md:leading-8">
                 <p>
                   ISO 13485 is an internationally recognized standard that specifies requirements for a <strong className="font-semibold text-[#111827]">Quality Management System (QMS)</strong> specifically designed for organizations involved in the medical device industry. It helps organizations consistently design, develop, manufacture, install, and service medical devices while meeting customer and regulatory requirements.
@@ -117,7 +110,6 @@ export default function IsoCertificationLayout() {
                 </p>
               </div>
 
-              {/* --- ENQUIRE BUTTON --- */}
               <div className="mt-2 flex justify-center lg:justify-start">
                 <button
                   onClick={() => setIsModalOpen(true)}
@@ -130,7 +122,6 @@ export default function IsoCertificationLayout() {
                   <div className="absolute inset-0 rounded-full ring-2 ring-white/20 group-hover:ring-white/40 transition-all"></div>
                 </button>
               </div>
-
             </div>
           </article>
         </section>
@@ -138,7 +129,6 @@ export default function IsoCertificationLayout() {
         {/* --- SECTION 2: Importance & Benefits Grid --- */}
         <section aria-labelledby="iso13485-importance">
           <div className="relative z-20 flex flex-col items-center gap-10 lg:flex-row lg:items-stretch lg:gap-16">
-
             {/* IMAGE SECTION (Now lg:order-2 so it appears on the right) */}
             <div className="relative order-2 flex w-full justify-center lg:order-2 lg:w-[42%]">
               <figure className="relative aspect-[4/3] w-full max-w-[500px] overflow-hidden rounded-2xl bg-red-50 ring-1 ring-black/5 shadow-[0_16px_45px_rgba(17,24,39,0.10)] sm:rounded-[1.5rem] lg:h-full lg:aspect-auto">
@@ -162,8 +152,6 @@ export default function IsoCertificationLayout() {
                 <h3 id="iso13485-importance" className="text-balance text-2xl font-extrabold leading-tight tracking-tight text-[#111827] sm:text-3xl md:text-4xl lg:text-5xl">
                   Why is <span className="text-[#E30613]">ISO 13485</span> Important?
                 </h3>
-
-                {/* TEXT JUSTIFY APPLIED HERE */}
                 <p className="mt-4 text-left text-sm leading-7 text-[#526581] sm:text-base md:text-lg md:leading-8 text-justify">
                   Implementing ISO 13485 is crucial for demonstrating your ability to provide medical devices and related services that consistently meet customer and applicable regulatory requirements.
                 </p>
@@ -193,9 +181,9 @@ export default function IsoCertificationLayout() {
             </div>
           </div>
         </section>
+
         {/* --- SECTION 3: Principles, Detailed Benefits & Scope --- */}
         <section className="space-y-20 md:space-y-28">
-
           {/* Sub-section 1: 7 Principles - CENTER ALIGNED & IMPROVED */}
           <div>
             <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
@@ -216,28 +204,22 @@ export default function IsoCertificationLayout() {
                 >
                   {/* Decorative Background Blob inside Card */}
                   <div className="absolute -right-10 -top-10 h-32 w-32 rounded-full bg-red-50/50 blur-2xl transition-all duration-500 group-hover:bg-red-100/60" />
-
                   <div className="relative z-10 flex flex-col h-full items-center">
-                    
                     {/* Icon Container */}
                     <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-red-50 text-red-600 ring-1 ring-red-100 transition-all duration-300 group-hover:bg-red-600 group-hover:text-white group-hover:ring-red-600 group-hover:scale-110 group-hover:rotate-3">
                       <principle.icon className="h-7 w-7" strokeWidth={1.8} />
                     </div>
-
                     {/* Badge */}
-                    <span className="mb-3 inline-flex items-center rounded-full border border-slate-100 bg-slate-50 px-3 py-1 text-[10px] font-bold tracking-[0.1em] text-slate-500 group-hover:border-red-100 group-hover:bg-red-50 group-hover:text-red-700 transition-colors">
+                    <span className="mb-3 inline-flex items-center rounded-full border border-slate-100 bg-slate-50 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.1em] text-slate-500 group-hover:border-red-100 group-hover:bg-red-50 group-hover:text-red-700 transition-colors">
                       PRINCIPLE {principle.id}
                     </span>
-
                     <h4 className="text-xl font-bold tracking-tight text-slate-900 mb-3 group-hover:text-red-700 transition-colors">
                       {principle.title}
                     </h4>
-
-                    {/* TEXT CENTER APPLIED HERE */}
                     <p className="text-sm leading-relaxed text-slate-500 text-center">
                       {principle.desc}
                     </p>
-                    
+
                     {/* Bottom Accent Line */}
                     <div className="mt-6 h-0.5 w-12 bg-red-100 rounded-full transition-all duration-300 group-hover:w-24 group-hover:bg-red-200" />
                   </div>
@@ -258,8 +240,6 @@ export default function IsoCertificationLayout() {
                   Certification
                 </span>
               </h2>
-
-              {/* TEXT JUSTIFY APPLIED HERE */}
               <p className="mt-3 md:mt-4 text-sm md:text-base lg:text-lg leading-relaxed text-slate-500 max-w-2xl mx-auto px-2 text-justify">
                 Certification validates your commitment to quality and safety, opening doors to international markets and building trust with healthcare professionals and patients.
               </p>
@@ -272,9 +252,7 @@ export default function IsoCertificationLayout() {
                 { icon: TrendingUp, label: "Growth", title: "For Business Growth", items: ["Competitive advantage in tenders", "Access to new markets", "Reduced waste and rework", "Stronger supplier relationships", "Enhanced brand reputation"] }
               ].map((card, idx) => (
                 <article key={idx} className="group relative flex flex-col overflow-hidden rounded-[1.75rem] border border-slate-200/80 bg-white p-6 shadow-[0_12px_36px_rgba(15,23,42,0.055)] transition-all duration-300 hover:-translate-y-2 hover:border-red-200 hover:shadow-[0_26px_65px_rgba(127,29,29,0.13)] md:rounded-[2rem] md:p-8">
-
                   <div className="absolute -right-16 -top-16 h-44 w-44 rounded-full bg-red-50 blur-3xl transition-all duration-300 group-hover:bg-red-100" />
-
                   <div className="relative z-10 mb-7 flex items-start justify-between">
                     <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-red-700 text-white shadow-lg shadow-red-700/20 transition-transform duration-300 group-hover:scale-105 group-hover:-rotate-3 md:h-16 md:w-16">
                       <card.icon className="h-7 w-7" strokeWidth={1.8} />
@@ -283,7 +261,6 @@ export default function IsoCertificationLayout() {
                       0{idx + 1} / 03
                     </span>
                   </div>
-
                   <div className="relative z-10 flex-grow">
                     <p className="mb-2 text-[10px] font-bold uppercase tracking-[0.2em] text-red-700 md:text-xs">
                       {card.label}
@@ -291,9 +268,7 @@ export default function IsoCertificationLayout() {
                     <h3 className="mb-5 text-xl font-extrabold tracking-tight text-slate-900 md:text-2xl">
                       {card.title}
                     </h3>
-
                     <div className="mb-5 h-px w-full bg-gradient-to-r from-red-200 via-red-100 to-transparent md:mb-6" />
-
                     <ul className="space-y-3">
                       {card.items.map((item, i) => (
                         <li key={i} className="flex items-start gap-3 text-sm text-slate-600">
@@ -305,7 +280,6 @@ export default function IsoCertificationLayout() {
                       ))}
                     </ul>
                   </div>
-
                   <div className="absolute bottom-0 left-0 h-1 w-full origin-left scale-x-0 bg-gradient-to-r from-red-800 to-red-500 transition-transform duration-300 group-hover:scale-x-100" />
                 </article>
               ))}
@@ -316,18 +290,14 @@ export default function IsoCertificationLayout() {
           <div className="relative overflow-hidden rounded-2xl border border-red-100 bg-gradient-to-br from-white via-white to-red-50/70 p-7 shadow-[0_16px_50px_rgba(17,24,39,0.06)] sm:rounded-[2rem] sm:p-9 md:p-12 lg:rounded-[2.5rem] lg:p-16">
             <div aria-hidden="true" className="pointer-events-none absolute -right-24 -top-28 h-80 w-80 rounded-full bg-red-100/60 blur-[90px]" />
             <div aria-hidden="true" className="pointer-events-none absolute -bottom-32 -left-20 h-72 w-72 rounded-full bg-rose-100/50 blur-[90px]" />
-
             <div className="text-center max-w-2xl mx-auto mb-8 md:mb-12 relative z-10 flex flex-col items-center">
               <h2 className="mb-3 text-2xl font-extrabold leading-tight tracking-tight text-[#111827] sm:text-3xl md:mb-4 md:text-4xl lg:text-5xl">
                 Who Can Implement It?
               </h2>
-
-              {/* TEXT JUSTIFY APPLIED HERE */}
               <p className="px-2 text-center text-sm leading-7 text-[#526581] md:text-base lg:text-lg text-justify">
                 ISO 13485 applies to the entire medical device supply chain, ensuring quality at every step from design to disposal.
               </p>
             </div>
-
             <div className="flex flex-wrap justify-center gap-2.5 md:gap-3 lg:gap-4 relative z-10 max-w-5xl mx-auto">
               {industries.map((industry, index) => (
                 <span
@@ -339,7 +309,6 @@ export default function IsoCertificationLayout() {
               ))}
             </div>
           </div>
-
         </section>
       </div>
 
@@ -350,9 +319,7 @@ export default function IsoCertificationLayout() {
             className="absolute inset-0 bg-slate-950/60 backdrop-blur-sm transition-opacity"
             onClick={() => setIsModalOpen(false)}
           ></div>
-
           <div className="relative w-full max-w-lg bg-white rounded-3xl shadow-2xl overflow-hidden animate-in fade-in zoom-in duration-300">
-
             <div className="relative flex h-32 items-center justify-center bg-gradient-to-r from-red-800 to-[#E30613]">
               <button
                 onClick={() => setIsModalOpen(false)}
@@ -366,14 +333,12 @@ export default function IsoCertificationLayout() {
                 <p className="text-red-100 text-sm">Fill the form below</p>
               </div>
             </div>
-
             <div className="p-8">
               <form className="space-y-5">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-slate-700 mb-1">Full Name</label>
                   <input type="text" id="name" className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-red-500 focus:ring-2 focus:ring-red-200 outline-none transition-all bg-slate-50 focus:bg-white" placeholder="John Doe" />
                 </div>
-
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                   <div>
                     <label htmlFor="email" className="block text-sm font-medium text-slate-700 mb-1">Email Address</label>
@@ -384,17 +349,14 @@ export default function IsoCertificationLayout() {
                     <input type="tel" id="phone" className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-red-500 focus:ring-2 focus:ring-red-200 outline-none transition-all bg-slate-50 focus:bg-white" placeholder="+91 98765 43210" />
                   </div>
                 </div>
-
                 <div>
                   <label htmlFor="org" className="block text-sm font-medium text-slate-700 mb-1">Organization Name</label>
                   <input type="text" id="org" className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-red-500 focus:ring-2 focus:ring-red-200 outline-none transition-all bg-slate-50 focus:bg-white" placeholder="MedTech Solutions Ltd." />
                 </div>
-
                 <div>
                   <label htmlFor="message" className="block text-sm font-medium text-slate-700 mb-1">Message (Optional)</label>
                   <textarea id="message" rows="3" className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-red-500 focus:ring-2 focus:ring-red-200 outline-none transition-all bg-slate-50 focus:bg-white resize-none" placeholder="Tell us about your medical devices..."></textarea>
                 </div>
-
                 <button type="button" className="w-full py-3.5 bg-gradient-to-r from-red-700 to-red-600 text-white font-bold rounded-xl shadow-lg shadow-red-700/25 hover:shadow-red-700/40 hover:-translate-y-0.5 transition-all duration-200">
                   Submit Enquiry
                 </button>
@@ -403,7 +365,6 @@ export default function IsoCertificationLayout() {
           </div>
         </div>
       )}
-
     </main>
   );
 }

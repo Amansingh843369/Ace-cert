@@ -125,7 +125,7 @@ export default function AboutSection() {
                 <strong className="text-slate-900">ACE Certification Ltd.</strong> is a dedicated and client-centric professional services firm established to empower organizations of all sizes to achieve international standards of quality, safety, and efficiency.
               </p>
               <p>
-                The name "ACE" embodies our core promise: to help our clients <span className="font-bold text-red-600">Achieve Compliance & Excellence</span>. We bridge the gap between complex international standards and everyday business success.
+                The name &quot;ACE&quot; embodies our core promise: to help our clients <span className="font-bold text-red-600">Achieve Compliance & Excellence</span>. We bridge the gap between complex international standards and everyday business success.
               </p>
               <p>
                 Our team comprises highly experienced Lead Auditors who bring practical insights to every engagement. We believe certification is not just a trophy, but a strategic tool for <span className="font-semibold text-red-600">tangible business improvement</span>.

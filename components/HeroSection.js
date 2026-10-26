@@ -42,8 +42,10 @@ function TypewriterText() {
           setVisibleText(phrase.slice(0, visibleText.length - 1));
         }, deleteSpeed);
       } else {
-        setDeleting(false);
-        setPhraseIndex((current) => (current + 1) % typewriterPhrases.length);
+        timer = window.setTimeout(() => {
+          setDeleting(false);
+          setPhraseIndex((current) => (current + 1) % typewriterPhrases.length);
+        }, 0);
       }
     }
 
