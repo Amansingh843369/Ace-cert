@@ -12,6 +12,11 @@ function ServiceIcon({ type }) {
   return <Icon size={20} className="text-red-600 shrink-0" aria-hidden="true" />;
 }
 
+const getService = (service) =>
+  typeof service === "object"
+    ? { name: service.name, href: service.href }
+    : { name: service, href: "#services" };
+
 export default function Header() {
   const [servicesOpen, setServicesOpen] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -47,10 +52,26 @@ export default function Header() {
     };
   }, []);
 
+  // Lock body scroll when mobile menu is open
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [mobileMenuOpen]);
+
   const closeMobile = () => {
     setMobileMenuOpen(false);
     setMobileServicesOpen(false);
   };
+
+  const managementGroup = serviceGroups.find(
+    (group) => group.title === "Management Certification"
+  );
 
   return (
     <header
@@ -70,15 +91,18 @@ export default function Header() {
             alt="ACE-CERT - Accredited ISO Certification & Assessment Body"
             loading="eager"
             decoding="async"
-            className="h-11 sm:h-13 md:h-14 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+            className="h-11 sm:h-12 md:h-14 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
           />
         </Link>
 
         {/* DESKTOP NAVIGATION */}
-        <nav className="hidden lg:flex min-w-0 flex-1 items-center justify-center gap-6 xl:gap-10" aria-label="Main Navigation">
+        <nav
+          className="hidden lg:flex min-w-0 flex-1 items-center justify-center gap-6 xl:gap-10"
+          aria-label="Main Navigation"
+        >
           {navItems.map((item) =>
             item.hasDropdown ? (
-              <div key={item.name} className="static h-full flex items-center">
+              <div key={item.name} className="relative flex items-center">
                 <button
                   type="button"
                   onClick={() => setServicesOpen((open) => !open)}
@@ -92,10 +116,11 @@ export default function Header() {
                   {item.name}
                   <ChevronDown
                     size={16}
-                    className={`transition-transform duration-300 ${servicesOpen ? "rotate-180 text-red-600" : ""}`}
+                    className={`transition-transform duration-300 ${
+                      servicesOpen ? "rotate-180 text-red-600" : ""
+                    }`}
                     aria-hidden="true"
                   />
-                  {/* Active Indicator Line */}
                   {servicesOpen && (
                     <span className="absolute bottom-0 left-0 w-full h-0.5 bg-red-600 rounded-full" />
                   )}
@@ -104,7 +129,9 @@ export default function Header() {
                 {/* MANAGEMENT CERTIFICATION DROPDOWN */}
                 <div
                   id="desktop-services-dropdown"
-                  className={`fixed left-1/2 top-[72px] z-50 w-[calc(100vw-2rem)] max-w-6xl -translate-x-1/2
+                  className={`fixed left-1/2 ${
+                    scrolled ? "top-[60px]" : "top-[72px]"
+                  } z-50 w-[calc(100vw-2rem)] max-w-6xl -translate-x-1/2
                     rounded-2xl border border-slate-200 bg-white p-5 shadow-[0_24px_70px_rgba(15,23,42,0.18)] sm:p-6
                     transition-all duration-300 origin-top
                     ${
@@ -113,54 +140,45 @@ export default function Header() {
                         : "opacity-0 scale-95 invisible pointer-events-none -translate-y-2"
                     }`}
                 >
-                  {serviceGroups
-                    .filter((group) => group.title === "Management Certification")
-                    .map((group) => (
-                      <div key={group.title} className="space-y-4">
-
-                        {/* Group Header */}
-                        <div className="flex items-center gap-3 pb-3 border-b border-slate-100">
-                          <div className="p-2 rounded-xl bg-red-50 flex items-center justify-center">
-                            <ServiceIcon type={group.icon} />
-                          </div>
-
-                          <h3 className="text-slate-900 font-bold text-base tracking-tight">
-                            {group.title}
-                          </h3>
+                  {managementGroup && (
+                    <div className="space-y-4">
+                      <div className="flex items-center gap-3 pb-3 border-b border-slate-100">
+                        <div className="p-2 rounded-xl bg-red-50 flex items-center justify-center">
+                          <ServiceIcon type={managementGroup.icon} />
                         </div>
-
-                        {/* ISO Items */}
-                        <ul className="grid grid-cols-2 gap-1 sm:grid-cols-3 xl:grid-cols-4">
-                          {group.items.map((service) => {
-                            const serviceName = typeof service === "object" ? service.name : service;
-                            const serviceHref = typeof service === "object" ? service.href : "#services";
-                            return (
-                              <li key={serviceName}>
-                                <Link
-                                  href={serviceHref}
-                                  onClick={() => setServicesOpen(false)}
-                                  className="group/item flex min-h-10 items-center justify-between gap-2 rounded-xl px-3 py-2 text-xs font-semibold text-slate-700 transition-all duration-200 hover:bg-red-50 hover:text-red-700 sm:px-3.5 sm:text-sm"
-                                >
-                                  <span>{serviceName}</span>
-
-                                  <span
-                                    className="opacity-0 -translate-x-2
-                                      group-hover/item:opacity-100
-                                      group-hover/item:translate-x-0
-                                      transition-all duration-200
-                                      text-red-600 text-base font-bold"
-                                    aria-hidden="true"
-                                  >
-                                    →
-                                  </span>
-                                </Link>
-                              </li>
-                            );
-                          })}
-                        </ul>
-
+                        <h3 className="text-slate-900 font-bold text-base tracking-tight">
+                          {managementGroup.title}
+                        </h3>
                       </div>
-                    ))}
+
+                      <ul className="grid grid-cols-2 gap-1 sm:grid-cols-3 xl:grid-cols-4">
+                        {managementGroup.items.map((service) => {
+                          const { name, href } = getService(service);
+                          return (
+                            <li key={name}>
+                              <Link
+                                href={href}
+                                onClick={() => setServicesOpen(false)}
+                                className="group/item flex min-h-10 items-center justify-between gap-2 rounded-xl px-3 py-2 text-xs font-semibold text-slate-700 transition-all duration-200 hover:bg-red-50 hover:text-red-700 sm:px-3.5 sm:text-sm"
+                              >
+                                <span>{name}</span>
+                                <span
+                                  className="opacity-0 -translate-x-2
+                                    group-hover/item:opacity-100
+                                    group-hover/item:translate-x-0
+                                    transition-all duration-200
+                                    text-red-600 text-base font-bold"
+                                  aria-hidden="true"
+                                >
+                                  →
+                                </span>
+                              </Link>
+                            </li>
+                          );
+                        })}
+                      </ul>
+                    </div>
+                  )}
                 </div>
               </div>
             ) : (
@@ -197,12 +215,11 @@ export default function Header() {
         >
           {mobileMenuOpen ? <X size={26} /> : <Menu size={26} />}
         </button>
-
       </div>
 
       {/* MOBILE MENU ACCORDION */}
       {mobileMenuOpen && (
-        <div 
+        <div
           id="mobile-navigation-menu"
           className="lg:hidden absolute top-full left-0 w-full bg-white border-t border-slate-200 shadow-2xl p-4 sm:p-6 flex flex-col gap-2 max-h-[82vh] overflow-y-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden animate-in slide-in-from-top-2 duration-200"
         >
@@ -220,37 +237,41 @@ export default function Header() {
                     <span>{item.name}</span>
                     <ChevronDown
                       size={18}
-                      className={`transition-transform duration-200 ${mobileServicesOpen ? "rotate-180 text-red-600" : ""}`}
+                      className={`transition-transform duration-200 ${
+                        mobileServicesOpen ? "rotate-180 text-red-600" : ""
+                      }`}
                       aria-hidden="true"
                     />
                   </button>
 
-                  {mobileServicesOpen && (
-                    <div id="mobile-iso-dropdown" className="pl-2 mt-1 space-y-3 bg-slate-50 p-3.5 rounded-xl border border-slate-100">
-                      {serviceGroups.filter((group) => group.title === "Management Certification").map((group) => (
-                        <div key={group.title}>
-                          <p className="text-xs font-bold text-red-600 uppercase tracking-wider mb-2 px-1">
-                            {group.title}
-                          </p>
-                          <div className="space-y-1">
-                            {group.items.map((service) => {
-                              const name = typeof service === 'object' ? service.name : service;
-                              const href = typeof service === 'object' ? service.href : "#services";
-                              return (
-                                <Link
-                                  key={name}
-                                  href={href}
-                                  onClick={closeMobile}
-                                  className="flex items-center justify-between text-sm font-medium text-slate-700 py-2 px-3 rounded-lg hover:text-red-600 hover:bg-white transition-all"
-                                >
-                                  <span>{name}</span>
-                                  <span className="text-xs text-red-600 font-bold" aria-hidden="true">→</span>
-                                </Link>
-                              );
-                            })}
-                          </div>
+                  {mobileServicesOpen && managementGroup && (
+                    <div
+                      id="mobile-iso-dropdown"
+                      className="pl-2 mt-1 space-y-3 bg-slate-50 p-3.5 rounded-xl border border-slate-100"
+                    >
+                      <div>
+                        <p className="text-xs font-bold text-red-600 uppercase tracking-wider mb-2 px-1">
+                          {managementGroup.title}
+                        </p>
+                        <div className="space-y-1">
+                          {managementGroup.items.map((service) => {
+                            const { name, href } = getService(service);
+                            return (
+                              <Link
+                                key={name}
+                                href={href}
+                                onClick={closeMobile}
+                                className="flex items-center justify-between text-sm font-medium text-slate-700 py-2 px-3 rounded-lg hover:text-red-600 hover:bg-white transition-all"
+                              >
+                                <span>{name}</span>
+                                <span className="text-xs text-red-600 font-bold" aria-hidden="true">
+                                  →
+                                </span>
+                              </Link>
+                            );
+                          })}
                         </div>
-                      ))}
+                      </div>
                     </div>
                   )}
                 </div>
@@ -266,7 +287,7 @@ export default function Header() {
               )
             )}
           </nav>
-          
+
           <Link
             href="#contact"
             onClick={closeMobile}
