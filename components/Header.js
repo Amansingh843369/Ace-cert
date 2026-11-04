@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { BadgeCheck, ChevronDown, FileText, Lock, Menu, Package, ShieldCheck, X } from "lucide-react";
 import { navItems, serviceGroups } from "./siteData";
@@ -69,10 +69,6 @@ export default function Header() {
     setMobileServicesOpen(false);
   };
 
-  const managementGroup = serviceGroups.find(
-    (group) => group.title === "Management Certification"
-  );
-
   return (
     <header
       ref={headerRef}
@@ -126,13 +122,13 @@ export default function Header() {
                   )}
                 </button>
 
-                {/* MANAGEMENT CERTIFICATION DROPDOWN */}
+                {/* SERVICES DROPDOWN */}
                 <div
                   id="desktop-services-dropdown"
                   className={`fixed left-1/2 ${
                     scrolled ? "top-[60px]" : "top-[72px]"
-                  } z-50 w-[calc(100vw-2rem)] max-w-6xl -translate-x-1/2
-                    rounded-2xl border border-slate-200 bg-white p-5 shadow-[0_24px_70px_rgba(15,23,42,0.18)] sm:p-6
+                  } z-50 w-[560px] max-w-md -translate-x-1/2
+                    rounded-2xl border border-slate-200 bg-white p-5 sm:p-6
                     transition-all duration-300 origin-top
                     ${
                       servicesOpen
@@ -140,45 +136,44 @@ export default function Header() {
                         : "opacity-0 scale-95 invisible pointer-events-none -translate-y-2"
                     }`}
                 >
-                  {managementGroup && (
-                    <div className="space-y-4">
-                      <div className="flex items-center gap-3 pb-3 border-b border-slate-100">
-                        <div className="p-2 rounded-xl bg-red-50 flex items-center justify-center">
-                          <ServiceIcon type={managementGroup.icon} />
-                        </div>
-                        <h3 className="text-slate-900 font-bold text-base tracking-tight">
-                          {managementGroup.title}
-                        </h3>
-                      </div>
-
-                      <ul className="grid grid-cols-2 gap-1 sm:grid-cols-3 xl:grid-cols-4">
-                        {managementGroup.items.map((service) => {
-                          const { name, href } = getService(service);
-                          return (
-                            <li key={name}>
-                              <Link
-                                href={href}
-                                onClick={() => setServicesOpen(false)}
-                                className="group/item flex min-h-10 items-center justify-between gap-2 rounded-xl px-3 py-2 text-xs font-semibold text-slate-700 transition-all duration-200 hover:bg-red-50 hover:text-red-700 sm:px-3.5 sm:text-sm"
-                              >
-                                <span>{name}</span>
-                                <span
-                                  className="opacity-0 -translate-x-2
-                                    group-hover/item:opacity-100
-                                    group-hover/item:translate-x-0
-                                    transition-all duration-200
-                                    text-red-600 text-base font-bold"
-                                  aria-hidden="true"
-                                >
-                                  →
-                                </span>
-                              </Link>
-                            </li>
-                          );
-                        })}
-                      </ul>
-                    </div>
-                  )}
+                  <div className="space-y-4">
+                    {serviceGroups.map((group) => (
+                      <React.Fragment key={group.title}>
+                        {group.href && (
+                          <Link
+                            href={group.href}
+                            onClick={() => setServicesOpen(false)}
+                            className="flex items-center gap-3 pb-3 border-b border-slate-100 last:border-0"
+                          >
+                            <div className="p-2 rounded-xl bg-red-50 flex items-center justify-center shrink-0">
+                              <ServiceIcon type={group.icon} />
+                            </div>
+                            <h3 className="text-slate-900 font-bold text-base tracking-tight">
+                              {group.title}
+                            </h3>
+                          </Link>
+                        )}
+                        {group.items.length > 0 && (
+                          <ul className="grid grid-cols-2 gap-1 sm:grid-cols-3 xl:grid-cols-4">
+                            {group.items.map((service) => {
+                              const { name, href } = getService(service);
+                              return (
+                                <li key={name}>
+                                  <Link
+                                    href={href}
+                                    onClick={() => setServicesOpen(false)}
+                                    className="group/item flex min-h-10 items-center justify-between gap-2 rounded-xl px-3 py-2 text-xs font-semibold text-slate-700 transition-all duration-200 hover:bg-red-50 hover:text-red-700 sm:px-3.5 sm:text-sm"
+                                  >
+                                    <span>{name}</span>
+                                  </Link>
+                                </li>
+                              );
+                            })}
+                          </ul>
+                        )}
+                      </React.Fragment>
+                    ))}
+                  </div>
                 </div>
               </div>
             ) : (
@@ -244,34 +239,49 @@ export default function Header() {
                     />
                   </button>
 
-                  {mobileServicesOpen && managementGroup && (
+                  {mobileServicesOpen && (
                     <div
                       id="mobile-iso-dropdown"
                       className="pl-2 mt-1 space-y-3 bg-slate-50 p-3.5 rounded-xl border border-slate-100"
                     >
-                      <div>
-                        <p className="text-xs font-bold text-red-600 uppercase tracking-wider mb-2 px-1">
-                          {managementGroup.title}
-                        </p>
-                        <div className="space-y-1">
-                          {managementGroup.items.map((service) => {
-                            const { name, href } = getService(service);
-                            return (
-                              <Link
-                                key={name}
-                                href={href}
-                                onClick={closeMobile}
-                                className="flex items-center justify-between text-sm font-medium text-slate-700 py-2 px-3 rounded-lg hover:text-red-600 hover:bg-white transition-all"
-                              >
-                                <span>{name}</span>
-                                <span className="text-xs text-red-600 font-bold" aria-hidden="true">
-                                  →
-                                </span>
-                              </Link>
-                            );
-                          })}
+                    {serviceGroups.map((group) => (
+                        <div key={group.title} className="space-y-1">
+                          {group.href && (
+                            <Link
+                              href={group.href}
+                              onClick={closeMobile}
+                              className="flex items-center justify-between text-base font-bold text-slate-900 py-3 px-2 rounded-lg hover:bg-red-50 hover:text-red-600 transition-colors"
+                            >
+                              <div className="flex items-center gap-2">
+                                <ServiceIcon type={group.icon} />
+                                <span>{group.title}</span>
+                              </div>
+                              <ChevronDown
+                                size={16}
+                                className="text-red-600"
+                                aria-hidden="true"
+                              />
+                            </Link>
+                          )}
+                          {group.items.length > 0 && (
+                            <div className="space-y-1">
+                              {group.items.map((service) => {
+                                const { name, href } = getService(service);
+                                return (
+                                  <Link
+                                    key={name}
+                                    href={href}
+                                    onClick={closeMobile}
+                                    className="flex items-center justify-between text-sm font-medium text-slate-700 py-2 px-3 rounded-lg hover:text-red-600 hover:bg-white transition-all"
+                                  >
+                                    <span>{name}</span>
+                                  </Link>
+                                );
+                              })}
+                            </div>
+                          )}
                         </div>
-                      </div>
+                    ))}
                     </div>
                   )}
                 </div>

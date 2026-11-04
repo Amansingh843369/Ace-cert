@@ -2,8 +2,6 @@
 // NAVIGATION
 // ======================================================
 
-import { isoStandards } from "../data/isoStandards";
-
 export const navItems = [
   { name: "Home", href: "#" },
   { name: "About Us", href: "/about" },
@@ -15,28 +13,22 @@ export const navItems = [
 
 
 // ======================================================
-// ISO CERTIFICATION LINKS
-// ======================================================
-
-export const isoLinks = isoStandards.map(({ code, href }) => ({
-  name: code,
-  href,
-}));
-
-
-// ======================================================
 // SERVICE GROUPS
 // ======================================================
 
 export const serviceGroups = [
   {
     title: "Management Certification",
+    href: "/management-certification",
     icon: "badge",
-    items: isoLinks,
+    items: [],
   },
- 
-
- 
+  {
+    title: "Training",
+    href: "/training",
+    icon: "file",
+    items: [],
+  },
 ];
 
 
