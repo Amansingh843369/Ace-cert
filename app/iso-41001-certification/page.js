@@ -255,7 +255,7 @@ export default function IsoCertificationLayout() {
                 </span>
               </h2>
 
-              <p className="mt-3 text-sm md:text-base leading-relaxed text-slate-500 max-w-2xl mx-auto px-2 text-center">
+              <p className="text-justify mt-3 text-sm md:text-base leading-relaxed text-slate-500 max-w-2xl mx-auto px-2">
                 Achieving ISO 41001 certification acts as a powerful differentiator, proving to clients, tenants, and stakeholders that your facilities are managed with world-class efficiency, safety, and sustainability.
               </p>
             </div>
@@ -317,7 +317,7 @@ export default function IsoCertificationLayout() {
                 Who Can Implement It?
               </h2>
 
-              <p className="px-2 text-center text-sm leading-6 text-[#526581] md:text-base">
+              <p className="text-justify px-2 text-sm leading-6 text-[#526581] md:text-base">
                 ISO 41001 is essential for any organization responsible for managing facilities and workplace services. From corporate real estate managers and property developers to hospitals, universities, airports, and government complexes.
               </p>
             </div>

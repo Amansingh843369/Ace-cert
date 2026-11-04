@@ -256,7 +256,7 @@ export default function Iso37001Layout() {
               <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold mb-3 md:mb-4 text-white leading-tight">
                 Who Can Implement It?
               </h2>
-              <p className="text-blue-100/80 text-sm md:text-base lg:text-lg text-justify md:text-center px-2">
+              <p className="text-justify text-blue-100/80 text-sm md:text-base lg:text-lg text-justify md:text-center px-2">
                 ISO 37001 is applicable to organizations of all sizes and sectors, establishing universally recognized credentials for integrity.
               </p>
             </div>

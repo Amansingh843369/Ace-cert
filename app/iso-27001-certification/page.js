@@ -169,7 +169,7 @@ export default function IsoCertificationLayout() {
                 </h3>
 
                 {/* TEXT JUSTIFY APPLIED HERE */}
-                <p className="mt-4 text-left text-sm leading-7 text-[#526581] sm:text-base md:text-lg md:leading-8 text-justify">
+                <p className="text-justify mt-4 text-sm leading-7 text-[#526581] sm:text-base md:text-lg md:leading-8 text-justify">
                   Implementing ISO 27001 helps organizations protect against evolving cyber threats, comply with data privacy laws like GDPR, and build unshakeable trust with clients who value data security.
                 </p>
               </div>
@@ -324,7 +324,7 @@ export default function IsoCertificationLayout() {
               </h2>
 
               {/* TEXT JUSTIFY APPLIED HERE */}
-              <p className="px-2 text-center text-sm leading-7 text-[#526581] md:text-base lg:text-lg text-justify">
+              <p className="text-justify px-2 text-sm leading-7 text-[#526581] md:text-base lg:text-lg text-justify">
                 ISO 27001 is essential for any organization that handles sensitive data, from tech startups and financial institutions to healthcare providers and government bodies.
               </p>
             </div>

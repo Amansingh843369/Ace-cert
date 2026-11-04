@@ -169,7 +169,7 @@ export default function IsoCertificationLayout() {
                 </h3>
 
                 {/* TEXT JUSTIFY APPLIED HERE */}
-                <p className="mt-4 text-left text-sm leading-7 text-[#526581] sm:text-base md:text-lg md:leading-8 text-justify">
+                <p className="text-justify mt-4 text-sm leading-7 text-[#526581] sm:text-base md:text-lg md:leading-8 text-justify">
                   Implementing ISO 26000 helps organizations build trust, attract talent, and create long-term value by aligning business goals with societal needs and ethical standards.
                 </p>
               </div>
@@ -324,7 +324,7 @@ export default function IsoCertificationLayout() {
               </h2>
 
               {/* TEXT JUSTIFY APPLIED HERE */}
-              <p className="px-2 text-center text-sm leading-7 text-[#526581] md:text-base lg:text-lg text-justify">
+              <p className="text-justify px-2 text-sm leading-7 text-[#526581] md:text-base lg:text-lg text-justify">
                 ISO 26000 is designed for any organization regardless of size, location, or activity, aiming to operate in a socially responsible manner and contribute to sustainable development.
               </p>
             </div>

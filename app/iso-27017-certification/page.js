@@ -255,7 +255,7 @@ export default function IsoCertificationLayout() {
                 </span>
               </h2>
 
-              <p className="mt-3 text-sm md:text-base leading-relaxed text-slate-500 max-w-2xl mx-auto px-2 text-center">
+              <p className="text-justify mt-3 text-sm md:text-base leading-relaxed text-slate-500 max-w-2xl mx-auto px-2">
                 Achieving ISO 27017 certification proves to clients and stakeholders that your cloud services are built on a foundation of rigorous, internationally recognized security controls.
               </p>
             </div>
@@ -317,7 +317,7 @@ export default function IsoCertificationLayout() {
                 Who Can Implement It?
               </h2>
 
-              <p className="px-2 text-center text-sm leading-6 text-[#526581] md:text-base">
+              <p className="text-justify px-2 text-sm leading-6 text-[#526581] md:text-base">
                 ISO 27017 is essential for any organization acting as a Cloud Service Provider or a Cloud Service Customer. From tech startups and SaaS platforms to enterprise data centers and government cloud networks.
               </p>
             </div>

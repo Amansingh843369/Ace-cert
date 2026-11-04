@@ -166,7 +166,7 @@ export default function IsoCertificationLayout() {
                   Why is <span className="text-[#E30613]">ISO 50001</span> Important?
                 </h3>
                 
-                <p className="mt-3 text-left text-sm leading-6 text-[#526581] sm:text-base md:text-[16px] md:leading-7">
+                <p className="text-justify mt-3 text-sm leading-6 text-[#526581] sm:text-base md:text-[16px] md:leading-7">
                   Implementing ISO 50001 helps organizations systematically reduce their energy bills, minimize their carbon footprint, comply with environmental regulations, and demonstrate a strong commitment to corporate sustainability.
                 </p>
               </div>
@@ -251,7 +251,7 @@ export default function IsoCertificationLayout() {
                 </span>
               </h2>
               
-              <p className="mt-3 text-sm md:text-base leading-relaxed text-slate-500 max-w-2xl mx-auto px-2 text-center">
+              <p className="text-justify mt-3 text-sm md:text-base leading-relaxed text-slate-500 max-w-2xl mx-auto px-2">
                 Achieving ISO 50001 certification acts as a powerful differentiator, proving to regulators, investors, and customers that your organization is proactively reducing its environmental impact and operating sustainably.
               </p>
             </div>
@@ -313,7 +313,7 @@ export default function IsoCertificationLayout() {
                 Who Can Implement It?
               </h2>
               
-              <p className="px-2 text-center text-sm leading-6 text-[#526581] md:text-base">
+              <p className="text-justify px-2 text-sm leading-6 text-[#526581] md:text-base">
                 ISO 50001 is essential for any organization looking to reduce its energy costs and environmental impact. From heavy manufacturing plants and data centers to commercial buildings, hospitals, and municipal governments.
               </p>
             </div>

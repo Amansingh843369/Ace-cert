@@ -5,8 +5,15 @@
 export const navItems = [
   { name: "Home", href: "#" },
   { name: "About Us", href: "/about" },
-  { name: "Services", hasDropdown: true },
-  { name: "Our Presence", href: "#presence" },
+  { name: "Services", dropdown: "services" },
+  {
+    name: "Our Presence",
+    dropdown: "presence",
+    items: [
+      { name: "UK", href: "/contact?region=uk" },
+      { name: "International", href: "/presence-international" },
+    ],
+  },
   // { name: "Verify Certificate", href: "/verify_certificate" },
   { name: "Contact", href: "/contact" },
 ];

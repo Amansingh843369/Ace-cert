@@ -168,7 +168,7 @@ export default function IsoCertificationLayout() {
                 </h3>
 
                 {/* TEXT JUSTIFY APPLIED HERE */}
-                <p className="mt-4 text-left text-sm leading-7 text-[#526581] sm:text-base md:text-lg md:leading-8 text-justify">
+                <p className="text-justify mt-4 text-sm leading-7 text-[#526581] sm:text-base md:text-lg md:leading-8 text-justify">
                   Implementing ISO 22301 helps organizations survive crises, maintain customer trust during emergencies, and ensure that critical services remain available when they are needed most.
                 </p>
               </div>
@@ -323,7 +323,7 @@ export default function IsoCertificationLayout() {
               </h2>
 
               {/* TEXT JUSTIFY APPLIED HERE */}
-              <p className="px-2 text-center text-sm leading-7 text-[#526581] md:text-base lg:text-lg text-justify">
+              <p className="text-justify px-2 text-sm leading-7 text-[#526581] md:text-base lg:text-lg text-justify">
                 ISO 22301 is essential for any organization that cannot afford downtime, from critical infrastructure providers to digital service companies and manufacturing plants.
               </p>
             </div>

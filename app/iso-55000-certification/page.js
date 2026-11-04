@@ -255,7 +255,7 @@ export default function IsoCertificationLayout() {
                 </span>
               </h2>
 
-              <p className="mt-3 text-sm md:text-base leading-relaxed text-slate-500 max-w-2xl mx-auto px-2 text-center">
+              <p className="text-justify mt-3 text-sm md:text-base leading-relaxed text-slate-500 max-w-2xl mx-auto px-2">
                 Achieving ISO 55000 certification acts as a powerful differentiator, proving to investors, regulators, and stakeholders that your organization manages its critical assets with world-class efficiency and foresight.
               </p>
             </div>
@@ -317,7 +317,7 @@ export default function IsoCertificationLayout() {
                 Who Can Implement It?
               </h2>
 
-              <p className="px-2 text-center text-sm leading-6 text-[#526581] md:text-base">
+              <p className="text-justify px-2 text-sm leading-6 text-[#526581] md:text-base">
                 ISO 55000 is essential for any organization that relies heavily on physical or infrastructure assets to deliver value. From manufacturing plants and utility providers to transportation networks, government bodies, and facility managers.
               </p>
             </div>

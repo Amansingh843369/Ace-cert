@@ -152,7 +152,7 @@ export default function IsoCertificationLayout() {
                 <h3 id="iso13485-importance" className="text-balance text-2xl font-extrabold leading-tight tracking-tight text-[#111827] sm:text-3xl md:text-4xl lg:text-5xl">
                   Why is <span className="text-[#E30613]">ISO 13485</span> Important?
                 </h3>
-                <p className="mt-4 text-left text-sm leading-7 text-[#526581] sm:text-base md:text-lg md:leading-8 text-justify">
+                <p className="text-justify mt-4 text-sm leading-7 text-[#526581] sm:text-base md:text-lg md:leading-8 text-justify">
                   Implementing ISO 13485 is crucial for demonstrating your ability to provide medical devices and related services that consistently meet customer and applicable regulatory requirements.
                 </p>
               </div>
@@ -294,7 +294,7 @@ export default function IsoCertificationLayout() {
               <h2 className="mb-3 text-2xl font-extrabold leading-tight tracking-tight text-[#111827] sm:text-3xl md:mb-4 md:text-4xl lg:text-5xl">
                 Who Can Implement It?
               </h2>
-              <p className="px-2 text-center text-sm leading-7 text-[#526581] md:text-base lg:text-lg text-justify">
+              <p className="text-justify px-2 text-sm leading-7 text-[#526581] md:text-base lg:text-lg text-justify">
                 ISO 13485 applies to the entire medical device supply chain, ensuring quality at every step from design to disposal.
               </p>
             </div>

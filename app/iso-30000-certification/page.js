@@ -255,7 +255,7 @@ export default function IsoCertificationLayout() {
                 </span>
               </h2>
 
-              <p className="mt-3 text-sm md:text-base leading-relaxed text-slate-500 max-w-2xl mx-auto px-2 text-center">
+              <p className="text-justify mt-3 text-sm md:text-base leading-relaxed text-slate-500 max-w-2xl mx-auto px-2">
                 Achieving ISO 30000 certification acts as a powerful differentiator, proving to ship owners, regulators, and environmental groups that your recycling yard operates with the highest global standards of safety and sustainability.
               </p>
             </div>
@@ -317,7 +317,7 @@ export default function IsoCertificationLayout() {
                 Who Can Implement It?
               </h2>
 
-              <p className="px-2 text-center text-sm leading-6 text-[#526581] md:text-base">
+              <p className="text-justify px-2 text-sm leading-6 text-[#526581] md:text-base">
                 ISO 30000 is essential for any organization involved in the end-of-life management of marine vessels. From dedicated ship breaking yards and marine dismantling facilities to port authorities, scrap metal processors, and environmental regulatory bodies.
               </p>
             </div>

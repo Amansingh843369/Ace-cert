@@ -3,6 +3,12 @@ import "./globals.css";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 
+export const metadata = {
+  metadataBase: new URL("https://ace-cert.com"),
+  title: "ACE Certification",
+  description: "ISO certification, training, and advisory services",
+};
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -12,11 +18,6 @@ const geistMono = Geist_Mono({
   variable: "--font-geist-mono", 
   subsets: ["latin"],
 });
-
-export const metadata = {
-  title: "ACE Certification",
-  description: "ISO certification, training, and advisory services",
-};
 
 export default function RootLayout({ children }) {
   return (

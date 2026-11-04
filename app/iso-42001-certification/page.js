@@ -259,7 +259,7 @@ transparent, and secure use.
                 </span>
               </h2>
 
-              <p className="mt-3 text-sm md:text-base leading-relaxed text-slate-500 max-w-2xl mx-auto px-2 text-center">
+              <p className="text-justify mt-3 text-sm md:text-base leading-relaxed text-slate-500 max-w-2xl mx-auto px-2">
                 Achieving ISO 42001certification acts as a powerful differentiator, proving to regulators, partners, and users that your AI systems are governed with the highest global standards of ethics, safety, and accountability.
               </p>
             </div>
@@ -321,7 +321,7 @@ transparent, and secure use.
                 Who Can Implement It?
               </h2>
 
-              <p className="px-2 text-center text-sm leading-6 text-[#526581] md:text-base">
+              <p className="text-justify px-2 text-sm leading-6 text-[#526581] md:text-base">
                 ISO 42001is essential for any organization that develops, provides, or uses AI-based products and services. From tech startups and SaaS platforms to financial institutions, healthcare providers, and government agencies.
               </p>
             </div>

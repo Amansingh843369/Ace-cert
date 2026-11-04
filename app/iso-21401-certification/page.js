@@ -168,7 +168,7 @@ export default function IsoCertificationLayout() {
                 </h3>
 
                 {/* TEXT JUSTIFY APPLIED HERE */}
-                <p className="mt-4 text-left text-sm leading-7 text-[#526581] sm:text-base md:text-lg md:leading-8 text-justify">
+                <p className="text-justify mt-4 text-sm leading-7 text-[#526581] sm:text-base md:text-lg md:leading-8 text-justify">
                   Implementing ISO 21401 helps accommodation providers reduce their environmental footprint, attract eco-conscious travelers, and operate more efficiently while supporting local communities.
                 </p>
               </div>
@@ -323,7 +323,7 @@ export default function IsoCertificationLayout() {
               </h2>
 
               {/* TEXT JUSTIFY APPLIED HERE */}
-              <p className="px-2 text-center text-sm leading-7 text-[#526581] md:text-base lg:text-lg text-justify">
+              <p className="text-justify px-2 text-sm leading-7 text-[#526581] md:text-base lg:text-lg text-justify">
                 ISO 21401 is designed for any type of accommodation establishment, from small family-run B&Bs to large international hotel chains, aiming to operate sustainably.
               </p>
             </div>

@@ -255,7 +255,7 @@ export default function IsoCertificationLayout() {
                 </span>
               </h2>
 
-              <p className="mt-3 text-sm md:text-base leading-relaxed text-slate-500 max-w-2xl mx-auto px-2 text-center">
+              <p className="text-justify mt-3 text-sm md:text-base leading-relaxed text-slate-500 max-w-2xl mx-auto px-2">
                 Adopting ISO 31000 guidelines acts as a powerful catalyst for organizational maturity, proving to investors, regulators, and partners that your business is resilient, well-governed, and prepared for future challenges.
               </p>
             </div>
@@ -317,7 +317,7 @@ export default function IsoCertificationLayout() {
                 Who Can Implement It?
               </h2>
 
-              <p className="px-2 text-center text-sm leading-6 text-[#526581] md:text-base">
+              <p className="text-justify px-2 text-sm leading-6 text-[#526581] md:text-base">
                 ISO 31000 is universally applicable to any organization facing uncertainty. From multinational corporations and financial institutions to government bodies, healthcare networks, and growing tech startups.
               </p>
             </div>

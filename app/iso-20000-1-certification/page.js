@@ -165,7 +165,7 @@ export default function IsoCertificationLayout() {
               Why is <span className="text-[#E30613]">ISO 20000-1</span> Important?
             </h3>
             
-            <p className="mt-4 text-left text-sm leading-7 text-[#526581] sm:text-base md:text-lg md:leading-8 text-justify">
+            <p className="text-justify mt-4 text-sm leading-7 text-[#526581] sm:text-base md:text-lg md:leading-8 text-justify">
               Implementing ISO 20000-1 helps organizations align their IT services with business goals, reduce costs through efficient processes, and build trust with clients through certified service quality.
             </p>
           </div>
@@ -256,7 +256,7 @@ export default function IsoCertificationLayout() {
               </h2>
               
               {/* TEXT JUSTIFY APPLIED HERE */}
-              <p className="mt-3 md:mt-4 text-sm md:text-base lg:text-lg leading-relaxed text-slate-500 max-w-2xl mx-auto px-2 text-center">
+              <p className="text-justify mt-3 md:mt-4 text-sm md:text-base lg:text-lg leading-relaxed text-slate-500 max-w-2xl mx-auto px-2">
                 Certification demonstrates your ability to deliver managed IT services that meet customer requirements, helping you win tenders and retain clients in a competitive market.
               </p>
             </div>
@@ -319,7 +319,7 @@ export default function IsoCertificationLayout() {
               </h2>
               
               {/* TEXT JUSTIFY APPLIED HERE */}
-              <p className="px-2 text-center text-sm leading-7 text-[#526581] md:text-base lg:text-lg text-center">
+              <p className="text-justify px-2 text-sm leading-7 text-[#526581] md:text-base lg:text-lg">
                 ISO 20000-1 is designed for any organization that delivers IT services, from internal IT departments supporting employees to external MSPs serving global clients.
               </p>
             </div>

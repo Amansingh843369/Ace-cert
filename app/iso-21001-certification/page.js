@@ -167,7 +167,7 @@ export default function Iso21001CertificationLayout() {
                   Why is <span className="text-[#E30613]">ISO 21001</span> Important?
                 </h3>
 
-                <p className="mt-4 text-left text-sm leading-7 text-[#526581] sm:text-base md:text-lg md:leading-8 text-justify">
+                <p className="text-justify mt-4 text-sm leading-7 text-[#526581] sm:text-base md:text-lg md:leading-8 text-justify">
                   Implementing ISO 21001 helps educational institutions demonstrate their commitment to delivering highly effective, equitable, and personalized learning experiences while optimizing operational resources.
                 </p>
               </div>
@@ -257,7 +257,7 @@ export default function Iso21001CertificationLayout() {
                 </span>
               </h2>
 
-              <p className="mt-3 md:mt-4 text-sm md:text-base lg:text-lg leading-relaxed text-slate-500 max-w-2xl mx-auto px-2 text-center ">
+              <p className="text-justify mt-3 md:mt-4 text-sm md:text-base lg:text-lg leading-relaxed text-slate-500 max-w-2xl mx-auto px-2 ">
                 Certification distinguishes your institution globally, appealing to students, parents, and sponsors who prioritize quality education, ethical practices, and measurable academic success.
               </p>
             </div>
@@ -319,7 +319,7 @@ export default function Iso21001CertificationLayout() {
                 Who Can Implement It?
               </h2>
 
-              <p className="px-2 text-center text-sm leading-7 text-[#526581] md:text-base lg:text-lg text-center">
+              <p className="text-justify px-2 text-sm leading-7 text-[#526581] md:text-base lg:text-lg">
                 ISO 21001 is applicable to any organization that uses a curriculum to support the development of competence through teaching, learning, or research—regardless of its size, type, or delivery method.
               </p>
             </div>

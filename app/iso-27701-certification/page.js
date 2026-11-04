@@ -253,7 +253,7 @@ export default function IsoCertificationLayout() {
               </h2>
 
               {/* TEXT JUSTIFY HATA DIYA GAYA HAI */}
-              <p className="mt-3 text-sm md:text-base leading-relaxed text-slate-500 max-w-2xl mx-auto px-2 text-center">
+              <p className="text-justify mt-3 text-sm md:text-base leading-relaxed text-slate-500 max-w-2xl mx-auto px-2">
                 Achieving ISO 27701 certification acts as a powerful differentiator, proving to regulators, partners, and customers that your organization handles personal data with the highest level of care and accountability.
               </p>
             </div>
@@ -316,7 +316,7 @@ export default function IsoCertificationLayout() {
               </h2>
 
               {/* TEXT JUSTIFY HATA DIYA GAYA HAI */}
-              <p className="px-2 text-center text-sm leading-6 text-[#526581] md:text-base">
+              <p className="text-justify px-2 text-sm leading-6 text-[#526581] md:text-base">
                 ISO 27701 is essential for any organization acting as a PII Controller or Processor. From tech startups and financial institutions to healthcare providers and government bodies handling sensitive personal data.
               </p>
             </div>

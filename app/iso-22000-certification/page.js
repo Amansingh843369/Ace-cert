@@ -169,7 +169,7 @@ export default function IsoCertificationLayout() {
                 </h3>
 
                 {/* TEXT JUSTIFY APPLIED HERE */}
-                <p className="mt-4 text-left text-sm leading-7 text-[#526581] sm:text-base md:text-lg md:leading-8 text-justify">
+                <p className="text-justify mt-4 text-sm leading-7 text-[#526581] sm:text-base md:text-lg md:leading-8 text-justify">
                   Implementing ISO 22000 helps organizations demonstrate their commitment to food safety, comply with global regulations, and build lasting trust with consumers and retailers.
                 </p>
               </div>
@@ -324,7 +324,7 @@ export default function IsoCertificationLayout() {
               </h2>
 
               {/* TEXT JUSTIFY APPLIED HERE */}
-              <p className="px-2 text-center text-sm leading-7 text-[#526581] md:text-base lg:text-lg text-justify">
+              <p className="text-justify px-2 text-sm leading-7 text-[#526581] md:text-base lg:text-lg text-justify">
                 ISO 22000 applies to every organization directly or indirectly involved in the food chain, ensuring safety at every step from raw material to final consumption.
               </p>
             </div>

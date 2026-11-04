@@ -161,7 +161,7 @@ export default function IsoCertificationLayout() {
                 </h3>
 
                 {/* Added text-justify to keep styling consistent */}
-                <p className="mt-4 text-left text-sm leading-7 text-[#526581] sm:text-base md:text-lg md:leading-8 text-justify">
+                <p className="text-justify mt-4 text-sm leading-7 text-[#526581] sm:text-base md:text-lg md:leading-8 text-justify">
                   Implementing ISO 10002 helps organizations build unbreakable customer trust, resolve issues fairly, and turn negative experiences into opportunities for growth.
                 </p>
               </div>
@@ -311,7 +311,7 @@ export default function IsoCertificationLayout() {
               <h2 className="mb-3 text-2xl font-extrabold leading-tight tracking-tight text-[#111827] sm:text-3xl md:mb-4 md:text-4xl lg:text-5xl">
                 Who Can Implement It?
               </h2>
-              <p className="px-2 text-center text-sm leading-7 text-[#526581] md:text-base lg:text-lg">
+              <p className="text-justify px-2 text-sm leading-7 text-[#526581] md:text-base lg:text-lg">
                 ISO 10002 is universal. Any organization that interacts with customers and wants to improve their complaint handling process can benefit.
               </p>
             </div>

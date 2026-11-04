@@ -160,7 +160,7 @@ export default function IsoCertificationLayout() {
                 </h3>
 
                 {/* text-justify added to match your previous section */}
-                <p className="mt-4 text-left text-sm leading-7 text-[#526581] sm:text-base md:text-lg md:leading-8 text-justify">
+                <p className="text-justify mt-4 text-sm leading-7 text-[#526581] sm:text-base md:text-lg md:leading-8 text-justify">
                   Unlock global quality standards, build unbreakable customer trust, and scale your business operations efficiently. Certification is more than a badge—it&apos;s a commitment to excellence.
                 </p>
               </div>
@@ -311,7 +311,7 @@ export default function IsoCertificationLayout() {
               <h2 className="mb-3 text-2xl font-extrabold leading-tight tracking-tight text-[#111827] sm:text-3xl md:mb-4 md:text-4xl lg:text-5xl">
                 Who Can Implement It?
               </h2>
-              <p className="px-2 text-center text-sm leading-7 text-[#526581] md:text-base lg:text-lg">
+              <p className="text-justify px-2 text-sm leading-7 text-[#526581] md:text-base lg:text-lg">
                 ISO 9001 is universal. It adapts flawlessly to organizations of any size, sector, or industry globally.
               </p>
             </div>

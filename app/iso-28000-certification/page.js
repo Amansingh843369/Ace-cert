@@ -254,7 +254,7 @@ export default function IsoCertificationLayout() {
                 </span>
               </h2>
 
-              <p className="mt-3 text-sm md:text-base leading-relaxed text-slate-500 max-w-2xl mx-auto px-2 text-center">
+              <p className="text-justify mt-3 text-sm md:text-base leading-relaxed text-slate-500 max-w-2xl mx-auto px-2">
                 Achieving ISO 28000 certification acts as a powerful differentiator, proving to customs authorities, partners, and clients that your supply chain operations meet the highest global security standards.
               </p>
             </div>
@@ -316,7 +316,7 @@ export default function IsoCertificationLayout() {
                 Who Can Implement It?
               </h2>
 
-              <p className="px-2 text-center text-sm leading-6 text-[#526581] md:text-base">
+              <p className="text-justify px-2 text-sm leading-6 text-[#526581] md:text-base">
                 ISO 28000 is essential for any organization involved in the global supply chain. From manufacturers and freight forwarders to warehousing facilities, port authorities, and retail distribution networks.
               </p>
             </div>

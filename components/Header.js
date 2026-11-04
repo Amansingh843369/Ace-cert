@@ -19,8 +19,10 @@ const getService = (service) =>
 
 export default function Header() {
   const [servicesOpen, setServicesOpen] = useState(false);
+  const [presenceOpen, setPresenceOpen] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
+  const [mobilePresenceOpen, setMobilePresenceOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const headerRef = useRef(null);
 
@@ -29,15 +31,19 @@ export default function Header() {
     const onKeyDown = (event) => {
       if (event.key === "Escape") {
         setServicesOpen(false);
+        setPresenceOpen(false);
         setMobileMenuOpen(false);
         setMobileServicesOpen(false);
+        setMobilePresenceOpen(false);
       }
     };
     const onDocumentClick = (event) => {
       if (headerRef.current && !headerRef.current.contains(event.target)) {
         setServicesOpen(false);
+        setPresenceOpen(false);
         setMobileMenuOpen(false);
         setMobileServicesOpen(false);
+        setMobilePresenceOpen(false);
       }
     };
 
@@ -67,6 +73,7 @@ export default function Header() {
   const closeMobile = () => {
     setMobileMenuOpen(false);
     setMobileServicesOpen(false);
+    setMobilePresenceOpen(false);
   };
 
   return (
@@ -97,7 +104,7 @@ export default function Header() {
           aria-label="Main Navigation"
         >
           {navItems.map((item) =>
-            item.hasDropdown ? (
+            item.dropdown === "services" ? (
               <div key={item.name} className="relative flex items-center">
                 <button
                   type="button"
@@ -117,7 +124,7 @@ export default function Header() {
                     }`}
                     aria-hidden="true"
                   />
-                  {servicesOpen && (
+                    {servicesOpen && (
                     <span className="absolute bottom-0 left-0 w-full h-0.5 bg-red-600 rounded-full" />
                   )}
                 </button>
@@ -177,6 +184,31 @@ export default function Header() {
                 </div>
               </div>
             ) : (
+              item.dropdown === "presence" ? (
+                <div key={item.name} className="relative flex items-center">
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setPresenceOpen((open) => !open);
+                      setServicesOpen(false);
+                    }}
+                    aria-expanded={presenceOpen}
+                    aria-controls="desktop-presence-dropdown"
+                    aria-haspopup="true"
+                    className={`flex items-center gap-1.5 font-bold text-sm xl:text-base transition-colors py-2 cursor-pointer ${presenceOpen ? "text-red-600" : "text-slate-800 hover:text-red-600"}`}
+                  >
+                    {item.name}
+                    <ChevronDown size={16} className={`transition-transform duration-300 ${presenceOpen ? "rotate-180 text-red-600" : ""}`} aria-hidden="true" />
+                  </button>
+                  <div id="desktop-presence-dropdown" className={`absolute left-1/2 top-full z-50 mt-3 w-56 -translate-x-1/2 rounded-xl border border-slate-200 bg-white p-2 shadow-xl transition-all ${presenceOpen ? "visible translate-y-0 opacity-100" : "invisible -translate-y-2 opacity-0"}`}>
+                    {item.items.map((option) => (
+                      <Link key={option.name} href={option.href} onClick={() => setPresenceOpen(false)} className="block rounded-lg px-4 py-3 text-sm font-semibold text-slate-700 transition-colors hover:bg-red-50 hover:text-red-700">
+                        {option.name}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              ) : (
               <Link
                 key={item.name}
                 href={item.href || "/"}
@@ -185,6 +217,7 @@ export default function Header() {
                 {item.name}
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-red-600 transition-all duration-300 group-hover:w-full" />
               </Link>
+              )
             )
           )}
         </nav>
@@ -220,7 +253,7 @@ export default function Header() {
         >
           <nav aria-label="Mobile Navigation" className="flex flex-col gap-1">
             {navItems.map((item) =>
-              item.hasDropdown ? (
+              item.dropdown === "services" ? (
                 <div key={item.name} className="border-b border-slate-100 pb-2">
                   <button
                     type="button"
@@ -282,6 +315,28 @@ export default function Header() {
                           )}
                         </div>
                     ))}
+                    </div>
+                  )}
+                </div>
+              ) : item.dropdown === "presence" ? (
+                <div key={item.name} className="border-b border-slate-100 pb-2">
+                  <button
+                    type="button"
+                    aria-expanded={mobilePresenceOpen}
+                    aria-controls="mobile-presence-dropdown"
+                    onClick={() => setMobilePresenceOpen((open) => !open)}
+                    className="w-full flex items-center justify-between text-base font-bold text-slate-900 py-3 px-2 cursor-pointer"
+                  >
+                    <span>{item.name}</span>
+                    <ChevronDown size={18} className={`transition-transform duration-200 ${mobilePresenceOpen ? "rotate-180 text-red-600" : ""}`} aria-hidden="true" />
+                  </button>
+                  {mobilePresenceOpen && (
+                    <div id="mobile-presence-dropdown" className="mt-1 space-y-1 rounded-xl border border-slate-100 bg-slate-50 p-3">
+                      {item.items.map((option) => (
+                        <Link key={option.name} href={option.href} onClick={closeMobile} className="block rounded-lg px-3 py-3 text-sm font-semibold text-slate-700 transition-colors hover:bg-white hover:text-red-600">
+                          {option.name}
+                        </Link>
+                      ))}
                     </div>
                   )}
                 </div>

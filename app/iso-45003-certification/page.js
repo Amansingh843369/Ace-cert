@@ -255,7 +255,7 @@ export default function IsoCertificationLayout() {
                 </span>
               </h2>
 
-              <p className="mt-3 text-sm md:text-base leading-relaxed text-slate-500 max-w-2xl mx-auto px-2 text-center">
+              <p className="text-justify mt-3 text-sm md:text-base leading-relaxed text-slate-500 max-w-2xl mx-auto px-2">
                 Achieving ISO 45003 certification acts as a powerful differentiator, proving to employees, partners, and stakeholders that your organization genuinely prioritizes mental well-being and psychological safety.
               </p>
             </div>
@@ -317,7 +317,7 @@ export default function IsoCertificationLayout() {
                 Who Can Implement It?
               </h2>
 
-              <p className="px-2 text-center text-sm leading-6 text-[#526581] md:text-base">
+              <p className="text-justify px-2 text-sm leading-6 text-[#526581] md:text-base">
                 ISO 45003 is essential for any organization that wants to proactively manage psychosocial risks and support employee mental health. From corporate offices and healthcare facilities to schools, manufacturing plants, and government agencies.
               </p>
             </div>
