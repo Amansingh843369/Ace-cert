@@ -34,6 +34,31 @@ const ISO_STANDARDS = [
   { code: 'ISO 45003', title: 'Psychological Health & Safety at Work', href: '/iso-45003-certification' },
   { code: 'ISO 50001', title: 'Energy Management Systems', href: '/iso-50001-certification' },
   { code: 'ISO 55000', title: 'Asset Management', href: '/iso-55000-certification' },
+  // Additional certification cards from the linked reference page.
+  // Existing ACE-CERT cards above are intentionally retained as-is.
+  { code: 'ISO 22716', title: 'Cosmetics Good Manufacturing Practices', href: '/contact?standard=ISO%2022716', type: 'ISO STANDARD' },
+  { code: 'ISO 24161', title: 'Waste Collection & Transportation Management', href: '/contact?standard=ISO%2024161', type: 'ISO STANDARD' },
+  { code: 'ISO 27002', title: 'Information Security Controls', href: '/contact?standard=ISO%2027002', type: 'ISO STANDARD' },
+  { code: 'ISO 29001', title: 'Oil, Gas & Petrochemical Quality Management', href: '/contact?standard=ISO%2029001', type: 'ISO STANDARD' },
+  { code: 'ISO 55001', title: 'Asset Management System', href: '/contact?standard=ISO%2055001', type: 'ISO STANDARD' },
+  { code: 'IATF 16949', title: 'Automotive Quality Management System', href: '/contact?standard=IATF%2016949', type: 'ISO STANDARD' },
+  { code: 'FSSC 22000', title: 'Food Safety System Certification', href: '/contact?standard=FSSC%2022000', type: 'FOOD SAFETY' },
+  { code: 'HACCP', title: 'Hazard Analysis & Critical Control Points', href: '/haccp', type: 'FOOD SAFETY' },
+  { code: 'HALAL', title: 'Halal Certification', href: '/halal', type: 'CERTIFICATION' },
+  { code: 'GMP', title: 'Good Manufacturing Practices', href: '/contact?standard=GMP', type: 'PRACTICE' },
+  { code: 'GLP', title: 'Good Laboratory Practices', href: '/contact?standard=GLP', type: 'PRACTICE' },
+  { code: 'GDP', title: 'Good Distribution Practices', href: '/gdp', type: 'PRACTICE' },
+  { code: 'GWP', title: 'Good Warehousing Practices', href: '/contact?standard=GWP', type: 'PRACTICE' },
+  { code: 'GHP', title: 'Good Hygiene Practices', href: '/contact?standard=GHP', type: 'PRACTICE' },
+  { code: 'GDPR', title: 'General Data Protection Regulation Compliance', href: '/contact?standard=GDPR', type: 'COMPLIANCE' },
+  { code: 'SOC 2 Type 1', title: 'Service Organization Controls — Type 1', href: '/contact?standard=SOC%202%20Type%201', type: 'COMPLIANCE' },
+  { code: 'SOC 2 Type 2', title: 'Service Organization Controls — Type 2', href: '/contact?standard=SOC%202%20Type%202', type: 'COMPLIANCE' },
+  { code: 'PCI DSS', title: 'Payment Card Industry Data Security Standard', href: '/contact?standard=PCI%20DSS', type: 'COMPLIANCE' },
+  { code: 'VAPT', title: 'Vulnerability Assessment & Penetration Testing', href: '/contact?standard=VAPT', type: 'COMPLIANCE' },
+  { code: 'CMMI', title: 'Capability Maturity Model Integration', href: '/contact?standard=CMMI', type: 'FRAMEWORK' },
+  { code: 'DPDPA India', title: 'Digital Personal Data Protection Act Compliance', href: '/contact?standard=DPDPA%20India', type: 'COMPLIANCE' },
+  { code: 'HIPAA', title: 'Health Information Privacy Compliance', href: '/contact?standard=HIPAA', type: 'COMPLIANCE' },
+  { code: 'CE Marking', title: 'European Product Conformity', href: '/contact?standard=CE%20Marking', type: 'REGULATORY' },
 ];
 
 export default function ManagementCertificationDirectory() {
@@ -41,7 +66,7 @@ export default function ManagementCertificationDirectory() {
   const filteredStandards = useMemo(() => {
     const normalizedQuery = query.trim().toLowerCase();
     if (!normalizedQuery) return ISO_STANDARDS;
-    return ISO_STANDARDS.filter(({ code, title }) => `${code} ${title}`.toLowerCase().includes(normalizedQuery));
+    return ISO_STANDARDS.filter(({ code, title, type = 'ISO STANDARD' }) => `${code} ${title} ${type}`.toLowerCase().includes(normalizedQuery));
   }, [query]);
 
   return (
@@ -66,11 +91,11 @@ export default function ManagementCertificationDirectory() {
 
         {filteredStandards.length > 0 ? (
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5 lg:grid-cols-3">
-            {filteredStandards.map(({ code, title, href }) => (
+            {filteredStandards.map(({ code, title, href, type = 'ISO STANDARD' }) => (
               <Link key={code} href={href} className="group min-w-0 overflow-hidden rounded-2xl border border-red-100 bg-white shadow-sm transition hover:-translate-y-1 hover:border-red-300 hover:shadow-lg focus:outline-none focus:ring-4 focus:ring-red-200">
                 <div className="flex h-20 items-center justify-between bg-gradient-to-r from-red-700 to-red-600 px-4 sm:h-24 sm:px-6">
                   <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-white text-red-700 shadow-md sm:h-14 sm:w-14 sm:rounded-2xl"><Settings2 aria-hidden="true" className="h-6 w-6 sm:h-7 sm:w-7" /></span>
-                  <span className="rounded-lg bg-white px-2.5 py-1.5 text-[10px] font-bold tracking-wide text-red-700 sm:px-3 sm:py-2 sm:text-xs">ISO STANDARD</span>
+                  <span className="rounded-lg bg-white px-2.5 py-1.5 text-[10px] font-bold tracking-wide text-red-700 sm:px-3 sm:py-2 sm:text-xs">{type}</span>
                 </div>
                 <div className="flex min-h-28 items-start justify-between gap-3 p-4 sm:min-h-32 sm:gap-4 sm:p-6">
                   <div className="min-w-0"><h2 className="break-words text-lg font-extrabold text-slate-900 sm:text-xl">{code}</h2><p className="mt-2 text-sm leading-6 text-slate-600 sm:text-base">{title}</p></div>
