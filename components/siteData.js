@@ -10,7 +10,6 @@ export const navItems = [
     name: "Our Presence",
     dropdown: "presence",
     items: [
-      { name: "UK", href: "/contact?region=uk" },
       { name: "International", href: "/presence-international" },
     ],
   },
@@ -28,12 +27,6 @@ export const serviceGroups = [
     title: "Management Certification",
     href: "/management-certification",
     icon: "badge",
-    items: [],
-  },
-  {
-    title: "Training",
-    href: "/training",
-    icon: "file",
     items: [],
   },
 ];

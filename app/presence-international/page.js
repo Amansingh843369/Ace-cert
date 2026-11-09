@@ -1,5 +1,6 @@
 import Link from 'next/link';
-import { ArrowRight, Globe2, ShieldCheck, Target, UsersRound, MapPin, Check, MoveUpRight } from 'lucide-react';
+import { ArrowRight, Globe2, ShieldCheck, Target, UsersRound, MapPin, Check, MoveUpRight, Compass } from 'lucide-react';
+import CountryDestinationPicker from './CountryDestinationPicker';
 
 export const metadata = {
   title: 'International ISO Certification Support | ACE-CERT',
@@ -31,6 +32,39 @@ const countries = [
   'Netherlands', 'New Zealand', 'Nigeria', 'Norway', 'Oman', 'Pakistan', 'Panama', 'Peru', 'Philippines', 'Poland',
   'Portugal', 'Qatar', 'Romania', 'Saudi Arabia', 'Serbia', 'Singapore', 'South Africa', 'South Korea', 'Spain', 'Sri Lanka',
   'Sweden', 'Switzerland', 'Taiwan', 'Thailand', 'Türkiye', 'Ukraine', 'United Arab Emirates', 'United Kingdom', 'United States', 'Vietnam',
+];
+
+const countryRegions = [
+  {
+    name: 'Africa',
+    description: 'North, West, East and Southern Africa',
+    countries: ['Algeria', 'Angola', 'Benin', 'Cameroon', 'Egypt', 'Ethiopia', 'Ghana', 'Kenya', 'Mauritius', 'Morocco', 'Nigeria', 'South Africa'],
+  },
+  {
+    name: 'Asia & Middle East',
+    description: 'South, East, Southeast and West Asia',
+    countries: ['Afghanistan', 'Azerbaijan', 'Bahrain', 'Bangladesh', 'Bhutan', 'Brunei', 'Cambodia', 'China', 'Hong Kong', 'Indonesia', 'Iraq', 'Israel', 'Japan', 'Jordan', 'Kazakhstan', 'Kuwait', 'Lebanon', 'Malaysia', 'Maldives', 'Mongolia', 'Nepal', 'Oman', 'Pakistan', 'Philippines', 'Qatar', 'Saudi Arabia', 'Singapore', 'South Korea', 'Sri Lanka', 'Taiwan', 'Thailand', 'United Arab Emirates', 'Vietnam'],
+  },
+  {
+    name: 'Europe',
+    description: 'European countries and markets',
+    countries: ['Albania', 'Andorra', 'Armenia', 'Austria', 'Belgium', 'Bulgaria', 'Croatia', 'Cyprus', 'Czechia', 'Denmark', 'Estonia', 'Finland', 'France', 'Georgia', 'Germany', 'Greece', 'Hungary', 'Iceland', 'Ireland', 'Italy', 'Latvia', 'Lithuania', 'Luxembourg', 'Malta', 'Monaco', 'Netherlands', 'Norway', 'Poland', 'Portugal', 'Romania', 'Serbia', 'Spain', 'Sweden', 'Switzerland', 'Türkiye', 'Ukraine', 'United Kingdom'],
+  },
+  {
+    name: 'North America',
+    description: 'North American markets',
+    countries: ['Bahamas', 'Barbados', 'Belize', 'Canada', 'Costa Rica', 'Dominican Republic', 'Mexico', 'Panama', 'United States'],
+  },
+  {
+    name: 'South America',
+    description: 'South American markets',
+    countries: ['Argentina', 'Bolivia', 'Brazil', 'Chile', 'Colombia', 'Ecuador', 'Peru'],
+  },
+  {
+    name: 'Oceania',
+    description: 'Australia, New Zealand and Pacific markets',
+    countries: ['Australia', 'New Zealand'],
+  },
 ];
 
 const benefits = [
@@ -101,14 +135,7 @@ export default function InternationalPresencePage() {
             <div className="max-w-3xl"><p className="text-xs font-bold uppercase tracking-[.18em] text-red-700 sm:text-sm">Our international presence</p><h2 id="markets-heading" className="mt-3 text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl">Wherever you operate, <span className="text-red-700">let’s talk.</span></h2><p className="mt-4 text-sm leading-7 text-slate-600 sm:text-base">ACE-CERT works with organizations across a broad range of markets. Find your country below, then get in touch to confirm availability for your location and certification scope.</p></div>
             <div className="inline-flex w-fit items-center gap-3 rounded-xl border border-slate-200 bg-white px-4 py-3 shadow-sm"><Globe2 className="h-5 w-5 text-red-600" /><span><strong className="block text-lg leading-5 text-slate-900">{countries.length}</strong><span className="text-xs text-slate-500">markets listed</span></span></div>
           </div>
-          <div className="mt-7 rounded-2xl border border-red-100 bg-white p-4 shadow-[0_20px_60px_rgba(153,27,27,.07)] sm:p-7">
-            <div className="mb-4 flex items-center gap-2 text-sm font-semibold text-slate-800"><MapPin className="h-4 w-4 text-red-600" /> Countries and territories</div>
-            <ul className="grid grid-cols-2 gap-2 sm:grid-cols-3 sm:gap-3 md:grid-cols-4 lg:grid-cols-5">
-              {countries.map((country) => (
-                <li key={country} className="group flex min-h-12 min-w-0 items-center gap-2.5 rounded-lg border border-transparent bg-slate-50 px-3 py-2.5 text-xs font-medium leading-5 text-slate-700 transition duration-200 hover:border-red-200 hover:bg-white hover:shadow-sm sm:text-sm"><span aria-hidden="true" className="h-2 w-2 shrink-0 rounded-full bg-red-500 ring-4 ring-red-50 transition group-hover:bg-red-700" /><span className="min-w-0 break-words">{country}</span></li>
-              ))}
-            </ul>
-          </div>
+          <CountryDestinationPicker countries={countries} regions={countryRegions} />
         </div>
       </section>
 
