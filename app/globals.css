@@ -28,6 +28,45 @@ html {
   scroll-behavior: smooth;
 }
 
+@keyframes presence-float {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(0, -10px, 0);
+  }
+}
+
+@keyframes presence-orbit {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.presence-float {
+  animation: presence-float 6s ease-in-out infinite;
+}
+
+.presence-float-delayed {
+  animation: presence-float 7s ease-in-out 1.2s infinite;
+}
+
+.presence-orbit {
+  animation: presence-orbit 36s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .presence-float,
+  .presence-float-delayed,
+  .presence-orbit {
+    animation: none;
+  }
+}
+
 body {
   margin: 0;
   min-height: 100vh;
