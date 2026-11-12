@@ -1,94 +1,145 @@
 "use client";
 
 import React from "react";
-import { Check, ShieldCheck } from "lucide-react";
+import { Award, CheckCircle2, Globe, ShieldCheck, Target } from "lucide-react";
 
 const features = [
   {
     id: 1,
-    title: "The ACE-CERT Promise",
-    text: "The name ACE stands for our core promise: helping clients Achieve Compliance & Excellence at every operational level with precision.",
+    icon: Award,
+    title: "The ACE Name",
+    text: "We live up to our name, ensuring you ace your certification journey.",
   },
   {
     id: 2,
+    icon: CheckCircle2,
     title: "Clarity & Simplicity",
-    text: "International standards are the foundation of market trust. We simplify complex ISO benchmarks to protect consumers and empower your business growth.",
+    text: "We demystify complex standards, making them accessible and actionable.",
   },
   {
     id: 3,
-    title: "Practical & Industry Focused",
-    text: "Our lead auditors are seasoned industry professionals delivering realistic, high-impact ISO certification solutions tailored to your daily operations.",
+    icon: Target,
+    title: "Practical Focus",
+    text: "Our auditors and trainers provide practical, not just theoretical, solutions.",
   },
   {
     id: 4,
-    title: "Global Recognition",
-    text: "Get ISO certificates that open doors worldwide, delivered through adaptive, fast-acting, and dedicated local client support.",
+    icon: Globe,
+    title: "Global Recognition, Local Service",
+    text: "Our certifications are internationally recognized, with a personalized and responsive approach.",
   },
 ];
 
 export default function FeaturesSection() {
   return (
-    <section 
-      id="features" 
+    <section
+      id="features"
       aria-labelledby="features-heading"
-      className="py-12 sm:py-16 md:py-24 bg-slate-50 font-sans relative overflow-hidden"
+      className="relative overflow-hidden bg-white py-12 font-sans sm:py-16 lg:py-20"
     >
-      {/* Background Decor (Red & Neutral Accent) */}
-      <div className="absolute -top-24 -right-24 w-96 h-96 bg-red-100/40 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-red-50/60 rounded-full blur-3xl pointer-events-none" />
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-red-50/70 via-white to-slate-50" />
+      <div aria-hidden="true" className="pointer-events-none absolute inset-0 z-0">
+        <span className="absolute left-[9%] top-8 h-2 w-2 rounded-full bg-red-400" />
+        <span className="absolute right-[15%] top-12 h-2 w-2 rounded-full bg-amber-300" />
+        <svg
+          viewBox="0 0 64 64"
+          fill="none"
+          className="presence-float absolute left-[6%] top-[38%] hidden h-12 w-12 sm:block"
+        >
+          <path
+            d="M12 12 53 17 28 53 12 12Z"
+            stroke="url(#features-triangle-gradient)"
+            strokeWidth="5"
+            strokeLinejoin="round"
+          />
+          <defs>
+            <linearGradient id="features-triangle-gradient" x1="12" y1="12" x2="53" y2="53" gradientUnits="userSpaceOnUse">
+              <stop stopColor="#20C8C5" />
+              <stop offset="1" stopColor="#6675EF" />
+            </linearGradient>
+          </defs>
+        </svg>
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          className="presence-float-delayed absolute bottom-[18%] right-[8%] h-6 w-6 text-blue-500"
+        >
+          <path
+            d="M12 4v16M4 12h16"
+            stroke="currentColor"
+            strokeWidth="3.5"
+            strokeLinecap="round"
+          />
+        </svg>
+        <span className="absolute bottom-[30%] right-[22%] h-1.5 w-1.5 rounded-full bg-blue-500/70" />
+      </div>
 
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl relative z-10">
-        
-        {/* Top Section: Heading and Description */}
-        <div className="flex flex-col lg:flex-row justify-between items-start gap-6 sm:gap-8 lg:gap-16 mb-10 sm:mb-14 lg:mb-20">
-          <div className="w-full lg:w-1/2">
-            
-            {/* Badge */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-red-50 border border-red-100 text-red-700 text-xs font-bold uppercase tracking-widest shadow-sm mb-4">
-              <ShieldCheck className="w-4 h-4 text-red-600" aria-hidden="true" />
-              <span>Why Choose ACE</span>
-            </div>
-
-            <h2 
-              id="features-heading" 
-              className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] font-extrabold text-slate-900 leading-[1.15] tracking-tight"
-            >
-              Elevating Standards <br className="hidden sm:inline" />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-red-700">
-                & Empowering Business.
-              </span>
-            </h2>
+      <div className="container relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        {/* Section Header */}
+        <div className="mx-auto mb-10 max-w-3xl text-center sm:mb-12 lg:mb-14">
+          <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-red-100 bg-red-50 px-4 py-1.5 text-[11px] font-bold uppercase tracking-wider text-red-700 sm:text-xs">
+            <ShieldCheck className="w-3.5 h-3.5" />
+            <span>Why Choose ACE</span>
           </div>
-          
-          <div className="w-full lg:w-1/2 lg:pt-10">
-            <p className="text-base sm:text-lg md:text-xl text-slate-600 leading-relaxed font-normal sm:font-medium">
-              We don&apos;t just provide ISO certificates; we partner with you to build a foundation of trust, operational excellence, and global compliance that drives sustainable enterprise growth.
-            </p>
-          </div>
+          <h2
+            id="features-heading"
+            className="mb-4 text-4xl font-bold leading-[1.15] tracking-tight text-slate-900 sm:text-5xl"
+          >
+            Why <span className="text-red-600">Choose ACE?</span>
+          </h2>
+          <p className="mx-auto max-w-2xl text-base leading-relaxed text-slate-600 sm:text-lg">
+            We partner with you to build lasting trust, operational excellence,
+            and global compliance — not just hand you a certificate.
+          </p>
         </div>
 
-        {/* Bottom Section: Features Grid */}
-        <div className="grid sm:grid-cols-2 gap-6 sm:gap-8 md:gap-10 lg:gap-12">
-          {features.map((feature) => (
-            <article 
-              key={feature.id} 
-              className="flex flex-col p-6 sm:p-8 bg-white rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-md hover:border-red-200 transition-all duration-300 group"
-            >
-              <div className="flex items-center gap-3.5 mb-3.5">
-                <div className="flex-shrink-0 w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-red-50 flex items-center justify-center group-hover:bg-red-600 transition-colors duration-300">
-                  <Check className="w-5 h-5 sm:w-6 sm:h-6 text-red-600 group-hover:text-white transition-colors duration-300" strokeWidth={3} aria-hidden="true" />
+        {/* Feature Cards */}
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5 lg:grid-cols-4 lg:gap-6">
+          {features.map((feature) => {
+            const Icon = feature.icon;
+            const isFeatured = feature.id === 1;
+            return (
+              <article
+                key={feature.id}
+                className={`group relative flex min-h-[270px] flex-col overflow-hidden rounded-3xl border p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl sm:p-7 ${
+                  isFeatured
+                    ? "border-[#1c2448] bg-[#1c2448] text-white hover:shadow-[#1c2448]/20"
+                    : "border-slate-200 bg-white text-slate-900 hover:border-red-200"
+                }`}
+              >
+                <div
+                  aria-hidden="true"
+                  className={`pointer-events-none absolute -right-10 -top-10 h-32 w-32 rounded-full ${
+                    isFeatured ? "bg-white/5" : "bg-red-50/70"
+                  }`}
+                />
+                <div
+                  className={`relative z-10 mb-7 flex h-16 w-16 items-center justify-center rounded-2xl transition-colors ${
+                    isFeatured
+                      ? "bg-white/10 text-white group-hover:bg-white group-hover:text-[#1c2448]"
+                      : "bg-red-50 text-red-600 group-hover:bg-red-600 group-hover:text-white"
+                  }`}
+                >
+                  <Icon className="h-7 w-7" strokeWidth={1.7} aria-hidden="true" />
                 </div>
-                <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-slate-900 group-hover:text-red-600 transition-colors">
+                <h3
+                  className={`relative z-10 text-lg font-bold tracking-tight transition-colors sm:text-xl ${
+                    isFeatured ? "text-white" : "text-slate-900 group-hover:text-red-600"
+                  }`}
+                >
                   {feature.title}
                 </h3>
-              </div>
-              <p className="text-sm sm:text-base text-slate-600 leading-relaxed sm:pl-[3.25rem]">
-                {feature.text}
-              </p>
-            </article>
-          ))}
+                <p
+                  className={`relative z-10 mt-3 text-sm leading-relaxed sm:text-base ${
+                    isFeatured ? "text-white/75" : "text-slate-600"
+                  }`}
+                >
+                  {feature.text}
+                </p>
+              </article>
+            );
+          })}
         </div>
-        
       </div>
     </section>
   );

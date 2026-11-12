@@ -111,12 +111,6 @@ export default function AboutPage() {
               </p>
             </div>
 
-            <div className="pt-4">
-              <button className="px-8 py-3 bg-red-600 text-white font-semibold rounded-full shadow-lg shadow-red-200 hover:bg-red-700 hover:shadow-red-300 transition-all duration-300 transform hover:-translate-y-1">
-                Know More
-              </button>
-            </div>
-
           </div>
         </div>
       </section>
@@ -213,7 +207,7 @@ export default function AboutPage() {
               
               <div className="space-y-4 sm:space-y-5 text-base sm:text-lg text-gray-600 leading-relaxed text-justify">
                 <p>
-                  At <strong className="text-gray-900">ACERT Certification</strong>, our purpose is to bridge the gap between complex international standards and everyday business success. We believe that compliance shouldn't be a bureaucratic hurdle, but a <strong className="text-red-600">strategic catalyst for growth.</strong>
+                  At <strong className="text-gray-900">ACERT Certification</strong>, our purpose is to bridge the gap between complex international standards and everyday business success. We believe that compliance &apos;shouldn&apos;t&apos; be a bureaucratic hurdle, but a <strong className="text-red-600">strategic catalyst for growth.</strong>
                 </p>
               </div>
             </div>

@@ -1,148 +1,103 @@
 "use client";
 
 import React from "react";
-import { Trophy, Users, Globe, ShieldCheck, Play, ArrowRight } from "lucide-react";
-
-const stats = [
-  {
-    id: 1,
-    icon: Trophy,
-    number: "3+ Years",
-    label: "Industry Experience",
-    iconColor: "text-red-600",
-  },
-  {
-    id: 2,
-    icon: Users,
-    number: "240+",
-    label: "Happy Clients",
-    iconColor: "text-red-600",
-  },
-  {
-    id: 3,
-    icon: Globe,
-    number: "Global",
-    label: "Standards Coverage",
-    iconColor: "text-red-600",
-  },
-];
+import Image from "next/image";
+import Link from "next/link";
+import { Trophy, ShieldCheck, ArrowRight } from "lucide-react";
 
 export default function AboutSection() {
   return (
-    <section 
-      id="about" 
+    <section
+      id="about"
       aria-label="About ACE Certification Services"
-      className="py-12 sm:py-16 md:py-20 lg:py-24 bg-white overflow-hidden font-sans"
+      className="relative bg-white py-12 font-sans overflow-hidden sm:py-16 lg:py-16"
     >
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
-        <div className="flex flex-col lg:flex-row gap-10 lg:gap-8 items-center">
-          
-          {/* --- COLUMN 1: STATS (Top on Mobile/Tablet, Left on Desktop) --- */}
-          <div className="w-full lg:w-2/12 border-b lg:border-b-0 lg:border-r border-slate-100 pb-8 lg:pb-0 pr-0 lg:pr-6">
-            <div className="grid grid-cols-3 lg:grid-cols-1 gap-4 sm:gap-6 lg:gap-10 text-center">
-              {stats.map((stat) => {
-                const Icon = stat.icon;
-                return (
-                  <div key={stat.id} className="flex flex-col items-center group cursor-default">
-                    <div className="mb-2 sm:mb-3 p-2.5 sm:p-3 bg-red-50 rounded-xl group-hover:bg-red-100/80 transform group-hover:-translate-y-1 transition-all duration-300">
-                      <Icon className={`w-6 h-6 sm:w-7 sm:h-7 ${stat.iconColor}`} strokeWidth={1.5} />
-                    </div>
-                    <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-slate-900 mb-1 tracking-tight group-hover:text-red-600 transition-colors">
-                      {stat.number}
-                    </h3>
-                    <p className="text-[10px] sm:text-xs md:text-sm text-slate-500 font-semibold uppercase tracking-wider leading-tight">
-                      {stat.label}
-                    </p>
-                  </div>
-                );
-              })}
-            </div>
+      {/* Decorative gradient background */}
+      <div className="absolute -inset-1 bg-gradient-to-br from-red-50 via-white to-red-50/30 pointer-events-none" />
+      <div className="absolute top-[-10%] left-[-10%] w-[500px] h-[500px] bg-red-100/30 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute bottom-[-10%] right-[-10%] w-[600px] h-[600px] bg-red-50/20 rounded-full blur-[140px] pointer-events-none" />
+
+      <div className="relative container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl z-10">
+        {/* Section Header */}
+        <div className="mx-auto mb-12 max-w-3xl text-center sm:mb-14 lg:mb-16">
+          <div className="mb-5 inline-flex items-center gap-2.5 rounded-full bg-gradient-to-r from-red-600 to-red-500 px-5 py-2 text-[11px] font-bold uppercase tracking-wider text-white shadow-lg shadow-red-600/30 sm:mb-6 sm:text-xs">
+            <ShieldCheck className="w-4 h-4" />
+            <span>About ACE Certification</span>
           </div>
-
-          {/* --- COLUMN 2: IMAGE COLLAGE (Middle) --- */}
-          <div className="w-full lg:w-5/12 relative h-[360px] xs:h-[420px] sm:h-[480px] md:h-[520px] lg:h-[560px] flex items-center justify-center my-4 lg:my-0">
-            
-            {/* Background Accent Shapes (Red & White Theme) */}
-            <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-0">
-              <div className="w-28 sm:w-36 md:w-48 h-full bg-red-600/5 absolute rounded-3xl transform -rotate-3"></div>
-              <div className="w-full h-32 sm:h-44 md:h-56 bg-red-500/10 absolute rounded-3xl transform rotate-2"></div>
-            </div>
-
-            {/* Top Right Image */}
-            <img
-              src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
-              alt="ACE Certification team discussing ISO compliance strategies"
-              loading="lazy"
-              className="absolute top-0 right-0 w-[58%] h-[180px] xs:h-[210px] sm:h-[240px] md:h-[270px] object-cover rounded-xl shadow-md sm:shadow-lg z-10 hover:scale-105 transition-transform duration-500"
-            />
-            
-            {/* Middle Left Image */}
-            <img
-              src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
-              alt="ISO Certification audit and consulting session"
-              loading="lazy"
-              className="absolute top-[22%] left-0 w-[54%] h-[160px] xs:h-[190px] sm:h-[220px] md:h-[250px] object-cover rounded-xl shadow-md sm:shadow-lg z-20 hover:scale-105 transition-transform duration-500"
-            />
-            
-            {/* Bottom Right Image */}
-            <img
-              src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
-              alt="Global standards and business quality management team"
-              loading="lazy"
-              className="absolute bottom-2 sm:bottom-4 right-[8%] w-[48%] h-[150px] xs:h-[170px] sm:h-[200px] md:h-[230px] object-cover rounded-xl shadow-md sm:shadow-lg z-10 hover:scale-105 transition-transform duration-500"
-            />
-
-            {/* Central Play Button */}
-            <button 
-              type="button"
-              aria-label="Play ACE Certification Introduction Video"
-              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-30 w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 bg-white rounded-full flex items-center justify-center shadow-[0_8px_30px_rgba(0,0,0,0.15)] hover:scale-110 hover:shadow-[0_15px_40px_rgba(220,38,38,0.25)] transition-all duration-300 group cursor-pointer"
-            >
-              <Play className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 text-red-600 ml-1 sm:ml-2 group-hover:text-red-700 transition-colors" fill="currentColor" />
-            </button>
-          </div>
-
-          {/* --- COLUMN 3: TEXT CONTENT (Right Side) --- */}
-          <div className="w-full lg:w-5/12 pl-0 lg:pl-6 mt-4 lg:mt-0">
-            
-            {/* Badge (Red & White) */}
-            <div className="inline-flex items-center space-x-2 bg-red-600 text-white px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full text-[11px] sm:text-xs font-bold tracking-wider uppercase shadow-md shadow-red-600/20 mb-4 sm:mb-6">
-              <ShieldCheck className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-white" />
-              <span>About ACE Certification</span>
-            </div>
-            
-            {/* Heading */}
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-slate-900 mb-4 sm:mb-6 leading-tight">
-              Achieve Compliance & <br className="hidden sm:inline" />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-red-500">
-                Excellence.
-              </span>
-            </h2>
-            
-            {/* Description */}
-            <div className="space-y-4 sm:space-y-5 text-slate-600 text-sm md:text-base leading-relaxed text-left sm:text-justify">
-              <p>
-                <strong className="text-slate-900">ACE Certification Ltd.</strong> is a dedicated and client-centric professional services firm established to empower organizations of all sizes to achieve international standards of quality, safety, and efficiency.
-              </p>
-              <p>
-                The name &quot;ACE&quot; embodies our core promise: to help our clients <span className="font-bold text-red-600">Achieve Compliance & Excellence</span>. We bridge the gap between complex international standards and everyday business success.
-              </p>
-              <p>
-                Our team comprises highly experienced Lead Auditors who bring practical insights to every engagement. We believe certification is not just a trophy, but a strategic tool for <span className="font-semibold text-red-600">tangible business improvement</span>.
-              </p>
-            </div>
-            
-            {/* CTA Button */}
-            <div className="pt-6 sm:pt-8">
-              <button className="group w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-red-600 text-white px-7 py-3.5 sm:px-8 sm:py-4 rounded-xl font-bold hover:bg-red-700 transition-all duration-300 shadow-lg shadow-red-600/25 hover:shadow-red-600/35 text-sm sm:text-base cursor-pointer">
-                <span>Know More About Us</span>
-                <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
-              </button>
-            </div>
-            
-          </div>
-          
+          <h2 className="mb-5 text-4xl font-extrabold leading-tight tracking-tight text-slate-900 sm:text-5xl md:text-6xl">
+            Built on Trust.<br className="hidden sm:inline" />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-red-500">
+              Driven by Excellence.
+            </span>
+          </h2>
+          <p className="text-lg sm:text-xl text-slate-600 leading-relaxed max-w-2xl mx-auto opacity-90">
+            ACE Certification Ltd. is a client-centric professional services firm empowering organizations
+            worldwide to achieve international standards of quality, safety, and efficiency.
+          </p>
         </div>
+
+        {/* Two-Column Layout: Content | Single Image */}
+        <div className="grid grid-cols-1 items-start gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:gap-12">
+          {/* Left Column: Story + Values */}
+          <div className="relative space-y-8 lg:space-y-10">
+            <div className="relative space-y-6 lg:space-y-8">
+              <div>
+                <div className="mb-4 flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-2xl bg-red-600 flex items-center justify-center shadow-lg shadow-red-600/25">
+                    <Trophy className="w-5 h-5 text-white" />
+                  </div>
+                  <h3 className="text-2xl lg:text-3xl font-bold text-slate-900 tracking-tight">Our Story</h3>
+                </div>
+                <div className="h-[2px] w-16 bg-red-600 rounded-full" />
+              </div>
+
+              <div className="space-y-5 text-sm leading-relaxed text-slate-600 lg:space-y-6 lg:text-base">
+                <p className="leading-relaxed">
+                  <strong className="font-semibold text-slate-900">ACE Certification Ltd.</strong> is a
+                  dedicated and client-centric professional services firm established to empower
+                  organizations of all sizes to achieve international standards of quality, safety, and
+                  efficiency.
+                </p>
+                <p className="leading-relaxed">
+                  The name &quot;ACE&quot; embodies our core promise: to help our clients Achieve Compliance
+                  &amp; Excellence. We bridge the gap between complex international standards and everyday
+                  business success.
+                </p>
+                <p className="leading-relaxed">
+                  Our team comprises highly experienced Lead Auditors who bring practical insights to every
+                  engagement. We believe certification is not just a trophy, but a strategic tool for
+                  tangible business improvement.
+                </p>
+                <Link
+                  href="/about"
+                  className="group inline-flex items-center gap-2 rounded-full bg-red-600 px-5 py-3 text-sm font-bold text-white shadow-md shadow-red-600/20 transition hover:bg-red-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600"
+                >
+                  Read More
+                  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />
+                </Link>
+              </div>
+
+            </div>
+          </div>
+
+          {/* Right Column: Single Large Image */}
+          <div className="group relative aspect-[4/3] w-full overflow-hidden rounded-3xl border border-slate-200 shadow-2xl">
+            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-50/30 to-slate-50/70" />
+            <Image
+              src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=85"
+              alt="ACE Certification team discussing ISO compliance and quality standards"
+              fill
+              priority
+              sizes="(max-width: 1024px) 100vw, 600px"
+              className="object-cover object-center opacity-90 group-hover:scale-105 transition-transform duration-700"
+            />
+            <div className="absolute bottom-8 left-8 flex items-center gap-3 bg-white/95 backdrop-blur-md px-5 py-3.5 rounded-2xl shadow-xl border border-white/60 animate-fade-in-up">
+              <div className="w-3 h-3 rounded-full bg-red-500 animate-pulse" />
+              <span className="text-sm font-bold text-slate-900">Trusted Worldwide</span>
+            </div>
+          </div>
+        </div>
+
       </div>
     </section>
   );

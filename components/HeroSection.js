@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { ArrowRight } from "lucide-react";
 
 // --- Typewriter Component ---
-const typewriterPhrases = ["For Security", "For Trust", "For Excellence"];
+const typewriterPhrases = ["For Achieve", "For Compliance", "For Excellence", "For Trust"];
 
 function TypewriterText() {
   const [phraseIndex, setPhraseIndex] = useState(0);
@@ -101,7 +101,7 @@ export default function HeroSection() {
               <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-red-600"></span>
             </span>
             <span className="text-xs sm:text-sm font-bold tracking-wider uppercase text-red-900">
-              Welcome to ACE
+              Welcome to ACE CERT
             </span>
           </div>
 

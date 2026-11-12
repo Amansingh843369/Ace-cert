@@ -9,7 +9,7 @@ export default function sitemap() {
     .map(([path]) => ({
       url: `${siteUrl}${path === '/' ? '' : path}`,
       changeFrequency: path === '/' ? 'weekly' : 'monthly',
-      priority: path === '/' ? 1 : path === '/management-certification' ? 0.9 : 0.7,
+      priority: path === '/' ? 1 : path === '/certification' ? 0.9 : 0.7,
     }));
 
   const standardRoutes = isoStandards.map((standard) => ({

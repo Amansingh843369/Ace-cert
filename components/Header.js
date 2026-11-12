@@ -134,8 +134,8 @@ export default function Header() {
                   id="desktop-services-dropdown"
                   className={`fixed left-1/2 ${
                     scrolled ? "top-[60px]" : "top-[72px]"
-                  } z-50 w-[560px] max-w-md -translate-x-1/2
-                    rounded-2xl border border-slate-200 bg-white p-5 sm:p-6
+                  } z-50 w-full max-w-sm sm:w-[440px] -translate-x-1/2
+                    rounded-2xl border border-slate-200 bg-white p-4 sm:p-6
                     transition-all duration-300 origin-top
                     ${
                       servicesOpen
@@ -147,18 +147,20 @@ export default function Header() {
                     {serviceGroups.map((group) => (
                       <React.Fragment key={group.title}>
                         {group.href && (
-                          <Link
-                            href={group.href}
-                            onClick={() => setServicesOpen(false)}
-                            className="flex items-center gap-3 pb-3 border-b border-slate-100 last:border-0"
-                          >
-                            <div className="p-2 rounded-xl bg-red-50 flex items-center justify-center shrink-0">
-                              <ServiceIcon type={group.icon} />
-                            </div>
-                            <h3 className="text-slate-900 font-bold text-base tracking-tight">
-                              {group.title}
-                            </h3>
-                          </Link>
+                            <Link
+                              href={group.href}
+                              onClick={() => setServicesOpen(false)}
+                              className="flex items-center gap-3 pb-3 border-b border-slate-100 last:border-0"
+                            >
+                              {group.icon && (
+                                <div className="p-2 rounded-xl bg-red-50 flex items-center justify-center shrink-0">
+                                  <ServiceIcon type={group.icon} />
+                                </div>
+                              )}
+                              <h3 className="text-slate-900 font-bold text-base tracking-tight">
+                                {group.title}
+                              </h3>
+                            </Link>
                         )}
                         {group.items.length > 0 && (
                           <ul className="grid grid-cols-2 gap-1 sm:grid-cols-3 xl:grid-cols-4">
@@ -286,7 +288,7 @@ export default function Header() {
                               className="flex items-center justify-between text-base font-bold text-slate-900 py-3 px-2 rounded-lg hover:bg-red-50 hover:text-red-600 transition-colors"
                             >
                               <div className="flex items-center gap-2">
-                                <ServiceIcon type={group.icon} />
+                                {group.icon && <ServiceIcon type={group.icon} />}
                                 <span>{group.title}</span>
                               </div>
                               <ChevronDown
