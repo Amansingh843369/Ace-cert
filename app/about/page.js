@@ -116,136 +116,226 @@ export default function AboutPage() {
       </section>
 
       {/* ================= MISSION & VISION SECTION ================= */}
-      <section className="py-16 sm:py-24 px-4 sm:px-6 lg:px-12 bg-gray-50/50 text-gray-800">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
-            <div className="inline-block px-4 py-1.5 rounded-full bg-red-50 border border-red-100 text-red-600 text-xs font-semibold uppercase tracking-wider mb-4">
-              CONSULTING SERVICES
+      <section className="relative overflow-hidden bg-gradient-to-b from-white via-gray-50 to-white px-4 py-16 text-gray-800 sm:px-6 sm:py-24 lg:px-12">
+        <div className="pointer-events-none absolute -right-32 top-20 h-96 w-96 rounded-full bg-red-100/50 blur-3xl" />
+        <div className="relative mx-auto max-w-7xl">
+          <div className="grid items-center gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
+            <div className="max-w-xl">
+              <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-red-100 bg-white px-4 py-2 text-xs font-bold uppercase tracking-[0.16em] text-red-600 shadow-sm">
+                <span className="h-2 w-2 rounded-full bg-red-600" />
+                Consulting Services
+              </div>
+              <p className="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-gray-400">
+                Our purpose, in practice
+              </p>
+              <h2 className="text-4xl font-extrabold leading-[1.08] tracking-tight text-gray-900 sm:text-5xl lg:text-6xl">
+                Turning Vision
+                <span className="mt-1 block text-red-600">Into Growth</span>
+              </h2>
+              <p className="mt-6 max-w-lg text-base leading-7 text-gray-600 sm:text-lg sm:leading-8">
+                We go beyond traditional consulting by integrating digital innovation, customer centric support, and authentic engagement strategies.
+              </p>
+              <div className="mt-8 flex items-center gap-4">
+                <span className="h-px w-12 bg-red-600" />
+                <span className="text-sm font-semibold text-gray-700">Built around people. Focused on progress.</span>
+              </div>
             </div>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 tracking-tight mb-4">
-              Turning Vision Into Growth
-            </h2>
-            <p className="text-gray-600 text-base sm:text-lg leading-relaxed">
-              We go beyond traditional consulting by integrating digital innovation, customer centric support, and authentic engagement strategies.
-            </p>
+
+            <div className="relative mx-auto w-full max-w-2xl pb-10 pr-8 sm:pb-12 sm:pr-12">
+              <div className="relative aspect-[16/10] overflow-hidden rounded-[2rem] shadow-2xl shadow-slate-900/15">
+                <img
+                  src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=1400&q=85"
+                  alt="A team collaborating around a table"
+                  className="h-full w-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/55 via-transparent to-transparent" />
+                <div className="absolute bottom-5 left-5 text-white sm:bottom-7 sm:left-7">
+                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-white/75">The ACE approach</p>
+                  <p className="mt-1 text-lg font-bold sm:text-xl">Clarity that moves business forward</p>
+                </div>
+              </div>
+              <div className="absolute bottom-0 right-0 w-[38%] overflow-hidden rounded-2xl border-4 border-white shadow-xl sm:rounded-3xl">
+                <img
+                  src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=700&q=85"
+                  alt="Colleagues working together"
+                  className="aspect-[4/3] w-full object-cover"
+                />
+              </div>
+              <div className="absolute right-2 top-5 rounded-2xl border border-white/70 bg-white/95 px-4 py-3 shadow-lg backdrop-blur sm:right-5 sm:top-8 sm:px-5">
+                <p className="text-xl font-extrabold text-red-600 sm:text-2xl">ACE</p>
+                <p className="text-[10px] font-bold uppercase tracking-wider text-gray-500 sm:text-xs">Achieve. Comply. Excel.</p>
+              </div>
+            </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 max-w-5xl mx-auto">
-            {/* Mission Card */}
-            <div className="bg-white rounded-3xl p-6 sm:p-10 border border-gray-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgb(220,38,38,0.1)] hover:border-red-100 transition-all duration-300 flex flex-col justify-start group">
-              <div className="w-14 h-14 rounded-2xl bg-red-50 text-red-600 flex items-center justify-center mb-6 group-hover:bg-red-600 group-hover:text-white transition-colors duration-300 shrink-0">
-                <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
+          <div className="mt-14 grid grid-cols-1 gap-6 md:mt-20 md:grid-cols-2 md:gap-8">
+            <article className="group overflow-hidden rounded-3xl border border-gray-100 bg-white shadow-[0_12px_40px_rgba(15,23,42,0.06)] transition-all duration-300 hover:-translate-y-1 hover:border-red-100 hover:shadow-[0_20px_50px_rgba(220,38,38,0.1)]">
+              <div className="relative h-48 overflow-hidden sm:h-56">
+                <img
+                  src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=1000&q=85"
+                  alt="Professionals collaborating on a shared goal"
+                  className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 to-transparent" />
+                <span className="absolute bottom-5 left-6 text-xs font-bold uppercase tracking-[0.18em] text-white/85">What guides us</span>
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">Our Mission</h3>
-              <p className="text-gray-600 text-base leading-relaxed text-justify">
-               Our mission at ACE Certification Ltd. is to simplify the path to certification and embed a culture of continuous improvement within our client organizations. 
-              </p>
-              <p className='text-gray-600 text-justify mt-4'>  
-                We achieve this by providing rigorous & impartial certification, delivering reliable audit services that uphold the highest standards of integrity.
-              </p>
-            </div>
+              <div className="p-6 sm:p-8">
+                <div className="mb-5 flex items-center gap-4">
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-red-50 text-red-600 transition-colors duration-300 group-hover:bg-red-600 group-hover:text-white">
+                    <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
+                  </div>
+                  <h3 className="text-2xl font-bold text-gray-900">Our Mission</h3>
+                </div>
+                <p className="text-base leading-relaxed text-gray-600">
+                  Our mission at ACE Certification Ltd. is to simplify the path to certification and embed a culture of continuous improvement within our client organizations.
+                </p>
+                <p className="mt-4 text-base leading-relaxed text-gray-600">
+                  We achieve this by providing rigorous &amp; impartial certification, delivering reliable audit services that uphold the highest standards of integrity.
+                </p>
+              </div>
+            </article>
 
-            {/* Vision Card */}
-            <div className="bg-white rounded-3xl p-6 sm:p-10 border border-gray-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgb(220,38,38,0.1)] hover:border-red-100 transition-all duration-300 flex flex-col justify-start group">
-              <div className="w-14 h-14 rounded-2xl bg-red-50 text-red-600 flex items-center justify-center mb-6 group-hover:bg-red-600 group-hover:text-white transition-colors duration-300 shrink-0">
-                <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" /></svg>
+            <article className="group overflow-hidden rounded-3xl border border-gray-100 bg-white shadow-[0_12px_40px_rgba(15,23,42,0.06)] transition-all duration-300 hover:-translate-y-1 hover:border-red-100 hover:shadow-[0_20px_50px_rgba(220,38,38,0.1)]">
+              <div className="relative h-48 overflow-hidden sm:h-56">
+                <img
+                  src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1000&q=85"
+                  alt="A bright, modern workplace"
+                  className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 to-transparent" />
+                <span className="absolute bottom-5 left-6 text-xs font-bold uppercase tracking-[0.18em] text-white/85">Our direction</span>
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">Our Vision</h3>
-              <p className="text-gray-600 text-base leading-relaxed text-justify">
-                To be the most trusted and impactful partner for organizational excellence, recognized globally for setting the benchmark in certification and training services.
-              </p>
-            </div>
+              <div className="p-6 sm:p-8">
+                <div className="mb-5 flex items-center gap-4">
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-red-50 text-red-600 transition-colors duration-300 group-hover:bg-red-600 group-hover:text-white">
+                    <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M2.458 12C3.732 7.943 7.523 5 12 5s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7s-8.268-2.943-9.542-7z" /></svg>
+                  </div>
+                  <h3 className="text-2xl font-bold text-gray-900">Our Vision</h3>
+                </div>
+                <p className="text-base leading-relaxed text-gray-600">
+                  To be the most trusted and impactful partner for organizational excellence, recognized globally for setting the benchmark in certification and training services.
+                </p>
+              </div>
+            </article>
           </div>
         </div>
       </section>
 
       {/* ================= CORE VALUES SECTION ================= */}
-      <section className="py-16 sm:py-20 px-4 sm:px-6 lg:px-12 bg-white">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900 inline-block relative">
-              Our Core Values
-              <div className="absolute -bottom-3 left-1/2 transform -translate-x-1/2 w-16 h-1.5 bg-red-600 rounded-full"></div>
+      <section className="relative overflow-hidden bg-white px-4 py-16 sm:px-6 sm:py-24 lg:px-12">
+        <div className="pointer-events-none absolute -left-40 top-12 h-80 w-80 rounded-full bg-red-50 blur-3xl" />
+        <div className="relative mx-auto max-w-7xl">
+          <div className="mx-auto mb-12 max-w-2xl text-center sm:mb-16">
+            <span className="mb-4 inline-flex items-center gap-2 rounded-full border border-red-100 bg-red-50/70 px-4 py-2 text-xs font-bold uppercase tracking-[0.16em] text-red-600">
+              The ACE standard
+            </span>
+            <h2 className="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl lg:text-5xl">
+              Our Core <span className="text-red-600">Values</span>
             </h2>
+            <p className="mt-4 text-base leading-7 text-gray-600 sm:text-lg">
+              The principles behind every assessment, partnership, and result.
+            </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
-            <div className="bg-gray-50 p-8 rounded-3xl border border-gray-100 hover:border-red-200 hover:shadow-lg transition-all duration-300 group">
-              <div className="text-6xl font-black text-red-100 mb-4 group-hover:text-red-200 transition-colors">A</div>
-              <h4 className="text-xl font-bold text-gray-900 mb-3"><span className="text-red-600">A</span>ccuracy & Integrity</h4>
-              <p className="text-gray-600 text-sm leading-relaxed">We are unwavering in our commitment to impartiality, ethical practices, and technically sound assessments.</p>
-            </div>
-            <div className="bg-gray-50 p-8 rounded-3xl border border-gray-100 hover:border-red-200 hover:shadow-lg transition-all duration-300 group">
-              <div className="text-6xl font-black text-red-100 mb-4 group-hover:text-red-200 transition-colors">C</div>
-              <h4 className="text-xl font-bold text-gray-900 mb-3"><span className="text-red-600">C</span>lient Success</h4>
-              <p className="text-gray-600 text-sm leading-relaxed">Your success is our success. We build long-term partnerships based on understanding, respect, and shared goals.</p>
-            </div>
-            <div className="bg-gray-50 p-8 rounded-3xl border border-gray-100 hover:border-red-200 hover:shadow-lg transition-all duration-300 group">
-              <div className="text-6xl font-black text-red-100 mb-4 group-hover:text-red-200 transition-colors">E</div>
-              <h4 className="text-xl font-bold text-gray-900 mb-3"><span className="text-red-600">E</span>xcellence</h4>
-              <p className="text-gray-600 text-sm leading-relaxed">We continuously invest in the development of our team and services to provide cutting-edge, expert guidance.</p>
-            </div>
+          <div className="grid grid-cols-1 gap-5 md:grid-cols-3 md:gap-6">
+            <article className="group relative overflow-hidden rounded-3xl border border-gray-100 bg-gradient-to-br from-white to-red-50/60 p-7 shadow-[0_12px_40px_rgba(15,23,42,0.05)] transition-all duration-300 hover:-translate-y-1 hover:border-red-200 hover:shadow-[0_20px_50px_rgba(220,38,38,0.1)] sm:p-8">
+              <span className="absolute -right-2 -top-8 select-none text-[9rem] font-black leading-none text-red-100/70 transition-colors group-hover:text-red-100" aria-hidden="true">A</span>
+              <div className="relative">
+                <div className="mb-7 flex h-12 w-12 items-center justify-center rounded-2xl bg-red-600 text-white shadow-lg shadow-red-600/20">
+                  <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
+                </div>
+                <p className="mb-2 text-xs font-bold uppercase tracking-[0.16em] text-red-600">A · Integrity</p>
+                <h3 className="mb-3 text-xl font-bold text-gray-900 sm:text-2xl">Accuracy &amp; Integrity</h3>
+                <p className="text-sm leading-6 text-gray-600 sm:text-base sm:leading-7">We are unwavering in our commitment to impartiality, ethical practices, and technically sound assessments.</p>
+              </div>
+            </article>
+
+            <article className="group relative overflow-hidden rounded-3xl border border-gray-100 bg-gradient-to-br from-white to-red-50/60 p-7 shadow-[0_12px_40px_rgba(15,23,42,0.05)] transition-all duration-300 hover:-translate-y-1 hover:border-red-200 hover:shadow-[0_20px_50px_rgba(220,38,38,0.1)] sm:p-8">
+              <span className="absolute -right-2 -top-8 select-none text-[9rem] font-black leading-none text-red-100/70 transition-colors group-hover:text-red-100" aria-hidden="true">C</span>
+              <div className="relative">
+                <div className="mb-7 flex h-12 w-12 items-center justify-center rounded-2xl bg-red-600 text-white shadow-lg shadow-red-600/20">
+                  <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
+                </div>
+                <p className="mb-2 text-xs font-bold uppercase tracking-[0.16em] text-red-600">C · Partnership</p>
+                <h3 className="mb-3 text-xl font-bold text-gray-900 sm:text-2xl">Client Success</h3>
+                <p className="text-sm leading-6 text-gray-600 sm:text-base sm:leading-7">Your success is our success. We build long-term partnerships based on understanding, respect, and shared goals.</p>
+              </div>
+            </article>
+
+            <article className="group relative overflow-hidden rounded-3xl border border-gray-100 bg-gradient-to-br from-white to-red-50/60 p-7 shadow-[0_12px_40px_rgba(15,23,42,0.05)] transition-all duration-300 hover:-translate-y-1 hover:border-red-200 hover:shadow-[0_20px_50px_rgba(220,38,38,0.1)] sm:p-8">
+              <span className="absolute -right-2 -top-8 select-none text-[9rem] font-black leading-none text-red-100/70 transition-colors group-hover:text-red-100" aria-hidden="true">E</span>
+              <div className="relative">
+                <div className="mb-7 flex h-12 w-12 items-center justify-center rounded-2xl bg-red-600 text-white shadow-lg shadow-red-600/20">
+                  <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" /></svg>
+                </div>
+                <p className="mb-2 text-xs font-bold uppercase tracking-[0.16em] text-red-600">E · Progress</p>
+                <h3 className="mb-3 text-xl font-bold text-gray-900 sm:text-2xl">Excellence</h3>
+                <p className="text-sm leading-6 text-gray-600 sm:text-base sm:leading-7">We continuously invest in the development of our team and services to provide cutting-edge, expert guidance.</p>
+              </div>
+            </article>
           </div>
         </div>
       </section>
 
       {/* ================= OUR PURPOSE SECTION ================= */}
-      <section className="relative py-16 sm:py-24 px-4 sm:px-6 lg:px-12 bg-red-50/30 overflow-hidden">
-        <div className="max-w-7xl mx-auto relative z-10">
-          <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-center">
-            
-            <div className="lg:w-1/2 space-y-6 sm:space-y-8">
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-red-100 border border-red-200 shadow-sm">
-                <span className="w-2.5 h-2.5 rounded-full bg-red-600 animate-ping absolute"></span>
-                <span className="w-2.5 h-2.5 rounded-full bg-red-600 relative"></span>
-                <span className="text-sm font-bold uppercase tracking-widest text-red-800 ml-2">Our Purpose</span>
+      <section className="relative overflow-hidden bg-gradient-to-br from-red-50 via-white to-gray-50 px-4 py-16 sm:px-6 sm:py-24 lg:px-12">
+        <div className="pointer-events-none absolute -right-32 -top-24 h-96 w-96 rounded-full bg-red-100/60 blur-3xl" />
+        <div className="relative mx-auto grid max-w-7xl items-center gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
+          <div>
+            <span className="mb-6 inline-flex items-center gap-2 rounded-full border border-red-100 bg-white px-4 py-2 text-xs font-bold uppercase tracking-[0.16em] text-red-600 shadow-sm">
+              <span className="h-2 w-2 rounded-full bg-red-600" />
+              Our Purpose
+            </span>
+            <h2 className="text-3xl font-extrabold leading-tight tracking-tight text-gray-900 sm:text-4xl lg:text-5xl">
+              Bridging the Gap to <span className="text-red-600">Business Success</span>
+            </h2>
+            <p className="mt-6 text-base leading-7 text-gray-600 sm:text-lg sm:leading-8">
+              At <strong className="font-semibold text-gray-900">ACERT Certification</strong>, our purpose is to bridge the gap between complex international standards and everyday business success. We believe that compliance &apos;shouldn&apos;t&apos; be a bureaucratic hurdle, but a <strong className="font-semibold text-red-600">strategic catalyst for growth.</strong>
+            </p>
+            <div className="mt-8 flex items-center gap-4 rounded-2xl border border-red-100 bg-white/80 p-4 shadow-sm sm:p-5">
+              <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-red-600 text-white shadow-md shadow-red-600/20">
+                <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" /></svg>
               </div>
-              
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight">
-                Bridging the Gap to <br/><span className="text-red-600">Business Success</span>
-              </h2>
-              
-              <div className="space-y-4 sm:space-y-5 text-base sm:text-lg text-gray-600 leading-relaxed text-justify">
-                <p>
-                  At <strong className="text-gray-900">ACERT Certification</strong>, our purpose is to bridge the gap between complex international standards and everyday business success. We believe that compliance &apos;shouldn&apos;t&apos; be a bureaucratic hurdle, but a <strong className="text-red-600">strategic catalyst for growth.</strong>
-                </p>
-              </div>
+              <p className="text-sm font-semibold leading-6 text-gray-800 sm:text-base">
+                Turning complex standards into confident, lasting progress.
+              </p>
             </div>
+          </div>
 
-            <div className="lg:w-1/2 w-full space-y-4 sm:space-y-5">
-              {/* Trust Card */}
-              <div className="group bg-white p-5 sm:p-6 md:p-8 rounded-3xl border border-gray-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgb(220,38,38,0.12)] hover:border-red-200 transition-all duration-300 flex flex-col sm:flex-row gap-4 sm:gap-6 items-start transform hover:-translate-y-1">
-                <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-red-50 text-red-600 flex items-center justify-center shrink-0 group-hover:bg-red-600 group-hover:text-white transition-colors duration-300">
-                  <svg className="w-6 h-6 sm:w-7 sm:h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
-                </div>
-                <div>
-                  <h4 className="text-lg sm:text-xl font-bold text-gray-900 mb-2 group-hover:text-red-600 transition-colors">Build Unshakeable Trust</h4>
-                  <p className="text-gray-600 text-sm sm:text-base leading-relaxed">Prove your commitment to safety, quality, and excellence to your clients.</p>
-                </div>
+          <div className="space-y-4">
+            <p className="mb-5 text-xs font-bold uppercase tracking-[0.18em] text-red-600">What this means for you</p>
+            <article className="group flex gap-4 rounded-2xl border border-gray-100 bg-white p-5 shadow-[0_10px_30px_rgba(15,23,42,0.05)] transition-all duration-300 hover:-translate-y-0.5 hover:border-red-200 hover:shadow-lg sm:gap-5 sm:p-6">
+              <span className="pt-1 text-sm font-extrabold tracking-wider text-red-300">01</span>
+              <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-red-50 text-red-600 transition-colors group-hover:bg-red-600 group-hover:text-white">
+                <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
               </div>
+              <div>
+                <h3 className="text-lg font-bold text-gray-900 transition-colors group-hover:text-red-600 sm:text-xl">Build Unshakeable Trust</h3>
+                <p className="mt-1 text-sm leading-6 text-gray-600 sm:text-base">Prove your commitment to safety, quality, and excellence to your clients.</p>
+              </div>
+            </article>
 
-              {/* Market Potential Card */}
-              <div className="group bg-white p-5 sm:p-6 md:p-8 rounded-3xl border border-gray-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgb(220,38,38,0.12)] hover:border-red-200 transition-all duration-300 flex flex-col sm:flex-row gap-4 sm:gap-6 items-start transform hover:-translate-y-1">
-                <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-red-50 text-red-600 flex items-center justify-center shrink-0 group-hover:bg-red-600 group-hover:text-white transition-colors duration-300">
-                  <svg className="w-6 h-6 sm:w-7 sm:h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" /></svg>
-                </div>
-                <div>
-                  <h4 className="text-lg sm:text-xl font-bold text-gray-900 mb-2 group-hover:text-red-600 transition-colors">Unlock Market Potential</h4>
-                  <p className="text-gray-600 text-sm sm:text-base leading-relaxed">Open doors to new contracts, global opportunities, and regulatory compliance.</p>
-                </div>
+            <article className="group flex gap-4 rounded-2xl border border-gray-100 bg-white p-5 shadow-[0_10px_30px_rgba(15,23,42,0.05)] transition-all duration-300 hover:-translate-y-0.5 hover:border-red-200 hover:shadow-lg sm:gap-5 sm:p-6">
+              <span className="pt-1 text-sm font-extrabold tracking-wider text-red-300">02</span>
+              <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-red-50 text-red-600 transition-colors group-hover:bg-red-600 group-hover:text-white">
+                <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" /></svg>
               </div>
+              <div>
+                <h3 className="text-lg font-bold text-gray-900 transition-colors group-hover:text-red-600 sm:text-xl">Unlock Market Potential</h3>
+                <p className="mt-1 text-sm leading-6 text-gray-600 sm:text-base">Open doors to new contracts, global opportunities, and regulatory compliance.</p>
+              </div>
+            </article>
 
-              {/* Operational Excellence Card */}
-              <div className="group bg-white p-5 sm:p-6 md:p-8 rounded-3xl border border-gray-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgb(220,38,38,0.12)] hover:border-red-200 transition-all duration-300 flex flex-col sm:flex-row gap-4 sm:gap-6 items-start transform hover:-translate-y-1">
-                <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-red-50 text-red-600 flex items-center justify-center shrink-0 group-hover:bg-red-600 group-hover:text-white transition-colors duration-300">
-                  <svg className="w-6 h-6 sm:w-7 sm:h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" /></svg>
-                </div>
-                <div>
-                  <h4 className="text-lg sm:text-xl font-bold text-gray-900 mb-2 group-hover:text-red-600 transition-colors">Drive Operational Excellence</h4>
-                  <p className="text-gray-600 text-sm sm:text-base leading-relaxed">Transform rigorous industry standards into streamlined, efficient practices.</p>
-                </div>
+            <article className="group flex gap-4 rounded-2xl border border-gray-100 bg-white p-5 shadow-[0_10px_30px_rgba(15,23,42,0.05)] transition-all duration-300 hover:-translate-y-0.5 hover:border-red-200 hover:shadow-lg sm:gap-5 sm:p-6">
+              <span className="pt-1 text-sm font-extrabold tracking-wider text-red-300">03</span>
+              <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-red-50 text-red-600 transition-colors group-hover:bg-red-600 group-hover:text-white">
+                <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" /></svg>
               </div>
-            </div>
+              <div>
+                <h3 className="text-lg font-bold text-gray-900 transition-colors group-hover:text-red-600 sm:text-xl">Drive Operational Excellence</h3>
+                <p className="mt-1 text-sm leading-6 text-gray-600 sm:text-base">Transform rigorous industry standards into streamlined, efficient practices.</p>
+              </div>
+            </article>
           </div>
         </div>
       </section>
