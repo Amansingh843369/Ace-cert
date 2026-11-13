@@ -34,81 +34,139 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* ================= ABOUT US CONTENT SECTION ================= */}
-      <section className="relative py-12 sm:py-20 px-4 sm:px-6 lg:px-12 bg-white text-gray-800 overflow-hidden">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+{/* ================= ABOUT US CONTENT SECTION ================= */}
+      <section className="relative py-16 sm:py-24 px-4 sm:px-6 lg:px-12 bg-white text-gray-800 overflow-hidden">
+        {/* Decorative blobs */}
+        <div className="pointer-events-none absolute -left-48 top-16 h-[500px] w-[500px] rounded-full bg-red-100/30 blur-[100px]" />
+        <div className="pointer-events-none absolute -bottom-64 right-0 h-[500px] w-[500px] rounded-full bg-red-50 blur-[100px]" />
+
+        <div className="relative z-10 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           
-          {/* Left Column: Image Collage Section */}
-          <div className="lg:col-span-6 relative w-full flex flex-col items-center justify-center my-4 lg:my-0 order-1 lg:order-1">
-            
-            {/* Container for Desktop Absolute Positioning / Mobile Flex Stacking */}
-            <div className="relative w-full max-w-lg lg:max-w-none lg:h-[600px] flex flex-col lg:block items-center lg:items-start">
+          {/* Left Column: Visual Collage */}
+          <div className="lg:col-span-6 relative w-full order-1 lg:order-1">
+            <div className="relative w-full max-w-lg lg:max-w-none lg:h-[640px]">
               
-              {/* Main Top Right Image - ISO Team Meeting */}
-              <div className="w-full h-64 sm:h-80 lg:absolute lg:top-0 lg:right-0 lg:w-[85%] lg:h-[75%] rounded-3xl overflow-hidden shadow-xl border-4 border-white z-10 transition-transform duration-500 hover:scale-[1.02] mb-6 lg:mb-0">
+              {/* Main Image - Large, prominent */}
+              <div className="relative w-full h-[520px] lg:absolute lg:top-0 lg:right-0 lg:w-[90%] lg:h-[85%] overflow-hidden rounded-[2rem] shadow-2xl shadow-slate-900/15 border border-white ring-1 ring-slate-100 z-20 group">
                 <img 
-                  src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80" 
-                  alt="ACE Team Meeting" 
-                  className="w-full h-full object-cover"
+                  src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1200&q=85" 
+                  alt="ACE Team collaborating on certification project" 
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  loading="eager"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/40 via-transparent to-transparent" />
+                <div className="absolute bottom-5 left-5 text-white sm:bottom-7 sm:left-7">
+                  <p className="text-xs font-semibold uppercase tracking-[0.16em] text-white/80">
+                    Real partnerships
+                  </p>
+                  <p className="mt-1 text-lg font-bold sm:text-xl tracking-tight">
+                    Delivering measurable results
+                  </p>
+                </div>
+              </div>
+
+              {/* Overlapping Secondary Image */}
+              <div className="relative mt-6 lg:absolute lg:bottom-8 lg:left-4 lg:mt-0 w-full h-[320px] lg:w-[55%] lg:h-[50%] overflow-hidden rounded-2xl shadow-xl border-4 border-white z-10 group">
+                <img 
+                  src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=85" 
+                  alt="Lead Auditor reviewing documentation" 
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   loading="lazy"
                 />
               </div>
 
-              {/* Overlapping Bottom Left Image - Professional Auditor */}
-              <div className="w-full h-64 sm:h-80 lg:absolute lg:bottom-10 lg:left-0 lg:w-[70%] lg:h-[65%] rounded-3xl overflow-hidden shadow-2xl border-4 border-white z-20 transition-transform duration-500 hover:scale-[1.02]">
-                <img 
-                  src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=80" 
-                  alt="ACE Professional Auditor" 
-                  className="w-full h-full object-cover"
-                  loading="lazy"
-                />
+              {/* Accent Badge - ACE brand */}
+              <div className="hidden lg:block absolute -top-4 -left-4 w-32 h-32 lg:w-44 lg:h-44 z-30">
+                <div className="relative w-full h-full">
+                  <div className="absolute inset-0 bg-red-600 rounded-full opacity-10 blur-sm animate-pulse" />
+                  <div className="absolute inset-0 bg-red-600 rounded-full opacity-5" />
+                  <div className="relative w-full h-full rounded-full flex items-center justify-center">
+                    <div className="w-[80%] h-[80%] rounded-full flex items-center justify-center bg-red-600/90 shadow-2xl">
+                      <svg className="w-full h-full text-white animate-[spin_20s_linear_infinite]" viewBox="0 0 100 100">
+                        <path d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0" fill="none" />
+                        <text className="text-[8px] font-black tracking-widest uppercase fill-white">
+                          <textPath href="#circlePath" startOffset="0%">ACE CERTIFICATIONS • COMPLIANCE & EXCELLENCE •</textPath>
+                        </text>
+                      </svg>
+                      <div className="absolute inset-0 m-auto w-1/3 h-1/3 bg-red-700 rounded-full flex items-center justify-center shadow-inner">
+                        <svg className="w-3/4 h-3/4 fill-current" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" /></svg>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
 
-              {/* Small Top Left Accent Image - Office Work */}
-              <div className="hidden sm:block absolute -top-6 -left-6 w-32 h-32 lg:w-40 lg:h-40 rounded-2xl overflow-hidden shadow-lg border-2 border-white z-0 lg:top-10 lg:left-10">
-                <img 
-                  src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=500&q=80" 
-                  alt="Office Work" 
-                  className="w-full h-full object-cover opacity-90"
-                  loading="lazy"
-                />
-              </div>
-
-              {/* Circular Badge with Rotating SVG Text */}
-              <div className="relative mt-[-30px] lg:absolute lg:bottom-20 lg:right-10 w-28 h-28 sm:w-32 sm:h-32 bg-red-600 rounded-full flex items-center justify-center shadow-2xl border-4 border-white z-30 shrink-0">
-                <svg className="w-full h-full animate-[spin_12s_linear_infinite]" viewBox="0 0 100 100">
-                  <path id="circlePath" d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0" fill="none" />
-                  <text className="text-[9px] font-bold tracking-widest uppercase fill-white">
-                    <textPath href="#circlePath" startOffset="0%">ACE CERTIFICATIONS • COMPLIANCE & EXCELLENCE •</textPath>
-                  </text>
-                </svg>
-                <div className="absolute inset-0 m-auto w-12 h-12 sm:w-14 sm:h-14 bg-red-700 rounded-full flex items-center justify-center text-white shadow-inner">
-                  <svg className="w-6 h-6 sm:w-7 sm:h-7 fill-current" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" /></svg>
+              {/* Floating stat card */}
+              <div className="hidden lg:block absolute bottom-6 right-6 lg:bottom-16 lg:right-16 z-30 w-64">
+                <div className="bg-white/95 backdrop-blur-md rounded-2xl border border-red-100 p-5 shadow-xl shadow-slate-900/10">
+                  <div className="flex items-center gap-3">
+                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-red-100 text-red-600">
+                      <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                    </div>
+                    <div>
+                      <p className="text-sm font-bold text-slate-900">10+ Years</p>
+                      <p className="text-xs text-slate-500">Industry Experience</p>
+                    </div>
+                  </div>
                 </div>
               </div>
 
             </div>
           </div>
 
-          {/* Right Column: Content Section */}
-          <div className="lg:col-span-6 flex flex-col justify-center space-y-6 order-2 lg:order-2">
+          {/* Right Column: Content */}
+          <div className="lg:col-span-6 flex flex-col justify-center space-y-7 order-2 lg:order-2 pr-2 lg:pr-4">
             
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-red-100 border border-red-200 w-fit">
-              <span className="w-2.5 h-2.5 rounded-full bg-red-600 animate-pulse"></span>
-              <span className="text-xs font-bold uppercase tracking-wider text-red-800">About Us</span>
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-red-100 bg-red-50 w-fit">
+              <span className="relative flex h-2.5 w-2.5">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-red-500 opacity-40" />
+                <span className="relative inline-flex h-full w-full rounded-full bg-red-600" />
+              </span>
+              <span className="text-xs font-bold uppercase tracking-[0.15em] text-red-700">About Us</span>
             </div>
 
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 tracking-tight leading-tight">
-              Empowering Organizations for <span className="text-red-600">Global Excellence</span>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-900 leading-[1.08]">
+              Empowering Organizations for 
+              <br className="hidden sm:block" />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-red-500">
+                Global Excellence
+              </span>
             </h2>
 
-            <div className="space-y-4 text-gray-600 text-base sm:text-lg leading-relaxed text-justify">
+            <div className="space-y-5 text-base leading-7.5 text-slate-600 sm:text-lg sm:leading-8">
               <p>
-                <strong className="text-gray-900 font-semibold">ACE Certifications Ltd.</strong> is a dedicated and client-centric professional services firm established to empower organizations of all sizes to achieve international standards of quality, safety, and efficiency. The name <span className="font-bold text-red-600">&quot;ACE&quot;</span> embodies our core promise: to help our clients <strong className="text-gray-900">A</strong>chieve <strong className="text-gray-900">C</strong>ompliance & <strong className="text-gray-900">E</strong>xcellence.
+                <strong className="font-semibold text-slate-900">ACE Certifications Ltd.</strong> is a dedicated, client-centric professional services firm established to empower organizations of all sizes to achieve international standards of quality, safety, and efficiency.
               </p>
               <p>
-                Our team comprises highly experienced and qualified Lead Auditors and industry specialists who bring practical, real-world insights to every engagement. At ACE Certification Ltd., we believe that certification should not be a mere trophy but a strategic tool for tangible business improvement.
+                The name <span className="font-semibold text-slate-900">"ACE"</span> embodies our core promise: to help our clients 
+                <span className="font-bold text-red-600">A</span>chieve 
+                <span className="font-bold text-red-600">C</span>ompliance & 
+                <span className="font-bold text-red-600">E</span>xcellence.
               </p>
+              <p>
+                Our team comprises highly experienced and qualified Lead Auditors and industry specialists who bring practical, real-world insights to every engagement. We believe certification should be more than a trophy—it should be a strategic tool for tangible, lasting business improvement.
+              </p>
+            </div>
+
+            {/* ACE breakdown inline */}
+            <div className="mt-2 flex flex-wrap items-center gap-3">
+              {[
+                { letter: "A", label: "Achieve", color: "bg-red-600" },
+                { letter: "C", label: "Compliance", color: "bg-red-600" },
+                { letter: "E", label: "Excellence", color: "bg-red-600" },
+              ].map((item) => (
+                <div
+                  key={item.letter}
+                  className="inline-flex items-center gap-1.5 rounded-xl border border-red-100 bg-white px-3 py-2 shadow-sm"
+                >
+                  <span className={`flex h-6 w-6 shrink-0 items-center justify-center rounded-lg ${item.color} text-xs font-extrabold text-white`}>
+                    {item.letter}
+                  </span>
+                  <span className="text-sm font-semibold text-slate-700">{item.label}</span>
+                </div>
+              ))}
             </div>
 
           </div>
@@ -221,58 +279,126 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* ================= CORE VALUES SECTION ================= */}
+{/* ================= CORE VALUES SECTION ================= */}
       <section className="relative overflow-hidden bg-white px-4 py-16 sm:px-6 sm:py-24 lg:px-12">
-        <div className="pointer-events-none absolute -left-40 top-12 h-80 w-80 rounded-full bg-red-50 blur-3xl" />
-        <div className="relative mx-auto max-w-7xl">
+        {/* Navy + Red decorative blobs */}
+        <div className="pointer-events-none absolute -left-48 top-16 h-[500px] w-[500px] rounded-full bg-red-100/20 blur-[100px]" />
+        <div className="pointer-events-none absolute -right-48 top-16 h-[500px] w-[500px] rounded-full bg-blue-950/10 blur-[100px]" />
+        <div className="pointer-events-none absolute -bottom-64 left-1/2 h-[500px] w-[500px] rounded-full bg-red-50 blur-[100px]" />
+
+        <div className="relative z-10 mx-auto max-w-7xl">
           <div className="mx-auto mb-12 max-w-2xl text-center sm:mb-16">
-            <span className="mb-4 inline-flex items-center gap-2 rounded-full border border-red-100 bg-red-50/70 px-4 py-2 text-xs font-bold uppercase tracking-[0.16em] text-red-600">
-              The ACE standard
-            </span>
-            <h2 className="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl lg:text-5xl">
-              Our Core <span className="text-red-600">Values</span>
+            <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-red-100 bg-red-50 px-4 py-2 text-xs font-bold uppercase tracking-[0.16em] text-red-600 shadow-sm">
+              <span className="relative flex h-2.5 w-2.5">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-red-500 opacity-40" />
+                <span className="relative inline-flex h-full w-full rounded-full bg-red-600" />
+              </span>
+              The ACE Standard
+            </div>
+            <h2 className="text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl lg:text-5xl">
+              Our Core 
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-blue-900">
+                Values
+              </span>
             </h2>
-            <p className="mt-4 text-base leading-7 text-gray-600 sm:text-lg">
+            <p className="mt-4 text-base leading-7 text-slate-600 sm:text-lg">
               The principles behind every assessment, partnership, and result.
             </p>
           </div>
 
           <div className="grid grid-cols-1 gap-5 md:grid-cols-3 md:gap-6">
-            <article className="group relative overflow-hidden rounded-3xl border border-gray-100 bg-gradient-to-br from-white to-red-50/60 p-7 shadow-[0_12px_40px_rgba(15,23,42,0.05)] transition-all duration-300 hover:-translate-y-1 hover:border-red-200 hover:shadow-[0_20px_50px_rgba(220,38,38,0.1)] sm:p-8">
-              <span className="absolute -right-2 -top-8 select-none text-[9rem] font-black leading-none text-red-100/70 transition-colors group-hover:text-red-100" aria-hidden="true">A</span>
-              <div className="relative">
-                <div className="mb-7 flex h-12 w-12 items-center justify-center rounded-2xl bg-red-600 text-white shadow-lg shadow-red-600/20">
-                  <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
-                </div>
-                <p className="mb-2 text-xs font-bold uppercase tracking-[0.16em] text-red-600">A · Integrity</p>
-                <h3 className="mb-3 text-xl font-bold text-gray-900 sm:text-2xl">Accuracy &amp; Integrity</h3>
-                <p className="text-sm leading-6 text-gray-600 sm:text-base sm:leading-7">We are unwavering in our commitment to impartiality, ethical practices, and technically sound assessments.</p>
-              </div>
-            </article>
+            {[
+              {
+                letter: "A",
+                label: "A · Integrity",
+                title: "Accuracy & Integrity",
+                desc: "We are unwavering in our commitment to impartiality, ethical practices, and technically sound assessments.",
+                icon: (
+                  <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                  </svg>
+                ),
+                gradient: "from-red-600 to-red-500",
+                accent: "bg-red-100 text-red-600 group-hover:bg-red-600 group-hover:text-white",
+                border: "hover:border-red-200",
+                shadow: "hover:shadow-[0_20px_40px_rgba(227,6,19,0.12)]",
+              },
+              {
+                letter: "C",
+                label: "C · Partnership",
+                title: "Client Success",
+                desc: "Your success is our success. We build long-term partnerships based on understanding, respect, and shared goals.",
+                icon: (
+                  <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                  </svg>
+                ),
+                gradient: "from-blue-900 to-blue-800",
+                accent: "bg-blue-100 text-blue-900 group-hover:bg-blue-900 group-hover:text-white",
+                border: "hover:border-blue-200",
+                shadow: "hover:shadow-[0_20px_40px_rgba(30,58,138,0.12)]",
+              },
+              {
+                letter: "E",
+                label: "E · Progress",
+                title: "Excellence",
+                desc: "We continuously invest in the development of our team and services to provide cutting-edge, expert guidance.",
+                icon: (
+                  <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                  </svg>
+                ),
+                gradient: "from-red-600 via-red-500 to-blue-900",
+                accent: "bg-red-100 text-red-600 group-hover:bg-red-600 group-hover:text-white",
+                border: "hover:border-red-200",
+                shadow: "hover:shadow-[0_20px_40px_rgba(227,6,19,0.12)]",
+              },
+            ].map((value) => (
+              <article
+                key={value.letter}
+                className={`group relative overflow-hidden rounded-[2rem] border border-slate-100 bg-white p-7 shadow-[0_8px_30px_rgba(15,23,42,0.04)] transition-all duration-500 hover:-translate-y-1.5 ${value.border} ${value.shadow} sm:p-8`}
+              >
+                {/* Large background letter */}
+                <span className="absolute -right-4 -top-10 select-none text-[10rem] font-black leading-none text-slate-100 transition-colors duration-500 group-hover:text-red-100/50 group-hover:translate-x-2 group-hover:-translate-y-2" aria-hidden="true">
+                  {value.letter}
+                </span>
 
-            <article className="group relative overflow-hidden rounded-3xl border border-gray-100 bg-gradient-to-br from-white to-red-50/60 p-7 shadow-[0_12px_40px_rgba(15,23,42,0.05)] transition-all duration-300 hover:-translate-y-1 hover:border-red-200 hover:shadow-[0_20px_50px_rgba(220,38,38,0.1)] sm:p-8">
-              <span className="absolute -right-2 -top-8 select-none text-[9rem] font-black leading-none text-red-100/70 transition-colors group-hover:text-red-100" aria-hidden="true">C</span>
-              <div className="relative">
-                <div className="mb-7 flex h-12 w-12 items-center justify-center rounded-2xl bg-red-600 text-white shadow-lg shadow-red-600/20">
-                  <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
-                </div>
-                <p className="mb-2 text-xs font-bold uppercase tracking-[0.16em] text-red-600">C · Partnership</p>
-                <h3 className="mb-3 text-xl font-bold text-gray-900 sm:text-2xl">Client Success</h3>
-                <p className="text-sm leading-6 text-gray-600 sm:text-base sm:leading-7">Your success is our success. We build long-term partnerships based on understanding, respect, and shared goals.</p>
-              </div>
-            </article>
+                {/* Top accent bar */}
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-0 h-1 bg-gradient-to-r from-red-600 to-blue-900 transition-all duration-500 group-hover:w-full" />
 
-            <article className="group relative overflow-hidden rounded-3xl border border-gray-100 bg-gradient-to-br from-white to-red-50/60 p-7 shadow-[0_12px_40px_rgba(15,23,42,0.05)] transition-all duration-300 hover:-translate-y-1 hover:border-red-200 hover:shadow-[0_20px_50px_rgba(220,38,38,0.1)] sm:p-8">
-              <span className="absolute -right-2 -top-8 select-none text-[9rem] font-black leading-none text-red-100/70 transition-colors group-hover:text-red-100" aria-hidden="true">E</span>
-              <div className="relative">
-                <div className="mb-7 flex h-12 w-12 items-center justify-center rounded-2xl bg-red-600 text-white shadow-lg shadow-red-600/20">
-                  <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" /></svg>
+                <div className="relative z-10 flex flex-col h-full">
+                  {/* Icon Container */}
+                  <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl text-white shadow-lg shadow-blue-900/20 transition-all duration-300 group-hover:scale-105 group-hover:-rotate-3">
+                    <div className={`absolute inset-0 rounded-2xl bg-gradient-to-br ${value.gradient}`} />
+                    <div className="relative">{value.icon}</div>
+                  </div>
+
+                  {/* Label */}
+                  <p className="mb-2 text-xs font-bold uppercase tracking-[0.16em] text-slate-500 transition-colors group-hover:text-red-600">
+                    {value.label}
+                  </p>
+
+                  {/* Title */}
+                  <h3 className="mb-4 text-xl font-extrabold tracking-tight text-slate-900 sm:text-2xl transition-colors group-hover:text-red-600">
+                    {value.title}
+                  </h3>
+
+                  {/* Description */}
+                  <p className="text-sm leading-relaxed text-slate-600 sm:text-base sm:leading-7 flex-1">
+                    {value.desc}
+                  </p>
+
+                  {/* Bottom indicator */}
+                  <div className="mt-6 h-px w-full bg-gradient-to-r from-transparent via-slate-100 to-transparent" />
+                  <div className="mt-4 flex items-center gap-2 text-xs font-semibold text-slate-400 transition-colors group-hover:text-red-600">
+                    <span>Guiding principle</span>
+                    <svg className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                    </svg>
+                  </div>
                 </div>
-                <p className="mb-2 text-xs font-bold uppercase tracking-[0.16em] text-red-600">E · Progress</p>
-                <h3 className="mb-3 text-xl font-bold text-gray-900 sm:text-2xl">Excellence</h3>
-                <p className="text-sm leading-6 text-gray-600 sm:text-base sm:leading-7">We continuously invest in the development of our team and services to provide cutting-edge, expert guidance.</p>
-              </div>
-            </article>
+              </article>
+            ))}
           </div>
         </div>
       </section>
