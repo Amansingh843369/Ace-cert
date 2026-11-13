@@ -1,5 +1,6 @@
 import React from 'react';
-
+import Link from "next/link";
+import Image from "next/image";
 export default function AboutPage() {
   return (
     <main className="font-sans bg-white min-h-screen pb-20 selection:bg-red-100 selection:text-red-900">
@@ -40,245 +41,134 @@ export default function AboutPage() {
         <div className="pointer-events-none absolute -left-48 top-16 h-[500px] w-[500px] rounded-full bg-red-100/30 blur-[100px]" />
         <div className="pointer-events-none absolute -bottom-64 right-0 h-[500px] w-[500px] rounded-full bg-red-50 blur-[100px]" />
 
-        <div className="relative z-10 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+     
+      </section>
+
+   <section className="relative overflow-hidden bg-gradient-to-b from-white via-gray-50 to-white px-4 py-16 sm:px-6 sm:py-24 lg:px-12 font-sans text-gray-800">
+      
+      {/* Decorative Blobs */}
+      <div className="pointer-events-none absolute -right-32 top-20 h-96 w-96 rounded-full bg-red-100/50 blur-3xl" />
+      <div className="pointer-events-none absolute -left-32 bottom-20 h-96 w-96 rounded-full bg-red-50/50 blur-3xl" />
+
+      <div className="relative mx-auto max-w-7xl space-y-20 lg:space-y-32">
+        
+        {/* ================= 1. OUR MISSION (Text Left, Image Right) ================= */}
+        <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-20">
           
-          {/* Left Column: Visual Collage */}
-          <div className="lg:col-span-6 relative w-full order-1 lg:order-1">
-            <div className="relative w-full max-w-lg lg:max-w-none lg:h-[640px]">
-              
-              {/* Main Image - Large, prominent */}
-              <div className="relative w-full h-[520px] lg:absolute lg:top-0 lg:right-0 lg:w-[90%] lg:h-[85%] overflow-hidden rounded-[2rem] shadow-2xl shadow-slate-900/15 border border-white ring-1 ring-slate-100 z-20 group">
-                <img 
-                  src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1200&q=85" 
-                  alt="ACE Team collaborating on certification project" 
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  loading="eager"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/40 via-transparent to-transparent" />
-                <div className="absolute bottom-5 left-5 text-white sm:bottom-7 sm:left-7">
-                  <p className="text-xs font-semibold uppercase tracking-[0.16em] text-white/80">
-                    Real partnerships
-                  </p>
-                  <p className="mt-1 text-lg font-bold sm:text-xl tracking-tight">
-                    Delivering measurable results
-                  </p>
-                </div>
-              </div>
-
-              {/* Overlapping Secondary Image */}
-              <div className="relative mt-6 lg:absolute lg:bottom-8 lg:left-4 lg:mt-0 w-full h-[320px] lg:w-[55%] lg:h-[50%] overflow-hidden rounded-2xl shadow-xl border-4 border-white z-10 group">
-                <img 
-                  src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=85" 
-                  alt="Lead Auditor reviewing documentation" 
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  loading="lazy"
-                />
-              </div>
-
-              {/* Accent Badge - ACE brand */}
-              <div className="hidden lg:block absolute -top-4 -left-4 w-32 h-32 lg:w-44 lg:h-44 z-30">
-                <div className="relative w-full h-full">
-                  <div className="absolute inset-0 bg-red-600 rounded-full opacity-10 blur-sm animate-pulse" />
-                  <div className="absolute inset-0 bg-red-600 rounded-full opacity-5" />
-                  <div className="relative w-full h-full rounded-full flex items-center justify-center">
-                    <div className="w-[80%] h-[80%] rounded-full flex items-center justify-center bg-red-600/90 shadow-2xl">
-                      <svg className="w-full h-full text-white animate-[spin_20s_linear_infinite]" viewBox="0 0 100 100">
-                        <path d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0" fill="none" />
-                        <text className="text-[8px] font-black tracking-widest uppercase fill-white">
-                          <textPath href="#circlePath" startOffset="0%">ACE CERTIFICATIONS • COMPLIANCE & EXCELLENCE •</textPath>
-                        </text>
-                      </svg>
-                      <div className="absolute inset-0 m-auto w-1/3 h-1/3 bg-red-700 rounded-full flex items-center justify-center shadow-inner">
-                        <svg className="w-3/4 h-3/4 fill-current" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" /></svg>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Floating stat card */}
-              <div className="hidden lg:block absolute bottom-6 right-6 lg:bottom-16 lg:right-16 z-30 w-64">
-                <div className="bg-white/95 backdrop-blur-md rounded-2xl border border-red-100 p-5 shadow-xl shadow-slate-900/10">
-                  <div className="flex items-center gap-3">
-                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-red-100 text-red-600">
-                      <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                      </svg>
-                    </div>
-                    <div>
-                      <p className="text-sm font-bold text-slate-900">10+ Years</p>
-                      <p className="text-xs text-slate-500">Industry Experience</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-            </div>
-          </div>
-
-          {/* Right Column: Content */}
-          <div className="lg:col-span-6 flex flex-col justify-center space-y-7 order-2 lg:order-2 pr-2 lg:pr-4">
-            
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-red-100 bg-red-50 w-fit">
-              <span className="relative flex h-2.5 w-2.5">
-                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-red-500 opacity-40" />
-                <span className="relative inline-flex h-full w-full rounded-full bg-red-600" />
+          {/* Left: Mission Text */}
+          <div className="order-2 lg:order-1 space-y-6">
+            <div className="space-y-2">
+              <span className="text-sm font-semibold tracking-wider text-red-600 uppercase">
+                What guides us
               </span>
-              <span className="text-xs font-bold uppercase tracking-[0.15em] text-red-700">About Us</span>
-            </div>
-
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-900 leading-[1.08]">
-              Empowering Organizations for 
-              <br className="hidden sm:block" />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-red-500">
-                Global Excellence
-              </span>
-            </h2>
-
-            <div className="space-y-5 text-base leading-7.5 text-slate-600 sm:text-lg sm:leading-8">
-              <p>
-                <strong className="font-semibold text-slate-900">ACE Certifications Ltd.</strong> is a dedicated, client-centric professional services firm established to empower organizations of all sizes to achieve international standards of quality, safety, and efficiency.
-              </p>
-              <p>
-                The name <span className="font-semibold text-slate-900">"ACE"</span> embodies our core promise: to help our clients 
-                <span className="font-bold text-red-600">A</span>chieve 
-                <span className="font-bold text-red-600">C</span>ompliance & 
-                <span className="font-bold text-red-600">E</span>xcellence.
-              </p>
-              <p>
-                Our team comprises highly experienced and qualified Lead Auditors and industry specialists who bring practical, real-world insights to every engagement. We believe certification should be more than a trophy—it should be a strategic tool for tangible, lasting business improvement.
-              </p>
-            </div>
-
-            {/* ACE breakdown inline */}
-            <div className="mt-2 flex flex-wrap items-center gap-3">
-              {[
-                { letter: "A", label: "Achieve", color: "bg-red-600" },
-                { letter: "C", label: "Compliance", color: "bg-red-600" },
-                { letter: "E", label: "Excellence", color: "bg-red-600" },
-              ].map((item) => (
-                <div
-                  key={item.letter}
-                  className="inline-flex items-center gap-1.5 rounded-xl border border-red-100 bg-white px-3 py-2 shadow-sm"
-                >
-                  <span className={`flex h-6 w-6 shrink-0 items-center justify-center rounded-lg ${item.color} text-xs font-extrabold text-white`}>
-                    {item.letter}
-                  </span>
-                  <span className="text-sm font-semibold text-slate-700">{item.label}</span>
-                </div>
-              ))}
-            </div>
-
-          </div>
-        </div>
-      </section>
-
-      {/* ================= MISSION & VISION SECTION ================= */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-white via-gray-50 to-white px-4 py-16 text-gray-800 sm:px-6 sm:py-24 lg:px-12">
-        <div className="pointer-events-none absolute -right-32 top-20 h-96 w-96 rounded-full bg-red-100/50 blur-3xl" />
-        <div className="relative mx-auto max-w-7xl">
-          <div className="grid items-center gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
-            <div className="max-w-xl">
-              <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-red-100 bg-white px-4 py-2 text-xs font-bold uppercase tracking-[0.16em] text-red-600 shadow-sm">
-                <span className="h-2 w-2 rounded-full bg-red-600" />
-                Consulting Services
-              </div>
-              <p className="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-gray-400">
-                Our purpose, in practice
-              </p>
-              <h2 className="text-4xl font-extrabold leading-[1.08] tracking-tight text-gray-900 sm:text-5xl lg:text-6xl">
-                Turning Vision
-                <span className="mt-1 block text-red-600">Into Growth</span>
+              <h2 className="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl md:text-5xl">
+                Our Mission
               </h2>
-              <p className="mt-6 max-w-lg text-base leading-7 text-gray-600 sm:text-lg sm:leading-8">
-                We go beyond traditional consulting by integrating digital innovation, customer centric support, and authentic engagement strategies.
-              </p>
-              <div className="mt-8 flex items-center gap-4">
-                <span className="h-px w-12 bg-red-600" />
-                <span className="text-sm font-semibold text-gray-700">Built around people. Focused on progress.</span>
-              </div>
             </div>
+            
+            <p className="text-base leading-relaxed text-gray-600 sm:text-lg">
+              Our mission at ACE Certification Ltd. is to simplify the path to certification and embed a culture of continuous improvement within our client organizations.
+            </p>
+            <p className="text-base leading-relaxed text-gray-600 sm:text-lg">
+              We achieve this by providing rigorous &amp; impartial certification, delivering reliable audit services that uphold the highest standards of integrity.
+            </p>
 
-            <div className="relative mx-auto w-full max-w-2xl pb-10 pr-8 sm:pb-12 sm:pr-12">
-              <div className="relative aspect-[16/10] overflow-hidden rounded-[2rem] shadow-2xl shadow-slate-900/15">
-                <img
-                  src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=1400&q=85"
-                  alt="A team collaborating around a table"
-                  className="h-full w-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/55 via-transparent to-transparent" />
-                <div className="absolute bottom-5 left-5 text-white sm:bottom-7 sm:left-7">
-                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-white/75">The ACE approach</p>
-                  <p className="mt-1 text-lg font-bold sm:text-xl">Clarity that moves business forward</p>
-                </div>
-              </div>
-              <div className="absolute bottom-0 right-0 w-[38%] overflow-hidden rounded-2xl border-4 border-white shadow-xl sm:rounded-3xl">
-                <img
-                  src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=700&q=85"
-                  alt="Colleagues working together"
-                  className="aspect-[4/3] w-full object-cover"
-                />
-              </div>
-              <div className="absolute right-2 top-5 rounded-2xl border border-white/70 bg-white/95 px-4 py-3 shadow-lg backdrop-blur sm:right-5 sm:top-8 sm:px-5">
-                <p className="text-xl font-extrabold text-red-600 sm:text-2xl">ACE</p>
-                <p className="text-[10px] font-bold uppercase tracking-wider text-gray-500 sm:text-xs">Achieve. Comply. Excel.</p>
-              </div>
+            <div className="pt-4">
+              <Link
+                href="/mission"
+                className="inline-flex rounded-full bg-red-600 px-6 py-2.5 text-sm font-semibold text-white shadow-md transition-all hover:bg-red-700 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2"
+              >
+                LEARN MORE
+              </Link>
             </div>
           </div>
 
-          <div className="mt-14 grid grid-cols-1 gap-6 md:mt-20 md:grid-cols-2 md:gap-8">
-            <article className="group overflow-hidden rounded-3xl border border-gray-100 bg-white shadow-[0_12px_40px_rgba(15,23,42,0.06)] transition-all duration-300 hover:-translate-y-1 hover:border-red-100 hover:shadow-[0_20px_50px_rgba(220,38,38,0.1)]">
-              <div className="relative h-48 overflow-hidden sm:h-56">
-                <img
-                  src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=1000&q=85"
-                  alt="Professionals collaborating on a shared goal"
-                  className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 to-transparent" />
-                <span className="absolute bottom-5 left-6 text-xs font-bold uppercase tracking-[0.18em] text-white/85">What guides us</span>
-              </div>
-              <div className="p-6 sm:p-8">
-                <div className="mb-5 flex items-center gap-4">
-                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-red-50 text-red-600 transition-colors duration-300 group-hover:bg-red-600 group-hover:text-white">
-                    <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
-                  </div>
-                  <h3 className="text-2xl font-bold text-gray-900">Our Mission</h3>
-                </div>
-                <p className="text-base leading-relaxed text-gray-600">
-                  Our mission at ACE Certification Ltd. is to simplify the path to certification and embed a culture of continuous improvement within our client organizations.
-                </p>
-                <p className="mt-4 text-base leading-relaxed text-gray-600">
-                  We achieve this by providing rigorous &amp; impartial certification, delivering reliable audit services that uphold the highest standards of integrity.
-                </p>
-              </div>
-            </article>
-
-            <article className="group overflow-hidden rounded-3xl border border-gray-100 bg-white shadow-[0_12px_40px_rgba(15,23,42,0.06)] transition-all duration-300 hover:-translate-y-1 hover:border-red-100 hover:shadow-[0_20px_50px_rgba(220,38,38,0.1)]">
-              <div className="relative h-48 overflow-hidden sm:h-56">
-                <img
-                  src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1000&q=85"
-                  alt="A bright, modern workplace"
-                  className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 to-transparent" />
-                <span className="absolute bottom-5 left-6 text-xs font-bold uppercase tracking-[0.18em] text-white/85">Our direction</span>
-              </div>
-              <div className="p-6 sm:p-8">
-                <div className="mb-5 flex items-center gap-4">
-                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-red-50 text-red-600 transition-colors duration-300 group-hover:bg-red-600 group-hover:text-white">
-                    <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M2.458 12C3.732 7.943 7.523 5 12 5s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7s-8.268-2.943-9.542-7z" /></svg>
-                  </div>
-                  <h3 className="text-2xl font-bold text-gray-900">Our Vision</h3>
-                </div>
-                <p className="text-base leading-relaxed text-gray-600">
-                  To be the most trusted and impactful partner for organizational excellence, recognized globally for setting the benchmark in certification and training services.
-                </p>
-              </div>
-            </article>
+          {/* Right: Mission Image (Also made slightly compact to match) */}
+          <div className="order-1 lg:order-2 relative mx-auto aspect-[4/3] w-full max-w-[500px] overflow-hidden rounded-[2rem] shadow-2xl lg:mx-0 lg:ml-auto">
+            <Image
+              src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1000&q=85"
+              alt="Corporate team working together on a mission"
+              fill
+              sizes="(max-width: 1024px) 100vw, 50vw"
+              className="object-cover transition-transform duration-700 hover:scale-105"
+            />
           </div>
         </div>
-      </section>
 
+        {/* ================= 2. OUR VISION (Image Left, Text Right) ================= */}
+        <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-20">
+          
+          {/* Left: Vision Image Collage (MADE SMALLER & COMPACT) */}
+          <div className="relative mx-auto w-full max-w-sm lg:mx-0 lg:max-w-[420px]">
+            <div className="grid grid-cols-2 gap-3 sm:gap-4">
+              
+              {/* Tall Image */}
+              <div className="relative aspect-[3/4] w-full overflow-hidden rounded-[1.5rem] rounded-tr-none shadow-xl">
+                <Image
+                  src="https://images.unsplash.com/photo-1573164574572-cb89e39749b4?auto=format&fit=crop&w=600&q=85"
+                  alt="Business professional leading"
+                  fill
+                  sizes="(max-width: 1024px) 50vw, 25vw"
+                  className="object-cover"
+                />
+              </div>
+              
+              {/* Stacked Images */}
+              <div className="flex flex-col gap-3 sm:gap-4">
+                {/* Top Square Image */}
+                <div className="relative aspect-square w-full overflow-hidden rounded-[1.5rem] rounded-tl-none shadow-xl">
+                  <Image
+                    src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600&q=85"
+                    alt="Business growth and data analysis"
+                    fill
+                    sizes="(max-width: 1024px) 50vw, 25vw"
+                    className="object-cover"
+                  />
+                </div>
+                
+                {/* Bottom Square Image */}
+                <div className="relative aspect-square w-full overflow-hidden rounded-[1.5rem] rounded-bl-none shadow-xl">
+                  <Image
+                    src="https://images.unsplash.com/photo-1531496730074-83b638c0a7ac?auto=format&fit=crop&w=600&q=85"
+                    alt="Global team alignment"
+                    fill
+                    sizes="(max-width: 1024px) 50vw, 25vw"
+                    className="object-cover"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Right: Vision Text */}
+          <div className="space-y-6">
+            <div className="space-y-2">
+              <span className="text-sm font-semibold tracking-wider text-red-600 uppercase">
+                Our direction
+              </span>
+              <h2 className="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl md:text-5xl">
+                Our Vision
+              </h2>
+            </div>
+            
+            <p className="text-base leading-relaxed text-gray-600 sm:text-lg">
+              To be the most trusted and impactful partner for organizational excellence, recognized globally for setting the benchmark in certification and training services.
+            </p>
+
+            <div className="pt-4">
+              <Link
+                href="/vision"
+                className="inline-flex rounded-full bg-red-600 px-6 py-2.5 text-sm font-semibold text-white shadow-md transition-all hover:bg-red-700 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2"
+              >
+                LEARN MORE
+              </Link>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
 {/* ================= CORE VALUES SECTION ================= */}
       <section className="relative overflow-hidden bg-white px-4 py-16 sm:px-6 sm:py-24 lg:px-12">
         {/* Navy + Red decorative blobs */}
