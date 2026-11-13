@@ -35,7 +35,7 @@ export default function FeaturesSection() {
     <section
       id="features"
       aria-labelledby="features-heading"
-      className="relative overflow-hidden bg-white py-12 font-sans sm:py-16 lg:py-20"
+      className="relative overflow-hidden bg-white py-10 font-sans sm:py-12 lg:py-16"
     >
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-red-50/70 via-white to-slate-50" />
       <div aria-hidden="true" className="pointer-events-none absolute inset-0 z-0">
@@ -76,7 +76,7 @@ export default function FeaturesSection() {
 
       <div className="container relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="mx-auto mb-10 max-w-3xl text-center sm:mb-12 lg:mb-14">
+        <div className="mx-auto mb-8 max-w-3xl text-center sm:mb-10 lg:mb-12">
           <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-red-100 bg-red-50 px-4 py-1.5 text-[11px] font-bold uppercase tracking-wider text-red-700 sm:text-xs">
             <ShieldCheck className="w-3.5 h-3.5" />
             <span>Why Choose ACE</span>

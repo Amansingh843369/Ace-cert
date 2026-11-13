@@ -7,13 +7,13 @@ import { posts } from "./siteData"; // Make sure this data contains relevant ISO
 export default function BlogSection() {
   return (
     <section 
-      className="py-16 md:py-20 bg-slate-50 font-sans antialiased border-t border-slate-200" 
+      className="py-12 md:py-16 bg-slate-50 font-sans antialiased border-t border-slate-200"
       aria-labelledby="blog-title"
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
         
         {/* --- HEADER SECTION --- */}
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 lg:mb-16 gap-6">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-8 lg:mb-10 gap-6">
           <div className="max-w-2xl space-y-3">
             <span className="inline-block text-red-600 font-bold tracking-widest text-xs uppercase bg-red-50 px-3.5 py-1.5 rounded-full border border-red-100">
               Latest News & Insights

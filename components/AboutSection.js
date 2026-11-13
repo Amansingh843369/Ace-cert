@@ -20,7 +20,7 @@ export default function AboutSection() {
     <section
       id="about"
       aria-label="About ACE Certification Services"
-      className="relative overflow-hidden bg-white py-16 font-sans sm:py-20 lg:py-28"
+      className="relative overflow-hidden bg-white py-12 font-sans sm:py-14 lg:py-16"
     >
       {/* Decorative Blobs */}
       <div className="pointer-events-none absolute -left-48 top-12 h-[600px] w-[600px] rounded-full bg-red-100/30 blur-[120px]" />
@@ -28,7 +28,7 @@ export default function AboutSection() {
       <div className="pointer-events-none absolute top-0 right-1/4 h-[400px] w-[400px] rounded-full bg-red-50/40 blur-[100px]" />
 
       <section className="relative z-10 mx-auto max-w-7xl px-4  sm:px-6 lg:px-8 ">
-        <div className="grid grid-cols-1 items-center gap-16 lg:grid-cols-2 lg:gap-20">
+        <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-2 lg:gap-16">
           
           {/* Left: Overlapping Images */}
           <div className="relative mx-auto w-full max-w-md lg:mx-0 lg:max-w-none">

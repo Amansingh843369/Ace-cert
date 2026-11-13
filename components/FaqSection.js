@@ -38,12 +38,12 @@ export default function FaqSection() {
     <section 
       id="faq"
       aria-labelledby="faq-heading"
-      className="relative py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 bg-white overflow-hidden font-sans"
+      className="relative py-12 sm:py-14 lg:py-16 px-4 sm:px-6 lg:px-8 bg-white overflow-hidden font-sans"
     >
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center relative z-10">
         
         {/* --- LEFT SIDE: FAQ Content --- */}
-        <div className="order-2 lg:order-1 mt-8 lg:mt-0">
+        <div className="order-2 lg:order-1">
           
           <span className="text-red-600 text-xs sm:text-sm font-bold uppercase tracking-wider mb-3 block">
             FAQ

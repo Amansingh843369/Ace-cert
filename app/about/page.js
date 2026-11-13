@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from "next/link";
 import Image from "next/image";
+import { ArrowRight, Handshake, ShieldCheck, TrendingUp } from "lucide-react";
 export default function AboutPage() {
   return (
     <main className="font-sans bg-white min-h-screen pb-12 selection:bg-red-100 selection:text-red-900">
@@ -162,125 +163,74 @@ export default function AboutPage() {
       </div>
     </section>
 {/* ================= CORE VALUES SECTION ================= */}
-      <section className="relative overflow-hidden bg-white px-4 py-12 sm:px-6 sm:py-16 lg:px-12">
-        {/* Navy + Red decorative blobs */}
-        <div className="pointer-events-none absolute -left-48 top-16 h-[500px] w-[500px] rounded-full bg-red-100/20 blur-[100px]" />
-        <div className="pointer-events-none absolute -right-48 top-16 h-[500px] w-[500px] rounded-full bg-blue-950/10 blur-[100px]" />
-        <div className="pointer-events-none absolute -bottom-64 left-1/2 h-[500px] w-[500px] rounded-full bg-red-50 blur-[100px]" />
+      <section className="relative overflow-hidden bg-white px-4 py-14 sm:px-6 sm:py-20 lg:px-12">
+        <div className="pointer-events-none absolute -left-40 top-20 h-96 w-96 rounded-full bg-red-100/50 blur-3xl" />
+        <div className="pointer-events-none absolute -right-40 bottom-0 h-96 w-96 rounded-full bg-blue-100/60 blur-3xl" />
 
         <div className="relative z-10 mx-auto max-w-7xl">
-          <div className="mx-auto mb-12 max-w-2xl text-center sm:mb-16">
-            <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-red-100 bg-red-50 px-4 py-2 text-xs font-bold uppercase tracking-[0.16em] text-red-600 shadow-sm">
-              <span className="relative flex h-2.5 w-2.5">
-                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-red-500 opacity-40" />
-                <span className="relative inline-flex h-full w-full rounded-full bg-red-600" />
-              </span>
+          <div className="mx-auto mb-14 max-w-2xl text-center sm:mb-20">
+            <span className="mb-4 inline-flex items-center gap-2 rounded-full border border-red-100 bg-red-50 px-4 py-2 text-xs font-bold uppercase tracking-[0.16em] text-red-700">
+              <span className="h-2 w-2 rounded-full bg-red-600" />
               The ACE Standard
-            </div>
-            <h2 className="text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl lg:text-5xl">
-              Our Core 
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-blue-900">
-                Values
-              </span>
+            </span>
+            <h2 className="text-3xl font-extrabold tracking-tight text-blue-950 sm:text-4xl lg:text-5xl">
+              Our Core <span className="text-red-600">Values</span>
             </h2>
             <p className="mt-4 text-base leading-7 text-slate-600 sm:text-lg">
               The principles behind every assessment, partnership, and result.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 gap-5 md:grid-cols-3 md:gap-6">
+          <div className="relative grid grid-cols-1 gap-12 md:grid-cols-3 md:gap-8">
+            <div className="pointer-events-none absolute left-[16%] right-[16%] top-[4.25rem] hidden h-px bg-gradient-to-r from-red-200 via-blue-200 to-red-200 md:block" />
             {[
               {
                 letter: "A",
-                label: "A · Integrity",
                 title: "Accuracy & Integrity",
                 desc: "We are unwavering in our commitment to impartiality, ethical practices, and technically sound assessments.",
-                icon: (
-                  <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                  </svg>
-                ),
-                gradient: "from-red-600 to-red-500",
-                accent: "bg-red-100 text-red-600 group-hover:bg-red-600 group-hover:text-white",
-                border: "hover:border-red-200",
-                shadow: "hover:shadow-[0_20px_40px_rgba(227,6,19,0.12)]",
+                icon: ShieldCheck,
+                ring: "text-red-600",
               },
               {
                 letter: "C",
-                label: "C · Partnership",
-                title: "Client Success",
+                title: "Client Success & Collaboration",
                 desc: "Your success is our success. We build long-term partnerships based on understanding, respect, and shared goals.",
-                icon: (
-                  <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                  </svg>
-                ),
-                gradient: "from-blue-900 to-blue-800",
-                accent: "bg-blue-100 text-blue-900 group-hover:bg-blue-900 group-hover:text-white",
-                border: "hover:border-blue-200",
-                shadow: "hover:shadow-[0_20px_40px_rgba(30,58,138,0.12)]",
+                icon: Handshake,
+                ring: "text-blue-950",
               },
               {
                 letter: "E",
-                label: "E · Progress",
-                title: "Excellence",
+                title: "Excellence & Expertise",
                 desc: "We continuously invest in the development of our team and services to provide cutting-edge, expert guidance.",
-                icon: (
-                  <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
-                  </svg>
-                ),
-                gradient: "from-red-600 via-red-500 to-blue-900",
-                accent: "bg-red-100 text-red-600 group-hover:bg-red-600 group-hover:text-white",
-                border: "hover:border-red-200",
-                shadow: "hover:shadow-[0_20px_40px_rgba(227,6,19,0.12)]",
+                icon: TrendingUp,
+                ring: "text-red-600",
               },
-            ].map((value) => (
-              <article
-                key={value.letter}
-                className={`group relative overflow-hidden rounded-[2rem] border border-slate-100 bg-white p-7 shadow-[0_8px_30px_rgba(15,23,42,0.04)] transition-all duration-500 hover:-translate-y-1.5 ${value.border} ${value.shadow} sm:p-8`}
-              >
-                {/* Large background letter */}
-                <span className="absolute -right-4 -top-10 select-none text-[10rem] font-black leading-none text-slate-100 transition-colors duration-500 group-hover:text-red-100/50 group-hover:translate-x-2 group-hover:-translate-y-2" aria-hidden="true">
-                  {value.letter}
-                </span>
-
-                {/* Top accent bar */}
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-0 h-1 bg-gradient-to-r from-red-600 to-blue-900 transition-all duration-500 group-hover:w-full" />
-
-                <div className="relative z-10 flex flex-col h-full">
-                  {/* Icon Container */}
-                  <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl text-white shadow-lg shadow-blue-900/20 transition-all duration-300 group-hover:scale-105 group-hover:-rotate-3">
-                    <div className={`absolute inset-0 rounded-2xl bg-gradient-to-br ${value.gradient}`} />
-                    <div className="relative">{value.icon}</div>
+            ].map((value, index) => {
+              const Icon = value.icon;
+              return (
+                <article key={value.letter} className="group relative flex flex-col items-center text-center">
+                  <div className="relative mb-7 flex h-[8.5rem] w-[8.5rem] items-center justify-center rounded-full border border-slate-200 bg-white shadow-[0_12px_35px_rgba(15,23,42,0.07)] transition-transform duration-300 group-hover:-translate-y-1">
+                    <svg className={`absolute inset-0 h-full w-full -rotate-90 ${value.ring}`} viewBox="0 0 136 136" fill="none" aria-hidden="true">
+                      <circle cx="68" cy="68" r="63" stroke="currentColor" strokeOpacity="0.16" strokeWidth="2" />
+                      <circle cx="68" cy="68" r="63" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeDasharray="112 396" />
+                    </svg>
+                    <div className={`flex h-[4.5rem] w-[4.5rem] items-center justify-center rounded-full ${index === 1 ? "bg-blue-950" : "bg-red-600"} text-white shadow-lg transition-transform duration-300 group-hover:scale-105`}>
+                      <Icon className="h-8 w-8" strokeWidth={1.8} aria-hidden="true" />
+                    </div>
+                    <span className={`absolute -bottom-2 flex h-8 w-8 items-center justify-center rounded-full border-4 border-white ${index === 1 ? "bg-blue-950" : "bg-red-600"} text-xs font-bold text-white`}>
+                      {value.letter}
+                    </span>
                   </div>
 
-                  {/* Label */}
-                  <p className="mb-2 text-xs font-bold uppercase tracking-[0.16em] text-slate-500 transition-colors group-hover:text-red-600">
-                    {value.label}
-                  </p>
-
-                  {/* Title */}
-                  <h3 className="mb-4 text-xl font-extrabold tracking-tight text-slate-900 sm:text-2xl transition-colors group-hover:text-red-600">
+                  <h3 className="mb-3 text-xl font-extrabold tracking-tight text-blue-950 transition-colors group-hover:text-red-600 sm:text-2xl">
                     {value.title}
                   </h3>
-
-                  {/* Description */}
-                  <p className="text-sm leading-relaxed text-slate-600 sm:text-base sm:leading-7 flex-1">
+                  <p className="max-w-sm text-sm leading-7 text-slate-600 sm:text-base">
                     {value.desc}
                   </p>
-
-                  {/* Bottom indicator */}
-                  <div className="mt-6 h-px w-full bg-gradient-to-r from-transparent via-slate-100 to-transparent" />
-                  <div className="mt-4 flex items-center gap-2 text-xs font-semibold text-slate-400 transition-colors group-hover:text-red-600">
-                    <span>Guiding principle</span>
-                    <svg className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                    </svg>
-                  </div>
-                </div>
-              </article>
-            ))}
+                </article>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -348,54 +298,60 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* ================= BOTTOM CTA SECTION (With ISO Image) ================= */}
-      <section className="py-8 sm:py-12 px-4 sm:px-6 lg:px-12 bg-white">
-        <div className="max-w-6xl mx-auto bg-white rounded-[2.5rem] border border-gray-100 shadow-[0_20px_50px_rgba(0,0,0,0.05)] overflow-hidden relative">
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-0 relative z-10">
-            
-            {/* Left Side: Text Content */}
-            <div className="p-8 sm:p-12 lg:p-16 flex flex-col justify-center space-y-6 bg-white">
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 leading-tight">
-                Looking For Professional<br/>Certification Partner?
+      {/* ================= ABOUT PAGE CTA ================= */}
+      <section className="bg-white px-4 py-10 sm:px-6 sm:py-14 lg:px-12">
+        <div className="mx-auto max-w-6xl overflow-hidden rounded-[2rem] bg-blue-950 shadow-[0_24px_70px_rgba(15,23,42,0.18)]">
+          <div className="grid md:grid-cols-[1.05fr_0.95fr]">
+            <div className="relative flex flex-col justify-center px-7 py-10 sm:px-10 sm:py-14 lg:px-14">
+              <div className="absolute bottom-0 left-0 top-0 w-1.5 bg-red-600" />
+              <span className="mb-5 inline-flex w-fit items-center gap-2 rounded-full border border-white/15 bg-white/10 px-4 py-2 text-xs font-bold uppercase tracking-[0.16em] text-white">
+                <span className="h-2 w-2 rounded-full bg-red-500" />
+                Your certification journey
+              </span>
+              <h2 className="max-w-xl text-3xl font-extrabold leading-tight tracking-tight text-white sm:text-4xl lg:text-[2.75rem]">
+                A trusted partner for your{" "}
+                <span className="text-red-400">certification journey.</span>
               </h2>
-              <p className="text-gray-600 text-lg leading-relaxed max-w-md">
-                Highly recommend our templates and services for any business looking to establish a strong online presence and achieve global compliance standards.
+              <p className="mt-5 max-w-lg text-base leading-7 text-slate-300 sm:text-lg">
+                Partner with ACE Certification for impartial assessments, recognized standards, and practical guidance tailored to your organization.
               </p>
-              
-              {/* Hand drawn arrow icon simulation */}
-              <div className="hidden md:block w-16 h-16 text-gray-800 opacity-80">
-                <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="2" className="w-full h-full">
-                   <path d="M20,80 Q50,20 80,50 T90,20" strokeLinecap="round" />
-                   <path d="M80,20 L90,20 L90,30" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
+
+              <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+                <Link
+                  href="/contact"
+                  className="group inline-flex items-center justify-center gap-2 rounded-xl bg-red-600 px-5 py-3.5 text-sm font-bold text-white shadow-lg shadow-red-950/25 transition-colors hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-400 focus:ring-offset-2 focus:ring-offset-blue-950"
+                >
+                  Talk to our team
+                  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />
+                </Link>
+                <Link
+                  href="/certification"
+                  className="inline-flex items-center justify-center rounded-xl border border-white/25 px-5 py-3.5 text-sm font-bold text-white transition-colors hover:border-white/50 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-blue-950"
+                >
+                  Explore certifications
+                </Link>
+              </div>
+
+              <div className="mt-8 flex items-center gap-2 text-sm font-medium text-slate-300">
+                <ShieldCheck className="h-5 w-5 shrink-0 text-red-400" aria-hidden="true" />
+                Independent expertise. Clear guidance. Lasting confidence.
               </div>
             </div>
 
-            {/* Right Side: ISO Related Image + Button Overlay */}
-            <div className="relative min-h-[300px] md:min-h-full bg-gray-50">
-              {/* ISO Audit / Business Image */}
-              <img 
-                src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=800&q=80" 
-                alt="ISO Certification Audit Meeting" 
-                className="absolute inset-0 w-full h-full object-cover"
+            <div className="relative min-h-[280px] md:min-h-[440px]">
+              <Image
+                src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=1000&q=85"
+                alt="Business team working together during a meeting"
+                fill
+                sizes="(max-width: 768px) 100vw, 45vw"
+                className="object-cover"
               />
-              
-              {/* Dark Overlay for button visibility */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
-
-              {/* Floating CTA Button Area */}
-              <div className="absolute bottom-8 right-8 left-8 sm:left-auto sm:w-fit flex flex-col items-end gap-3 z-20">
-                <button className="group px-8 py-4 bg-orange-500 hover:bg-orange-600 text-white font-bold text-lg rounded-2xl shadow-lg shadow-orange-900/20 transition-all duration-300 transform hover:-translate-y-1 flex items-center gap-3">
-                  Get Started Free
-                  <svg className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M7 17L17 7M17 7H7M17 7V17" />
-                  </svg>
-                </button>
-                <p className="text-sm text-white/90 font-medium bg-black/30 backdrop-blur-md px-3 py-1 rounded-full">No credit card required</p>
+              <div className="absolute inset-0 bg-gradient-to-t from-blue-950/80 via-blue-950/10 to-transparent md:bg-gradient-to-l md:from-blue-950/20 md:via-transparent md:to-blue-950/10" />
+              <div className="absolute bottom-6 left-6 right-6 rounded-2xl border border-white/20 bg-blue-950/65 p-4 text-white shadow-lg backdrop-blur-sm sm:bottom-8 sm:left-8 sm:right-8 sm:p-5">
+                <p className="text-xs font-bold uppercase tracking-[0.16em] text-red-300">Built on trust</p>
+                <p className="mt-1 text-lg font-bold sm:text-xl">Standards that move your business forward.</p>
               </div>
             </div>
-
           </div>
         </div>
       </section>
