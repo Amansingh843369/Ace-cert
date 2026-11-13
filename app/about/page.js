@@ -3,10 +3,10 @@ import Link from "next/link";
 import Image from "next/image";
 export default function AboutPage() {
   return (
-    <main className="font-sans bg-white min-h-screen pb-20 selection:bg-red-100 selection:text-red-900">
+    <main className="font-sans bg-white min-h-screen pb-12 selection:bg-red-100 selection:text-red-900">
       
       {/* ================= HERO / BREADCRUMB SECTION (The "Patti") ================= */}
-      <section className="relative py-16 sm:py-24 px-4 text-center overflow-hidden bg-[#FFF8F7]">
+      <section className="relative py-10 sm:py-14 px-4 text-center overflow-hidden bg-[#FFF8F7]">
         
         {/* ISO Related Background Image with Red Overlay */}
         <div className="absolute inset-0 z-0">
@@ -36,24 +36,16 @@ export default function AboutPage() {
       </section>
 
 {/* ================= ABOUT US CONTENT SECTION ================= */}
-      <section className="relative py-16 sm:py-24 px-4 sm:px-6 lg:px-12 bg-white text-gray-800 overflow-hidden">
-        {/* Decorative blobs */}
-        <div className="pointer-events-none absolute -left-48 top-16 h-[500px] w-[500px] rounded-full bg-red-100/30 blur-[100px]" />
-        <div className="pointer-events-none absolute -bottom-64 right-0 h-[500px] w-[500px] rounded-full bg-red-50 blur-[100px]" />
-
-     
-      </section>
-
-   <section className="relative overflow-hidden bg-gradient-to-b from-white via-gray-50 to-white px-4 py-16 sm:px-6 sm:py-24 lg:px-12 font-sans text-gray-800">
+   <section className="relative overflow-hidden bg-gradient-to-b from-white via-gray-50 to-white px-4 py-10 sm:px-6 sm:py-14 lg:px-12 lg:py-16 font-sans text-gray-800">
       
       {/* Decorative Blobs */}
       <div className="pointer-events-none absolute -right-32 top-20 h-96 w-96 rounded-full bg-red-100/50 blur-3xl" />
       <div className="pointer-events-none absolute -left-32 bottom-20 h-96 w-96 rounded-full bg-red-50/50 blur-3xl" />
 
-      <div className="relative mx-auto max-w-7xl space-y-20 lg:space-y-32">
+      <div className="relative mx-auto max-w-7xl space-y-12 lg:space-y-16">
         
         {/* ================= 1. OUR MISSION (Text Left, Image Right) ================= */}
-        <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-20">
+        <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-2 lg:gap-12">
           
           {/* Left: Mission Text */}
           <div className="order-2 lg:order-1 space-y-6">
@@ -96,7 +88,7 @@ export default function AboutPage() {
         </div>
 
         {/* ================= 2. OUR VISION (Image Left, Text Right) ================= */}
-        <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-20">
+        <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-2 lg:gap-12">
           
           {/* Left: Vision Image Collage (MADE SMALLER & COMPACT) */}
           <div className="relative mx-auto w-full max-w-sm lg:mx-0 lg:max-w-[420px]">
@@ -170,7 +162,7 @@ export default function AboutPage() {
       </div>
     </section>
 {/* ================= CORE VALUES SECTION ================= */}
-      <section className="relative overflow-hidden bg-white px-4 py-16 sm:px-6 sm:py-24 lg:px-12">
+      <section className="relative overflow-hidden bg-white px-4 py-12 sm:px-6 sm:py-16 lg:px-12">
         {/* Navy + Red decorative blobs */}
         <div className="pointer-events-none absolute -left-48 top-16 h-[500px] w-[500px] rounded-full bg-red-100/20 blur-[100px]" />
         <div className="pointer-events-none absolute -right-48 top-16 h-[500px] w-[500px] rounded-full bg-blue-950/10 blur-[100px]" />
@@ -294,7 +286,7 @@ export default function AboutPage() {
       </section>
 
       {/* ================= OUR PURPOSE SECTION ================= */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-red-50 via-white to-gray-50 px-4 py-16 sm:px-6 sm:py-24 lg:px-12">
+      <section className="relative overflow-hidden bg-gradient-to-br from-red-50 via-white to-gray-50 px-4 py-12 sm:px-6 sm:py-16 lg:px-12">
         <div className="pointer-events-none absolute -right-32 -top-24 h-96 w-96 rounded-full bg-red-100/60 blur-3xl" />
         <div className="relative mx-auto grid max-w-7xl items-center gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
           <div>
@@ -357,7 +349,7 @@ export default function AboutPage() {
       </section>
 
       {/* ================= BOTTOM CTA SECTION (With ISO Image) ================= */}
-      <section className="py-12 sm:py-16 px-4 sm:px-6 lg:px-12 bg-white">
+      <section className="py-8 sm:py-12 px-4 sm:px-6 lg:px-12 bg-white">
         <div className="max-w-6xl mx-auto bg-white rounded-[2.5rem] border border-gray-100 shadow-[0_20px_50px_rgba(0,0,0,0.05)] overflow-hidden relative">
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-0 relative z-10">
