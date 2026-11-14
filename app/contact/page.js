@@ -25,28 +25,30 @@ export default function ContactPage() {
 
   return (
     <main className="relative min-h-screen overflow-x-hidden bg-slate-50 font-sans text-slate-800">
-      <section className="relative overflow-hidden bg-[#0B1739] px-4 py-14 text-white sm:px-6 sm:py-16 lg:px-8 lg:py-20">
-        <div aria-hidden="true" className="pointer-events-none absolute -right-24 -top-32 h-80 w-80 rounded-full border-[40px] border-white/5 sm:h-[28rem] sm:w-[28rem]" />
-        <div aria-hidden="true" className="pointer-events-none absolute -bottom-36 -left-20 h-72 w-72 rounded-full bg-red-600/20 blur-3xl" />
+      <section className="relative overflow-hidden bg-[#FFF8F7] px-4 py-10 text-center sm:py-14">
+        <div className="absolute inset-0 z-0">
+          <img
+            src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1920&q=80"
+            alt=""
+            className="h-full w-full object-cover opacity-30"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-white/40 via-transparent to-white/80" />
+        </div>
 
-        <div className="relative mx-auto max-w-7xl">
-          <div className="max-w-3xl">
-            <p className="mb-4 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-4 py-2 text-xs font-bold uppercase tracking-[0.16em] text-slate-200">
-              <span aria-hidden="true" className="h-2 w-2 rounded-full bg-red-500" />
-              Contact ACE-CERT
-            </p>
-            <h1 className="text-4xl font-extrabold leading-tight tracking-tight sm:text-5xl lg:text-6xl">
-              Contact <span className="text-red-400">Us</span>
-            </h1>
-            <p className="mt-4 max-w-2xl text-base leading-7 text-slate-300 sm:text-lg sm:leading-8">
-              Have a question about certification? Our team is ready to help you find the right next step.
-            </p>
-            <nav aria-label="Breadcrumb" className="mt-6 flex items-center gap-2 text-sm font-medium text-slate-300">
-              <Link href="/" className="transition-colors hover:text-white">Home</Link>
-              <span aria-hidden="true" className="text-red-400">/</span>
-              <span aria-current="page" className="text-white">Contact Us</span>
-            </nav>
-          </div>
+        <div className="relative z-10 mx-auto max-w-4xl space-y-4">
+          <h1 className="text-4xl font-extrabold tracking-tight text-red-600 drop-shadow-sm sm:text-5xl md:text-6xl">
+            Contact Us
+          </h1>
+          <nav
+            aria-label="Breadcrumb"
+            className="mx-auto flex w-fit items-center justify-center gap-2 rounded-full border border-red-100 bg-white/60 px-6 py-2 text-sm font-medium text-gray-500 shadow-sm backdrop-blur-sm sm:text-base"
+          >
+            <Link href="/" className="transition-colors hover:text-red-600">Home</Link>
+            <svg className="h-4 w-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
+            </svg>
+            <span aria-current="page" className="font-semibold text-gray-900">Contact Us</span>
+          </nav>
         </div>
       </section>
 
