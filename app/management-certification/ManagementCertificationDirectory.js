@@ -6,17 +6,19 @@ import Image from 'next/image';
 import { ArrowUpRight, Filter, Search, Settings2, ShieldCheck, Globe, Award } from 'lucide-react';
 import { certifications as ISO_STANDARDS } from '../../data/certifications';
 
+const DIRECTORY_STANDARDS = ISO_STANDARDS.filter(({ code }) => code !== 'CE Marking');
+
 const FILTER_OPTIONS = [
-  { value: 'ALL', label: 'All Certifications', count: ISO_STANDARDS.length },
+  { value: 'ALL', label: 'All Certifications', count: DIRECTORY_STANDARDS.length },
   {
     value: 'ISO STANDARD',
     label: 'ISO Standards',
-    count: ISO_STANDARDS.filter(({ type }) => type === 'ISO STANDARD').length,
+    count: DIRECTORY_STANDARDS.filter(({ type }) => type === 'ISO STANDARD').length,
   },
   {
     value: 'OTHER',
     label: 'Other Certifications',
-    count: ISO_STANDARDS.filter(({ type }) => type !== 'ISO STANDARD').length,
+    count: DIRECTORY_STANDARDS.filter(({ type }) => type !== 'ISO STANDARD').length,
   },
 ];
 
@@ -26,7 +28,7 @@ export default function ManagementCertificationDirectory() {
 
   const filteredStandards = useMemo(() => {
     const normalizedQuery = query.trim().toLowerCase();
-    return ISO_STANDARDS.filter(({ code, title, type }) => {
+    return DIRECTORY_STANDARDS.filter(({ code, title, type }) => {
       const matchesQuery = `${code} ${title} ${type}`.toLowerCase().includes(normalizedQuery);
       const matchesType =
         selectedType === 'ALL' ||
@@ -36,7 +38,7 @@ export default function ManagementCertificationDirectory() {
   }, [query, selectedType]);
 
   const selectedFilterCount =
-    FILTER_OPTIONS.find(({ value }) => value === selectedType)?.count ?? ISO_STANDARDS.length;
+    FILTER_OPTIONS.find(({ value }) => value === selectedType)?.count ?? DIRECTORY_STANDARDS.length;
 
   return (
     <main className="min-h-screen bg-white text-[#1c2448]">
@@ -54,7 +56,7 @@ export default function ManagementCertificationDirectory() {
                 ACE Certifications
               </span>
               <span className="px-3 py-1 rounded-full bg-slate-100 text-[10px] font-bold text-slate-600 tracking-wider uppercase sm:text-xs">
-                {ISO_STANDARDS.length} Standards
+                {DIRECTORY_STANDARDS.length} Standards
               </span>
             </div>
             <h1 className="max-w-3xl text-3xl font-extrabold leading-[1.05] tracking-tight text-[#1c2448] sm:text-4xl md:text-5xl">

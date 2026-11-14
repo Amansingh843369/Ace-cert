@@ -28,7 +28,7 @@ export default function ContactPage() {
       <section className="relative overflow-hidden bg-[#FFF8F7] px-4 py-10 text-center sm:py-14">
         <div className="absolute inset-0 z-0">
           <img
-            src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1920&q=80"
+            src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1920&q=80"
             alt=""
             className="h-full w-full object-cover opacity-30"
           />
