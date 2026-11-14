@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { ArrowRight } from "lucide-react";
 
 // --- Typewriter Component ---
-const typewriterPhrases = ["For Achieve", "For Compliance", "For Excellence", "For Trust"];
+const typewriterPhrases = ["For Achieve", "For Compliance", "For Excellence"];
 
 function TypewriterText() {
   const [phraseIndex, setPhraseIndex] = useState(0);

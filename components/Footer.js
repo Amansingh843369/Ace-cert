@@ -1,202 +1,323 @@
 "use client";
 
-import React from "react";
-import { Mail, Phone } from "lucide-react";
+import Link from "next/link";
+import Image from "next/image";
+import { motion, MotionConfig, useReducedMotion } from "framer-motion";
+import {
+  ArrowRight,
+  ArrowUp,
+  ArrowUpRight,
+  Mail,
+  MessageCircle,
+} from "lucide-react";
+
+const MotionLink = motion.create(Link);
+
+const navigation = [
+  {
+    title: "Services",
+    links: [
+      {
+        label: "Certification",
+        href: "/certification",
+      },
+    ],
+  },
+  {
+    title: "Quick Links",
+    links: [
+      {
+        label: "About Us",
+        href: "/about",
+      },
+      {
+        label: "Privacy Policy",
+        href: "/privacy-policy",
+      },
+      {
+        label: "Contact Us",
+        href: "/contact",
+      },
+      {
+        label: "Feedback",
+        href: "mailto:info@acecert.com?subject=Website%20Feedback",
+      },
+    ],
+  },
+];
+
+// Keep content visible while adding a subtle entrance animation.
+const entrance = {
+  initial: { y: 20 },
+  whileInView: { y: 0 },
+  viewport: { once: true, amount: 0.15 },
+};
+
+const focusClass =
+  "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-600 focus-visible:ring-offset-4";
+
+const linkClass = `group inline-flex min-h-11 max-w-full items-center gap-1 rounded-md text-sm text-slate-600 transition-colors duration-200 hover:text-red-600 motion-reduce:transition-none ${focusClass}`;
 
 export default function Footer() {
-  return (
-    <footer className="bg-white text-slate-800 pt-12 sm:pt-16 pb-8 font-sans border-t border-slate-200">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        {/* --- MAIN FOOTER GRID --- */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-12 pb-12 border-b border-slate-200">
-          
-          {/* COLUMN 1: Logo, About Us & Quick Contact */}
-          <div className="sm:col-span-2 lg:col-span-5 space-y-4">
-            <div className="flex items-start">
-              <img
-                src="/acecert-logo.png"
-                alt="ACERT - ISO Certification and Compliance Services Logo"
-                loading="lazy"
-                decoding="async"
-                className="h-14 sm:h-16 w-auto object-contain" 
-              />
-            </div>
+  const prefersReducedMotion = useReducedMotion();
+  const currentYear = new Date().getFullYear();
 
-            <p className="text-xs sm:text-sm text-slate-600 leading-relaxed max-w-md">
-              We guide you through internal reviews, evidence preparation, audit coordination, corrective actions, and final ISO certification. Our accredited team stays engaged until your compliance goals are fully achieved.
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: prefersReducedMotion ? "instant" : "smooth",
+    });
+  };
+
+  return (
+    <MotionConfig
+      reducedMotion="user"
+      transition={{
+        duration: 0.5,
+        ease: [0.22, 1, 0.36, 1],
+      }}
+    >
+      <footer className="relative isolate overflow-hidden rounded-t-[2rem] border-t border-slate-200 bg-white font-sans text-[#0B1739] sm:rounded-t-[3rem]">
+        {/* Top accent */}
+        
+
+        <div className="mx-auto max-w-7xl px-4 pb-5 pt-8 sm:px-6 sm:pb-6 sm:pt-10 lg:px-8">
+          {/* Certification CTA */}
+          <motion.div
+            {...entrance}
+            className="relative overflow-hidden rounded-2xl border border-red-100 bg-[#FFF5F5] p-5 sm:rounded-3xl sm:p-8 lg:p-10"
+          >
+            <div
+              aria-hidden="true"
+              className="pointer-events-none absolute -right-20 -top-28 h-80 w-80 rounded-full border-[40px] border-red-100/70"
+            />
+
+            <div className="relative flex flex-col gap-6 md:flex-row md:items-center md:justify-between md:gap-8">
+              <div className="min-w-0">
+                <p className="flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.18em] text-red-700">
+                  <span
+                    aria-hidden="true"
+                    className="h-0.5 w-6 shrink-0 rounded-full bg-red-600"
+                  />
+                  Move forward with ACE-CERT
+                </p>
+
+                <h2 className="mt-3 text-2xl font-bold leading-tight tracking-tight sm:text-3xl lg:text-[2.5rem]">
+                  Ready for your{" "}
+                  <span className="text-red-600">next step?</span>
+                </h2>
+
+                <p className="mt-3 max-w-md text-sm leading-6 text-slate-600">
+                  Explore certification and take your next step with
+                  confidence.
+                </p>
+              </div>
+
+              <MotionLink
+                href="/certification"
+                whileHover={{ y: -3 }}
+                whileTap={{ scale: 0.98 }}
+                transition={{
+                  type: "spring",
+                  stiffness: 400,
+                  damping: 25,
+                }}
+                className={`group inline-flex min-h-14 w-full shrink-0 items-center justify-center gap-3 rounded-xl bg-red-600 px-5 py-3 text-sm font-semibold text-white shadow-[0_12px_28px_-12px_rgba(220,38,38,0.65)] transition-colors hover:bg-red-700 motion-reduce:transition-none md:w-auto ${focusClass}`}
+              >
+                Explore certification
+
+                <span
+                  aria-hidden="true"
+                  className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-white/20"
+                >
+                  <ArrowUpRight className="h-4 w-4 transition-transform duration-200 motion-safe:group-hover:-translate-y-0.5 motion-safe:group-hover:translate-x-0.5 motion-reduce:transition-none" />
+                </span>
+              </MotionLink>
+            </div>
+          </motion.div>
+
+          {/* Brand, navigation and contact */}
+          <div className="grid grid-cols-2 items-start gap-x-6 gap-y-9 py-9 sm:grid-cols-4 sm:py-12 lg:grid-cols-12 lg:gap-x-8 xl:gap-x-12">
+            <motion.div
+              {...entrance}
+              className="col-span-2 min-w-0 lg:col-span-4"
+            >
+              <Link
+                href="/"
+                aria-label="ACE-CERT home"
+                className={`inline-flex rounded-lg ${focusClass}`}
+              >
+                <Image
+                  src="/acecert-logo.png"
+                  alt="ACE-CERT"
+                  width={180}
+                  height={72}
+                  loading="lazy"
+                  className="h-12 w-auto object-contain sm:h-14"
+                />
+              </Link>
+
+              <p className="mt-4 max-w-xs text-sm leading-7 text-slate-600">
+                Practical support for your certification journey.
+                Take your next step with clarity and confidence.
+              </p>
+
+              <a
+                href="mailto:info@acecert.com"
+                className={`group mt-4 inline-flex min-h-11 max-w-full items-center gap-3 rounded-lg ${focusClass}`}
+              >
+                <span
+                  aria-hidden="true"
+                  className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-red-100 bg-red-50 text-red-600 transition-colors group-hover:border-red-600 group-hover:bg-red-600 group-hover:text-white motion-reduce:transition-none"
+                >
+                  <Mail className="h-4 w-4" />
+                </span>
+
+                <span className="min-w-0">
+                  <span className="block text-[11px] font-medium uppercase tracking-wider text-slate-500">
+                    Email us
+                  </span>
+
+                  <span className="block break-all text-sm font-medium text-[#0B1739] transition-colors group-hover:text-red-600 motion-reduce:transition-none">
+                    info@acecert.com
+                  </span>
+                </span>
+              </a>
+            </motion.div>
+
+            {navigation.map((group) => (
+              <motion.nav
+                key={group.title}
+                {...entrance}
+                aria-label={group.title}
+                className="min-w-0 lg:col-span-2"
+              >
+                <h2 className="text-xs font-bold uppercase tracking-[0.14em] text-[#0B1739]">
+                  {group.title}
+                </h2>
+
+                <div
+                  aria-hidden="true"
+                  className="mt-3 h-0.5 w-7 rounded-full bg-red-600"
+                />
+
+                <ul className="mt-3">
+                  {group.links.map((link) => {
+                    const content = (
+                      <>
+                        <span>{link.label}</span>
+
+                        <ArrowUpRight
+                          aria-hidden="true"
+                          className="h-3.5 w-3.5 shrink-0 text-red-600 opacity-0 transition-opacity duration-200 group-hover:opacity-100 group-focus-visible:opacity-100 motion-reduce:transition-none"
+                        />
+                      </>
+                    );
+
+                    return (
+                      <li key={link.label}>
+                        {link.href.startsWith("mailto:") ? (
+                          <a href={link.href} className={linkClass}>
+                            {content}
+                          </a>
+                        ) : (
+                          <Link href={link.href} className={linkClass}>
+                            {content}
+                          </Link>
+                        )}
+                      </li>
+                    );
+                  })}
+                </ul>
+              </motion.nav>
+            ))}
+
+            {/* Navy contact card */}
+            <motion.div
+              {...entrance}
+              className="relative col-span-2 overflow-hidden rounded-2xl bg-[#0B1739] p-6 text-white sm:col-span-4 lg:col-span-4"
+            >
+              <div
+                aria-hidden="true"
+                className="pointer-events-none absolute -right-10 -top-10 h-40 w-40 rounded-full border-[24px] border-white/5"
+              />
+
+              <div className="relative flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between sm:gap-8 lg:flex-col lg:items-stretch lg:gap-5">
+                <div className="min-w-0">
+                  <p className="flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.16em] text-slate-300">
+                    <MessageCircle
+                      aria-hidden="true"
+                      className="h-4 w-4 shrink-0 text-red-400"
+                    />
+                    Here to help
+                  </p>
+
+                  <h2 className="mt-3 text-xl font-semibold tracking-tight text-white">
+                    Let’s talk about your next step.
+                  </h2>
+
+                  <p className="mt-2 max-w-sm text-sm leading-6 text-slate-300">
+                    Get in touch with our team for guidance on your
+                    certification journey.
+                  </p>
+                </div>
+
+                <MotionLink
+                  href="/contact"
+                  whileHover={{ y: -2 }}
+                  whileTap={{ scale: 0.98 }}
+                  transition={{
+                    type: "spring",
+                    stiffness: 400,
+                    damping: 25,
+                  }}
+                  className="group inline-flex min-h-11 w-full shrink-0 items-center justify-between gap-6 rounded-xl bg-white px-4 py-3 text-sm font-semibold text-[#0B1739] transition-colors hover:bg-red-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-4 focus-visible:ring-offset-[#0B1739] motion-reduce:transition-none sm:w-auto lg:w-full"
+                >
+                  Contact our team
+
+                  <ArrowRight
+                    aria-hidden="true"
+                    className="h-4 w-4 shrink-0 text-red-600 transition-transform duration-200 motion-safe:group-hover:translate-x-1 motion-reduce:transition-none"
+                  />
+                </MotionLink>
+              </div>
+            </motion.div>
+          </div>
+
+          {/* Copyright and back to top */}
+          <div className="flex flex-col items-center gap-3 border-t border-slate-200 pt-5 sm:flex-row sm:justify-between sm:gap-6">
+            <p className="text-center text-xs leading-6 text-slate-500 sm:text-left">
+              © {currentYear}{" "}
+              <span className="font-semibold text-[#0B1739]">
+                ACE-CERT.
+              </span>{" "}
+              All rights reserved.
             </p>
 
-            {/* Quick Contact Info for Local SEO */}
-            <div className="pt-2 space-y-2 text-xs sm:text-sm text-slate-600">
-              <div className="flex items-center gap-2">
-                <Mail className="w-4 h-4 text-red-600 flex-shrink-0" aria-hidden="true" />
-                <a href="mailto:info@acecert.com" className="hover:text-red-600 transition-colors">
-                  info@acecert.com
-                </a>
-              </div>
-              <div className="flex items-center gap-2">
-                <Phone className="w-4 h-4 text-red-600 flex-shrink-0" aria-hidden="true" />
-                <a href="tel:+11234567890" className="hover:text-red-600 transition-colors">
-                  +1 (123) 456-7890
-                </a>
-              </div>
-            </div>
+            <motion.button
+              type="button"
+              onClick={scrollToTop}
+              whileHover={{ y: -2 }}
+              whileTap={{ scale: 0.97 }}
+              transition={{
+                type: "spring",
+                stiffness: 400,
+                damping: 25,
+              }}
+              className={`group inline-flex min-h-11 items-center gap-3 rounded-lg px-1 text-xs font-semibold text-slate-600 transition-colors hover:text-red-600 motion-reduce:transition-none ${focusClass}`}
+            >
+              Back to top
+
+              <span
+                aria-hidden="true"
+                className="flex h-9 w-9 items-center justify-center rounded-full border border-red-100 bg-red-50 text-red-600 transition-colors group-hover:border-red-600 group-hover:bg-red-600 group-hover:text-white motion-reduce:transition-none"
+              >
+                <ArrowUp className="h-4 w-4" />
+              </span>
+            </motion.button>
           </div>
-
-          {/* COLUMN 2: ACERT Services Navigation */}
-          <nav aria-label="Services Navigation" className="lg:col-span-2 space-y-4">
-            <h3 className="text-xs sm:text-sm font-bold text-slate-900 uppercase tracking-wider">
-              ACERT Services
-            </h3>
-            <ul className="space-y-2.5 text-xs sm:text-sm">
-              <li>
-                <a href="#services" className="text-slate-600 hover:text-red-600 transition-colors">
-                  ISO Certification
-                </a>
-              </li>
-              <li>
-                <a href="#inspection" className="text-slate-600 hover:text-red-600 transition-colors">
-                  Third-Party Inspection
-                </a>
-              </li>
-              <li>
-                <a href="#training" className="text-slate-600 hover:text-red-600 transition-colors">
-                  Auditor Training
-                </a>
-              </li>
-              <li>
-                <a href="#compliance" className="text-slate-600 hover:text-red-600 transition-colors">
-                  Compliance Audits
-                </a>
-              </li>
-            </ul>
-          </nav>
-
-          {/* COLUMN 3: Policy Navigation */}
-          <nav aria-label="Policy Links" className="lg:col-span-2 space-y-4">
-            <h3 className="text-xs sm:text-sm font-bold text-slate-900 uppercase tracking-wider">
-              Governance
-            </h3>
-            <ul className="space-y-2.5 text-xs sm:text-sm">
-              <li>
-                <a href="#impartiality" className="text-slate-600 hover:text-red-600 transition-colors">
-                  Impartiality Policy
-                </a>
-              </li>
-              <li>
-                <a href="#privacy" className="text-slate-600 hover:text-red-600 transition-colors">
-                  Privacy Policy
-                </a>
-              </li>
-              <li>
-                <a href="#documents" className="text-slate-600 hover:text-red-600 transition-colors">
-                  Public Documents
-                </a>
-              </li>
-              <li>
-                <a href="#terms" className="text-slate-600 hover:text-red-600 transition-colors">
-                  Terms of Service
-                </a>
-              </li>
-            </ul>
-          </nav>
-
-          {/* COLUMN 4: Quick Links Navigation */}
-          <nav aria-label="Quick Links" className="lg:col-span-3 space-y-4">
-            <h3 className="text-xs sm:text-sm font-bold text-slate-900 uppercase tracking-wider">
-              Quick Links
-            </h3>
-            <ul className="space-y-2.5 text-xs sm:text-sm">
-              <li>
-                <a href="#about" className="text-slate-600 hover:text-red-600 transition-colors">
-                  About Us
-                </a>
-              </li>
-              <li>
-                <a href="#faq" className="text-slate-600 hover:text-red-600 transition-colors">
-                  Frequently Asked Questions
-                </a>
-              </li>
-              <li>
-                <a href="#feedback" className="text-slate-600 hover:text-red-600 transition-colors">
-                  Feedback & Complaints
-                </a>
-              </li>
-              <li>
-                <a href="#contact" className="text-slate-600 hover:text-red-600 transition-colors">
-                  Contact Us
-                </a>
-              </li>
-            </ul>
-          </nav>
-
         </div>
-
-        {/* --- BOTTOM ROW: Copyright & Social Media --- */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
-          
-          {/* Copyright */}
-          <p className="text-center sm:text-left">
-            © {new Date().getFullYear()} ACERT Certification Body. All Rights Reserved.
-          </p>
-
-          {/* Social Media Icons */}
-          <div className="flex items-center gap-3">
-            <span className="font-semibold text-slate-700 hidden sm:inline-block">
-              Follow us:
-            </span>
-            
-            <div className="flex items-center gap-2.5 text-slate-600">
-              {/* Facebook */}
-              <a 
-                href="https://facebook.com" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                aria-label="Follow ACERT on Facebook" 
-                className="p-2 rounded-full bg-slate-100 hover:bg-red-600 hover:text-white transition-all border border-slate-200"
-              >
-                <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"/></svg>
-              </a>
-
-              {/* Twitter / X */}
-              <a 
-                href="https://x.com" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                aria-label="Follow ACERT on X" 
-                className="p-2 rounded-full bg-slate-100 hover:bg-red-600 hover:text-white transition-all border border-slate-200"
-              >
-                <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-              </a>
-
-              {/* LinkedIn */}
-              <a 
-                href="https://linkedin.com" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                aria-label="Follow ACERT on LinkedIn" 
-                className="p-2 rounded-full bg-slate-100 hover:bg-red-600 hover:text-white transition-all border border-slate-200"
-              >
-                <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-              </a>
-
-              {/* Instagram */}
-              <a 
-                href="https://instagram.com" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                aria-label="Follow ACERT on Instagram" 
-                className="p-2 rounded-full bg-slate-100 hover:bg-red-600 hover:text-white transition-all border border-slate-200"
-              >
-                <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-              </a>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-    </footer>
+      </footer>
+    </MotionConfig>
   );
 }

@@ -2,6 +2,7 @@ import React from 'react';
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight, Handshake, ShieldCheck, TrendingUp } from "lucide-react";
+import AboutSection from "../../components/AboutSection";
 export default function AboutPage() {
   return (
     <main className="font-sans bg-white min-h-screen pb-12 selection:bg-red-100 selection:text-red-900">
@@ -36,6 +37,8 @@ export default function AboutPage() {
         </div>
       </section>
 
+      <AboutSection showActions={false} />
+
 {/* ================= ABOUT US CONTENT SECTION ================= */}
    <section className="relative overflow-hidden bg-gradient-to-b from-white via-gray-50 to-white px-4 py-10 sm:px-6 sm:py-14 lg:px-12 lg:py-16 font-sans text-gray-800">
       
@@ -59,21 +62,13 @@ export default function AboutPage() {
               </h2>
             </div>
             
-            <p className="text-base leading-relaxed text-gray-600 sm:text-lg">
+            <p className="text-justify text-base leading-relaxed text-gray-600 sm:text-lg">
               Our mission at ACE Certification Ltd. is to simplify the path to certification and embed a culture of continuous improvement within our client organizations.
             </p>
-            <p className="text-base leading-relaxed text-gray-600 sm:text-lg">
+            <p className="text-justify text-base leading-relaxed text-gray-600 sm:text-lg">
               We achieve this by providing rigorous &amp; impartial certification, delivering reliable audit services that uphold the highest standards of integrity.
             </p>
 
-            <div className="pt-4">
-              <Link
-                href="/mission"
-                className="inline-flex rounded-full bg-red-600 px-6 py-2.5 text-sm font-semibold text-white shadow-md transition-all hover:bg-red-700 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2"
-              >
-                LEARN MORE
-              </Link>
-            </div>
           </div>
 
           {/* Right: Mission Image (Also made slightly compact to match) */}
@@ -134,7 +129,7 @@ export default function AboutPage() {
           </div>
 
           {/* Right: Vision Text */}
-          <div className="space-y-6">
+          <div className="space-y-4">
             <div className="space-y-2">
               <span className="text-sm font-semibold tracking-wider text-red-600 uppercase">
                 Our direction
@@ -144,18 +139,14 @@ export default function AboutPage() {
               </h2>
             </div>
             
-            <p className="text-base leading-relaxed text-gray-600 sm:text-lg">
+            <p className="text-justify text-base leading-relaxed text-gray-600 sm:text-lg">
               To be the most trusted and impactful partner for organizational excellence, recognized globally for setting the benchmark in certification and training services.
             </p>
 
-            <div className="pt-4">
-              <Link
-                href="/vision"
-                className="inline-flex rounded-full bg-red-600 px-6 py-2.5 text-sm font-semibold text-white shadow-md transition-all hover:bg-red-700 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2"
-              >
-                LEARN MORE
-              </Link>
-            </div>
+          <p className="text-justify text-base leading-relaxed text-gray-600 sm:text-lg">
+            We aim to help organizations strengthen their management systems through impartial assessments, practical guidance, and clear communication.
+
+            </p>
           </div>
 
         </div>
@@ -247,17 +238,14 @@ export default function AboutPage() {
             <h2 className="text-3xl font-extrabold leading-tight tracking-tight text-gray-900 sm:text-4xl lg:text-5xl">
               Bridging the Gap to <span className="text-red-600">Business Success</span>
             </h2>
-            <p className="mt-6 text-base leading-7 text-gray-600 sm:text-lg sm:leading-8">
-              At <strong className="font-semibold text-gray-900">ACERT Certification</strong>, our purpose is to bridge the gap between complex international standards and everyday business success. We believe that compliance &apos;shouldn&apos;t&apos; be a bureaucratic hurdle, but a <strong className="font-semibold text-red-600">strategic catalyst for growth.</strong>
+            <p className="mt-6 text-base leading-7 text-gray-600 text-justify sm:text-lg sm:leading-8">
+              At <strong className="font-normal text-gray-900"> ACERT Certification, our purpose is to bridge the gap between complex international standards and everyday business success. We believe that compliance shouldn't be a bureaucratic hurdle, but a strategic catalyst for growth.</strong>
             </p>
-            <div className="mt-8 flex items-center gap-4 rounded-2xl border border-red-100 bg-white/80 p-4 shadow-sm sm:p-5">
-              <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-red-600 text-white shadow-md shadow-red-600/20">
-                <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" /></svg>
-              </div>
-              <p className="text-sm font-semibold leading-6 text-gray-800 sm:text-base">
-                Turning complex standards into confident, lasting progress.
-              </p>
-            </div>
+           
+
+            <p className="mt-6 text-base leading-7 text-gray-600 text-justify sm:text-lg sm:leading-8">
+              By delivering accessible, practical, and globally recognized ISO certification, training, and advisory services, we empower small and middle-market businesses to.
+            </p>
           </div>
 
           <div className="space-y-4">
@@ -269,7 +257,7 @@ export default function AboutPage() {
               </div>
               <div>
                 <h3 className="text-lg font-bold text-gray-900 transition-colors group-hover:text-red-600 sm:text-xl">Build Unshakeable Trust</h3>
-                <p className="mt-1 text-sm leading-6 text-gray-600 sm:text-base">Prove your commitment to safety, quality, and excellence to your clients.</p>
+                <p className="mt-1 text-sm leading-6 text-gray-600 sm:text-base"> Prove your commitment to safety, quality, and excellence to your clients and stakeholders.</p>
               </div>
             </article>
 
@@ -280,7 +268,7 @@ export default function AboutPage() {
               </div>
               <div>
                 <h3 className="text-lg font-bold text-gray-900 transition-colors group-hover:text-red-600 sm:text-xl">Unlock Market Potential</h3>
-                <p className="mt-1 text-sm leading-6 text-gray-600 sm:text-base">Open doors to new contracts, global opportunities, and regulatory compliance.</p>
+                <p className="mt-1 text-sm leading-6 text-gray-600 sm:text-base">Open doors to new contracts, global opportunities, and regulatory compliance with confidence.</p>
               </div>
             </article>
 
@@ -291,7 +279,7 @@ export default function AboutPage() {
               </div>
               <div>
                 <h3 className="text-lg font-bold text-gray-900 transition-colors group-hover:text-red-600 sm:text-xl">Drive Operational Excellence</h3>
-                <p className="mt-1 text-sm leading-6 text-gray-600 sm:text-base">Transform rigorous industry standards into streamlined, efficient practices.</p>
+                <p className="mt-1 text-sm leading-6 text-gray-600 sm:text-base">Transform rigorous industry standards into streamlined, efficient, and highly profitable everyday practices. We don't just audit businesses—we partner with them to ensure they truly Achieve Compliance & Excellence.</p>
               </div>
             </article>
           </div>

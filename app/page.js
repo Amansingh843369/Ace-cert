@@ -16,7 +16,7 @@ export default function HomePage() {
       <HeroSection />
     
        
-      <AboutSection />
+      <AboutSection showStrategicParagraph={false} />
       <ServiceSection />
      {/* <ExperienceSection />   */}
      <FeaturesSection />

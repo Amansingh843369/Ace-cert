@@ -13,7 +13,10 @@ import {
   X,
 } from "lucide-react";
 
-export default function AboutSection() {
+export default function AboutSection({
+  showActions = true,
+  showStrategicParagraph = true,
+}) {
   const [isVideoOpen, setIsVideoOpen] = useState(false);
 
   return (
@@ -45,8 +48,8 @@ export default function AboutSection() {
 
             {/* Foreground Overlapping Corporate Image (Professional with Play Button) */}
             <div 
-              className="absolute -right-2 top-[35%] w-[60%] aspect-square cursor-pointer overflow-hidden border-8 border-white bg-slate-100 shadow-2xl sm:-right-8 lg:-right-4 xl:-right-12"
-              onClick={() => setIsVideoOpen(true)}
+              className={`absolute -right-2 top-[35%] w-[60%] aspect-square overflow-hidden border-8 border-white bg-slate-100 shadow-2xl sm:-right-8 lg:-right-4 xl:-right-12 ${showActions ? "cursor-pointer" : ""}`}
+              onClick={showActions ? () => setIsVideoOpen(true) : undefined}
             >
               <Image
                 src="https://images.unsplash.com/photo-1573496799652-408c2ac9fe98?auto=format&fit=crop&w=600&q=85"
@@ -57,11 +60,13 @@ export default function AboutSection() {
               />
               
               {/* Play Button Overlay */}
-              <div className="absolute inset-0 flex items-center justify-center bg-black/20 hover:bg-black/30 transition-colors">
-                <button className="group flex h-14 w-14 items-center justify-center rounded-full bg-white shadow-xl transition-transform hover:scale-110 sm:h-16 sm:w-16">
-                  <Play className="ml-1 h-6 w-6 fill-red-500 text-red-500 transition-colors group-hover:fill-red-400 group-hover:text-red-400" />
-                </button>
-              </div>
+              {showActions && (
+                <div className="absolute inset-0 flex items-center justify-center bg-black/20 transition-colors hover:bg-black/30">
+                  <button className="group flex h-14 w-14 items-center justify-center rounded-full bg-white shadow-xl transition-transform hover:scale-110 sm:h-16 sm:w-16">
+                    <Play className="ml-1 h-6 w-6 fill-red-500 text-red-500 transition-colors group-hover:fill-red-400 group-hover:text-red-400" />
+                  </button>
+                </div>
+              )}
             </div>
           </div>
 
@@ -90,27 +95,31 @@ export default function AboutSection() {
               </p>
               <p>
                 The name{" "}
-                <span className="font-semibold text-slate-900">"ACE"</span>{" "}
+                <span className="font-semibold text-slate-900">&quot;ACE&quot;</span>{" "}
                 reflects our promise: to help clients Achieve Compliance &amp; Excellence. Our
                 experienced Lead Auditors turn complex standards into practical steps for lasting
                 business improvement.
               </p>
-              <p>
-                We believe certification should be more than a trophy—it should be a strategic tool
-                that creates measurable improvement for your business.
-              </p>
+              {showStrategicParagraph && (
+                <p>
+                  We believe certification should be more than a trophy—it should be a strategic tool
+                  that creates measurable improvement for your business.
+                </p>
+              )}
             </div>
 
-            <Link
-              href="/about"
-              className="group mt-2 inline-flex items-center gap-2.5 rounded-xl bg-red-600 px-7 py-3 text-sm font-bold text-white shadow-lg shadow-red-600/20 transition-all hover:-translate-y-0.5 hover:bg-red-700 hover:shadow-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-2"
-            >
-              Discover our story
-              <ArrowRight
-                className="h-4 w-4 transition-transform group-hover:translate-x-1"
-                aria-hidden="true"
-              />
-            </Link>
+            {showActions && (
+              <Link
+                href="/about"
+                className="group mt-2 inline-flex items-center gap-2.5 rounded-xl bg-red-600 px-7 py-3 text-sm font-bold text-white shadow-lg shadow-red-600/20 transition-all hover:-translate-y-0.5 hover:bg-red-700 hover:shadow-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-2"
+              >
+                Know More
+                <ArrowRight
+                  className="h-4 w-4 transition-transform group-hover:translate-x-1"
+                  aria-hidden="true"
+                />
+              </Link>
+            )}
           </div>
         </div>
       </section>
