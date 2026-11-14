@@ -16,6 +16,8 @@ import {
 export default function AboutSection({
   showActions = true,
   showStrategicParagraph = true,
+  foregroundImage = "https://images.unsplash.com/photo-1573496799652-408c2ac9fe98?auto=format&fit=crop&w=600&q=85",
+  foregroundImageAlt = "Corporate professional woman",
 }) {
   const [isVideoOpen, setIsVideoOpen] = useState(false);
 
@@ -52,8 +54,8 @@ export default function AboutSection({
               onClick={showActions ? () => setIsVideoOpen(true) : undefined}
             >
               <Image
-                src="https://images.unsplash.com/photo-1573496799652-408c2ac9fe98?auto=format&fit=crop&w=600&q=85"
-                alt="Corporate professional woman"
+                src={foregroundImage}
+                alt={foregroundImageAlt}
                 fill
                 sizes="(max-width: 1024px) 50vw, 300px"
                 className="object-cover transition-transform duration-500 hover:scale-105"

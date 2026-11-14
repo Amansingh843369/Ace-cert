@@ -3,9 +3,9 @@
 // ======================================================
 
 export const navItems = [
-  { name: "Home", href: "#" },
+  { name: "Home", href: "/" },
   { name: "About Us", href: "/about" },
-  { name: "Services", dropdown: "services" },
+  { name: "Certification", href: "/certification" },
   // { name: "Verify Certificate", href: "/verify_certificate" },
   { name: "Contact", href: "/contact" },
 ];

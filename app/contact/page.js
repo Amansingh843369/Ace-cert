@@ -1,7 +1,8 @@
 
-"use client";   
- import React, { useState } from 'react';
- import Link from 'next/link';
+"use client";
+
+import React, { useState } from "react";
+import Link from "next/link";
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -22,66 +23,52 @@ export default function ContactPage() {
     alert('Thank you for contacting us! We will get back to you shortly.');
   };
 
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
-
   return (
-    <main className="font-sans bg-[#F9FAFB] min-h-screen pb-16 sm:pb-24 text-gray-800 relative overflow-x-hidden">
-      
-      {/* ================= 1. HERO BANNER SECTION (SHORTER HEIGHT) ================= */}
-      <section className="relative py-12 sm:py-16 md:py-20 px-4 sm:px-6 lg:px-12 text-white flex flex-col items-center justify-center">
-        
-        {/* Background Image */}
-        <div 
-          className="absolute inset-0 z-0 w-full h-full bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: "url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=2000')" }}
-        ></div>
-        
-        {/* Deep Red / Black Opacity Overlay */}
-        <div className="absolute inset-0 z-0 bg-gradient-to-r from-red-950/95 via-red-900/85 to-gray-900/95 mix-blend-multiply"></div>
-        <div className="absolute inset-0 z-0 bg-red-900/30"></div> 
+    <main className="relative min-h-screen overflow-x-hidden bg-slate-50 font-sans text-slate-800">
+      <section className="relative overflow-hidden bg-[#0B1739] px-4 py-14 text-white sm:px-6 sm:py-16 lg:px-8 lg:py-20">
+        <div aria-hidden="true" className="pointer-events-none absolute -right-24 -top-32 h-80 w-80 rounded-full border-[40px] border-white/5 sm:h-[28rem] sm:w-[28rem]" />
+        <div aria-hidden="true" className="pointer-events-none absolute -bottom-36 -left-20 h-72 w-72 rounded-full bg-red-600/20 blur-3xl" />
 
-        {/* Content */}
-        <div className="max-w-5xl mx-auto text-center relative z-10">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight leading-tight sm:leading-none relative inline-block">
-            Contact Us
-            {/* Red decorative stroke effect */}
-            <svg className="absolute -top-5 -right-6 w-24 sm:w-32 hidden sm:block text-red-500 opacity-60" viewBox="0 0 200 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-               <path d="M5 25 C 50 5, 150 5, 195 15" stroke="currentColor" strokeWidth="3" strokeLinecap="round" fill="none"/>
-               <path d="M15 35 C 70 20, 130 20, 185 30" stroke="currentColor" strokeWidth="2" strokeLinecap="round" fill="none"/>
-            </svg>
-          </h1>
-          
-          {/* Breadcrumbs */}
-          <div className="mt-4 flex items-center justify-center gap-2 text-xs sm:text-sm font-medium text-gray-300">
-            <Link href="/" className="hover:text-white transition-colors">Home</Link>
-            <span className="text-red-500">/</span>
-            <span className="text-white font-semibold">Contact Us</span>
+        <div className="relative mx-auto max-w-7xl">
+          <div className="max-w-3xl">
+            <p className="mb-4 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-4 py-2 text-xs font-bold uppercase tracking-[0.16em] text-slate-200">
+              <span aria-hidden="true" className="h-2 w-2 rounded-full bg-red-500" />
+              Contact ACE-CERT
+            </p>
+            <h1 className="text-4xl font-extrabold leading-tight tracking-tight sm:text-5xl lg:text-6xl">
+              Contact <span className="text-red-400">Us</span>
+            </h1>
+            <p className="mt-4 max-w-2xl text-base leading-7 text-slate-300 sm:text-lg sm:leading-8">
+              Have a question about certification? Our team is ready to help you find the right next step.
+            </p>
+            <nav aria-label="Breadcrumb" className="mt-6 flex items-center gap-2 text-sm font-medium text-slate-300">
+              <Link href="/" className="transition-colors hover:text-white">Home</Link>
+              <span aria-hidden="true" className="text-red-400">/</span>
+              <span aria-current="page" className="text-white">Contact Us</span>
+            </nav>
           </div>
         </div>
       </section>
 
-      {/* ================= 2. MAIN CONTENT GRID (MOVED DOWN, NO OVERLAP) ================= */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 mt-10 sm:mt-16 md:mt-20 relative z-20">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
+      <section className="relative z-10 mx-auto -mt-6 max-w-7xl px-4 pb-14 sm:-mt-8 sm:px-6 sm:pb-18 lg:-mt-10 lg:px-8 lg:pb-20">
+        <div className="grid grid-cols-1 items-stretch gap-6 lg:grid-cols-[0.85fr_1.15fr] lg:gap-8">
           
           {/* LEFT COLUMN: CONTACT INFO CARD */}
-          <div className="lg:col-span-5 bg-white rounded-3xl p-6 sm:p-8 md:p-10 border border-gray-100 shadow-xl shadow-gray-200/50 flex flex-col justify-between space-y-8">
+          <div className="order-2 flex flex-col justify-between space-y-8 rounded-3xl border border-slate-200 bg-white p-6 shadow-[0_20px_60px_-32px_rgba(11,23,57,0.28)] sm:p-8 lg:order-1 lg:p-9">
             <div>
-              <div className="flex items-center justify-between mb-4">
-                <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-900 tracking-tight">
-                  Get In Touch
+              <div className="mb-4">
+                <p className="text-xs font-bold uppercase tracking-[0.16em] text-red-600">We’re here to help</p>
+                <h2 className="mt-2 text-2xl font-extrabold tracking-tight text-[#0B1739] sm:text-3xl">
+                  Get in touch
                 </h2>
-               
               </div>
               
-              <p className="text-gray-600 text-sm sm:text-base leading-relaxed font-semibold mb-6">
+              <p className="mb-6 text-sm font-semibold leading-relaxed text-slate-600 sm:text-base">
                 Universal Certification Conformity Limited
               </p>
 
               {/* Info Items List */}
-              <div className="mt-4 space-y-6 sm:space-y-7">
+              <div className="mt-6 space-y-6 sm:space-y-7">
                 
                 {/* Address */}
                 <div className="flex items-start gap-4 sm:gap-5 group">
@@ -92,8 +79,8 @@ export default function ContactPage() {
                     </svg>
                   </div>
                   <div>
-                    <h3 className="text-base sm:text-lg font-bold text-gray-900 mb-1">Our Location</h3>
-                    <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">
+                    <h3 className="mb-1 text-base font-bold text-[#0B1739] sm:text-lg">Our Location</h3>
+                    <p className="text-sm leading-relaxed text-slate-600">
                       11-12 St. Andrew Square,<br />
                       Edinburgh, EH2 2AF,<br />
                       United Kingdom
@@ -109,9 +96,9 @@ export default function ContactPage() {
                     </svg>
                   </div>
                   <div>
-                    <h3 className="text-base sm:text-lg font-bold text-gray-900 mb-1">Call Us</h3>
-                    <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">
-                      <a href="tel:+442079460000" className="hover:text-red-600 transition-colors font-medium">+91 20 0000</a>
+                    <h3 className="mb-1 text-base font-bold text-[#0B1739] sm:text-lg">Call Us</h3>
+                    <p className="text-sm leading-relaxed text-slate-600">
+                      <a href="tel:+442079460000" className="font-medium transition-colors hover:text-red-600">+44 20 7946 0000</a>
                     </p>
                   </div>
                 </div>
@@ -124,9 +111,9 @@ export default function ContactPage() {
                     </svg>
                   </div>
                   <div>
-                    <h3 className="text-base sm:text-lg font-bold text-gray-900 mb-1">Email Us</h3>
-                    <p className="text-gray-600 text-xs sm:text-sm leading-relaxed break-all">
-                      <a href="mailto:info@yourcompany.co.uk" className="hover:text-red-600 transition-colors">info@yourcompany.co.uk</a>
+                    <h3 className="mb-1 text-base font-bold text-[#0B1739] sm:text-lg">Email Us</h3>
+                    <p className="break-all text-sm leading-relaxed text-slate-600">
+                      <a href="mailto:info@acecert.com" className="transition-colors hover:text-red-600">info@acecert.com</a>
                     </p>
                   </div>
                 </div>
@@ -139,8 +126,8 @@ export default function ContactPage() {
                     </svg>
                   </div>
                   <div>
-                    <h3 className="text-base sm:text-lg font-bold text-gray-900 mb-1">Working Hours</h3>
-                    <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">
+                    <h3 className="mb-1 text-base font-bold text-[#0B1739] sm:text-lg">Working Hours</h3>
+                    <p className="text-sm leading-relaxed text-slate-600">
                       Mon - Fri: 9:00 AM - 6:00 PM<br />
                       <span className="text-xs text-gray-400">Closed on Weekends</span>
                     </p>
@@ -152,15 +139,16 @@ export default function ContactPage() {
           </div>
 
           {/* RIGHT COLUMN: CONTACT FORM CARD */}
-          <div className="lg:col-span-7 bg-white rounded-3xl p-6 sm:p-8 md:p-10 border border-gray-100 shadow-xl shadow-gray-200/50">
-            <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-900 tracking-tight mb-2">
+          <div className="order-1 rounded-3xl border border-slate-200 bg-white p-6 shadow-[0_20px_60px_-32px_rgba(11,23,57,0.28)] sm:p-8 lg:order-2 lg:p-9">
+            <p className="text-xs font-bold uppercase tracking-[0.16em] text-red-600">Have a question?</p>
+            <h2 className="mt-2 text-2xl font-extrabold tracking-tight text-[#0B1739] sm:text-3xl">
               Send Us a Message
             </h2>
-            <p className="text-gray-500 text-xs sm:text-sm mb-6 sm:mb-8">
+            <p className="mb-6 mt-2 text-sm leading-6 text-slate-500 sm:mb-8 sm:text-base">
               Fill in your details below and our support team will respond within 24 business hours.
             </p>
 
-            <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-5">
+            <form onSubmit={handleSubmit} className="space-y-5 sm:space-y-6">
               
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
                 <div>
@@ -170,6 +158,7 @@ export default function ContactPage() {
                     id="firstName"
                     name="firstName"
                     required
+                    autoComplete="given-name"
                     value={formData.firstName}
                     onChange={handleChange}
                     className="w-full px-4 py-3.5 rounded-xl bg-gray-50 border border-gray-200 text-gray-900 placeholder-gray-400 text-sm focus:outline-none focus:ring-2 focus:ring-red-500/20 focus:border-red-600 transition-all"
@@ -181,6 +170,7 @@ export default function ContactPage() {
                     type="text"
                     id="lastName"
                     name="lastName"
+                    autoComplete="family-name"
                     value={formData.lastName}
                     onChange={handleChange}
                     className="w-full px-4 py-3.5 rounded-xl bg-gray-50 border border-gray-200 text-gray-900 placeholder-gray-400 text-sm focus:outline-none focus:ring-2 focus:ring-red-500/20 focus:border-red-600 transition-all"
@@ -195,6 +185,7 @@ export default function ContactPage() {
                   id="email"
                   name="email"
                   required
+                  autoComplete="email"
                   value={formData.email}
                   onChange={handleChange}
                   className="w-full px-4 py-3.5 rounded-xl bg-gray-50 border border-gray-200 text-gray-900 placeholder-gray-400 text-sm focus:outline-none focus:ring-2 focus:ring-red-500/20 focus:border-red-600 transition-all"
@@ -208,6 +199,7 @@ export default function ContactPage() {
                   id="phone"
                   name="phone"
                   required
+                  autoComplete="tel"
                   value={formData.phone}
                   onChange={handleChange}
                   className="w-full px-4 py-3.5 rounded-xl bg-gray-50 border border-gray-200 text-gray-900 placeholder-gray-400 text-sm focus:outline-none focus:ring-2 focus:ring-red-500/20 focus:border-red-600 transition-all"
@@ -263,12 +255,18 @@ export default function ContactPage() {
       </section>
 
       {/* ================= 3. MAP SECTION ================= */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 mt-12 sm:mt-16">
-        <div className="bg-white rounded-3xl p-3 sm:p-4 border border-gray-200 shadow-xl shadow-gray-200/50 relative overflow-hidden">
-          
-          <div className="w-full h-[320px] sm:h-[400px] md:h-[450px] lg:h-[480px] rounded-2xl overflow-hidden relative">
+      <section className="mx-auto max-w-7xl px-4 pb-14 sm:px-6 sm:pb-16 lg:px-8 lg:pb-20">
+        <div className="mb-5 max-w-2xl">
+          <p className="text-xs font-bold uppercase tracking-[0.16em] text-red-600">Visit us</p>
+          <h2 className="mt-2 text-2xl font-extrabold tracking-tight text-[#0B1739] sm:text-3xl">Find our office</h2>
+          <p className="mt-2 text-sm leading-6 text-slate-600 sm:text-base">
+            11-12 St. Andrew Square, Edinburgh, EH2 2AF, United Kingdom
+          </p>
+        </div>
+        <div className="relative overflow-hidden rounded-3xl border border-slate-200 bg-white p-2.5 shadow-[0_20px_60px_-32px_rgba(11,23,57,0.28)] sm:p-3">
+          <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl sm:aspect-video lg:aspect-[2.4/1]">
             <iframe
-              title="Office Location Map"
+              title="Map to the ACE-CERT office in Edinburgh"
               src="https://maps.google.com/maps?q=11-12%20St.%20Andrew%20Square,%20Edinburgh,%20EH2%202AF,%20United%20Kingdom&t=&z=15&ie=UTF8&iwloc=&output=embed"
               width="100%"
               height="100%"
@@ -276,12 +274,9 @@ export default function ContactPage() {
               allowFullScreen=""
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              className="w-full h-full grayscale-[10%] contrast-[105%]"
+              className="absolute inset-0 h-full w-full"
             ></iframe>
-
-           
           </div>
-
         </div>
       </section>
 

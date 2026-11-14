@@ -16,7 +16,11 @@ export default function HomePage() {
       <HeroSection />
     
        
-      <AboutSection showStrategicParagraph={false} />
+      <AboutSection
+        showStrategicParagraph={false}
+        foregroundImage="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=600&q=85"
+        foregroundImageAlt="Corporate team collaborating in a meeting"
+      />
       <ServiceSection />
      {/* <ExperienceSection />   */}
      <FeaturesSection />

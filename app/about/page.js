@@ -28,7 +28,7 @@ export default function AboutPage() {
           
           {/* Breadcrumbs */}
           <nav className="flex items-center justify-center gap-2 text-sm sm:text-base text-gray-500 font-medium bg-white/60 backdrop-blur-sm py-2 px-6 rounded-full w-fit mx-auto border border-red-100 shadow-sm">
-            <span className="hover:text-red-600 transition-colors cursor-pointer">Home</span>
+            <Link href="/" className="transition-colors hover:text-red-600">Home</Link>
             <svg className="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
             </svg>
@@ -106,8 +106,8 @@ export default function AboutPage() {
                 {/* Top Square Image */}
                 <div className="relative aspect-square w-full overflow-hidden rounded-[1.5rem] rounded-tl-none shadow-xl">
                   <Image
-                    src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600&q=85"
-                    alt="Business growth and data analysis"
+                    src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=600&q=85"
+                    alt="Corporate office interior"
                     fill
                     sizes="(max-width: 1024px) 50vw, 25vw"
                     className="object-cover"
@@ -291,11 +291,6 @@ export default function AboutPage() {
         <div className="mx-auto max-w-6xl overflow-hidden rounded-[2rem] bg-blue-950 shadow-[0_24px_70px_rgba(15,23,42,0.18)]">
           <div className="grid md:grid-cols-[1.05fr_0.95fr]">
             <div className="relative flex flex-col justify-center px-7 py-10 sm:px-10 sm:py-14 lg:px-14">
-              <div className="absolute bottom-0 left-0 top-0 w-1.5 bg-red-600" />
-              <span className="mb-5 inline-flex w-fit items-center gap-2 rounded-full border border-white/15 bg-white/10 px-4 py-2 text-xs font-bold uppercase tracking-[0.16em] text-white">
-                <span className="h-2 w-2 rounded-full bg-red-500" />
-                Your certification journey
-              </span>
               <h2 className="max-w-xl text-3xl font-extrabold leading-tight tracking-tight text-white sm:text-4xl lg:text-[2.75rem]">
                 A trusted partner for your{" "}
                 <span className="text-red-400">certification journey.</span>
@@ -328,8 +323,8 @@ export default function AboutPage() {
 
             <div className="relative min-h-[280px] md:min-h-[440px]">
               <Image
-                src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=1000&q=85"
-                alt="Business team working together during a meeting"
+                src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1000&q=85"
+                alt="Modern corporate office interior"
                 fill
                 sizes="(max-width: 768px) 100vw, 45vw"
                 className="object-cover"

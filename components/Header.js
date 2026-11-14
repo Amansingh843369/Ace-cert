@@ -227,7 +227,7 @@ export default function Header() {
         {/* CTA BUTTON */}
         <div className="hidden lg:flex shrink-0">
           <Link
-            href="#contact"
+            href="/contact"
             className="bg-red-600 text-white px-6 py-2.5 rounded-lg font-bold text-xs uppercase tracking-wider hover:bg-slate-900 hover:shadow-lg transition-all duration-300 whitespace-nowrap active:scale-95"
           >
             Contact Today
@@ -356,7 +356,7 @@ export default function Header() {
           </nav>
 
           <Link
-            href="#contact"
+            href="/contact"
             onClick={closeMobile}
             className="bg-red-600 text-white text-center block w-full py-3.5 rounded-lg font-bold text-sm uppercase tracking-wider mt-3 shadow-md active:scale-[0.99] transition-all hover:bg-slate-900"
           >
