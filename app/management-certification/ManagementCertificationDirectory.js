@@ -5,7 +5,6 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowUpRight, Filter, Search, Settings2, ShieldCheck, Globe, Award } from 'lucide-react';
 import { certifications as ISO_STANDARDS } from '../../data/certifications';
-import { certificationImages } from '../../data/certificationImages';
 
 const FILTER_OPTIONS = [
   { value: 'ALL', label: 'All Certifications', count: ISO_STANDARDS.length },
@@ -160,52 +159,32 @@ export default function ManagementCertificationDirectory() {
 
             {filteredStandards.length > 0 ? (
               <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4 xl:grid-cols-3">
-                {filteredStandards.map(({ code, title, href, type }) => {
-                  const image = certificationImages[code];
-
-                  return (
-                    <Link
-                      key={code}
-                      href={href}
-                      className="group min-w-0 overflow-hidden rounded-2xl border border-[#1c2448]/15 bg-white shadow-sm transition hover:-translate-y-0.5 hover:border-red-300 hover:shadow-md focus:outline-none focus:ring-4 focus:ring-red-200"
-                    >
-                      {image ? (
-                        <div className="relative h-36 overflow-hidden sm:h-40">
-                          <Image
-                            src={image}
-                            alt={`${code} certification`}
-                            fill
-                            sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 33vw"
-                            className="object-cover transition-transform duration-300 group-hover:scale-105"
-                          />
-                          <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-slate-950/40 to-transparent" />
-                          <span className="absolute right-3 top-3 rounded-lg bg-white px-2 py-1 text-[9px] font-bold tracking-wide text-[#1c2448] sm:px-2.5 sm:py-1.5 sm:text-xs">
-                            {type}
-                          </span>
-                        </div>
-                      ) : (
-                        <div className="flex h-16 items-center justify-between bg-gradient-to-r from-red-700 to-red-600 px-4 sm:h-20 sm:px-5">
-                          <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-white text-[#1c2448] shadow-sm sm:h-12 sm:w-12 sm:rounded-xl">
-                            <Settings2 className="h-5 w-5 sm:h-6 sm:w-6" aria-hidden="true" />
-                          </span>
-                          <span className="rounded-lg bg-white px-2 py-1 text-[9px] font-bold tracking-wide text-[#1c2448] sm:px-2.5 sm:py-1.5 sm:text-xs">
-                            {type}
-                          </span>
-                        </div>
-                      )}
-                      <div className="flex min-h-24 items-start justify-between gap-2 p-4 sm:min-h-28 sm:gap-3 sm:p-5">
-                        <div className="min-w-0">
-                          <h2 className="break-words text-lg font-extrabold text-[#1c2448] sm:text-xl">{code}</h2>
-                          <p className="mt-1.5 text-xs sm:text-sm leading-6 text-[#1c2448]/75">{title}</p>
-                        </div>
-                        <ArrowUpRight
-                          className="mt-0.5 h-4 w-4 shrink-0 text-[#1c2448] transition-transform group-hover:translate-x-0.5"
-                          aria-hidden="true"
-                        />
+                {filteredStandards.map(({ code, title, href, type }) => (
+                  <Link
+                    key={code}
+                    href={href}
+                    className="group min-w-0 overflow-hidden rounded-2xl border border-[#1c2448]/15 bg-white shadow-sm transition hover:-translate-y-0.5 hover:border-red-300 hover:shadow-md focus:outline-none focus:ring-4 focus:ring-red-200"
+                  >
+                    <div className="flex h-16 items-center justify-between bg-gradient-to-r from-red-700 to-red-600 px-4 sm:h-20 sm:px-5">
+                      <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-white text-[#1c2448] shadow-sm sm:h-12 sm:w-12 sm:rounded-xl">
+                        <Settings2 className="h-5 w-5 sm:h-6 sm:w-6" aria-hidden="true" />
+                      </span>
+                      <span className="rounded-lg bg-white px-2 py-1 text-[9px] font-bold tracking-wide text-[#1c2448] sm:px-2.5 sm:py-1.5 sm:text-xs">
+                        {type}
+                      </span>
+                    </div>
+                    <div className="flex min-h-24 items-start justify-between gap-2 p-4 sm:min-h-28 sm:gap-3 sm:p-5">
+                      <div className="min-w-0">
+                        <h2 className="break-words text-lg font-extrabold text-[#1c2448] sm:text-xl">{code}</h2>
+                        <p className="mt-1.5 text-xs sm:text-sm leading-6 text-[#1c2448]/75">{title}</p>
                       </div>
-                    </Link>
-                  );
-                })}
+                      <ArrowUpRight
+                        className="mt-0.5 h-4 w-4 shrink-0 text-[#1c2448] transition-transform group-hover:translate-x-0.5"
+                        aria-hidden="true"
+                      />
+                    </div>
+                  </Link>
+                ))}
               </div>
             ) : (
               <p className="rounded-2xl border border-[#1c2448]/15 bg-white px-6 py-10 text-center text-[#1c2448]/75">

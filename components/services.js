@@ -12,7 +12,10 @@ import {
   Settings2,
 } from 'lucide-react';
 import { certifications } from '../data/certifications';
-import { certificationImages } from '../data/certificationImages';
+import {
+  certificationImages,
+  getCertificationImageFile,
+} from '../data/certificationImages';
 
 const categoryImages = {
   'ISO STANDARD': 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&q=80',
@@ -43,14 +46,17 @@ const iconsByType = {
   REGULATORY: Award,
 };
 
-const services = certifications
-  .filter(({ code }) => code !== 'CE Marking')
-  .map((certification) => ({
-    ...certification,
-    img: certificationImages[certification.code] || imagesByCode[certification.code] || categoryImages[certification.type],
-  }));
-
-export default function ServicesSection() {
+export default function ServicesSection({ certificationImageFiles = {} }) {
+  const services = certifications
+    .filter(({ code }) => code !== 'CE Marking')
+    .map((certification) => ({
+      ...certification,
+      img:
+        getCertificationImageFile(certification.code, certificationImageFiles) ||
+        certificationImages[certification.code] ||
+        imagesByCode[certification.code] ||
+        categoryImages[certification.type],
+    }));
   const extendedServices = [...services, ...services];
 
   return (
@@ -108,21 +114,21 @@ export default function ServicesSection() {
                 className="relative flex-shrink-0 w-[270px] sm:w-[310px] md:w-[340px] bg-white rounded-2xl overflow-hidden border border-slate-100 group/card transition-all duration-300 shadow-sm hover:shadow-xl hover:shadow-red-600/10 border-t-4 border-t-red-600"
               >
                 {/* Image Section */}
-                <div className="h-40 sm:h-48 w-full relative overflow-hidden bg-slate-100">
+                <div className="relative h-40 w-full overflow-hidden bg-slate-50 sm:h-48">
                   <img 
                     src={service.img} 
                     alt=""
                     loading="lazy"
                     decoding="async"
-                    className="w-full h-full object-cover transform group-hover/card:scale-105 transition-transform duration-500 ease-out" 
+                    className="h-full w-full object-cover object-top"
                   />
                   
                   {/* Overlay on Hover */}
                   <div className="absolute inset-0 bg-slate-900/10 group-hover/card:bg-slate-900/0 transition-colors duration-300"></div>
                   
                   {/* Icon Badge */}
-                  <div className="absolute top-3.5 right-3.5 sm:top-4 sm:right-4 w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-gradient-to-br from-red-600 to-red-700 flex items-center justify-center shadow-lg border-2 border-white transform group-hover/card:scale-110 group-hover/card:rotate-6 transition-all duration-300 z-10">
-                    <Icon className="w-5 h-5 sm:w-6 sm:h-6 text-white" aria-hidden="true" />
+                  <div className="absolute right-3.5 top-3.5 z-10 flex h-10 w-10 items-center justify-center rounded-xl border border-slate-200 bg-white shadow-lg sm:right-4 sm:top-4 sm:h-12 sm:w-12">
+                    <Icon className="h-5 w-5 text-[#1c2448] sm:h-6 sm:w-6" aria-hidden="true" />
                   </div>
                 </div>
 
