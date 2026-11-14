@@ -16,6 +16,7 @@ import {
   Target,
   TrendingUp,
   UsersRound,
+  AlertTriangle,
   Workflow,
   Factory, // For manufacturing
   FlaskConical, // For quality control
