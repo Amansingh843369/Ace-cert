@@ -12,6 +12,7 @@ import {
   Settings2,
 } from 'lucide-react';
 import { certifications } from '../data/certifications';
+import { certificationImages } from '../data/certificationImages';
 
 const categoryImages = {
   'ISO STANDARD': 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&q=80',
@@ -28,7 +29,6 @@ const imagesByCode = {
   'ISO 45001': 'https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=600&q=80',
   'ISO 27001': 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=600&q=80',
   'ISO 22301': 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=600&q=80',
-  'ISO 37001': 'https://images.unsplash.com/photo-1589829085413-56de8ae18c73?w=600&q=80',
   'ISO 50001': 'https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?w=600&q=80',
   'ISO 20000-1': 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=600&q=80',
 };
@@ -47,7 +47,7 @@ const services = certifications
   .filter(({ code }) => code !== 'CE Marking')
   .map((certification) => ({
     ...certification,
-    img: imagesByCode[certification.code] || categoryImages[certification.type],
+    img: certificationImages[certification.code] || imagesByCode[certification.code] || categoryImages[certification.type],
   }));
 
 export default function ServicesSection() {

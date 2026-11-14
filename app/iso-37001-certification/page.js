@@ -1,6 +1,8 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image';
+import { certificationImages } from '../../data/certificationImages';
 
 export default function Iso37001Layout() {
   // Data Arrays based on ISO 37001 content
@@ -74,8 +76,14 @@ export default function Iso37001Layout() {
 
             {/* Left: Blank Box Placeholder */}
             <div className="w-full lg:w-5/12 flex justify-center order-1 lg:order-1">
-              <div className="relative w-full max-w-[280px] md:max-w-sm aspect-square md:h-[320px] bg-slate-200/50 rounded-3xl border-2 border-dashed border-slate-300 flex items-center justify-center">
-                <span className="text-slate-400 font-medium text-sm tracking-widest uppercase">Blank Box Placeholder</span>
+              <div className="relative aspect-square w-full max-w-[280px] overflow-hidden rounded-3xl shadow-lg md:max-w-sm">
+                <Image
+                  src={certificationImages['ISO 37001']}
+                  alt="ISO 37001 anti-bribery certification"
+                  fill
+                  sizes="(max-width: 768px) 280px, 384px"
+                  className="object-cover"
+                />
               </div>
             </div>
 
