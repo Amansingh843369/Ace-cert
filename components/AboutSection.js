@@ -15,6 +15,7 @@ import {
 
 export default function AboutSection({
   showActions = true,
+  showVideoButton = showActions,
   showStrategicParagraph = true,
   foregroundImage = "https://images.unsplash.com/photo-1573496799652-408c2ac9fe98?auto=format&fit=crop&w=600&q=85",
   foregroundImageAlt = "Corporate professional woman",
@@ -50,8 +51,8 @@ export default function AboutSection({
 
             {/* Foreground Overlapping Corporate Image (Professional with Play Button) */}
             <div 
-              className={`absolute -right-2 top-[35%] w-[60%] aspect-square overflow-hidden border-8 border-white bg-slate-100 shadow-2xl sm:-right-8 lg:-right-4 xl:-right-12 ${showActions ? "cursor-pointer" : ""}`}
-              onClick={showActions ? () => setIsVideoOpen(true) : undefined}
+              className={`absolute -right-2 top-[35%] aspect-square w-[60%] overflow-hidden border-8 border-white bg-slate-100 shadow-2xl sm:-right-8 lg:-right-4 xl:-right-12 ${showVideoButton ? "cursor-pointer" : ""}`}
+              onClick={showVideoButton ? () => setIsVideoOpen(true) : undefined}
             >
               <Image
                 src={foregroundImage}
@@ -62,9 +63,13 @@ export default function AboutSection({
               />
               
               {/* Play Button Overlay */}
-              {showActions && (
+              {showVideoButton && (
                 <div className="absolute inset-0 flex items-center justify-center bg-black/20 transition-colors hover:bg-black/30">
-                  <button className="group flex h-14 w-14 items-center justify-center rounded-full bg-white shadow-xl transition-transform hover:scale-110 sm:h-16 sm:w-16">
+                  <button
+                    type="button"
+                    aria-label="Play ACE-CERT introduction video"
+                    className="group flex h-14 w-14 items-center justify-center rounded-full bg-white shadow-xl transition-transform hover:scale-110 sm:h-16 sm:w-16"
+                  >
                     <Play className="ml-1 h-6 w-6 fill-red-500 text-red-500 transition-colors group-hover:fill-red-400 group-hover:text-red-400" />
                   </button>
                 </div>
@@ -131,6 +136,8 @@ export default function AboutSection({
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4 backdrop-blur-sm">
           {/* Close button */}
           <button
+            type="button"
+            aria-label="Close introduction video"
             onClick={() => setIsVideoOpen(false)}
             className="absolute right-4 top-4 z-[60] flex h-12 w-12 items-center justify-center rounded-full bg-slate-900/50 text-white transition-colors hover:bg-red-600 focus:outline-none md:right-8 md:top-8"
           >

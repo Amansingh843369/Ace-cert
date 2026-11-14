@@ -37,7 +37,12 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <AboutSection showActions={false} />
+      <AboutSection
+        showActions={false}
+        showVideoButton
+        foregroundImage="/about-page-video-team.png"
+        foregroundImageAlt="Corporate team discussing work around a table"
+      />
 
 {/* ================= ABOUT US CONTENT SECTION ================= */}
    <section className="relative overflow-hidden bg-gradient-to-b from-white via-gray-50 to-white px-4 py-10 sm:px-6 sm:py-14 lg:px-12 lg:py-16 font-sans text-gray-800">
