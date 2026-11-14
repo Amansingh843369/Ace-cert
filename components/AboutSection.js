@@ -28,12 +28,12 @@ export default function AboutSection() {
       <div className="pointer-events-none absolute top-0 right-1/4 h-[400px] w-[400px] rounded-full bg-red-50/40 blur-[100px]" />
 
       <section className="relative z-10 mx-auto max-w-7xl px-4  sm:px-6 lg:px-8 ">
-        <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-2 lg:gap-16">
+        <div className="grid grid-cols-1 items-stretch gap-10 lg:grid-cols-2 lg:gap-16">
           
           {/* Left: Overlapping Images */}
-          <div className="relative mx-auto w-full max-w-md lg:mx-0 lg:max-w-none">
+          <div className="relative mx-auto w-full max-w-md lg:mx-0 lg:h-full lg:max-w-none">
             {/* Main Background Corporate Image (Team Meeting/High-Five vibe) */}
-            <div className="relative aspect-[4/5] w-[80%] overflow-hidden rounded-lg shadow-xl">
+            <div className="relative aspect-[4/5] w-[80%] overflow-hidden rounded-lg shadow-xl lg:absolute lg:inset-y-0 lg:left-0 lg:aspect-auto lg:h-full">
               <Image
                 src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=800&q=85"
                 alt="Corporate team working together"
