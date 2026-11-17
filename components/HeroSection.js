@@ -94,7 +94,7 @@ export default function HeroSection() {
       <svg
         aria-hidden="true"
         viewBox="0 0 48 48"
-        className="absolute left-[39%] top-[11%] hidden h-12 w-12 sm:block"
+        className="presence-float absolute left-[39%] top-[11%] hidden h-12 w-12 sm:block"
       >
         <path
           d="M6 8 43 4 31 42 6 8Z"
@@ -107,7 +107,7 @@ export default function HeroSection() {
       <svg
         aria-hidden="true"
         viewBox="0 0 48 48"
-        className="absolute left-[8%] top-[42%] hidden h-12 w-12 sm:block"
+        className="presence-float-delayed absolute bottom-[20%] right-[24%] hidden h-12 w-12 sm:block"
       >
         <path
           d="m24 3 21 38H3L24 3Z"
