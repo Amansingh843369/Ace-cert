@@ -114,7 +114,7 @@ export default function Iso29001Layout() {
               </h3>
 
               {/* TEXT JUSTIFY APPLIED HERE */}
-              <div className="mt-2 space-y-4 text-left text-sm leading-7 text-[#526581] sm:text-base md:text-[17px] md:leading-8 text-justify">
+              <div className="mt-2 space-y-4 text-sm leading-7 text-[#526581] sm:text-base md:text-[17px] md:leading-8 text-justify">
                 <p>
                   ISO 29001 is an internationally recognized quality management standard specifically developed for organizations operating in the <strong className="font-semibold text-[#111827]">petroleum, petrochemical, and natural gas industries</strong>. It supplements ISO 9001 by introducing industry-specific requirements focused on risk management, defect prevention, product reliability, and supply chain performance.
                 </p>
@@ -263,7 +263,7 @@ export default function Iso29001Layout() {
               </h2>
 
               {/* TEXT JUSTIFY APPLIED HERE */}
-              <p className="mt-3 md:mt-4 text-sm md:text-base lg:text-lg leading-relaxed text-slate-500 max-w-2xl mx-auto px-2 text-justify">
+              <p className="mt-3 md:mt-4 text-sm md:text-base lg:text-lg leading-relaxed text-slate-500 max-w-2xl mx-auto px-2 text-center">
                 Certification demonstrates your commitment to quality and safety in the energy sector, helping you win contracts with major operators and reduce costly operational failures.
               </p>
             </div>

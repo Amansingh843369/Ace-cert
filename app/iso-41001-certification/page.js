@@ -110,7 +110,7 @@ export default function IsoCertificationLayout() {
               </h3>
 
               {/* Content exactly from the image */}
-              <div className="mt-2 space-y-3 text-justify text-sm leading-6 text-[#526581] sm:text-base md:text-[16px] md:leading-7">
+              <div className="mt-2 space-y-3 text-sm leading-6 text-[#526581] sm:text-base md:text-[16px] md:leading-7 text-justify">
                 <p>
                   ISO 41001 is an internationally recognized standard for <strong className="font-semibold text-[#111827]">Facility Management Systems (FMS)</strong>. It provides a framework for organizations to effectively manage facilities, infrastructure, services, and workplace environments to support business objectives and enhance operational performance.
                 </p>
@@ -255,7 +255,7 @@ export default function IsoCertificationLayout() {
                 </span>
               </h2>
 
-              <p className="text-justify mt-3 text-sm md:text-base leading-relaxed text-slate-500 max-w-2xl mx-auto px-2">
+              <p className="mt-3 text-sm md:text-base leading-relaxed text-slate-500 max-w-2xl mx-auto px-2 text-center">
                 Achieving ISO 41001 certification acts as a powerful differentiator, proving to clients, tenants, and stakeholders that your facilities are managed with world-class efficiency, safety, and sustainability.
               </p>
             </div>
@@ -317,7 +317,7 @@ export default function IsoCertificationLayout() {
                 Who Can Implement It?
               </h2>
 
-              <p className="text-justify px-2 text-sm leading-6 text-[#526581] md:text-base">
+              <p className="px-2 text-sm leading-6 text-[#526581] md:text-base text-center">
                 ISO 41001 is essential for any organization responsible for managing facilities and workplace services. From corporate real estate managers and property developers to hospitals, universities, airports, and government complexes.
               </p>
             </div>

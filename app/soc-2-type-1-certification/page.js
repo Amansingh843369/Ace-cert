@@ -115,7 +115,7 @@ export default function Soc2Type1Layout() {
               </h3>
 
               {/* TEXT JUSTIFY APPLIED HERE */}
-              <div className="mt-2 space-y-4 text-left text-sm leading-7 text-[#526581] sm:text-base md:text-[17px] md:leading-8 text-justify">
+              <div className="mt-2 space-y-4 text-sm leading-7 text-[#526581] sm:text-base md:text-[17px] md:leading-8 text-justify">
                 <p>
                   SOC 2 Type 1 is an audit report that evaluates the <strong className="font-semibold text-[#111827]">design and implementation</strong> of a service organization&apos;s controls at a <strong className="font-semibold text-[#111827]">specific point in time</strong>. It confirms that your security systems and policies are suitably designed to meet the Trust Services Criteria (Security, Availability, etc.).
                 </p>
@@ -264,7 +264,7 @@ export default function Soc2Type1Layout() {
               </h2>
 
               {/* TEXT JUSTIFY APPLIED HERE */}
-              <p className="mt-3 md:mt-4 text-sm md:text-base lg:text-lg leading-relaxed text-slate-500 max-w-2xl mx-auto px-2 text-justify">
+              <p className="mt-3 md:mt-4 text-sm md:text-base lg:text-lg leading-relaxed text-slate-500 max-w-2xl mx-auto px-2 text-center">
                 Achieving SOC 2 Type 1 allows you to say &quot;We are secure&quot; with authority today, rather than waiting six months to prove it. It&apos;s the bridge between building your product and scaling your sales.
               </p>
             </div>

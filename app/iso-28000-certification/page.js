@@ -110,7 +110,7 @@ export default function IsoCertificationLayout() {
               </h3>
 
               {/* Content exactly from the image */}
-              <div className="mt-2 space-y-3 text-justify text-sm leading-6 text-[#526581] sm:text-base md:text-[16px] md:leading-7">
+              <div className="mt-2 space-y-3 text-sm leading-6 text-[#526581] sm:text-base md:text-[16px] md:leading-7 text-justify">
                 <p>
                   ISO 28000 is an internationally recognized standard for <strong className="font-semibold text-[#111827]">Supply Chain Security Management Systems (SCSMS)</strong>. It provides a framework for organizations to identify and mitigate security risks throughout the supply chain, ensuring the safe and secure movement of goods, services, and information.
                 </p>
@@ -254,7 +254,7 @@ export default function IsoCertificationLayout() {
                 </span>
               </h2>
 
-              <p className="text-justify mt-3 text-sm md:text-base leading-relaxed text-slate-500 max-w-2xl mx-auto px-2">
+              <p className="mt-3 text-sm md:text-base leading-relaxed text-slate-500 max-w-2xl mx-auto px-2 text-center">
                 Achieving ISO 28000 certification acts as a powerful differentiator, proving to customs authorities, partners, and clients that your supply chain operations meet the highest global security standards.
               </p>
             </div>
@@ -316,7 +316,7 @@ export default function IsoCertificationLayout() {
                 Who Can Implement It?
               </h2>
 
-              <p className="text-justify px-2 text-sm leading-6 text-[#526581] md:text-base">
+              <p className="px-2 text-sm leading-6 text-[#526581] md:text-base text-center">
                 ISO 28000 is essential for any organization involved in the global supply chain. From manufacturers and freight forwarders to warehousing facilities, port authorities, and retail distribution networks.
               </p>
             </div>

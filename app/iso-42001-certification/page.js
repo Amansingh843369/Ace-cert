@@ -111,7 +111,7 @@ standard for Artificial Intelligence Management Systems (AIMS).
               </h3>
 
               {/* Content exactly from the image */}
-              <div className="mt-2 space-y-3 text-justify text-sm leading-6 text-[#526581] sm:text-base md:text-[16px] md:leading-7">
+              <div className="mt-2 space-y-3 text-sm leading-6 text-[#526581] sm:text-base md:text-[16px] md:leading-7 text-justify">
                 <p>
                   ISO 42001 is the world&apos;s first internationally recognized 
 standard for <strong className="font-semibold text-[#111827]">Artificial Intelligence Management Systems 
@@ -259,7 +259,7 @@ transparent, and secure use.
                 </span>
               </h2>
 
-              <p className="text-justify mt-3 text-sm md:text-base leading-relaxed text-slate-500 max-w-2xl mx-auto px-2">
+              <p className="mt-3 text-sm md:text-base leading-relaxed text-slate-500 max-w-2xl mx-auto px-2 text-center">
                 Achieving ISO 42001certification acts as a powerful differentiator, proving to regulators, partners, and users that your AI systems are governed with the highest global standards of ethics, safety, and accountability.
               </p>
             </div>
@@ -321,7 +321,7 @@ transparent, and secure use.
                 Who Can Implement It?
               </h2>
 
-              <p className="text-justify px-2 text-sm leading-6 text-[#526581] md:text-base">
+              <p className="px-2 text-sm leading-6 text-[#526581] md:text-base text-center">
                 ISO 42001is essential for any organization that develops, provides, or uses AI-based products and services. From tech startups and SaaS platforms to financial institutions, healthcare providers, and government agencies.
               </p>
             </div>

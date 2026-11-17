@@ -177,7 +177,7 @@ export default function HalalCertificationPage() {
                   <span aria-hidden="true" className="absolute -bottom-2 left-0 h-1 w-12 rounded-full bg-[#E30613] sm:-bottom-3 sm:w-14" />
                 </h3>
 
-                <div className="space-y-3 pt-2 text-sm leading-7 text-[#526581] sm:text-base sm:leading-8 md:text-[17px]">
+                <div className="space-y-3 pt-2 text-sm leading-7 text-[#526581] sm:text-base sm:leading-8 md:text-[17px] text-justify">
                   <p>
                     Halal Certification is a formal recognition that products are prepared,
                     processed, manufactured, stored, and distributed according to established{' '}
@@ -353,7 +353,7 @@ export default function HalalCertificationPage() {
               <SectionHeading className="mt-4" highlight="Certification">
                 Benefits of Halal
               </SectionHeading>
-              <p className="mx-auto mt-3 max-w-2xl px-2 text-sm leading-relaxed text-slate-500 sm:mt-4 sm:text-base md:text-lg">
+              <p className="mx-auto mt-3 max-w-2xl px-2 text-sm leading-relaxed text-slate-500 sm:mt-4 sm:text-base md:text-lg text-center">
                 Beyond religious compliance, Halal certification signals quality, safety,
                 and ethical integrity to a global audience of conscious consumers.
               </p>
@@ -419,7 +419,7 @@ export default function HalalCertificationPage() {
               >
                 Who Can Implement It?
               </h2>
-              <p className="mx-auto mt-3 max-w-xl px-2 text-sm leading-7 text-[#526581] sm:mt-4 sm:text-base md:text-lg">
+              <p className="mx-auto mt-3 max-w-xl px-2 text-sm leading-7 text-[#526581] sm:mt-4 sm:text-base md:text-lg text-center">
                 Halal Certification is essential for any organization involved in the
                 production, handling, or distribution of consumer goods targeting the
                 global Muslim market.

@@ -112,7 +112,7 @@ export default function IsoCertificationLayout() {
               </h3>
 
               {/* TEXT JUSTIFY APPLIED HERE */}
-              <div className="mt-2 space-y-4 text-left text-sm leading-7 text-[#526581] sm:text-base md:text-[17px] md:leading-8 text-justify">
+              <div className="mt-2 space-y-4 text-sm leading-7 text-[#526581] sm:text-base md:text-[17px] md:leading-8 text-justify">
                 <p>
                   ISO 27001 is an internationally recognized standard for <strong className="font-semibold text-[#111827]">Information Security Management Systems (ISMS)</strong>. It provides a systematic framework for managing and protecting sensitive information, ensuring its confidentiality, integrity, and availability.
                 </p>
@@ -261,7 +261,7 @@ export default function IsoCertificationLayout() {
               </h2>
 
               {/* TEXT JUSTIFY APPLIED HERE */}
-              <p className="mt-3 md:mt-4 text-sm md:text-base lg:text-lg leading-relaxed text-slate-500 max-w-2xl mx-auto px-2 text-justify">
+              <p className="mt-3 md:mt-4 text-sm md:text-base lg:text-lg leading-relaxed text-slate-500 max-w-2xl mx-auto px-2 text-center">
                 Certification acts as a powerful differentiator in tenders and contracts, proving to partners that your information security practices meet the highest global standards.
               </p>
             </div>
@@ -324,7 +324,7 @@ export default function IsoCertificationLayout() {
               </h2>
 
               {/* TEXT JUSTIFY APPLIED HERE */}
-              <p className="text-justify px-2 text-sm leading-7 text-[#526581] md:text-base lg:text-lg text-justify">
+              <p className="px-2 text-sm leading-7 text-[#526581] md:text-base lg:text-lg text-center">
                 ISO 27001 is essential for any organization that handles sensitive data, from tech startups and financial institutions to healthcare providers and government bodies.
               </p>
             </div>

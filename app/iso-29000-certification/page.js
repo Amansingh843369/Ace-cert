@@ -110,7 +110,7 @@ export default function IsoCertificationLayout() {
               </h3>
 
               {/* Content exactly from the image */}
-              <div className="mt-2 space-y-3 text-left text-sm leading-6 text-[#526581] sm:text-base md:text-[16px] md:leading-7">
+              <div className="mt-2 space-y-3 text-sm leading-6 text-[#526581] sm:text-base md:text-[16px] md:leading-7 text-justify">
                 <p>
                   ISO 29000 is an internationally recognized standard framework that provides guidance and quality management principles for organizations operating in the <strong className="font-semibold text-[#111827]">petroleum, petrochemical, and natural gas industries</strong>. It establishes industry-specific quality requirements aimed at improving operational performance, product reliability, risk management, and customer satisfaction throughout the supply chain.
                 </p>
@@ -255,7 +255,7 @@ export default function IsoCertificationLayout() {
                 </span>
               </h2>
 
-              <p className="text-justify mt-3 text-sm md:text-base leading-relaxed text-slate-500 max-w-2xl mx-auto px-2">
+              <p className="mt-3 text-sm md:text-base leading-relaxed text-slate-500 max-w-2xl mx-auto px-2 text-center">
                 Achieving ISO 29000 certification acts as a powerful differentiator, proving to regulators, partners, and clients that your energy operations meet the highest global quality and safety standards.
               </p>
             </div>
@@ -317,7 +317,7 @@ export default function IsoCertificationLayout() {
                 Who Can Implement It?
               </h2>
 
-              <p className="text-justify px-2 text-sm leading-6 text-[#526581] md:text-base">
+              <p className="px-2 text-sm leading-6 text-[#526581] md:text-base text-center">
                 ISO 29000 is essential for any organization operating within the oil, gas, and petrochemical supply chain. From exploration and drilling companies to refineries, pipeline operators, and equipment manufacturers.
               </p>
             </div>

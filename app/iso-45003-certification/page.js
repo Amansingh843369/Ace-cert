@@ -110,7 +110,7 @@ export default function IsoCertificationLayout() {
               </h3>
 
               {/* Content exactly from the image */}
-              <div className="mt-2 space-y-3 text-left text-sm leading-6 text-[#526581] sm:text-base md:text-[16px] md:leading-7">
+              <div className="mt-2 space-y-3 text-sm leading-6 text-[#526581] sm:text-base md:text-[16px] md:leading-7 text-justify">
                 <p>
                   ISO 45003 is an internationally recognized standard that provides guidelines for managing <strong className="font-semibold text-[#111827]">psychological health and safety in the workplace</strong>. It helps organizations identify, assess, and manage psychosocial risks that may affect employees' mental well-being, job satisfaction, and overall workplace performance.
                 </p>
@@ -255,7 +255,7 @@ export default function IsoCertificationLayout() {
                 </span>
               </h2>
 
-              <p className="text-justify mt-3 text-sm md:text-base leading-relaxed text-slate-500 max-w-2xl mx-auto px-2">
+              <p className="mt-3 text-sm md:text-base leading-relaxed text-slate-500 max-w-2xl mx-auto px-2 text-center">
                 Achieving ISO 45003 certification acts as a powerful differentiator, proving to employees, partners, and stakeholders that your organization genuinely prioritizes mental well-being and psychological safety.
               </p>
             </div>
@@ -317,7 +317,7 @@ export default function IsoCertificationLayout() {
                 Who Can Implement It?
               </h2>
 
-              <p className="text-justify px-2 text-sm leading-6 text-[#526581] md:text-base">
+              <p className="px-2 text-sm leading-6 text-[#526581] md:text-base text-center">
                 ISO 45003 is essential for any organization that wants to proactively manage psychosocial risks and support employee mental health. From corporate offices and healthcare facilities to schools, manufacturing plants, and government agencies.
               </p>
             </div>

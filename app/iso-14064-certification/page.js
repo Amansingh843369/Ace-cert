@@ -180,7 +180,7 @@ export default function IsoCertificationLayout() {
                   <span aria-hidden="true" className="absolute -bottom-2 left-0 h-1 w-12 rounded-full bg-[#E30613] sm:-bottom-3 sm:w-14" />
                 </h3>
 
-                <div className="space-y-3 pt-2 text-sm leading-7 text-[#526581] sm:text-base sm:leading-8 md:text-[17px]">
+                <div className="space-y-3 pt-2 text-sm leading-7 text-[#526581] sm:text-base sm:leading-8 md:text-[17px] text-justify">
                   <p>
                     ISO 14064 is an internationally recognized standard that provides
                     principles and requirements for{' '}
@@ -340,7 +340,7 @@ export default function IsoCertificationLayout() {
               <SectionHeading className="mt-4" highlight="Certification">
                 Benefits of
               </SectionHeading>
-              <p className="mx-auto mt-3 max-w-2xl px-2 text-sm leading-relaxed text-slate-500 sm:mt-4 sm:text-base md:text-lg">
+              <p className="mx-auto mt-3 max-w-2xl px-2 text-sm leading-relaxed text-slate-500 sm:mt-4 sm:text-base md:text-lg text-center">
                 Certification demonstrates your leadership in sustainability, helps you
                 comply with emerging climate regulations, and attracts eco-conscious
                 investors and customers.
@@ -407,7 +407,7 @@ export default function IsoCertificationLayout() {
               >
                 Who Can Implement It?
               </h2>
-              <p className="mx-auto mt-3 max-w-xl px-2 text-sm leading-7 text-[#526581] sm:mt-4 sm:text-base md:text-lg">
+              <p className="mx-auto mt-3 max-w-xl px-2 text-sm leading-7 text-[#526581] sm:mt-4 sm:text-base md:text-lg text-center">
                 ISO 14064 is versatile and can be adopted by any organization looking to
                 quantify and manage their GHG emissions — regardless of industry or size.
               </p>

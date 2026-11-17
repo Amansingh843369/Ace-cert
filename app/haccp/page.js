@@ -165,7 +165,7 @@ export default function HaccpCertificationPage() {
           <div className="flex-1 space-y-6">
             <SectionBadge>About HACCP</SectionBadge>
             <SectionHeading>What is <span className="text-red-600">HACCP?</span></SectionHeading>
-            <div className="space-y-6 text-slate-600 text-sm sm:text-base leading-relaxed">
+            <div className="space-y-6 text-slate-600 text-sm sm:text-base leading-relaxed text-justify">
               <p>
                 HACCP (Hazard Analysis and Critical Control Points) is an internationally recognized
                 food safety management system. Unlike traditional inspection methods, it focuses on
@@ -320,7 +320,7 @@ export default function HaccpCertificationPage() {
           <h2 className="mt-4 text-balance text-2xl font-extrabold leading-tight tracking-tight text-[#111827] sm:text-3xl md:text-4xl lg:text-5xl">
             Who Can Implement It?
           </h2>
-          <p className="mx-auto mt-3 max-w-xl px-2 text-sm leading-7 text-[#526581] sm:mt-4 sm:text-base md:text-lg">
+          <p className="mx-auto mt-3 max-w-xl px-2 text-sm leading-7 text-[#526581] sm:mt-4 sm:text-base md:text-lg text-center">
             HACCP is mandatory for many food businesses and highly recommended for any organization
             involved in the food supply chain, from primary production to retail.
           </p>

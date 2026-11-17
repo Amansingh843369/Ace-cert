@@ -113,7 +113,7 @@ export default function Iso27002Layout() {
               </h3>
 
               {/* TEXT JUSTIFY APPLIED HERE */}
-              <div className="mt-2 space-y-4 text-left text-sm leading-7 text-[#526581] sm:text-base md:text-[17px] md:leading-8 text-justify">
+              <div className="mt-2 space-y-4 text-sm leading-7 text-[#526581] sm:text-base md:text-[17px] md:leading-8 text-justify">
                 <p>
                   ISO 27002 is an internationally recognized standard that provides guidelines and best practices for implementing <strong className="font-semibold text-[#111827]">information security controls</strong>. It supports organizations in selecting, implementing, and managing security measures to protect information assets and complement the requirements of ISO 27001.
                 </p>
@@ -262,7 +262,7 @@ export default function Iso27002Layout() {
               </h2>
 
               {/* TEXT JUSTIFY APPLIED HERE */}
-              <p className="mt-3 md:mt-4 text-sm md:text-base lg:text-lg leading-relaxed text-slate-500 max-w-2xl mx-auto px-2 text-justify">
+              <p className="mt-3 md:mt-4 text-sm md:text-base lg:text-lg leading-relaxed text-slate-500 max-w-2xl mx-auto px-2 text-center">
                 Adopting ISO 27002 guidelines demonstrates a commitment to information security, helping to build trust with clients and partners while reducing the likelihood of costly security breaches.
               </p>
             </div>

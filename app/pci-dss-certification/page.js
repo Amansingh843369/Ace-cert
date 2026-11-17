@@ -115,7 +115,7 @@ export default function PciDssLayout() {
               </h3>
 
               {/* TEXT JUSTIFY APPLIED HERE */}
-              <div className="mt-2 space-y-4 text-left text-sm leading-7 text-[#526581] sm:text-base md:text-[17px] md:leading-8 text-justify">
+              <div className="mt-2 space-y-4 text-sm leading-7 text-[#526581] sm:text-base md:text-[17px] md:leading-8 text-justify">
                 <p>
                   PCI DSS (Payment Card Industry Data Security Standard) is a globally recognized security standard designed to protect payment card data and reduce credit/debit card fraud. It defines a set of technical and operational security requirements for organizations that store, process, or transmit cardholder data.
                 </p>
@@ -264,7 +264,7 @@ export default function PciDssLayout() {
               </h2>
 
               {/* TEXT JUSTIFY APPLIED HERE */}
-              <p className="mt-3 md:mt-4 text-sm md:text-base lg:text-lg leading-relaxed text-slate-500 max-w-2xl mx-auto px-2 text-justify">
+              <p className="mt-3 md:mt-4 text-sm md:text-base lg:text-lg leading-relaxed text-slate-500 max-w-2xl mx-auto px-2 text-center">
                 Achieving PCI DSS compliance demonstrates your commitment to data security, protecting your business from financial loss and reputational damage associated with payment fraud.
               </p>
             </div>

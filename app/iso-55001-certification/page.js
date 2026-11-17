@@ -114,7 +114,7 @@ export default function Iso55001Layout() {
               </h3>
 
               {/* TEXT JUSTIFY APPLIED HERE */}
-              <div className="mt-2 space-y-4 text-left text-sm leading-7 text-[#526581] sm:text-base md:text-[17px] md:leading-8 text-justify">
+              <div className="mt-2 space-y-4 text-sm leading-7 text-[#526581] sm:text-base md:text-[17px] md:leading-8 text-justify">
                 <p>
                   ISO 55001 is the international standard for <strong className="font-semibold text-[#111827]">Asset Management Systems</strong>. It provides a framework for organizations to manage the lifecycle of their assets more effectively, ensuring they deliver value while managing risks and costs.
                 </p>
@@ -263,7 +263,7 @@ export default function Iso55001Layout() {
               </h2>
 
               {/* TEXT JUSTIFY APPLIED HERE */}
-              <p className="mt-3 md:mt-4 text-sm md:text-base lg:text-lg leading-relaxed text-slate-500 max-w-2xl mx-auto px-2 text-justify">
+              <p className="mt-3 md:mt-4 text-sm md:text-base lg:text-lg leading-relaxed text-slate-500 max-w-2xl mx-auto px-2 text-center">
                 Certification proves to investors and regulators that you are managing your physical infrastructure responsibly, sustainably, and profitably.
               </p>
             </div>

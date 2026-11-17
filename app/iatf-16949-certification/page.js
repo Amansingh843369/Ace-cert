@@ -114,7 +114,7 @@ export default function Iatf16949Layout() {
               </h3>
 
               {/* TEXT JUSTIFY APPLIED HERE */}
-              <div className="mt-2 space-y-4 text-left text-sm leading-7 text-[#526581] sm:text-base md:text-[17px] md:leading-8 text-justify">
+              <div className="mt-2 space-y-4 text-sm leading-7 text-[#526581] sm:text-base md:text-[17px] md:leading-8 text-justify">
                 <p>
                   IATF 16949 is the global technical specification and quality management standard for the <strong className="font-semibold text-[#111827]">automotive industry</strong>. Developed by the International Automotive Task Force (IATF), it builds upon ISO 9001 to focus specifically on defect prevention, reduction of variation, and waste minimization in the automotive supply chain.
                 </p>
@@ -263,7 +263,7 @@ export default function Iatf16949Layout() {
               </h2>
 
               {/* TEXT JUSTIFY APPLIED HERE */}
-              <p className="mt-3 md:mt-4 text-sm md:text-base lg:text-lg leading-relaxed text-slate-500 max-w-2xl mx-auto px-2 text-justify">
+              <p className="mt-3 md:mt-4 text-sm md:text-base lg:text-lg leading-relaxed text-slate-500 max-w-2xl mx-auto px-2 text-center">
                 Achieving IATF 16949 certification is your ticket to the global automotive supply chain, proving your commitment to excellence, safety, and continuous improvement.
               </p>
             </div>

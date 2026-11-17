@@ -110,7 +110,7 @@ export default function IsoCertificationLayout() {
               </h3>
 
               {/* Content exactly from the image */}
-              <div className="mt-2 space-y-3 text-left text-sm leading-6 text-[#526581] sm:text-base md:text-[16px] md:leading-7">
+              <div className="mt-2 space-y-3 text-sm leading-6 text-[#526581] sm:text-base md:text-[16px] md:leading-7 text-justify">
                 <p>
                   ISO 27017 is an internationally recognized standard that provides guidelines for information security controls specifically designed for <strong className="font-semibold text-[#111827]">cloud services</strong>. It offers additional security recommendations for both cloud service providers and cloud service customers, complementing the requirements of ISO 27001 and enhancing cloud security management.
                 </p>
@@ -255,7 +255,7 @@ export default function IsoCertificationLayout() {
                 </span>
               </h2>
 
-              <p className="text-justify mt-3 text-sm md:text-base leading-relaxed text-slate-500 max-w-2xl mx-auto px-2">
+              <p className="mt-3 text-sm md:text-base leading-relaxed text-slate-500 max-w-2xl mx-auto px-2 text-center">
                 Achieving ISO 27017 certification proves to clients and stakeholders that your cloud services are built on a foundation of rigorous, internationally recognized security controls.
               </p>
             </div>
@@ -317,7 +317,7 @@ export default function IsoCertificationLayout() {
                 Who Can Implement It?
               </h2>
 
-              <p className="text-justify px-2 text-sm leading-6 text-[#526581] md:text-base">
+              <p className="px-2 text-sm leading-6 text-[#526581] md:text-base text-center">
                 ISO 27017 is essential for any organization acting as a Cloud Service Provider or a Cloud Service Customer. From tech startups and SaaS platforms to enterprise data centers and government cloud networks.
               </p>
             </div>

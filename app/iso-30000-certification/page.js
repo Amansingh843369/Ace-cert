@@ -110,7 +110,7 @@ export default function IsoCertificationLayout() {
               </h3>
 
               {/* Content exactly from the image */}
-              <div className="mt-2 space-y-3 text-justify text-sm leading-6 text-[#526581] sm:text-base md:text-[16px] md:leading-7">
+              <div className="mt-2 space-y-3 text-sm leading-6 text-[#526581] sm:text-base md:text-[16px] md:leading-7 text-justify">
                 <p>
                   ISO 30000:2009 is an internationally recognized standard for <strong className="font-semibold text-[#111827]">Ship Recycling Management Systems (SRMS)</strong>. It provides a framework for ship recycling facilities to establish, implement, maintain, and improve processes that ensure safe, environmentally sound, and legally compliant ship recycling operations. The standard addresses worker safety, environmental protection, waste management, and regulatory compliance throughout the ship recycling process.
                 </p>
@@ -255,7 +255,7 @@ export default function IsoCertificationLayout() {
                 </span>
               </h2>
 
-              <p className="text-justify mt-3 text-sm md:text-base leading-relaxed text-slate-500 max-w-2xl mx-auto px-2">
+              <p className="mt-3 text-sm md:text-base leading-relaxed text-slate-500 max-w-2xl mx-auto px-2 text-center">
                 Achieving ISO 30000 certification acts as a powerful differentiator, proving to ship owners, regulators, and environmental groups that your recycling yard operates with the highest global standards of safety and sustainability.
               </p>
             </div>
@@ -317,7 +317,7 @@ export default function IsoCertificationLayout() {
                 Who Can Implement It?
               </h2>
 
-              <p className="text-justify px-2 text-sm leading-6 text-[#526581] md:text-base">
+              <p className="px-2 text-sm leading-6 text-[#526581] md:text-base text-center">
                 ISO 30000 is essential for any organization involved in the end-of-life management of marine vessels. From dedicated ship breaking yards and marine dismantling facilities to port authorities, scrap metal processors, and environmental regulatory bodies.
               </p>
             </div>

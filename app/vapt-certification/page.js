@@ -114,7 +114,7 @@ export default function VaptLayout() {
               </h3>
 
               {/* TEXT JUSTIFY APPLIED HERE */}
-              <div className="mt-2 space-y-4 text-left text-sm leading-7 text-[#526581] sm:text-base md:text-[17px] md:leading-8 text-justify">
+              <div className="mt-2 space-y-4 text-sm leading-7 text-[#526581] sm:text-base md:text-[17px] md:leading-8 text-justify">
                 <p>
                   VAPT (Vulnerability Assessment and Penetration Testing) is a comprehensive cybersecurity testing process used to identify, evaluate, and exploit security vulnerabilities in systems, networks, applications, and IT infrastructure.
                 </p>
@@ -263,7 +263,7 @@ export default function VaptLayout() {
               </h2>
 
               {/* TEXT JUSTIFY APPLIED HERE */}
-              <p className="mt-3 md:mt-4 text-sm md:text-base lg:text-lg leading-relaxed text-slate-500 max-w-2xl mx-auto px-2 text-justify">
+              <p className="mt-3 md:mt-4 text-sm md:text-base lg:text-lg leading-relaxed text-slate-500 max-w-2xl mx-auto px-2 text-center">
                 Regular VAPT services empower organizations to stay ahead of cyber threats, ensuring robust defense mechanisms and compliance with global security standards.
               </p>
             </div>

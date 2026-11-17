@@ -112,7 +112,7 @@ export default function IsoCertificationLayout() {
               </h3>
 
               {/* TEXT JUSTIFY APPLIED HERE */}
-              <div className="mt-2 space-y-4 text-left text-sm leading-7 text-[#526581] sm:text-base md:text-[17px] md:leading-8 text-justify">
+              <div className="mt-2 space-y-4 text-sm leading-7 text-[#526581] sm:text-base md:text-[17px] md:leading-8 text-justify">
                 <p>
                   ISO 22000 is an internationally recognized standard for <strong className="font-semibold text-[#111827]">Food Safety Management Systems (FSMS)</strong>. It provides a framework for organizations involved in the food chain to identify, control, and manage food safety hazards, ensuring that food products are safe for consumption.
                 </p>
@@ -261,7 +261,7 @@ export default function IsoCertificationLayout() {
               </h2>
 
               {/* TEXT JUSTIFY APPLIED HERE */}
-              <p className="mt-3 md:mt-4 text-sm md:text-base lg:text-lg leading-relaxed text-slate-500 max-w-2xl mx-auto px-2 text-justify">
+              <p className="mt-3 md:mt-4 text-sm md:text-base lg:text-lg leading-relaxed text-slate-500 max-w-2xl mx-auto px-2 text-center">
                 Certification opens doors to international markets, reduces the risk of costly product recalls, and assures your customers that safety is your top priority.
               </p>
             </div>
@@ -324,7 +324,7 @@ export default function IsoCertificationLayout() {
               </h2>
 
               {/* TEXT JUSTIFY APPLIED HERE */}
-              <p className="text-justify px-2 text-sm leading-7 text-[#526581] md:text-base lg:text-lg text-justify">
+              <p className="px-2 text-sm leading-7 text-[#526581] md:text-base lg:text-lg text-center">
                 ISO 22000 applies to every organization directly or indirectly involved in the food chain, ensuring safety at every step from raw material to final consumption.
               </p>
             </div>

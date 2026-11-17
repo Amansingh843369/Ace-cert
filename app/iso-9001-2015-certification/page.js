@@ -103,7 +103,7 @@ export default function IsoCertificationLayout() {
                 What is ISO 9001?
                 <span aria-hidden="true" className="absolute -bottom-3 left-1/2 h-1 w-14 -translate-x-1/2 rounded-full bg-[#E30613] lg:left-0 lg:translate-x-0" />
               </h3>
-              <div className="mt-2 space-y-4 text-justify text-sm leading-7 text-[#526581] sm:text-base md:text-[17px] md:leading-8">
+              <div className="mt-2 space-y-4 text-sm leading-7 text-[#526581] sm:text-base md:text-[17px] md:leading-8 text-justify">
                 <p>
                   ISO 9001 is the world&apos;s most recognized standard for <strong className="font-semibold text-[#111827]">Quality Management Systems (QMS)</strong>. It provides a robust framework for organizations to consistently deliver products and services that meet customer requirements as well as applicable statutory and regulatory demands.
                 </p>
@@ -249,7 +249,7 @@ export default function IsoCertificationLayout() {
                   Certification
                 </span>
               </h2>
-              <p className="mt-3 md:mt-4 text-sm md:text-base lg:text-lg leading-relaxed text-slate-500 max-w-2xl mx-auto px-2">
+              <p className="mt-3 md:mt-4 text-sm md:text-base lg:text-lg leading-relaxed text-slate-500 max-w-2xl mx-auto px-2 text-center">
                 Certification strengthens your organization, builds customer confidence,
                 and creates new opportunities for sustainable business growth.
               </p>
@@ -311,7 +311,7 @@ export default function IsoCertificationLayout() {
               <h2 className="mb-3 text-2xl font-extrabold leading-tight tracking-tight text-[#111827] sm:text-3xl md:mb-4 md:text-4xl lg:text-5xl">
                 Who Can Implement It?
               </h2>
-              <p className="text-justify px-2 text-sm leading-7 text-[#526581] md:text-base lg:text-lg">
+              <p className="px-2 text-sm leading-7 text-[#526581] md:text-base lg:text-lg text-center">
                 ISO 9001 is universal. It adapts flawlessly to organizations of any size, sector, or industry globally.
               </p>
             </div>

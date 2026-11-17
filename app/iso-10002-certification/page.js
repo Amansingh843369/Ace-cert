@@ -104,7 +104,7 @@ export default function IsoCertificationLayout() {
                 What is ISO 10002?
                 <span aria-hidden="true" className="absolute -bottom-3 left-1/2 h-1 w-14 -translate-x-1/2 rounded-full bg-[#E30613] lg:left-0 lg:translate-x-0" />
               </h3>
-              <div className="mt-2 space-y-4 text-left text-sm leading-7 text-[#526581] sm:text-base md:text-[17px] md:leading-8">
+              <div className="mt-2 space-y-4 text-sm leading-7 text-[#526581] sm:text-base md:text-[17px] md:leading-8 text-justify">
                 <p>
                   ISO 10002 is an internationally recognized standard that provides guidelines for <strong className="font-semibold text-[#111827]">effective complaints handling</strong> within organizations. It helps establish a structured and customer-focused process for receiving, managing, investigating, and resolving customer complaints while improving overall satisfaction.
                 </p>
@@ -250,7 +250,7 @@ export default function IsoCertificationLayout() {
                   Implementation
                 </span>
               </h2>
-              <p className="mt-3 md:mt-4 text-sm md:text-base lg:text-lg leading-relaxed text-slate-500 max-w-2xl mx-auto px-2">
+              <p className="mt-3 md:mt-4 text-sm md:text-base lg:text-lg leading-relaxed text-slate-500 max-w-2xl mx-auto px-2 text-center">
                 A robust complaint management system strengthens your organization, builds customer confidence, and creates new opportunities for sustainable business growth.
               </p>
             </div>
@@ -311,7 +311,7 @@ export default function IsoCertificationLayout() {
               <h2 className="mb-3 text-2xl font-extrabold leading-tight tracking-tight text-[#111827] sm:text-3xl md:mb-4 md:text-4xl lg:text-5xl">
                 Who Can Implement It?
               </h2>
-              <p className="text-justify px-2 text-sm leading-7 text-[#526581] md:text-base lg:text-lg">
+              <p className="px-2 text-sm leading-7 text-[#526581] md:text-base lg:text-lg text-center">
                 ISO 10002 is universal. Any organization that interacts with customers and wants to improve their complaint handling process can benefit.
               </p>
             </div>

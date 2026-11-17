@@ -109,7 +109,7 @@ export default function IsoCertificationLayout() {
               </h3>
 
               {/* Content exactly from the image */}
-              <div className="mt-2 space-y-3 text-justify text-sm leading-6 text-[#526581] sm:text-base md:text-[16px] md:leading-7">
+              <div className="mt-2 space-y-3 text-sm leading-6 text-[#526581] sm:text-base md:text-[16px] md:leading-7 text-justify">
                 <p>
                   ISO 37301 is an internationally recognized standard for <strong className="font-semibold text-[#111827]">Compliance Management Systems (CMS)</strong>. It provides a framework for organizations to establish, develop, implement, evaluate, maintain, and continually improve effective compliance processes that ensure adherence to legal, regulatory, ethical, and organizational requirements.
                 </p>
@@ -253,7 +253,7 @@ export default function IsoCertificationLayout() {
                 </span>
               </h2>
 
-              <p className="text-justify mt-3 text-sm md:text-base leading-relaxed text-slate-500 max-w-2xl mx-auto px-2">
+              <p className="mt-3 text-sm md:text-base leading-relaxed text-slate-500 max-w-2xl mx-auto px-2 text-center">
                 Achieving ISO 37301 certification acts as a powerful differentiator, proving to regulators, partners, and investors that your organization operates with the highest global standards of governance, ethics, and legal compliance.
               </p>
             </div>
@@ -315,7 +315,7 @@ export default function IsoCertificationLayout() {
                 Who Can Implement It?
               </h2>
 
-              <p className="text-justify px-2 text-sm leading-6 text-[#526581] md:text-base">
+              <p className="px-2 text-sm leading-6 text-[#526581] md:text-base text-center">
                 ISO 37301 is essential for any organization seeking to formalize its commitment to legal and ethical operations. From highly regulated sectors like banking and healthcare to tech startups, manufacturing firms, and government agencies.
               </p>
             </div>

@@ -111,7 +111,7 @@ export default function IsoCertificationLayout() {
               </h3>
 
               {/* TEXT JUSTIFY APPLIED HERE */}
-              <div className="mt-2 space-y-4 text-left text-sm leading-7 text-[#526581] sm:text-base md:text-[17px] md:leading-8 text-justify">
+              <div className="mt-2 space-y-4 text-sm leading-7 text-[#526581] sm:text-base md:text-[17px] md:leading-8 text-justify">
                 <p>
                   ISO 22301 is an internationally recognized standard for <strong className="font-semibold text-[#111827]">Business Continuity Management Systems (BCMS)</strong>. It provides a framework for organizations to identify potential threats, assess their impact, and establish plans and procedures to ensure the continuity of critical business operations during disruptions.
                 </p>
@@ -260,7 +260,7 @@ export default function IsoCertificationLayout() {
               </h2>
 
               {/* TEXT JUSTIFY APPLIED HERE */}
-              <p className="mt-3 md:mt-4 text-sm md:text-base lg:text-lg leading-relaxed text-slate-500 max-w-2xl mx-auto px-2 text-justify">
+              <p className="mt-3 md:mt-4 text-sm md:text-base lg:text-lg leading-relaxed text-slate-500 max-w-2xl mx-auto px-2 text-center">
                 Certification proves to clients and regulators that your organization can withstand disruptions, minimizing financial loss and reputational damage during crises.
               </p>
             </div>
@@ -323,7 +323,7 @@ export default function IsoCertificationLayout() {
               </h2>
 
               {/* TEXT JUSTIFY APPLIED HERE */}
-              <p className="text-justify px-2 text-sm leading-7 text-[#526581] md:text-base lg:text-lg text-justify">
+              <p className="px-2 text-sm leading-7 text-[#526581] md:text-base lg:text-lg text-center">
                 ISO 22301 is essential for any organization that cannot afford downtime, from critical infrastructure providers to digital service companies and manufacturing plants.
               </p>
             </div>

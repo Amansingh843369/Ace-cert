@@ -114,7 +114,7 @@ export default function Fssc22000Layout() {
               </h3>
 
               {/* TEXT JUSTIFY APPLIED HERE */}
-              <div className="mt-2 space-y-4 text-left text-sm leading-7 text-[#526581] sm:text-base md:text-[17px] md:leading-8 text-justify">
+              <div className="mt-2 space-y-4 text-sm leading-7 text-[#526581] sm:text-base md:text-[17px] md:leading-8 text-justify">
                 <p>
                   FSSC 22000 (Food Safety System Certification) is a globally recognized certification scheme for Food Safety Management Systems (FSMS). It combines <strong className="font-semibold text-[#111827]">ISO 22000</strong>, sector-specific <strong className="font-semibold text-[#111827]">Prerequisite Programs (PRPs)</strong>, and additional FSSC requirements to ensure comprehensive food safety.
                 </p>
@@ -263,7 +263,7 @@ export default function Fssc22000Layout() {
               </h2>
 
               {/* TEXT JUSTIFY APPLIED HERE */}
-              <p className="mt-3 md:mt-4 text-sm md:text-base lg:text-lg leading-relaxed text-slate-500 max-w-2xl mx-auto px-2 text-justify">
+              <p className="mt-3 md:mt-4 text-sm md:text-base lg:text-lg leading-relaxed text-slate-500 max-w-2xl mx-auto px-2 text-center">
                 Achieving FSSC 22000 certification opens doors to global markets, demonstrating your commitment to the highest standards of food safety and quality management.
               </p>
             </div>

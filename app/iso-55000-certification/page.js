@@ -110,7 +110,7 @@ export default function IsoCertificationLayout() {
               </h3>
 
               {/* Content exactly from the image */}
-              <div className="mt-2 space-y-3 text-justify text-sm leading-6 text-[#526581] sm:text-base md:text-[16px] md:leading-7">
+              <div className="mt-2 space-y-3 text-sm leading-6 text-[#526581] sm:text-base md:text-[16px] md:leading-7 text-justify">
                 <p>
                   ISO 55000 is an internationally recognized standard that provides principles, requirements, and guidelines for effective <strong className="font-semibold text-[#111827]">Asset Management Systems (AMS)</strong>. It helps organizations manage physical, financial, technological, and infrastructure assets throughout their lifecycle to maximize value, improve performance, and reduce risks.
                 </p>
@@ -255,7 +255,7 @@ export default function IsoCertificationLayout() {
                 </span>
               </h2>
 
-              <p className="text-justify mt-3 text-sm md:text-base leading-relaxed text-slate-500 max-w-2xl mx-auto px-2">
+              <p className="mt-3 text-sm md:text-base leading-relaxed text-slate-500 max-w-2xl mx-auto px-2 text-center">
                 Achieving ISO 55000 certification acts as a powerful differentiator, proving to investors, regulators, and stakeholders that your organization manages its critical assets with world-class efficiency and foresight.
               </p>
             </div>
@@ -317,7 +317,7 @@ export default function IsoCertificationLayout() {
                 Who Can Implement It?
               </h2>
 
-              <p className="text-justify px-2 text-sm leading-6 text-[#526581] md:text-base">
+              <p className="px-2 text-sm leading-6 text-[#526581] md:text-base text-center">
                 ISO 55000 is essential for any organization that relies heavily on physical or infrastructure assets to deliver value. From manufacturing plants and utility providers to transportation networks, government bodies, and facility managers.
               </p>
             </div>

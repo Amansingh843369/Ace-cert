@@ -106,7 +106,7 @@ export default function IsoCertificationLayout() {
                 <span aria-hidden="true" className="absolute -bottom-2 left-1/2 h-1 w-14 -translate-x-1/2 rounded-full bg-[#E30613] lg:left-0 lg:translate-x-0" />
               </h3>
 
-              <div className="mt-2 space-y-3  text-justify text-sm leading-6 text-[#526581] sm:text-base md:text-[16px] md:leading-7">
+              <div className="mt-2 space-y-3 text-sm leading-6 text-[#526581] sm:text-base md:text-[16px] md:leading-7 text-justify">
                 <p>
                   ISO 27701 is an internationally recognized extension to ISO 27001 and ISO 27002 that focuses on <strong className="font-semibold text-[#111827]">Privacy Information Management Systems (PIMS)</strong>. It provides a framework for managing personally identifiable information (PII) in a structured and secure way, helping organizations enhance privacy protection and comply with global data protection regulations.
                 </p>
@@ -253,7 +253,7 @@ export default function IsoCertificationLayout() {
               </h2>
 
               {/* TEXT JUSTIFY HATA DIYA GAYA HAI */}
-              <p className="text-justify mt-3 text-sm md:text-base leading-relaxed text-slate-500 max-w-2xl mx-auto px-2">
+              <p className="mt-3 text-sm md:text-base leading-relaxed text-slate-500 max-w-2xl mx-auto px-2 text-center">
                 Achieving ISO 27701 certification acts as a powerful differentiator, proving to regulators, partners, and customers that your organization handles personal data with the highest level of care and accountability.
               </p>
             </div>
@@ -316,7 +316,7 @@ export default function IsoCertificationLayout() {
               </h2>
 
               {/* TEXT JUSTIFY HATA DIYA GAYA HAI */}
-              <p className="text-justify px-2 text-sm leading-6 text-[#526581] md:text-base">
+              <p className="px-2 text-sm leading-6 text-[#526581] md:text-base text-center">
                 ISO 27701 is essential for any organization acting as a PII Controller or Processor. From tech startups and financial institutions to healthcare providers and government bodies handling sensitive personal data.
               </p>
             </div>

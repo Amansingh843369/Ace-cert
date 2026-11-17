@@ -112,7 +112,7 @@ export default function Iso21001CertificationLayout() {
                 <span aria-hidden="true" className="absolute -bottom-3 left-1/2 h-1 w-14 -translate-x-1/2 rounded-full bg-[#E30613] lg:left-0 lg:translate-x-0" />
               </h3>
 
-              <div className="mt-2 space-y-4 text-justify text-sm leading-7 text-[#526581] sm:text-base md:text-[17px] md:leading-8">
+              <div className="mt-2 space-y-4 text-sm leading-7 text-[#526581] sm:text-base md:text-[17px] md:leading-8 text-justify">
                 <p>
                   ISO 21001 is an internationally recognized standard that specifies requirements for an <strong className="font-semibold text-[#111827]">Educational Organizations Management System (EOMS)</strong>. It provides a common management tool for organizations providing educational products and services capable of meeting the needs of learners and other beneficiaries.
                 </p>
@@ -257,7 +257,7 @@ export default function Iso21001CertificationLayout() {
                 </span>
               </h2>
 
-              <p className="text-justify mt-3 md:mt-4 text-sm md:text-base lg:text-lg leading-relaxed text-slate-500 max-w-2xl mx-auto px-2 ">
+              <p className="mt-3 md:mt-4 text-sm md:text-base lg:text-lg leading-relaxed text-slate-500 max-w-2xl mx-auto px-2 text-center">
                 Certification distinguishes your institution globally, appealing to students, parents, and sponsors who prioritize quality education, ethical practices, and measurable academic success.
               </p>
             </div>
@@ -319,7 +319,7 @@ export default function Iso21001CertificationLayout() {
                 Who Can Implement It?
               </h2>
 
-              <p className="text-justify px-2 text-sm leading-7 text-[#526581] md:text-base lg:text-lg">
+              <p className="px-2 text-sm leading-7 text-[#526581] md:text-base lg:text-lg text-center">
                 ISO 21001 is applicable to any organization that uses a curriculum to support the development of competence through teaching, learning, or research—regardless of its size, type, or delivery method.
               </p>
             </div>

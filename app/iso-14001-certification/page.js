@@ -111,7 +111,7 @@ export default function IsoCertificationLayout() {
               </h3>
 
               {/* TEXT JUSTIFY APPLIED HERE */}
-              <div className="mt-2 space-y-4 text-justify text-sm leading-7 text-[#526581] sm:text-base md:text-[17px] md:leading-8">
+              <div className="mt-2 space-y-4 text-sm leading-7 text-[#526581] sm:text-base md:text-[17px] md:leading-8 text-justify">
                 <p>
                   ISO 14001 is an internationally recognized standard for <strong className="font-semibold text-[#111827]">Environmental Management Systems (EMS)</strong>. It provides a framework for organizations to identify, manage, monitor, and improve their environmental performance while meeting applicable legal and regulatory requirements.
                 </p>
@@ -262,7 +262,7 @@ export default function IsoCertificationLayout() {
               </h2>
 
               {/* TEXT JUSTIFY APPLIED HERE */}
-              <p className="mt-3 md:mt-4 text-sm md:text-base lg:text-lg leading-relaxed text-slate-500 max-w-2xl mx-auto px-2 text-justify">
+              <p className="mt-3 md:mt-4 text-sm md:text-base lg:text-lg leading-relaxed text-slate-500 max-w-2xl mx-auto px-2 text-center">
                 Certification proves your dedication to the planet, reduces operational costs through waste reduction, and opens doors to global markets requiring strict environmental compliance.
               </p>
             </div>
@@ -325,7 +325,7 @@ export default function IsoCertificationLayout() {
               </h2>
 
               {/* TEXT JUSTIFY APPLIED HERE */}
-              <p className="text-justify px-2 text-sm leading-7 text-[#526581] md:text-base lg:text-lg text-justify">
+              <p className="px-2 text-sm leading-7 text-[#526581] md:text-base lg:text-lg text-center">
                 ISO 14001 is universally applicable. Any organization, regardless of its size, type, or nature, can implement it to improve its environmental performance.
               </p>
             </div>

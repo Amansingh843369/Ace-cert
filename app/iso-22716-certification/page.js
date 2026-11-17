@@ -114,7 +114,7 @@ export default function Iso22716Layout() {
               </h3>
 
               {/* TEXT JUSTIFY APPLIED HERE */}
-              <div className="mt-2 space-y-4 text-left text-sm leading-7 text-[#526581] sm:text-base md:text-[17px] md:leading-8 text-justify">
+              <div className="mt-2 space-y-4 text-sm leading-7 text-[#526581] sm:text-base md:text-[17px] md:leading-8 text-justify">
                 <p>
                   ISO 22716 is an internationally recognized standard that provides guidelines for <strong className="font-semibold text-[#111827]">Good Manufacturing Practices (GMP)</strong> in the cosmetics industry. It establishes a comprehensive framework for the production, control, storage, and shipment of cosmetic products to ensure quality, safety, and regulatory compliance.
                 </p>
@@ -263,7 +263,7 @@ export default function Iso22716Layout() {
               </h2>
 
               {/* TEXT JUSTIFY APPLIED HERE */}
-              <p className="mt-3 md:mt-4 text-sm md:text-base lg:text-lg leading-relaxed text-slate-500 max-w-2xl mx-auto px-2 text-justify">
+              <p className="mt-3 md:mt-4 text-sm md:text-base lg:text-lg leading-relaxed text-slate-500 max-w-2xl mx-auto px-2 text-center">
                 Certification proves to regulators and consumers that your cosmetic products are manufactured under strict hygiene and quality controls, reducing liability and enhancing brand value.
               </p>
             </div>

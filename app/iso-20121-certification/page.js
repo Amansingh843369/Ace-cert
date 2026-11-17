@@ -111,7 +111,7 @@ export default function IsoCertificationLayout() {
               </h3>
 
               {/* TEXT JUSTIFY APPLIED HERE */}
-              <div className="mt-2 space-y-4 text-justify text-sm leading-7 text-[#526581] sm:text-base md:text-[17px] md:leading-8">
+              <div className="mt-2 space-y-4 text-sm leading-7 text-[#526581] sm:text-base md:text-[17px] md:leading-8 text-justify">
                 <p>
                   ISO 20121 is an internationally recognized standard for <strong className="font-semibold text-[#111827]">Event Sustainability Management Systems (ESMS)</strong>. It provides a framework for organizations involved in planning, managing, and delivering events to identify, control, and improve their environmental, social, and economic impacts.
                 </p>
@@ -260,7 +260,7 @@ export default function IsoCertificationLayout() {
               </h2>
 
               {/* TEXT JUSTIFY APPLIED HERE */}
-              <p className="mt-3 md:mt-4 text-sm md:text-base lg:text-lg leading-relaxed text-slate-500 max-w-2xl mx-auto px-2 text-justify">
+              <p className="mt-3 md:mt-4 text-sm md:text-base lg:text-lg leading-relaxed text-slate-500 max-w-2xl mx-auto px-2 text-center">
                 Certification proves your commitment to responsible event management, attracting eco-conscious sponsors, attendees, and partners who value sustainability.
               </p>
             </div>
@@ -323,7 +323,7 @@ export default function IsoCertificationLayout() {
               </h2>
 
               {/* TEXT JUSTIFY APPLIED HERE */}
-              <p className="text-justify px-2 text-sm leading-7 text-[#526581] md:text-base lg:text-lg text-justify">
+              <p className="px-2 text-sm leading-7 text-[#526581] md:text-base lg:text-lg text-center">
                 ISO 20121 is designed for anyone involved in the event industry, from large-scale Olympic organizers to local wedding planners and venue managers.
               </p>
             </div>

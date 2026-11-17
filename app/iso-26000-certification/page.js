@@ -112,7 +112,7 @@ export default function IsoCertificationLayout() {
               </h3>
 
               {/* TEXT JUSTIFY APPLIED HERE */}
-              <div className="mt-2 space-y-4 text-left text-sm leading-7 text-[#526581] sm:text-base md:text-[17px] md:leading-8 text-justify">
+              <div className="mt-2 space-y-4 text-sm leading-7 text-[#526581] sm:text-base md:text-[17px] md:leading-8 text-justify">
                 <p>
                   ISO 26000 is an internationally recognized standard that provides <strong className="font-semibold text-[#111827]">guidance on social responsibility and sustainable business practices</strong>. It helps organizations understand and integrate socially responsible behavior into their values, strategies, operations, and stakeholder relationships.
                 </p>
@@ -261,7 +261,7 @@ export default function IsoCertificationLayout() {
               </h2>
 
               {/* TEXT JUSTIFY APPLIED HERE */}
-              <p className="mt-3 md:mt-4 text-sm md:text-base lg:text-lg leading-relaxed text-slate-500 max-w-2xl mx-auto px-2 text-justify">
+              <p className="mt-3 md:mt-4 text-sm md:text-base lg:text-lg leading-relaxed text-slate-500 max-w-2xl mx-auto px-2 text-center">
                 Adopting ISO 26000 demonstrates your leadership in corporate citizenship, fostering loyalty among customers and employees who value ethical and sustainable practices.
               </p>
             </div>

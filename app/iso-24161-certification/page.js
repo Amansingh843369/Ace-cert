@@ -114,7 +114,7 @@ export default function Iso24161Layout() {
               </h3>
 
               {/* TEXT JUSTIFY APPLIED HERE */}
-              <div className="mt-2 space-y-4 text-left text-sm leading-7 text-[#526581] sm:text-base md:text-[17px] md:leading-8 text-justify">
+              <div className="mt-2 space-y-4 text-sm leading-7 text-[#526581] sm:text-base md:text-[17px] md:leading-8 text-justify">
                 <p>
                   ISO 24161 is an international standard that defines the <strong className="font-semibold text-[#111827]">vocabulary and terminology</strong> used in waste collection and transportation management. It establishes a common language for regulators, standards bodies, academia, and industry professionals to ensure clear communication [[2]][[6]].
                 </p>
@@ -263,7 +263,7 @@ export default function Iso24161Layout() {
               </h2>
 
               {/* TEXT JUSTIFY APPLIED HERE */}
-              <p className="mt-3 md:mt-4 text-sm md:text-base lg:text-lg leading-relaxed text-slate-500 max-w-2xl mx-auto px-2 text-justify">
+              <p className="mt-3 md:mt-4 text-sm md:text-base lg:text-lg leading-relaxed text-slate-500 max-w-2xl mx-auto px-2 text-center">
                 Adopting ISO 24161 terminology streamlines operations, reduces legal ambiguities, and positions your organization as a leader in standardized waste management practices.
               </p>
             </div>

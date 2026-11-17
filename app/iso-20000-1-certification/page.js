@@ -110,7 +110,7 @@ export default function IsoCertificationLayout() {
               </h3>
               
               {/* TEXT JUSTIFY APPLIED HERE */}
-              <div className="mt-2 space-y-4 text-justify text-sm leading-7 text-[#526581] sm:text-base md:text-[17px] md:leading-8">
+              <div className="mt-2 space-y-4 text-sm leading-7 text-[#526581] sm:text-base md:text-[17px] md:leading-8 text-justify">
                 <p>
                   ISO 20000-1 is an internationally recognized standard for <strong className="font-semibold text-[#111827]">Information Technology Service Management Systems (ITSMS)</strong>. It provides a framework for organizations to establish, implement, maintain, and continually improve IT service management processes, ensuring the delivery of high-quality and reliable IT services.
                 </p>
@@ -256,7 +256,7 @@ export default function IsoCertificationLayout() {
               </h2>
               
               {/* TEXT JUSTIFY APPLIED HERE */}
-              <p className="text-justify mt-3 md:mt-4 text-sm md:text-base lg:text-lg leading-relaxed text-slate-500 max-w-2xl mx-auto px-2">
+              <p className="mt-3 md:mt-4 text-sm md:text-base lg:text-lg leading-relaxed text-slate-500 max-w-2xl mx-auto px-2 text-center">
                 Certification demonstrates your ability to deliver managed IT services that meet customer requirements, helping you win tenders and retain clients in a competitive market.
               </p>
             </div>
@@ -319,7 +319,7 @@ export default function IsoCertificationLayout() {
               </h2>
               
               {/* TEXT JUSTIFY APPLIED HERE */}
-              <p className="text-justify px-2 text-sm leading-7 text-[#526581] md:text-base lg:text-lg">
+              <p className="px-2 text-sm leading-7 text-[#526581] md:text-base lg:text-lg text-center">
                 ISO 20000-1 is designed for any organization that delivers IT services, from internal IT departments supporting employees to external MSPs serving global clients.
               </p>
             </div>

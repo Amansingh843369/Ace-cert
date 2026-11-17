@@ -110,7 +110,7 @@ export default function IsoCertificationLayout() {
               </h3>
 
               {/* Content exactly from the image */}
-              <div className="mt-2 space-y-3 text-justify text-sm leading-6 text-[#526581] sm:text-base md:text-[16px] md:leading-7">
+              <div className="mt-2 space-y-3 text-sm leading-6 text-[#526581] sm:text-base md:text-[16px] md:leading-7 text-justify">
                 <p>
                   ISO 27018 is an internationally recognized standard that provides guidelines for protecting <strong className="font-semibold text-[#111827]">Personally Identifiable Information (PII)</strong> in public cloud computing environments. It establishes privacy controls and best practices for cloud service providers that process personal data on behalf of customers, helping ensure data privacy, security, and regulatory compliance.
                 </p>
@@ -255,7 +255,7 @@ export default function IsoCertificationLayout() {
                 </span>
               </h2>
 
-              <p className="text-justify mt-3 text-sm md:text-base leading-relaxed text-slate-500 max-w-2xl mx-auto px-2">
+              <p className="mt-3 text-sm md:text-base leading-relaxed text-slate-500 max-w-2xl mx-auto px-2 text-center">
                 Achieving ISO 27018 certification acts as a powerful differentiator, proving to regulators, partners, and customers that your public cloud services handle personal data with the highest level of privacy and care.
               </p>
             </div>
@@ -317,7 +317,7 @@ export default function IsoCertificationLayout() {
                 Who Can Implement It?
               </h2>
 
-              <p className="text-justify px-2 text-sm leading-6 text-[#526581] md:text-base">
+              <p className="px-2 text-sm leading-6 text-[#526581] md:text-base text-center">
                 ISO 27018 is essential for any organization acting as a Public Cloud Service Provider (CSP) or processing PII on behalf of customers. From SaaS platforms and tech startups to enterprise data centers and government cloud networks.
               </p>
             </div>

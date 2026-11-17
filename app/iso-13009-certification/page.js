@@ -106,7 +106,7 @@ export default function IsoCertificationLayout() {
                 What is ISO 13009?
                 <span aria-hidden="true" className="absolute -bottom-3 left-1/2 h-1 w-14 -translate-x-1/2 rounded-full bg-[#E30613] lg:left-0 lg:translate-x-0" />
               </h3>
-              <div className="mt-2 space-y-4 text-left text-sm leading-7 text-[#526581] sm:text-base md:text-[17px] md:leading-8 text-justify">
+              <div className="mt-2 space-y-4 text-sm leading-7 text-[#526581] sm:text-base md:text-[17px] md:leading-8 text-justify">
                 <p>
                   ISO 13009 is an internationally recognized standard that provides requirements and recommendations for <strong className="font-semibold text-[#111827]">beach operations, management, and visitor services</strong>. It helps beach operators and local authorities improve safety, service quality, environmental protection, accessibility, and customer satisfaction.
                 </p>
@@ -248,7 +248,7 @@ export default function IsoCertificationLayout() {
                   Certification
                 </span>
               </h2>
-              <p className="mt-3 md:mt-4 text-sm md:text-base lg:text-lg leading-relaxed text-slate-500 max-w-2xl mx-auto px-2 text-justify">
+              <p className="mt-3 md:mt-4 text-sm md:text-base lg:text-lg leading-relaxed text-slate-500 max-w-2xl mx-auto px-2 text-center">
                 Certification ensures your beach meets global standards for safety, cleanliness, and sustainability, attracting more visitors and protecting your coastline.
               </p>
             </div>
@@ -309,7 +309,7 @@ export default function IsoCertificationLayout() {
               <h2 className="mb-3 text-2xl font-extrabold leading-tight tracking-tight text-[#111827] sm:text-3xl md:mb-4 md:text-4xl lg:text-5xl">
                 Who Can Implement It?
               </h2>
-              <p className="text-justify px-2 text-sm leading-7 text-[#526581] md:text-base lg:text-lg text-justify">
+              <p className="px-2 text-sm leading-7 text-[#526581] md:text-base lg:text-lg text-center">
                 ISO 13009 is designed for any entity responsible for managing beach areas, from small private resorts to large municipal coastlines.
               </p>
             </div>

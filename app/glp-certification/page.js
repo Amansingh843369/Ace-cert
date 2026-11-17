@@ -114,7 +114,7 @@ export default function GlpLayout() {
               </h3>
 
               {/* TEXT JUSTIFY APPLIED HERE */}
-              <div className="mt-2 space-y-4 text-left text-sm leading-7 text-[#526581] sm:text-base md:text-[17px] md:leading-8 text-justify">
+              <div className="mt-2 space-y-4 text-sm leading-7 text-[#526581] sm:text-base md:text-[17px] md:leading-8 text-justify">
                 <p>
                   Good Laboratory Practices (GLP) is a globally recognized quality system that establishes principles and requirements for the planning, performance, recording, reporting, and archiving of laboratory studies. GLP ensures the integrity, reliability, consistency, and quality of laboratory data generated for regulatory submission.
                 </p>
@@ -263,7 +263,7 @@ export default function GlpLayout() {
               </h2>
 
               {/* TEXT JUSTIFY APPLIED HERE */}
-              <p className="mt-3 md:mt-4 text-sm md:text-base lg:text-lg leading-relaxed text-slate-500 max-w-2xl mx-auto px-2 text-justify">
+              <p className="mt-3 md:mt-4 text-sm md:text-base lg:text-lg leading-relaxed text-slate-500 max-w-2xl mx-auto px-2 text-center">
                 GLP certification demonstrates that your laboratory operates with the highest standards of quality and integrity, facilitating global regulatory acceptance of your study data.
               </p>
             </div>

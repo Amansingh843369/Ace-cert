@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import {
   ArrowUpRight,
+  AlertTriangle,
   BarChart3,
   Building2,
   CircleCheck,
@@ -114,7 +115,7 @@ export default function HipaaLayout() {
               </h3>
 
               {/* TEXT JUSTIFY APPLIED HERE */}
-              <div className="mt-2 space-y-4 text-left text-sm leading-7 text-[#526581] sm:text-base md:text-[17px] md:leading-8 text-justify">
+              <div className="mt-2 space-y-4 text-sm leading-7 text-[#526581] sm:text-base md:text-[17px] md:leading-8 text-justify">
                 <p>
                   HIPAA (Health Insurance Portability and Accountability Act) is a US federal law that mandates the protection of sensitive patient health information from being disclosed without the patient&apos;s consent or knowledge. It establishes national standards for the security and privacy of <strong className="font-semibold text-[#111827]">Protected Health Information (PHI)</strong>.
                 </p>
@@ -263,7 +264,7 @@ export default function HipaaLayout() {
               </h2>
 
               {/* TEXT JUSTIFY APPLIED HERE */}
-              <p className="mt-3 md:mt-4 text-sm md:text-base lg:text-lg leading-relaxed text-slate-500 max-w-2xl mx-auto px-2 text-justify">
+              <p className="mt-3 md:mt-4 text-sm md:text-base lg:text-lg leading-relaxed text-slate-500 max-w-2xl mx-auto px-2 text-center">
                 Achieving HIPAA compliance allows you to legally serve US healthcare clients, proving that you treat patient data with the highest level of care and security.
               </p>
             </div>

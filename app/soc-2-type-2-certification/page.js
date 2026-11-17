@@ -114,7 +114,7 @@ export default function Soc2Type2Layout() {
               </h3>
 
               {/* TEXT JUSTIFY APPLIED HERE */}
-              <div className="mt-2 space-y-4 text-left text-sm leading-7 text-[#526581] sm:text-base md:text-[17px] md:leading-8 text-justify">
+              <div className="mt-2 space-y-4 text-sm leading-7 text-[#526581] sm:text-base md:text-[17px] md:leading-8 text-justify">
                 <p>
                   SOC 2 Type 2 is an auditing procedure that ensures a service provider securely manages data to protect the interests of your organization and the privacy of their clients. Unlike Type 1 (which checks design at a single point in time), <strong className="font-semibold text-[#111827]">Type 2 evaluates the operating effectiveness of controls over a period of time</strong> (usually 6-12 months).
                 </p>
@@ -263,7 +263,7 @@ export default function Soc2Type2Layout() {
               </h2>
 
               {/* TEXT JUSTIFY APPLIED HERE */}
-              <p className="mt-3 md:mt-4 text-sm md:text-base lg:text-lg leading-relaxed text-slate-500 max-w-2xl mx-auto px-2 text-justify">
+              <p className="mt-3 md:mt-4 text-sm md:text-base lg:text-lg leading-relaxed text-slate-500 max-w-2xl mx-auto px-2 text-center">
                 Achieving SOC 2 Type 2 is often the tipping point in enterprise sales, removing security objections and proving you are a mature, low-risk vendor.
               </p>
             </div>

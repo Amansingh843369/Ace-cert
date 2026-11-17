@@ -110,7 +110,7 @@ export default function IsoCertificationLayout() {
               </h3>
 
               {/* Content exactly from the image */}
-              <div className="mt-2 space-y-3 text-justify text-sm leading-6 text-[#526581] sm:text-base md:text-[16px] md:leading-7">
+              <div className="mt-2 space-y-3 text-sm leading-6 text-[#526581] sm:text-base md:text-[16px] md:leading-7 text-justify">
                 <p>
                   ISO 31000 is an internationally recognized standard that provides principles, frameworks, and guidelines for <strong className="font-semibold text-[#111827]">effective risk management</strong>. It helps organizations identify, assess, evaluate, treat, monitor, and review risks that may impact the achievement of business objectives.
                 </p>
@@ -255,7 +255,7 @@ export default function IsoCertificationLayout() {
                 </span>
               </h2>
 
-              <p className="text-justify mt-3 text-sm md:text-base leading-relaxed text-slate-500 max-w-2xl mx-auto px-2">
+              <p className="mt-3 text-sm md:text-base leading-relaxed text-slate-500 max-w-2xl mx-auto px-2 text-center">
                 Adopting ISO 31000 guidelines acts as a powerful catalyst for organizational maturity, proving to investors, regulators, and partners that your business is resilient, well-governed, and prepared for future challenges.
               </p>
             </div>
@@ -317,7 +317,7 @@ export default function IsoCertificationLayout() {
                 Who Can Implement It?
               </h2>
 
-              <p className="text-justify px-2 text-sm leading-6 text-[#526581] md:text-base">
+              <p className="px-2 text-sm leading-6 text-[#526581] md:text-base text-center">
                 ISO 31000 is universally applicable to any organization facing uncertainty. From multinational corporations and financial institutions to government bodies, healthcare networks, and growing tech startups.
               </p>
             </div>

@@ -114,7 +114,7 @@ export default function GhpLayout() {
               </h3>
 
               {/* TEXT JUSTIFY APPLIED HERE */}
-              <div className="mt-2 space-y-4 text-left text-sm leading-7 text-[#526581] sm:text-base md:text-[17px] md:leading-8 text-justify">
+              <div className="mt-2 space-y-4 text-sm leading-7 text-[#526581] sm:text-base md:text-[17px] md:leading-8 text-justify">
                 <p>
                   Good Hygiene Practices (GHP) are fundamental guidelines that ensure food is handled, prepared, and stored in a hygienic manner to prevent contamination and foodborne illnesses. It covers all aspects of environmental and personal hygiene in food operations.
                 </p>

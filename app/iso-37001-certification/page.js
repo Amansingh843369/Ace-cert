@@ -93,7 +93,7 @@ export default function Iso37001Layout() {
                 What is ISO 37001?
                 <div className="absolute -bottom-2 left-1/2 lg:left-0 transform -translate-x-1/2 lg:translate-x-0 w-20 h-1.5 bg-gradient-to-r from-blue-600 to-cyan-400 rounded-full"></div>
               </h3>
-              <div className="space-y-3 md:space-y-4 text-slate-600 text-sm md:text-base lg:text-lg leading-relaxed text-justify md:text-left mt-2">
+              <div className="space-y-3 md:space-y-4 text-slate-600 text-sm md:text-base lg:text-lg leading-relaxed mt-2 text-justify">
                 <p>
                   ISO 37001 is an internationally recognized standard for <strong className="text-slate-900">Anti-Bribery Management Systems (ABMS)</strong>. It provides a structured framework for organizations to prevent, detect, and respond to bribery risks while promoting a culture of integrity, transparency, and ethical business conduct.
                 </p>
@@ -203,7 +203,7 @@ export default function Iso37001Layout() {
                   Certification
                 </span>
               </h2>
-              <p className="mt-3 md:mt-4 text-sm md:text-base lg:text-lg leading-relaxed text-slate-500 max-w-2xl mx-auto px-2">
+              <p className="mt-3 md:mt-4 text-sm md:text-base lg:text-lg leading-relaxed text-slate-500 max-w-2xl mx-auto px-2 text-center">
                 Demonstrate an absolute commitment to anti-bribery practices, empowering growth and protecting against operational and legal vulnerabilities.
               </p>
             </div>
@@ -264,7 +264,7 @@ export default function Iso37001Layout() {
               <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold mb-3 md:mb-4 text-white leading-tight">
                 Who Can Implement It?
               </h2>
-              <p className="text-justify text-blue-100/80 text-sm md:text-base lg:text-lg text-justify md:text-center px-2">
+              <p className="text-blue-100/80 text-sm md:text-base lg:text-lg px-2 text-center">
                 ISO 37001 is applicable to organizations of all sizes and sectors, establishing universally recognized credentials for integrity.
               </p>
             </div>

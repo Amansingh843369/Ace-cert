@@ -115,7 +115,7 @@ export default function GwpLayout() {
               </h3>
 
               {/* TEXT JUSTIFY APPLIED HERE */}
-              <div className="mt-2 space-y-4 text-left text-sm leading-7 text-[#526581] sm:text-base md:text-[17px] md:leading-8 text-justify">
+              <div className="mt-2 space-y-4 text-sm leading-7 text-[#526581] sm:text-base md:text-[17px] md:leading-8 text-justify">
                 <p>
                   Good Warehouse Practices (GWP) is a globally recognized quality management system that establishes guidelines for the proper storage, handling, inventory control, and movement of products within warehouse facilities. GWP ensures that products are stored under appropriate conditions to maintain their quality, safety, integrity, and traceability throughout the warehousing process.
                 </p>
@@ -264,7 +264,7 @@ export default function GwpLayout() {
               </h2>
 
               {/* TEXT JUSTIFY APPLIED HERE */}
-              <p className="mt-3 md:mt-4 text-sm md:text-base lg:text-lg leading-relaxed text-slate-500 max-w-2xl mx-auto px-2 text-justify">
+              <p className="mt-3 md:mt-4 text-sm md:text-base lg:text-lg leading-relaxed text-slate-500 max-w-2xl mx-auto px-2 text-center">
                 Adopting GWP standards demonstrates a commitment to supply chain integrity, reducing waste and ensuring that products are handled with care from receipt to dispatch.
               </p>
             </div>

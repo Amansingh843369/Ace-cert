@@ -179,7 +179,7 @@ export default function GdpCertificationPage() {
                   <span aria-hidden="true" className="absolute -bottom-2 left-0 h-1 w-12 rounded-full bg-[#E30613] sm:-bottom-3 sm:w-14" />
                 </h3>
 
-                <div className="space-y-3 text-justify pt-2 text-sm leading-7 text-[#526581] sm:text-base sm:leading-8 md:text-[17px]">
+                <div className="space-y-3 pt-2 text-sm leading-7 text-[#526581] sm:text-base sm:leading-8 md:text-[17px] text-justify">
                   <p>
                     Good Distribution Practices (GDP) is a globally recognized quality system
                     that establishes guidelines for the proper distribution, storage,
@@ -337,7 +337,7 @@ export default function GdpCertificationPage() {
               <SectionHeading className="mt-4" highlight="Certification">
                 Benefits of GDP
               </SectionHeading>
-              <p className="mx-auto mt-3 max-w-2xl px-2 text-sm leading-relaxed text-slate-500 sm:mt-4 sm:text-base md:text-lg">
+              <p className="mx-auto mt-3 max-w-2xl px-2 text-sm leading-relaxed text-slate-500 sm:mt-4 sm:text-base md:text-lg text-center">
                 GDP certification validates your supply chain's ability to handle sensitive
                 products with the highest level of care, compliance, and efficiency.
               </p>
@@ -403,7 +403,7 @@ export default function GdpCertificationPage() {
               >
                 Who Can Implement It?
               </h2>
-              <p className="mx-auto mt-3 max-w-xl px-2 text-sm leading-7 text-[#526581] sm:mt-4 sm:text-base md:text-lg">
+              <p className="mx-auto mt-3 max-w-xl px-2 text-sm leading-7 text-[#526581] sm:mt-4 sm:text-base md:text-lg text-center">
                 GDP is essential for any organization involved in the wholesale distribution,
                 storage, or transport of medicinal products and other regulated goods.
               </p>

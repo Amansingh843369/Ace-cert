@@ -111,7 +111,7 @@ export default function IsoCertificationLayout() {
               </h3>
 
               {/* TEXT JUSTIFY APPLIED HERE */}
-              <div className="mt-2 space-y-4 text-justify text-sm leading-7 text-[#526581] sm:text-base md:text-[17px] md:leading-8">
+              <div className="mt-2 space-y-4 text-sm leading-7 text-[#526581] sm:text-base md:text-[17px] md:leading-8 text-justify">
                 <p>
                   ISO 21401 is an internationally recognized standard that specifies requirements for a <strong className="font-semibold text-[#111827]">Sustainability Management System for accommodation establishments</strong>. It provides a framework for hotels, resorts, lodges, guesthouses, and other accommodation providers to manage their environmental, social, and economic impacts while delivering sustainable hospitality services.
                 </p>
@@ -260,7 +260,7 @@ export default function IsoCertificationLayout() {
               </h2>
 
               {/* TEXT JUSTIFY APPLIED HERE */}
-              <p className="mt-3 md:mt-4 text-sm md:text-base lg:text-lg leading-relaxed text-slate-500 max-w-2xl mx-auto px-2 text-justify">
+              <p className="mt-3 md:mt-4 text-sm md:text-base lg:text-lg leading-relaxed text-slate-500 max-w-2xl mx-auto px-2 text-center">
                 Certification distinguishes your property in a competitive market, appealing to the growing number of travelers who prioritize sustainability without compromising on comfort or quality.
               </p>
             </div>
@@ -323,7 +323,7 @@ export default function IsoCertificationLayout() {
               </h2>
 
               {/* TEXT JUSTIFY APPLIED HERE */}
-              <p className="text-justify px-2 text-sm leading-7 text-[#526581] md:text-base lg:text-lg text-justify">
+              <p className="px-2 text-sm leading-7 text-[#526581] md:text-base lg:text-lg text-center">
                 ISO 21401 is designed for any type of accommodation establishment, from small family-run B&Bs to large international hotel chains, aiming to operate sustainably.
               </p>
             </div>
