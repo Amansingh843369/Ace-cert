@@ -198,7 +198,7 @@ export default function FeaturesSection() {
                   {feature.title}
                 </h3>
 
-                <p className="relative z-10 mt-3 text-sm leading-relaxed text-slate-600 sm:text-base">
+                <p className="relative z-10 mt-3 text-justify text-sm leading-relaxed text-slate-600 sm:text-base">
                   {feature.text}
                 </p>
               </article>
