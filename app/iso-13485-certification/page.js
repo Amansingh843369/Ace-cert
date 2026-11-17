@@ -68,7 +68,7 @@ export default function IsoCertificationLayout() {
               </span>
               Medical Device Standard
             </div>
-            <h1 id="iso13485-title" className="mb-4 max-w-4xl text-balance text-4xl font-extrabold leading-[1.08] tracking-[-0.045em] text-[#111827] sm:text-5xl md:text-6xl lg:text-[4.25rem]">
+            <h1 id="iso13485-title" className="mb-4 max-w-4xl text-balance text-4xl font-extrabold leading-[1.08] tracking-[-0.045em] text-[#111827] sm:text-5xl md:text-6xl lg:text-5xl lg:whitespace-nowrap xl:text-[3.5rem]">
               ISO 13485 <span className="text-[#E30613]">Certification</span>
             </h1>
             <h2 className="max-w-2xl px-2 text-pretty text-base font-medium leading-relaxed text-[#526581] sm:text-lg md:text-xl">
@@ -149,7 +149,7 @@ export default function IsoCertificationLayout() {
             {/* TEXT SECTION (Now lg:order-1 so it appears on the left) */}
             <div className="order-1 flex w-full flex-col gap-6 md:gap-8 lg:order-1 lg:w-[58%]">
               <div className="text-center lg:text-left">
-                <h3 id="iso13485-importance" className="text-balance text-2xl font-extrabold leading-tight tracking-tight text-[#111827] sm:text-3xl md:text-4xl lg:text-5xl">
+                <h3 id="iso13485-importance" className="text-balance text-2xl font-extrabold leading-tight tracking-tight text-[#111827] sm:text-3xl md:text-4xl lg:text-[1.65rem] lg:whitespace-nowrap xl:text-3xl">
                   Why is <span className="text-[#E30613]">ISO 13485</span> Important?
                 </h3>
                 <p className="text-justify mt-4 text-sm leading-7 text-[#526581] sm:text-base md:text-lg md:leading-8 text-justify">

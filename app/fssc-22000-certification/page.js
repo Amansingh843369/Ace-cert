@@ -77,7 +77,7 @@ export default function Fssc22000Layout() {
               GFSI Recognized Food Safety Standard
             </div>
 
-            <h1 id="fssc22000-title" className="mb-4 max-w-4xl text-balance text-4xl font-extrabold leading-[1.08] tracking-[-0.045em] text-[#111827] sm:text-5xl md:text-6xl lg:text-[4.25rem]">
+            <h1 id="fssc22000-title" className="mb-4 max-w-4xl text-balance text-4xl font-extrabold leading-[1.08] tracking-[-0.045em] text-[#111827] sm:text-5xl md:text-6xl lg:text-5xl lg:whitespace-nowrap xl:text-[3.5rem]">
               FSSC 22000 <span className="text-[#E30613]">Certification</span>
             </h1>
 
@@ -166,7 +166,7 @@ export default function Fssc22000Layout() {
             {/* TEXT SECTION (Now lg:order-1 so it appears on the left) */}
             <div className="order-1 flex w-full flex-col gap-6 md:gap-8 lg:order-1 lg:w-[58%]">
               <div className="text-center lg:text-left">
-                <h3 id="fssc22000-importance" className="text-balance text-2xl font-extrabold leading-tight tracking-tight text-[#111827] sm:text-3xl md:text-4xl lg:text-5xl">
+                <h3 id="fssc22000-importance" className="text-balance text-2xl font-extrabold leading-tight tracking-tight text-[#111827] sm:text-3xl md:text-4xl lg:text-[1.65rem] lg:whitespace-nowrap xl:text-3xl">
                   Why is <span className="text-[#E30613]">FSSC 22000</span> Important?
                 </h3>
 

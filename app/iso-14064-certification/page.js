@@ -134,7 +134,7 @@ export default function IsoCertificationLayout() {
 
               <h1
                 id="hero-title"
-                className="mb-4 text-balance text-[2rem] font-extrabold leading-[1.1] tracking-[-0.03em] text-[#111827] xs:text-4xl sm:text-5xl md:text-6xl lg:text-[4rem]"
+                className="mb-4 text-balance text-[2rem] font-extrabold leading-[1.1] tracking-[-0.03em] text-[#111827] xs:text-4xl sm:text-5xl md:text-6xl lg:text-5xl lg:whitespace-nowrap xl:text-[3.5rem]"
               >
                 ISO 14064 <span className="text-[#E30613]">Certification</span>
               </h1>
@@ -229,7 +229,7 @@ export default function IsoCertificationLayout() {
                 <div className="text-center lg:text-left">
                   <h2
                     id="importance-title"
-                    className="text-balance text-2xl font-extrabold leading-tight tracking-tight text-[#111827] sm:text-3xl md:text-4xl lg:text-[2.75rem]"
+                    className="text-balance text-2xl font-extrabold leading-tight tracking-tight text-[#111827] sm:text-3xl md:text-4xl lg:text-[1.65rem] lg:whitespace-nowrap xl:text-3xl"
                   >
                     Why is <span className="text-[#E30613]">ISO 14064</span> Important?
                   </h2>

@@ -73,7 +73,7 @@ export default function IsoCertificationLayout() {
               Global AI Governance Standard
             </div>
 
-            <h1 id="iso42001-title" className="mb-3 max-w-4xl text-balance text-4xl font-extrabold leading-[1.08] tracking-[-0.045em] text-[#111827] sm:text-5xl md:text-6xl lg:text-[4.25rem]">
+            <h1 id="iso42001-title" className="mb-3 max-w-4xl text-balance text-4xl font-extrabold leading-[1.08] tracking-[-0.045em] text-[#111827] sm:text-5xl md:text-6xl lg:text-5xl lg:whitespace-nowrap xl:text-[3.5rem]">
               ISO 42001 <span className="text-[#E30613]">Certification</span>
             </h1>
 
@@ -106,7 +106,7 @@ standard for Artificial Intelligence Management Systems (AIMS).
 
             <div className="order-2 flex w-full flex-col justify-center gap-4 text-center sm:gap-4 lg:w-[54%] lg:gap-5 lg:text-left">
               <h3 id="iso42001-introduction" className="relative mx-auto inline-block text-2xl font-bold tracking-tight text-[#111827] sm:text-3xl md:text-[2rem] lg:mx-0 lg:text-4xl">
-                What is ISO/IEC 42001?
+                What is ISO 42001?
                 <span aria-hidden="true" className="absolute -bottom-2 left-1/2 h-1 w-14 -translate-x-1/2 rounded-full bg-[#E30613] lg:left-0 lg:translate-x-0" />
               </h3>
 
@@ -166,8 +166,8 @@ transparent, and secure use.
             {/* TEXT SECTION (Now lg:order-1 so it appears on the left) */}
             <div className="order-1 flex w-full flex-col gap-5 md:gap-6 lg:order-1 lg:w-[58%]">
               <div className="text-center lg:text-left">
-                <h3 id="iso42001-importance" className="text-balance text-2xl font-extrabold leading-tight tracking-tight text-[#111827] sm:text-3xl md:text-4xl lg:text-4xl">
-                  Why is <span className="text-[#E30613]">ISO/IEC 42001</span> Important?
+                <h3 id="iso42001-importance" className="text-balance text-2xl font-extrabold leading-tight tracking-tight text-[#111827] sm:text-3xl md:text-4xl lg:text-[1.65rem] lg:whitespace-nowrap xl:text-3xl">
+                  Why is <span className="text-[#E30613]">ISO 42001</span> Important?
                 </h3>
 
                 {/* TEXT JUSTIFY APPLIED HERE & typo fixed */}
@@ -209,7 +209,7 @@ transparent, and secure use.
               </span>
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-slate-900 leading-tight">
                 Key Principles of <br className="hidden md:block" />
-                <span className="text-[#E30613]">ISO/IEC 42001</span>
+                <span className="text-[#E30613]">ISO 42001</span>
               </h2>
               <p className="mt-3 text-sm md:text-base text-slate-500 px-4 max-w-2xl mx-auto">
                 ISO 42001is based on key AI management principles designed to ensure artificial intelligence is developed and deployed safely, ethically, and effectively.

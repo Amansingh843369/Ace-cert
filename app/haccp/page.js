@@ -111,7 +111,7 @@ export default function HaccpCertificationPage() {
         <div className="relative mx-auto grid max-w-7xl items-center gap-8 px-4 py-10 sm:px-6 sm:py-14 lg:grid-cols-[1.05fr_0.95fr] lg:gap-12 lg:px-8 lg:py-16">
           <div className="relative z-10">
             <SectionBadge>Food Safety Management</SectionBadge>
-            <h1 className="mt-5 max-w-xl text-4xl font-extrabold leading-[1.05] tracking-tight text-[#111827] sm:text-5xl lg:text-6xl">
+            <h1 className="mt-5 max-w-xl text-4xl font-extrabold leading-[1.05] tracking-tight text-[#111827] sm:text-5xl lg:text-5xl lg:whitespace-nowrap xl:text-[3.5rem]">
               HACCP <span className="text-red-600">Certification</span>
             </h1>
             <p className="mt-5 max-w-xl text-base leading-7 text-slate-600 sm:text-lg sm:leading-8">

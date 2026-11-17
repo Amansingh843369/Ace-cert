@@ -167,7 +167,7 @@ export default function HipaaLayout() {
             {/* TEXT SECTION (Now lg:order-1 so it appears on the left) */}
             <div className="order-1 flex w-full flex-col gap-6 md:gap-8 lg:order-1 lg:w-[58%]">
               <div className="text-center lg:text-left">
-                <h3 id="hipaa-importance" className="text-balance text-2xl font-extrabold leading-tight tracking-tight text-[#111827] sm:text-3xl md:text-4xl lg:text-5xl">
+                <h3 id="hipaa-importance" className="text-balance text-2xl font-extrabold leading-tight tracking-tight text-[#111827] sm:text-3xl md:text-4xl lg:text-[1.65rem] lg:whitespace-nowrap xl:text-3xl">
                   Why is <span className="text-[#E30613]">HIPAA</span> Important?
                 </h3>
 
