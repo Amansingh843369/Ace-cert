@@ -5,7 +5,7 @@ import { ArrowRight, Handshake, ShieldCheck, TrendingUp } from "lucide-react";
 import AboutSection from "../../components/AboutSection";
 export default function AboutPage() {
   return (
-    <main className="font-sans bg-white min-h-screen pb-12 selection:bg-red-100 selection:text-red-900">
+    <main className=" bg-white min-h-screen pb-12 selection:bg-red-100 selection:text-red-900">
       
       {/* ================= HERO / BREADCRUMB SECTION (The "Patti") ================= */}
       <section className="relative py-10 sm:py-14 px-4 text-center overflow-hidden bg-[#FFF8F7]">
@@ -159,7 +159,7 @@ export default function AboutPage() {
       </div>
     </section>
 {/* ================= CORE VALUES SECTION ================= */}
-      <section className="relative overflow-hidden bg-white px-4 py-14 sm:px-6 sm:py-20 lg:px-12">
+      <section className="relative overflow-hidden bg-white px-4  sm:px-6 sm:py-20 lg:px-12">
         <div className="pointer-events-none absolute -left-40 top-20 h-96 w-96 rounded-full bg-red-100/50 blur-3xl" />
         <div className="pointer-events-none absolute -right-40 bottom-0 h-96 w-96 rounded-full bg-blue-100/60 blur-3xl" />
 

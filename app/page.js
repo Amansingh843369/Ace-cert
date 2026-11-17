@@ -3,7 +3,6 @@ import { basename, extname, join } from "node:path";
 import AboutSection from "../components/AboutSection";
 import { createPageMetadata } from '../lib/seo';
 import BlogSection from "../components/BlogSection";
-import FaqSection from "../components/FaqSection";
 import FeaturesSection from '../components/FeaturesSection'; // Apna exact file path yahan daalein
 import HeroSection from "../components/HeroSection";
 //  import ExperienceSection  from "../components/exp";
@@ -49,7 +48,7 @@ export const metadata = createPageMetadata('/');
       <ServiceSection certificationImageFiles={certificationImageFiles} />
      {/* <ExperienceSection />   */}
      <FeaturesSection />
-      <FaqSection />
+      
       <BlogSection />
       {/* <ContactSection /> */}
     </main>
