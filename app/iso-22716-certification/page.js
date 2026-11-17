@@ -90,11 +90,11 @@ export default function Iso22716Layout() {
             <div aria-hidden="true" className="absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent via-red-200 to-transparent" />
 
             <div className="order-1 flex w-full justify-center lg:w-[46%]">
-              <figure className="relative aspect-[4/3] w-full max-w-[520px] overflow-hidden rounded-2xl bg-red-50 ring-1 ring-black/5 sm:rounded-[1.5rem] lg:h-full lg:aspect-auto">
+              <figure className="relative aspect-square w-full max-w-[520px] overflow-hidden rounded-2xl bg-red-50 ring-1 ring-black/5 sm:rounded-[1.5rem]">
                 {/* IMAGE 1: Cosmetics Lab / Cream Texture */}
                 <Image
-                  src="https://images.unsplash.com/photo-1556228720-19de77d60e6f?auto=format&fit=crop&w=1200&q=85"
-                  alt="Cosmetic cream texture and laboratory equipment representing GMP"
+                  src="/certifications/22716.png"
+                  alt="ISO 22716 certification artwork"
                   fill
                   priority
                   sizes="(max-width: 1024px) 100vw, 520px"

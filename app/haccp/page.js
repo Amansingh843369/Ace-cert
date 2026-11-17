@@ -135,10 +135,10 @@ export default function HaccpCertificationPage() {
               </a>
             </div>
           </div>
-          <div className="relative mx-auto aspect-square w-full max-w-[320px] overflow-hidden rounded-3xl border border-red-100 bg-white shadow-2xl shadow-red-900/10 sm:max-w-[380px] lg:max-w-[440px]">
+          <div className="relative aspect-square mx-auto w-full max-w-[320px] overflow-hidden rounded-3xl border border-red-100 bg-white shadow-2xl shadow-red-900/10 sm:max-w-[380px] lg:max-w-[440px]">
             <Image
               src="/certifications/haccp.png"
-              alt="HACCP food safety inspection in a food production facility"
+              alt="HACCP certification artwork"
               fill
               sizes="(max-width: 1024px) 100vw, 440px"
               priority

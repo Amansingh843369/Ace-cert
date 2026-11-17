@@ -91,11 +91,11 @@ export default function GmpLayout() {
             <div aria-hidden="true" className="absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent via-red-200 to-transparent" />
 
             <div className="order-1 flex w-full justify-center lg:w-[46%]">
-              <figure className="relative aspect-[4/3] w-full max-w-[520px] overflow-hidden rounded-2xl bg-red-50 ring-1 ring-black/5 sm:rounded-[1.5rem] lg:h-full lg:aspect-auto">
+              <figure className="relative aspect-[4/3] w-full max-w-[520px] overflow-hidden rounded-2xl bg-red-50 ring-1 ring-black/5 sm:rounded-[1.5rem]">
                 {/* IMAGE 1: Pharmaceutical Manufacturing / Clean Room */}
                 <Image
-                  src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1200&q=85"
-                  alt="Pharmaceutical manufacturing clean room with workers in protective gear"
+                  src="/certifications/gmp.png"
+                  alt="GMP certification artwork"
                   fill
                   priority
                   sizes="(max-width: 1024px) 100vw, 520px"

@@ -91,11 +91,11 @@ export default function Soc2Type1Layout() {
             <div aria-hidden="true" className="absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent via-red-200 to-transparent" />
 
             <div className="order-1 flex w-full justify-center lg:w-[46%]">
-              <figure className="relative aspect-[4/3] w-full max-w-[520px] overflow-hidden rounded-2xl bg-red-50 ring-1 ring-black/5 sm:rounded-[1.5rem] lg:h-full lg:aspect-auto">
+              <figure className="relative aspect-square w-full max-w-[520px] overflow-hidden rounded-2xl bg-red-50 ring-1 ring-black/5 sm:rounded-[1.5rem]">
                 {/* IMAGE 1: Architect / Blueprint / Planning Security */}
                 <Image
-                  src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1200&q=85"
-                  alt="Team reviewing security architecture blueprints representing SOC 2 Type 1 design assessment"
+                  src="/certifications/soc2type1.png"
+                  alt="SOC 2 Type 1 certification artwork"
                   fill
                   priority
                   sizes="(max-width: 1024px) 100vw, 520px"

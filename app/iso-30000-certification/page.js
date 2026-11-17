@@ -86,11 +86,11 @@ export default function IsoCertificationLayout() {
             <div aria-hidden="true" className="absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent via-red-200 to-transparent" />
 
             <div className="order-1 flex w-full justify-center lg:w-[46%]">
-              <figure className="relative aspect-[4/3] w-full max-w-[520px] overflow-hidden rounded-2xl bg-red-50 ring-1 ring-black/5 sm:rounded-[1.5rem] lg:h-full lg:aspect-auto">
+              <figure className="relative aspect-square w-full max-w-[520px] overflow-hidden rounded-2xl bg-red-50 ring-1 ring-black/5 sm:rounded-[1.5rem]">
                 {/* Ship Recycling / Shipyard Image */}
                 <Image
-                  src="/9001-removebg.png"
-                  alt="Large cargo ship at a port facility ready for marine operations"
+                  src="/certifications/30000.png"
+                  alt="ISO 30000 certification artwork"
                   fill
                   priority
                   sizes="(max-width: 1024px) 100vw, 520px"

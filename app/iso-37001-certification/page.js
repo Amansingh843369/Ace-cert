@@ -78,8 +78,8 @@ export default function Iso37001Layout() {
             <div className="w-full lg:w-5/12 flex justify-center order-1 lg:order-1">
               <div className="relative aspect-square w-full max-w-[280px] overflow-hidden rounded-3xl shadow-lg md:max-w-sm">
                 <Image
-                  src={certificationImages['ISO 37001']}
-                  alt="ISO 37001 anti-bribery certification"
+                  src="/certifications/37001.png"
+                  alt="ISO 37001 certification artwork"
                   fill
                   sizes="(max-width: 768px) 280px, 384px"
                   className="object-cover"

@@ -87,10 +87,10 @@ export default function IsoCertificationLayout() {
             <div aria-hidden="true" className="absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent via-red-200 to-transparent" />
             
             <div className="order-1 flex w-full justify-center lg:w-[46%]">
-              <figure className="relative aspect-[4/3] w-full max-w-[520px] overflow-hidden rounded-2xl bg-red-50 ring-1 ring-black/5 sm:rounded-[1.5rem] lg:h-full lg:aspect-auto">
+              <figure className="relative aspect-square w-full max-w-[520px] overflow-hidden rounded-2xl bg-red-50 ring-1 ring-black/5 sm:rounded-[1.5rem]">
                 <Image
-                  src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=1200&q=85"
-                  alt="IT professionals managing server infrastructure representing ISO 20000-1"
+                  src="/certifications/20000-1.png"
+                  alt="ISO 20000-1 certification artwork"
                   fill
                   priority
                   sizes="(max-width: 1024px) 100vw, 520px"

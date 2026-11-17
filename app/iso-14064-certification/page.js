@@ -153,10 +153,10 @@ export default function IsoCertificationLayout() {
 
               {/* Image */}
               <div className="w-full shrink-0 lg:w-[44%]">
-                <figure className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl bg-red-50 ring-1 ring-black/5 sm:aspect-[16/10] lg:aspect-auto lg:h-full lg:min-h-[380px]">
+                <figure className="relative aspect-square w-full overflow-hidden rounded-2xl bg-red-50 ring-1 ring-black/5">
                   <Image
-                    src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=1200&q=85"
-                    alt="Sustainable energy wind turbines representing ISO 14064 certification"
+                    src="/certifications/14064.png"
+                    alt="ISO 14064 certification artwork"
                     fill
                     priority
                     sizes="(max-width: 1024px) 100vw, 480px"

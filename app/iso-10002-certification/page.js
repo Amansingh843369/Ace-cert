@@ -83,10 +83,10 @@ export default function IsoCertificationLayout() {
             <div aria-hidden="true" className="absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent via-red-200 to-transparent" />
 
             <div className="order-1 flex w-full justify-center lg:w-[46%]">
-              <div className="relative aspect-[4/3] w-full max-w-[520px] overflow-hidden rounded-2xl bg-red-50 ring-1 ring-black/5 sm:rounded-[1.5rem] lg:h-full lg:aspect-auto">
+              <div className="relative aspect-square w-full max-w-[520px] overflow-hidden rounded-2xl bg-red-50 ring-1 ring-black/5 sm:rounded-[1.5rem]">
                 <Image
-                  src="/37.1.png"
-                  alt="Customer support team helping clients"
+                  src="/certifications/10002.png"
+                  alt="ISO 10002 certification artwork"
                   fill
                   priority
                   sizes="(max-width: 1024px) 100vw, 520px"
