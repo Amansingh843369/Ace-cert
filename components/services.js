@@ -120,7 +120,7 @@ export default function ServicesSection({ certificationImageFiles = {} }) {
                     alt=""
                     loading="lazy"
                     decoding="async"
-                    className="h-full w-full object-cover object-top"
+                    className="h-full w-full object-contain object-center"
                   />
                   
                   {/* Overlay on Hover */}
