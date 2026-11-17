@@ -49,20 +49,7 @@ export default function PurposeSection({ navy = false }) {
 
       <div className="relative mx-auto grid w-full max-w-screen-2xl grid-cols-1 items-start gap-8 xl:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] xl:gap-16">
         <div className="min-w-0">
-          <span
-            className={`mb-6 inline-flex items-center gap-2 rounded-full border px-4 py-2 text-xs font-bold uppercase tracking-[0.16em] shadow-sm ${
-              navy
-                ? "border-white/15 bg-white/10 text-red-300"
-                : "border-red-100 bg-white text-red-600"
-            }`}
-          >
-            <span
-              aria-hidden="true"
-              className="h-2 w-2 rounded-full bg-red-600"
-            />
-            Our Purpose
-          </span>
-
+           
           <h2
             id="purpose-heading"
             className={`text-3xl font-extrabold leading-tight tracking-tight sm:text-4xl lg:text-5xl ${
