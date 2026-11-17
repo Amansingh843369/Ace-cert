@@ -48,7 +48,7 @@ export default function RootLayout({ children }) {
                   name: 'ACE-CERT',
                   url: 'https://ace-cert.com/',
                   logo: 'https://ace-cert.com/acecert-logo.png',
-                  email: 'info@acecert.com',
+                  email: 'info@ace-cert.com',
                 },
                 {
                   '@type': 'WebSite',

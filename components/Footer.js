@@ -21,7 +21,7 @@ const navigation = [
       { label: "Privacy Policy", href: "/privacy-policy" },
       {
         label: "Feedback",
-        href: "mailto:info@acecert.com?subject=Website%20Feedback",
+        href: "mailto:info@ace-cert.com?subject=Website%20Feedback",
       },
     ],
   },
@@ -127,11 +127,11 @@ export default function Footer() {
             </p>
 
             <a
-              href="mailto:info@acecert.com"
+              href="mailto:info@ace-cert.com"
               className={`mt-4 inline-flex min-h-11 items-center gap-2 rounded-md text-sm text-slate-600 transition-colors hover:text-red-600 motion-reduce:transition-none ${focusClass}`}
             >
               <Mail aria-hidden="true" className="h-4 w-4 text-red-600" />
-              info@acecert.com
+              info@ace-cert.com
             </a>
           </div>
 

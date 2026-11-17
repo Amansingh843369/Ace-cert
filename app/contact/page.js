@@ -115,7 +115,7 @@ export default function ContactPage() {
                   <div>
                     <h3 className="mb-1 text-base font-bold text-[#0B1739] sm:text-lg">Email Us</h3>
                     <p className="break-all text-sm leading-relaxed text-slate-600">
-                      <a href="mailto:info@acecert.com" className="transition-colors hover:text-red-600">info@acecert.com</a>
+                      <a href="mailto:info@ace-cert.com" className="transition-colors hover:text-red-600">info@ace-cert.com</a>
                     </p>
                   </div>
                 </div>

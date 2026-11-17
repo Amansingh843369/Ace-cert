@@ -74,10 +74,10 @@ export default function PrivacyPolicyPage() {
         <p className="mt-8 border-t border-slate-200 pt-6 leading-7 text-slate-600">
           For privacy questions, email{" "}
           <a
-            href="mailto:info@acecert.com"
+            href="mailto:info@ace-cert.com"
             className="font-medium text-red-600 hover:text-red-700"
           >
-            info@acecert.com
+            info@ace-cert.com
           </a>
           .
         </p>
