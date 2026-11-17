@@ -11,6 +11,7 @@ import {
   Handshake,
   Leaf,
   LineChart,
+  Lock,
   Recycle,
   ShieldCheck,
   Target,

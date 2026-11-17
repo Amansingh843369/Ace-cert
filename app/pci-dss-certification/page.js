@@ -5,6 +5,7 @@ import Image from 'next/image';
 import {
   ArrowUpRight,
   BarChart3,
+  Bug,
   Building2,
   CircleCheck,
   Globe,
