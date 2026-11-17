@@ -89,8 +89,8 @@ export default function IsoCertificationLayout() {
             <div className="order-1 flex w-full justify-center lg:w-[46%]">
               <figure className="relative aspect-[4/3] w-full max-w-[520px] overflow-hidden rounded-2xl bg-red-50 ring-1 ring-black/5 sm:rounded-[1.5rem] lg:h-full lg:aspect-auto">
                 <Image
-                  src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=1200&q=85"
-                  alt="Sustainable wind turbines representing ISO 14001 environmental management"
+                  src="/certifications/14001.jpeg"
+                  alt="ISO 14001 environmental management certification and sustainability imagery"
                   fill
                   priority
                   sizes="(max-width: 1024px) 100vw, 520px"

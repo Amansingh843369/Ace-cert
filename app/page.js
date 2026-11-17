@@ -5,6 +5,7 @@ import { createPageMetadata } from '../lib/seo';
 import BlogSection from "../components/BlogSection";
 import FeaturesSection from '../components/FeaturesSection'; // Apna exact file path yahan daalein
 import HeroSection from "../components/HeroSection";
+import PurposeSection from "../components/PurposeSection";
 //  import ExperienceSection  from "../components/exp";
 //  import  ContactSection  from "../components/contact";
  import ServiceSection from "../components/services";
@@ -46,6 +47,7 @@ export const metadata = createPageMetadata('/');
         foregroundImageAlt="Corporate team reviewing documents in a meeting"
       />
       <ServiceSection certificationImageFiles={certificationImageFiles} />
+      <PurposeSection navy />
      {/* <ExperienceSection />   */}
      <FeaturesSection />
       

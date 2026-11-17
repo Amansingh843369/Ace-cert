@@ -12,7 +12,6 @@ const navigation = [
     title: "Product",
     links: [
       { label: "Certification", href: "/certification" },
-      { label: "Training", href: "/training" },
       { label: "Verify Certificate", href: "/verify_certificate" },
     ],
   },

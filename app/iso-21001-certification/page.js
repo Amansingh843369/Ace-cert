@@ -92,8 +92,8 @@ export default function Iso21001CertificationLayout() {
               <figure className="relative aspect-[4/3] w-full max-w-[520px] overflow-hidden rounded-2xl bg-red-50 ring-1 ring-black/5 sm:rounded-[1.5rem] lg:h-full lg:aspect-auto">
                 {/* Education-focused Image */}
                 <Image
-                  src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1200&q=85"
-                  alt="Students walking on a modern university campus representing ISO 21001 education standards"
+                  src="/certifications/21001.jpeg"
+                  alt="ISO 21001 educational organizations certification"
                   fill
                   priority
                   sizes="(max-width: 1024px) 100vw, 520px"

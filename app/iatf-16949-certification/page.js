@@ -93,8 +93,8 @@ export default function Iatf16949Layout() {
               <figure className="relative aspect-[4/3] w-full max-w-[520px] overflow-hidden rounded-2xl bg-red-50 ring-1 ring-black/5 sm:rounded-[1.5rem] lg:h-full lg:aspect-auto">
                 {/* IMAGE 1: Car Manufacturing / Assembly Line */}
                 <Image
-                  src="https://images.unsplash.com/photo-1565043666747-69f6646db940?auto=format&fit=crop&w=1200&q=85"
-                  alt="Automotive assembly line with robotic arms representing IATF 16949 manufacturing standards"
+                  src="/certifications/1atf16949.jpeg"
+                  alt="IATF 16949 automotive quality management certification"
                   fill
                   priority
                   sizes="(max-width: 1024px) 100vw, 520px"

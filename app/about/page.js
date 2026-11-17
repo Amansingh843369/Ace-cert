@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight, Handshake, ShieldCheck, TrendingUp } from "lucide-react";
 import AboutSection from "../../components/AboutSection";
+import PurposeSection from "../../components/PurposeSection";
 export default function AboutPage() {
   return (
     <main className=" bg-white min-h-screen pb-12 selection:bg-red-100 selection:text-red-900">
@@ -231,65 +232,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* ================= OUR PURPOSE SECTION ================= */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-red-50 via-white to-gray-50 px-4 py-10 sm:px-6 sm:py-14 lg:px-8 lg:py-16 2xl:px-12">
-        <div className="pointer-events-none absolute -right-32 -top-24 h-96 w-96 rounded-full bg-red-100/60 blur-3xl" />
-        <div className="relative mx-auto grid w-full max-w-screen-2xl grid-cols-1 items-start gap-8 xl:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] xl:gap-16">
-          <div className="min-w-0">
-            <span className="mb-6 inline-flex items-center gap-2 rounded-full border border-red-100 bg-white px-4 py-2 text-xs font-bold uppercase tracking-[0.16em] text-red-600 shadow-sm">
-              <span className="h-2 w-2 rounded-full bg-red-600" />
-              Our Purpose
-            </span>
-            <h2 className="text-3xl font-extrabold leading-tight tracking-tight text-gray-900 sm:text-4xl lg:text-5xl">
-              Bridging the Gap to <span className="text-red-600">Business Success</span>
-            </h2>
-            <p className="mt-6 text-base leading-7 text-gray-600 text-justify sm:text-lg sm:leading-8">
-              At <strong className="font-normal text-gray-900"> ACERT Certification, our purpose is to bridge the gap between complex international standards and everyday business success. We believe that compliance shouldn&apos;t be a bureaucratic hurdle, but a strategic catalyst for growth.</strong>
-            </p>
-           
-
-            <p className="mt-6 text-base leading-7 text-gray-600 text-justify sm:text-lg sm:leading-8">
-              By delivering accessible, practical, and globally recognized ISO certification, training, and advisory services, we empower small and middle-market businesses to.
-            </p>
-          </div>
-
-          <div className="min-w-0 space-y-4">
-            <p className="text-xs font-bold uppercase tracking-[0.18em] text-red-600">What this means for you</p>
-            <article className="group flex min-w-0 gap-4 rounded-2xl border border-gray-100 bg-white p-5 shadow-[0_10px_30px_rgba(15,23,42,0.05)] transition-all duration-300 hover:-translate-y-0.5 hover:border-red-200 hover:shadow-lg sm:gap-5 sm:p-6">
-              <span className="pt-1 text-sm font-extrabold tracking-wider text-red-300">01</span>
-              <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-red-50 text-red-600 transition-colors group-hover:bg-red-600 group-hover:text-white">
-                <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
-              </div>
-              <div className="min-w-0 flex-1">
-                <h3 className="break-words text-lg font-bold text-gray-900 transition-colors group-hover:text-red-600 sm:text-xl">Build Unshakeable Trust</h3>
-                <p className="mt-1 text-sm leading-6 text-gray-600 sm:text-base"> Prove your commitment to safety, quality, and excellence to your clients and stakeholders.</p>
-              </div>
-            </article>
-
-            <article className="group flex min-w-0 gap-4 rounded-2xl border border-gray-100 bg-white p-5 shadow-[0_10px_30px_rgba(15,23,42,0.05)] transition-all duration-300 hover:-translate-y-0.5 hover:border-red-200 hover:shadow-lg sm:gap-5 sm:p-6">
-              <span className="pt-1 text-sm font-extrabold tracking-wider text-red-300">02</span>
-              <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-red-50 text-red-600 transition-colors group-hover:bg-red-600 group-hover:text-white">
-                <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" /></svg>
-              </div>
-              <div className="min-w-0 flex-1">
-                <h3 className="break-words text-lg font-bold text-gray-900 transition-colors group-hover:text-red-600 sm:text-xl">Unlock Market Potential</h3>
-                <p className="mt-1 text-sm leading-6 text-gray-600 sm:text-base">Open doors to new contracts, global opportunities, and regulatory compliance with confidence.</p>
-              </div>
-            </article>
-
-            <article className="group flex min-w-0 gap-4 rounded-2xl border border-gray-100 bg-white p-5 shadow-[0_10px_30px_rgba(15,23,42,0.05)] transition-all duration-300 hover:-translate-y-0.5 hover:border-red-200 hover:shadow-lg sm:gap-5 sm:p-6">
-              <span className="pt-1 text-sm font-extrabold tracking-wider text-red-300">03</span>
-              <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-red-50 text-red-600 transition-colors group-hover:bg-red-600 group-hover:text-white">
-                <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" /></svg>
-              </div>
-              <div className="min-w-0 flex-1">
-                <h3 className="break-words text-lg font-bold text-gray-900 transition-colors group-hover:text-red-600 sm:text-xl">Drive Operational Excellence</h3>
-                <p className="mt-1 text-sm leading-6 text-gray-600 sm:text-base">Transform rigorous industry standards into streamlined, efficient, and highly profitable everyday practices. We don&apos;t just audit businesses—we partner with them to ensure they truly Achieve Compliance & Excellence.</p>
-              </div>
-            </article>
-          </div>
-        </div>
-      </section>
+      <PurposeSection />
 
       {/* ================= ABOUT PAGE CTA ================= */}
       <section className="bg-white px-4 py-10 sm:px-6 sm:py-14 lg:px-12">
