@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { ArrowRight } from "lucide-react";
+import Image from "next/image";
 
 // --- Typewriter Component ---
 const typewriterPhrases = ["For Achieve", "For Compliance", "For Excellence"];
@@ -53,9 +54,9 @@ function TypewriterText() {
   }, [deleting, phraseIndex, visibleText, isPaused]);
 
   return (
-    <span className="text-red-600 font-bold inline-block min-w-[160px] sm:min-w-[240px] md:min-w-[300px] lg:min-w-[380px] align-bottom"> 
+    <span className="inline-block whitespace-nowrap font-bold text-red-700">
       {visibleText}
-      <span className="animate-pulse border-r-2 sm:border-r-[3px] border-red-600 h-[0.85em] inline-block align-middle ml-1"></span>
+      <span className="ml-1 inline-block h-[0.85em] animate-pulse border-r-2 border-red-600 align-middle sm:border-r-[3px]" />
     </span>
   );
 }
@@ -64,86 +65,88 @@ export default function HeroSection() {
   return (
     <section 
       id="hero" 
-      className="relative w-full min-h-[100dvh] flex items-center justify-center overflow-hidden bg-white py-12 sm:py-20 lg:py-0"
+      className="relative isolate flex min-h-[100dvh] w-full items-center overflow-hidden bg-white py-16 sm:py-20"
     >
-      
-      {/* --- BACKGROUND IMAGE LAYER --- */}
       <div className="absolute inset-0">
-        <img 
+        <Image
           src="/your_success.jpg" 
-          alt="Team Meeting Professional" 
-          className="w-full h-full object-cover object-center lg:object-right"
+          alt="Professionals collaborating during a business meeting"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover object-center"
         />
-        
-        {/* Mobile (Below md): Solid/Semi-transparent white layer for crisp mobile readability and Red+White theme */}
-        <div className="absolute inset-0 bg-white/95 md:hidden" />
-        
-        {/* Tablet / Small Laptop (md to lg): Gradient overlay */}
-        <div className="hidden md:block lg:hidden absolute inset-0 bg-gradient-to-r from-white via-white/95 to-white/20" />
-        
-        {/* Desktop / Large Screen (lg+): Soft background gradient */}
-        <div className="hidden lg:block absolute inset-0 bg-gradient-to-r from-white via-white/95 to-transparent w-3/4" />
+        <div className="absolute inset-0 bg-white/10" />
+        <div className="absolute inset-0 bg-gradient-to-r from-white via-white/60 to-white/10 md:to-transparent" />
+        <div className="absolute inset-0 bg-white/70 md:hidden" />
       </div>
 
-      {/* Decorative Elements (Updated to Red Theme) */}
-      <div className="absolute top-10 left-8 w-3 h-3 sm:w-4 sm:h-4 border-2 border-red-400 rotate-45 z-20 hidden sm:block animate-spin-slow"></div>
-      <div className="absolute top-28 right-12 w-2.5 h-2.5 sm:w-3 sm:h-3 bg-red-300 rounded-full z-20 hidden md:block"></div>
-      <div className="absolute bottom-12 right-1/4 w-3 h-3 bg-red-500 rounded-full z-20 hidden lg:block opacity-60"></div>
+      <div
+        aria-hidden="true"
+        className="absolute bottom-0 right-0 h-[24%] w-[26%] bg-red-700 [clip-path:polygon(100%_0,100%_100%,0_100%)] sm:h-[34%] sm:w-[20%] lg:h-[40%] lg:w-[20%]"
+      />
+      <span
+        aria-hidden="true"
+        className="absolute left-[8.5%] top-[15%] hidden text-5xl font-light leading-none text-red-500 sm:block"
+      >
+        +
+      </span>
+      <svg
+        aria-hidden="true"
+        viewBox="0 0 48 48"
+        className="absolute left-[39%] top-[11%] hidden h-12 w-12 sm:block"
+      >
+        <path
+          d="M6 8 43 4 31 42 6 8Z"
+          fill="none"
+          stroke="#DC2626"
+          strokeWidth="5"
+          strokeLinejoin="round"
+        />
+      </svg>
+      <svg
+        aria-hidden="true"
+        viewBox="0 0 48 48"
+        className="absolute left-[8%] top-[42%] hidden h-12 w-12 sm:block"
+      >
+        <path
+          d="m24 3 21 38H3L24 3Z"
+          fill="none"
+          stroke="#EF4444"
+          strokeWidth="5"
+          strokeLinejoin="round"
+        />
+      </svg>
 
-      {/* --- CONTENT CONTAINER --- */}
-      <div className="container mx-auto px-5 sm:px-6 md:px-8 lg:px-12 xl:px-16 max-w-7xl relative z-30">
-        <div className="max-w-xl sm:max-w-2xl md:max-w-2xl lg:max-w-2xl xl:max-w-3xl">
-          
-          {/* Badge / Welcome Text */}
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-red-50 border border-red-100 mb-5 shadow-sm">
-            <span className="relative flex h-2.5 w-2.5">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-red-600"></span>
-            </span>
-            <span className="text-xs sm:text-sm font-bold tracking-wider uppercase text-red-900">
-              Welcome to ACE CERT
-            </span>
-          </div>
+      <div className="relative z-10 mx-auto w-full px-6 sm:px-10 lg:translate-y-3 lg:px-16">
+        <div className="max-w-[690px]">
+          <p className="mb-4 text-lg font-semibold uppercase tracking-[0.08em] text-slate-700 sm:text-xl">
+            Welcome
+          </p>
 
-          {/* Main Headline */}
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-slate-900 tracking-tight leading-[1.1] mb-5">
-            <span className="block text-slate-900">
-              ACE Certification
-            </span>
-            <span className="block mt-1.5 sm:mt-2 text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-red-700 min-h-[1.2em]">
+          <h1 className="mb-6 text-[clamp(3rem,5.2vw,5.75rem)] font-black leading-[0.98] tracking-[-0.045em] text-slate-900">
+            <span className="block">ACE</span>
+            <span className="block">Certification</span>
+            <span className="block min-h-[1em]">
               <TypewriterText />
             </span>
           </h1>
 
-          {/* Subheadline / Description */}
-          <p className="text-base md:text-lg lg:text-xl text-slate-600 sm:text-slate-700 mb-8 max-w-lg md:max-w-xl leading-relaxed font-normal sm:font-medium">
+          <p className="mb-8 max-w-[640px] text-lg leading-relaxed text-slate-700 sm:text-xl lg:text-2xl">
             Your trusted partner for Certification, Inspection and training Services. We simplify complex standards to power your business growth.
           </p>
 
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full sm:w-auto">
-            <a 
-              href="#contact" 
-              className="group inline-flex items-center justify-center px-6 sm:px-8 py-3.5 sm:py-4 bg-red-600 hover:bg-red-700 text-white font-semibold text-base rounded-xl shadow-lg shadow-red-600/25 hover:shadow-red-600/35 transition-all duration-300 transform active:scale-95 sm:hover:-translate-y-0.5 w-full sm:w-auto text-center"
+          <div>
+            <a
+              href="#contact"
+              className="group inline-flex w-full items-center justify-center rounded-md bg-red-600 px-8 py-4 text-base font-bold text-white shadow-lg shadow-red-700/20 transition duration-300 hover:-translate-y-0.5 hover:bg-red-700 hover:shadow-red-700/30 active:scale-[0.98] sm:w-auto sm:px-10 sm:text-lg"
             >
               <span>CONTACT TODAY</span>
-              <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+              <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
             </a>
           </div>
-
         </div>
       </div>
-
-      {/* Custom Keyframe Animation */}
-      <style jsx>{`
-        @keyframes spin-slow {
-          from { transform: rotate(0deg); }
-          to { transform: rotate(360deg); }
-        }
-        .animate-spin-slow {
-          animation: spin-slow 12s linear infinite;
-        }
-      `}</style>
     </section>
   );
 }
