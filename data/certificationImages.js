@@ -1,4 +1,5 @@
 export const certificationImages = {
+  "IATF 16949": "/certifications/1atf16949.jpeg",
   "ISO 37001": "/certifications/37001.png",
   "ISO 31000": "/certifications/31000.png",
 };
