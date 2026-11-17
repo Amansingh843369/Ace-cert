@@ -114,13 +114,13 @@ export default function ServicesSection({ certificationImageFiles = {} }) {
                 className="relative flex-shrink-0 w-[270px] sm:w-[310px] md:w-[340px] bg-white rounded-2xl overflow-hidden border border-slate-100 group/card transition-all duration-300 shadow-sm hover:shadow-xl hover:shadow-red-600/10 border-t-4 border-t-red-600"
               >
                 {/* Image Section */}
-                <div className="relative h-40 w-full overflow-hidden bg-slate-50 sm:h-48">
+                <div className="relative aspect-square w-full overflow-hidden bg-slate-50">
                   <img 
                     src={service.img} 
                     alt=""
                     loading="lazy"
                     decoding="async"
-                    className="h-full w-full object-contain object-center"
+                    className="h-full w-full object-cover object-center"
                   />
                   
                   {/* Overlay on Hover */}
