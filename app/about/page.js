@@ -183,21 +183,21 @@ export default function AboutPage() {
             {[
               {
                 letter: "A",
-                title: "Accuracy & Integrity",
+                title: "Achieve",
                 desc: "We are unwavering in our commitment to impartiality, ethical practices, and technically sound assessments.",
                 icon: ShieldCheck,
                 ring: "text-red-600",
               },
               {
                 letter: "C",
-                title: "Client Success & Collaboration",
+                title: "Compliance",
                 desc: "Your success is our success. We build long-term partnerships based on understanding, respect, and shared goals.",
                 icon: Handshake,
                 ring: "text-blue-950",
               },
               {
                 letter: "E",
-                title: "Excellence & Expertise",
+                title: "Excellence ",
                 desc: "We continuously invest in the development of our team and services to provide cutting-edge, expert guidance.",
                 icon: TrendingUp,
                 ring: "text-red-600",
