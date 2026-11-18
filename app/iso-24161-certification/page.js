@@ -94,7 +94,7 @@ export default function Iso24161Layout() {
               <figure className="relative aspect-[4/3] w-full max-w-[520px] overflow-hidden rounded-2xl bg-red-50 ring-1 ring-black/5 sm:rounded-[1.5rem] lg:h-full lg:aspect-auto">
                 {/* IMAGE 1: Waste Collection Truck / Recycling */}
                 <Image
-                  src=""
+                  src="https://plus.unsplash.com/premium_photo-1723373960718-c26efde88d6d?q=80&w=688&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D"
                   alt="Waste collection truck and recycling bins representing ISO 24161 waste management standards"
                   fill
                   priority
