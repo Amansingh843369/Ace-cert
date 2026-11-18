@@ -69,7 +69,7 @@ export default function AboutPage() {
             </div>
             
             <p className="text-justify text-base leading-relaxed text-gray-600 sm:text-lg">
-              Our mission at ACE Certification Ltd. is to simplify the path to certification and embed a culture of continuous improvement within our client organizations.
+              Our mission at ACE Certification. is to simplify the path to certification and embed a culture of continuous improvement within our client organizations.
             </p>
             <p className="text-justify text-base leading-relaxed text-gray-600 sm:text-lg">
               We achieve this by providing rigorous &amp; impartial certification, delivering reliable audit services that uphold the highest standards of integrity.

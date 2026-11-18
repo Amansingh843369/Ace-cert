@@ -55,12 +55,10 @@ export default function ManagementCertificationDirectory() {
                 </span>
                 ACE Certifications
               </span>
-              <span className="px-3 py-1 rounded-full bg-slate-100 text-[10px] font-bold text-slate-600 tracking-wider uppercase sm:text-xs">
-                {DIRECTORY_STANDARDS.length} Standards
-              </span>
+               
             </div>
             <h1 className="max-w-3xl text-3xl font-extrabold leading-[1.05] tracking-tight text-[#1c2448] sm:text-4xl md:text-5xl">
-              ACE Cert <span className="text-red-600">Certification</span>
+              ACE-CERT <span className="text-red-600">Certification</span>
             </h1>
             <p className="max-w-2xl text-sm leading-7 text-[#1c2448]/80 sm:text-base sm:leading-8 md:text-lg">
               Explore our complete range of ISO management system certifications — from quality and

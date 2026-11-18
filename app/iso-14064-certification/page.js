@@ -1,9 +1,10 @@
 'use client';
 
+import CertificationImportanceSection from '../../components/CertificationImportanceSection';
+
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import {
-  ArrowUpRight,
   BarChart3,
   Building2,
   CircleCheck,
@@ -221,69 +222,18 @@ export default function IsoCertificationLayout() {
           {/* =====================================================
               SECTION 2 — WHY IMPORTANT + BENEFITS GRID
              ===================================================== */}
-          <section aria-labelledby="importance-title">
-            <div className="flex flex-col-reverse items-stretch gap-8 lg:flex-row lg:gap-14 xl:gap-16">
-
-              {/* Text + benefit grid (Left on desktop) */}
-              <div className="flex w-full flex-col gap-6 sm:gap-8 lg:w-[58%]">
-                <div className="text-center lg:text-left">
-                  <h2
-                    id="importance-title"
-                    className="text-balance text-2xl font-extrabold leading-tight tracking-tight text-[#111827] sm:text-3xl md:text-4xl lg:text-[1.65rem] lg:whitespace-nowrap xl:text-3xl"
-                  >
-                    Why is <span className="text-[#E30613]">ISO 14064</span> Important?
-                  </h2>
-                  <p className="mt-3 text-sm leading-7 text-[#526581] sm:mt-4 sm:text-base md:text-lg md:leading-8">
-                    Implementing ISO 14064 helps organizations accurately track their
-                    environmental impact, meet global climate goals, and build trust with
-                    stakeholders through transparent reporting.
-                  </p>
-                </div>
-
-                <div className="grid grid-cols-1 gap-2.5 sm:grid-cols-2 sm:gap-3 md:gap-4">
-                  {BENEFITS.map((benefit, index) => (
-                    <div
-                      key={benefit}
-                      className="group relative flex items-center gap-3 overflow-hidden rounded-xl border border-slate-200/80 bg-white p-3 shadow-[0_2px_10px_rgba(15,23,42,0.03)] transition-all duration-300 hover:-translate-y-0.5 hover:border-red-200 hover:shadow-[0_10px_24px_rgba(127,29,29,0.08)] sm:min-h-[72px] sm:rounded-2xl sm:p-3.5 md:p-4"
-                    >
-                      <span className="absolute inset-y-3 left-0 w-0.5 rounded-r-full bg-red-600 scale-y-0 transition-transform duration-300 group-hover:scale-y-100 sm:w-1" />
-                      <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-red-50 text-red-700 ring-1 ring-red-100 transition-all duration-300 group-hover:bg-red-700 group-hover:text-white group-hover:ring-red-700 sm:h-9 sm:w-9 md:h-10 md:w-10 md:rounded-xl">
-                        <CircleCheck className="h-4 w-4 md:h-5 md:w-5" strokeWidth={2.2} />
-                      </div>
-                      <div className="min-w-0 flex-1">
-                        <span className="mb-0.5 block text-[9px] font-bold uppercase tracking-[0.14em] text-red-500 sm:text-[10px]">
-                          Benefit {String(index + 1).padStart(2, '0')}
-                        </span>
-                        <span className="block text-xs font-semibold leading-snug text-slate-700 transition-colors group-hover:text-slate-950 sm:text-sm md:text-[15px]">
-                          {benefit}
-                        </span>
-                      </div>
-                      <ArrowUpRight className="ml-auto hidden h-4 w-4 shrink-0 text-slate-300 transition-all duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-red-600 sm:block" />
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              {/* Image (Right on desktop) */}
-              <div className="w-full lg:w-[42%]">
-                <figure className="relative aspect-[16/10] w-full overflow-hidden rounded-2xl bg-red-50 shadow-[0_16px_45px_rgba(17,24,39,0.10)] ring-1 ring-black/5 sm:rounded-[1.5rem] lg:sticky lg:top-24 lg:aspect-auto lg:h-[600px]">
-                  <Image
-                    src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=1200&q=85"
-                    alt="Environmental sustainability and green earth concept"
-                    fill
-                    sizes="(max-width: 1024px) 100vw, 42vw"
-                    className="object-cover"
-                    loading="lazy"
-                  />
-                  <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-950/80 to-transparent px-5 pb-5 pt-20 sm:px-6 sm:pb-6">
-                    <p className="text-sm font-semibold text-white sm:text-base">
-                      Measure less. Impact more.
-                    </p>
-                  </figcaption>
-                </figure>
-              </div>
-            </div>
-          </section>
+          <CertificationImportanceSection
+            id="importance-title"
+            title="ISO 14064"
+            description={
+              <>
+                Implementing ISO 14064 helps organizations accurately track their
+                                    environmental impact, meet global climate goals, and build trust with
+                                    stakeholders through transparent reporting.
+              </>
+            }
+            benefits={BENEFITS}
+          />
 
           {/* =====================================================
               SECTION 3 — PRINCIPLES
@@ -312,7 +262,7 @@ export default function IsoCertificationLayout() {
                   </div>
 
                   <div className="flex flex-col">
-                    <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-red-50 text-red-600 ring-1 ring-red-100 transition-all duration-300 group-hover:bg-red-600 group-hover:text-white group-hover:ring-red-600 sm:h-14 sm:w-14 sm:rounded-2xl">
+                    <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-slate-100 text-[#0F1B33] ring-1 ring-slate-200 sm:h-14 sm:w-14 sm:rounded-2xl">
                       <principle.icon className="h-6 w-6" strokeWidth={1.8} />
                     </div>
 
@@ -356,7 +306,7 @@ export default function IsoCertificationLayout() {
                   <div className="absolute -right-16 -top-16 h-44 w-44 rounded-full bg-red-50 blur-3xl transition-all duration-300 group-hover:bg-red-100" />
 
                   <div className="relative z-10 mb-6 flex items-start justify-between sm:mb-7">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-red-700 text-white shadow-lg shadow-red-700/20 transition-transform duration-300 group-hover:scale-105 group-hover:-rotate-3 sm:h-14 sm:w-14 md:h-16 md:w-16">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-slate-100 text-[#0F1B33] shadow-sm ring-1 ring-slate-200  sm:h-14 sm:w-14 md:h-16 md:w-16">
                       <card.icon className="h-6 w-6 sm:h-7 sm:w-7" strokeWidth={1.8} />
                     </div>
                     <span className="rounded-full border border-red-100 bg-red-50 px-2.5 py-1 text-[9px] font-bold uppercase tracking-[0.14em] text-red-700 sm:px-3 sm:py-1.5 sm:text-[10px]">

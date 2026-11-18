@@ -1,9 +1,10 @@
 'use client';
 
+import CertificationImportanceSection from '../../components/CertificationImportanceSection';
+
 import React, { useState } from 'react';
 import Image from 'next/image';
 import {
-  ArrowUpRight,
   Award,
   BarChart3,
   Building2,
@@ -132,63 +133,16 @@ export default function IsoCertificationLayout() {
         </section>
 
         {/* --- SECTION 2: Importance & Benefits Grid --- */}
-        <section aria-labelledby="iso9001-importance">
-          <div className="relative z-20 flex flex-col items-center gap-10 lg:flex-row lg:items-stretch lg:gap-16">
-
-            {/* IMAGE SECTION (Now lg:order-2 so it appears on the right) */}
-            <div className="relative order-2 flex w-full justify-center lg:order-2 lg:w-[42%]">
-              <div className="relative aspect-[4/3] w-full max-w-[500px] overflow-hidden rounded-2xl bg-red-50 ring-1 ring-black/5 shadow-[0_16px_45px_rgba(17,24,39,0.10)] sm:rounded-[1.5rem] lg:h-full lg:aspect-auto">
-                <Image
-                  src="/35.png"
-                  alt="A professional team working together in a modern office"
-                  fill
-                  sizes="(max-width: 1024px) 100vw, 500px"
-                  className="object-cover"
-                  loading="lazy"
-                />
-                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-950/75 to-transparent px-5 pb-5 pt-16">
-                  <p className="text-sm font-semibold text-white">Stronger processes. Better outcomes.</p>
-                </div>
-              </div>
-            </div>
-
-            {/* TEXT SECTION (Now lg:order-1 so it appears on the left) */}
-            <div className="order-1 flex w-full flex-col gap-6 md:gap-8 lg:order-1 lg:w-[58%]">
-              <div className="text-center lg:text-left">
-                <h3 id="iso9001-importance" className="text-balance text-2xl font-extrabold leading-tight tracking-tight text-[#111827] sm:text-3xl md:text-4xl lg:text-[1.65rem] lg:whitespace-nowrap xl:text-3xl">
-                  Why is <span className="text-[#E30613]">ISO 9001</span> Important?
-                </h3>
-
-                {/* text-justify added to match your previous section */}
-                <p className="text-justify mt-4 text-sm leading-7 text-[#526581] sm:text-base md:text-lg md:leading-8 text-justify">
-                  Unlock global quality standards, build unbreakable customer trust, and scale your business operations efficiently. Certification is more than a badge—it&apos;s a commitment to excellence.
-                </p>
-              </div>
-
-              {/* Interactive Grid */}
-              <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 md:gap-4">
-                {benefitsList.map((benefit, index) => (
-                  <div
-                    key={index}
-                    className="group relative flex min-h-[78px] items-center gap-3 overflow-hidden rounded-2xl border border-slate-200/80 bg-white p-3.5 md:p-4 shadow-[0_4px_18px_rgba(15,23,42,0.04)] transition-all duration-300 hover:-translate-y-1 hover:border-red-200 hover:shadow-[0_14px_30px_rgba(127,29,29,0.10)] cursor-default"
-                  >
-                    <span className="absolute inset-y-3 left-0 w-1 rounded-r-full bg-red-600 scale-y-0 transition-transform duration-300 group-hover:scale-y-100" />
-                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-red-50 text-red-700 ring-1 ring-red-100 transition-all duration-300 group-hover:bg-red-700 group-hover:text-white group-hover:ring-red-700">
-                      <CircleCheck className="h-5 w-5" strokeWidth={2} />
-                    </div>
-                    <div className="min-w-0">
-                      <span className="mb-0.5 block text-[10px] font-bold uppercase tracking-[0.16em] text-red-500">Benefit {String(index + 1).padStart(2, '0')}</span>
-                      <span className="block text-sm font-semibold leading-snug text-slate-700 transition-colors group-hover:text-slate-950 md:text-[15px]">
-                        {benefit}
-                      </span>
-                    </div>
-                    <ArrowUpRight className="ml-auto h-4 w-4 shrink-0 text-slate-300 transition-all duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-red-600" />
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
+        <CertificationImportanceSection
+            id="iso9001-importance"
+            title="ISO 9001"
+            description={
+              <>
+                Unlock global quality standards, build unbreakable customer trust, and scale your business operations efficiently. Certification is more than a badge—it&apos;s a commitment to excellence.
+              </>
+            }
+            benefits={benefitsList}
+          />
 
         {/* --- SECTION 3: Principles, Detailed Benefits & Scope --- */}
         <section className="space-y-20 md:space-y-28">
@@ -218,7 +172,7 @@ export default function IsoCertificationLayout() {
 
                   <div className="relative z-0 flex h-full flex-col">
                     <div className="mb-7 flex items-center justify-between">
-                      <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-red-50 to-white text-red-700 shadow-sm ring-1 ring-red-100 transition-all duration-300 group-hover:bg-red-700 group-hover:text-white group-hover:ring-red-700">
+                      <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-slate-100 text-[#0F1B33] shadow-sm ring-1 ring-slate-200">
                         <principle.icon className="h-5 w-5" strokeWidth={1.8} />
                       </div>
                       <span className="rounded-full border border-slate-100 bg-slate-50 px-3 py-1 text-[10px] font-bold tracking-[0.18em] text-slate-400 transition-colors group-hover:border-red-100 group-hover:bg-red-50 group-hover:text-red-600">
@@ -266,7 +220,7 @@ export default function IsoCertificationLayout() {
                   <div className="absolute -right-16 -top-16 h-44 w-44 rounded-full bg-red-50 blur-3xl transition-all duration-300 group-hover:bg-red-100" />
 
                   <div className="relative z-10 mb-7 flex items-start justify-between">
-                    <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-red-700 text-white shadow-lg shadow-red-700/20 transition-transform duration-300 group-hover:scale-105 group-hover:-rotate-3 md:h-16 md:w-16">
+                    <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-slate-100 text-[#0F1B33] shadow-sm ring-1 ring-slate-200  md:h-16 md:w-16">
                       <card.icon className="h-7 w-7" strokeWidth={1.8} />
                     </div>
                     <span className="rounded-full border border-red-100 bg-red-50 px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.16em] text-red-700">

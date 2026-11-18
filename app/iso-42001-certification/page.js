@@ -1,9 +1,10 @@
 'use client';
 
+import CertificationImportanceSection from '../../components/CertificationImportanceSection';
+
 import React, { useState } from 'react';
 import Image from 'next/image';
 import {
-  ArrowUpRight,
   CircleCheck,
   BrainCircuit,
   Lock,
@@ -142,62 +143,16 @@ transparent, and secure use.
         </section>
 
         {/* --- SECTION 2: Importance & Benefits Grid --- */}
-        <section aria-labelledby="iso42001-importance">
-          <div className="relative z-20 flex flex-col items-center gap-8 lg:flex-row lg:items-stretch lg:gap-12">
-
-            {/* IMAGE SECTION (Now lg:order-2 so it appears on the right) */}
-            <div className="relative order-2 flex w-full justify-center lg:order-2 lg:w-[42%]">
-              <figure className="relative aspect-[4/3] w-full max-w-[500px] overflow-hidden rounded-2xl bg-red-50 ring-1 ring-black/5 shadow-[0_16px_45px_rgba(17,24,39,0.10)] sm:rounded-[1.5rem] lg:h-full lg:aspect-auto">
-                {/* AI Ethics / Tech Team Image */}
-                <Image
-                  src="https://images.unsplash.com/photo-1555255707-c07966088b7b?auto=format&fit=crop&w=1200&q=85"
-                  alt="Tech team discussing AI ethics and data governance"
-                  fill
-                  sizes="(max-width: 1024px) 100vw, 500px"
-                  className="object-cover"
-                  loading="lazy"
-                />
-                <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-950/75 to-transparent px-5 pb-4 pt-12">
-                  <p className="text-sm font-semibold text-white">Empowering trustworthy AI.</p>
-                </figcaption>
-              </figure>
-            </div>
-
-            {/* TEXT SECTION (Now lg:order-1 so it appears on the left) */}
-            <div className="order-1 flex w-full flex-col gap-5 md:gap-6 lg:order-1 lg:w-[58%]">
-              <div className="text-center lg:text-left">
-                <h3 id="iso42001-importance" className="text-balance text-2xl font-extrabold leading-tight tracking-tight text-[#111827] sm:text-3xl md:text-4xl lg:text-[1.65rem] lg:whitespace-nowrap xl:text-3xl">
-                  Why is <span className="text-[#E30613]">ISO 42001</span> Important?
-                </h3>
-
-                {/* TEXT JUSTIFY APPLIED HERE & typo fixed */}
-                <p className="mt-3 text-justify text-sm leading-6 text-[#526581] sm:text-base md:text-[16px] md:leading-7">
-                  Implementing ISO 42001 helps organizations proactively manage AI risks, prevent algorithmic bias, ensure strict regulatory compliance, and build unshakeable trust with customers who demand ethical and transparent AI.
-                </p>
-              </div>
-
-              <div className="grid grid-cols-1 gap-2.5 sm:grid-cols-2 md:gap-3">
-                {benefitsList.map((benefit, index) => (
-                  <div
-                    key={index}
-                    className="group relative flex min-h-[68px] items-center gap-3 overflow-hidden rounded-xl border border-slate-200/80 bg-white p-3 md:p-3.5 shadow-[0_4px_18px_rgba(15,23,42,0.04)] transition-all duration-300 hover:-translate-y-0.5 hover:border-red-200 hover:shadow-[0_14px_30px_rgba(127,29,29,0.10)] cursor-default"
-                  >
-                    <span className="absolute inset-y-2 left-0 w-1 rounded-r-full bg-red-600 scale-y-0 transition-transform duration-300 group-hover:scale-y-100" />
-                    <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-red-50 text-red-700 ring-1 ring-red-100 transition-all duration-300 group-hover:bg-red-700 group-hover:text-white group-hover:ring-red-700">
-                      <CircleCheck className="h-4 w-4" strokeWidth={2.5} />
-                    </div>
-                    <div className="min-w-0">
-                      <span className="block text-[13px] font-semibold leading-snug text-slate-700 transition-colors group-hover:text-slate-950 md:text-sm">
-                        {benefit}
-                      </span>
-                    </div>
-                    <ArrowUpRight className="ml-auto h-3.5 w-3.5 shrink-0 text-slate-300 transition-all duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-red-600" />
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
+        <CertificationImportanceSection
+            id="iso42001-importance"
+            title="ISO 42001"
+            description={
+              <>
+                Implementing ISO 42001 helps organizations proactively manage AI risks, prevent algorithmic bias, ensure strict regulatory compliance, and build unshakeable trust with customers who demand ethical and transparent AI.
+              </>
+            }
+            benefits={benefitsList}
+          />
         {/* --- SECTION 3: Principles, Detailed Benefits & Scope --- */}
         <section className="space-y-12 md:space-y-16">
 
@@ -229,7 +184,7 @@ transparent, and secure use.
                   </div>
 
                   <div className="relative z-0 flex flex-col h-full">
-                    <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-red-50 text-red-600 ring-1 ring-red-100 transition-all duration-300 group-hover:bg-red-600 group-hover:text-white group-hover:ring-red-600">
+                    <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-slate-100 text-[#0F1B33] ring-1 ring-slate-200">
                       <principle.icon className="h-5 w-5" strokeWidth={1.8} />
                     </div>
 
@@ -275,7 +230,7 @@ transparent, and secure use.
                   <div className="absolute -right-16 -top-16 h-40 w-40 rounded-full bg-red-50 blur-3xl transition-all duration-300 group-hover:bg-red-100" />
 
                   <div className="relative z-10 mb-5 flex items-start justify-between">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-red-700 text-white shadow-lg shadow-red-700/20 transition-transform duration-300 group-hover:scale-105 group-hover:-rotate-3 md:h-14 md:w-14">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-slate-100 text-[#0F1B33] shadow-sm ring-1 ring-slate-200  md:h-14 md:w-14">
                       <card.icon className="h-6 w-6" strokeWidth={1.8} />
                     </div>
                     <span className="rounded-full border border-red-100 bg-red-50 px-2.5 py-1 text-[9px] font-bold uppercase tracking-[0.16em] text-red-700">
