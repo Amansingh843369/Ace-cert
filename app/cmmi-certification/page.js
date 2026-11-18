@@ -91,10 +91,10 @@ export default function CmmiLayout() {
 
             <div className="order-1 flex w-full justify-center lg:w-[46%]">
               <figure className="relative aspect-[4/3] w-full max-w-[520px] overflow-hidden rounded-2xl bg-red-50 ring-1 ring-black/5 sm:rounded-[1.5rem] lg:h-full lg:aspect-auto">
-                {/* IMAGE 1: Team analyzing charts / Process optimization */}
+                {/* CMMI certification artwork */}
                 <Image
-                  src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=85"
-                  alt="Team analyzing performance charts and graphs representing CMMI process improvement"
+                  src="/certifications/cmmi.png"
+                  alt="CMMI certification artwork"
                   fill
                   priority
                   sizes="(max-width: 1024px) 100vw, 520px"
@@ -107,7 +107,7 @@ export default function CmmiLayout() {
               </figure>
             </div>
 
-            <div className="order-2 flex w-full flex-col justify-center gap-4 text-center sm:gap-5 lg:w-[54%] lg:gap-6 lg:text-left">
+            <div className="order-2 flex w-full flex-col justify-center lg:justify-between gap-4 text-center sm:gap-5 lg:w-[54%] lg:gap-6 lg:text-left">
               <h3 id="cmmi-introduction" className="relative mx-auto inline-block text-2xl font-bold tracking-tight text-[#111827] sm:text-3xl md:text-[2rem] lg:mx-0 lg:text-4xl">
                 What is CMMI?
                 <span aria-hidden="true" className="absolute -bottom-3 left-1/2 h-1 w-14 -translate-x-1/2 rounded-full bg-[#E30613] lg:left-0 lg:translate-x-0" />
@@ -166,7 +166,7 @@ export default function CmmiLayout() {
             {/* TEXT SECTION (Now lg:order-1 so it appears on the left) */}
             <div className="order-1 flex w-full flex-col gap-6 md:gap-8 lg:order-1 lg:w-[58%]">
               <div className="text-center lg:text-left">
-                <h3 id="cmmi-importance" className="text-balance text-2xl font-extrabold leading-tight tracking-tight text-[#111827] sm:text-3xl md:text-4xl lg:text-5xl">
+                <h3 id="cmmi-importance" className="whitespace-nowrap text-[clamp(1rem,2.5vw,2.75rem)] font-extrabold leading-tight tracking-tight text-[#111827]">
                   Why is <span className="text-[#E30613]">CMMI</span> Important?
                 </h3>
 
@@ -231,7 +231,7 @@ export default function CmmiLayout() {
 
                   <div className="relative z-0 flex flex-col h-full">
                     {/* Icon Container */}
-                    <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-red-50 text-red-600 ring-1 ring-red-100 transition-all duration-300 group-hover:bg-red-600 group-hover:text-white group-hover:ring-red-600">
+                    <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-slate-100 text-[#0F1B33] ring-1 ring-slate-200">
                       <principle.icon className="h-6 w-6" strokeWidth={1.8} />
                     </div>
 
@@ -279,7 +279,7 @@ export default function CmmiLayout() {
                   <div className="absolute -right-16 -top-16 h-44 w-44 rounded-full bg-red-50 blur-3xl transition-all duration-300 group-hover:bg-red-100" />
 
                   <div className="relative z-10 mb-7 flex items-start justify-between">
-                    <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-red-700 text-white shadow-lg shadow-red-700/20 transition-transform duration-300 group-hover:scale-105 group-hover:-rotate-3 md:h-16 md:w-16">
+                    <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-slate-100 text-[#0F1B33] shadow-sm ring-1 ring-slate-200 transition-transform duration-300 group-hover:scale-105 group-hover:-rotate-3 md:h-16 md:w-16">
                       <card.icon className="h-7 w-7" strokeWidth={1.8} />
                     </div>
                     <span className="rounded-full border border-red-100 bg-red-50 px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.16em] text-red-700">

@@ -152,7 +152,7 @@ export default function GdpCertificationPage() {
 
               {/* Image Side */}
               <div className="w-full shrink-0 lg:w-[44%]">
-                <figure className="relative aspect-square w-full overflow-hidden rounded-2xl bg-red-50 ring-1 ring-black/5">
+                <figure className="relative aspect-square w-full overflow-hidden rounded-2xl bg-red-50 ring-1 ring-black/5 lg:h-full">
                   <Image
                     src="/certifications/gdp.png"
                     alt="GDP certification artwork"
@@ -173,7 +173,7 @@ export default function GdpCertificationPage() {
               </div>
 
               {/* Content Side */}
-              <div className="flex w-full flex-col justify-center gap-4 text-left sm:gap-5 lg:w-[56%] lg:gap-6">
+              <div className="flex w-full flex-col justify-center lg:justify-between gap-4 text-left sm:gap-5 lg:w-[56%] lg:gap-6">
                 <h3 className="relative inline-block text-xl font-bold tracking-tight text-[#111827] sm:text-2xl md:text-3xl lg:text-4xl">
                   What is GDP?
                   <span aria-hidden="true" className="absolute -bottom-2 left-0 h-1 w-12 rounded-full bg-[#E30613] sm:-bottom-3 sm:w-14" />
@@ -227,7 +227,7 @@ export default function GdpCertificationPage() {
                 <div className="text-center lg:text-left">
                   <h2
                     id="importance-title"
-                    className="text-balance text-2xl font-extrabold leading-tight tracking-tight text-[#111827] sm:text-3xl md:text-4xl lg:text-[1.65rem] lg:whitespace-nowrap xl:text-3xl"
+                    className="whitespace-nowrap text-[clamp(1rem,2.2vw,2rem)] font-extrabold leading-tight tracking-tight text-[#111827]"
                   >
                     Why is <span className="text-[#E30613]">GDP</span> Important?
                   </h2>
@@ -309,7 +309,7 @@ export default function GdpCertificationPage() {
                   </div>
 
                   <div className="flex flex-col">
-                    <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-red-50 text-red-600 ring-1 ring-red-100 transition-all duration-300 group-hover:bg-red-600 group-hover:text-white group-hover:ring-red-600 sm:h-14 sm:w-14 sm:rounded-2xl">
+                    <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-slate-100 text-[#0F1B33] ring-1 ring-slate-200 sm:h-14 sm:w-14 sm:rounded-2xl">
                       <principle.icon className="h-6 w-6" strokeWidth={1.8} />
                     </div>
 
@@ -352,7 +352,7 @@ export default function GdpCertificationPage() {
                   <div className="absolute -right-16 -top-16 h-44 w-44 rounded-full bg-red-50 blur-3xl transition-all duration-300 group-hover:bg-red-100" />
 
                   <div className="relative z-10 mb-6 flex items-start justify-between sm:mb-7">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-red-700 text-white shadow-lg shadow-red-700/20 transition-transform duration-300 group-hover:scale-105 group-hover:-rotate-3 sm:h-14 sm:w-14 md:h-16 md:w-16">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-slate-100 text-[#0F1B33] shadow-sm ring-1 ring-slate-200 transition-transform duration-300 group-hover:scale-105 group-hover:-rotate-3 sm:h-14 sm:w-14 md:h-16 md:w-16">
                       <card.icon className="h-6 w-6 sm:h-7 sm:w-7" strokeWidth={1.8} />
                     </div>
                     <span className="rounded-full border border-red-100 bg-red-50 px-2.5 py-1 text-[9px] font-bold uppercase tracking-[0.14em] text-red-700 sm:px-3 sm:py-1.5 sm:text-[10px]">

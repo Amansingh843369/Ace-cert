@@ -13,40 +13,64 @@ const certificationImages = {
   HIPAA:
     'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1200&q=85',
   'IATF 16949': '/certifications/1atf16949.jpeg',
-  'ISO 10002': '/certifications/10002.png',
-  'ISO 13009': '/certifications/13009.png',
-  'ISO 13485': '/certifications/13485.png',
-  'ISO 14001': '/certifications/14001.jpeg',
-  'ISO 14064': '/certifications/14064.png',
-  'ISO 20000-1': '/certifications/20000-1.png',
-  'ISO 20121': '/certifications/20121.png',
-  'ISO 21001': '/certifications/21001.jpeg',
-  'ISO 21401': '/certifications/21401.png',
-  'ISO 22000': '/certifications/22000.png',
-  'ISO 22301': '/certifications/22301.png',
-  'ISO 22716': '/certifications/22716.png',
+  'ISO 10002':
+    'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1200&q=85',
+  'ISO 13009':
+    'https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?auto=format&fit=crop&w=1200&q=85',
+  'ISO 13485':
+    'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1200&q=85',
+  'ISO 14001':
+    'https://images.unsplash.com/photo-1466611653911-95081537e5b7?auto=format&fit=crop&w=1200&q=85',
+  'ISO 14064':
+    'https://images.unsplash.com/photo-1466611653911-95081537e5b7?auto=format&fit=crop&w=1200&q=85',
+  'ISO 20000-1':
+    'https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=85',
+  'ISO 20121':
+    'https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=1200&q=85',
+  'ISO 21001':
+    'https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1200&q=85',
+  'ISO 21401':
+    'https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=1200&q=85',
+  'ISO 22000':
+    'https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=1200&q=85',
+  'ISO 22301':
+    'https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1200&q=85',
+  'ISO 22716':
+    'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1200&q=85',
   'ISO 24161':
     'https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?auto=format&fit=crop&w=1200&q=85',
-  'ISO 26000': '/certifications/26000.jpeg',
+  'ISO 26000':
+    'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1200&q=85',
   'ISO 27001':
     'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1200&q=85',
-  'ISO 27002': '/certifications/27002.png',
+  'ISO 27002':
+    'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1200&q=85',
   'ISO 27017':
     'https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1200&q=85',
-  'ISO 27018': '/certifications/27018.png',
+  'ISO 27018':
+    'https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1200&q=85',
   'ISO 27701':
     'https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1200&q=85',
-  'ISO 28000': '/certifications/28000.png',
-  'ISO 29000': '/certifications/29000.png',
-  'ISO 29001': '/certifications/29001.png',
-  'ISO 30000': '/certifications/30000.png',
-  'ISO 31000': '/certifications/31000.png',
-  'ISO 37001': '/certifications/37001.png',
-  'ISO 37301': '/certifications/37301.jpeg',
-  'ISO 41001': '/certifications/41001.png',
+  'ISO 28000':
+    'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1200&q=85',
+  'ISO 29000':
+    'https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=1200&q=85',
+  'ISO 29001':
+    'https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=1200&q=85',
+  'ISO 30000':
+    'https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?auto=format&fit=crop&w=1200&q=85',
+  'ISO 31000':
+    'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=85',
+  'ISO 37001':
+    'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1200&q=85',
+  'ISO 37301':
+    'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1200&q=85',
+  'ISO 41001':
+    'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=85',
   'ISO 42001':
     'https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1200&q=85',
-  'ISO 45001': '/certifications/45001.png',
+  'ISO 45001':
+    'https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=1200&q=85',
   'ISO 45003':
     'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=1200&q=85',
   'ISO 50001':
@@ -55,7 +79,8 @@ const certificationImages = {
     'https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=1200&q=85',
   'ISO 55001':
     'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1200&q=85',
-  'ISO 9001': '/certifications/9001.png',
+  'ISO 9001':
+    'https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=1200&q=85',
   'PCI DSS': '/certifications/pcidss.png',
   'SOC 2 Type 1': '/certifications/soc2type1.png',
   'SOC 2 Type 2': '/certifications/soc2type2.png',
@@ -84,7 +109,7 @@ export default function CertificationImportanceSection({
             </p>
             <h2
               id={id}
-              className="text-balance text-3xl font-extrabold leading-tight tracking-[-0.035em] text-[#111827] sm:text-4xl md:text-5xl"
+              className="whitespace-nowrap text-[clamp(1rem,3vw,2.75rem)] font-extrabold leading-tight tracking-[-0.035em] text-[#111827]"
             >
               Why is <span className="text-[#E30613]">{title}</span> Important?
             </h2>

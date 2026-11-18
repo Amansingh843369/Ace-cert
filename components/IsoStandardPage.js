@@ -80,7 +80,7 @@ export default function IsoStandardPage({ standard }) {
 
         <section id="standard-applications" className="mt-12 grid gap-5 md:mt-16 md:grid-cols-2">
           <article className="rounded-3xl border border-slate-200/80 bg-white p-6 shadow-[0_10px_35px_rgba(17,24,39,0.05)] sm:p-8">
-            <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-red-50 text-red-700 ring-1 ring-red-100">
+            <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-slate-100 text-[#0F1B33] ring-1 ring-slate-200">
               <ShieldCheck className="h-6 w-6" aria-hidden="true" />
             </div>
             <h2 className="text-xl font-bold tracking-tight text-[#111827] sm:text-2xl">
@@ -92,7 +92,7 @@ export default function IsoStandardPage({ standard }) {
           </article>
 
           <article className="rounded-3xl border border-slate-200/80 bg-white p-6 shadow-[0_10px_35px_rgba(17,24,39,0.05)] sm:p-8">
-            <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-red-50 text-red-700 ring-1 ring-red-100">
+            <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-slate-100 text-[#0F1B33] ring-1 ring-slate-200">
               <Check className="h-6 w-6" aria-hidden="true" />
             </div>
             <h2 className="text-xl font-bold tracking-tight text-[#111827] sm:text-2xl">

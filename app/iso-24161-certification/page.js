@@ -94,7 +94,7 @@ export default function Iso24161Layout() {
               <figure className="relative aspect-[4/3] w-full max-w-[520px] overflow-hidden rounded-2xl bg-red-50 ring-1 ring-black/5 sm:rounded-[1.5rem] lg:h-full lg:aspect-auto">
                 {/* IMAGE 1: Waste Collection Truck / Recycling */}
                 <Image
-                  src="https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?auto=format&fit=crop&w=1200&q=85"
+                  src=""
                   alt="Waste collection truck and recycling bins representing ISO 24161 waste management standards"
                   fill
                   priority
@@ -108,7 +108,7 @@ export default function Iso24161Layout() {
               </figure>
             </div>
 
-            <div className="order-2 flex w-full flex-col justify-center gap-4 text-center sm:gap-5 lg:w-[54%] lg:gap-6 lg:text-left">
+            <div className="order-2 flex w-full flex-col justify-center lg:justify-between gap-4 text-center sm:gap-5 lg:w-[54%] lg:gap-6 lg:text-left">
               <h3 id="iso24161-introduction" className="relative mx-auto inline-block text-2xl font-bold tracking-tight text-[#111827] sm:text-3xl md:text-[2rem] lg:mx-0 lg:text-4xl">
                 What is ISO 24161?
                 <span aria-hidden="true" className="absolute -bottom-3 left-1/2 h-1 w-14 -translate-x-1/2 rounded-full bg-[#E30613] lg:left-0 lg:translate-x-0" />
@@ -117,7 +117,7 @@ export default function Iso24161Layout() {
               {/* TEXT JUSTIFY APPLIED HERE */}
               <div className="mt-2 space-y-4 text-sm leading-7 text-[#526581] sm:text-base md:text-[17px] md:leading-8 text-justify">
                 <p>
-                  ISO 24161 is an international standard that defines the <strong className="font-semibold text-[#111827]">vocabulary and terminology</strong> used in waste collection and transportation management. It establishes a common language for regulators, standards bodies, academia, and industry professionals to ensure clear communication [[2]][[6]].
+                  ISO 24161 is an international standard that defines the <strong className="font-semibold text-[#111827]">vocabulary and terminology</strong> used in waste collection and transportation management. It establishes a common language for regulators, standards bodies, academia, and industry professionals to ensure clear communication.
                 </p>
                 <p>
                   By standardizing terms related to functional components, performance indicators, and operational processes, ISO 24161 helps align waste management practices globally, reducing confusion and improving efficiency in contracts, reporting, and regulation.

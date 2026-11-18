@@ -154,7 +154,7 @@ export default function IsoCertificationLayout() {
 
               {/* Image */}
               <div className="w-full shrink-0 lg:w-[44%]">
-                <figure className="relative aspect-square w-full overflow-hidden rounded-2xl bg-red-50 ring-1 ring-black/5">
+                <figure className="relative aspect-square w-full overflow-hidden rounded-2xl bg-red-50 ring-1 ring-black/5 lg:h-full">
                   <Image
                     src="/certifications/14064.png"
                     alt="ISO 14064 certification artwork"
@@ -175,7 +175,7 @@ export default function IsoCertificationLayout() {
               </div>
 
               {/* Content */}
-              <div className="flex w-full flex-col justify-center gap-4 text-left sm:gap-5 lg:w-[56%] lg:gap-6">
+              <div className="flex w-full flex-col justify-center lg:justify-between gap-4 text-left sm:gap-5 lg:w-[56%] lg:gap-6">
                 <h3 className="relative inline-block text-xl font-bold tracking-tight text-[#111827] sm:text-2xl md:text-3xl lg:text-4xl">
                   What is ISO 14064?
                   <span aria-hidden="true" className="absolute -bottom-2 left-0 h-1 w-12 rounded-full bg-[#E30613] sm:-bottom-3 sm:w-14" />

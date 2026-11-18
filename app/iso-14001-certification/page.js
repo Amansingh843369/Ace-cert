@@ -104,7 +104,7 @@ export default function IsoCertificationLayout() {
               </figure>
             </div>
 
-            <div className="order-2 flex w-full flex-col justify-center gap-4 text-center sm:gap-5 lg:w-[54%] lg:gap-6 lg:text-left">
+            <div className="order-2 flex w-full flex-col justify-center lg:justify-between gap-4 text-center sm:gap-5 lg:w-[54%] lg:gap-6 lg:text-left">
               {/* REMOVED :2015 FROM HEADING */}
               <h3 id="iso14001-introduction" className="relative mx-auto inline-block text-2xl font-bold tracking-tight text-[#111827] sm:text-3xl md:text-[2rem] lg:mx-0 lg:text-4xl">
                 What is ISO 14001?

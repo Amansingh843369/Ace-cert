@@ -108,8 +108,8 @@ export default function HaccpCertificationPage() {
       {/* Hero */}
       <section className="relative overflow-hidden border-b border-red-100 bg-gradient-to-br from-white via-[#fff8f7] to-red-50/70">
         <div className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full bg-red-100/60 blur-3xl" />
-        <div className="relative mx-auto grid max-w-7xl items-center gap-8 px-4 py-10 sm:px-6 sm:py-14 lg:grid-cols-[1.05fr_0.95fr] lg:gap-12 lg:px-8 lg:py-16">
-          <div className="relative z-10">
+        <div className="relative mx-auto grid max-w-7xl items-center gap-8 px-4 py-10 sm:px-6 sm:py-14 lg:items-stretch lg:grid-cols-[1.05fr_0.95fr] lg:gap-12 lg:px-8 lg:py-16">
+          <div className="relative z-10 flex flex-col justify-between">
             <SectionBadge>Food Safety Management</SectionBadge>
             <h1 className="mt-5 max-w-xl text-4xl font-extrabold leading-[1.05] tracking-tight text-[#111827] sm:text-5xl lg:text-5xl lg:whitespace-nowrap xl:text-[3.5rem]">
               HACCP <span className="text-red-600">Certification</span>
@@ -135,7 +135,7 @@ export default function HaccpCertificationPage() {
               </a>
             </div>
           </div>
-          <div className="relative aspect-square mx-auto w-full max-w-[320px] overflow-hidden rounded-3xl border border-red-100 bg-white shadow-2xl shadow-red-900/10 sm:max-w-[380px] lg:max-w-[440px]">
+          <div className="relative aspect-square mx-auto w-full max-w-[320px] overflow-hidden rounded-3xl border border-red-100 bg-white shadow-2xl shadow-red-900/10 sm:max-w-[380px] lg:h-full lg:max-w-[440px]">
             <Image
               src="/certifications/haccp.png"
               alt="HACCP certification artwork"
@@ -150,9 +150,9 @@ export default function HaccpCertificationPage() {
 
       {/* What is HACCP */}
       <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-20">
-        <div className="flex flex-col items-center gap-8 lg:flex-row lg:gap-14">
+        <div className="flex flex-col items-center gap-8 lg:items-stretch lg:flex-row lg:gap-14">
           <div className="flex-1">
-            <figure className="relative h-[300px] overflow-hidden rounded-2xl border border-slate-200 shadow-lg sm:h-[380px] lg:h-[420px]">
+            <figure className="relative h-[300px] overflow-hidden rounded-2xl border border-slate-200 shadow-lg sm:h-[380px] lg:h-full">
               <Image
                 src="https://images.unsplash.com/photo-1606859191214-25806e8e2423?auto=format&fit=crop&w=1200&q=85"
                 alt="Food safety inspection and quality control in manufacturing"
@@ -162,7 +162,7 @@ export default function HaccpCertificationPage() {
               />
             </figure>
           </div>
-          <div className="flex-1 space-y-6">
+          <div className="flex flex-1 flex-col justify-between space-y-6">
             <SectionBadge>About HACCP</SectionBadge>
             <SectionHeading>What is <span className="text-red-600">HACCP?</span></SectionHeading>
             <div className="space-y-6 text-slate-600 text-sm sm:text-base leading-relaxed text-justify">
@@ -249,7 +249,7 @@ export default function HaccpCertificationPage() {
                     </span>
                   </div>
                   <div className="flex flex-col relative z-10">
-                    <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-red-50 text-red-600 ring-1 ring-red-100 transition-all duration-300 group-hover:bg-red-600 group-hover:text-white group-hover:ring-red-600 sm:h-14 sm:w-14 sm:rounded-2xl">
+                    <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-slate-100 text-[#0F1B33] ring-1 ring-slate-200 sm:h-14 sm:w-14 sm:rounded-2xl">
                       <Icon className="h-6 w-6" strokeWidth={1.8} />
                     </div>
                     <h3 className="mb-2 text-lg font-bold tracking-tight text-slate-900 transition-colors group-hover:text-red-700 sm:text-xl">
@@ -285,7 +285,7 @@ export default function HaccpCertificationPage() {
                 key={card.title}
                 className="group relative flex flex-col overflow-hidden rounded-3xl border border-slate-200/80 bg-white p-6 shadow-sm hover:shadow-md hover:border-red-200 transition-all duration-300 sm:p-7 md:p-8"
               >
-                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-red-700 text-white shadow-lg shadow-red-700/20 transition-transform duration-300 group-hover:scale-105 group-hover:-rotate-3 sm:h-14 sm:w-14 md:h-16 md:w-16 mb-6">
+                <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-2xl bg-slate-100 text-[#0F1B33] shadow-sm ring-1 ring-slate-200 transition-transform duration-300 group-hover:scale-105 group-hover:-rotate-3 sm:h-14 sm:w-14 md:h-16 md:w-16">
                   <card.icon className="h-6 w-6 sm:h-7 sm:w-7" strokeWidth={1.8} />
                 </div>
                 <span className="rounded-full border border-red-100 bg-red-50 px-2.5 py-1 text-[9px] font-bold uppercase tracking-[0.14em] text-red-700 sm:px-3 sm:py-1.5 sm:text-[10px]">
