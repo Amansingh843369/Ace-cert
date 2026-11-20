@@ -1,10 +1,28 @@
-"use client";
-
 import React from "react";
+import Image from "next/image";
 import { ArrowUpRight, Calendar, User, ArrowRight } from "lucide-react";
-import { posts } from "./siteData"; // Make sure this data contains relevant ISO/Compliance articles
+import { posts as fallbackPosts } from "./siteData";
+import { sanityClient, sanityConfigured, urlFor } from "../lib/sanity/client";
+import { postsQuery } from "../lib/sanity/queries";
 
-export default function BlogSection() {
+export default async function BlogSection() {
+  let posts = [];
+
+  if (sanityConfigured) {
+    try {
+      posts = await sanityClient.fetch(postsQuery);
+    } catch (error) {
+      console.error("Unable to load Sanity blog posts:", error);
+    }
+  }
+
+  if (!posts.length) {
+    posts = fallbackPosts.map((post) => ({
+      ...post,
+      link: "/blog",
+    }));
+  }
+
   return (
     <section 
       className="py-12 md:py-16 bg-slate-50 font-sans antialiased border-t border-slate-200"
@@ -46,11 +64,16 @@ export default function BlogSection() {
             >
               {/* Image Container with Floating Author Badge */}
               <div className="relative h-60 w-full overflow-hidden bg-slate-100">
-                <img
-                  src={post.image}
-                  alt={`Cover image for article: ${post.title}`}
+                <Image
+                  src={
+                    (urlFor(post.mainImage)?.width(900).height(480).url()) ||
+                    post.image ||
+                    "/about-team-meeting.png"
+                  }
+                  alt={post.mainImage?.alt || `Cover image for article: ${post.title}`}
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   loading="lazy"
-                  decoding="async"
                   className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 ease-out"
                 />
                 
@@ -69,7 +92,15 @@ export default function BlogSection() {
                 {/* Date Row */}
                 <div className="flex items-center gap-2 text-xs font-bold text-slate-500 mb-3 uppercase tracking-wide">
                   <Calendar size={15} className="text-red-600" aria-hidden="true" />
-                  <time dateTime={post.date}>{post.date || "8 December 2024"}</time>
+                  <time dateTime={post.publishedAt || post.date}>
+                    {post.publishedAt
+                      ? new Intl.DateTimeFormat("en-IN", {
+                          day: "numeric",
+                          month: "short",
+                          year: "numeric",
+                        }).format(new Date(post.publishedAt))
+                      : post.date || "8 December 2024"}
+                  </time>
                 </div>
 
                 {/* Title */}
@@ -79,7 +110,11 @@ export default function BlogSection() {
 
                 {/* Learn More Link */}
                 <a
-                  href={post.link || "#"}
+                  href={
+                    post.slug?.current
+                      ? `/blog/${post.slug.current}`
+                      : post.link || "/blog"
+                  }
                   className="mt-auto inline-flex items-center gap-1.5 text-xs font-extrabold uppercase tracking-wider text-slate-900 hover:text-red-600 transition-colors duration-200 group/link focus:outline-none focus:text-red-600"
                   aria-label={`Read full article: ${post.title}`}
                 >

@@ -6,6 +6,7 @@ export const navItems = [
   { name: "Home", href: "/" },
   { name: "About Us", href: "/about" },
   { name: "Certification", href: "/certification" },
+  { name: "Blog", href: "/blog" },
   // { name: "Verify Certificate", href: "/verify_certificate" },
   { name: "Contact", href: "/contact" },
 ];

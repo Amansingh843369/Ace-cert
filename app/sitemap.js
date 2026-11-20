@@ -1,9 +1,11 @@
 import { isoStandards } from '../data/isoStandards';
 import { routeSeo } from '../lib/seo';
+import { sanityClient, sanityConfigured } from '../lib/sanity/client';
+import { postSlugsQuery } from '../lib/sanity/queries';
 
 const siteUrl = 'https://ace-cert.com';
 
-export default function sitemap() {
+export default async function sitemap() {
   const staticRoutes = Object.entries(routeSeo)
     .filter(([, page]) => !page.noIndex)
     .map(([path]) => ({
@@ -18,5 +20,19 @@ export default function sitemap() {
     priority: 0.75,
   }));
 
-  return [...staticRoutes, ...standardRoutes];
+  let blogRoutes = [];
+  if (sanityConfigured) {
+    try {
+      const slugs = await sanityClient.fetch(postSlugsQuery);
+      blogRoutes = slugs.map((slug) => ({
+        url: `${siteUrl}/blog/${slug}`,
+        changeFrequency: 'weekly',
+        priority: 0.65,
+      }));
+    } catch (error) {
+      console.error('Unable to add Sanity blog routes to sitemap:', error);
+    }
+  }
+
+  return [...staticRoutes, ...standardRoutes, ...blogRoutes];
 }
