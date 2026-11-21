@@ -222,7 +222,7 @@ export default async function AboutPage() {
         </div>
       </section>
 
-      <PurposeSection content={purpose} />
+      <PurposeSection content={purpose} alignBenefitsWithText />
 
       {/* ================= ABOUT PAGE CTA ================= */}
       <section className="bg-white px-4 py-10 sm:px-6 sm:py-14 lg:px-12">

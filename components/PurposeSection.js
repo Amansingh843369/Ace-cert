@@ -30,7 +30,7 @@ const benefitIcons = {
   trendingUp: TrendingUp,
 };
 
-export default function PurposeSection({ navy = false, content = null }) {
+export default function PurposeSection({ navy = false, content = null, alignBenefitsWithText = false }) {
   const purposeContent = {
     firstParagraphPrefix: "At ",
     companyName: "ACE Certification",
@@ -64,7 +64,7 @@ export default function PurposeSection({ navy = false, content = null }) {
         />
       )}
 
-      <div className="relative mx-auto grid w-full max-w-screen-2xl grid-cols-1 items-start gap-10 xl:grid-cols-[minmax(0,0.86fr)_minmax(0,1.14fr)] xl:gap-24 2xl:gap-28">
+      <div className={`relative mx-auto grid w-full max-w-screen-2xl grid-cols-1 items-start gap-10 xl:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] ${alignBenefitsWithText ? "xl:gap-16" : "xl:gap-16"}`}>
         <div className="min-w-0">
            
           <h2
@@ -104,14 +104,16 @@ export default function PurposeSection({ navy = false, content = null }) {
           </p>
         </div>
 
-        <div className="min-w-0 space-y-4">
-          <p
-            className={`text-xs font-bold uppercase tracking-[0.18em] ${
-              navy ? "text-red-300" : "text-red-600"
-            }`}
-          >
-            {content?.benefitsEyebrow ?? "What this means for you"}
-          </p>
+        <div className={`min-w-0 space-y-4 ${alignBenefitsWithText ? "xl:mt-0" : ""}`}>
+          {!alignBenefitsWithText && (
+            <p
+              className={`text-xs font-bold uppercase tracking-[0.18em] ${
+                navy ? "text-red-300" : "text-red-600"
+              }`}
+            >
+              {content?.benefitsEyebrow ?? "What this means for you"}
+            </p>
+          )}
 
           {benefits.map(({ number, title, description, icon }) => {
             const Icon = benefitIcons[icon] || ShieldCheck;
