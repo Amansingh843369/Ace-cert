@@ -88,7 +88,7 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-4 lg:gap-6">
         
         {/* LOGO */}
-        <Link href="/" aria-label="ACE-CERT Homepage" className="flex shrink-0 items-center group">
+        <Link href="/" aria-label="ACE-CERT Homepage" className="flex shrink-0 items-center group lg:ml-6 lg:mt-1">
           <img
             src="/acecert-logo.png"
             alt="ACE-CERT - Accredited ISO Certification & Assessment Body"
@@ -227,10 +227,10 @@ export default function Header() {
         {/* CTA BUTTON */}
         <div className="hidden lg:flex shrink-0">
           <Link
-            href="/contact"
+            href="/validate_certificate"
             className="bg-red-600 text-white px-6 py-2.5 rounded-lg font-bold text-xs uppercase tracking-wider hover:bg-slate-900 hover:shadow-lg transition-all duration-300 whitespace-nowrap active:scale-95"
           >
-            Contact Today
+            Validate Certificate
           </Link>
         </div>
 

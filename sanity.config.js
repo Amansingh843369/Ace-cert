@@ -6,6 +6,8 @@ import { aboutPageType } from './sanity/schemaTypes/aboutPageType';
 import { contactPageType } from './sanity/schemaTypes/contactPageType';
 import { homePageType } from './sanity/schemaTypes/homePageType';
 import { postType } from './sanity/schemaTypes/postType';
+import { certificationType } from './sanity/schemaTypes/certificationType';
+import { certificationDirectoryPageType } from './sanity/schemaTypes/certificationDirectoryPageType';
 
 export default defineConfig({
   name: 'ace-cert',
@@ -46,11 +48,22 @@ export default defineConfig({
                   .title('Contact Page'),
               ),
             S.divider(),
+            S.listItem()
+              .title('Certification Listing Page')
+              .child(
+                S.document()
+                  .schemaType('certificationDirectoryPage')
+                  .documentId('certificationDirectoryPage')
+                  .title('Certification Listing Page'),
+              ),
+            S.divider(),
             S.documentTypeListItem('post').title('Blog Posts'),
+            S.divider(),
+            S.documentTypeListItem('certification').title('Certification Pages'),
           ]),
     }),
   ],
   schema: {
-    types: [homePageType, aboutPageType, contactPageType, postType],
+    types: [homePageType, aboutPageType, contactPageType, postType, certificationType, certificationDirectoryPageType],
   },
 });

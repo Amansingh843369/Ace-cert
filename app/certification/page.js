@@ -1,4 +1,9 @@
 import ManagementCertificationDirectory from '../management-certification/ManagementCertificationDirectory';
+import { sanityClient, sanityConfigured } from '../../lib/sanity/client';
+import { certificationsQuery } from '../../lib/sanity/queries';
+import { certifications as fallbackCertifications } from '../../data/certifications';
+import { getCertificationDirectoryPageContent } from '../../lib/sanity/certificationDirectoryPageContent';
+import { urlFor } from '../../lib/sanity/client';
 
 const title = 'ISO Management System Certifications | ACE Certifications';
 const description = 'Explore ACE Certifications’ ISO management system standards. Search ISO 9001, ISO 14001, ISO 27001, ISO 45001, and more.';
@@ -20,6 +25,45 @@ export const metadata = {
   },
 };
 
-export default function CertificationPage() {
-  return <ManagementCertificationDirectory />;
+export default async function CertificationPage() {
+  let certificationItems = fallbackCertifications;
+  const directoryContent = await getCertificationDirectoryPageContent();
+  const directoryHeroImage = urlFor(directoryContent.heroImage)?.toString() || null;
+
+  if (sanityConfigured) {
+    try {
+      const sanityCertifications = await sanityClient.fetch(certificationsQuery);
+      if (Array.isArray(sanityCertifications) && sanityCertifications.length > 0) {
+        const sanityByCode = new Map(
+          sanityCertifications
+            .filter((item) => item.active !== false)
+            .map((item) => [item.code?.trim().toLowerCase(), item])
+        );
+
+        certificationItems = fallbackCertifications.map((fallbackItem) => {
+          const sanityItem = sanityByCode.get(fallbackItem.code?.trim().toLowerCase());
+          return sanityItem
+            ? {
+                id: sanityItem._id,
+                code: sanityItem.code,
+                title: sanityItem.title,
+                type: sanityItem.type,
+                href: fallbackItem.href,
+                active: sanityItem.active,
+              }
+            : fallbackItem;
+        });
+      }
+    } catch (error) {
+      console.error('Unable to load certifications from Sanity:', error);
+    }
+  }
+
+  return (
+    <ManagementCertificationDirectory
+      initialStandards={certificationItems}
+      pageContent={directoryContent}
+      heroImageUrl={directoryHeroImage}
+    />
+  );
 }

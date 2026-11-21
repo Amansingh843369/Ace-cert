@@ -72,25 +72,15 @@ export default function ServicesSection({ certificationImageFiles = {}, content 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 mb-6 sm:mb-8">
         <div className="max-w-3xl mx-auto text-center space-y-3 sm:space-y-5">
           
-          {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-red-50 border border-red-100 text-red-700 text-xs font-bold uppercase tracking-widest shadow-sm">
-            <span className="w-2 h-2 rounded-full bg-red-600 animate-pulse"></span>
-            <span>{content.eyebrow ?? 'Our Expertise'}</span>
-          </div>
           
           {/* Main Heading */}
           <h2 id="services-heading" className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-slate-900 leading-[1.2]">
-            {content.titleStart ?? 'Comprehensive '}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-red-700">
-              {content.titleHighlight ?? 'Service Solutions'}
+              {content.titleHighlight}
             </span>
           </h2>
           
-          {/* Description */}
-          <p className="text-sm sm:text-base md:text-lg text-slate-600 leading-relaxed max-w-2xl mx-auto font-normal">
-            {content.description ??
-              'Explore our full range of ISO standards, certifications, and compliance frameworks for your organization.'}
-          </p>
+        
         </div>
       </div>
 

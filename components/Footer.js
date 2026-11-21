@@ -5,14 +5,12 @@ import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
 import { ArrowUp, ArrowUpRight, Mail } from "lucide-react";
 
-const MotionLink = motion.create(Link);
-
 const navigation = [
   {
     title: "Product",
     links: [
       { label: "Certification", href: "/certification" },
-      { label: "Verify Certificate", href: "/verify_certificate" },
+      { label: " Validate Certificate", href: "/validate_certificate" },
     ],
   },
   {
@@ -50,59 +48,6 @@ export default function Footer() {
 
   return (
     <footer className="relative isolate overflow-hidden bg-[#F8F9FA] px-4 pb-8 pt-8 font-sans text-[#0B1739] sm:px-6 sm:pb-12 sm:pt-12 lg:px-8">
-      <section
-        aria-labelledby="footer-cta-title"
-        className="relative mx-auto mb-8 max-w-7xl overflow-hidden rounded-[2rem] border border-red-100 bg-[#FFF5F5] px-6 py-8 sm:px-10 sm:py-10 lg:px-14 lg:py-12"
-      >
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute -right-20 -top-28 h-80 w-80 rounded-full border-[40px] border-red-100/70"
-        />
-
-        <div className="relative flex flex-col gap-6 md:flex-row md:items-center md:justify-between md:gap-8">
-          <div>
-            <p className="flex items-center gap-3 text-xs font-bold uppercase tracking-[0.18em] text-red-700">
-              <span
-                aria-hidden="true"
-                className="h-0.5 w-9 shrink-0 rounded-full bg-red-600"
-              />
-              Move forward with ACE-CERT
-            </p>
-
-            <h2
-              id="footer-cta-title"
-              className="mt-4 text-3xl font-bold leading-tight tracking-tight sm:text-4xl lg:text-5xl"
-            >
-              Ready for your <span className="text-red-600">next step?</span>
-            </h2>
-
-            <p className="mt-3 text-sm leading-6 text-slate-600 sm:text-base">
-              Explore certification and take your next step with confidence.
-            </p>
-          </div>
-
-          <MotionLink
-            href="/certification"
-            whileHover={{ y: -3 }}
-            whileTap={{ scale: 0.98 }}
-            transition={{
-              type: "spring",
-              stiffness: 400,
-              damping: 25,
-            }}
-            className={`group inline-flex min-h-14 w-full shrink-0 items-center justify-center gap-4 rounded-2xl bg-red-600 px-6 py-4 text-sm font-semibold text-white shadow-[0_12px_28px_-12px_rgba(220,38,38,0.65)] transition-colors hover:bg-red-700 motion-reduce:transition-none md:w-auto ${focusClass}`}
-          >
-            Explore certification
-            <span
-              aria-hidden="true"
-              className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-white/20"
-            >
-              <ArrowUpRight className="h-5 w-5 transition-transform duration-200 motion-safe:group-hover:-translate-y-0.5 motion-safe:group-hover:translate-x-0.5 motion-reduce:transition-none" />
-            </span>
-          </MotionLink>
-        </div>
-      </section>
-
       <div className="relative z-10 mx-auto max-w-7xl overflow-hidden rounded-[2rem] border border-slate-200 bg-white px-6 py-8 shadow-[0_18px_55px_rgba(11,23,57,0.07)] sm:px-10 sm:py-10 lg:px-14">
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-[1.7fr_repeat(3,minmax(0,1fr))] lg:gap-12">
           <div>

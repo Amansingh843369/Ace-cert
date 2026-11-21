@@ -64,7 +64,7 @@ export default function PurposeSection({ navy = false, content = null }) {
         />
       )}
 
-      <div className="relative mx-auto grid w-full max-w-screen-2xl grid-cols-1 items-start gap-8 xl:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] xl:gap-16">
+      <div className="relative mx-auto grid w-full max-w-screen-2xl grid-cols-1 items-start gap-10 xl:grid-cols-[minmax(0,0.86fr)_minmax(0,1.14fr)] xl:gap-24 2xl:gap-28">
         <div className="min-w-0">
            
           <h2
@@ -73,9 +73,9 @@ export default function PurposeSection({ navy = false, content = null }) {
               navy ? "text-white" : "text-gray-900"
             }`}
           >
-            {content?.titleStart ?? "Building a Better Future "}
-            <span className={navy ? "text-red-400" : "text-red-600"}>
-              {content?.titleHighlight ?? "for Your Business"}
+            Empowering Businesses Through
+            <span className={`block ${navy ? "text-red-400" : "text-red-600"}`}>
+              Achieve Compliance &amp; Excellence.
             </span>
           </h2>
 

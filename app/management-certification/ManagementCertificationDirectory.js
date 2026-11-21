@@ -2,7 +2,6 @@
 
 import { useMemo, useState } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 import { ArrowUpRight, Filter, Search, Settings2, ShieldCheck, Globe, Award } from 'lucide-react';
 import { certifications as ISO_STANDARDS } from '../../data/certifications';
 
@@ -22,29 +21,43 @@ const FILTER_OPTIONS = [
   },
 ];
 
-export default function ManagementCertificationDirectory() {
+export default function ManagementCertificationDirectory({ initialStandards, pageContent, heroImageUrl }) {
   const [query, setQuery] = useState('');
   const [selectedType, setSelectedType] = useState('ALL');
+  const standards = useMemo(
+    () => Array.isArray(initialStandards) && initialStandards.length > 0
+      ? initialStandards.filter(({ code }) => code !== 'CE Marking')
+      : DIRECTORY_STANDARDS,
+    [initialStandards]
+  );
+  const filterOptions = FILTER_OPTIONS.map((option) => {
+    if (option.value === 'ALL') return { ...option, count: standards.length };
+    if (option.value === 'ISO STANDARD') {
+      return { ...option, count: standards.filter(({ type }) => type === 'ISO STANDARD').length };
+    }
+    return { ...option, count: standards.filter(({ type }) => type !== 'ISO STANDARD').length };
+  });
 
   const filteredStandards = useMemo(() => {
     const normalizedQuery = query.trim().toLowerCase();
-    return DIRECTORY_STANDARDS.filter(({ code, title, type }) => {
+    return standards.filter(({ code, title, type }) => {
       const matchesQuery = `${code} ${title} ${type}`.toLowerCase().includes(normalizedQuery);
       const matchesType =
         selectedType === 'ALL' ||
         (selectedType === 'OTHER' ? type !== 'ISO STANDARD' : type === selectedType);
       return matchesQuery && matchesType;
     });
-  }, [query, selectedType]);
+  }, [query, selectedType, standards]);
 
   const selectedFilterCount =
-    FILTER_OPTIONS.find(({ value }) => value === selectedType)?.count ?? DIRECTORY_STANDARDS.length;
+    filterOptions.find(({ value }) => value === selectedType)?.count ?? standards.length;
+  const hero = pageContent?.hero;
 
   return (
     <main className="min-h-screen bg-white text-[#1c2448]">
       <section className="relative border-b border-red-100 bg-gradient-to-br from-red-50 via-white to-white overflow-hidden">
         <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=85')] bg-cover bg-center opacity-[0.10] pointer-events-none" />
-        <div className="relative z-10 mx-auto grid max-w-7xl items-center gap-8 px-4 py-8 sm:px-6 sm:py-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-12 lg:px-8 lg:py-14">
+        <div className="relative z-10 mx-auto max-w-7xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8 lg:py-14">
           {/* Left: Content */}
           <div className="min-w-0 space-y-4">
             <div className="mb-4 flex flex-wrap items-center gap-2">
@@ -53,53 +66,40 @@ export default function ManagementCertificationDirectory() {
                   <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-red-500 opacity-40" />
                   <span className="relative inline-flex h-full w-full rounded-full bg-[#E30613]" />
                 </span>
-                ACE Certifications
+                {hero?.eyebrow || 'ACE Certifications'}
               </span>
                
             </div>
             <h1 className="max-w-3xl text-3xl font-extrabold leading-[1.05] tracking-tight text-[#1c2448] sm:text-4xl md:text-5xl">
-              ACE-CERT <span className="text-red-600">Certification</span>
+              {hero?.titleLine1 || 'ACE-CERT'}{' '}
+              <span className="text-red-600">{hero?.titleHighlight || 'Certification'}</span>
             </h1>
             <p className="max-w-2xl text-sm leading-7 text-[#1c2448]/80 sm:text-base sm:leading-8 md:text-lg">
-              Explore our complete range of ISO management system certifications — from quality and
-              environment to security and food safety. Search by ISO number or standard name to find
-              the right certification for your organization.
+              {hero?.description ||
+                'Explore our complete range of ISO management system certifications — from quality and environment to security and food safety. Search by ISO number or standard name to find the right certification for your organization.'}
             </p>
             <div className="mt-5 flex flex-wrap items-center gap-x-5 gap-y-2">
               <div className="flex items-center gap-2 text-sm font-bold text-[#1c2448]">
                 <span className="flex h-6 w-6 items-center justify-center rounded-full bg-red-50 text-red-600">
                   <ShieldCheck className="h-3 w-3" />
                 </span>
-                <span>Internationally Recognized</span>
+                <span>{hero?.feature1 || 'Internationally Recognized'}</span>
               </div>
               <div className="flex items-center gap-2 text-sm font-bold text-[#1c2448]">
                 <span className="flex h-6 w-6 items-center justify-center rounded-full bg-red-50 text-red-600">
                   <Award className="h-3 w-3" />
                 </span>
-                <span>Global Accreditation</span>
+                <span>{hero?.feature2 || 'Global Accreditation'}</span>
               </div>
               <div className="flex items-center gap-2 text-sm font-bold text-[#1c2448]">
                 <span className="flex h-6 w-6 items-center justify-center rounded-full bg-red-50 text-red-600">
                   <Globe className="h-3 w-3" />
                 </span>
-                <span>Industry Trusted</span>
+                <span>{hero?.feature3 || 'Industry Trusted'}</span>
               </div>
             </div>
           </div>
 
-          {/* Right: Image */}
-          <div className="flex min-w-0 items-center justify-center">
-            <div className="relative aspect-[16/9] w-full overflow-hidden rounded-3xl border border-red-100 shadow-2xl shadow-red-200/40">
-              <Image
-                src="/ace-cert-building-banner.png"
-                alt="ACE-CERT certification with a globe in front of a modern office building"
-                fill
-                sizes="(max-width: 768px) 100vw, 600px"
-                className="object-cover object-center"
-                priority
-              />
-            </div>
-          </div>
         </div>
       </section>
 
@@ -114,7 +114,7 @@ export default function ManagementCertificationDirectory() {
               Filter By
             </h2>
             <div className="grid grid-cols-3 gap-2 lg:flex lg:flex-col">
-              {FILTER_OPTIONS.map(({ value, label, count }) => {
+              {filterOptions.map(({ value, label, count }) => {
                 const isSelected = selectedType === value;
                 return (
                   <button

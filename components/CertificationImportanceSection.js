@@ -2,17 +2,10 @@ import Image from 'next/image';
 import { ArrowUpRight, CircleCheck } from 'lucide-react';
 
 const certificationImages = {
-  DPDPA: '/certifications/dpdpa.png',
-  'FSSC 22000':
-    'https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=1200&q=85',
-  GDPR: '/certifications/gdpr.png',
   GHP: '/certifications/ghp.png',
   GLP: '/certifications/glp.png',
   GMP: '/certifications/gmp.png',
   GWP: '/certifications/gwp.png',
-  HIPAA:
-    'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1200&q=85',
-  'IATF 16949': '/certifications/1atf16949.jpeg',
   'ISO 10002':
     'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1200&q=85',
   'ISO 13009':
@@ -81,10 +74,6 @@ const certificationImages = {
     'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1200&q=85',
   'ISO 9001':
     'https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=1200&q=85',
-  'PCI DSS': '/certifications/pcidss.png',
-  'SOC 2 Type 1': '/certifications/soc2type1.png',
-  'SOC 2 Type 2': '/certifications/soc2type2.png',
-  VAPT: '/certifications/vapt.png',
 };
 
 export default function CertificationImportanceSection({
