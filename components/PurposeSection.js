@@ -1,30 +1,47 @@
 import { Link2, ShieldCheck, TrendingUp } from "lucide-react";
 
-const benefits = [
+const defaultBenefits = [
   {
     number: "01",
     title: "Build Unshakeable Trust",
     description:
       "Prove your commitment to safety, quality, and excellence to your clients and stakeholders.",
-    Icon: ShieldCheck,
+    icon: "shieldCheck",
   },
   {
     number: "02",
     title: "Unlock Market Potential",
     description:
       "Open doors to new contracts, global opportunities, and regulatory compliance with confidence.",
-    Icon: Link2,
+    icon: "link2",
   },
   {
     number: "03",
     title: "Drive Operational Excellence",
     description:
       "Transform rigorous industry standards into streamlined, efficient, and highly profitable everyday practices. We don’t just audit businesses—we partner with them to help them achieve compliance and excellence.",
-    Icon: TrendingUp,
+    icon: "trendingUp",
   },
 ];
 
-export default function PurposeSection({ navy = false }) {
+const benefitIcons = {
+  shieldCheck: ShieldCheck,
+  link2: Link2,
+  trendingUp: TrendingUp,
+};
+
+export default function PurposeSection({ navy = false, content = null }) {
+  const purposeContent = {
+    firstParagraphPrefix: "At ",
+    companyName: "ACE Certification",
+    firstParagraphSuffix:
+      ", our purpose is to bridge the gap between complex international standards and everyday business success. We believe compliance shouldn’t be a bureaucratic hurdle, but a strategic catalyst for growth.",
+    secondParagraph:
+      "By delivering accessible, practical, and globally recognized ISO certification, training, and advisory services, we empower small and middle-market businesses to grow with confidence.",
+    ...content,
+  };
+  const benefits = content?.benefits ?? defaultBenefits;
+
   return (
     <section
       aria-labelledby="purpose-heading"
@@ -56,9 +73,9 @@ export default function PurposeSection({ navy = false }) {
               navy ? "text-white" : "text-gray-900"
             }`}
           >
-            Building a Better Future{" "}
+            {content?.titleStart ?? "Building a Better Future "}
             <span className={navy ? "text-red-400" : "text-red-600"}>
-              for Your Business
+              {content?.titleHighlight ?? "for Your Business"}
             </span>
           </h2>
 
@@ -67,18 +84,15 @@ export default function PurposeSection({ navy = false }) {
               navy ? "text-slate-300" : "text-gray-600"
             }`}
           >
-            At{" "}
+            {purposeContent.firstParagraphPrefix}
             <strong
               className={`font-semibold ${
                 navy ? "text-white" : "text-gray-900"
               }`}
             >
-              ACE Certification
+              {purposeContent.companyName}
             </strong>
-            , our purpose is to bridge the gap between complex international
-            standards and everyday business success. We believe compliance
-            shouldn’t be a bureaucratic hurdle, but a strategic catalyst for
-            growth.
+            {purposeContent.firstParagraphSuffix}
           </p>
 
           <p
@@ -86,9 +100,7 @@ export default function PurposeSection({ navy = false }) {
               navy ? "text-slate-300" : "text-gray-600"
             }`}
           >
-            By delivering accessible, practical, and globally recognized ISO
-            certification, training, and advisory services, we empower small
-            and middle-market businesses to grow with confidence.
+            {purposeContent.secondParagraph}
           </p>
         </div>
 
@@ -98,37 +110,41 @@ export default function PurposeSection({ navy = false }) {
               navy ? "text-red-300" : "text-red-600"
             }`}
           >
-            What this means for you
+            {content?.benefitsEyebrow ?? "What this means for you"}
           </p>
 
-          {benefits.map(({ number, title, description, Icon }) => (
-            <article
-              key={number}
-              className={`group flex min-w-0 gap-4 rounded-2xl border bg-white p-5 transition-all duration-300 hover:-translate-y-0.5 hover:border-red-200 hover:shadow-lg sm:gap-5 sm:p-6 ${
-                navy
-                  ? "border-white/60 shadow-[0_18px_50px_rgba(0,0,0,0.2)]"
-                  : "border-gray-100 shadow-[0_10px_30px_rgba(15,23,42,0.05)]"
-              }`}
-            >
-              <span
-                aria-hidden="true"
-                className="pt-1 text-sm font-extrabold tracking-wider text-red-300"
+          {benefits.map(({ number, title, description, icon }) => {
+            const Icon = benefitIcons[icon] || ShieldCheck;
+
+            return (
+              <article
+                key={number}
+                className={`group flex min-w-0 gap-4 rounded-2xl border bg-white p-5 transition-all duration-300 hover:-translate-y-0.5 hover:border-red-200 hover:shadow-lg sm:gap-5 sm:p-6 ${
+                  navy
+                    ? "border-white/60 shadow-[0_18px_50px_rgba(0,0,0,0.2)]"
+                    : "border-gray-100 shadow-[0_10px_30px_rgba(15,23,42,0.05)]"
+                }`}
               >
-                {number}
-              </span>
-              <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-red-50 text-red-600 transition-colors group-hover:bg-red-600 group-hover:text-white">
-                <Icon aria-hidden="true" className="h-5 w-5" />
-              </div>
-              <div className="min-w-0 flex-1">
-                <h3 className="break-words text-lg font-bold text-gray-900 transition-colors group-hover:text-red-600 sm:text-xl">
-                  {title}
-                </h3>
-                <p className="mt-1 text-sm leading-6 text-gray-600 sm:text-base">
-                  {description}
-                </p>
-              </div>
-            </article>
-          ))}
+                <span
+                  aria-hidden="true"
+                  className="pt-1 text-sm font-extrabold tracking-wider text-red-300"
+                >
+                  {number}
+                </span>
+                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-red-50 text-red-600 transition-colors group-hover:bg-red-600 group-hover:text-white">
+                  <Icon aria-hidden="true" className="h-5 w-5" />
+                </div>
+                <div className="min-w-0 flex-1">
+                  <h3 className="break-words text-lg font-bold text-gray-900 transition-colors group-hover:text-red-600 sm:text-xl">
+                    {title}
+                  </h3>
+                  <p className="mt-1 text-sm leading-6 text-gray-600 sm:text-base">
+                    {description}
+                  </p>
+                </div>
+              </article>
+            );
+          })}
         </div>
       </div>
     </section>

@@ -10,6 +10,7 @@ import PurposeSection from "../components/PurposeSection";
 //  import  ContactSection  from "../components/contact";
  import ServiceSection from "../components/services";
  import { certificationCodeToSlug } from "../data/certificationImages";
+ import { getHomePageContent } from "../lib/sanity/homePage";
 
 export const metadata = createPageMetadata('/');
 
@@ -35,23 +36,28 @@ export const metadata = createPageMetadata('/');
 
  export default async function HomePage() {
    const certificationImageFiles = await getCertificationImageFiles();
+   const content = await getHomePageContent();
 
   return (
     <main className="min-h-screen bg-slate-50 font-sans text-slate-800 selection:bg-blue-100">
-      <HeroSection />
+      <HeroSection content={content.hero} />
     
        
       <AboutSection
         showStrategicParagraph={false}
         foregroundImage="/about-team-meeting.png"
         foregroundImageAlt="Corporate team reviewing documents in a meeting"
+        content={content.about}
       />
-      <ServiceSection certificationImageFiles={certificationImageFiles} />
-      <PurposeSection navy />
+      <ServiceSection
+        certificationImageFiles={certificationImageFiles}
+        content={content.services}
+      />
+      <PurposeSection navy content={content.purpose} />
      {/* <ExperienceSection />   */}
-     <FeaturesSection />
+     <FeaturesSection content={content.features} />
       
-      <BlogSection />
+      <BlogSection content={content.blog} />
       {/* <ContactSection /> */}
     </main>
   );

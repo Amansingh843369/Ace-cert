@@ -5,9 +5,9 @@ import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 
 // --- Typewriter Component ---
-const typewriterPhrases = ["For Achieve", "For Compliance", "For Excellence"];
-
-function TypewriterText() {
+function TypewriterText({ phrases }) {
+  const typewriterPhrases =
+    phrases?.length ? phrases : ["For Achieve", "For Compliance", "For Excellence"];
   const [phraseIndex, setPhraseIndex] = useState(0);
   const [visibleText, setVisibleText] = useState("");
   const [deleting, setDeleting] = useState(false);
@@ -61,7 +61,7 @@ function TypewriterText() {
   );
 }
 
-export default function HeroSection() {
+export default function HeroSection({ content = {} }) {
   return (
     <section 
       id="hero" 
@@ -121,27 +121,28 @@ export default function HeroSection() {
       <div className="relative z-10 mx-auto w-full px-6 sm:px-10 lg:translate-y-3 lg:px-16">
         <div className="max-w-[690px]">
           <p className="mb-4 text-lg font-semibold uppercase tracking-[0.08em] text-slate-700 sm:text-xl">
-            Welcome
+            {content.eyebrow ?? "Welcome"}
           </p>
 
           <h1 className="mb-6 text-[clamp(3rem,5.2vw,5.75rem)] font-black leading-[0.98] tracking-[-0.045em] text-slate-900">
-            <span className="block">ACE</span>
-            <span className="block">Certification</span>
+            <span className="block">{content.titleLine1 ?? "ACE"}</span>
+            <span className="block">{content.titleLine2 ?? "Certification"}</span>
             <span className="block min-h-[1em]">
-              <TypewriterText />
+              <TypewriterText phrases={content.phrases} />
             </span>
           </h1>
 
           <p className="mb-8 max-w-[640px] text-lg leading-relaxed text-slate-700 sm:text-xl lg:text-2xl">
-            Your trusted partner for Certification, Inspection and training Services. We simplify complex standards to power your business growth.
+            {content.description ??
+              "Your trusted partner for Certification, Inspection and training Services. We simplify complex standards to power your business growth."}
           </p>
 
           <div>
             <a
-              href="#contact"
+              href={content.buttonLink || "/contact"}
               className="group inline-flex w-full items-center justify-center rounded-md bg-red-600 px-8 py-4 text-base font-bold text-white shadow-lg shadow-red-700/20 transition duration-300 hover:-translate-y-0.5 hover:bg-red-700 hover:shadow-red-700/30 active:scale-[0.98] sm:w-auto sm:px-10 sm:text-lg"
             >
-              <span>CONTACT TODAY</span>
+              <span>{content.buttonLabel ?? "CONTACT TODAY"}</span>
               <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
             </a>
           </div>

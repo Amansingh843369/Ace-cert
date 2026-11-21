@@ -46,7 +46,7 @@ const iconsByType = {
   REGULATORY: Award,
 };
 
-export default function ServicesSection({ certificationImageFiles = {} }) {
+export default function ServicesSection({ certificationImageFiles = {}, content = {} }) {
   const services = certifications
     .filter(({ code }) => code !== 'CE Marking')
     .map((certification) => ({
@@ -75,17 +75,21 @@ export default function ServicesSection({ certificationImageFiles = {} }) {
           {/* Badge */}
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-red-50 border border-red-100 text-red-700 text-xs font-bold uppercase tracking-widest shadow-sm">
             <span className="w-2 h-2 rounded-full bg-red-600 animate-pulse"></span>
-            <span>Our Expertise</span>
+            <span>{content.eyebrow ?? 'Our Expertise'}</span>
           </div>
           
           {/* Main Heading */}
           <h2 id="services-heading" className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-slate-900 leading-[1.2]">
-            Comprehensive <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-red-700">Service Solutions</span>
+            {content.titleStart ?? 'Comprehensive '}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-red-700">
+              {content.titleHighlight ?? 'Service Solutions'}
+            </span>
           </h2>
           
           {/* Description */}
           <p className="text-sm sm:text-base md:text-lg text-slate-600 leading-relaxed max-w-2xl mx-auto font-normal">
-            Explore our full range of ISO standards, certifications, and compliance frameworks for your organization.
+            {content.description ??
+              'Explore our full range of ISO standards, certifications, and compliance frameworks for your organization.'}
           </p>
         </div>
       </div>
@@ -144,7 +148,7 @@ export default function ServicesSection({ certificationImageFiles = {} }) {
                     {service.title}
                   </p>
                   <div className="flex items-center gap-2 text-xs sm:text-sm font-bold text-red-600 mt-auto">
-                    <span>Explore Standard</span>
+                    <span>{content.cardLinkLabel ?? 'Explore Standard'}</span>
                     <ArrowRight className="w-4 h-4 transform group-hover/card:translate-x-1.5 transition-transform" aria-hidden="true" />
                   </div>
                 </div>
@@ -161,7 +165,7 @@ export default function ServicesSection({ certificationImageFiles = {} }) {
           className="group/btn relative overflow-hidden flex items-center gap-3 bg-red-600 text-white px-7 py-3.5 sm:px-8 sm:py-4 rounded-xl font-bold text-sm sm:text-base shadow-lg shadow-red-600/25 hover:bg-red-700 hover:shadow-red-600/35 hover:-translate-y-0.5 active:scale-95 transition-all duration-300 cursor-pointer"
         >
           <span className="relative z-10 flex items-center gap-2">
-            View All Certifications 
+            {content.buttonLabel ?? 'View All Certifications'}
             <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover/btn:translate-x-1 transition-transform" />
           </span>
           <div className="absolute inset-0 -translate-x-full group-hover/btn:translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent transition-transform duration-700 ease-in-out"></div>

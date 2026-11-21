@@ -5,7 +5,7 @@ import { posts as fallbackPosts } from "./siteData";
 import { sanityClient, sanityConfigured, urlFor } from "../lib/sanity/client";
 import { postsQuery } from "../lib/sanity/queries";
 
-export default async function BlogSection() {
+export default async function BlogSection({ content = {} }) {
   let posts = [];
 
   if (sanityConfigured) {
@@ -34,14 +34,14 @@ export default async function BlogSection() {
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-8 lg:mb-10 gap-6">
           <div className="max-w-2xl space-y-3">
             <span className="inline-block text-red-600 font-bold tracking-widest text-xs uppercase bg-red-50 px-3.5 py-1.5 rounded-full border border-red-100">
-              Latest News & Insights
+              {content.eyebrow ?? "Latest News & Insights"}
             </span>
             
             <h2 
               id="blog-title" 
               className="text-3xl sm:text-4xl lg:text-[2.5rem] font-black text-slate-900 leading-tight tracking-tight"
             >
-              Explore our latest articles and expert guides
+              {content.title ?? "Explore our latest articles and expert guides"}
             </h2>
           </div>
 
@@ -50,7 +50,7 @@ export default async function BlogSection() {
             className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-slate-900 bg-white hover:bg-slate-900 hover:text-white px-6 py-3.5 rounded-full border border-slate-200 shadow-sm hover:shadow-md transition-all duration-300 group shrink-0 focus:outline-none focus:ring-2 focus:ring-red-600 focus:ring-offset-2"
             aria-label="View all ISO certification news and articles"
           >
-            <span>View All Posts</span>
+            <span>{content.buttonLabel ?? "View All Posts"}</span>
             <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform duration-300" />
           </a>
         </div>

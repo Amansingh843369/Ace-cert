@@ -99,7 +99,16 @@ function FeatureIllustration({ feature }) {
   );
 }
 
-export default function FeaturesSection() {
+export default function FeaturesSection({ content = {} }) {
+  const sectionFeatures = content.items?.length ? content.items : features;
+  const sectionTitle =
+    content.title ?? "Why Choose ACE Certification Ltd.?";
+
+  const normalizedFeatures = sectionFeatures.map((feature, index) => ({
+    ...feature,
+    id: feature.id ?? index + 1,
+    blob: feature.blob ?? features[index]?.blob ?? features[0].blob,
+  }));
   return (
     <section
       id="features"
