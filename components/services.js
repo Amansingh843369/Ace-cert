@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { 
   ArrowRight, 
   ShieldCheck,
@@ -63,7 +64,7 @@ export default function ServicesSection({ certificationImageFiles = {}, content 
     <section 
       id="services" 
       aria-labelledby="services-heading"
-      className="py-10 sm:py-12 md:py-16 bg-slate-50 overflow-hidden relative font-sans"
+      className="pt-4 pb-10 sm:pt-6 sm:pb-12 md:pt-8 md:pb-16 bg-slate-50 overflow-hidden relative font-sans"
     >
       {/* Background Accents (Red & Neutral Theme) */}
       <div className="absolute top-0 left-1/4 w-[300px] sm:w-[500px] h-[300px] sm:h-[500px] bg-red-100/40 rounded-full mix-blend-multiply filter blur-[80px] sm:blur-[100px] opacity-70 pointer-events-none"></div>
@@ -109,12 +110,12 @@ export default function ServicesSection({ certificationImageFiles = {}, content 
               >
                 {/* Image Section */}
                 <div className="relative aspect-square w-full overflow-hidden bg-slate-50">
-                  <img 
+                  <Image
                     src={service.img} 
                     alt=""
-                    loading="lazy"
-                    decoding="async"
-                    className="h-full w-full object-cover object-center"
+                    fill
+                    sizes="(max-width: 639px) 270px, (max-width: 767px) 310px, 340px"
+                    className="object-cover object-center"
                   />
                   
                   {/* Overlay on Hover */}

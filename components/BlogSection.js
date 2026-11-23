@@ -1,11 +1,11 @@
-import React from "react";
-import Image from "next/image";
-import { ArrowUpRight, Calendar, User, ArrowRight } from "lucide-react";
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
+import BlogPostGrid from "./BlogPostGrid";
 import { posts as fallbackPosts } from "./siteData";
 import { sanityClient, sanityConfigured, urlFor } from "../lib/sanity/client";
 import { postsQuery } from "../lib/sanity/queries";
 
-export default async function BlogSection({ content = {} }) {
+export default async function BlogSection({ content = {}, showFilters = false }) {
   let posts = [];
 
   if (sanityConfigured) {
@@ -22,6 +22,28 @@ export default async function BlogSection({ content = {} }) {
       link: "/blog",
     }));
   }
+
+  const displayPosts = posts.map((post, index) => {
+    const imageBuilder = urlFor(post.mainImage);
+
+    return {
+      id: post._id || post.id || `${post.title}-${index}`,
+      title: post.title,
+      slug: post.slug?.current || null,
+      category: post.category || "Other",
+      excerpt: post.excerpt || "",
+      author: post.author || "ACERT Expert",
+      publishedAt: post.publishedAt || null,
+      date: post.date || "8 December 2024",
+      image:
+        imageBuilder?.width(900).height(480).url() ||
+        post.image ||
+        "/about-team-meeting.png",
+      imageAlt:
+        post.mainImage?.alt || `Cover image for article: ${post.title}`,
+      link: post.link || "/blog",
+    };
+  });
 
   return (
     <section 
@@ -45,91 +67,17 @@ export default async function BlogSection({ content = {} }) {
             </h2>
           </div>
 
-          <a
-            href="#blog"
+          <Link
+            href="/blog"
             className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-slate-900 bg-white hover:bg-slate-900 hover:text-white px-6 py-3.5 rounded-full border border-slate-200 shadow-sm hover:shadow-md transition-all duration-300 group shrink-0 focus:outline-none focus:ring-2 focus:ring-red-600 focus:ring-offset-2"
             aria-label="View all ISO certification news and articles"
           >
             <span>{content.buttonLabel ?? "View All Posts"}</span>
             <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform duration-300" />
-          </a>
+          </Link>
         </div>
 
-        {/* --- BLOG CARDS GRID --- */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {posts.map((post, index) => (
-            <article
-              key={post.id || post.title || index}
-              className="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)] hover:-translate-y-1.5 transition-all duration-500 ease-out group flex flex-col h-full"
-            >
-              {/* Image Container with Floating Author Badge */}
-              <div className="relative h-60 w-full overflow-hidden bg-slate-100">
-                <Image
-                  src={
-                    (urlFor(post.mainImage)?.width(900).height(480).url()) ||
-                    post.image ||
-                    "/about-team-meeting.png"
-                  }
-                  alt={post.mainImage?.alt || `Cover image for article: ${post.title}`}
-                  fill
-                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  loading="lazy"
-                  className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 ease-out"
-                />
-                
-                {/* Author Badge Overlay */}
-                <div className="absolute top-4 left-4 z-10 bg-white/95 backdrop-blur-md px-3.5 py-1.5 rounded-full flex items-center gap-2 shadow-sm border border-slate-200/80">
-                  <User size={14} className="text-red-600" aria-hidden="true" />
-                  <span className="text-xs font-bold text-slate-900 tracking-tight">
-                    {post.author || "ACERT Expert"}
-                  </span>
-                </div>
-              </div>
-
-              {/* Card Content Area */}
-              <div className="p-7 flex flex-col flex-grow bg-white">
-                
-                {/* Date Row */}
-                <div className="flex items-center gap-2 text-xs font-bold text-slate-500 mb-3 uppercase tracking-wide">
-                  <Calendar size={15} className="text-red-600" aria-hidden="true" />
-                  <time dateTime={post.publishedAt || post.date}>
-                    {post.publishedAt
-                      ? new Intl.DateTimeFormat("en-IN", {
-                          day: "numeric",
-                          month: "short",
-                          year: "numeric",
-                        }).format(new Date(post.publishedAt))
-                      : post.date || "8 December 2024"}
-                  </time>
-                </div>
-
-                {/* Title */}
-                <h3 className="text-xl font-bold text-slate-900 mb-6 leading-snug tracking-tight line-clamp-2 group-hover:text-red-600 transition-colors duration-300">
-                  {post.title}
-                </h3>
-
-                {/* Learn More Link */}
-                <a
-                  href={
-                    post.slug?.current
-                      ? `/blog/${post.slug.current}`
-                      : post.link || "/blog"
-                  }
-                  className="mt-auto inline-flex items-center gap-1.5 text-xs font-extrabold uppercase tracking-wider text-slate-900 hover:text-red-600 transition-colors duration-200 group/link focus:outline-none focus:text-red-600"
-                  aria-label={`Read full article: ${post.title}`}
-                >
-                  <span>Learn More</span>
-                  <ArrowUpRight 
-                    size={16} 
-                    className="transform group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 transition-transform duration-200" 
-                    aria-hidden="true"
-                  />
-                </a>
-              </div>
-            </article>
-          ))}
-        </div>
-
+        <BlogPostGrid posts={displayPosts} showFilters={showFilters} />
       </div>
     </section>
   );

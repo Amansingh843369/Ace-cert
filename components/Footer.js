@@ -26,7 +26,7 @@ const navigation = [
   {
     title: "Company",
     links: [
-      { label: "About Us", href: "/about" },
+      { label: "Our Story", href: "/about" },
       { label: "Contact Us", href: "/contact" },
     ],
   },

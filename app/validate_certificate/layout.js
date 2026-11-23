@@ -1,7 +1,7 @@
 ﻿import { createPageMetadata } from '../../lib/seo';
 
 export const metadata = {
-  ...createPageMetadata('/verify_certificate'),
+  ...createPageMetadata('/validate_certificate'),
   title: 'Certificate Verification | ACE-CERT',
 };
 

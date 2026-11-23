@@ -17,6 +17,7 @@ export const metadata = {
   },
   twitter: { card: "summary_large_image" },
   robots: { index: true, follow: true },
+  icons: { icon: "/acecert-logo.png" },
 };
 
 const geistSans = Geist({
@@ -27,6 +28,7 @@ const geistSans = Geist({
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono", 
   subsets: ["latin"],
+  preload: false,
 });
 
 export default function RootLayout({ children }) {
@@ -57,6 +59,13 @@ export default function RootLayout({ children }) {
                   name: 'ACE-CERT',
                   publisher: { '@id': 'https://ace-cert.com/#organization' },
                   inLanguage: 'en',
+                },
+                {
+                  '@type': 'Service',
+                  '@id': 'https://ace-cert.com/#certification-services',
+                  name: 'ISO Certification, Inspection and Training Services',
+                  provider: { '@id': 'https://ace-cert.com/#organization' },
+                  url: 'https://ace-cert.com/',
                 },
               ],
             }),

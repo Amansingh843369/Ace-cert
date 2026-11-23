@@ -9,7 +9,7 @@ export default async function sitemap() {
   const staticRoutes = Object.entries(routeSeo)
     .filter(([, page]) => !page.noIndex)
     .map(([path]) => ({
-      url: `${siteUrl}${path === '/' ? '' : path}`,
+      url: `${siteUrl}${path === '/' ? '/' : path}`,
       changeFrequency: path === '/' ? 'weekly' : 'monthly',
       priority: path === '/' ? 1 : path === '/certification' ? 0.9 : 0.7,
     }));

@@ -2,6 +2,7 @@
 
 import React, { useEffect, useRef, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { BadgeCheck, ChevronDown, FileText, Lock, Menu, Package, ShieldCheck, X } from "lucide-react";
 import { navItems, serviceGroups } from "./siteData";
 
@@ -38,7 +39,7 @@ export default function Header() {
       }
     };
     const onDocumentClick = (event) => {
-      if (headerRef.current && !headerRef.current.contains(event.target)) {
+      if (headerRef.current && !event.composedPath().includes(headerRef.current)) {
         setServicesOpen(false);
         setPresenceOpen(false);
         setMobileMenuOpen(false);
@@ -89,11 +90,13 @@ export default function Header() {
         
         {/* LOGO */}
         <Link href="/" aria-label="ACE-CERT Homepage" className="flex shrink-0 items-center group lg:ml-6 lg:mt-1">
-          <img
+          <Image
             src="/acecert-logo.png"
             alt="ACE-CERT - Accredited ISO Certification & Assessment Body"
+            width={162}
+            height={100}
             loading="eager"
-            decoding="async"
+            sizes="(max-width: 639px) 72px, (max-width: 767px) 78px, 91px"
             className="h-11 sm:h-12 md:h-14 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
           />
         </Link>
@@ -240,7 +243,7 @@ export default function Header() {
           aria-label={mobileMenuOpen ? "Close navigation menu" : "Open navigation menu"}
           aria-expanded={mobileMenuOpen}
           aria-controls="mobile-navigation-menu"
-          className="lg:hidden p-2 text-slate-900 hover:bg-slate-100 rounded-lg transition-colors cursor-pointer"
+          className="lg:hidden flex min-h-11 min-w-11 items-center justify-center rounded-lg p-2 text-slate-900 transition-colors hover:bg-slate-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-600 focus-visible:ring-offset-2 cursor-pointer"
           onClick={() => setMobileMenuOpen((open) => !open)}
         >
           {mobileMenuOpen ? <X size={26} /> : <Menu size={26} />}

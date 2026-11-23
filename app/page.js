@@ -1,6 +1,7 @@
 import { readdir } from "node:fs/promises";
 import { basename, extname, join } from "node:path";
 import AboutSection from "../components/AboutSection";
+import CertificationCtaSection from "../components/CertificationCtaSection";
 import { createPageMetadata } from '../lib/seo';
 import BlogSection from "../components/BlogSection";
 import FeaturesSection from '../components/FeaturesSection'; // Apna exact file path yahan daalein
@@ -53,6 +54,7 @@ export const metadata = createPageMetadata('/');
         justifyText
         highlightAcronymExpansion
         compactTopPadding
+        compactBottomPadding
         emphasizeImage
         imageSrc="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1400&q=85"
         imageAlt="Corporate professionals discussing a project around a meeting table"
@@ -66,7 +68,7 @@ export const metadata = createPageMetadata('/');
       <PurposeSection navy content={content.purpose} alignBenefitsWithText />
      {/* <ExperienceSection />   */}
      <FeaturesSection content={content.features} />
-      
+       <CertificationCtaSection />
       <BlogSection content={content.blog} />
       {/* <ContactSection /> */}
     </main>

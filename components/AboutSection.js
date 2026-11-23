@@ -19,6 +19,7 @@ export default function AboutSection({
   justifyText = false,
   highlightAcronymExpansion = false,
   compactTopPadding = false,
+  compactBottomPadding = false,
   emphasizeImage = false,
 }) {
   return (
@@ -26,9 +27,9 @@ export default function AboutSection({
       id="about"
       aria-label="About ACE Certification Services"
       className={`relative overflow-hidden bg-slate-50 font-sans ${
-        compactTopPadding
-          ? "pt-8 pb-20 sm:pt-12 sm:pb-28 lg:pt-16 lg:pb-32"
-          : "py-20 sm:py-28 lg:py-32"
+        compactTopPadding ? "pt-8 sm:pt-12 lg:pt-16" : "pt-20 sm:pt-28 lg:pt-32"
+      } ${
+        compactBottomPadding ? "pb-12 sm:pb-14 lg:pb-16" : "pb-20 sm:pb-28 lg:pb-32"
       }`}
     >
       {/* Premium Background Blurs */}

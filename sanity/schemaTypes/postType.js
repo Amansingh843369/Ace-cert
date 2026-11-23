@@ -52,7 +52,7 @@ export const postType = defineType({
       title: 'Category',
       type: 'string',
       options: {
-        list: ['ISO Standards', 'Certification', 'Compliance', 'Training', 'Cybersecurity'],
+        list: ['ISO Standards', 'Certification', 'Compliance', 'Training', 'Cybersecurity', 'Business Growth'],
         layout: 'dropdown',
       },
     }),

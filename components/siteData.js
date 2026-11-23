@@ -4,7 +4,7 @@
 
 export const navItems = [
   { name: "Home", href: "/" },
-  { name: "About Us", href: "/about" },
+  { name: "Our Story", href: "/about" },
   { name: "Certification", href: "/certification" },
   { name: "Blog", href: "/blog" },
   // { name: "Verify Certificate", href: "/verify_certificate" },
@@ -70,6 +70,7 @@ export const features = [
 export const posts = [
   {
     title: "How to increase your ROI through scientific SEM",
+    category: "Business Growth",
     image:
       "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=900&q=80",
     date: "Sep 15, 2026",
@@ -77,6 +78,7 @@ export const posts = [
 
   {
     title: "Understanding the new ISO 27701 Privacy Standards",
+    category: "ISO Standards",
     image:
       "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=900&q=80",
     date: "Sep 10, 2026",
@@ -84,6 +86,7 @@ export const posts = [
 
   {
     title: "Why Cybersecurity Gap Review is critical for SMEs",
+    category: "Cybersecurity",
     image:
       "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=80",
     date: "Sep 05, 2026",

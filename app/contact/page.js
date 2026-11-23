@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import { connection } from 'next/server';
 import ContactForm from '../../components/ContactForm';
 import { getContactPageContent } from '../../lib/sanity/contactPage';
@@ -6,7 +5,7 @@ import { getContactPageContent } from '../../lib/sanity/contactPage';
 export default async function ContactPage() {
   await connection();
   const content = await getContactPageContent();
-  const { hero, info, form, map } = content;
+  const { hero, info, form } = content;
 
   return (
     <main className="relative min-h-screen overflow-x-hidden bg-slate-50 font-sans text-slate-800">
@@ -23,13 +22,6 @@ export default async function ContactPage() {
           <h1 className="text-4xl font-extrabold tracking-tight text-red-600 drop-shadow-sm sm:text-5xl md:text-6xl">
             {hero.title}
           </h1>
-          <nav aria-label="Breadcrumb" className="mx-auto flex w-fit items-center justify-center gap-2 rounded-full border border-red-100 bg-white/60 px-6 py-2 text-sm font-medium text-gray-500 shadow-sm backdrop-blur-sm sm:text-base">
-            <Link href="/" className="transition-colors hover:text-red-600">{hero.homeLabel}</Link>
-            <svg className="h-4 w-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
-            </svg>
-            <span aria-current="page" className="font-semibold text-gray-900">{hero.title}</span>
-          </nav>
         </div>
       </section>
 
@@ -62,28 +54,6 @@ export default async function ContactPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-4 pb-14 sm:px-6 sm:pb-16 lg:px-8 lg:pb-20">
-        <div className="mb-5 max-w-2xl">
-          <p className="text-xs font-bold uppercase tracking-[0.16em] text-red-600">{map.eyebrow}</p>
-          <h2 className="mt-2 text-2xl font-extrabold tracking-tight text-[#0B1739] sm:text-3xl">{map.title}</h2>
-          <p className="mt-2 whitespace-pre-line text-sm leading-6 text-slate-600 sm:text-base">{map.address}</p>
-        </div>
-        <div className="relative overflow-hidden rounded-3xl border border-slate-200 bg-white p-2.5 shadow-[0_20px_60px_-32px_rgba(11,23,57,0.28)] sm:p-3">
-          <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl sm:aspect-video lg:aspect-[2.4/1]">
-            <iframe
-              title={map.mapTitle}
-              src={map.mapUrl}
-              width="100%"
-              height="100%"
-              style={{ border: 0 }}
-              allowFullScreen=""
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              className="absolute inset-0 h-full w-full"
-            />
-          </div>
-        </div>
-      </section>
     </main>
   );
 }

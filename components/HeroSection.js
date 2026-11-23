@@ -72,7 +72,7 @@ export default function HeroSection({ content = {} }) {
           src="/your_success.jpg" 
           alt="Professionals collaborating during a business meeting"
           fill
-          priority
+          preload
           sizes="100vw"
           className="object-cover object-center"
         />
@@ -124,7 +124,7 @@ export default function HeroSection({ content = {} }) {
             {content.eyebrow ?? "Welcome"}
           </p>
 
-          <h1 className="mb-6 text-[clamp(3rem,5.2vw,5.75rem)] font-black leading-[0.98] tracking-[-0.045em] text-slate-900">
+          <h1 className="mb-6 text-[clamp(2rem,5.2vw,5.75rem)] font-black leading-[0.98] tracking-[-0.045em] text-slate-900 sm:text-[clamp(3rem,5.2vw,5.75rem)]">
             <span className="block">{content.titleLine1 ?? "ACE"}</span>
             <span className="block">{content.titleLine2 ?? "Certification"}</span>
             <span className="block min-h-[1em]">
