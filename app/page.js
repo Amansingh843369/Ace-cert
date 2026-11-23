@@ -46,7 +46,9 @@ export const metadata = createPageMetadata('/');
       <AboutSection
         eyebrowText="Our Story"
         showAcronymHighlights={false}
-        showStoryLink={false}
+        showStoryLink
+        showStrategicParagraph={false}
+        storyLinkLabel="Know More"
         showTrustCard={false}
         justifyText
         highlightAcronymExpansion

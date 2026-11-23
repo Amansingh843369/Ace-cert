@@ -10,6 +10,8 @@ export default function AboutSection({
   imageAlt = "Professionals collaborating on quality and compliance",
   overlayImageSrc = "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=85",
   overlayImageAlt = "A team working together",
+  showStrategicParagraph = true,
+  storyLinkLabel = "Discover our story",
   eyebrowText = "About ACE Certification",
   showAcronymHighlights = true,
   showStoryLink = true,
@@ -119,10 +121,12 @@ export default function AboutSection({
               Our experienced Lead Auditors turn complex standards into practical steps for lasting
               business improvement.
             </p>
-            <p>
-              We believe certification should be more than a trophy—it should be a strategic tool
-              that creates measurable improvement for your business.
-            </p>
+            {showStrategicParagraph && (
+              <p>
+                We believe certification should be more than a trophy—it should be a strategic tool
+                that creates measurable improvement for your business.
+              </p>
+            )}
           </div>
 
           {/* ACE Acronym Highlights */}
@@ -153,7 +157,7 @@ export default function AboutSection({
               href="/about"
               className="group mt-10 inline-flex items-center gap-3 rounded-full bg-red-600 px-8 py-4 text-sm font-bold text-white shadow-lg shadow-red-600/25 transition-all hover:-translate-y-1 hover:bg-red-700 hover:shadow-xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600"
             >
-              Discover our story
+              {storyLinkLabel}
               <ArrowRight
                 className="h-4 w-4 transition-transform group-hover:translate-x-1.5"
                 aria-hidden="true"
