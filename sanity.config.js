@@ -8,6 +8,7 @@ import { homePageType } from './sanity/schemaTypes/homePageType';
 import { postType } from './sanity/schemaTypes/postType';
 import { certificationType } from './sanity/schemaTypes/certificationType';
 import { certificationDirectoryPageType } from './sanity/schemaTypes/certificationDirectoryPageType';
+import { certificateRecordType } from './sanity/schemaTypes/certificateRecordType';
 
 export default defineConfig({
   name: 'ace-cert',
@@ -60,10 +61,20 @@ export default defineConfig({
             S.documentTypeListItem('post').title('Blog Posts'),
             S.divider(),
             S.documentTypeListItem('certification').title('Certification Pages'),
+            S.divider(),
+            S.documentTypeListItem('certificateRecord').title('Issued Certificate Records'),
           ]),
     }),
   ],
   schema: {
-    types: [homePageType, aboutPageType, contactPageType, postType, certificationType, certificationDirectoryPageType],
+    types: [
+      homePageType,
+      aboutPageType,
+      contactPageType,
+      postType,
+      certificationType,
+      certificationDirectoryPageType,
+      certificateRecordType,
+    ],
   },
 });
