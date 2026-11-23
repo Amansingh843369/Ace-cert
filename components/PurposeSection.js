@@ -67,18 +67,21 @@ export default function PurposeSection({ navy = false, content = null, alignBene
       <div className="relative mx-auto grid w-full max-w-screen-2xl grid-cols-1 items-start gap-8 sm:gap-10 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:gap-12 xl:gap-16">
         <div className="min-w-0">
            
-          {/* Responsive 3-Line Heading */}
           <h2
             id="purpose-heading"
             className={`text-3xl font-extrabold leading-tight tracking-tight sm:text-4xl lg:text-5xl ${
               navy ? "text-white" : "text-gray-900"
             }`}
           >
-            <span className="block">Empowering Business </span>
-         Through
-            <span className="text-red-400"> Achieve</span>
-            <span className={`block mt-1 sm:mt-2 ${navy ? "text-red-400" : "text-red-600"}`}>
-               Compliance  Excellence.
+            <span className="block">Empowering Business</span>
+            <span className="block">
+              Through{" "}
+              <span className={navy ? "text-red-400" : "text-red-600"}>
+                Achieve
+              </span>
+            </span>
+            <span className={`block ${navy ? "text-red-400" : "text-red-600"}`}>
+              Compliance &amp; Excellence.
             </span>
           </h2>
 
@@ -107,7 +110,7 @@ export default function PurposeSection({ navy = false, content = null, alignBene
           </p>
         </div>
 
-        <div className="min-w-0 space-y-6 sm:space-y-8 lg:space-y-10">
+        <div className="min-w-0 space-y-3 sm:space-y-4 lg:space-y-5">
           
           {/* Eyebrow Text: Always visible and responsive based on your image */}
           <p
