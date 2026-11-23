@@ -53,7 +53,7 @@ export const metadata = createPageMetadata('/');
         certificationImageFiles={certificationImageFiles}
         content={content.services}
       />
-      <PurposeSection navy content={content.purpose} />
+      <PurposeSection navy content={content.purpose} alignBenefitsWithText />
      {/* <ExperienceSection />   */}
      <FeaturesSection content={content.features} />
       

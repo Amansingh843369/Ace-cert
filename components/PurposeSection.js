@@ -64,18 +64,21 @@ export default function PurposeSection({ navy = false, content = null, alignBene
         />
       )}
 
-      <div className={`relative mx-auto grid w-full max-w-screen-2xl grid-cols-1 items-start gap-10 xl:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] ${alignBenefitsWithText ? "xl:gap-16" : "xl:gap-16"}`}>
+      <div className="relative mx-auto grid w-full max-w-screen-2xl grid-cols-1 items-start gap-8 sm:gap-10 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:gap-12 xl:gap-16">
         <div className="min-w-0">
            
+          {/* Responsive 3-Line Heading */}
           <h2
             id="purpose-heading"
             className={`text-3xl font-extrabold leading-tight tracking-tight sm:text-4xl lg:text-5xl ${
               navy ? "text-white" : "text-gray-900"
             }`}
           >
-            Empowering Businesses Through
-            <span className={`block ${navy ? "text-red-400" : "text-red-600"}`}>
-              Achieve Compliance &amp; Excellence.
+            <span className="block">Empowering Business </span>
+         Through
+            <span className="text-red-400"> Achieve</span>
+            <span className={`block mt-1 sm:mt-2 ${navy ? "text-red-400" : "text-red-600"}`}>
+               Compliance  Excellence.
             </span>
           </h2>
 
@@ -104,16 +107,16 @@ export default function PurposeSection({ navy = false, content = null, alignBene
           </p>
         </div>
 
-        <div className={`min-w-0 space-y-4 ${alignBenefitsWithText ? "xl:mt-0" : ""}`}>
-          {!alignBenefitsWithText && (
-            <p
-              className={`text-xs font-bold uppercase tracking-[0.18em] ${
-                navy ? "text-red-300" : "text-red-600"
-              }`}
-            >
-              {content?.benefitsEyebrow ?? "What this means for you"}
-            </p>
-          )}
+        <div className="min-w-0 space-y-6 sm:space-y-8 lg:space-y-10">
+          
+          {/* Eyebrow Text: Always visible and responsive based on your image */}
+          <p
+            className={`text-xs font-bold uppercase tracking-[0.18em] ${
+              navy ? "text-red-300" : "text-red-600"
+            }`}
+          >
+            {content?.benefitsEyebrow ?? "WHAT THIS MEANS FOR YOU"}
+          </p>
 
           {benefits.map(({ number, title, description, icon }) => {
             const Icon = benefitIcons[icon] || ShieldCheck;
@@ -121,7 +124,7 @@ export default function PurposeSection({ navy = false, content = null, alignBene
             return (
               <article
                 key={number}
-                className={`group flex min-w-0 gap-4 rounded-2xl border bg-white p-5 transition-all duration-300 hover:-translate-y-0.5 hover:border-red-200 hover:shadow-lg sm:gap-5 sm:p-6 ${
+                className={`group flex min-w-0 items-start gap-3 rounded-2xl border bg-white p-4 transition-all duration-300 hover:-translate-y-0.5 hover:border-red-200 hover:shadow-lg sm:gap-5 sm:p-6 ${
                   navy
                     ? "border-white/60 shadow-[0_18px_50px_rgba(0,0,0,0.2)]"
                     : "border-gray-100 shadow-[0_10px_30px_rgba(15,23,42,0.05)]"
@@ -129,7 +132,7 @@ export default function PurposeSection({ navy = false, content = null, alignBene
               >
                 <span
                   aria-hidden="true"
-                  className="pt-1 text-sm font-extrabold tracking-wider text-red-300"
+                  className="shrink-0 pt-1 text-sm font-extrabold tracking-wider text-red-300"
                 >
                   {number}
                 </span>
