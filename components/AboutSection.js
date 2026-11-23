@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, ShieldCheck, Trophy } from "lucide-react";
 
-export default function AboutSection() {
+export default function AboutSection({ imageFirst = false }) {
   return (
     <section
       id="about"
@@ -16,7 +16,7 @@ export default function AboutSection() {
       <div className="pointer-events-none absolute -bottom-48 right-0 h-96 w-96 rounded-full bg-red-50 blur-3xl" />
 
       <div className="relative z-10 mx-auto grid max-w-7xl items-center gap-12 px-4 sm:px-6 lg:grid-cols-[0.95fr_1.05fr] lg:gap-16 lg:px-8">
-        <div className="max-w-2xl">
+        <div className={`max-w-2xl ${imageFirst ? "order-2" : ""}`}>
           <div className="mb-7 inline-flex items-center gap-2 rounded-full border border-red-100 bg-white px-4 py-2 text-xs font-bold uppercase tracking-[0.15em] text-red-600 shadow-sm">
             <ShieldCheck className="h-4 w-4" aria-hidden="true" />
             <span>About ACE Certification</span>
@@ -81,7 +81,7 @@ export default function AboutSection() {
           </Link>
         </div>
 
-        <div className="relative mx-auto w-full max-w-2xl pb-10 pr-7 sm:pb-12 sm:pr-10">
+        <div className={`relative mx-auto w-full max-w-2xl pb-10 pr-7 sm:pb-12 sm:pr-10 ${imageFirst ? "order-1" : ""}`}>
           <div className="group relative aspect-[4/3] overflow-hidden rounded-[2rem] border border-white shadow-2xl shadow-slate-900/15">
             <Image
               src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=1400&q=85"

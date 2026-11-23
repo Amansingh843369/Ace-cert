@@ -55,6 +55,7 @@ export default async function AboutPage() {
       </section>
 
       <AboutSection
+        imageFirst
         showActions={false}
         showVideoButton
         foregroundImage="/about-page-video-team.png"
