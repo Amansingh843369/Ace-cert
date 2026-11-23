@@ -5,36 +5,100 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, ShieldCheck, Trophy } from "lucide-react";
 
-export default function AboutSection({ imageFirst = false }) {
+export default function AboutSection({
+  imageSrc = "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=1000&q=85",
+  imageAlt = "Professionals collaborating on quality and compliance",
+  overlayImageSrc = "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=85",
+  overlayImageAlt = "A team working together",
+  eyebrowText = "About ACE Certification",
+  showAcronymHighlights = true,
+  showStoryLink = true,
+  showTrustCard = true,
+  justifyText = false,
+  compactTopPadding = false,
+  emphasizeImage = false,
+}) {
   return (
     <section
       id="about"
       aria-label="About ACE Certification Services"
-      className="relative overflow-hidden bg-gradient-to-br from-white via-red-50/40 to-white py-16 font-sans sm:py-20 lg:py-24"
+      className={`relative overflow-hidden bg-slate-50 font-sans ${
+        compactTopPadding
+          ? "pt-8 pb-20 sm:pt-12 sm:pb-28 lg:pt-16 lg:pb-32"
+          : "py-20 sm:py-28 lg:py-32"
+      }`}
     >
-      <div className="pointer-events-none absolute -left-40 top-10 h-96 w-96 rounded-full bg-red-100/40 blur-3xl" />
-      <div className="pointer-events-none absolute -bottom-48 right-0 h-96 w-96 rounded-full bg-red-50 blur-3xl" />
+      {/* Premium Background Blurs */}
+      <div className="pointer-events-none absolute -left-40 top-20 h-[500px] w-[500px] rounded-full bg-red-100/40 blur-[100px]" />
+      <div className="pointer-events-none absolute -bottom-48 right-0 h-[400px] w-[400px] rounded-full bg-red-200/20 blur-[100px]" />
 
-      <div className="relative z-10 mx-auto grid max-w-7xl items-center gap-12 px-4 sm:px-6 lg:grid-cols-[0.95fr_1.05fr] lg:gap-16 lg:px-8">
-        <div className={`max-w-2xl ${imageFirst ? "order-2" : ""}`}>
-          <div className="mb-7 inline-flex items-center gap-2 rounded-full border border-red-100 bg-white px-4 py-2 text-xs font-bold uppercase tracking-[0.15em] text-red-600 shadow-sm">
+      <div className={`relative z-10 mx-auto grid max-w-7xl items-center gap-16 px-4 sm:px-6 lg:gap-20 lg:px-8 ${emphasizeImage ? "lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)]" : "lg:grid-cols-2"}`}>
+        
+        {/* LEFT COLUMN: IMAGE COMPOSITION (Based on your sketch) */}
+        <div className="relative w-full max-w-lg mx-auto lg:mx-0 lg:max-w-none">
+          <div className={`relative w-full ${emphasizeImage ? "pr-10 sm:pr-16" : "pb-12 pr-12 sm:pb-20 sm:pr-20"}`}>
+            
+            {/* Main Image */}
+            <div className={`relative overflow-hidden rounded-[2rem] shadow-2xl shadow-slate-900/15 ${
+              `aspect-[3/4] ${emphasizeImage ? "w-[90%]" : "w-[85%]"}`
+            }`}>
+              <Image
+                src={imageSrc}
+                alt={imageAlt}
+                fill
+                sizes="(max-width: 1024px) 85vw, 500px"
+                className="object-cover transition-transform duration-700 hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent" />
+            </div>
+
+            {/* Front Overlapping Image (Wide/Landscape) */}
+            <div className={`absolute right-0 overflow-hidden rounded-3xl border-[8px] border-slate-50 bg-white shadow-2xl ${
+              emphasizeImage
+                ? "top-1/2 w-[58%] -translate-y-1/2"
+                : "bottom-0 w-[70%]"
+            }`}>
+              <div className={`relative w-full ${emphasizeImage ? "aspect-[16/10]" : "aspect-[4/3]"}`}>
+                <Image
+                  src={overlayImageSrc}
+                  alt={overlayImageAlt}
+                  fill
+                  sizes="(max-width: 1024px) 70vw, 400px"
+                  className="object-cover transition-transform duration-700 hover:scale-105"
+                />
+              </div>
+            </div>
+
+            {showTrustCard && (
+              <div className="absolute top-10 -left-6 flex items-center gap-3 rounded-2xl border border-white/60 bg-white/90 p-4 shadow-xl backdrop-blur-md sm:top-16 sm:-left-8 sm:p-5">
+                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-red-50 text-red-600">
+                  <Trophy className="h-6 w-6" aria-hidden="true" />
+                </div>
+                <div className="pr-2 hidden sm:block">
+                  <p className="text-base font-extrabold text-slate-900">Trusted worldwide</p>
+                  <p className="text-sm font-medium text-slate-500">Quality & Excellence</p>
+                </div>
+              </div>
+            )}
+
+          </div>
+        </div>
+
+        {/* RIGHT COLUMN: TEXT CONTENT */}
+        <div className="max-w-2xl">
+          <div className="mb-6 inline-flex items-center gap-2.5 rounded-full border border-red-200 bg-red-50/50 px-4 py-2 text-xs font-bold uppercase tracking-widest text-red-600 backdrop-blur-sm">
             <ShieldCheck className="h-4 w-4" aria-hidden="true" />
-            <span>About ACE Certification</span>
+            <span>{eyebrowText}</span>
           </div>
 
-          <div className="mb-4 flex items-center gap-3">
-            <span className="h-px w-9 bg-red-600" />
-            <span className="text-sm font-semibold text-slate-500">Our story</span>
-          </div>
-
-          <h2 className="text-4xl font-extrabold leading-[1.08] tracking-tight text-slate-900 sm:text-5xl lg:text-6xl">
+          <h2 className="text-4xl font-extrabold leading-[1.1] tracking-tight text-slate-900 sm:text-5xl lg:text-6xl">
             Built on Trust.
-            <span className="mt-1 block bg-gradient-to-r from-red-600 to-red-500 bg-clip-text text-transparent">
+            <span className="mt-2 block bg-gradient-to-r from-red-600 to-red-400 bg-clip-text text-transparent">
               Driven by Excellence.
             </span>
           </h2>
 
-          <div className="mt-6 space-y-4 text-base leading-7 text-slate-600 sm:text-lg sm:leading-8">
+          <div className={`mt-8 space-y-5 text-base leading-relaxed text-slate-600 sm:text-lg sm:leading-loose ${justifyText ? "text-justify" : ""}`}>
             <p>
               <strong className="font-semibold text-slate-900">ACE Certification Ltd.</strong> is a
               dedicated, client-centric professional services firm helping organizations of all sizes
@@ -51,77 +115,43 @@ export default function AboutSection({ imageFirst = false }) {
             </p>
           </div>
 
-          <div className="mt-8 flex flex-wrap gap-3">
+          {/* ACE Acronym Highlights */}
+          {showAcronymHighlights && (
+            <div className="mt-10 flex flex-wrap items-center gap-4 rounded-2xl border border-slate-200 bg-white p-4 shadow-sm sm:gap-6 sm:p-5">
             {[
               ["A", "Achieve"],
               ["C", "Compliance"],
               ["E", "Excellence"],
-            ].map(([letter, label]) => (
-              <div
-                key={letter}
-                className="inline-flex items-center gap-2 rounded-xl border border-red-100 bg-white/80 px-3 py-2 shadow-sm"
-              >
-                <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-red-600 text-xs font-extrabold text-white">
-                  {letter}
-                </span>
-                <span className="text-sm font-semibold text-slate-700">{label}</span>
-              </div>
+            ].map(([letter, label], index) => (
+              <React.Fragment key={letter}>
+                <div className="flex items-center gap-3">
+                  <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-red-50 text-base font-extrabold text-red-600">
+                    {letter}
+                  </span>
+                  <span className="text-sm font-bold text-slate-700 sm:text-base">{label}</span>
+                </div>
+                {index !== 2 && (
+                  <div className="hidden h-5 w-px bg-slate-200 sm:block" aria-hidden="true" />
+                )}
+              </React.Fragment>
             ))}
-          </div>
+            </div>
+          )}
 
-          <Link
-            href="/about"
-            className="group mt-8 inline-flex items-center gap-2 rounded-full bg-red-600 px-6 py-3.5 text-sm font-bold text-white shadow-lg shadow-red-600/20 transition hover:-translate-y-0.5 hover:bg-red-700 hover:shadow-xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600"
-          >
-            Discover our story
-            <ArrowRight
-              className="h-4 w-4 transition-transform group-hover:translate-x-1"
-              aria-hidden="true"
-            />
-          </Link>
+          {showStoryLink && (
+            <Link
+              href="/about"
+              className="group mt-10 inline-flex items-center gap-3 rounded-full bg-red-600 px-8 py-4 text-sm font-bold text-white shadow-lg shadow-red-600/25 transition-all hover:-translate-y-1 hover:bg-red-700 hover:shadow-xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600"
+            >
+              Discover our story
+              <ArrowRight
+                className="h-4 w-4 transition-transform group-hover:translate-x-1.5"
+                aria-hidden="true"
+              />
+            </Link>
+          )}
         </div>
 
-        <div className={`relative mx-auto w-full max-w-2xl pb-10 pr-7 sm:pb-12 sm:pr-10 ${imageFirst ? "order-1" : ""}`}>
-          <div className="group relative aspect-[4/3] overflow-hidden rounded-[2rem] border border-white shadow-2xl shadow-slate-900/15">
-            <Image
-              src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=1400&q=85"
-              alt="Professionals collaborating on quality and compliance"
-              fill
-              sizes="(max-width: 1024px) 100vw, 600px"
-              className="object-cover transition-transform duration-700 group-hover:scale-105"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent" />
-            <div className="absolute bottom-5 left-5 text-white sm:bottom-7 sm:left-7">
-              <p className="text-xs font-semibold uppercase tracking-[0.16em] text-white/75">
-                Practical expertise
-              </p>
-              <p className="mt-1 text-lg font-bold sm:text-xl">
-                Standards that move business forward
-              </p>
-            </div>
-          </div>
-
-          <div className="absolute bottom-0 right-0 w-[38%] overflow-hidden rounded-2xl border-4 border-white shadow-xl sm:rounded-3xl">
-            <Image
-              src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=700&q=85"
-              alt="A team working together"
-              width={700}
-              height={525}
-              sizes="(max-width: 640px) 38vw, 240px"
-              className="aspect-[4/3] h-full w-full object-cover"
-            />
-          </div>
-
-          <div className="absolute right-0 top-5 flex items-center gap-3 rounded-2xl border border-white/80 bg-white/95 px-4 py-3 shadow-lg backdrop-blur sm:right-2 sm:top-8 sm:px-5">
-            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-red-50 text-red-600">
-              <Trophy className="h-5 w-5" aria-hidden="true" />
-            </div>
-            <div>
-              <p className="text-sm font-bold text-slate-900">Trusted worldwide</p>
-              <p className="text-xs text-slate-500">Quality. Safety. Excellence.</p>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   );

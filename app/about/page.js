@@ -56,9 +56,19 @@ export default async function AboutPage() {
 
       <AboutSection
         imageFirst
+        eyebrowText="Our Story"
+        showAcronymHighlights={false}
+        showStoryLink={false}
+        showTrustCard={false}
+        justifyText
+        compactTopPadding
+        emphasizeImage
         showActions={false}
         showVideoButton
-        foregroundImage="/about-page-video-team.png"
+        imageSrc="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1400&q=85"
+        imageAlt="Corporate professionals discussing a project around a meeting table"
+        overlayImageSrc="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=800&q=85"
+        overlayImageAlt="Corporate team collaborating during a strategy meeting"
         content={story}
       />
 
