@@ -47,6 +47,7 @@ export default async function BlogSection({ content = {}, showFilters = false })
 
   return (
     <section 
+      id={showFilters ? "blog-articles" : undefined}
       className="py-12 md:py-16 bg-slate-50 font-sans antialiased border-t border-slate-200"
       aria-labelledby="blog-title"
     >
