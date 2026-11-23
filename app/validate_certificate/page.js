@@ -77,57 +77,67 @@ export default function CertificateVerificationPage() {
   };
 
   const inputClassName =
-    'min-h-16 w-full rounded-xl border border-white/10 bg-white px-5 py-4 text-base text-[#0B1739] shadow-sm outline-none transition placeholder:text-slate-500 focus:border-red-400 focus:ring-4 focus:ring-red-500/20 sm:text-lg';
+    'min-h-16 w-full rounded-xl border border-slate-200 bg-white px-5 py-4 text-base text-[#0B1739] shadow-sm outline-none transition placeholder:text-slate-500 focus:border-red-600 focus:ring-4 focus:ring-red-600/10 sm:text-lg';
 
   return (
-    <main className="min-h-screen bg-[#F5F7FA] pb-16 font-sans text-[#0B1739]">
+    <main className="min-h-screen bg-white pb-16 font-sans text-[#0B1739]">
       <section
         aria-labelledby="certificate-title"
-        className="relative isolate overflow-hidden bg-[#101827] text-white"
+        className="relative isolate overflow-hidden bg-gradient-to-br from-rose-50 via-white to-rose-50 text-[#0B1739]"
       >
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute -right-36 -top-56 h-[34rem] w-[34rem] rounded-full border-[60px] border-white/[0.04] sm:-right-20"
+          className="pointer-events-none absolute -right-36 -top-56 h-[34rem] w-[34rem] rounded-full border-[60px] border-red-600/[0.06] sm:-right-20"
         />
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute -bottom-40 -left-32 h-96 w-96 rounded-full bg-red-600/20 blur-3xl"
+          className="pointer-events-none absolute -bottom-40 -left-32 h-96 w-96 rounded-full bg-red-600/10 blur-3xl"
+        />
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute right-[14%] top-12 h-52 w-52 rounded-full bg-[#0B1739]/[0.04] blur-3xl"
         />
 
         <div className="relative mx-auto max-w-7xl px-4 py-10 sm:px-6 sm:py-14 lg:px-8 lg:py-16">
-          <div className="flex items-center justify-center gap-3 text-center">
-            <BadgeCheck
-              aria-hidden="true"
-              className="h-8 w-8 shrink-0 text-white sm:h-10 sm:w-10"
-              strokeWidth={2.5}
-            />
-            <h1
-              id="certificate-title"
-              className="text-3xl font-extrabold tracking-tight sm:text-4xl md:text-5xl"
-            >
-              Find Certificate
-            </h1>
+          <div className="mx-auto max-w-3xl text-center">
+            <p className="mb-4 inline-flex items-center gap-2 rounded-full border border-red-100 bg-white px-4 py-2 text-xs font-bold uppercase tracking-[0.16em] text-red-700 shadow-sm sm:text-sm">
+              <ShieldCheck aria-hidden="true" className="h-4 w-4 text-[#0B1739]" />
+              Certificate verification
+            </p>
+            <div className="flex items-center justify-center gap-3">
+              <BadgeCheck
+                aria-hidden="true"
+                className="h-8 w-8 shrink-0 text-red-600 sm:h-10 sm:w-10"
+                strokeWidth={2.5}
+              />
+              <h1
+                id="certificate-title"
+                className="text-3xl font-extrabold tracking-tight text-[#0B1739] sm:text-4xl md:text-5xl"
+              >
+                Verify Your <span className="text-red-600">Certificate</span>
+              </h1>
+            </div>
+            <p className="mx-auto mt-4 max-w-2xl text-sm leading-6 text-slate-600 sm:text-base">
+              Check an ACE-CERT record using the company name, registered email,
+              and certificate number.
+            </p>
           </div>
-          <p className="mx-auto mt-4 max-w-2xl text-center text-sm leading-6 text-slate-300 sm:text-base">
-            Verify an ACE-CERT record using the company name, registered email,
-            and certificate number.
-          </p>
 
           <form
             onSubmit={handleSubmit}
-            className="mx-auto mt-8 grid max-w-6xl grid-cols-1 gap-x-8 gap-y-5 sm:mt-10 sm:grid-cols-2 sm:gap-y-6"
+            className="mx-auto mt-8 grid max-w-6xl grid-cols-1 gap-x-8 gap-y-5 rounded-3xl border border-red-100 bg-white p-5 shadow-[0_24px_70px_-35px_rgba(11,23,57,0.28)] sm:mt-10 sm:grid-cols-2 sm:gap-y-6 sm:p-8 lg:p-10"
           >
             <div>
               <label
                 htmlFor="companyName"
-                className="mb-2 block text-base font-semibold text-white sm:text-lg"
+                className="mb-2 block text-base font-semibold text-[#0B1739] sm:text-lg"
               >
-                Company Name <span className="text-red-300">*</span>
+                Company Name <span className="text-red-600">*</span>
               </label>
               <div className="relative">
                 <Building2
                   aria-hidden="true"
-                  className="pointer-events-none absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-slate-500"
+                  className="pointer-events-none absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-red-600"
                 />
                 <input
                   autoComplete="organization"
@@ -139,7 +149,7 @@ export default function CertificateVerificationPage() {
                   onChange={(event) =>
                     updateField('companyName', event.target.value)
                   }
-                  placeholder="Enter company name as registered"
+                  placeholder="Registered company name"
                   required
                   value={form.companyName}
                 />
@@ -149,14 +159,14 @@ export default function CertificateVerificationPage() {
             <div>
               <label
                 htmlFor="registeredEmail"
-                className="mb-2 block text-base font-semibold text-white sm:text-lg"
+                className="mb-2 block text-base font-semibold text-[#0B1739] sm:text-lg"
               >
-                Registered Email <span className="text-red-300">*</span>
+                Registered Email <span className="text-red-600">*</span>
               </label>
               <div className="relative">
                 <Mail
                   aria-hidden="true"
-                  className="pointer-events-none absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-slate-500"
+                  className="pointer-events-none absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-red-600"
                 />
                 <input
                   autoComplete="email"
@@ -168,7 +178,7 @@ export default function CertificateVerificationPage() {
                   onChange={(event) =>
                     updateField('registeredEmail', event.target.value)
                   }
-                  placeholder="Enter the email registered with ACE-CERT"
+                  placeholder="Registered email address"
                   required
                   type="email"
                   value={form.registeredEmail}
@@ -179,14 +189,14 @@ export default function CertificateVerificationPage() {
             <div className="sm:col-span-2">
               <label
                 htmlFor="certificateNumber"
-                className="mb-2 block text-base font-semibold text-white sm:text-lg"
+                className="mb-2 block text-base font-semibold text-[#0B1739] sm:text-lg"
               >
-                Certificate Number <span className="text-red-300">*</span>
+                Certificate Number <span className="text-red-600">*</span>
               </label>
               <div className="relative">
                 <Hash
                   aria-hidden="true"
-                  className="pointer-events-none absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-slate-500"
+                  className="pointer-events-none absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-red-600"
                 />
                 <input
                   autoComplete="off"
@@ -198,7 +208,7 @@ export default function CertificateVerificationPage() {
                   onChange={(event) =>
                     updateField('certificateNumber', event.target.value)
                   }
-                  placeholder="Enter certificate number (e.g. QMS 260703 00087)"
+                  placeholder="e.g. QMS 260703 00087"
                   required
                   value={form.certificateNumber}
                 />
@@ -206,7 +216,7 @@ export default function CertificateVerificationPage() {
             </div>
 
             <button
-              className="inline-flex min-h-16 items-center justify-center gap-3 rounded-xl bg-white px-6 py-4 text-base font-extrabold uppercase tracking-wide text-[#0B1739] shadow-lg transition hover:bg-slate-100 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-red-400/60 disabled:cursor-wait disabled:opacity-70 sm:col-span-2 sm:text-lg"
+              className="inline-flex min-h-16 items-center justify-center gap-3 rounded-xl bg-red-600 px-6 py-4 text-base font-extrabold uppercase tracking-wide text-white shadow-[0_12px_30px_-12px_rgba(220,38,38,0.65)] transition hover:bg-red-700 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-red-600/30 disabled:cursor-wait disabled:opacity-70 sm:col-span-2 sm:text-lg"
               disabled={loading}
               type="submit"
             >
