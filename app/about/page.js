@@ -62,7 +62,7 @@ export default async function AboutPage() {
       />
 
 {/* ================= ABOUT US CONTENT SECTION ================= */}
-   <section className="relative overflow-hidden bg-gradient-to-b from-white via-gray-50 to-white px-4 py-10 sm:px-6 sm:py-14 lg:px-12 lg:py-16 font-sans text-gray-800">
+   <section className="relative overflow-hidden bg-gradient-to-b from-white via-gray-50 to-white px-4 py-10 sm:px-6 sm:py-14 lg:px-12 lg:pt-16 lg:pb-10 font-sans text-gray-800">
       
       {/* Decorative Blobs */}
       <div className="pointer-events-none absolute -right-32 top-20 h-96 w-96 rounded-full bg-red-100/50 blur-3xl" />
@@ -76,10 +76,7 @@ export default async function AboutPage() {
           {/* Left: Mission Text */}
           <div className="order-2 lg:order-1 space-y-6">
             <div className="space-y-2">
-              <span className="text-sm font-semibold tracking-wider text-red-600 uppercase">
-                {mission.eyebrow}
-              </span>
-              <h2 className="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl md:text-5xl">
+              <h2 className="text-3xl font-extrabold tracking-tight text-red-600 sm:text-4xl md:text-5xl">
                 {mission.title}
               </h2>
             </div>
@@ -107,12 +104,12 @@ export default async function AboutPage() {
         {/* ================= 2. OUR VISION (Image Left, Text Right) ================= */}
         <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-2 lg:gap-12">
           
-          {/* Left: Vision Image Collage (MADE SMALLER & COMPACT) */}
+          {/* Left: Vision Image Collage */}
           <div className="relative mx-auto w-full max-w-sm lg:mx-0 lg:max-w-[420px]">
             <div className="grid grid-cols-2 gap-3 sm:gap-4">
               
-              {/* Tall Image */}
-              <div className="relative aspect-[3/4] w-full overflow-hidden rounded-[1.5rem] rounded-tr-none shadow-xl">
+              {/* Tall image fills the same height as the two stacked images */}
+              <div className="relative row-span-2 h-full min-h-0 w-full overflow-hidden rounded-[1.5rem] rounded-tr-none shadow-xl">
                 <Image
                   src="https://images.unsplash.com/photo-1573164574572-cb89e39749b4?auto=format&fit=crop&w=600&q=85"
                   alt={vision.tallImageAlt}
@@ -152,10 +149,7 @@ export default async function AboutPage() {
           {/* Right: Vision Text */}
           <div className="space-y-4">
             <div className="space-y-2">
-              <span className="text-sm font-semibold tracking-wider text-red-600 uppercase">
-                {vision.eyebrow}
-              </span>
-              <h2 className="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl md:text-5xl">
+              <h2 className="text-3xl font-extrabold tracking-tight text-red-600 sm:text-4xl md:text-5xl">
                 {vision.title}
               </h2>
             </div>
@@ -172,7 +166,7 @@ export default async function AboutPage() {
       </div>
     </section>
 {/* ================= CORE VALUES SECTION ================= */}
-      <section className="relative overflow-hidden bg-white px-4  sm:px-6 sm:py-20 lg:px-12">
+      <section className="relative overflow-hidden bg-white px-4 sm:px-6 sm:pt-16 sm:pb-20 lg:px-12">
         <div className="pointer-events-none absolute -left-40 top-20 h-96 w-96 rounded-full bg-red-100/50 blur-3xl" />
         <div className="pointer-events-none absolute -right-40 bottom-0 h-96 w-96 rounded-full bg-blue-100/60 blur-3xl" />
 
