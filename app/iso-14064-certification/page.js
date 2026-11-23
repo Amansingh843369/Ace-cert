@@ -1,6 +1,8 @@
 'use client';
 
 import CertificationImportanceSection from '../../components/CertificationImportanceSection';
+import CertificationHeroTitle from '../../components/CertificationHeroTitle';
+import { useCertificationContent } from '../../lib/sanity/useCertificationContent';
 
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
@@ -43,12 +45,7 @@ const PRINCIPLES = [
   { id: '07', title: 'Verification', desc: 'Ensuring data is credible through independent assessment.', icon: Recycle },
 ];
 
-const INDUSTRIES = [
-  'Manufacturing Units', 'Energy & Power Plants', 'Oil & Gas Sector',
-  'Transportation & Logistics', 'Construction Companies', 'Agriculture',
-  'Waste Management', 'Corporate Offices', 'Aviation Industry',
-  'Chemical Industries', 'Public Sector Organizations',
-];
+
 
 const BENEFIT_CARDS = [
   {
@@ -93,6 +90,7 @@ function SectionHeading({ children, highlight, className = '' }) {
 /* ---------- Main Component ---------- */
 export default function IsoCertificationLayout() {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const certification = useCertificationContent();
 
   useEffect(() => {
     if (!isModalOpen) return;
@@ -130,20 +128,20 @@ export default function IsoCertificationLayout() {
                   <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-red-500 opacity-40" />
                   <span className="relative inline-flex h-full w-full rounded-full bg-[#E30613]" />
                 </span>
-                Global Carbon Standard
+                {certification?.heroBadge || "Global Carbon Standard"}
               </div>
 
               <h1
                 id="hero-title"
                 className="mb-4 text-balance text-[2rem] font-extrabold leading-[1.1] tracking-[-0.03em] text-[#111827] xs:text-4xl sm:text-5xl md:text-6xl lg:text-5xl lg:whitespace-nowrap xl:text-[3.5rem]"
-              >
+              >{certification?.heroTitle ? <CertificationHeroTitle title={certification.heroTitle} highlightClass="text-[#E30613]" /> : <>
                 ISO 14064 <span className="text-[#E30613]">Certification</span>
-              </h1>
+              </>}</h1>
 
-              <p className="max-w-2xl text-pretty text-sm font-medium leading-relaxed text-[#526581] sm:text-base md:text-lg lg:text-xl">
+              <p className="max-w-2xl text-pretty text-sm font-medium leading-relaxed text-[#526581] sm:text-base md:text-lg lg:text-xl">{certification?.heroDescription || <>
                 Quantify, monitor, and report your greenhouse gas emissions with the
                 international standard for carbon accounting.
-              </p>
+              </>}</p>
             </div>
 
             {/* Hero card */}
@@ -156,8 +154,8 @@ export default function IsoCertificationLayout() {
               <div className="w-full shrink-0 lg:w-[44%]">
                 <figure className="relative aspect-square w-full overflow-hidden rounded-2xl bg-red-50 ring-1 ring-black/5 lg:h-full">
                   <Image
-                    src="/certifications/14064.png"
-                    alt="ISO 14064 certification artwork"
+                    src={certification?.heroImageUrl || "/certifications/14064.png"}
+                    alt={certification?.heroImageAlt || "ISO 14064 certification artwork"}
                     fill
                     priority
                     sizes="(max-width: 1024px) 100vw, 480px"
@@ -176,13 +174,13 @@ export default function IsoCertificationLayout() {
 
               {/* Content */}
               <div className="flex w-full flex-col justify-center lg:justify-between gap-4 text-left sm:gap-5 lg:w-[56%] lg:gap-6">
-                <h3 className="relative inline-block text-xl font-bold tracking-tight text-[#111827] sm:text-2xl md:text-3xl lg:text-4xl">
+                <h3 className="relative inline-block text-xl font-bold tracking-tight text-[#111827] sm:text-2xl md:text-3xl lg:text-4xl">{certification?.introTitle || <>
                   What is ISO 14064?
-                  <span aria-hidden="true" className="absolute -bottom-2 left-0 h-1 w-12 rounded-full bg-[#E30613] sm:-bottom-3 sm:w-14" />
+                  </>}<span aria-hidden="true" className="absolute -bottom-2 left-0 h-1 w-12 rounded-full bg-[#E30613] sm:-bottom-3 sm:w-14" />
                 </h3>
 
                 <div className="space-y-3 pt-2 text-sm leading-7 text-[#526581] sm:text-base sm:leading-8 md:text-[17px] text-justify">
-                  <p>
+                  <p>{certification?.introParagraphs?.[0] || <>
                     ISO 14064 is an internationally recognized standard that provides
                     principles and requirements for{' '}
                     <strong className="font-semibold text-[#111827]">
@@ -192,12 +190,12 @@ export default function IsoCertificationLayout() {
                     . It helps organizations establish credible carbon accounting
                     practices and demonstrate their commitment to climate action and
                     environmental sustainability.
-                  </p>
-                  <p>
+                  </>}</p>
+                  <p>{certification?.introParagraphs?.[1] || <>
                     The standard is published by the International Organization for
                     Standardization and is applicable to organizations of all sizes and
                     sectors seeking to measure, manage, and reduce their carbon footprint.
-                  </p>
+                  </>}</p>
                 </div>
 
                 <div className="mt-2 flex justify-start">
@@ -206,7 +204,7 @@ export default function IsoCertificationLayout() {
                     type="button"
                     className="group relative inline-flex w-full items-center justify-center gap-2 rounded-xl bg-[#E30613] px-6 py-3.5 text-sm font-bold text-white shadow-[0_8px_22px_rgba(227,6,19,0.2)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-red-800 hover:shadow-[0_12px_28px_rgba(227,6,19,0.26)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-700 focus-visible:ring-offset-2 active:translate-y-0 sm:w-auto sm:px-7 sm:text-base"
                   >
-                    <span>Get Certified Today</span>
+                    <span>{certification?.enquireLabel || "Get Certified Today"}</span>
                     <svg
                       className="h-5 w-5 -mr-1 transition-transform group-hover:translate-x-1"
                       fill="none" stroke="currentColor" viewBox="0 0 24 24"
@@ -225,6 +223,7 @@ export default function IsoCertificationLayout() {
           <CertificationImportanceSection
             id="importance-title"
             title="ISO 14064"
+            certification={certification}
             description={
               <>
                 Implementing ISO 14064 helps organizations accurately track their
@@ -342,38 +341,8 @@ export default function IsoCertificationLayout() {
             </div>
           </section>
 
-          {/* =====================================================
-              SECTION 5 — WHO CAN IMPLEMENT
-             ===================================================== */}
-          <section aria-labelledby="who-title" className="relative overflow-hidden rounded-3xl border border-red-100 bg-gradient-to-br from-white via-white to-red-50/70 p-6 shadow-[0_16px_50px_rgba(17,24,39,0.06)] sm:rounded-[2rem] sm:p-9 md:p-12 lg:rounded-[2.5rem] lg:p-16">
-            <div aria-hidden="true" className="pointer-events-none absolute -right-24 -top-28 h-80 w-80 rounded-full bg-red-100/60 blur-[90px]" />
-            <div aria-hidden="true" className="pointer-events-none absolute -bottom-32 -left-20 h-72 w-72 rounded-full bg-rose-100/50 blur-[90px]" />
 
-            <div className="relative z-10 mx-auto mb-8 max-w-2xl text-center sm:mb-10 md:mb-12">
-              <SectionBadge>Scope</SectionBadge>
-              <h2
-                id="who-title"
-                className="mt-4 text-balance text-2xl font-extrabold leading-tight tracking-tight text-[#111827] sm:text-3xl md:text-4xl lg:text-5xl"
-              >
-                Who Can Implement It?
-              </h2>
-              <p className="mx-auto mt-3 max-w-xl px-2 text-sm leading-7 text-[#526581] sm:mt-4 sm:text-base md:text-lg text-center">
-                ISO 14064 is versatile and can be adopted by any organization looking to
-                quantify and manage their GHG emissions — regardless of industry or size.
-              </p>
-            </div>
 
-            <div className="relative z-10 mx-auto flex max-w-5xl flex-wrap justify-center gap-2 sm:gap-2.5 md:gap-3">
-              {INDUSTRIES.map((industry) => (
-                <span
-                  key={industry}
-                  className="rounded-lg border border-red-100 bg-white/90 px-3 py-1.5 text-[11px] font-semibold text-slate-700 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-red-300 hover:bg-white hover:text-red-800 hover:shadow-md sm:rounded-xl sm:px-4 sm:py-2 sm:text-xs md:px-5 md:py-2.5 md:text-sm lg:text-base"
-                >
-                  {industry}
-                </span>
-              ))}
-            </div>
-          </section>
 
         </div>
       </div>

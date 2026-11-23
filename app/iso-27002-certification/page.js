@@ -1,6 +1,8 @@
  'use client';
 
 import CertificationImportanceSection from '../../components/CertificationImportanceSection';
+import CertificationHeroTitle from '../../components/CertificationHeroTitle';
+import { mergeCertificationPillars, useCertificationContent } from '../../lib/sanity/useCertificationContent';
 
 import React, { useState } from 'react';
 import Image from 'next/image';
@@ -24,6 +26,7 @@ import {
 
 export default function Iso27002Layout() {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const certification = useCertificationContent();
 
   // Data Arrays - Updated for ISO 27002 (Information Security Controls) with RED Theme
   const benefitsList = [
@@ -49,12 +52,7 @@ export default function Iso27002Layout() {
     { id: "07", title: "Access Control", desc: "Limiting access to information and information processing facilities to authorized users.", icon: UsersRound },
   ];
 
-  const industries = [
-    "Banking & Finance", "Healthcare Services", "IT & Telecommunications",
-    "Manufacturing", "Energy & Utilities", "Government Agencies",
-    "Transportation", "Retail & E-commerce", "Education Institutions",
-    "Hospitality", "Construction"
-  ];
+
 
   return (
     <main className="relative min-h-screen overflow-hidden bg-[#fffdfd] font-sans text-slate-900 selection:bg-red-200 selection:text-red-900">
@@ -74,16 +72,16 @@ export default function Iso27002Layout() {
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-red-500 opacity-40"></span>
                 <span className="relative inline-flex h-full w-full rounded-full bg-[#E30613]"></span>
               </span>
-              Information Security Guidelines
+              {certification?.heroBadge || "Information Security Guidelines"}
             </div>
 
-            <h1 id="iso27002-title" className="mb-4 max-w-4xl text-balance text-4xl font-extrabold leading-[1.08] tracking-[-0.045em] text-[#111827] sm:text-5xl md:text-6xl lg:text-[4.25rem]">
+            <h1 id="iso27002-title" className="mb-4 max-w-4xl text-balance text-4xl font-extrabold leading-[1.08] tracking-[-0.045em] text-[#111827] sm:text-5xl md:text-6xl lg:text-[4.25rem]">{certification?.heroTitle ? <CertificationHeroTitle title={certification.heroTitle} highlightClass="text-[#E30613]" /> : <>
               ISO 27002 <span className="text-[#E30613]">Certification</span>
-            </h1>
+            </>}</h1>
 
-            <h2 className="max-w-2xl px-2 text-pretty text-base font-medium leading-relaxed text-[#526581] sm:text-lg md:text-xl">
+            <h2 className="max-w-2xl px-2 text-pretty text-base font-medium leading-relaxed text-[#526581] sm:text-lg md:text-xl">{certification?.heroDescription || <>
               Best practices for implementing information security controls to protect your organization&apos;s critical assets.
-            </h2>
+            </>}</h2>
           </div>
 
           <article className="relative flex flex-col items-center gap-7 overflow-hidden rounded-[1.75rem] border border-red-100/90 bg-white/95 p-5 shadow-[0_18px_60px_rgba(17,24,39,0.07)] sm:rounded-[2rem] sm:p-7 md:gap-10 md:p-9 lg:flex-row lg:items-stretch lg:gap-12 lg:rounded-[2.25rem] lg:p-11">
@@ -93,8 +91,8 @@ export default function Iso27002Layout() {
               <figure className="relative aspect-square w-full max-w-[520px] overflow-hidden rounded-2xl bg-red-50 ring-1 ring-black/5 sm:rounded-[1.5rem] lg:h-full">
                 {/* IMAGE 1: Cybersecurity / Info Sec Concept */}
                 <Image
-                  src="/certifications/27002.png"
-                  alt="ISO 27002 certification artwork"
+                  src={certification?.heroImageUrl || "/certifications/27002.png"}
+                  alt={certification?.heroImageAlt || "ISO 27002 certification artwork"}
                   fill
                   priority
                   sizes="(max-width: 1024px) 100vw, 520px"
@@ -108,19 +106,19 @@ export default function Iso27002Layout() {
             </div>
 
             <div className="order-2 flex w-full flex-col justify-center lg:justify-between gap-4 text-center sm:gap-5 lg:w-[54%] lg:gap-6 lg:text-left">
-              <h3 id="iso27002-introduction" className="relative mx-auto inline-block text-2xl font-bold tracking-tight text-[#111827] sm:text-3xl md:text-[2rem] lg:mx-0 lg:text-4xl">
+              <h3 id="iso27002-introduction" className="relative mx-auto inline-block text-2xl font-bold tracking-tight text-[#111827] sm:text-3xl md:text-[2rem] lg:mx-0 lg:text-4xl">{certification?.introTitle || <>
                 What is ISO 27002?
-                <span aria-hidden="true" className="absolute -bottom-3 left-1/2 h-1 w-14 -translate-x-1/2 rounded-full bg-[#E30613] lg:left-0 lg:translate-x-0" />
+                </>}<span aria-hidden="true" className="absolute -bottom-3 left-1/2 h-1 w-14 -translate-x-1/2 rounded-full bg-[#E30613] lg:left-0 lg:translate-x-0" />
               </h3>
 
               {/* TEXT JUSTIFY APPLIED HERE */}
               <div className="mt-2 space-y-4 text-sm leading-7 text-[#526581] sm:text-base md:text-[17px] md:leading-8 text-justify">
-                <p>
+                <p>{certification?.introParagraphs?.[0] || <>
                   ISO 27002 is an internationally recognized standard that provides guidelines and best practices for implementing <strong className="font-semibold text-[#111827]">information security controls</strong>. It supports organizations in selecting, implementing, and managing security measures to protect information assets and complement the requirements of ISO 27001.
-                </p>
-                <p>
+                </>}</p>
+                <p>{certification?.introParagraphs?.[1] || <>
                   The standard is published by the International Organization for Standardization and is applicable to organizations of all sizes and sectors seeking to strengthen their information security practices and manage cybersecurity risks effectively.
-                </p>
+                </>}</p>
               </div>
 
               {/* --- ENQUIRE BUTTON --- */}
@@ -145,6 +143,7 @@ export default function Iso27002Layout() {
         <CertificationImportanceSection
             id="iso27002-importance"
             title="ISO 27002"
+            certification={certification}
             description={
               <>
                 Implementing ISO 27002 helps organizations establish a robust framework for information security, ensuring that sensitive data is protected against evolving cyber threats and unauthorized access.
@@ -169,7 +168,7 @@ export default function Iso27002Layout() {
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-              {principles.map((principle, index) => (
+              {mergeCertificationPillars(certification?.pillars, principles).map((principle, index) => (
                 <article
                   key={index}
                   className={`group relative rounded-[2rem] border border-slate-100 bg-white p-8 shadow-[0_8px_30px_rgba(15,23,42,0.03)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_40px_rgba(127,29,29,0.08)] overflow-hidden ${index === 6 ? 'sm:col-span-2 lg:col-span-1' : ''}`}
@@ -267,35 +266,7 @@ export default function Iso27002Layout() {
             </div>
           </div>
 
-          {/* Sub-section 3: Who Can Implement? */}
-          <div className="relative overflow-hidden rounded-2xl border border-red-100 bg-gradient-to-br from-white via-white to-red-50/70 p-7 shadow-[0_16px_50px_rgba(17,24,39,0.06)] sm:rounded-[2rem] sm:p-9 md:p-12 lg:rounded-[2.5rem] lg:p-16">
-            <div aria-hidden="true" className="pointer-events-none absolute -right-24 -top-28 h-80 w-80 rounded-full bg-red-100/60 blur-[90px]" />
-            <div aria-hidden="true" className="pointer-events-none absolute -bottom-32 -left-20 h-72 w-72 rounded-full bg-rose-100/50 blur-[90px]" />
-
-            <div className="text-center max-w-2xl mx-auto mb-8 md:mb-12 relative z-10 flex flex-col items-center">
-              <h2 className="mb-3 text-2xl font-extrabold leading-tight tracking-tight text-[#111827] sm:text-3xl md:mb-4 md:text-4xl lg:text-5xl">
-                Who Should Use These Guidelines?
-              </h2>
-
-              {/* TEXT JUSTIFY APPLIED HERE */}
-              <p className="text-justify px-2 text-sm leading-7 text-[#526581] md:text-base lg:text-lg text-justify">
-                ISO 27002 is essential for any organization that handles sensitive information, from startups and SMEs to large enterprises and government bodies aiming to secure their digital infrastructure.
-              </p>
-            </div>
-
-            <div className="flex flex-wrap justify-center gap-2.5 md:gap-3 lg:gap-4 relative z-10 max-w-5xl mx-auto">
-              {industries.map((industry, index) => (
-                <span
-                  key={index}
-                  className="rounded-xl border border-red-100 bg-white/90 px-4 py-2 text-xs font-semibold text-slate-700 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-red-300 hover:bg-white hover:text-red-800 hover:shadow-md md:px-5 md:py-2.5 md:text-sm lg:text-base"
-                >
-                  {industry}
-                </span>
-              ))}
-            </div>
-          </div>
-
-        </section>
+          </section>
       </div>
 
       {/* --- MODAL POPUP FORM --- */}

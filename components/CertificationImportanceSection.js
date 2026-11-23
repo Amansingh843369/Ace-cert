@@ -1,3 +1,5 @@
+'use client';
+
 import Image from 'next/image';
 import { ArrowUpRight, CircleCheck } from 'lucide-react';
 
@@ -81,8 +83,16 @@ export default function CertificationImportanceSection({
   title,
   description,
   benefits,
+  certification,
 }) {
-  const image = certificationImages[title];
+  const content = certification;
+  const image = content?.heroImageUrl || certificationImages[title];
+  const sectionDescription =
+    content?.importanceDescription || description;
+  const sectionBenefits =
+    Array.isArray(content?.benefits) && content.benefits.length > 0
+      ? content.benefits
+      : benefits;
 
   if (!image) {
     throw new Error(`Missing certification image for "${title}"`);
@@ -103,12 +113,12 @@ export default function CertificationImportanceSection({
               Why is <span className="text-[#E30613]">{title}</span> Important?
             </h2>
             <p className="mt-4 text-sm leading-7 text-[#526581] sm:text-base sm:leading-8 md:text-lg">
-              {description}
+              {sectionDescription}
             </p>
           </div>
 
           <ol className="grid grid-cols-1 gap-3 sm:grid-cols-2 md:gap-4">
-            {benefits.map((benefit, index) => (
+            {sectionBenefits.map((benefit, index) => (
               <li
                 key={`${index}-${benefit}`}
                 className="group relative flex min-h-[96px] items-center gap-3 overflow-hidden rounded-2xl border border-slate-200/80 bg-white p-3.5 shadow-[0_4px_18px_rgba(15,23,42,0.04)] transition-all duration-300 hover:-translate-y-1 hover:border-red-200 hover:shadow-[0_14px_30px_rgba(127,29,29,0.10)] md:min-h-[112px] md:gap-4 md:p-4"
@@ -137,7 +147,7 @@ export default function CertificationImportanceSection({
         <figure className="relative min-h-[360px] overflow-hidden rounded-[1.75rem] bg-red-50 ring-1 ring-black/5 shadow-[0_16px_45px_rgba(17,24,39,0.10)] sm:min-h-[480px] lg:min-h-[620px] lg:rounded-[2rem]">
           <Image
             src={image}
-            alt={`${title} certification`}
+            alt={content?.heroImageAlt || `${title} certification`}
             fill
             sizes="(max-width: 1024px) 100vw, 40vw"
             className="object-cover"

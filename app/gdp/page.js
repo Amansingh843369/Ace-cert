@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
+import { useCertificationContent } from '../../lib/sanity/useCertificationContent';
 import {
   ArrowUpRight,
   CheckCircle2,
@@ -93,6 +94,25 @@ function SectionHeading({ children, highlight, className = '' }) {
 /* ---------- Main Component ---------- */
 export default function GdpCertificationPage() {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const certification = useCertificationContent();
+  const benefits =
+    certification?.benefits?.length > 0 ? certification.benefits : GDP_BENEFITS;
+  const principles =
+    certification?.pillars?.length > 0
+      ? certification.pillars.map((pillar, index) => {
+          const fallback = GDP_PRINCIPLES[index % GDP_PRINCIPLES.length];
+          return {
+            ...fallback,
+            id: String(index + 1).padStart(2, '0'),
+            title: pillar.title || fallback.title,
+            desc: pillar.description || fallback.desc,
+          };
+        })
+      : GDP_PRINCIPLES;
+  const industries =
+    certification?.industries?.length > 0
+      ? certification.industries
+      : GDP_INDUSTRIES;
 
   useEffect(() => {
     if (!isModalOpen) return;
@@ -129,19 +149,22 @@ export default function GdpCertificationPage() {
                   <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-red-500 opacity-40" />
                   <span className="relative inline-flex h-full w-full rounded-full bg-[#E30613]" />
                 </span>
-                Supply Chain Quality
+                {certification?.heroBadge || 'Supply Chain Quality'}
               </div>
 
               <h1
                 id="hero-title"
                 className="mb-4 text-balance text-[2rem] font-extrabold leading-[1.1] tracking-[-0.03em] text-[#111827] xs:text-4xl sm:text-5xl md:text-6xl lg:text-5xl lg:whitespace-nowrap xl:text-[3.5rem]"
               >
-                GDP <span className="text-[#E30613]">Certification</span>
+                {certification?.heroTitle
+                  ? certification.heroTitle.replace(/\s+Certification$/i, '')
+                  : 'GDP'}{' '}
+                <span className="text-[#E30613]">Certification</span>
               </h1>
 
               <p className="max-w-2xl text-pretty text-sm font-medium leading-relaxed text-[#526581] sm:text-base md:text-lg lg:text-xl">
-                Globally recognized guidelines for the proper distribution, storage, and
-                transportation of products to maintain quality from manufacture to end user.
+                {certification?.heroDescription ||
+                  'Globally recognized guidelines for the proper distribution, storage, and transportation of products to maintain quality from manufacture to end user.'}
               </p>
             </div>
 
@@ -154,8 +177,8 @@ export default function GdpCertificationPage() {
               <div className="w-full shrink-0 lg:w-[44%]">
                 <figure className="relative aspect-square w-full overflow-hidden rounded-2xl bg-red-50 ring-1 ring-black/5 lg:h-full">
                   <Image
-                    src="/certifications/gdp.png"
-                    alt="GDP certification artwork"
+                    src={certification?.heroImageUrl || '/certifications/gdp.png'}
+                    alt={certification?.heroImageAlt || 'GDP certification artwork'}
                     fill
                     priority
                     sizes="(max-width: 1024px) 100vw, 480px"
@@ -175,26 +198,34 @@ export default function GdpCertificationPage() {
               {/* Content Side */}
               <div className="flex w-full flex-col justify-center lg:justify-between gap-4 text-left sm:gap-5 lg:w-[56%] lg:gap-6">
                 <h3 className="relative inline-block text-xl font-bold tracking-tight text-[#111827] sm:text-2xl md:text-3xl lg:text-4xl">
-                  What is GDP?
+                  {certification?.introTitle || 'What is GDP?'}
                   <span aria-hidden="true" className="absolute -bottom-2 left-0 h-1 w-12 rounded-full bg-[#E30613] sm:-bottom-3 sm:w-14" />
                 </h3>
 
                 <div className="space-y-3 pt-2 text-sm leading-7 text-[#526581] sm:text-base sm:leading-8 md:text-[17px] text-justify">
-                  <p>
-                    Good Distribution Practices (GDP) is a globally recognized quality system
-                    that establishes guidelines for the proper distribution, storage,
-                    transportation, and handling of products. It ensures that products maintain
-                    their{' '}
-                    <strong className="font-semibold text-[#111827]">
-                      quality, safety, and integrity
-                    </strong>{' '}
-                    from the point of manufacture to the end user.
-                  </p>
-                  <p>
-                    Widely applied in pharmaceuticals, medical devices, healthcare products,
-                    food, and cosmetics, GDP is critical for any regulated sector where
-                    traceability and product condition are paramount.
-                  </p>
+                  {certification?.introParagraphs?.length ? (
+                    certification.introParagraphs.map((paragraph, index) => (
+                      <p key={`${index}-${paragraph}`}>{paragraph}</p>
+                    ))
+                  ) : (
+                    <>
+                      <p>
+                        Good Distribution Practices (GDP) is a globally recognized quality system
+                        that establishes guidelines for the proper distribution, storage,
+                        transportation, and handling of products. It ensures that products maintain
+                        their{' '}
+                        <strong className="font-semibold text-[#111827]">
+                          quality, safety, and integrity
+                        </strong>{' '}
+                        from the point of manufacture to the end user.
+                      </p>
+                      <p>
+                        Widely applied in pharmaceuticals, medical devices, healthcare products,
+                        food, and cosmetics, GDP is critical for any regulated sector where
+                        traceability and product condition are paramount.
+                      </p>
+                    </>
+                  )}
                 </div>
 
                 <div className="mt-2 flex justify-start">
@@ -203,7 +234,7 @@ export default function GdpCertificationPage() {
                     type="button"
                     className="group relative inline-flex w-full items-center justify-center gap-2 rounded-xl bg-[#E30613] px-6 py-3.5 text-sm font-bold text-white shadow-[0_8px_22px_rgba(227,6,19,0.2)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-red-800 hover:shadow-[0_12px_28px_rgba(227,6,19,0.26)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-700 focus-visible:ring-offset-2 active:translate-y-0 sm:w-auto sm:px-7 sm:text-base"
                   >
-                    <span>Get Certified Today</span>
+                    <span>{certification?.enquireLabel || 'Get Certified Today'}</span>
                     <svg
                       className="h-5 w-5 -mr-1 transition-transform group-hover:translate-x-1"
                       fill="none" stroke="currentColor" viewBox="0 0 24 24"
@@ -232,14 +263,13 @@ export default function GdpCertificationPage() {
                     Why is <span className="text-[#E30613]">GDP</span> Important?
                   </h2>
                   <p className="mt-3 text-sm leading-7 text-[#526581] sm:mt-4 sm:text-base md:text-lg md:leading-8">
-                    Implementing GDP helps organizations ensure product quality throughout
-                    distribution, maintain proper storage conditions, and strengthen customer
-                    confidence in the supply chain.
+                    {certification?.importanceDescription ||
+                      'Implementing GDP helps organizations ensure product quality throughout distribution, maintain proper storage conditions, and strengthen customer confidence in the supply chain.'}
                   </p>
                 </div>
 
                 <div className="grid grid-cols-1 gap-2.5 sm:grid-cols-2 sm:gap-3 md:gap-4">
-                  {GDP_BENEFITS.map((benefit, index) => (
+                  {benefits.map((benefit, index) => (
                     <div
                       key={benefit}
                       className="group relative flex items-center gap-3 overflow-hidden rounded-xl border border-slate-200/80 bg-white p-3 shadow-[0_2px_10px_rgba(15,23,42,0.03)] transition-all duration-300 hover:-translate-y-0.5 hover:border-red-200 hover:shadow-[0_10px_24px_rgba(127,29,29,0.08)] sm:min-h-[72px] sm:rounded-2xl sm:p-3.5 md:p-4"
@@ -295,11 +325,11 @@ export default function GdpCertificationPage() {
             </div>
 
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5 md:gap-6 lg:grid-cols-3">
-              {GDP_PRINCIPLES.map((principle, index) => (
+              {principles.map((principle, index) => (
                 <article
                   key={principle.id}
                   className={`group relative overflow-hidden rounded-2xl border border-slate-100 bg-white p-6 shadow-[0_6px_24px_rgba(15,23,42,0.03)] transition-all duration-300 hover:-translate-y-1 hover:border-red-100 hover:shadow-[0_20px_40px_rgba(127,29,29,0.08)] sm:rounded-3xl sm:p-7 md:p-8 ${
-                    index === GDP_PRINCIPLES.length - 1 ? 'sm:col-span-2 lg:col-span-1' : ''
+                    index === principles.length - 1 ? 'sm:col-span-2 lg:col-span-1' : ''
                   }`}
                 >
                   <div className="absolute right-5 top-5 sm:right-7 sm:top-7">
@@ -338,7 +368,7 @@ export default function GdpCertificationPage() {
                 Benefits of GDP
               </SectionHeading>
               <p className="mx-auto mt-3 max-w-2xl px-2 text-sm leading-relaxed text-slate-500 sm:mt-4 sm:text-base md:text-lg text-center">
-                GDP certification validates your supply chain's ability to handle sensitive
+                GDP certification validates your supply chain&apos;s ability to handle sensitive
                 products with the highest level of care, compliance, and efficiency.
               </p>
             </div>
@@ -410,7 +440,7 @@ export default function GdpCertificationPage() {
             </div>
 
             <div className="relative z-10 mx-auto flex max-w-5xl flex-wrap justify-center gap-2 sm:gap-2.5 md:gap-3">
-              {GDP_INDUSTRIES.map((industry) => (
+              {industries.map((industry) => (
                 <span
                   key={industry}
                   className="rounded-lg border border-red-100 bg-white/90 px-3 py-1.5 text-[11px] font-semibold text-slate-700 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-red-300 hover:bg-white hover:text-red-800 hover:shadow-md sm:rounded-xl sm:px-4 sm:py-2 sm:text-xs md:px-5 md:py-2.5 md:text-sm lg:text-base"

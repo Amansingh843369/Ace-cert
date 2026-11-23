@@ -1,6 +1,8 @@
  'use client';
 
 import CertificationImportanceSection from '../../components/CertificationImportanceSection';
+import CertificationHeroTitle from '../../components/CertificationHeroTitle';
+import { mergeCertificationPillars, useCertificationContent } from '../../lib/sanity/useCertificationContent';
 
 import React, { useState } from 'react';
 import Image from 'next/image';
@@ -26,6 +28,7 @@ import {
 
 export default function GmpLayout() {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const certification = useCertificationContent();
 
   // Data Arrays - Updated for GMP (Manufacturing Practices) with RED Theme
   const benefitsList = [
@@ -76,16 +79,16 @@ export default function GmpLayout() {
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-red-500 opacity-40"></span>
                 <span className="relative inline-flex h-full w-full rounded-full bg-[#E30613]"></span>
               </span>
-              Manufacturing Quality Standard
+              {certification?.heroBadge || "Manufacturing Quality Standard"}
             </div>
 
-            <h1 id="gmp-title" className="mb-4 max-w-4xl text-balance text-4xl font-extrabold leading-[1.08] tracking-[-0.045em] text-[#111827] sm:text-5xl md:text-6xl lg:text-5xl lg:whitespace-nowrap xl:text-[3.5rem]">
+            <h1 id="gmp-title" className="mb-4 max-w-4xl text-balance text-4xl font-extrabold leading-[1.08] tracking-[-0.045em] text-[#111827] sm:text-5xl md:text-6xl lg:text-5xl lg:whitespace-nowrap xl:text-[3.5rem]">{certification?.heroTitle ? <CertificationHeroTitle title={certification.heroTitle} highlightClass="text-[#E30613]" /> : <>
               GMP <span className="text-[#E30613]">Certification</span>
-            </h1>
+            </>}</h1>
 
-            <h2 className="max-w-2xl px-2 text-pretty text-base font-medium leading-relaxed text-[#526581] sm:text-lg md:text-xl">
+            <h2 className="max-w-2xl px-2 text-pretty text-base font-medium leading-relaxed text-[#526581] sm:text-lg md:text-xl">{certification?.heroDescription || <>
               Good Manufacturing Practices — Ensuring products are consistently produced and controlled according to quality standards.
-            </h2>
+            </>}</h2>
           </div>
 
           <article className="relative flex flex-col items-center gap-7 overflow-hidden rounded-[1.75rem] border border-red-100/90 bg-white/95 p-5 shadow-[0_18px_60px_rgba(17,24,39,0.07)] sm:rounded-[2rem] sm:p-7 md:gap-10 md:p-9 lg:flex-row lg:items-stretch lg:gap-12 lg:rounded-[2.25rem] lg:p-11">
@@ -95,8 +98,8 @@ export default function GmpLayout() {
               <figure className="relative aspect-[4/3] w-full max-w-[520px] overflow-hidden rounded-2xl bg-red-50 ring-1 ring-black/5 sm:rounded-[1.5rem] lg:h-full">
                 {/* IMAGE 1: Pharmaceutical Manufacturing / Clean Room */}
                 <Image
-                  src="/certifications/gmp.png"
-                  alt="GMP certification artwork"
+                  src={certification?.heroImageUrl || "/certifications/gmp.png"}
+                  alt={certification?.heroImageAlt || "GMP certification artwork"}
                   fill
                   priority
                   sizes="(max-width: 1024px) 100vw, 520px"
@@ -110,19 +113,19 @@ export default function GmpLayout() {
             </div>
 
             <div className="order-2 flex w-full flex-col justify-center lg:justify-between gap-4 text-center sm:gap-5 lg:w-[54%] lg:gap-6 lg:text-left">
-              <h3 id="gmp-introduction" className="relative mx-auto inline-block text-2xl font-bold tracking-tight text-[#111827] sm:text-3xl md:text-[2rem] lg:mx-0 lg:text-4xl">
+              <h3 id="gmp-introduction" className="relative mx-auto inline-block text-2xl font-bold tracking-tight text-[#111827] sm:text-3xl md:text-[2rem] lg:mx-0 lg:text-4xl">{certification?.introTitle || <>
                 What is GMP?
-                <span aria-hidden="true" className="absolute -bottom-3 left-1/2 h-1 w-14 -translate-x-1/2 rounded-full bg-[#E30613] lg:left-0 lg:translate-x-0" />
+                </>}<span aria-hidden="true" className="absolute -bottom-3 left-1/2 h-1 w-14 -translate-x-1/2 rounded-full bg-[#E30613] lg:left-0 lg:translate-x-0" />
               </h3>
 
               {/* TEXT JUSTIFY APPLIED HERE */}
               <div className="mt-2 space-y-4 text-sm leading-7 text-[#526581] sm:text-base md:text-[17px] md:leading-8 text-justify">
-                <p>
+                <p>{certification?.introParagraphs?.[0] || <>
                   Good Manufacturing Practices (GMP) is a globally recognized quality assurance system that ensures products are consistently produced and controlled according to established quality and safety standards. GMP focuses on all aspects of production, including personnel, premises, equipment, manufacturing processes, quality control, storage, and distribution.
-                </p>
-                <p>
+                </>}</p>
+                <p>{certification?.introParagraphs?.[1] || <>
                   GMP is widely applied across industries such as pharmaceuticals, food and beverages, cosmetics, dietary supplements, medical devices, and veterinary products to ensure product safety, quality, and regulatory compliance.
-                </p>
+                </>}</p>
               </div>
 
               {/* --- ENQUIRE BUTTON --- */}
@@ -131,7 +134,7 @@ export default function GmpLayout() {
                   onClick={() => setIsModalOpen(true)}
                   className="group relative inline-flex min-h-12 w-full items-center justify-center rounded-xl bg-[#E30613] px-7 py-3.5 text-sm font-bold text-white shadow-[0_8px_22px_rgba(227,6,19,0.2)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-red-800 hover:shadow-[0_12px_28px_rgba(227,6,19,0.26)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-700 focus-visible:ring-offset-2 active:translate-y-0 sm:w-auto sm:text-base"
                 >
-                  <span>Get Certified Today</span>
+                  <span>{certification?.enquireLabel || "Get Certified Today"}</span>
                   <svg className="w-5 h-5 ml-2 -mr-1 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
                   </svg>
@@ -147,6 +150,7 @@ export default function GmpLayout() {
         <CertificationImportanceSection
             id="gmp-importance"
             title="GMP"
+            certification={certification}
             description={
               <>
                 Implementing GMP helps organizations minimize risks in manufacturing that cannot be eliminated through testing the final product alone, ensuring consumer safety and regulatory approval.
@@ -171,7 +175,7 @@ export default function GmpLayout() {
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-              {principles.map((principle, index) => (
+              {mergeCertificationPillars(certification?.pillars, principles).map((principle, index) => (
                 <article
                   key={index}
                   className={`group relative rounded-[2rem] border border-slate-100 bg-white p-8 shadow-[0_8px_30px_rgba(15,23,42,0.03)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_40px_rgba(127,29,29,0.08)] overflow-hidden ${index === 6 ? 'sm:col-span-2 lg:col-span-1' : ''}`}
@@ -286,7 +290,7 @@ export default function GmpLayout() {
             </div>
 
             <div className="flex flex-wrap justify-center gap-2.5 md:gap-3 lg:gap-4 relative z-10 max-w-5xl mx-auto">
-              {industries.map((industry, index) => (
+              {(certification?.industries?.length ? certification.industries : industries).map((industry, index) => (
                 <span
                   key={index}
                   className="rounded-xl border border-red-100 bg-white/90 px-4 py-2 text-xs font-semibold text-slate-700 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-red-300 hover:bg-white hover:text-red-800 hover:shadow-md md:px-5 md:py-2.5 md:text-sm lg:text-base"

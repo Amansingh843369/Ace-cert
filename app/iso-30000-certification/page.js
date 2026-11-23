@@ -1,6 +1,8 @@
 'use client';
 
 import CertificationImportanceSection from '../../components/CertificationImportanceSection';
+import CertificationHeroTitle from '../../components/CertificationHeroTitle';
+import { mergeCertificationPillars, useCertificationContent } from '../../lib/sanity/useCertificationContent';
 
 import React, { useState } from 'react';
 import Image from 'next/image';
@@ -19,6 +21,7 @@ import {
 
 export default function IsoCertificationLayout() {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const certification = useCertificationContent();
 
   // Data Arrays - Updated for ISO 30000 (Ship Recycling) based on the provided image
   const benefitsList = [
@@ -45,12 +48,7 @@ export default function IsoCertificationLayout() {
     { id: "07", title: "Continual Improvement", desc: "Regularly enhancing SRMS processes to achieve higher safety and sustainability standards.", icon: TrendingUp },
   ];
 
-  const industries = [
-    "Ship Recycling Yards", "Marine Dismantling Facilities", "Shipping Companies",
-    "Port Authorities", "Environmental Agencies", "Scrap Metal Processors",
-    "Maritime Logistics", "Government Regulators", "Waste Management Firms",
-    "Offshore Platform Recycling", "Naval Defense Contractors"
-  ];
+
 
   return (
     <main className="relative min-h-screen overflow-hidden bg-[#fffdfd] font-sans text-slate-900 selection:bg-red-200 selection:text-red-900">
@@ -71,16 +69,16 @@ export default function IsoCertificationLayout() {
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-red-500 opacity-40"></span>
                 <span className="relative inline-flex h-full w-full rounded-full bg-[#E30613]"></span>
               </span>
-              Global Marine Recycling Standard
+              {certification?.heroBadge || "Global Marine Recycling Standard"}
             </div>
 
-            <h1 id="iso30000-title" className="mb-3 max-w-4xl text-balance text-4xl font-extrabold leading-[1.08] tracking-[-0.045em] text-[#111827] sm:text-5xl md:text-6xl lg:text-5xl lg:whitespace-nowrap xl:text-[3.5rem]">
+            <h1 id="iso30000-title" className="mb-3 max-w-4xl text-balance text-4xl font-extrabold leading-[1.08] tracking-[-0.045em] text-[#111827] sm:text-5xl md:text-6xl lg:text-5xl lg:whitespace-nowrap xl:text-[3.5rem]">{certification?.heroTitle ? <CertificationHeroTitle title={certification.heroTitle} highlightClass="text-[#E30613]" /> : <>
               ISO 30000 <span className="text-[#E30613]">Certification</span>
-            </h1>
+            </>}</h1>
 
-            <h2 className="max-w-3xl px-2 text-pretty text-base font-medium leading-relaxed text-[#526581] sm:text-lg md:text-xl">
+            <h2 className="max-w-3xl px-2 text-pretty text-base font-medium leading-relaxed text-[#526581] sm:text-lg md:text-xl">{certification?.heroDescription || <>
               Ensure safe, sustainable, and compliant end-of-life vessel management with the standard for Ship Recycling Management Systems (SRMS).
-            </h2>
+            </>}</h2>
           </div>
 
           <article className="relative flex flex-col items-center gap-6 overflow-hidden rounded-[1.75rem] border border-red-100/90 bg-white/95 p-5 shadow-[0_18px_60px_rgba(17,24,39,0.07)] sm:rounded-[2rem] sm:p-6 md:gap-8 md:p-8 lg:flex-row lg:items-stretch lg:gap-10 lg:rounded-[2.25rem] lg:p-10">
@@ -90,8 +88,8 @@ export default function IsoCertificationLayout() {
               <figure className="relative aspect-square w-full max-w-[520px] overflow-hidden rounded-2xl bg-red-50 ring-1 ring-black/5 sm:rounded-[1.5rem] lg:h-full">
                 {/* Ship Recycling / Shipyard Image */}
                 <Image
-                  src="/certifications/30000.png"
-                  alt="ISO 30000 certification artwork"
+                  src={certification?.heroImageUrl || "/certifications/30000.png"}
+                  alt={certification?.heroImageAlt || "ISO 30000 certification artwork"}
                   fill
                   priority
                   sizes="(max-width: 1024px) 100vw, 520px"
@@ -105,19 +103,19 @@ export default function IsoCertificationLayout() {
             </div>
 
             <div className="order-2 flex w-full flex-col justify-center lg:justify-between gap-4 text-center sm:gap-4 lg:w-[54%] lg:gap-5 lg:text-left">
-              <h3 id="iso30000-introduction" className="relative mx-auto inline-block text-2xl font-bold tracking-tight text-[#111827] sm:text-3xl md:text-[2rem] lg:mx-0 lg:text-4xl">
+              <h3 id="iso30000-introduction" className="relative mx-auto inline-block text-2xl font-bold tracking-tight text-[#111827] sm:text-3xl md:text-[2rem] lg:mx-0 lg:text-4xl">{certification?.introTitle || <>
                 What is ISO 30000?
-                <span aria-hidden="true" className="absolute -bottom-2 left-1/2 h-1 w-14 -translate-x-1/2 rounded-full bg-[#E30613] lg:left-0 lg:translate-x-0" />
+                </>}<span aria-hidden="true" className="absolute -bottom-2 left-1/2 h-1 w-14 -translate-x-1/2 rounded-full bg-[#E30613] lg:left-0 lg:translate-x-0" />
               </h3>
 
               {/* Content exactly from the image */}
               <div className="mt-2 space-y-3 text-sm leading-6 text-[#526581] sm:text-base md:text-[16px] md:leading-7 text-justify">
-                <p>
+                <p>{certification?.introParagraphs?.[0] || <>
                   ISO 30000:2009 is an internationally recognized standard for <strong className="font-semibold text-[#111827]">Ship Recycling Management Systems (SRMS)</strong>. It provides a framework for ship recycling facilities to establish, implement, maintain, and improve processes that ensure safe, environmentally sound, and legally compliant ship recycling operations. The standard addresses worker safety, environmental protection, waste management, and regulatory compliance throughout the ship recycling process.
-                </p>
-                <p>
+                </>}</p>
+                <p>{certification?.introParagraphs?.[1] || <>
                   The standard is published by the International Organization for Standardization and is applicable to ship recycling facilities, ship dismantling yards, marine recycling operators, and organizations involved in end-of-life vessel management.
-                </p>
+                </>}</p>
               </div>
 
               <div className="mt-2 flex justify-center lg:justify-start">
@@ -125,7 +123,7 @@ export default function IsoCertificationLayout() {
                   onClick={() => setIsModalOpen(true)}
                   className="group relative inline-flex min-h-11 w-full items-center justify-center rounded-xl bg-[#E30613] px-6 py-3 text-sm font-bold text-white shadow-[0_8px_22px_rgba(227,6,19,0.2)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-red-800 hover:shadow-[0_12px_28px_rgba(227,6,19,0.26)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-700 focus-visible:ring-offset-2 active:translate-y-0 sm:w-auto sm:text-base"
                 >
-                  <span>Get Certified Today</span>
+                  <span>{certification?.enquireLabel || "Get Certified Today"}</span>
                   <svg className="w-4 h-4 ml-2 -mr-1 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
                   </svg>
@@ -141,6 +139,7 @@ export default function IsoCertificationLayout() {
         <CertificationImportanceSection
             id="iso30000-importance"
             title="ISO 30000"
+            certification={certification}
             description={
               <>
                 Implementing ISO 30000 helps ship recycling yards prevent workplace accidents, safely manage toxic materials like asbestos, protect coastal environments from pollution, and meet strict international maritime regulations.
@@ -168,7 +167,7 @@ export default function IsoCertificationLayout() {
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
-              {principles.map((principle, index) => (
+              {mergeCertificationPillars(certification?.pillars, principles).map((principle, index) => (
                 <article
                   key={index}
                   className={`group relative rounded-2xl border border-slate-100 bg-white p-6 shadow-[0_8px_30px_rgba(15,23,42,0.03)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_40px_rgba(127,29,29,0.08)] overflow-hidden ${index === 6 ? 'sm:col-span-2 lg:col-span-1' : ''}`}
@@ -262,34 +261,7 @@ export default function IsoCertificationLayout() {
             </div>
           </div>
 
-          {/* Sub-section 3: Who Can Implement? */}
-          <div className="relative overflow-hidden rounded-2xl border border-red-100 bg-gradient-to-br from-white via-white to-red-50/70 p-6 shadow-[0_16px_50px_rgba(17,24,39,0.06)] sm:rounded-[1.75rem] sm:p-8 md:p-10 lg:rounded-3xl lg:p-12">
-            <div aria-hidden="true" className="pointer-events-none absolute -right-24 -top-28 h-80 w-80 rounded-full bg-red-100/60 blur-[90px]" />
-            <div aria-hidden="true" className="pointer-events-none absolute -bottom-32 -left-20 h-72 w-72 rounded-full bg-rose-100/50 blur-[90px]" />
-
-            <div className="text-center max-w-2xl mx-auto mb-6 md:mb-8 relative z-10 flex flex-col items-center">
-              <h2 className="mb-2 text-2xl font-extrabold leading-tight tracking-tight text-[#111827] sm:text-3xl md:text-4xl">
-                Who Can Implement It?
-              </h2>
-
-              <p className="px-2 text-sm leading-6 text-[#526581] md:text-base text-center">
-                ISO 30000 is essential for any organization involved in the end-of-life management of marine vessels. From dedicated ship breaking yards and marine dismantling facilities to port authorities, scrap metal processors, and environmental regulatory bodies.
-              </p>
-            </div>
-
-            <div className="flex flex-wrap justify-center gap-2 md:gap-2.5 relative z-10 max-w-5xl mx-auto">
-              {industries.map((industry, index) => (
-                <span
-                  key={index}
-                  className="rounded-lg border border-red-100 bg-white/90 px-3 py-1.5 text-xs font-semibold text-slate-700 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-red-300 hover:bg-white hover:text-red-800 hover:shadow-md md:px-4 md:py-2 md:text-sm"
-                >
-                  {industry}
-                </span>
-              ))}
-            </div>
-          </div>
-
-        </section>
+          </section>
       </div>
 
       {/* --- MODAL POPUP FORM --- */}

@@ -1,6 +1,8 @@
 'use client';
 
 import CertificationImportanceSection from '../../components/CertificationImportanceSection';
+import CertificationHeroTitle from '../../components/CertificationHeroTitle';
+import { mergeCertificationPillars, useCertificationContent } from '../../lib/sanity/useCertificationContent';
 import React, { useState } from 'react';
 import Image from 'next/image';
 import {
@@ -19,6 +21,7 @@ import {
 
 export default function IsoCertificationLayout() {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const certification = useCertificationContent();
 
   // Data Arrays - Updated for ISO 13485 (Medical Devices)
   const benefitsList = [
@@ -44,13 +47,6 @@ export default function IsoCertificationLayout() {
     { id: "07", title: "Continual Improvement", desc: "Constantly enhancing the Quality Management System.", icon: TrendingUp },
   ];
 
-  const industries = [
-    "Medical Device Manufacturers", "Diagnostic Labs", "Pharmaceuticals",
-    "Surgical Instrument Makers", "Implant Manufacturers", "Dental Equipment",
-    "Software as Medical Device (SaMD)", "Sterilization Services", "Contract Manufacturers",
-    "Distributors & Wholesalers", "Healthcare Providers"
-  ];
-
   return (
     <main className="relative min-h-screen overflow-hidden bg-[#fffdfd] font-sans text-slate-900 selection:bg-red-200 selection:text-red-900">
       {/* Background Blobs - RED & WHITE Theme */}
@@ -67,14 +63,14 @@ export default function IsoCertificationLayout() {
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-red-500 opacity-40"></span>
                 <span className="relative inline-flex h-full w-full rounded-full bg-[#E30613]"></span>
               </span>
-              Medical Device Standard
+              {certification?.heroBadge || "Medical Device Standard"}
             </div>
-            <h1 id="iso13485-title" className="mb-4 max-w-4xl text-balance text-4xl font-extrabold leading-[1.08] tracking-[-0.045em] text-[#111827] sm:text-5xl md:text-6xl lg:text-5xl lg:whitespace-nowrap xl:text-[3.5rem]">
+            <h1 id="iso13485-title" className="mb-4 max-w-4xl text-balance text-4xl font-extrabold leading-[1.08] tracking-[-0.045em] text-[#111827] sm:text-5xl md:text-6xl lg:text-5xl lg:whitespace-nowrap xl:text-[3.5rem]">{certification?.heroTitle ? <CertificationHeroTitle title={certification.heroTitle} highlightClass="text-[#E30613]" /> : <>
               ISO 13485 <span className="text-[#E30613]">Certification</span>
-            </h1>
-            <h2 className="max-w-2xl px-2 text-pretty text-base font-medium leading-relaxed text-[#526581] sm:text-lg md:text-xl">
+            </>}</h1>
+            <h2 className="max-w-2xl px-2 text-pretty text-base font-medium leading-relaxed text-[#526581] sm:text-lg md:text-xl">{certification?.heroDescription || <>
               Ensure patient safety and regulatory compliance with the global standard for Medical Device Quality Management Systems (MDQMS).
-            </h2>
+            </>}</h2>
           </div>
 
           <article className="relative flex flex-col items-center gap-7 overflow-hidden rounded-[1.75rem] border border-red-100/90 bg-white/95 p-5 shadow-[0_18px_60px_rgba(17,24,39,0.07)] sm:rounded-[2rem] sm:p-7 md:gap-10 md:p-9 lg:flex-row lg:items-stretch lg:gap-12 lg:rounded-[2.25rem] lg:p-11">
@@ -82,8 +78,8 @@ export default function IsoCertificationLayout() {
             <div className="order-1 flex w-full justify-center lg:w-[46%]">
               <figure className="relative aspect-square w-full max-w-[520px] overflow-hidden rounded-2xl bg-red-50 ring-1 ring-black/5 sm:rounded-[1.5rem] lg:h-full">
                 <Image
-                  src="/certifications/13485.png"
-                  alt="ISO 13485 certification artwork"
+                  src={certification?.heroImageUrl || "/certifications/13485.png"}
+                  alt={certification?.heroImageAlt || "ISO 13485 certification artwork"}
                   fill
                   priority
                   sizes="(max-width: 1024px) 100vw, 520px"
@@ -97,18 +93,18 @@ export default function IsoCertificationLayout() {
             </div>
 
             <div className="order-2 flex w-full flex-col justify-center lg:justify-between gap-4 text-center sm:gap-5 lg:w-[54%] lg:gap-6 lg:text-left">
-              <h3 id="iso13485-introduction" className="relative mx-auto inline-block text-2xl font-bold tracking-tight text-[#111827] sm:text-3xl md:text-[2rem] lg:mx-0 lg:text-4xl">
+              <h3 id="iso13485-introduction" className="relative mx-auto inline-block text-2xl font-bold tracking-tight text-[#111827] sm:text-3xl md:text-[2rem] lg:mx-0 lg:text-4xl">{certification?.introTitle || <>
                 What is ISO 13485?
-                <span aria-hidden="true" className="absolute -bottom-3 left-1/2 h-1 w-14 -translate-x-1/2 rounded-full bg-[#E30613] lg:left-0 lg:translate-x-0" />
+                </>}<span aria-hidden="true" className="absolute -bottom-3 left-1/2 h-1 w-14 -translate-x-1/2 rounded-full bg-[#E30613] lg:left-0 lg:translate-x-0" />
               </h3>
 
               <div className="mt-2 space-y-4 text-sm leading-7 text-[#526581] sm:text-base md:text-[17px] md:leading-8 text-justify">
-                <p>
+                <p>{certification?.introParagraphs?.[0] || <>
                   ISO 13485 is an internationally recognized standard that specifies requirements for a <strong className="font-semibold text-[#111827]">Quality Management System (QMS)</strong> specifically designed for organizations involved in the medical device industry. It helps organizations consistently design, develop, manufacture, install, and service medical devices while meeting customer and regulatory requirements.
-                </p>
-                <p>
+                </>}</p>
+                <p>{certification?.introParagraphs?.[1] || <>
                   The standard is published by the International Organization for Standardization and is applicable to manufacturers, suppliers, distributors, service providers, and other organizations throughout the medical device supply chain.
-                </p>
+                </>}</p>
               </div>
 
               <div className="mt-2 flex justify-center lg:justify-start">
@@ -116,7 +112,7 @@ export default function IsoCertificationLayout() {
                   onClick={() => setIsModalOpen(true)}
                   className="group relative inline-flex min-h-12 w-full items-center justify-center rounded-xl bg-[#E30613] px-7 py-3.5 text-sm font-bold text-white shadow-[0_8px_22px_rgba(227,6,19,0.2)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-red-800 hover:shadow-[0_12px_28px_rgba(227,6,19,0.26)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-700 focus-visible:ring-offset-2 active:translate-y-0 sm:w-auto sm:text-base"
                 >
-                  <span>Get Certified Today</span>
+                  <span>{certification?.enquireLabel || "Get Certified Today"}</span>
                   <svg className="w-5 h-5 ml-2 -mr-1 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
                   </svg>
@@ -131,6 +127,7 @@ export default function IsoCertificationLayout() {
         <CertificationImportanceSection
             id="iso13485-importance"
             title="ISO 13485"
+            certification={certification}
             description={
               <>
                 Implementing ISO 13485 is crucial for demonstrating your ability to provide medical devices and related services that consistently meet customer and applicable regulatory requirements.
@@ -154,7 +151,7 @@ export default function IsoCertificationLayout() {
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-              {principles.map((principle, index) => (
+              {mergeCertificationPillars(certification?.pillars, principles).map((principle, index) => (
                 <article
                   key={index}
                   className={`group relative flex flex-col items-center text-center rounded-[1.5rem] border border-slate-100 bg-white p-8 shadow-[0_8px_30px_rgba(15,23,42,0.03)] transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(127,29,29,0.12)] overflow-hidden ${index === 6 ? 'sm:col-span-2 lg:col-span-1' : ''}`}
@@ -243,30 +240,7 @@ export default function IsoCertificationLayout() {
             </div>
           </div>
 
-          {/* Sub-section 3: Who Can Implement? */}
-          <div className="relative overflow-hidden rounded-2xl border border-red-100 bg-gradient-to-br from-white via-white to-red-50/70 p-7 shadow-[0_16px_50px_rgba(17,24,39,0.06)] sm:rounded-[2rem] sm:p-9 md:p-12 lg:rounded-[2.5rem] lg:p-16">
-            <div aria-hidden="true" className="pointer-events-none absolute -right-24 -top-28 h-80 w-80 rounded-full bg-red-100/60 blur-[90px]" />
-            <div aria-hidden="true" className="pointer-events-none absolute -bottom-32 -left-20 h-72 w-72 rounded-full bg-rose-100/50 blur-[90px]" />
-            <div className="text-center max-w-2xl mx-auto mb-8 md:mb-12 relative z-10 flex flex-col items-center">
-              <h2 className="mb-3 text-2xl font-extrabold leading-tight tracking-tight text-[#111827] sm:text-3xl md:mb-4 md:text-4xl lg:text-5xl">
-                Who Can Implement It?
-              </h2>
-              <p className="px-2 text-sm leading-7 text-[#526581] md:text-base lg:text-lg text-center">
-                ISO 13485 applies to the entire medical device supply chain, ensuring quality at every step from design to disposal.
-              </p>
-            </div>
-            <div className="flex flex-wrap justify-center gap-2.5 md:gap-3 lg:gap-4 relative z-10 max-w-5xl mx-auto">
-              {industries.map((industry, index) => (
-                <span
-                  key={index}
-                  className="rounded-xl border border-red-100 bg-white/90 px-4 py-2 text-xs font-semibold text-slate-700 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-red-300 hover:bg-white hover:text-red-800 hover:shadow-md md:px-5 md:py-2.5 md:text-sm lg:text-base"
-                >
-                  {industry}
-                </span>
-              ))}
-            </div>
-          </div>
-        </section>
+          </section>
       </div>
 
       {/* --- MODAL POPUP FORM --- */}

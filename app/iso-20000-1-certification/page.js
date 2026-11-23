@@ -1,6 +1,8 @@
 'use client';
 
 import CertificationImportanceSection from '../../components/CertificationImportanceSection';
+import CertificationHeroTitle from '../../components/CertificationHeroTitle';
+import { mergeCertificationPillars, useCertificationContent } from '../../lib/sanity/useCertificationContent';
 
 import React, { useState } from 'react';
 import Image from 'next/image';
@@ -22,6 +24,7 @@ import {
 
 export default function IsoCertificationLayout() {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const certification = useCertificationContent();
 
   // Data Arrays - Updated for ISO 20000-1 (ITSM) with RED Theme
   const benefitsList = [
@@ -47,23 +50,18 @@ export default function IsoCertificationLayout() {
     { id: "07", title: "Leadership", desc: "Establishing unity of purpose in IT.", icon: Building2 },
   ];
 
-  const industries = [
-    "IT Service Providers", "Software Companies", "Data Centers",
-    "Cloud Service Providers", "Telecommunications", "Banking & Finance IT",
-    "Government IT Depts", "Healthcare IT", "E-commerce Platforms",
-    "Managed Service Providers (MSP)", "Internal IT Departments"
-  ];
+
 
   return (
     <main className="relative min-h-screen overflow-hidden bg-[#fffdfd] font-sans text-slate-900 selection:bg-red-200 selection:text-red-900">
-      
+
       {/* Background Blobs - RED & WHITE Theme */}
       <div aria-hidden="true" className="pointer-events-none absolute -left-40 -top-40 h-[480px] w-[480px] rounded-full bg-red-100/50 blur-[120px]" />
       <div aria-hidden="true" className="pointer-events-none absolute right-0 top-[28%] h-[460px] w-[460px] rounded-full bg-rose-100/40 blur-[130px]" />
       <div aria-hidden="true" className="pointer-events-none absolute bottom-0 left-[10%] h-[520px] w-[520px] rounded-full bg-red-50 blur-[130px]" />
 
       <div className="relative z-10 mx-auto max-w-7xl space-y-20 px-4 py-8 md:space-y-24 md:px-6 md:py-12 lg:space-y-28 lg:px-12 lg:py-16">
-        
+
         {/* --- SECTION 1: Hero & Definition --- */}
         <section aria-labelledby="iso20000-title">
           <div className="mb-8 flex flex-col items-center text-center md:mb-10">
@@ -72,26 +70,26 @@ export default function IsoCertificationLayout() {
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-red-500 opacity-40"></span>
                 <span className="relative inline-flex h-full w-full rounded-full bg-[#E30613]"></span>
               </span>
-              Global IT Service Standard
+              {certification?.heroBadge || "Global IT Service Standard"}
             </div>
 
-            <h1 id="iso20000-title" className="mb-4 max-w-4xl text-balance text-4xl font-extrabold leading-[1.08] tracking-[-0.045em] text-[#111827] sm:text-5xl md:text-6xl lg:text-5xl lg:whitespace-nowrap xl:text-[3.5rem]">
+            <h1 id="iso20000-title" className="mb-4 max-w-4xl text-balance text-4xl font-extrabold leading-[1.08] tracking-[-0.045em] text-[#111827] sm:text-5xl md:text-6xl lg:text-5xl lg:whitespace-nowrap xl:text-[3.5rem]">{certification?.heroTitle ? <CertificationHeroTitle title={certification.heroTitle} highlightClass="text-[#E30613]" /> : <>
               ISO 20000-1 <span className="text-[#E30613]">Certification</span>
-            </h1>
-            
-            <h2 className="max-w-2xl px-2 text-pretty text-base font-medium leading-relaxed text-[#526581] sm:text-lg md:text-xl">
+            </>}</h1>
+
+            <h2 className="max-w-2xl px-2 text-pretty text-base font-medium leading-relaxed text-[#526581] sm:text-lg md:text-xl">{certification?.heroDescription || <>
               Deliver high-quality IT services consistently with the international standard for IT Service Management Systems (ITSMS).
-            </h2>
+            </>}</h2>
           </div>
 
           <article className="relative flex flex-col items-center gap-7 overflow-hidden rounded-[1.75rem] border border-red-100/90 bg-white/95 p-5 shadow-[0_18px_60px_rgba(17,24,39,0.07)] sm:rounded-[2rem] sm:p-7 md:gap-10 md:p-9 lg:flex-row lg:items-stretch lg:gap-12 lg:rounded-[2.25rem] lg:p-11">
             <div aria-hidden="true" className="absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent via-red-200 to-transparent" />
-            
+
             <div className="order-1 flex w-full justify-center lg:w-[46%]">
               <figure className="relative aspect-square w-full max-w-[520px] overflow-hidden rounded-2xl bg-red-50 ring-1 ring-black/5 sm:rounded-[1.5rem] lg:h-full">
                 <Image
-                  src="/certifications/20000-1.png"
-                  alt="ISO 20000-1 certification artwork"
+                  src={certification?.heroImageUrl || "/certifications/20000-1.png"}
+                  alt={certification?.heroImageAlt || "ISO 20000-1 certification artwork"}
                   fill
                   priority
                   sizes="(max-width: 1024px) 100vw, 520px"
@@ -105,28 +103,28 @@ export default function IsoCertificationLayout() {
             </div>
 
             <div className="order-2 flex w-full flex-col justify-center lg:justify-between gap-4 text-center sm:gap-5 lg:w-[54%] lg:gap-6 lg:text-left">
-              <h3 id="iso20000-introduction" className="relative mx-auto inline-block text-2xl font-bold tracking-tight text-[#111827] sm:text-3xl md:text-[2rem] lg:mx-0 lg:text-4xl">
+              <h3 id="iso20000-introduction" className="relative mx-auto inline-block text-2xl font-bold tracking-tight text-[#111827] sm:text-3xl md:text-[2rem] lg:mx-0 lg:text-4xl">{certification?.introTitle || <>
                 What is ISO 20000-1?
-                <span aria-hidden="true" className="absolute -bottom-3 left-1/2 h-1 w-14 -translate-x-1/2 rounded-full bg-[#E30613] lg:left-0 lg:translate-x-0" />
+                </>}<span aria-hidden="true" className="absolute -bottom-3 left-1/2 h-1 w-14 -translate-x-1/2 rounded-full bg-[#E30613] lg:left-0 lg:translate-x-0" />
               </h3>
-              
+
               {/* TEXT JUSTIFY APPLIED HERE */}
               <div className="mt-2 space-y-4 text-sm leading-7 text-[#526581] sm:text-base md:text-[17px] md:leading-8 text-justify">
-                <p>
+                <p>{certification?.introParagraphs?.[0] || <>
                   ISO 20000-1 is an internationally recognized standard for <strong className="font-semibold text-[#111827]">Information Technology Service Management Systems (ITSMS)</strong>. It provides a framework for organizations to establish, implement, maintain, and continually improve IT service management processes, ensuring the delivery of high-quality and reliable IT services.
-                </p>
-                <p>
+                </>}</p>
+                <p>{certification?.introParagraphs?.[1] || <>
                   The standard is published by the International Organization for Standardization and is applicable to organizations of all sizes and sectors that provide, manage, or support IT services, whether internally or externally.
-                </p>
+                </>}</p>
               </div>
-              
+
               {/* --- ENQUIRE BUTTON --- */}
               <div className="mt-2 flex justify-center lg:justify-start">
                 <button 
                   onClick={() => setIsModalOpen(true)}
                   className="group relative inline-flex min-h-12 w-full items-center justify-center rounded-xl bg-[#E30613] px-7 py-3.5 text-sm font-bold text-white shadow-[0_8px_22px_rgba(227,6,19,0.2)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-red-800 hover:shadow-[0_12px_28px_rgba(227,6,19,0.26)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-700 focus-visible:ring-offset-2 active:translate-y-0 sm:w-auto sm:text-base"
                 >
-                  <span>Get Certified Today</span>
+                  <span>{certification?.enquireLabel || "Get Certified Today"}</span>
                   <svg className="w-5 h-5 ml-2 -mr-1 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
                   </svg>
@@ -142,6 +140,7 @@ export default function IsoCertificationLayout() {
     <CertificationImportanceSection
             id="iso20000-importance"
             title="ISO 20000-1"
+            certification={certification}
             description={
               <>
                 Implementing ISO 20000-1 helps organizations align their IT services with business goals, reduce costs through efficient processes, and build trust with clients through certified service quality.
@@ -151,7 +150,7 @@ export default function IsoCertificationLayout() {
           />
         {/* --- SECTION 3: Principles, Detailed Benefits & Scope --- */}
         <section className="space-y-20 md:space-y-28">
-          
+
           {/* Sub-section 1: 7 Principles */}
           <div>
             <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
@@ -165,7 +164,7 @@ export default function IsoCertificationLayout() {
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-              {principles.map((principle, index) => (
+              {mergeCertificationPillars(certification?.pillars, principles).map((principle, index) => (
                 <article 
                   key={index}
                   className={`group relative rounded-[2rem] border border-slate-100 bg-white p-8 shadow-[0_8px_30px_rgba(15,23,42,0.03)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_40px_rgba(127,29,29,0.08)] overflow-hidden ${index === 6 ? 'sm:col-span-2 lg:col-span-1' : ''}`}
@@ -176,17 +175,17 @@ export default function IsoCertificationLayout() {
                       PRINCIPLE {principle.id}
                     </span>
                   </div>
-                  
+
                   <div className="relative z-0 flex flex-col h-full">
                     {/* Icon Container */}
                     <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-slate-100 text-[#0F1B33] ring-1 ring-slate-200">
                       <principle.icon className="h-6 w-6" strokeWidth={1.8} />
                     </div>
-                    
+
                     <h4 className="text-xl font-bold tracking-tight text-slate-900 mb-3 group-hover:text-red-700 transition-colors">
                       {principle.title}
                     </h4>
-                    
+
                     {/* TEXT JUSTIFY APPLIED HERE */}
                     <p className="text-sm leading-relaxed text-slate-500 text-justify">
                       {principle.desc}
@@ -209,7 +208,7 @@ export default function IsoCertificationLayout() {
                   Certification
                 </span>
               </h2>
-              
+
               {/* TEXT JUSTIFY APPLIED HERE */}
               <p className="mt-3 md:mt-4 text-sm md:text-base lg:text-lg leading-relaxed text-slate-500 max-w-2xl mx-auto px-2 text-center">
                 Certification demonstrates your ability to deliver managed IT services that meet customer requirements, helping you win tenders and retain clients in a competitive market.
@@ -223,9 +222,9 @@ export default function IsoCertificationLayout() {
                 { icon: TrendingUp, label: "Business", title: "For Business Growth", items: ["Competitive differentiation", "Eligibility for government contracts", "Reduced operational costs", "Better vendor management", "Scalable IT infrastructure"] }
               ].map((card, idx) => (
                 <article key={idx} className="group relative flex flex-col overflow-hidden rounded-[1.75rem] border border-slate-200/80 bg-white p-6 shadow-[0_12px_36px_rgba(15,23,42,0.055)] transition-all duration-300 hover:-translate-y-2 hover:border-red-200 hover:shadow-[0_26px_65px_rgba(127,29,29,0.13)] md:rounded-[2rem] md:p-8">
-                  
+
                   <div className="absolute -right-16 -top-16 h-44 w-44 rounded-full bg-red-50 blur-3xl transition-all duration-300 group-hover:bg-red-100" />
-                  
+
                   <div className="relative z-10 mb-7 flex items-start justify-between">
                     <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-slate-100 text-[#0F1B33] shadow-sm ring-1 ring-slate-200  md:h-16 md:w-16">
                       <card.icon className="h-7 w-7" strokeWidth={1.8} />
@@ -242,9 +241,9 @@ export default function IsoCertificationLayout() {
                     <h3 className="mb-5 text-xl font-extrabold tracking-tight text-slate-900 md:text-2xl">
                       {card.title}
                     </h3>
-                    
+
                     <div className="mb-5 h-px w-full bg-gradient-to-r from-red-200 via-red-100 to-transparent md:mb-6" />
-                    
+
                     <ul className="space-y-3">
                       {card.items.map((item, i) => (
                         <li key={i} className="flex items-start gap-3 text-sm text-slate-600">
@@ -263,35 +262,7 @@ export default function IsoCertificationLayout() {
             </div>
           </div>
 
-          {/* Sub-section 3: Who Can Implement? */}
-          <div className="relative overflow-hidden rounded-2xl border border-red-100 bg-gradient-to-br from-white via-white to-red-50/70 p-7 shadow-[0_16px_50px_rgba(17,24,39,0.06)] sm:rounded-[2rem] sm:p-9 md:p-12 lg:rounded-[2.5rem] lg:p-16">
-            <div aria-hidden="true" className="pointer-events-none absolute -right-24 -top-28 h-80 w-80 rounded-full bg-red-100/60 blur-[90px]" />
-            <div aria-hidden="true" className="pointer-events-none absolute -bottom-32 -left-20 h-72 w-72 rounded-full bg-rose-100/50 blur-[90px]" />
-            
-            <div className="text-center max-w-2xl mx-auto mb-8 md:mb-12 relative z-10 flex flex-col items-center">
-              <h2 className="mb-3 text-2xl font-extrabold leading-tight tracking-tight text-[#111827] sm:text-3xl md:mb-4 md:text-4xl lg:text-5xl">
-                Who Can Implement It?
-              </h2>
-              
-              {/* TEXT JUSTIFY APPLIED HERE */}
-              <p className="px-2 text-sm leading-7 text-[#526581] md:text-base lg:text-lg text-center">
-                ISO 20000-1 is designed for any organization that delivers IT services, from internal IT departments supporting employees to external MSPs serving global clients.
-              </p>
-            </div>
-
-            <div className="flex flex-wrap justify-center gap-2.5 md:gap-3 lg:gap-4 relative z-10 max-w-5xl mx-auto">
-              {industries.map((industry, index) => (
-                <span 
-                  key={index} 
-                  className="rounded-xl border border-red-100 bg-white/90 px-4 py-2 text-xs font-semibold text-slate-700 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-red-300 hover:bg-white hover:text-red-800 hover:shadow-md md:px-5 md:py-2.5 md:text-sm lg:text-base"
-                >
-                  {industry}
-                </span>
-              ))}
-            </div>
-          </div>
-
-        </section>
+          </section>
       </div>
 
       {/* --- MODAL POPUP FORM --- */}
@@ -303,7 +274,7 @@ export default function IsoCertificationLayout() {
           ></div>
 
           <div className="relative w-full max-w-lg bg-white rounded-3xl shadow-2xl overflow-hidden animate-in fade-in zoom-in duration-300">
-            
+
             <div className="relative flex h-32 items-center justify-center bg-gradient-to-r from-red-800 to-[#E30613]">
                <button 
                  onClick={() => setIsModalOpen(false)}
@@ -324,7 +295,7 @@ export default function IsoCertificationLayout() {
                   <label htmlFor="name" className="block text-sm font-medium text-slate-700 mb-1">Full Name</label>
                   <input type="text" id="name" className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-red-500 focus:ring-2 focus:ring-red-200 outline-none transition-all bg-slate-50 focus:bg-white" placeholder="John Doe" />
                 </div>
-                
+
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                   <div>
                     <label htmlFor="email" className="block text-sm font-medium text-slate-700 mb-1">Email Address</label>

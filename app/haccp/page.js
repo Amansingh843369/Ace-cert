@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
+import { useCertificationContent } from '../../lib/sanity/useCertificationContent';
 import {
   Search,
   ShieldAlert,
@@ -89,6 +90,25 @@ function SectionHeading({ children, highlight, className = '' }) {
 
 export default function HaccpCertificationPage() {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const certification = useCertificationContent();
+  const benefits =
+    certification?.benefits?.length > 0 ? certification.benefits : HACCP_BENEFITS;
+  const principles =
+    certification?.pillars?.length > 0
+      ? certification.pillars.map((pillar, index) => {
+          const fallback = HACCP_PRINCIPLES[index % HACCP_PRINCIPLES.length];
+          return {
+            ...fallback,
+            id: String(index + 1).padStart(2, '0'),
+            title: pillar.title || fallback.title,
+            desc: pillar.description || fallback.desc,
+          };
+        })
+      : HACCP_PRINCIPLES;
+  const industries =
+    certification?.industries?.length > 0
+      ? certification.industries
+      : HACCP_INDUSTRIES;
 
   useEffect(() => {
     if (!isModalOpen) return;
@@ -110,13 +130,18 @@ export default function HaccpCertificationPage() {
         <div className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full bg-red-100/60 blur-3xl" />
         <div className="relative mx-auto grid max-w-7xl items-center gap-8 px-4 py-10 sm:px-6 sm:py-14 lg:items-stretch lg:grid-cols-[1.05fr_0.95fr] lg:gap-12 lg:px-8 lg:py-16">
           <div className="relative z-10 flex flex-col justify-between">
-            <SectionBadge>Food Safety Management</SectionBadge>
+            <SectionBadge>
+              {certification?.heroBadge || 'Food Safety Management'}
+            </SectionBadge>
             <h1 className="mt-5 max-w-xl text-4xl font-extrabold leading-[1.05] tracking-tight text-[#111827] sm:text-5xl lg:text-5xl lg:whitespace-nowrap xl:text-[3.5rem]">
-              HACCP <span className="text-red-600">Certification</span>
+              {certification?.heroTitle
+                ? certification.heroTitle.replace(/\s+Certification$/i, '')
+                : 'HACCP'}{' '}
+              <span className="text-red-600">Certification</span>
             </h1>
             <p className="mt-5 max-w-xl text-base leading-7 text-slate-600 sm:text-lg sm:leading-8">
-              A preventive approach to food safety that identifies, evaluates, and controls hazards
-              throughout the food production and supply chain.
+              {certification?.heroDescription ||
+                'A preventive approach to food safety that identifies, evaluates, and controls hazards throughout the food production and supply chain.'}
             </p>
             <div className="mt-7 flex flex-wrap items-center gap-3">
               <button
@@ -124,7 +149,7 @@ export default function HaccpCertificationPage() {
                 type="button"
                 className="group inline-flex items-center justify-center gap-2 rounded-xl bg-red-600 px-6 py-3.5 text-sm font-bold text-white shadow-lg shadow-red-600/25 transition hover:-translate-y-0.5 hover:bg-red-700 hover:shadow-red-600/35 sm:text-base"
               >
-                Get Certified Today
+                {certification?.enquireLabel || 'Get Certified Today'}
                 <ChevronRight className="h-4 w-4 transition-transform group-hover:translate-x-1 sm:h-5 sm:w-5" />
               </button>
               <a
@@ -137,8 +162,8 @@ export default function HaccpCertificationPage() {
           </div>
           <div className="relative aspect-square mx-auto w-full max-w-[320px] overflow-hidden rounded-3xl border border-red-100 bg-white shadow-2xl shadow-red-900/10 sm:max-w-[380px] lg:h-full lg:max-w-[440px]">
             <Image
-              src="/certifications/haccp.png"
-              alt="HACCP certification artwork"
+              src={certification?.heroImageUrl || '/certifications/haccp.png'}
+              alt={certification?.heroImageAlt || 'HACCP certification artwork'}
               fill
               sizes="(max-width: 1024px) 100vw, 440px"
               priority
@@ -164,18 +189,35 @@ export default function HaccpCertificationPage() {
           </div>
           <div className="flex flex-1 flex-col justify-between space-y-6">
             <SectionBadge>About HACCP</SectionBadge>
-            <SectionHeading>What is <span className="text-red-600">HACCP?</span></SectionHeading>
+            <SectionHeading>
+              {certification?.introTitle ? (
+                <>
+                  {certification.introTitle.replace(/HACCP\??$/i, '')}
+                  <span className="text-red-600">HACCP?</span>
+                </>
+              ) : (
+                <>What is <span className="text-red-600">HACCP?</span></>
+              )}
+            </SectionHeading>
             <div className="space-y-6 text-slate-600 text-sm sm:text-base leading-relaxed text-justify">
-              <p>
-                HACCP (Hazard Analysis and Critical Control Points) is an internationally recognized
-                food safety management system. Unlike traditional inspection methods, it focuses on
-                preventing hazards rather than detecting them after they occur.
-              </p>
-              <p>
-                It systematically identifies biological, chemical, and physical hazards throughout
-                the food production and supply chain, ensuring products are safe for consumption
-                before they reach the market.
-              </p>
+              {certification?.introParagraphs?.length ? (
+                certification.introParagraphs.map((paragraph, index) => (
+                  <p key={`${index}-${paragraph}`}>{paragraph}</p>
+                ))
+              ) : (
+                <>
+                  <p>
+                    HACCP (Hazard Analysis and Critical Control Points) is an internationally recognized
+                    food safety management system. Unlike traditional inspection methods, it focuses on
+                    preventing hazards rather than detecting them after they occur.
+                  </p>
+                  <p>
+                    It systematically identifies biological, chemical, and physical hazards throughout
+                    the food production and supply chain, ensuring products are safe for consumption
+                    before they reach the market.
+                  </p>
+                </>
+              )}
             </div>
             <div className="pt-2">
               <button
@@ -183,7 +225,7 @@ export default function HaccpCertificationPage() {
                 type="button"
                 className="group inline-flex items-center justify-center gap-2 bg-red-600 text-white px-8 py-4 rounded-xl font-bold hover:bg-red-700 transition-all duration-300 shadow-lg shadow-red-600/25 hover:shadow-red-600/35 text-sm sm:text-base cursor-pointer"
               >
-                <span>Get Certified Today</span>
+                <span>{certification?.enquireLabel || 'Get Certified Today'}</span>
                 <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
               </button>
             </div>
@@ -201,7 +243,7 @@ export default function HaccpCertificationPage() {
             </SectionHeading>
           </div>
           <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-5 lg:gap-6">
-            {HACCP_BENEFITS.map((benefit, index) => (
+            {benefits.map((benefit, index) => (
               <div
                 key={benefit}
                 className="group relative flex items-center gap-3 overflow-hidden rounded-xl border border-slate-200/80 bg-white p-3 shadow-[0_2px_10px_rgba(15,23,42,0.03)] transition-all duration-300 hover:-translate-y-0.5 hover:border-red-200 hover:shadow-[0_10px_24px_rgba(127,29,29,0.08)] sm:min-h-[72px] sm:rounded-2xl sm:p-3.5 md:p-4"
@@ -234,13 +276,13 @@ export default function HaccpCertificationPage() {
             </SectionHeading>
           </div>
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5 md:gap-6 lg:grid-cols-3 lg:gap-8">
-            {HACCP_PRINCIPLES.map((principle, index) => {
+            {principles.map((principle, index) => {
               const Icon = principle.icon;
               return (
                 <article
                   key={principle.id}
                   className={`group relative overflow-hidden rounded-2xl border border-slate-100 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-red-100 hover:shadow-[0_20px_40px_rgba(127,29,29,0.08)] sm:rounded-3xl sm:p-7 md:p-8 ${
-                    index === HACCP_PRINCIPLES.length - 1 ? 'sm:col-span-2 lg:col-span-1' : ''
+                    index === principles.length - 1 ? 'sm:col-span-2 lg:col-span-1' : ''
                   }`}
                 >
                   <div className="absolute right-5 top-5 sm:right-7 sm:top-7">
@@ -275,8 +317,8 @@ export default function HaccpCertificationPage() {
               Why HACCP Certification
             </SectionHeading>
             <p className="mx-auto mt-3 max-w-2xl px-2 text-sm leading-relaxed text-slate-500 sm:mt-4 sm:text-base md:text-lg">
-              HACCP certification demonstrates your commitment to producing safe, high-quality
-              food products that meet the strictest international standards.
+              {certification?.importanceDescription ||
+                'HACCP certification demonstrates your commitment to producing safe, high-quality food products that meet the strictest international standards.'}
             </p>
           </div>
           <div className="grid grid-cols-1 gap-5 sm:gap-6 md:grid-cols-2 lg:grid-cols-3 lg:gap-7">
@@ -326,7 +368,7 @@ export default function HaccpCertificationPage() {
           </p>
         </div>
           <div className="relative z-10 mx-auto flex max-w-5xl flex-wrap justify-center gap-2 sm:gap-2.5 md:gap-3">
-            {HACCP_INDUSTRIES.map((industry) => (
+            {industries.map((industry) => (
               <span
                 key={industry}
                 className="rounded-lg border border-red-100 bg-white/90 px-3 py-1.5 text-[11px] font-semibold text-slate-700 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-red-300 hover:bg-white hover:text-red-800 hover:shadow-md sm:rounded-xl sm:px-4 sm:py-2 sm:text-xs md:px-5 md:py-2.5 md:text-sm lg:text-base"
