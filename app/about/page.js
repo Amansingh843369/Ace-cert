@@ -61,6 +61,7 @@ export default async function AboutPage() {
         showStoryLink={false}
         showTrustCard={false}
         justifyText
+        highlightAcronymExpansion
         compactTopPadding
         emphasizeImage
         showActions={false}

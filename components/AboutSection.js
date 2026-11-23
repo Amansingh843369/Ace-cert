@@ -15,6 +15,7 @@ export default function AboutSection({
   showStoryLink = true,
   showTrustCard = true,
   justifyText = false,
+  highlightAcronymExpansion = false,
   compactTopPadding = false,
   emphasizeImage = false,
 }) {
@@ -32,15 +33,21 @@ export default function AboutSection({
       <div className="pointer-events-none absolute -left-40 top-20 h-[500px] w-[500px] rounded-full bg-red-100/40 blur-[100px]" />
       <div className="pointer-events-none absolute -bottom-48 right-0 h-[400px] w-[400px] rounded-full bg-red-200/20 blur-[100px]" />
 
-      <div className={`relative z-10 mx-auto grid max-w-7xl items-center gap-16 px-4 sm:px-6 lg:gap-20 lg:px-8 ${emphasizeImage ? "lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)]" : "lg:grid-cols-2"}`}>
+      <div className={`relative z-10 mx-auto grid max-w-7xl gap-16 px-4 sm:px-6 lg:px-8 ${
+        emphasizeImage
+          ? "items-stretch lg:gap-12 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)]"
+          : "items-center lg:gap-20 lg:grid-cols-2"
+      }`}>
         
         {/* LEFT COLUMN: IMAGE COMPOSITION (Based on your sketch) */}
-        <div className="relative w-full max-w-lg mx-auto lg:mx-0 lg:max-w-none">
-          <div className={`relative w-full ${emphasizeImage ? "pr-10 sm:pr-16" : "pb-12 pr-12 sm:pb-20 sm:pr-20"}`}>
+        <div className={`relative w-full max-w-lg mx-auto lg:mx-0 lg:max-w-none ${emphasizeImage ? "lg:h-full" : ""}`}>
+          <div className={`relative w-full ${emphasizeImage ? "pr-10 sm:pr-16 lg:h-full" : "pb-12 pr-12 sm:pb-20 sm:pr-20"}`}>
             
             {/* Main Image */}
             <div className={`relative overflow-hidden rounded-[2rem] shadow-2xl shadow-slate-900/15 ${
-              `aspect-[3/4] ${emphasizeImage ? "w-[90%]" : "w-[85%]"}`
+              emphasizeImage
+                ? "aspect-[3/4] w-[90%] lg:absolute lg:inset-y-0 lg:left-0 lg:aspect-auto"
+                : "aspect-[3/4] w-[85%]"
             }`}>
               <Image
                 src={imageSrc}
@@ -55,10 +62,10 @@ export default function AboutSection({
             {/* Front Overlapping Image (Wide/Landscape) */}
             <div className={`absolute right-0 overflow-hidden rounded-3xl border-[8px] border-slate-50 bg-white shadow-2xl ${
               emphasizeImage
-                ? "top-1/2 w-[58%] -translate-y-1/2"
+                ? "top-[60%] w-[45%] -translate-y-1/2"
                 : "bottom-0 w-[70%]"
             }`}>
-              <div className={`relative w-full ${emphasizeImage ? "aspect-[16/10]" : "aspect-[4/3]"}`}>
+              <div className={`relative w-full ${emphasizeImage ? "aspect-square" : "aspect-[4/3]"}`}>
                 <Image
                   src={overlayImageSrc}
                   alt={overlayImageAlt}
@@ -105,9 +112,12 @@ export default function AboutSection({
               achieve international standards of quality, safety, and efficiency.
             </p>
             <p>
-              The name &quot;ACE&quot; reflects our promise: to help clients Achieve Compliance &amp;
-              Excellence. Our experienced Lead Auditors turn complex standards into practical steps
-              for lasting business improvement.
+              The name &quot;ACE&quot; reflects our promise: to help clients{" "}
+              <span className={highlightAcronymExpansion ? "font-semibold text-red-600" : ""}>
+                Achieve Compliance &amp; Excellence.
+              </span>{" "}
+              Our experienced Lead Auditors turn complex standards into practical steps for lasting
+              business improvement.
             </p>
             <p>
               We believe certification should be more than a trophy—it should be a strategic tool
