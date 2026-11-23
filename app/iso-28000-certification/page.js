@@ -116,6 +116,7 @@ export default function IsoCertificationLayout() {
                 <p>{certification?.introParagraphs?.[1] || <>
                   The standard is published by the International Organization for Standardization and is applicable to organizations of all sizes involved in manufacturing, warehousing, distribution, and global supply chain operations.
                 </>}</p>
+                {certification?.introSupport && <p>{certification.introSupport}</p>}
               </div>
 
               <div className="mt-2 flex justify-center lg:justify-start">

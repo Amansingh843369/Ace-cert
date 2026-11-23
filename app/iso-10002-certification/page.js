@@ -108,6 +108,7 @@ export default function IsoCertificationLayout() {
                 <p>{certification?.introParagraphs?.[1] || <>
                   The standard is published by the International Organization for Standardization and is applicable to organizations of all sizes and sectors that seek to enhance customer experience and strengthen customer relationships.
                 </>}</p>
+                {certification?.introSupport && <p>{certification.introSupport}</p>}
               </div>
 
               {/* --- NEW ENQUIRE BUTTON --- */}

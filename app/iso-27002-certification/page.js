@@ -119,6 +119,7 @@ export default function Iso27002Layout() {
                 <p>{certification?.introParagraphs?.[1] || <>
                   The standard is published by the International Organization for Standardization and is applicable to organizations of all sizes and sectors seeking to strengthen their information security practices and manage cybersecurity risks effectively.
                 </>}</p>
+                {certification?.introSupport && <p>{certification.introSupport}</p>}
               </div>
 
               {/* --- ENQUIRE BUTTON --- */}

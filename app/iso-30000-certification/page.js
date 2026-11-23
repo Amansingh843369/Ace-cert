@@ -116,6 +116,7 @@ export default function IsoCertificationLayout() {
                 <p>{certification?.introParagraphs?.[1] || <>
                   The standard is published by the International Organization for Standardization and is applicable to ship recycling facilities, ship dismantling yards, marine recycling operators, and organizations involved in end-of-life vessel management.
                 </>}</p>
+                {certification?.introSupport && <p>{certification.introSupport}</p>}
               </div>
 
               <div className="mt-2 flex justify-center lg:justify-start">

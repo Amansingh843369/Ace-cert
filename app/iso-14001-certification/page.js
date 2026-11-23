@@ -115,6 +115,7 @@ export default function IsoCertificationLayout() {
                 <p>{certification?.introParagraphs?.[1] || <>
                   The standard is published by the International Organization for Standardization and is applicable to organizations of all sizes and sectors that are committed to environmental responsibility and sustainable business practices.
                 </>}</p>
+                {certification?.introSupport && <p>{certification.introSupport}</p>}
               </div>
 
               {/* --- ENQUIRE BUTTON --- */}

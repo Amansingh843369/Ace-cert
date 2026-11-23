@@ -118,6 +118,7 @@ export default function IsoCertificationLayout() {
                 <p>{certification?.introParagraphs?.[1] || <>
                   The standard is published by the International Organization for Standardization and is applicable to organizations of all sizes involved in food production, processing, packaging, storage, transportation, distribution, and food services.
                 </>}</p>
+                {certification?.introSupport && <p>{certification.introSupport}</p>}
               </div>
 
               {/* --- ENQUIRE BUTTON --- */}

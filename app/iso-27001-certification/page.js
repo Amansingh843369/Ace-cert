@@ -118,6 +118,7 @@ export default function IsoCertificationLayout() {
                 <p>{certification?.introParagraphs?.[1] || <>
                   The standard is published by the International Organization for Standardization and is applicable to organizations of all sizes and sectors that need to safeguard business, customer, employee, and stakeholder information from security threats and cyber risks.
                 </>}</p>
+                {certification?.introSupport && <p>{certification.introSupport}</p>}
               </div>
 
               {/* --- ENQUIRE BUTTON --- */}

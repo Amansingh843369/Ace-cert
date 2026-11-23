@@ -120,6 +120,7 @@ export default function Iso22716Layout() {
                 <p>{certification?.introParagraphs?.[1] || <>
                   The standard is published by the International Organization for Standardization and is applicable to cosmetic manufacturers, suppliers, contract manufacturers, distributors, and organizations involved in the cosmetics supply chain.
                 </>}</p>
+                {certification?.introSupport && <p>{certification.introSupport}</p>}
               </div>
 
               {/* --- ENQUIRE BUTTON --- */}

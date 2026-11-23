@@ -112,6 +112,7 @@ export default function IsoCertificationLayout() {
                 <p>{certification?.introParagraphs?.[1] || <>
                   The standard is published by the International Organization for Standardization and is applicable to organizations that collect, process, store, or manage personal data, either as data controllers or data processors.
                 </>}</p>
+                {certification?.introSupport && <p>{certification.introSupport}</p>}
               </div>
 
               <div className="mt-2 flex justify-center lg:justify-start">

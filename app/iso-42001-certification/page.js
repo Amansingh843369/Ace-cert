@@ -121,6 +121,7 @@ transparent, and secure use.
                 <p>{certification?.introParagraphs?.[1] || <>
                   The standard is jointly published by the International Organization for Standardization (ISO) and the International Electrotechnical Commission (IEC) and is applicable to organizations of all sizes and sectors that develop, provide, or use AI-based products, services, and solutions.
                 </>}</p>
+                {certification?.introSupport && <p>{certification.introSupport}</p>}
               </div>
 
               <div className="mt-2 flex justify-center lg:justify-start">

@@ -121,6 +121,7 @@ export default function Iso37001Layout() {
                 <p>{certification?.introParagraphs?.[1] || <>
                   Published by the International Organization for Standardization, it is applicable to organizations of all sizes and sectors, including public, private, and non-profit entities worldwide.
                 </>}</p>
+                {certification?.introSupport && <p>{certification.introSupport}</p>}
               </div>
 
               {/* --- ENQUIRE BUTTON --- */}

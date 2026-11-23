@@ -118,6 +118,7 @@ export default function Iso21001CertificationLayout() {
                 <p>{certification?.introParagraphs?.[1] || <>
                   Whether you are a university, a specialized training center, or an e-learning platform, this standard helps you align your educational mission with operational processes, driving inclusive, equitable, and high-quality education.
                 </>}</p>
+                {certification?.introSupport && <p>{certification.introSupport}</p>}
               </div>
 
               <div className="mt-2 flex justify-center lg:justify-start">

@@ -120,6 +120,7 @@ export default function Iso24161Layout() {
                 <p>{certification?.introParagraphs?.[1] || <>
                   By standardizing terms related to functional components, performance indicators, and operational processes, ISO 24161 helps align waste management practices globally, reducing confusion and improving efficiency in contracts, reporting, and regulation.
                 </>}</p>
+                {certification?.introSupport && <p>{certification.introSupport}</p>}
               </div>
 
               {/* --- ENQUIRE BUTTON --- */}

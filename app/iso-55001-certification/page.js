@@ -120,6 +120,7 @@ export default function Iso55001Layout() {
                 <p>{certification?.introParagraphs?.[1] || <>
                   It helps organizations align their asset management activities with their strategic objectives, improving financial performance, operational reliability, and sustainability across the entire asset portfolio.
                 </>}</p>
+                {certification?.introSupport && <p>{certification.introSupport}</p>}
               </div>
 
               {/* --- ENQUIRE BUTTON --- */}

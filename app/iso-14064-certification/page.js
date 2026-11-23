@@ -196,6 +196,7 @@ export default function IsoCertificationLayout() {
                     Standardization and is applicable to organizations of all sizes and
                     sectors seeking to measure, manage, and reduce their carbon footprint.
                   </>}</p>
+                  {certification?.introSupport && <p>{certification.introSupport}</p>}
                 </div>
 
                 <div className="mt-2 flex justify-start">

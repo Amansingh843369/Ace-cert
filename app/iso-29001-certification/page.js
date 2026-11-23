@@ -120,6 +120,7 @@ export default function Iso29001Layout() {
                 <p>{certification?.introParagraphs?.[1] || <>
                   The standard is published by the International Organization for Standardization and is applicable to organizations involved in the design, development, production, installation, and servicing of products and services within the oil, gas, and petrochemical sectors.
                 </>}</p>
+                {certification?.introSupport && <p>{certification.introSupport}</p>}
               </div>
 
               {/* --- ENQUIRE BUTTON --- */}
