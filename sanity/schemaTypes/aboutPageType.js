@@ -26,8 +26,8 @@ export const aboutPageType = defineType({
       type: 'object',
       fields: [
         headingField('title', 'Heading'),
-        headingField('homeLabel', 'Home breadcrumb'),
         headingField('backgroundImageAlt', 'Background image alt text'),
+        defineField({ name: 'backgroundImage', title: 'Background image', type: 'image', options: { hotspot: true } }),
       ],
     }),
     defineField({
@@ -44,6 +44,7 @@ export const aboutPageType = defineType({
         headingField('badgeTitle', 'Image badge title'),
         textField('badgeDescription', 'Image badge description', 2),
         headingField('imageAlt', 'Image alt text'),
+        defineField({ name: 'image', title: 'CTA image', type: 'image', options: { hotspot: true } }),
       ],
     }),
     defineField({
@@ -55,6 +56,8 @@ export const aboutPageType = defineType({
         headingField('ariaLabel', 'Section accessibility label'),
         headingField('titleLine1', 'Title line 1'),
         headingField('titleLine2', 'Title line 2'),
+        defineField({ name: 'image', title: 'Main image', type: 'image', options: { hotspot: true } }),
+        defineField({ name: 'overlayImage', title: 'Overlay image', type: 'image', options: { hotspot: true } }),
         headingField('backgroundImageAlt', 'Background image alt text'),
         headingField('foregroundImageAlt', 'Foreground image alt text'),
         headingField('companyName', 'Company name'),
@@ -74,6 +77,7 @@ export const aboutPageType = defineType({
         headingField('eyebrow', 'Small heading'),
         headingField('title', 'Title'),
         headingField('imageAlt', 'Image alt text'),
+        defineField({ name: 'image', title: 'Mission image', type: 'image', options: { hotspot: true } }),
         defineField({
           name: 'paragraphs',
           title: 'Paragraphs',
@@ -89,6 +93,9 @@ export const aboutPageType = defineType({
       fields: [
         headingField('eyebrow', 'Small heading'),
         headingField('title', 'Title'),
+        defineField({ name: 'tallImage', title: 'Tall image', type: 'image', options: { hotspot: true } }),
+        defineField({ name: 'topImage', title: 'Top image', type: 'image', options: { hotspot: true } }),
+        defineField({ name: 'bottomImage', title: 'Bottom image', type: 'image', options: { hotspot: true } }),
         headingField('tallImageAlt', 'Tall image alt text'),
         headingField('topImageAlt', 'Top image alt text'),
         headingField('bottomImageAlt', 'Bottom image alt text'),
@@ -140,8 +147,10 @@ export const aboutPageType = defineType({
       title: 'Purpose section',
       type: 'object',
       fields: [
-        headingField('titleStart', 'Title (first part)'),
-        headingField('titleHighlight', 'Title (highlighted part)'),
+        headingField('titleLine1', 'Heading line 1'),
+        headingField('titleLine2Prefix', 'Heading line 2 prefix'),
+        headingField('titleLine2Highlight', 'Heading line 2 highlight'),
+        headingField('titleLine3', 'Heading line 3'),
         headingField('firstParagraphPrefix', 'First paragraph (before bold text)'),
         headingField('companyName', 'Bold company name'),
         textField('firstParagraphSuffix', 'First paragraph (after bold text)', 4),

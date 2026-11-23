@@ -73,15 +73,17 @@ export default function PurposeSection({ navy = false, content = null, alignBene
               navy ? "text-white" : "text-gray-900"
             }`}
           >
-            <span className="block">Empowering Business</span>
             <span className="block">
-              Through{" "}
+              {purposeContent.titleLine1 ?? "Empowering Business"}
+            </span>
+            <span className="block">
+              {purposeContent.titleLine2Prefix ?? "Through"}{" "}
               <span className={navy ? "text-red-400" : "text-red-600"}>
-                Achieve
+                {purposeContent.titleLine2Highlight ?? "Achieve"}
               </span>
             </span>
             <span className={`block ${navy ? "text-red-400" : "text-red-600"}`}>
-              Compliance &amp; Excellence.
+              {purposeContent.titleLine3 ?? "Compliance & Excellence."}
             </span>
           </h2>
 

@@ -4,10 +4,12 @@ import { useEffect, useState } from "react";
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 
+const defaultTypewriterPhrases = ["For Achieve", "For Compliance", "For Excellence"];
+
 // --- Typewriter Component ---
 function TypewriterText({ phrases }) {
   const typewriterPhrases =
-    phrases?.length ? phrases : ["For Achieve", "For Compliance", "For Excellence"];
+    phrases?.length ? phrases : defaultTypewriterPhrases;
   const [phraseIndex, setPhraseIndex] = useState(0);
   const [visibleText, setVisibleText] = useState("");
   const [deleting, setDeleting] = useState(false);
@@ -51,7 +53,7 @@ function TypewriterText({ phrases }) {
     }
 
     return () => window.clearTimeout(timer);
-  }, [deleting, phraseIndex, visibleText, isPaused]);
+  }, [deleting, phraseIndex, visibleText, isPaused, typewriterPhrases]);
 
   return (
     <span className="inline-block whitespace-nowrap font-bold text-red-700">
@@ -69,8 +71,8 @@ export default function HeroSection({ content = {} }) {
     >
       <div className="absolute inset-0">
         <Image
-          src="/your_success.jpg" 
-          alt="Professionals collaborating during a business meeting"
+          src={content.backgroundImageUrl || "/your_success.jpg"}
+          alt={content.backgroundImageAlt ?? "Professionals collaborating during a business meeting"}
           fill
           preload
           sizes="100vw"

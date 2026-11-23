@@ -28,7 +28,8 @@ export const metadata = {
 export default async function CertificationPage() {
   let certificationItems = fallbackCertifications;
   const directoryContent = await getCertificationDirectoryPageContent();
-  const directoryHeroImage = urlFor(directoryContent.heroImage)?.toString() || null;
+  const directoryHeroImage =
+    urlFor(directoryContent.heroImage)?.width(1600).url() || null;
 
   if (sanityConfigured) {
     try {

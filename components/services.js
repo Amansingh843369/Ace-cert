@@ -47,12 +47,17 @@ const iconsByType = {
   REGULATORY: Award,
 };
 
-export default function ServicesSection({ certificationImageFiles = {}, content = {} }) {
-  const services = certifications
+export default function ServicesSection({
+  certificationImageFiles = {},
+  certificationItems = certifications,
+  content = {},
+}) {
+  const services = certificationItems
     .filter(({ code }) => code !== 'CE Marking')
     .map((certification) => ({
       ...certification,
       img:
+        certification.imageUrl ||
         getCertificationImageFile(certification.code, certificationImageFiles) ||
         certificationImages[certification.code] ||
         imagesByCode[certification.code] ||

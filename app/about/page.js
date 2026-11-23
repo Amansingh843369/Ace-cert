@@ -6,6 +6,7 @@ import AboutSection from "../../components/AboutSection";
 import CertificationCtaSection from "../../components/CertificationCtaSection";
 import PurposeSection from "../../components/PurposeSection";
 import { getAboutPageContent } from '../../lib/sanity/aboutPage';
+import { urlFor } from '../../lib/sanity/client';
 
 const valueIcons = {
   shieldCheck: ShieldCheck,
@@ -17,6 +18,14 @@ export default async function AboutPage() {
   await connection();
   const content = await getAboutPageContent();
   const { hero, story, mission, vision, values, purpose, cta } = content;
+  const heroImageUrl = urlFor(hero.backgroundImage)?.width(1920).url();
+  const storyImageUrl = urlFor(story.image)?.width(1400).url();
+  const storyOverlayImageUrl = urlFor(story.overlayImage)?.width(800).url();
+  const missionImageUrl = urlFor(mission.image)?.width(1000).url();
+  const visionTallImageUrl = urlFor(vision.tallImage)?.width(600).url();
+  const visionTopImageUrl = urlFor(vision.topImage)?.width(600).url();
+  const visionBottomImageUrl = urlFor(vision.bottomImage)?.width(600).url();
+  const ctaImageUrl = urlFor(cta.image)?.width(1000).url();
 
   return (
     <main className=" bg-white min-h-screen pb-12 selection:bg-red-100 selection:text-red-900">
@@ -27,11 +36,11 @@ export default async function AboutPage() {
         {/* ISO Related Background Image with Red Overlay */}
         <div className="absolute inset-0 z-0">
           <Image
-            src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1920&q=80"
+            src={heroImageUrl || "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1920&q=80"}
             alt={hero.backgroundImageAlt}
             fill
             sizes="100vw"
-            priority
+            preload
             className="object-cover opacity-30"
           />
           {/* Gradient Overlay for better text readability */}
@@ -40,7 +49,7 @@ export default async function AboutPage() {
         
         <div className="relative z-10 max-w-4xl mx-auto space-y-4">
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-red-600 tracking-tight drop-shadow-sm">
-            Our Story
+            {hero.title}
           </h1>
         </div>
       </section>
@@ -57,10 +66,8 @@ export default async function AboutPage() {
         emphasizeImage
         showActions={false}
         showVideoButton
-        imageSrc="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1400&q=85"
-        imageAlt="Corporate professionals discussing a project around a meeting table"
-        overlayImageSrc="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=800&q=85"
-        overlayImageAlt="Corporate team collaborating during a strategy meeting"
+        imageSrc={storyImageUrl || "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1400&q=85"}
+        overlayImageSrc={storyOverlayImageUrl || "https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=800&q=85"}
         content={story}
       />
 
@@ -95,7 +102,7 @@ export default async function AboutPage() {
           {/* Right: Mission Image (Also made slightly compact to match) */}
           <div className="order-1 lg:order-2 relative mx-auto aspect-[4/3] w-full max-w-[500px] overflow-hidden rounded-[2rem] shadow-2xl lg:mx-0 lg:ml-auto">
             <Image
-              src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1000&q=85"
+              src={missionImageUrl || "https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1000&q=85"}
               alt={mission.imageAlt}
               fill
               sizes="(max-width: 1024px) 100vw, 50vw"
@@ -114,7 +121,7 @@ export default async function AboutPage() {
               {/* Tall image fills the same height as the two stacked images */}
               <div className="relative row-span-2 h-full min-h-0 w-full overflow-hidden rounded-[1.5rem] rounded-tr-none shadow-xl">
                 <Image
-                  src="https://images.unsplash.com/photo-1573164574572-cb89e39749b4?auto=format&fit=crop&w=600&q=85"
+                  src={visionTallImageUrl || "https://images.unsplash.com/photo-1573164574572-cb89e39749b4?auto=format&fit=crop&w=600&q=85"}
                   alt={vision.tallImageAlt}
                   fill
                   sizes="(max-width: 1024px) 50vw, 25vw"
@@ -127,7 +134,7 @@ export default async function AboutPage() {
                 {/* Top Square Image */}
                 <div className="relative aspect-square w-full overflow-hidden rounded-[1.5rem] rounded-tl-none shadow-xl">
                   <Image
-                    src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=600&q=85"
+                    src={visionTopImageUrl || "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=600&q=85"}
                     alt={vision.topImageAlt}
                     fill
                     sizes="(max-width: 1024px) 50vw, 25vw"
@@ -138,7 +145,7 @@ export default async function AboutPage() {
                 {/* Bottom Square Image */}
                 <div className="relative aspect-square w-full overflow-hidden rounded-[1.5rem] rounded-bl-none shadow-xl">
                   <Image
-                    src="https://images.unsplash.com/photo-1531496730074-83b638c0a7ac?auto=format&fit=crop&w=600&q=85"
+                    src={visionBottomImageUrl || "https://images.unsplash.com/photo-1531496730074-83b638c0a7ac?auto=format&fit=crop&w=600&q=85"}
                     alt={vision.bottomImageAlt}
                     fill
                     sizes="(max-width: 1024px) 50vw, 25vw"
@@ -221,7 +228,7 @@ export default async function AboutPage() {
 
       <PurposeSection navy content={purpose} alignBenefitsWithText />
 
-      <CertificationCtaSection content={cta} />
+      <CertificationCtaSection content={{ ...cta, imageUrl: ctaImageUrl }} />
 
     </main>
   );

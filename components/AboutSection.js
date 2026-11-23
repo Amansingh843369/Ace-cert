@@ -6,6 +6,7 @@ import Link from "next/link";
 import { ArrowRight, ShieldCheck, Trophy } from "lucide-react";
 
 export default function AboutSection({
+  content = {},
   imageSrc = "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=1000&q=85",
   imageAlt = "Professionals collaborating on quality and compliance",
   overlayImageSrc = "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=85",
@@ -22,10 +23,22 @@ export default function AboutSection({
   compactBottomPadding = false,
   emphasizeImage = false,
 }) {
+  const paragraph1Suffix =
+    content.paragraph1Suffix ??
+    " is a dedicated, client-centric professional services firm helping organizations of all sizes achieve international standards of quality, safety, and efficiency.";
+  const paragraph2Suffix =
+    content.paragraph2Suffix ??
+    " reflects our promise: to help clients Achieve Compliance & Excellence. Our experienced Lead Auditors turn complex standards into practical steps for lasting business improvement.";
+  const highlightedPhrase = "Achieve Compliance & Excellence.";
+  const highlightIndex = paragraph2Suffix.indexOf(highlightedPhrase);
+  const paragraph3 =
+    content.paragraph3 ??
+    "We believe certification should be more than a trophy—it should be a strategic tool that creates measurable improvement for your business.";
+
   return (
     <section
       id="about"
-      aria-label="About ACE Certification Services"
+      aria-label={content.ariaLabel ?? "About ACE Certification Services"}
       className={`relative overflow-hidden bg-slate-50 font-sans ${
         compactTopPadding ? "pt-8 sm:pt-12 lg:pt-16" : "pt-20 sm:pt-28 lg:pt-32"
       } ${
@@ -54,7 +67,7 @@ export default function AboutSection({
             }`}>
               <Image
                 src={imageSrc}
-                alt={imageAlt}
+                alt={content.backgroundImageAlt ?? imageAlt}
                 fill
                 sizes="(max-width: 1024px) 85vw, 500px"
                 className="object-cover transition-transform duration-700 hover:scale-105"
@@ -71,7 +84,7 @@ export default function AboutSection({
               <div className={`relative w-full ${emphasizeImage ? "aspect-square" : "aspect-[4/3]"}`}>
                 <Image
                   src={overlayImageSrc}
-                  alt={overlayImageAlt}
+                  alt={content.foregroundImageAlt ?? overlayImageAlt}
                   fill
                   sizes="(max-width: 1024px) 70vw, 400px"
                   className="object-cover transition-transform duration-700 hover:scale-105"
@@ -98,36 +111,41 @@ export default function AboutSection({
         <div className="max-w-2xl">
           <div className="mb-6 inline-flex items-center gap-2.5 rounded-full border border-red-200 bg-red-50/50 px-4 py-2 text-xs font-bold uppercase tracking-widest text-red-600 backdrop-blur-sm">
             <ShieldCheck className="h-4 w-4" aria-hidden="true" />
-            <span>{eyebrowText}</span>
+            <span>{content.eyebrow ?? eyebrowText}</span>
           </div>
 
           <h2 className="text-4xl font-extrabold leading-[1.1] tracking-tight text-slate-900 sm:text-5xl lg:text-6xl">
-            Built on Trust.
+            {content.titleLine1 ?? "Built on Trust."}
             <span className="mt-2 block bg-gradient-to-r from-red-600 to-red-400 bg-clip-text text-transparent">
-              Driven by Excellence.
+              {content.titleLine2 ?? "Driven by Excellence."}
             </span>
           </h2>
 
           <div className={`mt-8 space-y-5 text-base leading-relaxed text-slate-600 sm:text-lg sm:leading-loose ${justifyText ? "text-justify" : ""}`}>
             <p>
-              <strong className="font-semibold text-slate-900">ACE Certification Ltd.</strong> is a
-              dedicated, client-centric professional services firm helping organizations of all sizes
-              achieve international standards of quality, safety, and efficiency.
+              <strong className="font-semibold text-slate-900">
+                {content.companyName ?? "ACE Certification Ltd."}
+              </strong>
+              {paragraph1Suffix}
             </p>
             <p>
-              The name &quot;ACE&quot; reflects our promise: to help clients{" "}
-              <span className={highlightAcronymExpansion ? "font-semibold text-red-600" : ""}>
-                Achieve Compliance &amp; Excellence.
-              </span>{" "}
-              Our experienced Lead Auditors turn complex standards into practical steps for lasting
-              business improvement.
+              {content.paragraph2Prefix ?? "The name "}
+              &quot;{content.acronym ?? "ACE"}&quot;
+              {highlightAcronymExpansion && highlightIndex >= 0 ? (
+                <>
+                  {paragraph2Suffix.slice(0, highlightIndex)}
+                  <span className="font-semibold text-red-600">
+                    {highlightedPhrase}
+                  </span>
+                  {paragraph2Suffix.slice(
+                    highlightIndex + highlightedPhrase.length,
+                  )}
+                </>
+              ) : (
+                paragraph2Suffix
+              )}
             </p>
-            {showStrategicParagraph && (
-              <p>
-                We believe certification should be more than a trophy—it should be a strategic tool
-                that creates measurable improvement for your business.
-              </p>
-            )}
+            {showStrategicParagraph && <p>{paragraph3}</p>}
           </div>
 
           {/* ACE Acronym Highlights */}
@@ -158,7 +176,7 @@ export default function AboutSection({
               href="/about"
               className="group mt-10 inline-flex items-center gap-3 rounded-full bg-red-600 px-8 py-4 text-sm font-bold text-white shadow-lg shadow-red-600/25 transition-all hover:-translate-y-1 hover:bg-red-700 hover:shadow-xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600"
             >
-              {storyLinkLabel}
+              {content.buttonLabel ?? storyLinkLabel}
               <ArrowRight
                 className="h-4 w-4 transition-transform group-hover:translate-x-1.5"
                 aria-hidden="true"

@@ -1,20 +1,28 @@
 import { connection } from 'next/server';
+import Image from 'next/image';
 import ContactForm from '../../components/ContactForm';
 import { getContactPageContent } from '../../lib/sanity/contactPage';
+import { urlFor } from '../../lib/sanity/client';
 
 export default async function ContactPage() {
   await connection();
   const content = await getContactPageContent();
   const { hero, info, form } = content;
+  const heroImageUrl =
+    urlFor(hero.backgroundImage)?.width(1920).url() ||
+    'https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1920&q=80';
 
   return (
     <main className="relative min-h-screen overflow-x-hidden bg-slate-50 font-sans text-slate-800">
       <section className="relative overflow-hidden bg-[#FFF8F7] px-4 py-10 text-center sm:py-14">
         <div className="absolute inset-0 z-0">
-          <img
-            src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1920&q=80"
+          <Image
+            src={heroImageUrl}
             alt={hero.backgroundImageAlt}
-            className="h-full w-full object-cover opacity-30"
+            fill
+            preload
+            sizes="100vw"
+            className="object-cover opacity-30"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-white/40 via-transparent to-white/80" />
         </div>

@@ -138,11 +138,11 @@ export default function FeaturesSection({ content = {} }) {
           id="features-heading"
           className="mb-10 text-center text-3xl font-extrabold leading-tight tracking-tight text-[#343653] sm:mb-12 sm:text-4xl lg:mb-14 lg:text-5xl"
         >
-          Why Choose ACE Certification Ltd.?
+          {sectionTitle}
         </h2>
 
         <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 sm:gap-6 xl:grid-cols-4 xl:gap-8">
-          {features.map((feature) => (
+          {normalizedFeatures.map((feature) => (
             <article
               key={feature.id}
               className="flex min-h-[360px] flex-col rounded-[18px] border border-slate-100/90 bg-white px-6 py-8 shadow-[0_16px_50px_rgba(32,43,66,0.07)] sm:px-7 sm:py-9 xl:min-h-[400px] xl:px-5 xl:py-8 2xl:min-h-[400px] 2xl:px-8 2xl:py-8"

@@ -49,7 +49,7 @@ export default function CertificationCtaSection({
 
           <div className="relative min-h-[280px] md:min-h-[440px]">
             <Image
-              src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1000&q=85"
+              src={content.imageUrl || "https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1000&q=85"}
               alt={content.imageAlt}
               fill
               sizes="(max-width: 768px) 100vw, 45vw"

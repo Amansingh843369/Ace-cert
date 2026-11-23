@@ -56,7 +56,14 @@ export default function ManagementCertificationDirectory({ initialStandards, pag
   return (
     <main className="min-h-screen bg-white text-[#1c2448]">
       <section className="relative border-b border-red-100 bg-gradient-to-br from-red-50 via-white to-white overflow-hidden">
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=85')] bg-cover bg-center opacity-[0.10] pointer-events-none" />
+        <div
+          className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=85')] bg-cover bg-center opacity-[0.10] pointer-events-none"
+          style={
+            heroImageUrl
+              ? { backgroundImage: `url("${heroImageUrl}")` }
+              : undefined
+          }
+        />
         <div className="relative z-10 mx-auto max-w-7xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8 lg:py-14">
           {/* Left: Content */}
           <div className="min-w-0 space-y-4">
