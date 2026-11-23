@@ -8,7 +8,6 @@ export default function ContactForm({ content }) {
     lastName: '',
     email: '',
     phone: '',
-    purpose: '',
     message: '',
   });
 
@@ -61,20 +60,6 @@ export default function ContactForm({ content }) {
             {content.phoneLabel} *
           </label>
           <input id="phone" name="phone" type="tel" required autoComplete="tel" value={formData.phone} onChange={handleChange} className="w-full rounded-xl border border-gray-200 bg-gray-50 px-4 py-3.5 text-sm text-gray-900 placeholder-gray-400 transition-all focus:border-red-600 focus:outline-none focus:ring-2 focus:ring-red-500/20" />
-        </div>
-
-        <div>
-          <label htmlFor="purpose" className="mb-1.5 block text-xs font-bold uppercase tracking-wider text-gray-700">
-            {content.purposeLabel} *
-          </label>
-          <select id="purpose" name="purpose" required value={formData.purpose} onChange={handleChange} className="w-full cursor-pointer rounded-xl border border-gray-200 bg-gray-50 px-4 py-3.5 text-sm text-gray-700 transition-all focus:border-red-600 focus:outline-none focus:ring-2 focus:ring-red-500/20">
-            <option value="" disabled>{content.purposePlaceholder}</option>
-            {content.purposeOptions.map((option, index) => (
-              <option key={option.value || index} value={option.value}>
-                {option.label}
-              </option>
-            ))}
-          </select>
         </div>
 
         <div>
