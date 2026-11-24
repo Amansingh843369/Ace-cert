@@ -152,23 +152,15 @@ export default function IsoCertificationLayout() {
 
               {/* Image */}
               <div className="w-full shrink-0 lg:w-[44%]">
-                <figure className="relative aspect-square w-full overflow-hidden rounded-2xl bg-red-50 ring-1 ring-black/5 lg:h-full">
+                <figure className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl bg-white ring-1 ring-black/5 self-center">
                   <Image
-                    src={certification?.heroImageUrl || "/certifications/14064.png"}
-                    alt={certification?.heroImageAlt || "ISO 14064 certification artwork"}
+                    src="/certification-logos/iso-14064.png"
+                    alt="ACE-CERT 14064 certification logo"
                     fill
                     priority
                     sizes="(max-width: 1024px) 100vw, 480px"
-                    className="object-cover transition-transform duration-700 hover:scale-[1.04]"
+                    className="object-contain p-3 sm:p-5"
                   />
-                  <figcaption className="absolute bottom-3 left-3 rounded-xl border border-white/70 bg-white/95 px-3.5 py-2.5 shadow-lg backdrop-blur-sm sm:bottom-4 sm:left-4 sm:px-4 sm:py-3">
-                    <p className="text-[10px] font-semibold uppercase tracking-wider text-red-700 sm:text-xs">
-                      Carbon Neutral
-                    </p>
-                    <p className="mt-0.5 text-xs font-bold text-slate-900 sm:text-sm">
-                      Sustainable future starts here
-                    </p>
-                  </figcaption>
                 </figure>
               </div>
 

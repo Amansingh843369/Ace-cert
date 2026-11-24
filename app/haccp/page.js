@@ -160,14 +160,14 @@ export default function HaccpCertificationPage() {
               </a>
             </div>
           </div>
-          <div className="relative aspect-square mx-auto w-full max-w-[320px] overflow-hidden rounded-3xl border border-red-100 bg-white shadow-2xl shadow-red-900/10 sm:max-w-[380px] lg:h-full lg:max-w-[440px]">
+          <div className="relative aspect-[4/3] mx-auto w-full max-w-[320px] overflow-hidden rounded-3xl border border-red-100 bg-white shadow-2xl shadow-red-900/10 sm:max-w-[380px] lg:max-w-[440px] self-center">
             <Image
-              src="/2nd_images_ace-cert/haccp.jpg"
-              alt={certification?.heroImageAlt || 'HACCP certification artwork'}
+              src="/certification-logos/haccp.png"
+              alt="ACE-CERT HACCP certification logo"
               fill
               sizes="(max-width: 1024px) 100vw, 440px"
               priority
-              className="object-cover"
+              className="object-contain p-3 sm:p-5"
             />
           </div>
         </div>

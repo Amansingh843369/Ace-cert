@@ -88,7 +88,7 @@ export default function IsoCertificationLayout() {
               <figure className="relative aspect-[4/3] w-full max-w-[520px] overflow-hidden rounded-2xl bg-red-50 ring-1 ring-black/5 sm:rounded-[1.5rem] lg:h-full lg:aspect-auto">
                 {/* Industrial Asset / Facility Image */}
                 <Image
-                  src={certification?.heroImageUrl || "https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=1200&q=85"}
+                  src="/2nd_images_ace-cert/55000.jpg"
                   alt={certification?.heroImageAlt || "Industrial facility and asset management infrastructure"}
                   fill
                   priority

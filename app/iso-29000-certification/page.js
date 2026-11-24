@@ -88,7 +88,7 @@ export default function IsoCertificationLayout() {
               <figure className="relative aspect-square w-full max-w-[520px] overflow-hidden rounded-2xl bg-red-50 ring-1 ring-black/5 sm:rounded-[1.5rem] lg:h-full">
                 {/* Oil & Gas Refinery Image */}
                 <Image
-                  src={certification?.heroImageUrl || "/certifications/29000.png"}
+                  src="/2nd_images_ace-cert/29000.jpg"
                   alt={certification?.heroImageAlt || "ISO 29000 certification artwork"}
                   fill
                   priority

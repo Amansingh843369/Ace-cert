@@ -89,20 +89,16 @@ export default function Iso24161Layout() {
             <div aria-hidden="true" className="absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent via-red-200 to-transparent" />
 
             <div className="order-1 flex w-full justify-center lg:w-[46%]">
-              <figure className="relative aspect-[4/3] w-full max-w-[520px] overflow-hidden rounded-2xl bg-red-50 ring-1 ring-black/5 sm:rounded-[1.5rem] lg:h-full lg:aspect-auto">
+              <figure className="relative aspect-[4/3] w-full max-w-[520px] overflow-hidden rounded-2xl bg-white ring-1 ring-black/5 sm:rounded-[1.5rem] lg:aspect-auto self-center">
                 {/* IMAGE 1: Waste Collection Truck / Recycling */}
                 <Image
-                  src={certification?.heroImageUrl || "https://plus.unsplash.com/premium_photo-1723373960718-c26efde88d6d?q=80&w=688&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D"}
-                  alt={certification?.heroImageAlt || "Waste collection truck and recycling bins representing ISO 24161 waste management standards"}
+                  src="/certification-logos/iso-24161.png"
+                  alt="ACE-CERT 24161 certification logo"
                   fill
                   priority
                   sizes="(max-width: 1024px) 100vw, 520px"
-                  className="object-cover transition-transform duration-700 hover:scale-[1.03]"
+                  className="object-contain p-3 sm:p-5"
                 />
-                <figcaption className="absolute bottom-4 left-4 rounded-xl border border-white/70 bg-white/95 px-4 py-3 shadow-lg backdrop-blur-sm">
-                  <p className="text-xs font-semibold uppercase tracking-wider text-red-700">Global Vocabulary</p>
-                  <p className="mt-0.5 text-sm font-bold text-slate-900">Unified Standards</p>
-                </figcaption>
               </figure>
             </div>
 

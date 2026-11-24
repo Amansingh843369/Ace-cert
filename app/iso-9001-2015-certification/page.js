@@ -79,14 +79,14 @@ export default function IsoCertificationLayout() {
             <div aria-hidden="true" className="absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent via-red-200 to-transparent" />
 
             <div className="order-1 flex w-full justify-center lg:w-[46%]">
-              <div className="relative aspect-[4/3] w-full max-w-[560px] overflow-hidden rounded-2xl bg-white ring-1 ring-slate-200 shadow-[0_12px_36px_rgba(15,23,42,0.06)] sm:rounded-[1.5rem]">
+              <div className="relative aspect-[4/3] w-full max-w-[560px] overflow-hidden rounded-2xl bg-white ring-1 ring-slate-200 shadow-[0_12px_36px_rgba(15,23,42,0.06)] sm:rounded-[1.5rem] self-center">
                 <Image
-                  src="/certifications/iso-9001-shield-logo.png"
+                  src="/certification-logos/iso-9001.png"
                   alt="ACE-CERT ISO 9001 shield logo"
                   fill
                   priority
                   sizes="(max-width: 1024px) 100vw, 560px"
-                  className="object-contain p-3 transition-transform duration-700 hover:scale-[1.03] sm:p-5"
+                  className="object-contain p-3 sm:p-5"
                 />
               </div>
             </div>

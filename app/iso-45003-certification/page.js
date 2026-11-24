@@ -88,7 +88,7 @@ export default function IsoCertificationLayout() {
               <figure className="relative aspect-[4/3] w-full max-w-[520px] overflow-hidden rounded-2xl bg-red-50 ring-1 ring-black/5 sm:rounded-[1.5rem] lg:h-full lg:aspect-auto">
                 {/* Mental Health / Workplace Well-being Image */}
                 <Image
-                  src={certification?.heroImageUrl || "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=1200&q=85"}
+                  src="/2nd_images_ace-cert/45003.png"
                   alt={certification?.heroImageAlt || "Employees discussing mental health and workplace well-being"}
                   fill
                   priority

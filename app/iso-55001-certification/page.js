@@ -89,20 +89,16 @@ export default function Iso55001Layout() {
             <div aria-hidden="true" className="absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent via-red-200 to-transparent" />
 
             <div className="order-1 flex w-full justify-center lg:w-[46%]">
-              <figure className="relative aspect-[4/3] w-full max-w-[520px] overflow-hidden rounded-2xl bg-red-50 ring-1 ring-black/5 sm:rounded-[1.5rem] lg:h-full lg:aspect-auto">
+              <figure className="relative aspect-[4/3] w-full max-w-[520px] overflow-hidden rounded-2xl bg-white ring-1 ring-black/5 sm:rounded-[1.5rem] lg:aspect-auto self-center">
                 {/* IMAGE 1: Industrial Assets / Factory Machinery */}
                 <Image
-                  src={certification?.heroImageUrl || "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1200&q=85"}
-                  alt={certification?.heroImageAlt || "Industrial machinery and factory assets representing ISO 55001 asset management"}
+                  src="/certification-logos/iso-55001.png"
+                  alt="ACE-CERT 55001 certification logo"
                   fill
                   priority
                   sizes="(max-width: 1024px) 100vw, 520px"
-                  className="object-cover transition-transform duration-700 hover:scale-[1.03]"
+                  className="object-contain p-3 sm:p-5"
                 />
-                <figcaption className="absolute bottom-4 left-4 rounded-xl border border-white/70 bg-white/95 px-4 py-3 shadow-lg backdrop-blur-sm">
-                  <p className="text-xs font-semibold uppercase tracking-wider text-red-700">Optimized Performance</p>
-                  <p className="mt-0.5 text-sm font-bold text-slate-900">Maximum Value</p>
-                </figcaption>
               </figure>
             </div>
 
