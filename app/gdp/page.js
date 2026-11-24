@@ -177,7 +177,7 @@ export default function GdpCertificationPage() {
               <div className="w-full shrink-0 lg:w-[44%]">
                 <figure className="relative aspect-square w-full overflow-hidden rounded-2xl bg-red-50 ring-1 ring-black/5 lg:h-full">
                   <Image
-                    src={certification?.heroImageUrl || '/certifications/gdp.png'}
+                    src="/2nd_images_ace-cert/gdp.jpg"
                     alt={certification?.heroImageAlt || 'GDP certification artwork'}
                     fill
                     priority
