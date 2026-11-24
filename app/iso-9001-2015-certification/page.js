@@ -75,18 +75,18 @@ export default function IsoCertificationLayout() {
             </>}</h2>
           </div>
 
-          <div className="relative flex flex-col items-center gap-7 overflow-hidden rounded-[1.75rem] border border-red-100/90 bg-white/95 p-5 shadow-[0_18px_60px_rgba(17,24,39,0.07)] sm:rounded-[2rem] sm:p-7 md:gap-10 md:p-9 lg:flex-row lg:items-center lg:gap-12 lg:rounded-[2.25rem] lg:p-11">
+          <div className="relative flex flex-col items-center gap-7 overflow-hidden rounded-[1.75rem] border border-red-100/90 bg-white/95 p-5 shadow-[0_18px_60px_rgba(17,24,39,0.07)] sm:rounded-[2rem] sm:p-7 md:gap-10 md:p-9 lg:flex-row lg:items-stretch lg:gap-12 lg:rounded-[2.25rem] lg:p-11">
             <div aria-hidden="true" className="absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent via-red-200 to-transparent" />
 
             <div className="order-1 flex w-full justify-center lg:w-[46%]">
-              <div className="relative aspect-[4/3] w-full max-w-[560px] overflow-hidden rounded-2xl bg-white ring-1 ring-slate-200 shadow-[0_12px_36px_rgba(15,23,42,0.06)] sm:rounded-[1.5rem] self-center">
+              <div className="relative aspect-square w-full max-w-[520px] overflow-hidden rounded-2xl bg-red-50 ring-1 ring-black/5 sm:rounded-[1.5rem] lg:h-full">
                 <Image
-                  src="/certification-logos/iso-9001.png"
+                  src="/certifications/iso-9001-shield-logo.png"
                   alt="ACE-CERT ISO 9001 shield logo"
                   fill
                   priority
-                  sizes="(max-width: 1024px) 100vw, 560px"
-                  className="object-contain p-3 sm:p-5"
+                  sizes="(max-width: 1024px) 100vw, 520px"
+                  className="object-contain p-8 transition-transform duration-700 hover:scale-[1.03]"
                 />
               </div>
             </div>
@@ -106,6 +106,21 @@ export default function IsoCertificationLayout() {
                 {certification?.introSupport && <p>{certification.introSupport}</p>}
               </div>
 
+              {/* --- NEW ENQUIRE BUTTON --- */}
+              <div className="mt-2 flex justify-center lg:justify-start">
+                <button
+                  onClick={() => setIsModalOpen(true)}
+                  className="group relative inline-flex min-h-12 w-full items-center justify-center rounded-xl bg-[#E30613] px-7 py-3.5 text-sm font-bold text-white shadow-[0_8px_22px_rgba(227,6,19,0.2)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-red-800 hover:shadow-[0_12px_28px_rgba(227,6,19,0.26)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-700 focus-visible:ring-offset-2 active:translate-y-0 sm:w-auto sm:text-base"
+                >
+                  <span>{certification?.enquireLabel || "Get Certified Today"}</span>
+                  <svg className="w-5 h-5 ml-2 -mr-1 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                  </svg>
+                  {/* Shine Effect */}
+                  <div className="absolute inset-0 rounded-full ring-2 ring-white/20 group-hover:ring-white/40 transition-all"></div>
+                </button>
+              </div>
+
             </div>
           </div>
         </section>
@@ -114,6 +129,7 @@ export default function IsoCertificationLayout() {
         <CertificationImportanceSection
             id="iso9001-importance"
             title="ISO 9001"
+            imageSrc="/certifications/9001.png"
             certification={certification}
             description={
               <>
