@@ -81,7 +81,7 @@ export default function IsoCertificationLayout() {
             <div className="order-1 flex w-full justify-center lg:w-[46%]">
               <div className="relative aspect-square w-full max-w-[520px] overflow-hidden rounded-2xl bg-red-50 ring-1 ring-black/5 sm:rounded-[1.5rem] lg:h-full">
                 <Image
-                  src={certification?.heroImageUrl || "/certifications/9001.png"}
+                  src={certification?.heroImageUrl || "/2nd_images_ace-cert/9001.jpg"}
                   alt={certification?.heroImageAlt || "ISO 9001 certification artwork"}
                   fill
                   priority
