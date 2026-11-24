@@ -9,33 +9,59 @@ export default async function ContactPage() {
   const content = await getContactPageContent();
   const { hero, info, form } = content;
   const heroImageUrl =
-    urlFor(hero.backgroundImage)?.width(1920).url() ||
-    'https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1920&q=80';
+    urlFor(hero.backgroundImage)?.width(1600).height(600).fit('crop').quality(72).url() ||
+    'https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1600&q=72';
+  const contactPageJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'ContactPage',
+    name: hero.title,
+    description: 'Contact ACE-CERT for ISO certification, inspection, training and management system support.',
+    url: 'https://ace-cert.com/contact',
+    mainEntity: {
+      '@type': 'Organization',
+      name: info.companyName,
+      email: info.email,
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: '11-12 St. Andrew Square',
+        addressLocality: 'Edinburgh',
+        postalCode: 'EH2 2AF',
+        addressCountry: 'GB',
+      },
+    },
+  };
 
   return (
     <main className="relative min-h-screen overflow-x-hidden bg-slate-50 font-sans text-slate-800">
-      <section className="relative overflow-hidden bg-[#FFF8F7] px-4 py-10 text-center sm:py-14">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(contactPageJsonLd) }}
+      />
+      <section aria-labelledby="contact-heading" className="relative overflow-hidden bg-[#FFF8F7] px-4 py-12 text-center sm:py-16">
         <div className="absolute inset-0 z-0">
           <Image
             src={heroImageUrl}
             alt={hero.backgroundImageAlt}
             fill
             preload
-            sizes="100vw"
-            className="object-cover opacity-30"
+            sizes="(max-width: 640px) 100vw, (max-width: 1280px) 100vw, 1600px"
+            className="object-cover opacity-20"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-white/40 via-transparent to-white/80" />
+          <div className="absolute inset-0 bg-gradient-to-b from-white/70 via-white/45 to-white/85" />
         </div>
         <div className="relative z-10 mx-auto max-w-4xl space-y-4">
-          <h1 className="text-4xl font-extrabold tracking-tight text-red-600 drop-shadow-sm sm:text-5xl md:text-6xl">
+          <h1 id="contact-heading" className="text-3xl font-extrabold tracking-tight text-[#0B1739] sm:text-5xl">
             {hero.title}
           </h1>
+          <p className="mx-auto max-w-2xl text-sm leading-6 text-slate-600 sm:text-base">
+            Speak with our certification team about standards, audits, training and compliance support.
+          </p>
         </div>
       </section>
 
-      <section className="relative z-10 mx-auto -mt-6 max-w-7xl px-4 pb-14 sm:-mt-8 sm:px-6 lg:-mt-10 lg:px-8 lg:pb-20">
-        <div className="grid grid-cols-1 items-stretch gap-6 lg:grid-cols-[0.85fr_1.15fr] lg:gap-8">
-          <div className="order-2 flex flex-col justify-between space-y-8 rounded-3xl border border-slate-200 bg-white p-6 shadow-[0_20px_60px_-32px_rgba(11,23,57,0.28)] sm:p-8 lg:order-1 lg:p-9">
+      <section aria-label="Contact ACE-CERT" className="relative z-10 mx-auto max-w-7xl px-4 py-10 sm:px-6 sm:py-14 lg:px-8 lg:py-16">
+        <div className="grid grid-cols-1 items-start gap-6 lg:grid-cols-[0.85fr_1.15fr] lg:gap-8">
+          <aside className="rounded-3xl border border-slate-200 bg-white p-5 shadow-[0_20px_60px_-32px_rgba(11,23,57,0.28)] sm:p-8 lg:p-9">
             <div>
               <div className="mb-4">
                 <p className="text-xs font-bold uppercase tracking-[0.16em] text-red-600">{info.eyebrow}</p>
@@ -54,7 +80,7 @@ export default async function ContactPage() {
                 </ContactInfo>
               </div>
             </div>
-          </div>
+          </aside>
           <ContactForm content={form} />
         </div>
       </section>
