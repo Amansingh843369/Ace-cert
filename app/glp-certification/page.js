@@ -86,16 +86,16 @@ export default function GlpLayout() {
           <article className="relative flex flex-col items-center gap-7 overflow-hidden rounded-[1.75rem] border border-red-100/90 bg-white/95 p-5 shadow-[0_18px_60px_rgba(17,24,39,0.07)] sm:rounded-[2rem] sm:p-7 md:gap-10 md:p-9 lg:flex-row lg:items-stretch lg:gap-12 lg:rounded-[2.25rem] lg:p-11">
             <div aria-hidden="true" className="absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent via-red-200 to-transparent" />
 
-            <div className="order-1 flex w-full justify-center lg:w-[46%]">
-              <figure className="relative aspect-[4/3] w-full max-w-[520px] overflow-hidden rounded-2xl bg-white ring-1 ring-black/5 sm:rounded-[1.5rem] self-center">
+            <div className="order-1 flex w-full justify-center lg:items-stretch lg:w-[46%]">
+              <figure className="relative aspect-[4/3] w-full max-w-[520px] overflow-hidden rounded-2xl bg-white ring-1 ring-black/5 sm:rounded-[1.5rem] lg:aspect-auto lg:h-full">
                 {/* IMAGE 1: Scientist in Lab / Microscope */}
                 <Image
-                  src="/certification-logos/glp.png"
+                  src="/glp.jpeg"
                   alt="ACE-CERT GLP certification logo"
                   fill
                   priority
                   sizes="(max-width: 1024px) 100vw, 520px"
-                  className="object-contain p-3 sm:p-5"
+                  className="object-cover"
                 />
               </figure>
             </div>
@@ -114,6 +114,9 @@ export default function GlpLayout() {
                 <p>{certification?.introParagraphs?.[1] || <>
                   GLP is widely applied in pharmaceutical, chemical, biotechnology, environmental, food, agricultural, and healthcare laboratories to ensure compliance with regulatory and scientific standards.
                 </>}</p>
+                <p>
+                  A reliable GLP program also uses approved protocols, calibrated equipment, trained personnel, and complete study records. These controls support traceable results and make data easier to review and reproduce.
+                </p>
               </div>
 
               {/* --- ENQUIRE BUTTON --- */}

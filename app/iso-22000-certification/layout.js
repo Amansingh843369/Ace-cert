@@ -92,7 +92,7 @@ export default function Iso22000Layout() {
                   fill
                   priority
                   sizes="(max-width: 1024px) 100vw, 520px"
-                  className="object-contain transition-transform duration-700 hover:scale-[1.03]"
+                  className="object-cover transition-transform duration-700 hover:scale-[1.03]"
                 />
                 <figcaption className="absolute bottom-4 left-4 rounded-xl border border-white/70 bg-white/95 px-4 py-3 shadow-lg backdrop-blur-sm">
                   <p className="text-xs font-semibold uppercase tracking-wider text-red-700">Farm to Fork</p>

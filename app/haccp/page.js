@@ -85,19 +85,18 @@ export default function HaccpCertificationPage() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const certification = useCertificationContent();
   const benefits =
-    certification?.benefits?.length > 0 ? certification.benefits : HACCP_BENEFITS;
-  const principles =
-    certification?.pillars?.length > 0
-      ? certification.pillars.map((pillar, index) => {
-          const fallback = HACCP_PRINCIPLES[index % HACCP_PRINCIPLES.length];
-          return {
-            ...fallback,
-            id: String(index + 1).padStart(2, '0'),
-            title: pillar.title || fallback.title,
-            desc: pillar.description || fallback.desc,
-          };
-        })
-      : HACCP_PRINCIPLES;
+    certification?.benefits?.length > 0
+      ? [...certification.benefits, ...HACCP_BENEFITS.slice(certification.benefits.length)]
+      : HACCP_BENEFITS;
+  const principles = HACCP_PRINCIPLES.map((fallback, index) => {
+    const pillar = certification?.pillars?.[index];
+    return {
+      ...fallback,
+      id: String(index + 1).padStart(2, '0'),
+      title: pillar?.title || fallback.title,
+      desc: pillar?.description || fallback.desc,
+    };
+  });
   useEffect(() => {
     if (!isModalOpen) return;
     document.body.style.overflow = 'hidden';
@@ -112,122 +111,114 @@ export default function HaccpCertificationPage() {
   }, [isModalOpen]);
 
   return (
-    <main className="min-h-screen bg-white text-slate-900 font-sans">
-      {/* Hero */}
-      <section className="relative overflow-hidden border-b border-red-100 bg-gradient-to-br from-white via-[#fff8f7] to-red-50/70">
-        <div className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full bg-red-100/60 blur-3xl" />
-        <div className="relative mx-auto grid max-w-7xl items-center gap-8 px-4 py-10 sm:px-6 sm:py-14 lg:items-stretch lg:grid-cols-[1.05fr_0.95fr] lg:gap-12 lg:px-8 lg:py-16">
-          <div className="relative z-10 flex flex-col justify-between">
-            <SectionBadge>
+    <main className="relative min-h-screen overflow-hidden bg-[#fffdfd] font-sans text-slate-900 selection:bg-red-200 selection:text-red-900">
+      <div aria-hidden="true" className="pointer-events-none absolute -left-40 -top-40 h-[480px] w-[480px] rounded-full bg-red-100/50 blur-[120px]" />
+      <div aria-hidden="true" className="pointer-events-none absolute right-0 top-[28%] h-[460px] w-[460px] rounded-full bg-rose-100/40 blur-[130px]" />
+      <div aria-hidden="true" className="pointer-events-none absolute bottom-0 left-[10%] h-[520px] w-[520px] rounded-full bg-red-50 blur-[130px]" />
+
+      <div className="relative z-10 mx-auto max-w-7xl space-y-20 px-4 py-8 md:space-y-24 md:px-6 md:py-12 lg:space-y-28 lg:px-12 lg:py-16">
+        <section aria-labelledby="haccp-title">
+          <div className="mb-8 flex flex-col items-center text-center md:mb-10">
+            <div className="mb-5 inline-flex items-center gap-2.5 rounded-full border border-red-100 bg-white/90 px-4 py-2 text-xs font-semibold text-red-800 shadow-[0_4px_16px_rgba(127,29,29,0.06)] md:mb-6 md:text-sm">
+              <span className="relative flex h-2.5 w-2.5">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-red-500 opacity-40" />
+                <span className="relative inline-flex h-full w-full rounded-full bg-[#E30613]" />
+              </span>
               {certification?.heroBadge || 'Food Safety Management'}
-            </SectionBadge>
-            <h1 className="mt-5 max-w-xl text-4xl font-extrabold leading-[1.05] tracking-tight text-[#111827] sm:text-5xl lg:text-5xl lg:whitespace-nowrap xl:text-[3.5rem]">
+            </div>
+
+            <h1 id="haccp-title" className="mb-4 max-w-4xl text-balance text-4xl font-extrabold leading-[1.08] tracking-[-0.045em] text-[#111827] sm:text-5xl md:text-6xl lg:text-5xl xl:text-[3.5rem]">
               {certification?.heroTitle
                 ? certification.heroTitle.replace(/\s+Certification$/i, '')
                 : 'HACCP'}{' '}
-              <span className="text-red-600">Certification</span>
+              <span className="text-[#E30613]">Certification</span>
             </h1>
-            <p className="mt-5 max-w-xl text-base leading-7 text-slate-600 sm:text-lg sm:leading-8">
+
+            <h2 className="max-w-2xl px-2 text-pretty text-base font-medium leading-relaxed text-[#526581] sm:text-lg md:text-xl">
               {certification?.heroDescription ||
                 'A preventive approach to food safety that identifies, evaluates, and controls hazards throughout the food production and supply chain.'}
-            </p>
-            <div className="mt-7 flex flex-wrap items-center gap-3">
-              <button
-                onClick={() => setIsModalOpen(true)}
-                type="button"
-                className="group inline-flex items-center justify-center gap-2 rounded-xl bg-red-600 px-6 py-3.5 text-sm font-bold text-white shadow-lg shadow-red-600/25 transition hover:-translate-y-0.5 hover:bg-red-700 hover:shadow-red-600/35 sm:text-base"
-              >
-                {certification?.enquireLabel || 'Get Certified Today'}
-                <ChevronRight className="h-4 w-4 transition-transform group-hover:translate-x-1 sm:h-5 sm:w-5" />
-              </button>
-              <a
-                href="#haccp-principles"
-                className="inline-flex items-center gap-2 rounded-xl border border-red-200 bg-white/80 px-5 py-3.5 text-sm font-bold text-[#1c2448] transition hover:border-red-300 hover:bg-white sm:text-base"
-              >
-                Explore the 7 principles
-              </a>
-            </div>
+            </h2>
           </div>
-          <div className="relative aspect-square mx-auto w-full max-w-[320px] overflow-hidden rounded-3xl border border-red-100 bg-white shadow-2xl shadow-red-900/10 sm:max-w-[380px] lg:h-full lg:max-w-[440px]">
-            <Image
-              src={certification?.heroImageUrl || '/certifications/haccp.png'}
-              alt={certification?.heroImageAlt || 'HACCP certification artwork'}
-              fill
-              sizes="(max-width: 1024px) 100vw, 440px"
-              priority
-              className="object-cover"
-            />
-          </div>
-        </div>
-      </section>
 
-      {/* What is HACCP */}
-      <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-20">
-        <div className="flex flex-col items-center gap-8 lg:items-stretch lg:flex-row lg:gap-14">
-          <div className="flex-1">
-            <figure className="relative h-[300px] overflow-hidden rounded-2xl border border-slate-200 shadow-lg sm:h-[380px] lg:h-full">
-              <Image
-                src="https://images.unsplash.com/photo-1606859191214-25806e8e2423?auto=format&fit=crop&w=1200&q=85"
-                alt="Food safety inspection and quality control in manufacturing"
-                fill
-                sizes="(max-width: 1024px) 100vw, 500px"
-                className="object-cover object-center opacity-90"
-              />
-            </figure>
-          </div>
-          <div className="flex flex-1 flex-col justify-between space-y-6">
-            <SectionBadge>About HACCP</SectionBadge>
-            <SectionHeading>
-              {certification?.introTitle ? (
-                <>
-                  {certification.introTitle.replace(/HACCP\??$/i, '')}
-                  <span className="text-red-600">HACCP?</span>
-                </>
-              ) : (
-                <>What is <span className="text-red-600">HACCP?</span></>
-              )}
-            </SectionHeading>
-            <div className="space-y-6 text-slate-600 text-sm sm:text-base leading-relaxed text-justify">
-              {certification?.introParagraphs?.length ? (
-                certification.introParagraphs.map((paragraph, index) => (
-                  <p key={`${index}-${paragraph}`}>{paragraph}</p>
-                ))
-              ) : (
-                <>
-                  <p>
-                    HACCP (Hazard Analysis and Critical Control Points) is an internationally recognized
-                    food safety management system. Unlike traditional inspection methods, it focuses on
-                    preventing hazards rather than detecting them after they occur.
-                  </p>
-                  <p>
-                    It systematically identifies biological, chemical, and physical hazards throughout
-                    the food production and supply chain, ensuring products are safe for consumption
-                    before they reach the market.
-                  </p>
-                </>
-              )}
+          <article className="relative flex flex-col items-center gap-7 overflow-hidden rounded-[1.75rem] border border-red-100/90 bg-white/95 p-5 shadow-[0_18px_60px_rgba(17,24,39,0.07)] sm:rounded-[2rem] sm:p-7 md:gap-10 md:p-9 lg:flex-row lg:items-stretch lg:gap-12 lg:rounded-[2.25rem] lg:p-11">
+            <div aria-hidden="true" className="absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent via-red-200 to-transparent" />
+
+            <div className="order-1 flex w-full justify-center lg:items-stretch lg:w-[46%]">
+              <figure className="relative aspect-[4/3] w-full max-w-[520px] overflow-hidden rounded-2xl bg-white ring-1 ring-black/5 sm:rounded-[1.5rem] lg:aspect-auto lg:h-full">
+                <Image
+                  src={certification?.heroImageUrl || '/haccp.jpeg'}
+                  alt={certification?.heroImageAlt || 'HACCP certification artwork'}
+                  fill
+                  priority
+                  sizes="(max-width: 1024px) 100vw, 520px"
+                  className="object-cover"
+                />
+              </figure>
             </div>
-            <div className="pt-2">
-              <button
-                onClick={() => setIsModalOpen(true)}
-                type="button"
-                className="group inline-flex items-center justify-center gap-2 bg-red-600 text-white px-8 py-4 rounded-xl font-bold hover:bg-red-700 transition-all duration-300 shadow-lg shadow-red-600/25 hover:shadow-red-600/35 text-sm sm:text-base cursor-pointer"
-              >
-                <span>{certification?.enquireLabel || 'Get Certified Today'}</span>
-                <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
-              </button>
+
+            <div className="order-2 flex w-full flex-col justify-center gap-4 text-center sm:gap-5 lg:w-[54%] lg:justify-between lg:gap-6 lg:text-left">
+              <h3 id="haccp-introduction" className="relative mx-auto inline-block text-2xl font-bold tracking-tight text-[#111827] sm:text-3xl md:text-[2rem] lg:mx-0 lg:text-4xl">
+                {certification?.introTitle || 'What is HACCP?'}
+                <span aria-hidden="true" className="absolute -bottom-3 left-1/2 h-1 w-14 -translate-x-1/2 rounded-full bg-[#E30613] lg:left-0 lg:translate-x-0" />
+              </h3>
+
+              <div className="mt-2 space-y-4 text-sm leading-7 text-[#526581] sm:text-base md:text-[17px] md:leading-8 text-justify">
+                {certification?.introParagraphs?.length >= 2 ? (
+                  certification.introParagraphs.map((paragraph, index) => (
+                    <p key={`${index}-${paragraph}`}>{paragraph}</p>
+                  ))
+                ) : (
+                  <>
+                    <p>
+                      HACCP (Hazard Analysis and Critical Control Points) is an internationally recognized
+                      food safety management system. Unlike traditional inspection methods, it focuses on
+                      preventing hazards rather than detecting them after they occur.
+                    </p>
+                    <p>
+                      It systematically identifies biological, chemical, and physical hazards throughout
+                      the food production and supply chain, helping ensure products are safe before they
+                      reach consumers.
+                    </p>
+                  </>
+                )}
+                <p>
+                  Effective HACCP plans build on prerequisite programs such as good hygiene, sanitation,
+                  approved supplier controls, and staff training. They also define monitoring, corrective
+                  actions, verification, and clear records at every critical control point.
+                </p>
+              </div>
+
+              <div className="mt-2 flex flex-wrap justify-center gap-3 lg:justify-start">
+                <button
+                  onClick={() => setIsModalOpen(true)}
+                  type="button"
+                  className="group inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-xl bg-[#E30613] px-7 py-3.5 text-sm font-bold text-white shadow-[0_8px_22px_rgba(227,6,19,0.2)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-red-800 hover:shadow-[0_12px_28px_rgba(227,6,19,0.26)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-700 focus-visible:ring-offset-2 sm:w-auto sm:text-base"
+                >
+                  {certification?.enquireLabel || 'Get Certified Today'}
+                  <ChevronRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
+                </button>
+                <a
+                  href="#haccp-principles"
+                  className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl border border-red-200 bg-white px-5 py-3.5 text-sm font-bold text-[#1c2448] transition hover:border-red-300 hover:bg-red-50 sm:text-base"
+                >
+                  Explore the 7 principles
+                  <ChevronRight className="h-4 w-4" />
+                </a>
+              </div>
             </div>
-          </div>
-        </div>
-      </section>
+          </article>
+        </section>
 
       {/* Benefits */}
-      <section className="bg-slate-50 py-12 sm:py-16 lg:py-20">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 xl:px-10">
+      <section aria-label="HACCP certification benefits">
+        <div>
           <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-12">
             <SectionBadge>Benefits</SectionBadge>
-            <SectionHeading className="mt-4" highlight="Certification">
-              Benefits of HACCP
+            <SectionHeading className="mt-4">
+              Benefits of{' '}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-700 to-red-500">
+                Certification
+              </span>
             </SectionHeading>
           </div>
           <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-5 lg:gap-6">
@@ -255,8 +246,8 @@ export default function HaccpCertificationPage() {
       </section>
 
       {/* 7 Principles */}
-      <section id="haccp-principles" className="scroll-mt-24 py-12 sm:py-16 lg:py-20">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 xl:px-10">
+      <section id="haccp-principles" className="scroll-mt-24">
+        <div>
           <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-12">
             <SectionBadge>The 7 Principles</SectionBadge>
             <SectionHeading className="mt-4">
@@ -297,8 +288,8 @@ export default function HaccpCertificationPage() {
       </section>
 
       {/* Value Cards */}
-      <section className="bg-white py-12 sm:py-16 lg:py-20">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 xl:px-10">
+      <section>
+        <div>
           <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-12">
             <SectionBadge>Value Proposition</SectionBadge>
             <SectionHeading className="mt-4" highlight="Matters">
@@ -340,6 +331,7 @@ export default function HaccpCertificationPage() {
           </div>
         </div>
       </section>
+      </div>
 
       {/* Modal */}
       {isModalOpen && (

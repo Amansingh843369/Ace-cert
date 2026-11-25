@@ -96,7 +96,7 @@ export default function Iso21001CertificationLayout() {
                   fill
                   priority
                   sizes="(max-width: 1024px) 100vw, 520px"
-                  className="object-contain"
+                  className="object-cover"
                 />
               </figure>
             </div>

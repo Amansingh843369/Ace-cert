@@ -10,7 +10,7 @@ export const isoIntroSupport = {
   'ISO 14001':
     'By tracking environmental aspects, legal obligations, and objectives, organizations can reduce impacts and build sustainability into day-to-day operations.',
   'ISO 14064':
-    "A structured greenhouse-gas programme supports consistent emissions quantification, transparent reporting, and credible verification of an organization's climate data.",
+    "A structured greenhouse-gas programme supports consistent emissions quantification, transparent reporting, and credible verification of an organization's climate data. Setting clear organizational boundaries, classifying emission sources, and documenting calculation methods makes the inventory traceable and repeatable over time.",
   'ISO 20000-1':
     'Defined service-management processes help teams meet agreed service levels, handle incidents and changes consistently, and improve the reliability of IT services.',
   'ISO 20121':

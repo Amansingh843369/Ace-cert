@@ -94,7 +94,7 @@ standard for Artificial Intelligence Management Systems (AIMS).
                   fill
                   priority
                   sizes="(max-width: 1024px) 100vw, 520px"
-                  className="object-contain"
+                  className="object-cover"
                 />
               </figure>
             </div>

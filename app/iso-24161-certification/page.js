@@ -97,7 +97,7 @@ export default function Iso24161Layout() {
                   fill
                   priority
                   sizes="(max-width: 1024px) 100vw, 520px"
-                  className="object-contain"
+                  className="object-cover"
                 />
               </figure>
             </div>

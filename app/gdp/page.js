@@ -165,7 +165,7 @@ export default function GdpCertificationPage() {
               <div className="w-full shrink-0 lg:w-[44%]">
                 <figure className="relative aspect-square w-full overflow-hidden rounded-2xl bg-red-50 ring-1 ring-black/5 lg:h-full">
                   <Image
-                    src={certification?.heroImageUrl || '/certifications/gdp.png'}
+                    src={certification?.heroImageUrl || '/gdp.jpeg'}
                     alt={certification?.heroImageAlt || 'GDP certification artwork'}
                     fill
                     priority
@@ -214,6 +214,9 @@ export default function GdpCertificationPage() {
                       </p>
                     </>
                   )}
+                  <p>
+                    A strong GDP program includes supplier qualification, temperature monitoring, secure handling, and documented transport controls. These checks protect product condition and preserve traceability at every transfer.
+                  </p>
                 </div>
 
                 <div className="mt-2 flex justify-start">

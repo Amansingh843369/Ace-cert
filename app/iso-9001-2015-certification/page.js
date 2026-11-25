@@ -86,7 +86,7 @@ export default function IsoCertificationLayout() {
                   fill
                   priority
                   sizes="(max-width: 1024px) 100vw, 520px"
-                  className="object-contain transition-transform duration-700 hover:scale-[1.03]"
+                  className="object-cover transition-transform duration-700 hover:scale-[1.03]"
                 />
                 <span className="absolute bottom-6 left-1/2 -translate-x-1/2 rounded-full border border-red-100 bg-white px-4 py-2 text-sm font-bold text-[#1c2448] shadow-md">
                   ISO 9001
