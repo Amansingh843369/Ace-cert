@@ -39,7 +39,7 @@ export default function CertificationImportanceSection({
 
   return (
     <section aria-labelledby={id} className="relative">
-      <div className="grid items-start gap-8 lg:grid-cols-[1.45fr_1fr] lg:gap-12">
+      <div className="grid items-stretch gap-8 lg:grid-cols-[1.45fr_1fr] lg:gap-12">
         <div className="flex flex-col gap-6 md:gap-8">
           <div>
             <p className="mb-4 text-xs font-bold uppercase tracking-[0.22em] text-red-700">
@@ -83,13 +83,13 @@ export default function CertificationImportanceSection({
           </ol>
         </div>
 
-        <figure className="relative aspect-[1055/1491] w-full overflow-hidden rounded-[1.75rem] bg-red-50 ring-1 ring-black/5 shadow-[0_16px_45px_rgba(17,24,39,0.10)] lg:rounded-[2rem]">
+        <figure className="relative aspect-[1055/1491] w-full overflow-hidden rounded-[1.75rem] bg-red-50 ring-1 ring-black/5 shadow-[0_16px_45px_rgba(17,24,39,0.10)] lg:aspect-auto lg:rounded-[2rem]">
           <Image
             src={image}
             alt={content?.heroImageAlt || `${title} certification`}
             fill
             sizes="(max-width: 1024px) 100vw, 40vw"
-            className={title.startsWith('ISO ') ? 'object-contain' : 'object-cover'}
+            className="object-cover"
             loading="lazy"
           />
           {title === 'ISO 9001' && (

@@ -27,6 +27,9 @@ const iconsByType = {
   REGULATORY: Award,
 };
 
+const excludedHomepageServicePattern =
+  /\b(?:aman|dpdpa?|cmmi|soc|hipaa|fssc|vapt|gdpr|iatf|halal)\b|\bpci\s+dss\b/;
+
 export default function ServicesSection({
   certificationImageFiles = {},
   certificationItems = certifications,
@@ -34,6 +37,15 @@ export default function ServicesSection({
 }) {
   const services = certificationItems
     .filter(({ code }) => code !== 'CE Marking')
+    .filter(({ code, title, href }) =>
+      !excludedHomepageServicePattern.test(
+        [code, title, href]
+          .filter(Boolean)
+          .join(' ')
+          .toLowerCase()
+          .replace(/[^a-z0-9]+/g, ' '),
+      ),
+    )
     .map((certification) => ({
       ...certification,
       img:
