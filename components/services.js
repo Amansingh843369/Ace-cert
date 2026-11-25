@@ -54,15 +54,20 @@ export default function ServicesSection({
 }) {
   const services = certificationItems
     .filter(({ code }) => code !== 'CE Marking')
-    .map((certification) => ({
-      ...certification,
-      img:
-        certification.imageUrl ||
-        getCertificationImageFile(certification.code, certificationImageFiles) ||
+    .map((certification) => {
+      const localImage =
         certificationImages[certification.code] ||
-        imagesByCode[certification.code] ||
-        categoryImages[certification.type],
-    }));
+        getCertificationImageFile(certification.code, certificationImageFiles);
+
+      return {
+        ...certification,
+        img:
+          localImage ||
+          certification.imageUrl ||
+          imagesByCode[certification.code] ||
+          categoryImages[certification.type],
+      };
+    });
   const extendedServices = [...services, ...services];
 
   return (
@@ -120,7 +125,7 @@ export default function ServicesSection({
                     alt=""
                     fill
                     sizes="(max-width: 639px) 270px, (max-width: 767px) 310px, 340px"
-                    className="object-cover object-center"
+                    className="object-contain object-center"
                   />
                   
                   {/* Overlay on Hover */}

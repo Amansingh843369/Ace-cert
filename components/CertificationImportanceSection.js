@@ -80,7 +80,7 @@ const certificationImages = {
 };
 
 export const getCertificationImage = (title) =>
-  localCertificationImages[title] || certificationImages[title];
+  (localCertificationImages[title] || certificationImages[title])?.trim();
 
 export default function CertificationImportanceSection({
   id,

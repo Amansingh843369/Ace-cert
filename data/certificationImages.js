@@ -1,5 +1,11 @@
 export const certificationImages = {
   "ISO 9001": "/acecert-logo.png",
+  HACCP: "/haccp.jpeg",
+  GMP: "/gmp.jpeg",
+  GLP: "/glp.jpeg",
+  GDP: "/gdp.jpeg",
+  GWP: "/gwp.jpeg",
+  GHP: "/ghp.jpeg",
   "ISO 24161": "/24161.jpeg",
   "ISO 27001": "/27001.jpeg",
   "ISO 27002": "/27002.jpeg",
