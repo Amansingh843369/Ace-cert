@@ -66,7 +66,6 @@ export const metadata = createPageMetadata('/');
      getHomepageCertifications(),
    ]);
    const heroImageUrl = urlFor(content.hero.backgroundImage)?.width(1920).url();
-   const aboutImageUrl = urlFor(content.about.image)?.width(1400).url();
    const aboutOverlayImageUrl = urlFor(content.about.overlayImage)?.width(800).url();
    const ctaImageUrl = urlFor(content.cta.image)?.width(1000).url();
 
@@ -76,7 +75,10 @@ export const metadata = createPageMetadata('/');
     
        
       <AboutSection
-        content={content.about}
+        content={{
+          ...content.about,
+          backgroundImageAlt: "ACE Certification office building and team",
+        }}
         showAcronymHighlights={false}
         showStoryLink
         showStrategicParagraph={false}
@@ -87,7 +89,7 @@ export const metadata = createPageMetadata('/');
         compactTopPadding
         compactBottomPadding
         emphasizeImage
-        imageSrc={aboutImageUrl || "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1400&q=85"}
+        imageSrc="/about-office-building.png"
         overlayImageSrc={aboutOverlayImageUrl || "https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=800&q=85"}
       />
       <ServiceSection

@@ -65,7 +65,7 @@ export default function IsoCertificationLayout() {
               </span>
               {certification?.heroBadge || "Medical Device Standard"}
             </div>
-            <h1 id="iso13485-title" className="mb-4 max-w-4xl text-balance text-4xl font-extrabold leading-[1.08] tracking-[-0.045em] text-[#111827] sm:text-5xl md:text-6xl lg:text-5xl lg:whitespace-nowrap xl:text-[3.5rem]">{certification?.heroTitle ? <CertificationHeroTitle title={certification.heroTitle} highlightClass="text-[#E30613]" /> : <>
+            <h1 id="iso13485-title" className="mb-4 max-w-4xl text-balance text-4xl font-extrabold leading-[1.08] tracking-[-0.045em] text-[#111827] sm:text-5xl md:text-6xl lg:text-5xl xl:text-[3.5rem]">{certification?.heroTitle ? <CertificationHeroTitle title={certification.heroTitle} highlightClass="text-[#E30613]" /> : <>
               ISO 13485 <span className="text-[#E30613]">Certification</span>
             </>}</h1>
             <h2 className="max-w-2xl px-2 text-pretty text-base font-medium leading-relaxed text-[#526581] sm:text-lg md:text-xl">{certification?.heroDescription || <>

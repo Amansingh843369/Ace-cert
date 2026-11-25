@@ -76,7 +76,7 @@ export default function Iso29001Layout() {
               {certification?.heroBadge || "Petroleum & Gas Quality Standard"}
             </div>
 
-            <h1 id="iso29001-title" className="mb-4 max-w-4xl text-balance text-4xl font-extrabold leading-[1.08] tracking-[-0.045em] text-[#111827] sm:text-5xl md:text-6xl lg:text-5xl lg:whitespace-nowrap xl:text-[3.5rem]">{certification?.heroTitle ? <CertificationHeroTitle title={certification.heroTitle} highlightClass="text-[#E30613]" /> : <>
+            <h1 id="iso29001-title" className="mb-4 max-w-4xl text-balance text-4xl font-extrabold leading-[1.08] tracking-[-0.045em] text-[#111827] sm:text-5xl md:text-6xl lg:text-5xl xl:text-[3.5rem]">{certification?.heroTitle ? <CertificationHeroTitle title={certification.heroTitle} highlightClass="text-[#E30613]" /> : <>
               ISO 29001 <span className="text-[#E30613]">Certification</span>
             </>}</h1>
 

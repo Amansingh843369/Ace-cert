@@ -133,7 +133,7 @@ export default function IsoCertificationLayout() {
 
               <h1
                 id="hero-title"
-                className="mb-4 text-balance text-[2rem] font-extrabold leading-[1.1] tracking-[-0.03em] text-[#111827] xs:text-4xl sm:text-5xl md:text-6xl lg:text-5xl lg:whitespace-nowrap xl:text-[3.5rem]"
+                className="mb-4 text-balance text-[2rem] font-extrabold leading-[1.1] tracking-[-0.03em] text-[#111827] xs:text-4xl sm:text-5xl md:text-6xl lg:text-5xl xl:text-[3.5rem]"
               >{certification?.heroTitle ? <CertificationHeroTitle title={certification.heroTitle} highlightClass="text-[#E30613]" /> : <>
                 ISO 14064 <span className="text-[#E30613]">Certification</span>
               </>}</h1>

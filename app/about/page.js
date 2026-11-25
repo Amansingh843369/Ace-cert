@@ -4,7 +4,6 @@ import { Handshake, ShieldCheck, TrendingUp } from "lucide-react";
 import { connection } from 'next/server';
 import AboutSection from "../../components/AboutSection";
 import CertificationCtaSection from "../../components/CertificationCtaSection";
-import PurposeSection from "../../components/PurposeSection";
 import { getAboutPageContent } from '../../lib/sanity/aboutPage';
 import { urlFor } from '../../lib/sanity/client';
 
@@ -17,14 +16,10 @@ const valueIcons = {
 export default async function AboutPage() {
   await connection();
   const content = await getAboutPageContent();
-  const { hero, story, mission, vision, values, purpose, cta } = content;
+  const { hero, story, mission, vision, values, cta } = content;
   const heroImageUrl = urlFor(hero.backgroundImage)?.width(1920).url();
-  const storyImageUrl = urlFor(story.image)?.width(1400).url();
   const storyOverlayImageUrl = urlFor(story.overlayImage)?.width(800).url();
-  const missionImageUrl = urlFor(mission.image)?.width(1000).url();
-  const visionTallImageUrl = urlFor(vision.tallImage)?.width(600).url();
   const visionTopImageUrl = urlFor(vision.topImage)?.width(600).url();
-  const visionBottomImageUrl = urlFor(vision.bottomImage)?.width(600).url();
   const ctaImageUrl = urlFor(cta.image)?.width(1000).url();
 
   return (
@@ -66,9 +61,12 @@ export default async function AboutPage() {
         emphasizeImage
         showActions={false}
         showVideoButton
-        imageSrc={storyImageUrl || "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1400&q=85"}
+        imageSrc="/about-office-building.png"
         overlayImageSrc={storyOverlayImageUrl || "https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=800&q=85"}
-        content={story}
+        content={{
+          ...story,
+          backgroundImageAlt: "ACE Certification office building and team",
+        }}
       />
 
 {/* ================= ABOUT US CONTENT SECTION ================= */}
@@ -100,13 +98,13 @@ export default async function AboutPage() {
           </div>
 
           {/* Right: Mission Image (Also made slightly compact to match) */}
-          <div className="order-1 lg:order-2 relative mx-auto aspect-[4/3] w-full max-w-[500px] overflow-hidden rounded-[2rem] shadow-2xl lg:mx-0 lg:ml-auto">
+          <div className="order-1 lg:order-2 relative mx-auto aspect-[3/2] w-full max-w-[500px] overflow-hidden rounded-[2rem] bg-white shadow-2xl lg:mx-0 lg:ml-auto">
             <Image
-              src={missionImageUrl || "https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1000&q=85"}
-              alt={mission.imageAlt}
+              src="/our-mission-team.png"
+              alt="ACE Certification team working together toward its mission"
               fill
               sizes="(max-width: 1024px) 100vw, 50vw"
-              className="object-cover transition-transform duration-700 hover:scale-105"
+              className="object-contain"
             />
           </div>
         </div>
@@ -114,46 +112,14 @@ export default async function AboutPage() {
         {/* ================= 2. OUR VISION (Image Left, Text Right) ================= */}
         <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-2 lg:gap-12">
           
-          {/* Left: Vision Image Collage */}
-          <div className="relative mx-auto w-full max-w-sm lg:mx-0 lg:max-w-[420px]">
-            <div className="grid grid-cols-2 gap-3 sm:gap-4">
-              
-              {/* Tall image fills the same height as the two stacked images */}
-              <div className="relative row-span-2 h-full min-h-0 w-full overflow-hidden rounded-[1.5rem] rounded-tr-none shadow-xl">
-                <Image
-                  src={visionTallImageUrl || "https://images.unsplash.com/photo-1573164574572-cb89e39749b4?auto=format&fit=crop&w=600&q=85"}
-                  alt={vision.tallImageAlt}
-                  fill
-                  sizes="(max-width: 1024px) 50vw, 25vw"
-                  className="object-cover"
-                />
-              </div>
-              
-              {/* Stacked Images */}
-              <div className="flex flex-col gap-3 sm:gap-4">
-                {/* Top Square Image */}
-                <div className="relative aspect-square w-full overflow-hidden rounded-[1.5rem] rounded-tl-none shadow-xl">
-                  <Image
-                    src={visionTopImageUrl || "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=600&q=85"}
-                    alt={vision.topImageAlt}
-                    fill
-                    sizes="(max-width: 1024px) 50vw, 25vw"
-                    className="object-cover"
-                  />
-                </div>
-                
-                {/* Bottom Square Image */}
-                <div className="relative aspect-square w-full overflow-hidden rounded-[1.5rem] rounded-bl-none shadow-xl">
-                  <Image
-                    src={visionBottomImageUrl || "https://images.unsplash.com/photo-1531496730074-83b638c0a7ac?auto=format&fit=crop&w=600&q=85"}
-                    alt={vision.bottomImageAlt}
-                    fill
-                    sizes="(max-width: 1024px) 50vw, 25vw"
-                    className="object-cover"
-                  />
-                </div>
-              </div>
-            </div>
+          <div className="relative mx-auto aspect-[10/9] w-full max-w-[520px] overflow-hidden rounded-[1.5rem] shadow-xl lg:mx-0">
+            <Image
+              src={visionTopImageUrl || "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=600&q=85"}
+              alt={vision.topImageAlt}
+              fill
+              sizes="(max-width: 1024px) 100vw, 520px"
+              className="object-cover"
+            />
           </div>
 
           {/* Right: Vision Text */}
@@ -225,8 +191,6 @@ export default async function AboutPage() {
           </div>
         </div>
       </section>
-
-      <PurposeSection navy content={purpose} alignBenefitsWithText />
 
       <CertificationCtaSection content={{ ...cta, imageUrl: ctaImageUrl }} />
 
