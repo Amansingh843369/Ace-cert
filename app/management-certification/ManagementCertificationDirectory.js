@@ -83,7 +83,7 @@ export default function ManagementCertificationDirectory({ initialStandards, pag
             </h1>
             <p className="max-w-2xl text-sm leading-7 text-[#1c2448]/80 sm:text-base sm:leading-8 md:text-lg">
               {hero?.description ||
-                'Explore our complete range of ISO management system certifications — from quality and environment to security and food safety. Search by ISO number or standard name to find the right certification for your organization.'}
+                'Explore our complete range of  management system certifications — from quality and environment to security and food safety. Search by ISO number or standard name to find the right certification for your organization.'}
             </p>
             <div className="mt-5 flex flex-wrap items-center gap-x-5 gap-y-2">
               <div className="flex items-center gap-2 text-sm font-bold text-[#1c2448]">
