@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 const navigation = [
   {
@@ -44,35 +45,47 @@ export default function Footer() {
           </a>
         </div>
 
-        <div className="mt-9 grid max-w-xl grid-cols-2 gap-8 sm:mt-12 sm:gap-12">
-          {navigation.map((group) => (
-            <nav key={group.title} aria-label={group.title}>
-              <h3 className="text-xs font-bold tracking-wide sm:text-sm">
-                {group.title}
-              </h3>
-              <ul className="mt-2 space-y-1">
-                {group.links.map((link) => (
-                  <li key={link.label}>
-                    {link.href.startsWith("mailto:") ? (
-                      <a
-                        href={link.href}
-                        className={`inline-flex min-h-7 items-center text-sm text-slate-200 transition-colors hover:text-[#FFE34A] hover:underline hover:underline-offset-2 motion-reduce:transition-none ${focusClass}`}
-                      >
-                        {link.label}
-                      </a>
-                    ) : (
-                      <Link
-                        href={link.href}
-                        className={`inline-flex min-h-7 items-center text-sm text-slate-200 transition-colors hover:text-[#FFE34A] hover:underline hover:underline-offset-2 motion-reduce:transition-none ${focusClass}`}
-                      >
-                        {link.label}
-                      </Link>
-                    )}
-                  </li>
-                ))}
-              </ul>
-            </nav>
-          ))}
+        <div className="mt-9 grid gap-8 sm:mt-12 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:items-center lg:gap-10">
+          <div className="grid max-w-xl grid-cols-2 gap-8 sm:gap-12">
+            {navigation.map((group) => (
+              <nav key={group.title} aria-label={group.title}>
+                <h3 className="text-xs font-bold tracking-wide sm:text-sm">
+                  {group.title}
+                </h3>
+                <ul className="mt-2 space-y-1">
+                  {group.links.map((link) => (
+                    <li key={link.label}>
+                      {link.href.startsWith("mailto:") ? (
+                        <a
+                          href={link.href}
+                          className={`inline-flex min-h-7 items-center text-sm text-slate-200 transition-colors hover:text-[#FFE34A] hover:underline hover:underline-offset-2 motion-reduce:transition-none ${focusClass}`}
+                        >
+                          {link.label}
+                        </a>
+                      ) : (
+                        <Link
+                          href={link.href}
+                          className={`inline-flex min-h-7 items-center text-sm text-slate-200 transition-colors hover:text-[#FFE34A] hover:underline hover:underline-offset-2 motion-reduce:transition-none ${focusClass}`}
+                        >
+                          {link.label}
+                        </Link>
+                      )}
+                    </li>
+                  ))}
+                </ul>
+              </nav>
+            ))}
+          </div>
+
+          <div className="relative aspect-[2.4/1] w-full overflow-hidden rounded-xl border border-white/20 shadow-lg lg:max-w-[650px] lg:justify-self-end">
+            <Image
+              src="/your_success.jpg"
+              alt="Professionals collaborating on a business project"
+              fill
+              sizes="(max-width: 1024px) 100vw, 650px"
+              className="object-cover"
+            />
+          </div>
         </div>
 
         <div className="mt-8 border-t border-white/25 pt-4">
