@@ -7,7 +7,6 @@ import {
   ArrowRight, 
   ShieldCheck,
   Globe,
-  Leaf,
   HeartPulse,
   Award,
   Settings2,
@@ -17,25 +16,6 @@ import {
   certificationImages,
   getCertificationImageFile,
 } from '../data/certificationImages';
-
-const categoryImages = {
-  'ISO STANDARD': 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&q=80',
-  'FOOD SAFETY': 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=600&q=80',
-  CERTIFICATION: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=600&q=80',
-  PRACTICE: 'https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=600&q=80',
-  COMPLIANCE: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=600&q=80',
-  FRAMEWORK: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=600&q=80',
-  REGULATORY: 'https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=600&q=80',
-};
-
-const imagesByCode = {
-  'ISO 14001': 'https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=600&q=80',
-  'ISO 45001': 'https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=600&q=80',
-  'ISO 27001': 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=600&q=80',
-  'ISO 22301': 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=600&q=80',
-  'ISO 50001': 'https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?w=600&q=80',
-  'ISO 20000-1': 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=600&q=80',
-};
 
 const iconsByType = {
   'ISO STANDARD': ShieldCheck,
@@ -54,20 +34,13 @@ export default function ServicesSection({
 }) {
   const services = certificationItems
     .filter(({ code }) => code !== 'CE Marking')
-    .map((certification) => {
-      const localImage =
+    .map((certification) => ({
+      ...certification,
+      img:
         certificationImages[certification.code] ||
-        getCertificationImageFile(certification.code, certificationImageFiles);
-
-      return {
-        ...certification,
-        img:
-          localImage ||
-          certification.imageUrl ||
-          imagesByCode[certification.code] ||
-          categoryImages[certification.type],
-      };
-    });
+        getCertificationImageFile(certification.code, certificationImageFiles) ||
+        certification.imageUrl,
+    }));
   const extendedServices = [...services, ...services];
 
   return (
@@ -116,20 +89,23 @@ export default function ServicesSection({
                 href={service.href}
                 aria-hidden={isDuplicate ? true : undefined}
                 tabIndex={isDuplicate ? -1 : undefined}
-                className="relative flex-shrink-0 w-[270px] sm:w-[310px] md:w-[340px] bg-white rounded-2xl overflow-hidden border border-slate-100 group/card transition-all duration-300 shadow-sm hover:shadow-xl hover:shadow-red-600/10 border-t-4 border-t-red-600"
+                className="relative flex-shrink-0 w-[270px] sm:w-[310px] md:w-[340px] bg-white rounded-2xl overflow-hidden border border-slate-100 group/card transition-all duration-300 shadow-sm hover:shadow-xl hover:shadow-red-600/10"
               >
                 {/* Image Section */}
-                <div className="relative aspect-square w-full overflow-hidden bg-slate-50">
-                  <Image
-                    src={service.img} 
-                    alt=""
-                    fill
-                    sizes="(max-width: 639px) 270px, (max-width: 767px) 310px, 340px"
-                    className="object-contain object-center"
-                  />
-                  
-                  {/* Overlay on Hover */}
-                  <div className="absolute inset-0 bg-slate-900/10 group-hover/card:bg-slate-900/0 transition-colors duration-300"></div>
+                <div className="relative aspect-square w-full overflow-hidden bg-white">
+                  {service.img ? (
+                    <Image
+                      src={service.img}
+                      alt=""
+                      fill
+                      sizes="(max-width: 639px) 270px, (max-width: 767px) 310px, 340px"
+                      className="object-contain object-center"
+                    />
+                  ) : (
+                    <div className="flex h-full items-center justify-center bg-slate-50">
+                      <Icon className="h-16 w-16 text-[#1c2448]" aria-hidden="true" />
+                    </div>
+                  )}
                   
                   {/* Icon Badge */}
                   <div className="absolute right-3.5 top-3.5 z-10 flex h-10 w-10 items-center justify-center rounded-xl border border-slate-200 bg-white shadow-lg sm:right-4 sm:top-4 sm:h-12 sm:w-12">
@@ -138,16 +114,13 @@ export default function ServicesSection({
                 </div>
 
                 {/* Content Section */}
-                <div className="p-5 sm:p-6 flex flex-col h-[170px] sm:h-[180px]">
+                <div className="p-5 sm:p-6 flex flex-col h-[150px] sm:h-[160px]">
                   <span className="mb-1 text-[10px] font-bold uppercase tracking-wider text-red-600">
                     {service.type}
                   </span>
-                  <h3 className="text-lg sm:text-xl font-bold text-slate-900 mb-2 group-hover/card:text-red-600 transition-colors">
+                  <h3 className="text-lg sm:text-xl font-bold text-slate-900 mb-1 group-hover/card:text-red-600 transition-colors">
                     {service.code}
                   </h3>
-                  <p className="text-xs sm:text-sm text-slate-500 leading-relaxed mb-3 flex-1 line-clamp-2">
-                    {service.title}
-                  </p>
                   <div className="flex items-center gap-2 text-xs sm:text-sm font-bold text-red-600 mt-auto">
                     <span>{content.cardLinkLabel ?? 'Explore Standard'}</span>
                     <ArrowRight className="w-4 h-4 transform group-hover/card:translate-x-1.5 transition-transform" aria-hidden="true" />

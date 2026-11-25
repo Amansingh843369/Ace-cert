@@ -4,83 +4,10 @@ import Image from 'next/image';
 import { ArrowUpRight, CircleCheck } from 'lucide-react';
 import { certificationImages as localCertificationImages } from '../data/certificationImages';
 
-const certificationImages = {
-  GHP: '/certifications/ghp.png',
-  GLP: '/certifications/glp.png',
-  GMP: '/certifications/gmp.png',
-  GWP: '/certifications/gwp.png',
-  'ISO 10002':
-    'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1200&q=85',
-  'ISO 13009':
-    'https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?auto=format&fit=crop&w=1200&q=85',
-  'ISO 13485':
-    'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1200&q=85',
-  'ISO 14001':
-    'https://images.unsplash.com/photo-1466611653911-95081537e5b7?auto=format&fit=crop&w=1200&q=85',
-  'ISO 14064':
-    'https://images.unsplash.com/photo-1466611653911-95081537e5b7?auto=format&fit=crop&w=1200&q=85',
-  'ISO 20000-1':
-    'https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=85',
-  'ISO 20121':
-    'https://images.unsplash.com/photo-1774437786865-2546668c9747?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D',
-  'ISO 21001':
-    'https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1200&q=85',
-  'ISO 21401':
-    'https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=1200&q=85',
-  'ISO 22000':
-    'https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=1200&q=85',
-  'ISO 22301':
-    'https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1200&q=85',
-  'ISO 22716':
-    'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1200&q=85',
-  'ISO 24161':
-    'https://images.unsplash.com/photo-1611284446314-60a58ac0deb9?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D',
-  'ISO 26000':
-    'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1200&q=85',
-  'ISO 27001':
-    'https://images.unsplash.com/photo-1792606302247-de06c712bb5d?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D',
-  'ISO 27002':
-    'https://images.unsplash.com/photo-1782945217386-300f33f22069?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D',
-  'ISO 27017':
-    'https://plus.unsplash.com/premium_photo-1764695613425-3d23cfa22150?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D',
-  'ISO 27018':
-    'https://plus.unsplash.com/premium_photo-1675329253565-24dfb38a4b59?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D',
-  'ISO 27701':
-    'https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1200&q=85',
-  'ISO 28000':
-    'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1200&q=85',
-  'ISO 29000':
-    'https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=1200&q=85',
-  'ISO 29001':
-    'https://plus.unsplash.com/premium_photo-1682148795124-dac95dd91fd4?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D',
-  'ISO 30000':
-    'https://plus.unsplash.com/premium_photo-1681987448179-4a93b7975018?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D',
-  'ISO 31000':
-    'https://plus.unsplash.com/premium_photo-1663089688175-227cd29e3b01?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D',
-  'ISO 37001':
-    ' https://images.unsplash.com/photo-1782849206621-29623b359224?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D',
-  'ISO 37301':
-    'https://images.unsplash.com/photo-1691935443555-7208a4d326b6?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D',
-  'ISO 41001':
-    'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=85',
-  'ISO 42001':
-    'https://plus.unsplash.com/premium_photo-1682124651258-410b25fa9dc0?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D',
-  'ISO 45001':
-    'https://images.unsplash.com/photo-1732364247535-52f549ecb46a?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D',
-  'ISO 45003':
-    ' https://plus.unsplash.com/premium_photo-1666299643987-9771de0efa4c?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D',
-  'ISO 50001':
-    'https://images.unsplash.com/photo-1558449028-b53a39d100fc?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D',
-  'ISO 55000':
-    'https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=1200&q=85',
-  'ISO 55001':
-    'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1200&q=85',
-  'ISO 9001':
-    'https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=1200&q=85',
-};
+
 
 export const getCertificationImage = (title) =>
-  (localCertificationImages[title] || certificationImages[title])?.trim();
+  localCertificationImages[title]?.trim();
 
 export default function CertificationImportanceSection({
   id,
@@ -105,7 +32,7 @@ export default function CertificationImportanceSection({
 
   return (
     <section aria-labelledby={id} className="relative">
-      <div className="grid items-stretch gap-8 lg:grid-cols-[1.45fr_1fr] lg:gap-12">
+      <div className="grid items-start gap-8 lg:grid-cols-[1.45fr_1fr] lg:gap-12">
         <div className="flex flex-col gap-6 md:gap-8">
           <div>
             <p className="mb-4 text-xs font-bold uppercase tracking-[0.22em] text-red-700">
@@ -149,13 +76,13 @@ export default function CertificationImportanceSection({
           </ol>
         </div>
 
-        <figure className="relative min-h-[360px] overflow-hidden rounded-[1.75rem] bg-red-50 ring-1 ring-black/5 shadow-[0_16px_45px_rgba(17,24,39,0.10)] sm:min-h-[480px] lg:min-h-[620px] lg:rounded-[2rem]">
+        <figure className="relative aspect-square w-full overflow-hidden rounded-[1.75rem] bg-red-50 ring-1 ring-black/5 shadow-[0_16px_45px_rgba(17,24,39,0.10)] lg:rounded-[2rem]">
           <Image
             src={image}
             alt={content?.heroImageAlt || `${title} certification`}
             fill
             sizes="(max-width: 1024px) 100vw, 40vw"
-            className={title.startsWith('ISO ') ? 'object-contain p-8' : 'object-cover'}
+            className={title.startsWith('ISO ') ? 'object-contain' : 'object-cover'}
             loading="lazy"
           />
           {title === 'ISO 9001' && (

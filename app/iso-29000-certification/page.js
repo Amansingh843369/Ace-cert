@@ -85,7 +85,7 @@ export default function IsoCertificationLayout() {
             <div aria-hidden="true" className="absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent via-red-200 to-transparent" />
 
             <div className="order-1 flex w-full justify-center lg:w-[46%]">
-              <figure className="relative aspect-square w-full max-w-[520px] overflow-hidden rounded-2xl bg-red-50 ring-1 ring-black/5 sm:rounded-[1.5rem] lg:h-full">
+              <figure className="relative aspect-square w-full max-w-[520px] overflow-hidden rounded-2xl bg-red-50 ring-1 ring-black/5 sm:rounded-[1.5rem]">
                 {/* Oil & Gas Refinery Image */}
                 <Image
                   src={getCertificationImage('ISO 29000')}
@@ -93,7 +93,7 @@ export default function IsoCertificationLayout() {
                   fill
                   priority
                   sizes="(max-width: 1024px) 100vw, 520px"
-                  className="object-contain p-3 transition-transform duration-700 hover:scale-[1.03]"
+                  className="object-contain transition-transform duration-700 hover:scale-[1.03]"
                 />
                 <figcaption className="absolute bottom-4 left-4 rounded-xl border border-white/70 bg-white/95 px-4 py-2.5 shadow-lg backdrop-blur-sm">
                   <p className="text-xs font-semibold uppercase tracking-wider text-red-700">Energy Quality</p>

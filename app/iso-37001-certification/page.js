@@ -90,7 +90,7 @@ export default function Iso37001Layout() {
             <div aria-hidden="true" className="absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent via-red-200 to-transparent" />
 
             <div className="order-1 flex w-full justify-center lg:w-[46%]">
-              <figure className="relative aspect-[4/3] w-full max-w-[520px] overflow-hidden rounded-2xl bg-white ring-1 ring-black/5 sm:rounded-[1.5rem] self-center">
+              <figure className="relative aspect-square w-full max-w-[520px] overflow-hidden rounded-2xl bg-white ring-1 ring-black/5 sm:rounded-[1.5rem]">
                 {/* IMAGE 1: Handshake / Integrity / Business Ethics */}
                 <Image
                   src={getCertificationImage('ISO 37001')}
@@ -98,7 +98,7 @@ export default function Iso37001Layout() {
                   fill
                   priority
                   sizes="(max-width: 1024px) 100vw, 520px"
-                  className="object-contain p-3 sm:p-5"
+                  className="object-contain"
                 />
               </figure>
             </div>
