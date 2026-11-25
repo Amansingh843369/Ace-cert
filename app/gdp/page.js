@@ -44,13 +44,6 @@ const GDP_PRINCIPLES = [
   { id: '07', title: 'Self-Inspection', desc: 'Regularly auditing internal processes to ensure continuous compliance and improvement.', icon: ShieldCheck },
 ];
 
-const GDP_INDUSTRIES = [
-  'Pharmaceuticals', 'Medical Devices', 'Biotechnology',
-  'Healthcare Products', 'Food & Beverages', 'Cosmetics',
-  'Chemical Distribution', 'Cold Chain Logistics', 'Warehousing',
-  'Third-Party Logistics (3PL)', 'Clinical Trial Supplies',
-];
-
 const VALUE_CARDS = [
   {
     icon: Thermometer, label: 'Integrity', title: 'Product Safety',
@@ -109,11 +102,6 @@ export default function GdpCertificationPage() {
           };
         })
       : GDP_PRINCIPLES;
-  const industries =
-    certification?.industries?.length > 0
-      ? certification.industries
-      : GDP_INDUSTRIES;
-
   useEffect(() => {
     if (!isModalOpen) return;
     const onKeyDown = (e) => {
@@ -203,7 +191,7 @@ export default function GdpCertificationPage() {
                 </h3>
 
                 <div className="space-y-3 pt-2 text-sm leading-7 text-[#526581] sm:text-base sm:leading-8 md:text-[17px] text-justify">
-                  {certification?.introParagraphs?.length ? (
+                  {certification?.introParagraphs?.length >= 2 ? (
                     certification.introParagraphs.map((paragraph, index) => (
                       <p key={`${index}-${paragraph}`}>{paragraph}</p>
                     ))
@@ -414,39 +402,6 @@ export default function GdpCertificationPage() {
 
                   <div className="absolute bottom-0 left-0 h-1 w-full origin-left scale-x-0 bg-gradient-to-r from-red-800 to-red-500 transition-transform duration-300 group-hover:scale-x-100" />
                 </article>
-              ))}
-            </div>
-          </section>
-
-          {/* =====================================================
-              SECTION 5 — WHO CAN IMPLEMENT
-             ===================================================== */}
-          <section aria-labelledby="who-title" className="relative overflow-hidden rounded-3xl border border-red-100 bg-gradient-to-br from-white via-white to-red-50/70 p-6 shadow-[0_16px_50px_rgba(17,24,39,0.06)] sm:rounded-[2rem] sm:p-9 md:p-12 lg:rounded-[2.5rem] lg:p-16">
-            <div aria-hidden="true" className="pointer-events-none absolute -right-24 -top-28 h-80 w-80 rounded-full bg-red-100/60 blur-[90px]" />
-            <div aria-hidden="true" className="pointer-events-none absolute -bottom-32 -left-20 h-72 w-72 rounded-full bg-rose-100/50 blur-[90px]" />
-
-            <div className="relative z-10 mx-auto mb-8 max-w-2xl text-center sm:mb-10 md:mb-12">
-              <SectionBadge>Scope</SectionBadge>
-              <h2
-                id="who-title"
-                className="mt-4 text-balance text-2xl font-extrabold leading-tight tracking-tight text-[#111827] sm:text-3xl md:text-4xl lg:text-5xl"
-              >
-                Who Can Implement It?
-              </h2>
-              <p className="mx-auto mt-3 max-w-xl px-2 text-sm leading-7 text-[#526581] sm:mt-4 sm:text-base md:text-lg text-center">
-                GDP is essential for any organization involved in the wholesale distribution,
-                storage, or transport of medicinal products and other regulated goods.
-              </p>
-            </div>
-
-            <div className="relative z-10 mx-auto flex max-w-5xl flex-wrap justify-center gap-2 sm:gap-2.5 md:gap-3">
-              {industries.map((industry) => (
-                <span
-                  key={industry}
-                  className="rounded-lg border border-red-100 bg-white/90 px-3 py-1.5 text-[11px] font-semibold text-slate-700 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-red-300 hover:bg-white hover:text-red-800 hover:shadow-md sm:rounded-xl sm:px-4 sm:py-2 sm:text-xs md:px-5 md:py-2.5 md:text-sm lg:text-base"
-                >
-                  {industry}
-                </span>
               ))}
             </div>
           </section>

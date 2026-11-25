@@ -195,7 +195,7 @@ export default function IsoCertificationLayout() {
               <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-900 leading-tight">
                 Benefits of{" "}
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-700 to-red-500">
-                  Implementation
+                  Certification
                 </span>
               </h2>
               <p className="mt-3 md:mt-4 text-sm md:text-base lg:text-lg leading-relaxed text-slate-500 max-w-2xl mx-auto px-2 text-center">

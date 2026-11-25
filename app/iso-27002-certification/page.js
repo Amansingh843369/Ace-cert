@@ -206,7 +206,7 @@ export default function Iso27002Layout() {
               <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-900 leading-tight">
                 Benefits of{" "}
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-700 to-red-500">
-                  Implementation
+                  Certification
                 </span>
               </h2>
 

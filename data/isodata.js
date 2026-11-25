@@ -36,7 +36,7 @@ export const isoPages = {
       }
     ],
 
-    benefitsTitle: "Benefits of ISO 9001 Certification",
+    benefitsTitle: "Benefits of Certification",
 
     benefits: [
       "Improved product and service quality",
@@ -147,7 +147,7 @@ export const isoPages = {
       }
     ],
 
-    benefitsTitle: "Benefits of ISO 14001 Certification",
+    benefitsTitle: "Benefits of Certification",
 
     benefits: [
       "Improved environmental performance",
@@ -259,7 +259,7 @@ export const isoPages = {
       }
     ],
 
-    benefitsTitle: "Benefits of ISO 45001 Certification",
+    benefitsTitle: "Benefits of Certification",
 
     benefits: [
       "Reduced workplace risks",
@@ -371,7 +371,7 @@ export const isoPages = {
       }
     ],
 
-    benefitsTitle: "Benefits of ISO 27001 Certification",
+    benefitsTitle: "Benefits of Certification",
 
     benefits: [
       "Improved information security",
