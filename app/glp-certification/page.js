@@ -141,7 +141,7 @@ export default function GlpLayout() {
             certification={certification}
             description={
               <>
-                Implementing GLP helps organizations ensure that their laboratory data is trustworthy and reproducible, which is critical for regulatory approval of new drugs, chemicals, and medical devices.
+                GLP helps organizations ensure that their laboratory data is trustworthy and reproducible, which is critical for regulatory approval of new drugs, chemicals, and medical devices.
               </>
             }
             benefits={benefitsList}

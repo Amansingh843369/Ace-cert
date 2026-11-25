@@ -252,7 +252,7 @@ export default function GdpCertificationPage() {
                   </h2>
                   <p className="mt-3 text-sm leading-7 text-[#526581] sm:mt-4 sm:text-base md:text-lg md:leading-8">
                     {certification?.importanceDescription ||
-                      'Implementing GDP helps organizations ensure product quality throughout distribution, maintain proper storage conditions, and strengthen customer confidence in the supply chain.'}
+                      'GDP helps organizations ensure product quality throughout distribution, maintain proper storage conditions, and strengthen customer confidence in the supply chain.'}
                   </p>
                 </div>
 

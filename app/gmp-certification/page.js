@@ -91,7 +91,7 @@ export default function GmpLayout() {
               <figure className="relative aspect-[4/3] w-full max-w-[520px] overflow-hidden rounded-2xl bg-white ring-1 ring-black/5 sm:rounded-[1.5rem] self-center">
                 {/* IMAGE 1: Pharmaceutical Manufacturing / Clean Room */}
                 <Image
-                  src="/certification-logos/gmp.png"
+                  src="/gmp.jpeg"
                   alt="ACE-CERT GMP certification logo"
                   fill
                   priority
@@ -142,7 +142,7 @@ export default function GmpLayout() {
             certification={certification}
             description={
               <>
-                Implementing GMP helps organizations minimize risks in manufacturing that cannot be eliminated through testing the final product alone, ensuring consumer safety and regulatory approval.
+                GMP helps organizations minimize risks in manufacturing that cannot be eliminated through testing the final product alone, ensuring consumer safety and regulatory approval.
               </>
             }
             benefits={benefitsList}

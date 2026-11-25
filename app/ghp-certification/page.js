@@ -141,7 +141,7 @@ export default function GhpLayout() {
             certification={certification}
             description={
               <>
-                Implementing GHP helps organizations prevent food contamination at the source, ensuring that the food served or sold is safe for consumption and meets legal health standards.
+                GHP helps organizations prevent food contamination at the source, ensuring that the food served or sold is safe for consumption and meets legal health standards.
               </>
             }
             benefits={benefitsList}
