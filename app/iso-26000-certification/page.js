@@ -142,7 +142,7 @@ export default function IsoCertificationLayout() {
             certification={certification}
             description={
               <>
-                Implementing ISO 26000 helps organizations build trust, attract talent, and create long-term value by aligning business goals with societal needs and ethical standards.
+                ISO 26000 helps organizations build trust, attract talent, and create long-term value by aligning business goals with societal needs and ethical standards.
               </>
             }
             benefits={benefitsList}

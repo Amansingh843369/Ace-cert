@@ -141,7 +141,7 @@ export default function IsoCertificationLayout() {
             certification={certification}
             description={
               <>
-                Implementing ISO 21401 helps accommodation providers reduce their environmental footprint, attract eco-conscious travelers, and operate more efficiently while supporting local communities.
+                ISO 21401 helps accommodation providers reduce their environmental footprint, attract eco-conscious travelers, and operate more efficiently while supporting local communities.
               </>
             }
             benefits={benefitsList}

@@ -138,7 +138,7 @@ export default function IsoCertificationLayout() {
             certification={certification}
             description={
               <>
-                Implementing ISO 37301 helps organizations proactively navigate complex legal landscapes, prevent costly regulatory fines, foster an ethical workplace culture, and build unshakeable trust with investors and stakeholders.
+                ISO 37301 helps organizations proactively navigate complex legal landscapes, prevent costly regulatory fines, foster an ethical workplace culture, and build unshakeable trust with investors and stakeholders.
               </>
             }
             benefits={benefitsList}

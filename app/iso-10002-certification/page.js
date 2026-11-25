@@ -133,7 +133,7 @@ export default function IsoCertificationLayout() {
             certification={certification}
             description={
               <>
-                Implementing ISO 10002 helps organizations build unbreakable customer trust, resolve issues fairly, and turn negative experiences into opportunities for growth.
+                ISO 10002 helps organizations build unbreakable customer trust, resolve issues fairly, and turn negative experiences into opportunities for growth.
               </>
             }
             benefits={benefitsList}

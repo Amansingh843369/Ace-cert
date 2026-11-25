@@ -141,7 +141,7 @@ export default function Iso21001CertificationLayout() {
             certification={certification}
             description={
               <>
-                Implementing ISO 21001 helps educational institutions demonstrate their commitment to delivering highly effective, equitable, and personalized learning experiences while optimizing operational resources.
+                ISO 21001 helps educational institutions demonstrate their commitment to delivering highly effective, equitable, and personalized learning experiences while optimizing operational resources.
               </>
             }
             benefits={benefitsList}

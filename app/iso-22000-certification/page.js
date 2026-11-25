@@ -142,7 +142,7 @@ export default function IsoCertificationLayout() {
             certification={certification}
             description={
               <>
-                Implementing ISO 22000 helps organizations demonstrate their commitment to food safety, comply with global regulations, and build lasting trust with consumers and retailers.
+                ISO 22000 helps organizations demonstrate their commitment to food safety, comply with global regulations, and build lasting trust with consumers and retailers.
               </>
             }
             benefits={benefitsList}

@@ -139,7 +139,7 @@ export default function IsoCertificationLayout() {
             certification={certification}
             description={
               <>
-                Implementing ISO 41001 helps organizations streamline facility operations, significantly reduce maintenance costs, ensure safe and sustainable work environments, and boost overall employee productivity and satisfaction.
+                ISO 41001 helps organizations streamline facility operations, significantly reduce maintenance costs, ensure safe and sustainable work environments, and boost overall employee productivity and satisfaction.
               </>
             }
             benefits={benefitsList}

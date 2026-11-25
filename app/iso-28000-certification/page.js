@@ -139,7 +139,7 @@ export default function IsoCertificationLayout() {
             certification={certification}
             description={
               <>
-                Implementing ISO 28000 helps organizations protect their global operations from theft, terrorism, and disruptions, while ensuring smooth customs clearance and building unshakeable trust with international partners.
+                ISO 28000 helps organizations protect their global operations from theft, terrorism, and disruptions, while ensuring smooth customs clearance and building unshakeable trust with international partners.
               </>
             }
             benefits={benefitsList}

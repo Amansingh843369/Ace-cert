@@ -139,7 +139,7 @@ export default function IsoCertificationLayout() {
             certification={certification}
             description={
               <>
-                Implementing ISO 27018 helps organizations establish robust cloud privacy practices, meet stringent global data protection laws, and build unshakeable trust with customers by transparently managing their personal data in public clouds.
+                ISO 27018 helps organizations establish robust cloud privacy practices, meet stringent global data protection laws, and build unshakeable trust with customers by transparently managing their personal data in public clouds.
               </>
             }
             benefits={benefitsList}

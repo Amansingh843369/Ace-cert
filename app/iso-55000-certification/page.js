@@ -143,7 +143,7 @@ export default function IsoCertificationLayout() {
             certification={certification}
             description={
               <>
-                Implementing ISO 55000 helps organizations extract maximum value from their assets, minimize downtime and maintenance costs, make smarter investment decisions, and ensure long-term operational resilience.
+                ISO 55000 helps organizations extract maximum value from their assets, minimize downtime and maintenance costs, make smarter investment decisions, and ensure long-term operational resilience.
               </>
             }
             benefits={benefitsList}

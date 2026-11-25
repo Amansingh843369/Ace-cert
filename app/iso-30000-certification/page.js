@@ -139,7 +139,7 @@ export default function IsoCertificationLayout() {
             certification={certification}
             description={
               <>
-                Implementing ISO 30000 helps ship recycling yards prevent workplace accidents, safely manage toxic materials like asbestos, protect coastal environments from pollution, and meet strict international maritime regulations.
+                ISO 30000 helps ship recycling yards prevent workplace accidents, safely manage toxic materials like asbestos, protect coastal environments from pollution, and meet strict international maritime regulations.
               </>
             }
             benefits={benefitsList}

@@ -144,7 +144,7 @@ export default function Iso24161Layout() {
             certification={certification}
             description={
               <>
-                Implementing ISO 24161 ensures that everyone in the waste management chain—from municipal planners to private contractors—speaks the same language. This reduces errors in tendering, improves data accuracy, and facilitates smoother cross-border operations.
+                ISO 24161 ensures that everyone in the waste management chain—from municipal planners to private contractors—speaks the same language. This reduces errors in tendering, improves data accuracy, and facilitates smoother cross-border operations.
               </>
             }
             benefits={benefitsList}

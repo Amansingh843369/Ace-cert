@@ -166,7 +166,7 @@ export default function Iso22000Layout() {
 
                 {/* TEXT JUSTIFY APPLIED HERE */}
                 <p className="text-justify mt-4 text-sm leading-7 text-[#526581] sm:text-base md:text-lg md:leading-8">
-                  Implementing ISO 22000 helps organizations systematically manage food safety risks, comply with international regulations, and build trust with consumers and stakeholders by ensuring the delivery of safe food products.
+                  ISO 22000 helps organizations systematically manage food safety risks, comply with international regulations, and build trust with consumers and stakeholders by ensuring the delivery of safe food products.
                 </p>
               </div>
 

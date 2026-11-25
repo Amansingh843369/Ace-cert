@@ -127,7 +127,7 @@ export default function IsoCertificationLayout() {
             certification={certification}
             description={
               <>
-                Implementing ISO 13485 is crucial for demonstrating your ability to provide medical devices and related services that consistently meet customer and applicable regulatory requirements.
+                ISO 13485 is crucial for demonstrating your ability to provide medical devices and related services that consistently meet customer and applicable regulatory requirements.
               </>
             }
             benefits={benefitsList}

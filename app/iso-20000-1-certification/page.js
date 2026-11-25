@@ -140,7 +140,7 @@ export default function IsoCertificationLayout() {
             certification={certification}
             description={
               <>
-                Implementing ISO 20000-1 helps organizations align their IT services with business goals, reduce costs through efficient processes, and build trust with clients through certified service quality.
+                ISO 20000-1 helps organizations align their IT services with business goals, reduce costs through efficient processes, and build trust with clients through certified service quality.
               </>
             }
             benefits={benefitsList}

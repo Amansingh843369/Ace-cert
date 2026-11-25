@@ -135,7 +135,7 @@ export default function IsoCertificationLayout() {
             certification={certification}
             description={
               <>
-                Implementing ISO 27701 helps organizations establish robust privacy practices, meet stringent global data protection laws (like GDPR), and build unshakeable trust with customers by transparently managing their personal data.
+                ISO 27701 helps organizations establish robust privacy practices, meet stringent global data protection laws (like GDPR), and build unshakeable trust with customers by transparently managing their personal data.
               </>
             }
             benefits={benefitsList}

@@ -219,7 +219,7 @@ export default function IsoCertificationLayout() {
             certification={certification}
             description={
               <>
-                Implementing ISO 14064 helps organizations accurately track their
+                ISO 14064 helps organizations accurately track their
                                     environmental impact, meet global climate goals, and build trust with
                                     stakeholders through transparent reporting.
               </>

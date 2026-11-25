@@ -144,7 +144,7 @@ export default function Iso55001Layout() {
             certification={certification}
             description={
               <>
-                Implementing ISO 55001 transforms how you view your assets—from cost centers to value drivers. It ensures you get the best return on investment while minimizing downtime and safety risks.
+                ISO 55001 transforms how you view your assets—from cost centers to value drivers. It ensures you get the best return on investment while minimizing downtime and safety risks.
               </>
             }
             benefits={benefitsList}

@@ -144,7 +144,7 @@ export default function Iso29001Layout() {
             certification={certification}
             description={
               <>
-                Implementing ISO 29001 helps organizations minimize risks in high-stakes environments, ensure product reliability, and meet the rigorous demands of global energy operators and regulators.
+                ISO 29001 helps organizations minimize risks in high-stakes environments, ensure product reliability, and meet the rigorous demands of global energy operators and regulators.
               </>
             }
             benefits={benefitsList}

@@ -141,7 +141,7 @@ export default function IsoCertificationLayout() {
             certification={certification}
             description={
               <>
-                Implementing ISO 22301 helps organizations survive crises, maintain customer trust during emergencies, and ensure that critical services remain available when they are needed most.
+                ISO 22301 helps organizations survive crises, maintain customer trust during emergencies, and ensure that critical services remain available when they are needed most.
               </>
             }
             benefits={benefitsList}

@@ -141,7 +141,7 @@ export default function IsoCertificationLayout() {
             certification={certification}
             description={
               <>
-                Implementing ISO 20121 helps organizations minimize the negative impacts of events on the environment and society, while maximizing positive legacy and operational efficiency.
+                ISO 20121 helps organizations minimize the negative impacts of events on the environment and society, while maximizing positive legacy and operational efficiency.
               </>
             }
             benefits={benefitsList}

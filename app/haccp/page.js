@@ -42,13 +42,6 @@ const HACCP_PRINCIPLES = [
   { id: '07', title: 'Record Keeping', desc: 'Maintain detailed documentation of all procedures, monitoring results, and corrective actions taken.', icon: FileText },
 ];
 
-const HACCP_INDUSTRIES = [
-  'Food Manufacturing', 'Meat & Poultry Processing', 'Dairy Products',
-  'Seafood & Fisheries', 'Bakery & Confectionery', 'Fruit & Vegetable Processing',
-  'Beverage Production', 'Animal Feed Manufacturing', 'Food Packaging',
-  'Warehousing & Distribution', 'Restaurants & Catering Services',
-];
-
 const VALUE_CARDS = [
   {
     icon: ShieldAlert, label: 'Safety First', title: 'Risk Prevention',
@@ -105,11 +98,6 @@ export default function HaccpCertificationPage() {
           };
         })
       : HACCP_PRINCIPLES;
-  const industries =
-    certification?.industries?.length > 0
-      ? certification.industries
-      : HACCP_INDUSTRIES;
-
   useEffect(() => {
     if (!isModalOpen) return;
     document.body.style.overflow = 'hidden';
@@ -348,33 +336,6 @@ export default function HaccpCertificationPage() {
                   ))}
                 </ul>
               </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Industries */}
-      <section className="mx-auto max-w-7xl px-4 py-10 sm:px-6 sm:py-14 lg:px-8 lg:py-16">
-        <div className="relative overflow-hidden rounded-3xl border border-red-100 bg-gradient-to-br from-white via-white to-red-50/70 px-5 py-10 sm:px-8 sm:py-12 lg:rounded-[2.5rem] lg:px-12 lg:py-14">
-          <div className="pointer-events-none absolute -right-16 -top-16 h-56 w-56 rounded-full bg-red-100/50 blur-3xl" />
-          <div className="relative z-10 mx-auto mb-8 max-w-4xl text-center sm:mb-10">
-          <SectionBadge>Scope</SectionBadge>
-          <h2 className="mt-4 text-balance text-2xl font-extrabold leading-tight tracking-tight text-[#111827] sm:text-3xl md:text-4xl lg:text-5xl">
-            Who Can Implement It?
-          </h2>
-          <p className="mx-auto mt-3 max-w-xl px-2 text-sm leading-7 text-[#526581] sm:mt-4 sm:text-base md:text-lg text-center">
-            HACCP is mandatory for many food businesses and highly recommended for any organization
-            involved in the food supply chain, from primary production to retail.
-          </p>
-        </div>
-          <div className="relative z-10 mx-auto flex max-w-5xl flex-wrap justify-center gap-2 sm:gap-2.5 md:gap-3">
-            {industries.map((industry) => (
-              <span
-                key={industry}
-                className="rounded-lg border border-red-100 bg-white/90 px-3 py-1.5 text-[11px] font-semibold text-slate-700 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-red-300 hover:bg-white hover:text-red-800 hover:shadow-md sm:rounded-xl sm:px-4 sm:py-2 sm:text-xs md:px-5 md:py-2.5 md:text-sm lg:text-base"
-              >
-                {industry}
-              </span>
             ))}
           </div>
         </div>

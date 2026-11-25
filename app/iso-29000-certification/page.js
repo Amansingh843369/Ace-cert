@@ -143,7 +143,7 @@ export default function IsoCertificationLayout() {
             certification={certification}
             description={
               <>
-                Implementing ISO 29000 helps organizations in the energy sector minimize operational risks, ensure product consistency, meet strict regulatory requirements, and build unshakeable trust with global stakeholders.
+                ISO 29000 helps organizations in the energy sector minimize operational risks, ensure product consistency, meet strict regulatory requirements, and build unshakeable trust with global stakeholders.
               </>
             }
             benefits={benefitsList}

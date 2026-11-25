@@ -139,7 +139,7 @@ export default function IsoCertificationLayout() {
             certification={certification}
             description={
               <>
-                Implementing ISO 45001 helps organizations proactively prevent workplace accidents, ensure strict legal compliance, boost employee morale, and significantly reduce downtime and compensation costs.
+                ISO 45001 helps organizations proactively prevent workplace accidents, ensure strict legal compliance, boost employee morale, and significantly reduce downtime and compensation costs.
               </>
             }
             benefits={benefitsList}

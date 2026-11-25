@@ -139,7 +139,7 @@ export default function IsoCertificationLayout() {
             certification={certification}
             description={
               <>
-                Implementing ISO 27017 helps organizations securely adopt cloud technologies, clarify shared security responsibilities, and protect sensitive data hosted in cloud environments against evolving cyber threats.
+                ISO 27017 helps organizations securely adopt cloud technologies, clarify shared security responsibilities, and protect sensitive data hosted in cloud environments against evolving cyber threats.
               </>
             }
             benefits={benefitsList}

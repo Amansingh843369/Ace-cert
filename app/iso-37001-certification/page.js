@@ -145,7 +145,7 @@ export default function Iso37001Layout() {
             certification={certification}
             description={
               <>
-                Implementing ISO 37001 helps organizations build a robust defense against corruption, ensuring ethical business practices, strengthening internal controls, and safeguarding corporate reputation on a global scale.
+                ISO 37001 helps organizations build a robust defense against corruption, ensuring ethical business practices, strengthening internal controls, and safeguarding corporate reputation on a global scale.
               </>
             }
             benefits={benefitsList}

@@ -54,13 +54,6 @@ export default function GwpLayout() {
     { id: "07", title: "Personnel Training", desc: "Ensuring all staff are trained in GWP standards, safety procedures, and handling techniques.", icon: UsersRound },
   ];
 
-  const industries = [
-    "Pharmaceuticals", "Food & Beverages", "Medical Devices",
-    "Cosmetics & Personal Care", "Chemicals", "Retail & E-commerce",
-    "Logistics Providers", "Cold Chain Services", "Automotive Parts",
-    "Electronics", "Consumer Goods"
-  ];
-
   return (
     <main className="relative min-h-screen overflow-hidden bg-[#fffdfd] font-sans text-slate-900 selection:bg-red-200 selection:text-red-900">
 
@@ -149,7 +142,7 @@ export default function GwpLayout() {
             certification={certification}
             description={
               <>
-                Implementing GWP helps organizations minimize risks in storage and handling, ensuring that products reach the consumer in perfect condition while optimizing operational efficiency.
+                GWP helps organizations minimize risks in storage and handling, ensuring that products reach the consumer in perfect condition while optimizing operational efficiency.
               </>
             }
             benefits={benefitsList}
@@ -265,34 +258,6 @@ export default function GwpLayout() {
 
                   <div className="absolute bottom-0 left-0 h-1 w-full origin-left scale-x-0 bg-gradient-to-r from-red-800 to-red-500 transition-transform duration-300 group-hover:scale-x-100" />
                 </article>
-              ))}
-            </div>
-          </div>
-
-          {/* Sub-section 3: Who Can Implement? */}
-          <div className="relative overflow-hidden rounded-2xl border border-red-100 bg-gradient-to-br from-white via-white to-red-50/70 p-7 shadow-[0_16px_50px_rgba(17,24,39,0.06)] sm:rounded-[2rem] sm:p-9 md:p-12 lg:rounded-[2.5rem] lg:p-16">
-            <div aria-hidden="true" className="pointer-events-none absolute -right-24 -top-28 h-80 w-80 rounded-full bg-red-100/60 blur-[90px]" />
-            <div aria-hidden="true" className="pointer-events-none absolute -bottom-32 -left-20 h-72 w-72 rounded-full bg-rose-100/50 blur-[90px]" />
-
-            <div className="text-center max-w-2xl mx-auto mb-8 md:mb-12 relative z-10 flex flex-col items-center">
-              <h2 className="mb-3 text-2xl font-extrabold leading-tight tracking-tight text-[#111827] sm:text-3xl md:mb-4 md:text-4xl lg:text-5xl">
-                Who Should Implement It?
-              </h2>
-
-              {/* TEXT JUSTIFY APPLIED HERE */}
-              <p className="text-justify px-2 text-sm leading-7 text-[#526581] md:text-base lg:text-lg text-justify">
-                GWP is essential for any organization involved in the storage and distribution of goods, particularly in regulated industries like pharma and food.
-              </p>
-            </div>
-
-            <div className="flex flex-wrap justify-center gap-2.5 md:gap-3 lg:gap-4 relative z-10 max-w-5xl mx-auto">
-              {(certification?.industries?.length ? certification.industries : industries).map((industry, index) => (
-                <span
-                  key={index}
-                  className="rounded-xl border border-red-100 bg-white/90 px-4 py-2 text-xs font-semibold text-slate-700 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-red-300 hover:bg-white hover:text-red-800 hover:shadow-md md:px-5 md:py-2.5 md:text-sm lg:text-base"
-                >
-                  {industry}
-                </span>
               ))}
             </div>
           </div>

@@ -139,7 +139,7 @@ export default function IsoCertificationLayout() {
             certification={certification}
             description={
               <>
-                Implementing ISO 31000 helps organizations shift from reactive problem-solving to proactive risk mitigation, ensuring business continuity, protecting valuable assets, and enabling confident strategic decision-making in uncertain markets.
+                ISO 31000 helps organizations shift from reactive problem-solving to proactive risk mitigation, ensuring business continuity, protecting valuable assets, and enabling confident strategic decision-making in uncertain markets.
               </>
             }
             benefits={benefitsList}

@@ -134,7 +134,7 @@ export default function IsoCertificationLayout() {
             certification={certification}
             description={
               <>
-                Implementing ISO 13009 helps organizations create safer, cleaner, and more enjoyable beach environments, boosting tourism and protecting natural resources.
+                ISO 13009 helps organizations create safer, cleaner, and more enjoyable beach environments, boosting tourism and protecting natural resources.
               </>
             }
             benefits={benefitsList}

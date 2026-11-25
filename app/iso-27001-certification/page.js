@@ -142,7 +142,7 @@ export default function IsoCertificationLayout() {
             certification={certification}
             description={
               <>
-                Implementing ISO 27001 helps organizations protect against evolving cyber threats, comply with data privacy laws like GDPR, and build unshakeable trust with clients who value data security.
+                ISO 27001 helps organizations protect against evolving cyber threats, comply with data privacy laws like GDPR, and build unshakeable trust with clients who value data security.
               </>
             }
             benefits={benefitsList}

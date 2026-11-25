@@ -143,7 +143,7 @@ export default function IsoCertificationLayout() {
             certification={certification}
             description={
               <>
-                Implementing ISO 50001 helps organizations systematically reduce their energy bills, minimize their carbon footprint, comply with environmental regulations, and demonstrate a strong commitment to corporate sustainability.
+                ISO 50001 helps organizations systematically reduce their energy bills, minimize their carbon footprint, comply with environmental regulations, and demonstrate a strong commitment to corporate sustainability.
               </>
             }
             benefits={benefitsList}

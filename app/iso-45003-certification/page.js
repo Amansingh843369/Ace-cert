@@ -143,7 +143,7 @@ export default function IsoCertificationLayout() {
             certification={certification}
             description={
               <>
-                Implementing ISO 45003 helps organizations proactively address workplace stress, prevent burnout, foster a supportive culture, and ultimately boost productivity while showing genuine care for employee mental health.
+                ISO 45003 helps organizations proactively address workplace stress, prevent burnout, foster a supportive culture, and ultimately boost productivity while showing genuine care for employee mental health.
               </>
             }
             benefits={benefitsList}

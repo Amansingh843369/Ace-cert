@@ -143,7 +143,7 @@ export default function Iso27002Layout() {
             certification={certification}
             description={
               <>
-                Implementing ISO 27002 helps organizations establish a robust framework for information security, ensuring that sensitive data is protected against evolving cyber threats and unauthorized access.
+                ISO 27002 helps organizations establish a robust framework for information security, ensuring that sensitive data is protected against evolving cyber threats and unauthorized access.
               </>
             }
             benefits={benefitsList}

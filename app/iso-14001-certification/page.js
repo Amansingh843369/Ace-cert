@@ -140,7 +140,7 @@ export default function IsoCertificationLayout() {
             certification={certification}
             description={
               <>
-                Implementing ISO 14001 helps organizations minimize their negative impact on the environment, comply with laws, and achieve financial savings through improved efficiency.
+                ISO 14001 helps organizations minimize their negative impact on the environment, comply with laws, and achieve financial savings through improved efficiency.
               </>
             }
             benefits={benefitsList}

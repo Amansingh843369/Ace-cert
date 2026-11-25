@@ -144,7 +144,7 @@ transparent, and secure use.
             certification={certification}
             description={
               <>
-                Implementing ISO 42001 helps organizations proactively manage AI risks, prevent algorithmic bias, ensure strict regulatory compliance, and build unshakeable trust with customers who demand ethical and transparent AI.
+                ISO 42001 helps organizations proactively manage AI risks, prevent algorithmic bias, ensure strict regulatory compliance, and build unshakeable trust with customers who demand ethical and transparent AI.
               </>
             }
             benefits={benefitsList}

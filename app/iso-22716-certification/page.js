@@ -144,7 +144,7 @@ export default function Iso22716Layout() {
             certification={certification}
             description={
               <>
-                Implementing ISO 22716 helps organizations minimize risks in cosmetic manufacturing, ensuring that products are safe for consumers and meet the stringent regulatory requirements of global markets like the EU and FDA.
+                ISO 22716 helps organizations minimize risks in cosmetic manufacturing, ensuring that products are safe for consumers and meet the stringent regulatory requirements of global markets like the EU and FDA.
               </>
             }
             benefits={benefitsList}
