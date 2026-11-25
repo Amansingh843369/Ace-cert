@@ -2,12 +2,15 @@
 
 import Image from 'next/image';
 import { ArrowUpRight, CircleCheck } from 'lucide-react';
-import { certificationImages as localCertificationImages } from '../data/certificationImages';
+import {
+  certificationDetailImages,
+  certificationImages,
+} from '../data/certificationImages';
 
 
 
 export const getCertificationImage = (title) =>
-  localCertificationImages[title]?.trim();
+  certificationImages[title]?.trim();
 
 export default function CertificationImportanceSection({
   id,
@@ -18,7 +21,11 @@ export default function CertificationImportanceSection({
   imageSrc,
 }) {
   const content = certification;
-  const image = imageSrc || getCertificationImage(title) || content?.heroImageUrl;
+  const image =
+    certificationDetailImages[title]?.trim() ||
+    imageSrc ||
+    getCertificationImage(title) ||
+    content?.heroImageUrl;
   const sectionDescription =
     content?.importanceDescription || description;
   const sectionBenefits =
@@ -76,7 +83,7 @@ export default function CertificationImportanceSection({
           </ol>
         </div>
 
-        <figure className="relative aspect-square w-full overflow-hidden rounded-[1.75rem] bg-red-50 ring-1 ring-black/5 shadow-[0_16px_45px_rgba(17,24,39,0.10)] lg:rounded-[2rem]">
+        <figure className="relative aspect-[1055/1491] w-full overflow-hidden rounded-[1.75rem] bg-red-50 ring-1 ring-black/5 shadow-[0_16px_45px_rgba(17,24,39,0.10)] lg:rounded-[2rem]">
           <Image
             src={image}
             alt={content?.heroImageAlt || `${title} certification`}
