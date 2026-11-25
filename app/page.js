@@ -1,5 +1,3 @@
-import { readdir } from "node:fs/promises";
-import { basename, extname, join } from "node:path";
 import AboutSection from "../components/AboutSection";
 import CertificationCtaSection from "../components/CertificationCtaSection";
 import { createPageMetadata } from '../lib/seo';
@@ -10,33 +8,12 @@ import PurposeSection from "../components/PurposeSection";
 //  import ExperienceSection  from "../components/exp";
 //  import  ContactSection  from "../components/contact";
  import ServiceSection from "../components/services";
- import { certificationCodeToSlug } from "../data/certificationImages";
  import { getHomePageContent } from "../lib/sanity/homePage";
  import { certifications as fallbackCertifications } from "../data/certifications";
  import { certificationsQuery } from "../lib/sanity/queries";
  import { sanityClient, sanityConfigured, urlFor } from "../lib/sanity/client";
 
 export const metadata = createPageMetadata('/');
-
- const certificationImageExtensions = new Set([".avif", ".gif", ".jpeg", ".jpg", ".png", ".webp"]);
-
- async function getCertificationImageFiles() {
-   const folder = join(process.cwd(), "public", "certifications");
-   const entries = await readdir(folder, { withFileTypes: true });
-
-   return Object.fromEntries(
-     entries
-       .filter(
-         (entry) =>
-           entry.isFile() &&
-           certificationImageExtensions.has(extname(entry.name).toLowerCase()),
-       )
-       .map((entry) => [
-         certificationCodeToSlug(basename(entry.name, extname(entry.name))),
-         `/certifications/${entry.name}`,
-       ]),
-   );
- }
 
  async function getHomepageCertifications() {
    if (!sanityConfigured) return fallbackCertifications;
@@ -84,8 +61,7 @@ export const metadata = createPageMetadata('/');
  }
 
  export default async function HomePage() {
-   const [certificationImageFiles, content, certificationItems] = await Promise.all([
-     getCertificationImageFiles(),
+   const [content, certificationItems] = await Promise.all([
      getHomePageContent(),
      getHomepageCertifications(),
    ]);
@@ -115,7 +91,6 @@ export const metadata = createPageMetadata('/');
         overlayImageSrc={aboutOverlayImageUrl || "https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=800&q=85"}
       />
       <ServiceSection
-        certificationImageFiles={certificationImageFiles}
         certificationItems={certificationItems}
         content={content.services}
       />

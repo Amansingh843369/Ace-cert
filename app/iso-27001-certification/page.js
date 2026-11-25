@@ -1,6 +1,6 @@
 'use client';
 
-import CertificationImportanceSection from '../../components/CertificationImportanceSection';
+import CertificationImportanceSection, { getCertificationImage } from '../../components/CertificationImportanceSection';
 import CertificationHeroTitle from '../../components/CertificationHeroTitle';
 import { mergeCertificationPillars, useCertificationContent } from '../../lib/sanity/useCertificationContent';
 
@@ -90,7 +90,7 @@ export default function IsoCertificationLayout() {
               <figure className="relative aspect-[4/3] w-full max-w-[520px] overflow-hidden rounded-2xl bg-white ring-1 ring-black/5 sm:rounded-[1.5rem] self-center">
                 {/* CHANGED IMAGE: Cyber Security / Digital Lock */}
                 <Image
-                  src="/certification-logos/iso-27001.png"
+                  src={getCertificationImage('ISO 27001')}
                   alt="ACE-CERT 27001 certification logo"
                   fill
                   priority

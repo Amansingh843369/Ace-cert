@@ -1,6 +1,6 @@
 'use client';
 
-import CertificationImportanceSection from '../../components/CertificationImportanceSection';
+import CertificationImportanceSection, { getCertificationImage } from '../../components/CertificationImportanceSection';
 import CertificationHeroTitle from '../../components/CertificationHeroTitle';
 import { mergeCertificationPillars, useCertificationContent } from '../../lib/sanity/useCertificationContent';
 
@@ -88,7 +88,7 @@ export default function IsoCertificationLayout() {
               <figure className="relative aspect-[4/3] w-full max-w-[520px] overflow-hidden rounded-2xl bg-red-50 ring-1 ring-black/5 sm:rounded-[1.5rem] lg:h-full lg:aspect-auto">
                 {/* Mental Health / Workplace Well-being Image */}
                 <Image
-                  src="/2nd_images_ace-cert/45003.png"
+                  src={getCertificationImage('ISO 45003')}
                   alt={certification?.heroImageAlt || "Employees discussing mental health and workplace well-being"}
                   fill
                   priority

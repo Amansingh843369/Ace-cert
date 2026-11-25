@@ -1,6 +1,6 @@
 'use client';
 
-import CertificationImportanceSection from '../../components/CertificationImportanceSection';
+import CertificationImportanceSection, { getCertificationImage } from '../../components/CertificationImportanceSection';
 import CertificationHeroTitle from '../../components/CertificationHeroTitle';
 import { mergeCertificationPillars, useCertificationContent } from '../../lib/sanity/useCertificationContent';
 
@@ -88,7 +88,7 @@ export default function IsoCertificationLayout() {
               <figure className="relative aspect-[4/3] w-full max-w-[520px] overflow-hidden rounded-2xl bg-white ring-1 ring-black/5 sm:rounded-[1.5rem] self-center">
                 {/* Ship Recycling / Shipyard Image */}
                 <Image
-                  src="/certification-logos/iso-30000.png"
+                  src={getCertificationImage('ISO 30000')}
                   alt="ACE-CERT 30000 certification logo"
                   fill
                   priority

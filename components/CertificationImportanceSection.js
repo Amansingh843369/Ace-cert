@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import { ArrowUpRight, CircleCheck } from 'lucide-react';
+import { certificationImages as localCertificationImages } from '../data/certificationImages';
 
 const certificationImages = {
   GHP: '/certifications/ghp.png',
@@ -78,6 +79,9 @@ const certificationImages = {
     'https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=1200&q=85',
 };
 
+export const getCertificationImage = (title) =>
+  localCertificationImages[title] || certificationImages[title];
+
 export default function CertificationImportanceSection({
   id,
   title,
@@ -87,7 +91,7 @@ export default function CertificationImportanceSection({
   imageSrc,
 }) {
   const content = certification;
-  const image = imageSrc || content?.heroImageUrl || certificationImages[title];
+  const image = imageSrc || getCertificationImage(title) || content?.heroImageUrl;
   const sectionDescription =
     content?.importanceDescription || description;
   const sectionBenefits =
@@ -151,9 +155,15 @@ export default function CertificationImportanceSection({
             alt={content?.heroImageAlt || `${title} certification`}
             fill
             sizes="(max-width: 1024px) 100vw, 40vw"
-            className="object-cover"
+            className={title === 'ISO 9001' ? 'object-contain p-12' : 'object-cover'}
             loading="lazy"
           />
+          {title === 'ISO 9001' && (
+            <figcaption className="absolute bottom-6 left-1/2 -translate-x-1/2 rounded-full border border-red-100 bg-white px-5 py-3 text-center shadow-lg">
+              <span className="block text-lg font-extrabold text-[#1c2448]">ISO 9001</span>
+              <span className="block text-xs font-semibold text-slate-600">Quality Management System</span>
+            </figcaption>
+          )}
         </figure>
       </div>
     </section>

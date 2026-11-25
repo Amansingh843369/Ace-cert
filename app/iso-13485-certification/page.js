@@ -1,6 +1,6 @@
 'use client';
 
-import CertificationImportanceSection from '../../components/CertificationImportanceSection';
+import CertificationImportanceSection, { getCertificationImage } from '../../components/CertificationImportanceSection';
 import CertificationHeroTitle from '../../components/CertificationHeroTitle';
 import { mergeCertificationPillars, useCertificationContent } from '../../lib/sanity/useCertificationContent';
 import React, { useState } from 'react';
@@ -78,7 +78,7 @@ export default function IsoCertificationLayout() {
             <div className="order-1 flex w-full justify-center lg:w-[46%]">
               <figure className="relative aspect-[4/3] w-full max-w-[520px] overflow-hidden rounded-2xl bg-white ring-1 ring-black/5 sm:rounded-[1.5rem] self-center">
                 <Image
-                  src="/certification-logos/iso-13485.png"
+                  src={getCertificationImage('ISO 13485')}
                   alt="ACE-CERT 13485 certification logo"
                   fill
                   priority

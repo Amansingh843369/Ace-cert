@@ -1,6 +1,6 @@
 'use client';
 
-import CertificationImportanceSection from '../../components/CertificationImportanceSection';
+import CertificationImportanceSection, { getCertificationImage } from '../../components/CertificationImportanceSection';
 import CertificationHeroTitle from '../../components/CertificationHeroTitle';
 import { mergeCertificationPillars, useCertificationContent } from '../../lib/sanity/useCertificationContent';
 
@@ -92,7 +92,7 @@ export default function Iso22716Layout() {
               <figure className="relative aspect-[4/3] w-full max-w-[520px] overflow-hidden rounded-2xl bg-white ring-1 ring-black/5 sm:rounded-[1.5rem] self-center">
                 {/* IMAGE 1: Cosmetics Lab / Cream Texture */}
                 <Image
-                  src="/certification-logos/iso-22716.png"
+                  src={getCertificationImage('ISO 22716')}
                   alt="ACE-CERT 22716 certification logo"
                   fill
                   priority

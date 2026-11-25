@@ -1,6 +1,6 @@
 'use client';
 
-import CertificationImportanceSection from '../../components/CertificationImportanceSection';
+import CertificationImportanceSection, { getCertificationImage } from '../../components/CertificationImportanceSection';
 import CertificationHeroTitle from '../../components/CertificationHeroTitle';
 import { mergeCertificationPillars, useCertificationContent } from '../../lib/sanity/useCertificationContent';
 
@@ -81,13 +81,16 @@ export default function IsoCertificationLayout() {
             <div className="order-1 flex w-full justify-center lg:w-[46%]">
               <div className="relative aspect-square w-full max-w-[520px] overflow-hidden rounded-2xl bg-red-50 ring-1 ring-black/5 sm:rounded-[1.5rem] lg:h-full">
                 <Image
-                  src="/certifications/iso-9001-shield-logo.png"
-                  alt="ACE-CERT ISO 9001 shield logo"
+                  src={getCertificationImage('ISO 9001')}
+                  alt="ACE-CERT logo for ISO 9001 certification"
                   fill
                   priority
                   sizes="(max-width: 1024px) 100vw, 520px"
                   className="object-contain p-8 transition-transform duration-700 hover:scale-[1.03]"
                 />
+                <span className="absolute bottom-6 left-1/2 -translate-x-1/2 rounded-full border border-red-100 bg-white px-4 py-2 text-sm font-bold text-[#1c2448] shadow-md">
+                  ISO 9001
+                </span>
               </div>
             </div>
 
@@ -129,7 +132,7 @@ export default function IsoCertificationLayout() {
         <CertificationImportanceSection
             id="iso9001-importance"
             title="ISO 9001"
-            imageSrc="/certifications/9001.png"
+            imageSrc={getCertificationImage('ISO 9001')}
             certification={certification}
             description={
               <>

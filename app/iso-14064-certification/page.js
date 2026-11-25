@@ -1,6 +1,6 @@
 'use client';
 
-import CertificationImportanceSection from '../../components/CertificationImportanceSection';
+import CertificationImportanceSection, { getCertificationImage } from '../../components/CertificationImportanceSection';
 import CertificationHeroTitle from '../../components/CertificationHeroTitle';
 import { useCertificationContent } from '../../lib/sanity/useCertificationContent';
 
@@ -154,7 +154,7 @@ export default function IsoCertificationLayout() {
               <div className="w-full shrink-0 lg:w-[44%]">
                 <figure className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl bg-white ring-1 ring-black/5 self-center">
                   <Image
-                    src="/certification-logos/iso-14064.png"
+                    src={getCertificationImage('ISO 14064')}
                     alt="ACE-CERT 14064 certification logo"
                     fill
                     priority

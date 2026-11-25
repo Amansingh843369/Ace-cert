@@ -1,4 +1,5 @@
 ﻿ 'use client';
+import { getCertificationImage } from '../../components/CertificationImportanceSection';
 
 import React, { useState } from 'react';
 import Image from 'next/image';
@@ -86,7 +87,7 @@ export default function Iso22000Layout() {
               <figure className="relative aspect-[4/3] w-full max-w-[520px] overflow-hidden rounded-2xl bg-red-50 ring-1 ring-black/5 sm:rounded-[1.5rem] lg:h-full lg:aspect-auto">
                 {/* ISO 22000 certification artwork */}
                 <Image
-                  src="/certifications/22000.png"
+                  src={getCertificationImage('ISO 22000')}
                   alt="ISO 22000 certification artwork"
                   fill
                   priority

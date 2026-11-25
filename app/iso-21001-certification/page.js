@@ -1,6 +1,6 @@
 'use client';
 
-import CertificationImportanceSection from '../../components/CertificationImportanceSection';
+import CertificationImportanceSection, { getCertificationImage } from '../../components/CertificationImportanceSection';
 import CertificationHeroTitle from '../../components/CertificationHeroTitle';
 import { mergeCertificationPillars, useCertificationContent } from '../../lib/sanity/useCertificationContent';
 
@@ -91,7 +91,7 @@ export default function Iso21001CertificationLayout() {
               <figure className="relative aspect-[4/3] w-full max-w-[520px] overflow-hidden rounded-2xl bg-white ring-1 ring-black/5 sm:rounded-[1.5rem] self-center">
                 {/* Education-focused Image */}
                 <Image
-                  src="/certification-logos/iso-21001.png"
+                  src={getCertificationImage('ISO 21001')}
                   alt="ACE-CERT 21001 certification logo"
                   fill
                   priority
