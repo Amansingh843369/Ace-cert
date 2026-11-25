@@ -155,7 +155,7 @@ export default function CertificationImportanceSection({
             alt={content?.heroImageAlt || `${title} certification`}
             fill
             sizes="(max-width: 1024px) 100vw, 40vw"
-            className={title === 'ISO 9001' ? 'object-contain p-12' : 'object-cover'}
+            className={title.startsWith('ISO ') ? 'object-contain p-8' : 'object-cover'}
             loading="lazy"
           />
           {title === 'ISO 9001' && (
