@@ -12,6 +12,15 @@ const navigation = [
     ],
   },
   {
+    title: "QUICK LINKS",
+    links: [
+      { label: "ISO 9001", href: "/iso-9001-2015-certification" },
+      { label: "ISO 10002", href: "/iso-10002-certification" },
+      { label: "ISO 14001", href: "/iso-14001-certification" },
+      { label: "ISO 27001", href: "/iso-27001-certification" },
+    ],
+  },
+  {
     title: "EXPLORE",
     links: [
       { label: "Verify Certificate", href: "/validate_certificate" },
@@ -46,7 +55,7 @@ export default function Footer() {
         </div>
 
         <div className="mt-9 grid gap-8 sm:mt-12 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:items-center lg:gap-10">
-          <div className="grid max-w-xl grid-cols-2 gap-8 sm:gap-12">
+          <div className="grid max-w-3xl grid-cols-2 gap-8 sm:grid-cols-3 sm:gap-10">
             {navigation.map((group) => (
               <nav key={group.title} aria-label={group.title}>
                 <h3 className="text-xs font-bold tracking-wide sm:text-sm">

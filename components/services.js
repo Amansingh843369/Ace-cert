@@ -118,22 +118,17 @@ export default function ServicesSection({
                       <Icon className="h-16 w-16 text-[#1c2448]" aria-hidden="true" />
                     </div>
                   )}
-                  
-                  {/* Icon Badge */}
-                  <div className="absolute right-3.5 top-3.5 z-10 flex h-10 w-10 items-center justify-center rounded-xl border border-slate-200 bg-white shadow-lg sm:right-4 sm:top-4 sm:h-12 sm:w-12">
-                    <Icon className="h-5 w-5 text-[#1c2448] sm:h-6 sm:w-6" aria-hidden="true" />
-                  </div>
                 </div>
 
                 {/* Content Section */}
-                <div className="p-5 sm:p-6 flex flex-col h-[150px] sm:h-[160px]">
+                <div className="p-5 sm:p-6 flex flex-col">
                   <span className="mb-1 text-[10px] font-bold uppercase tracking-wider text-red-600">
                     {service.type}
                   </span>
                   <h3 className="text-lg sm:text-xl font-bold text-slate-900 mb-1 group-hover/card:text-red-600 transition-colors">
                     {service.code}
                   </h3>
-                  <div className="flex items-center gap-2 text-xs sm:text-sm font-bold text-red-600 mt-auto">
+                  <div className="flex items-center gap-2 text-xs sm:text-sm font-bold text-red-600 mt-3">
                     <span>{content.cardLinkLabel ?? 'Explore Standard'}</span>
                     <ArrowRight className="w-4 h-4 transform group-hover/card:translate-x-1.5 transition-transform" aria-hidden="true" />
                   </div>

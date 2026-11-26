@@ -2,8 +2,6 @@ import ManagementCertificationDirectory from '../management-certification/Manage
 import { sanityClient, sanityConfigured } from '../../lib/sanity/client';
 import { certificationsQuery } from '../../lib/sanity/queries';
 import { certifications as fallbackCertifications } from '../../data/certifications';
-import { getCertificationDirectoryPageContent } from '../../lib/sanity/certificationDirectoryPageContent';
-import { urlFor } from '../../lib/sanity/client';
 
 const title = 'ISO Management System Certifications | ACE Certifications';
 const description = 'Explore ACE Certifications’ ISO management system standards. Search ISO 9001, ISO 14001, ISO 27001, ISO 45001, and more.';
@@ -27,9 +25,6 @@ export const metadata = {
 
 export default async function CertificationPage() {
   let certificationItems = fallbackCertifications;
-  const directoryContent = await getCertificationDirectoryPageContent();
-  const directoryHeroImage =
-    urlFor(directoryContent.heroImage)?.width(1600).url() || null;
 
   if (sanityConfigured) {
     try {
@@ -63,8 +58,6 @@ export default async function CertificationPage() {
   return (
     <ManagementCertificationDirectory
       initialStandards={certificationItems}
-      pageContent={directoryContent}
-      heroImageUrl={directoryHeroImage}
     />
   );
 }

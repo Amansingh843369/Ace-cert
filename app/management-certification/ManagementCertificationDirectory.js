@@ -2,14 +2,13 @@
 
 import { useMemo, useState } from 'react';
 import Link from 'next/link';
-import { ArrowUpRight, Search, Settings2, ShieldCheck, Globe, Award } from 'lucide-react';
+import Image from 'next/image';
+import { ArrowUpRight, Search, Settings2 } from 'lucide-react';
 import { certifications as ISO_STANDARDS } from '../../data/certifications';
 
 const DIRECTORY_STANDARDS = ISO_STANDARDS.filter(({ code }) => code !== 'CE Marking');
-const DEFAULT_HERO_DESCRIPTION =
-  'Explore our complete range of management system certifications — from quality and environment to security and food safety. Search by standard number or standard name to find the right certification for your organization.';
 
-export default function ManagementCertificationDirectory({ initialStandards, pageContent, heroImageUrl }) {
+export default function ManagementCertificationDirectory({ initialStandards }) {
   const [query, setQuery] = useState('');
   const standards = useMemo(
     () => Array.isArray(initialStandards) && initialStandards.length > 0
@@ -25,67 +24,31 @@ export default function ManagementCertificationDirectory({ initialStandards, pag
     );
   }, [query, standards]);
 
-  const hero = pageContent?.hero;
-  const heroDescription = (
-    typeof hero?.description === 'string' ? hero.description : DEFAULT_HERO_DESCRIPTION
-  )
-    .replace(/\bISO management system certifications\b/gi, 'management system certifications')
-    .replace(/\bISO number\b/gi, 'standard number');
-
   return (
     <main className="min-h-screen bg-white text-[#1c2448]">
-      <section className="relative border-b border-red-100 bg-gradient-to-br from-red-50 via-white to-white overflow-hidden">
-        <div
-          className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=85')] bg-cover bg-center opacity-[0.10] pointer-events-none"
-          style={
-            heroImageUrl
-              ? { backgroundImage: `url("${heroImageUrl}")` }
-              : undefined
-          }
-        />
-        <div className="relative z-10 mx-auto max-w-7xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8 lg:py-14">
-          {/* Left: Content */}
-          <div className="min-w-0 space-y-4">
-            <div className="mb-4 flex flex-wrap items-center gap-2">
-              <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-600 text-white text-[10px] sm:text-xs font-bold tracking-wider uppercase shadow-sm shadow-red-600/25">
-                <span className="relative flex h-2 w-2">
-                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-red-500 opacity-40" />
-                  <span className="relative inline-flex h-full w-full rounded-full bg-[#E30613]" />
-                </span>
-                {hero?.eyebrow || 'ACE Certifications'}
-              </span>
-               
-            </div>
-            <h1 className="max-w-3xl text-3xl font-extrabold leading-[1.05] tracking-tight text-[#1c2448] sm:text-4xl md:text-5xl">
-              {hero?.titleLine1 || 'ACE-CERT'}{' '}
-              <span className="text-red-600">{hero?.titleHighlight || 'Certification'}</span>
-            </h1>
-            <p className="max-w-2xl text-sm leading-7 text-[#1c2448]/80 sm:text-base sm:leading-8 md:text-lg">
-              {heroDescription}
-            </p>
-            <div className="mt-5 flex flex-wrap items-center gap-x-5 gap-y-2">
-              <div className="flex items-center gap-2 text-sm font-bold text-[#1c2448]">
-                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-red-50 text-red-600">
-                  <ShieldCheck className="h-3 w-3" />
-                </span>
-                <span>{hero?.feature1 || 'Internationally Recognized'}</span>
-              </div>
-              <div className="flex items-center gap-2 text-sm font-bold text-[#1c2448]">
-                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-red-50 text-red-600">
-                  <Award className="h-3 w-3" />
-                </span>
-                <span>{hero?.feature2 || 'Global Accreditation'}</span>
-              </div>
-              <div className="flex items-center gap-2 text-sm font-bold text-[#1c2448]">
-                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-red-50 text-red-600">
-                  <Globe className="h-3 w-3" />
-                </span>
-                <span>{hero?.feature3 || 'Industry Trusted'}</span>
-              </div>
-            </div>
-          </div>
-
+      <section aria-label="ACE certification banner" className="overflow-hidden border-b border-red-100 bg-white">
+        <div className="sr-only">
+          <h1>ACE Certification</h1>
+          <p>
+            Explore our complete range of management system certifications — from quality and
+            environment to security and food safety. Search by standard number or standard name to
+            find the right certification for your organization.
+          </p>
+          <ul>
+            <li>Internationally Recognized</li>
+            <li>Global Accreditation</li>
+            <li>Industry Trusted</li>
+          </ul>
         </div>
+        <Image
+          src="/certification-hero.png"
+          alt="A framed certificate beside a globe and books"
+          width={1600}
+          height={653}
+          sizes="100vw"
+          priority
+          className="h-auto w-full"
+        />
       </section>
 
       <section
