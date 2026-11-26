@@ -115,7 +115,7 @@ export default function FaqSection() {
           
           {/* Decorative Background Elements (Dots) */}
           <div className="absolute -left-10 top-1/4 w-32 h-32 opacity-10 hidden lg:block pointer-events-none">
-             <svg width="100%" height="100%" viewBox="0 0 100 100" fill="#dc2626">
+             <svg width="100%" height="100%" viewBox="0 0 100 100" fill="#C10007">
                <pattern id="dots" x="0" y="0" width="10" height="10" patternUnits="userSpaceOnUse">
                  <circle cx="2" cy="2" r="1.5"></circle>
                </pattern>

@@ -72,13 +72,13 @@ export default function Iso37001Layout() {
             <div className="mb-5 inline-flex items-center gap-2.5 rounded-full border border-red-100 bg-white/90 px-4 py-2 text-xs font-semibold text-red-800 shadow-[0_4px_16px_rgba(127,29,29,0.06)] md:mb-6 md:text-sm">
               <span className="relative flex h-2.5 w-2.5">
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-red-500 opacity-40"></span>
-                <span className="relative inline-flex h-full w-full rounded-full bg-[#E30613]"></span>
+                <span className="relative inline-flex h-full w-full rounded-full bg-[#C10007]"></span>
               </span>
               {certification?.heroBadge || "Anti-Bribery Management Systems (ABMS)"}
             </div>
 
-            <h1 id="iso37001-title" className="mb-4 max-w-4xl text-balance text-4xl font-extrabold leading-[1.08] tracking-[-0.045em] text-[#111827] sm:text-5xl md:text-6xl lg:text-[4.25rem]">{certification?.heroTitle ? <CertificationHeroTitle title={certification.heroTitle} highlightClass="text-[#E30613]" /> : <>
-              ISO 37001 <span className="text-[#E30613]">Certification</span>
+            <h1 id="iso37001-title" className="mb-4 max-w-4xl text-balance text-4xl font-extrabold leading-[1.08] tracking-[-0.045em] text-[#111827] sm:text-5xl md:text-6xl lg:text-[4.25rem]">{certification?.heroTitle ? <CertificationHeroTitle title={certification.heroTitle} highlightClass="text-[#C10007]" /> : <>
+              ISO 37001 <span className="text-[#C10007]">Certification</span>
             </>}</h1>
 
             <h2 className="max-w-2xl px-2 text-pretty text-base font-medium leading-relaxed text-[#526581] sm:text-lg md:text-xl">{certification?.heroDescription || <>
@@ -106,7 +106,7 @@ export default function Iso37001Layout() {
             <div className="order-2 flex w-full flex-col justify-center lg:justify-between gap-4 text-center sm:gap-5 lg:w-[54%] lg:gap-6 lg:text-left">
               <h3 id="iso37001-introduction" className="relative mx-auto inline-block text-2xl font-bold tracking-tight text-[#111827] sm:text-3xl md:text-[2rem] lg:mx-0 lg:text-4xl">{certification?.introTitle || <>
                 What is ISO 37001?
-                </>}<span aria-hidden="true" className="absolute -bottom-3 left-1/2 h-1 w-14 -translate-x-1/2 rounded-full bg-[#E30613] lg:left-0 lg:translate-x-0" />
+                </>}<span aria-hidden="true" className="absolute -bottom-3 left-1/2 h-1 w-14 -translate-x-1/2 rounded-full bg-[#C10007] lg:left-0 lg:translate-x-0" />
               </h3>
 
               {/* TEXT JUSTIFY APPLIED HERE */}
@@ -124,7 +124,7 @@ export default function Iso37001Layout() {
               <div className="mt-2 flex justify-center lg:justify-start">
                 <button
                   onClick={() => setIsModalOpen(true)}
-                  className="group relative inline-flex min-h-12 w-full items-center justify-center rounded-xl bg-[#E30613] px-7 py-3.5 text-sm font-bold text-white shadow-[0_8px_22px_rgba(227,6,19,0.2)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-red-800 hover:shadow-[0_12px_28px_rgba(227,6,19,0.26)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-700 focus-visible:ring-offset-2 active:translate-y-0 sm:w-auto sm:text-base"
+                  className="group relative inline-flex min-h-12 w-full items-center justify-center rounded-xl bg-[#C10007] px-7 py-3.5 text-sm font-bold text-white shadow-[0_8px_22px_rgba(193, 0, 7,0.2)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-red-800 hover:shadow-[0_12px_28px_rgba(193, 0, 7,0.26)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-700 focus-visible:ring-offset-2 active:translate-y-0 sm:w-auto sm:text-base"
                 >
                   <span>{certification?.enquireLabel || "Get Certified Today"}</span>
                   <svg className="w-5 h-5 ml-2 -mr-1 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -162,7 +162,7 @@ export default function Iso37001Layout() {
               </span>
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-900 leading-tight">
                 Key Anti-Bribery <br className="hidden md:block" />
-                <span className="text-[#E30613]">Principles</span>
+                <span className="text-[#C10007]">Principles</span>
               </h2>
             </div>
 
@@ -278,7 +278,7 @@ export default function Iso37001Layout() {
 
           <div className="relative w-full max-w-lg bg-white rounded-3xl shadow-2xl overflow-hidden animate-in fade-in zoom-in duration-300">
 
-            <div className="relative flex h-32 items-center justify-center bg-gradient-to-r from-red-800 to-[#E30613]">
+            <div className="relative flex h-32 items-center justify-center bg-gradient-to-r from-red-800 to-[#C10007]">
               <button
                 onClick={() => setIsModalOpen(false)}
                 className="absolute top-4 right-4 p-2 bg-white/20 hover:bg-white/30 rounded-full text-white transition-colors"

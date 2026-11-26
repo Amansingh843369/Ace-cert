@@ -67,13 +67,13 @@ export default function IsoCertificationLayout() {
             <div className="mb-4 inline-flex items-center gap-2.5 rounded-full border border-red-100 bg-white/90 px-4 py-1.5 text-xs font-semibold text-red-800 shadow-[0_4px_16px_rgba(127,29,29,0.06)] md:text-sm">
               <span className="relative flex h-2.5 w-2.5">
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-red-500 opacity-40"></span>
-                <span className="relative inline-flex h-full w-full rounded-full bg-[#E30613]"></span>
+                <span className="relative inline-flex h-full w-full rounded-full bg-[#C10007]"></span>
               </span>
               {certification?.heroBadge || "Global Asset Management Standard"}
             </div>
 
-            <h1 id="iso55000-title" className="mb-3 max-w-4xl text-balance text-4xl font-extrabold leading-[1.08] tracking-[-0.045em] text-[#111827] sm:text-5xl md:text-6xl lg:text-5xl xl:text-[3.5rem]">{certification?.heroTitle ? <CertificationHeroTitle title={certification.heroTitle} highlightClass="text-[#E30613]" /> : <>
-              ISO 55000 <span className="text-[#E30613]">Certification</span>
+            <h1 id="iso55000-title" className="mb-3 max-w-4xl text-balance text-4xl font-extrabold leading-[1.08] tracking-[-0.045em] text-[#111827] sm:text-5xl md:text-6xl lg:text-5xl xl:text-[3.5rem]">{certification?.heroTitle ? <CertificationHeroTitle title={certification.heroTitle} highlightClass="text-[#C10007]" /> : <>
+              ISO 55000 <span className="text-[#C10007]">Certification</span>
             </>}</h1>
 
             <h2 className="max-w-3xl px-2 text-pretty text-base font-medium leading-relaxed text-[#526581] sm:text-lg md:text-xl">{certification?.heroDescription || <>
@@ -101,7 +101,7 @@ export default function IsoCertificationLayout() {
             <div className="order-2 flex w-full flex-col justify-center lg:justify-between gap-4 text-center sm:gap-4 lg:w-[54%] lg:gap-5 lg:text-left">
               <h3 id="iso55000-introduction" className="relative mx-auto inline-block text-2xl font-bold tracking-tight text-[#111827] sm:text-3xl md:text-[2rem] lg:mx-0 lg:text-4xl">{certification?.introTitle || <>
                 What is ISO 55000?
-                </>}<span aria-hidden="true" className="absolute -bottom-2 left-1/2 h-1 w-14 -translate-x-1/2 rounded-full bg-[#E30613] lg:left-0 lg:translate-x-0" />
+                </>}<span aria-hidden="true" className="absolute -bottom-2 left-1/2 h-1 w-14 -translate-x-1/2 rounded-full bg-[#C10007] lg:left-0 lg:translate-x-0" />
               </h3>
 
               {/* Content exactly from the image */}
@@ -118,7 +118,7 @@ export default function IsoCertificationLayout() {
               <div className="mt-2 flex justify-center lg:justify-start">
                 <button
                   onClick={() => setIsModalOpen(true)}
-                  className="group relative inline-flex min-h-11 w-full items-center justify-center rounded-xl bg-[#E30613] px-6 py-3 text-sm font-bold text-white shadow-[0_8px_22px_rgba(227,6,19,0.2)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-red-800 hover:shadow-[0_12px_28px_rgba(227,6,19,0.26)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-700 focus-visible:ring-offset-2 active:translate-y-0 sm:w-auto sm:text-base"
+                  className="group relative inline-flex min-h-11 w-full items-center justify-center rounded-xl bg-[#C10007] px-6 py-3 text-sm font-bold text-white shadow-[0_8px_22px_rgba(193, 0, 7,0.2)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-red-800 hover:shadow-[0_12px_28px_rgba(193, 0, 7,0.26)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-700 focus-visible:ring-offset-2 active:translate-y-0 sm:w-auto sm:text-base"
                 >
                   <span>{certification?.enquireLabel || "Get Certified Today"}</span>
                   <svg className="w-4 h-4 ml-2 -mr-1 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -156,7 +156,7 @@ export default function IsoCertificationLayout() {
               </span>
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-slate-900 leading-tight">
                 Key Principles of <br className="hidden md:block" />
-                <span className="text-[#E30613]">ISO 55000</span>
+                <span className="text-[#C10007]">ISO 55000</span>
               </h2>
               <p className="mt-3 text-sm md:text-base text-slate-500 px-4 max-w-2xl mx-auto">
                 ISO 55000 is based on specialized asset management principles designed to align technical asset decisions with overarching organizational and financial objectives.
@@ -271,7 +271,7 @@ export default function IsoCertificationLayout() {
 
           <div className="relative w-full max-w-lg bg-white rounded-3xl shadow-2xl overflow-hidden animate-in fade-in zoom-in duration-300">
 
-            <div className="relative flex h-28 items-center justify-center bg-gradient-to-r from-red-800 to-[#E30613]">
+            <div className="relative flex h-28 items-center justify-center bg-gradient-to-r from-red-800 to-[#C10007]">
               <button
                 onClick={() => setIsModalOpen(false)}
                 className="absolute top-4 right-4 p-1.5 bg-white/20 hover:bg-white/30 rounded-full text-white transition-colors"

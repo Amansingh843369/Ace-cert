@@ -1,5 +1,4 @@
 import AboutSection from "../components/AboutSection";
-import CertificationCtaSection from "../components/CertificationCtaSection";
 import { createPageMetadata } from '../lib/seo';
 import BlogSection from "../components/BlogSection";
 import FeaturesSection from '../components/FeaturesSection'; // Apna exact file path yahan daalein
@@ -67,7 +66,6 @@ export const metadata = createPageMetadata('/');
    ]);
    const heroImageUrl = urlFor(content.hero.backgroundImage)?.width(1920).url();
    const aboutOverlayImageUrl = urlFor(content.about.overlayImage)?.width(800).url();
-   const ctaImageUrl = urlFor(content.cta.image)?.width(1000).url();
 
   return (
     <main className="min-h-screen bg-slate-50 font-sans text-slate-800 selection:bg-blue-100">
@@ -99,7 +97,6 @@ export const metadata = createPageMetadata('/');
       <PurposeSection navy content={content.purpose} alignBenefitsWithText />
      {/* <ExperienceSection />   */}
      <FeaturesSection content={content.features} />
-       <CertificationCtaSection content={{ ...content.cta, imageUrl: ctaImageUrl }} />
       <BlogSection content={content.blog} />
       {/* <ContactSection /> */}
     </main>

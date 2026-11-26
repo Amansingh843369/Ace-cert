@@ -113,7 +113,7 @@ const DigitalMarketingSection = () => {
                 <defs>
                   <linearGradient id="digitalGrad" x1="0%" y1="0%" x2="100%" y2="100%">
                     <stop offset="0%" stopColor="#1e3a8a" /> {/* Dark Blue */}
-                    <stop offset="100%" stopColor="#dc2626" /> {/* Red */}
+                    <stop offset="100%" stopColor="#C10007" /> {/* Red */}
                   </linearGradient>
                   
                   {/* Grid Pattern for Digital Feel */}

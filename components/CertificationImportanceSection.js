@@ -49,7 +49,7 @@ export default function CertificationImportanceSection({
               id={id}
               className="whitespace-nowrap text-[clamp(1rem,3vw,2.75rem)] font-extrabold leading-tight tracking-[-0.035em] text-[#111827]"
             >
-              Why is <span className="text-[#E30613]">{title}</span> Important?
+              Why is <span className="text-[#C10007]">{title}</span> Important?
             </h2>
             <p className="mt-4 text-sm leading-7 text-[#526581] sm:text-base sm:leading-8 md:text-lg">
               {sectionDescription}

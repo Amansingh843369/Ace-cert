@@ -66,7 +66,7 @@ const BENEFIT_CARDS = [
 function SectionBadge({ children }) {
   return (
     <span className="inline-flex items-center gap-2 rounded-full border border-red-100 bg-red-50 px-4 py-1.5 text-[10px] font-bold uppercase tracking-[0.18em] text-red-700 sm:text-xs">
-      <span className="h-1.5 w-1.5 rounded-full bg-[#E30613]" aria-hidden="true" />
+      <span className="h-1.5 w-1.5 rounded-full bg-[#C10007]" aria-hidden="true" />
       {children}
     </span>
   );
@@ -126,7 +126,7 @@ export default function IsoCertificationLayout() {
               <div className="mb-5 inline-flex items-center gap-2.5 rounded-full border border-red-100 bg-white/90 px-4 py-2 text-[11px] font-semibold text-red-800 shadow-[0_4px_16px_rgba(127,29,29,0.06)] sm:text-xs md:text-sm">
                 <span className="relative flex h-2.5 w-2.5">
                   <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-red-500 opacity-40" />
-                  <span className="relative inline-flex h-full w-full rounded-full bg-[#E30613]" />
+                  <span className="relative inline-flex h-full w-full rounded-full bg-[#C10007]" />
                 </span>
                 {certification?.heroBadge || "Global Carbon Standard"}
               </div>
@@ -134,8 +134,8 @@ export default function IsoCertificationLayout() {
               <h1
                 id="hero-title"
                 className="mb-4 text-balance text-[2rem] font-extrabold leading-[1.1] tracking-[-0.03em] text-[#111827] xs:text-4xl sm:text-5xl md:text-6xl lg:text-5xl xl:text-[3.5rem]"
-              >{certification?.heroTitle ? <CertificationHeroTitle title={certification.heroTitle} highlightClass="text-[#E30613]" /> : <>
-                ISO 14064 <span className="text-[#E30613]">Certification</span>
+              >{certification?.heroTitle ? <CertificationHeroTitle title={certification.heroTitle} highlightClass="text-[#C10007]" /> : <>
+                ISO 14064 <span className="text-[#C10007]">Certification</span>
               </>}</h1>
 
               <p className="max-w-2xl text-pretty text-sm font-medium leading-relaxed text-[#526581] sm:text-base md:text-lg lg:text-xl">{certification?.heroDescription || <>
@@ -168,7 +168,7 @@ export default function IsoCertificationLayout() {
               <div className="flex w-full flex-col justify-center lg:justify-between gap-4 text-left sm:gap-5 lg:w-[56%] lg:gap-6">
                 <h3 className="relative inline-block text-xl font-bold tracking-tight text-[#111827] sm:text-2xl md:text-3xl lg:text-4xl">{certification?.introTitle || <>
                   What is ISO 14064?
-                  </>}<span aria-hidden="true" className="absolute -bottom-2 left-0 h-1 w-12 rounded-full bg-[#E30613] sm:-bottom-3 sm:w-14" />
+                  </>}<span aria-hidden="true" className="absolute -bottom-2 left-0 h-1 w-12 rounded-full bg-[#C10007] sm:-bottom-3 sm:w-14" />
                 </h3>
 
                 <div className="space-y-3 pt-2 text-sm leading-7 text-[#526581] sm:text-base sm:leading-8 md:text-[17px] text-justify">
@@ -195,7 +195,7 @@ export default function IsoCertificationLayout() {
                   <button
                     onClick={() => setIsModalOpen(true)}
                     type="button"
-                    className="group relative inline-flex w-full items-center justify-center gap-2 rounded-xl bg-[#E30613] px-6 py-3.5 text-sm font-bold text-white shadow-[0_8px_22px_rgba(227,6,19,0.2)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-red-800 hover:shadow-[0_12px_28px_rgba(227,6,19,0.26)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-700 focus-visible:ring-offset-2 active:translate-y-0 sm:w-auto sm:px-7 sm:text-base"
+                    className="group relative inline-flex w-full items-center justify-center gap-2 rounded-xl bg-[#C10007] px-6 py-3.5 text-sm font-bold text-white shadow-[0_8px_22px_rgba(193, 0, 7,0.2)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-red-800 hover:shadow-[0_12px_28px_rgba(193, 0, 7,0.26)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-700 focus-visible:ring-offset-2 active:translate-y-0 sm:w-auto sm:px-7 sm:text-base"
                   >
                     <span>{certification?.enquireLabel || "Get Certified Today"}</span>
                     <svg
@@ -234,7 +234,7 @@ export default function IsoCertificationLayout() {
             <div className="mx-auto mb-10 max-w-3xl text-center sm:mb-12 md:mb-16">
               <SectionBadge>Core Pillars</SectionBadge>
               <SectionHeading className="mt-4">
-                Key Greenhouse Gas <span className="text-[#E30613]">Principles</span>
+                Key Greenhouse Gas <span className="text-[#C10007]">Principles</span>
               </SectionHeading>
             </div>
 
@@ -357,7 +357,7 @@ export default function IsoCertificationLayout() {
 
           <div className="relative max-h-[92vh] w-full max-w-lg animate-in fade-in zoom-in overflow-y-auto rounded-2xl bg-white shadow-2xl sm:rounded-3xl">
             {/* Modal Header */}
-            <div className="relative flex h-28 items-center justify-center bg-gradient-to-r from-red-800 to-[#E30613] sm:h-32">
+            <div className="relative flex h-28 items-center justify-center bg-gradient-to-r from-red-800 to-[#C10007] sm:h-32">
               <button
                 onClick={() => setIsModalOpen(false)}
                 className="absolute right-3 top-3 rounded-full bg-white/20 p-2 text-white transition-colors hover:bg-white/30 sm:right-4 sm:top-4"

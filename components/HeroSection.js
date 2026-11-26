@@ -101,7 +101,7 @@ export default function HeroSection({ content = {} }) {
         <path
           d="M6 8 43 4 31 42 6 8Z"
           fill="none"
-          stroke="#DC2626"
+          stroke="#C10007"
           strokeWidth="5"
           strokeLinejoin="round"
         />
@@ -114,7 +114,7 @@ export default function HeroSection({ content = {} }) {
         <path
           d="m24 3 21 38H3L24 3Z"
           fill="none"
-          stroke="#EF4444"
+          stroke="#C10007"
           strokeWidth="5"
           strokeLinejoin="round"
         />

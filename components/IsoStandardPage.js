@@ -13,11 +13,11 @@ export default function IsoStandardPage({ standard }) {
       <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 md:py-14 lg:px-12 lg:py-16">
         <header className="mx-auto mb-9 max-w-4xl text-center md:mb-12">
           <span className="mb-5 inline-flex items-center gap-2 rounded-full border border-red-100 bg-white px-4 py-2 text-xs font-semibold text-red-800 shadow-sm sm:text-sm">
-            <span className="h-2 w-2 rounded-full bg-[#E30613]" />
+            <span className="h-2 w-2 rounded-full bg-[#C10007]" />
             {standard.category}
           </span>
           <h1 className="text-balance text-4xl font-extrabold leading-[1.08] tracking-[-0.04em] text-[#111827] sm:text-5xl md:text-6xl">
-            {standard.name} <span className="text-[#E30613]">{titleSuffix}</span>
+            {standard.name} <span className="text-[#C10007]">{titleSuffix}</span>
           </h1>
           <p className="mx-auto mt-5 max-w-3xl text-pretty text-base leading-relaxed text-[#526581] sm:text-lg md:text-xl">
             {standard.focus}
@@ -42,7 +42,7 @@ export default function IsoStandardPage({ standard }) {
             </span>
             <h2 className="relative inline-block pb-4 text-2xl font-bold tracking-tight text-[#111827] sm:text-3xl">
               About {standard.name}
-              <span aria-hidden="true" className="absolute bottom-0 left-0 h-1 w-14 rounded-full bg-[#E30613]" />
+              <span aria-hidden="true" className="absolute bottom-0 left-0 h-1 w-14 rounded-full bg-[#C10007]" />
             </h2>
             <p className="mt-5 text-sm leading-7 text-[#526581] sm:text-base sm:leading-8">
               {standard.description}
@@ -63,7 +63,7 @@ export default function IsoStandardPage({ standard }) {
             <div className="mt-7 flex flex-col gap-3 sm:flex-row">
               <Link
                 href="/contact"
-                className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl bg-[#E30613] px-6 py-3 text-sm font-bold text-white shadow-[0_8px_22px_rgba(227,6,19,0.2)] transition-all hover:-translate-y-0.5 hover:bg-red-800 hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-700 focus-visible:ring-offset-2 active:translate-y-0"
+                className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl bg-[#C10007] px-6 py-3 text-sm font-bold text-white shadow-[0_8px_22px_rgba(193, 0, 7,0.2)] transition-all hover:-translate-y-0.5 hover:bg-red-800 hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-700 focus-visible:ring-offset-2 active:translate-y-0"
               >
                 Contact Our Experts
                 <ArrowRight className="h-4 w-4" aria-hidden="true" />
