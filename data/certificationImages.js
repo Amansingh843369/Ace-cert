@@ -43,7 +43,7 @@ export const certificationImages = {
 
 export const certificationDetailImages = {
   "ISO 9001": "/big images/9001.jpg",
-  "ISO 10002": "/big images/10002.jpg",
+  "ISO 10002": "/iso-10002-customer-feedback.png",
   "ISO 13009": "/big images/13009.jpg",
   "ISO 13485": "/big images/13485.png",
   "ISO 14001": "/big images/14001.jpg",
