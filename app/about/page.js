@@ -19,7 +19,6 @@ export default async function AboutPage() {
   const { hero, story, mission, vision, values, cta } = content;
   const heroImageUrl = urlFor(hero.backgroundImage)?.width(1920).url();
   const storyOverlayImageUrl = urlFor(story.overlayImage)?.width(800).url();
-  const visionTopImageUrl = urlFor(vision.topImage)?.width(600).url();
   const ctaImageUrl = urlFor(cta.image)?.width(1000).url();
 
   return (
@@ -114,8 +113,8 @@ export default async function AboutPage() {
           
           <div className="relative mx-auto aspect-[10/9] w-full max-w-[520px] overflow-hidden rounded-[1.5rem] shadow-xl lg:mx-0">
             <Image
-              src={visionTopImageUrl || "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=600&q=85"}
-              alt={vision.topImageAlt}
+              src="/our-vision-telescope.png"
+              alt="Telescope overlooking mountain ranges at sunrise, representing ACE Certification's vision"
               fill
               sizes="(max-width: 1024px) 100vw, 520px"
               className="object-cover"
