@@ -34,14 +34,14 @@ const navigation = [
 ];
 
 const focusClass =
-  "rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FFE34A] focus-visible:ring-offset-2 focus-visible:ring-offset-red-600";
+  "rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0B1739] focus-visible:ring-offset-2 focus-visible:ring-offset-red-400";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
     <footer className="bg-white px-2 py-2 font-sans sm:px-4 sm:py-4">
-      <div className="mx-auto max-w-screen-2xl rounded-2xl border border-slate-300 bg-red-600 px-5 py-7 text-white sm:px-8 sm:py-9 lg:px-10 lg:py-10">
+      <div className="mx-auto max-w-screen-2xl rounded-2xl border border-slate-300 bg-red-400 px-5 py-7 text-[#0B1739] sm:px-8 sm:py-9 lg:px-10 lg:py-10">
         <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
           <h2 className="text-2xl font-bold tracking-tight sm:text-3xl">
             Work With Us
@@ -67,14 +67,14 @@ export default function Footer() {
                       {link.href.startsWith("mailto:") ? (
                         <a
                           href={link.href}
-                          className={`inline-flex min-h-7 items-center text-sm text-slate-200 transition-colors hover:text-[#FFE34A] hover:underline hover:underline-offset-2 motion-reduce:transition-none ${focusClass}`}
+                          className={`inline-flex min-h-7 items-center text-sm text-[#0B1739] transition-colors hover:text-red-950 hover:underline hover:underline-offset-2 motion-reduce:transition-none ${focusClass}`}
                         >
                           {link.label}
                         </a>
                       ) : (
                         <Link
                           href={link.href}
-                          className={`inline-flex min-h-7 items-center text-sm text-slate-200 transition-colors hover:text-[#FFE34A] hover:underline hover:underline-offset-2 motion-reduce:transition-none ${focusClass}`}
+                          className={`inline-flex min-h-7 items-center text-sm text-[#0B1739] transition-colors hover:text-red-950 hover:underline hover:underline-offset-2 motion-reduce:transition-none ${focusClass}`}
                         >
                           {link.label}
                         </Link>
@@ -98,7 +98,7 @@ export default function Footer() {
         </div>
 
         <div className="mt-8 border-t border-white/25 pt-4">
-          <p className="text-xs text-slate-200">
+          <p className="text-xs text-[#0B1739]">
             © {currentYear} ACE-CERT. All rights reserved.
           </p>
         </div>
