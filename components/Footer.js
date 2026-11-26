@@ -48,7 +48,7 @@ export default function Footer() {
           </h2>
           <a
             href="mailto:info@ace-cert.com"
-            className={`w-fit break-all text-lg font-bold tracking-tight hover:underline hover:underline-offset-4 sm:text-xl ${focusClass}`}
+            className={`w-fit break-all text-base font-bold tracking-tight hover:underline hover:underline-offset-4 sm:text-lg ${focusClass}`}
           >
             info@ace-cert.com
           </a>
@@ -86,7 +86,7 @@ export default function Footer() {
             ))}
           </div>
 
-          <div className="relative aspect-[2.4/1] w-full overflow-hidden rounded-xl border border-white/20 shadow-lg lg:max-w-[650px] lg:justify-self-end">
+          <div className="relative aspect-[2.4/1] w-full overflow-hidden rounded-xl border border-white/20 shadow-lg lg:max-w-162.5 lg:justify-self-end">
             <Image
               src="/your_success.jpg"
               alt="Professionals collaborating on a business project"

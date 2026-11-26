@@ -38,7 +38,7 @@ export default async function AboutPage() {
             className="object-cover opacity-30"
           />
           {/* Gradient Overlay for better text readability */}
-          <div className="absolute inset-0 bg-gradient-to-b from-white/40 via-transparent to-white/80"></div>
+          <div className="absolute inset-0 bg-linear-to-b from-white/40 via-transparent to-white/80"></div>
         </div>
         
         <div className="relative z-10 max-w-4xl mx-auto space-y-4">
@@ -69,7 +69,7 @@ export default async function AboutPage() {
       />
 
 {/* ================= ABOUT US CONTENT SECTION ================= */}
-   <section className="relative overflow-hidden bg-gradient-to-b from-white via-gray-50 to-white px-4 py-10 sm:px-6 sm:py-14 lg:px-12 lg:pt-16 lg:pb-10 font-sans text-gray-800">
+   <section className="relative overflow-hidden bg-linear-to-b from-white via-gray-50 to-white px-4 py-10 sm:px-6 sm:py-14 lg:px-12 lg:pt-16 lg:pb-10 font-sans text-gray-800">
       
       {/* Decorative Blobs */}
       <div className="pointer-events-none absolute -right-32 top-20 h-96 w-96 rounded-full bg-red-100/50 blur-3xl" />
@@ -97,7 +97,7 @@ export default async function AboutPage() {
           </div>
 
           {/* Right: Mission Image (Also made slightly compact to match) */}
-          <div className="order-1 lg:order-2 relative mx-auto aspect-[3/2] w-full max-w-[500px] overflow-hidden rounded-[2rem] bg-white shadow-2xl lg:mx-0 lg:ml-auto">
+          <div className="order-1 lg:order-2 relative mx-auto aspect-3/2 w-full max-w-125 overflow-hidden rounded-4xl bg-white shadow-2xl lg:mx-0 lg:ml-auto">
             <Image
               src="/our-mission-team.png"
               alt="ACE Certification team working together toward its mission"
@@ -111,7 +111,7 @@ export default async function AboutPage() {
         {/* ================= 2. OUR VISION (Image Left, Text Right) ================= */}
         <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-2 lg:gap-12">
           
-          <div className="relative mx-auto aspect-[10/9] w-full max-w-[520px] overflow-hidden rounded-[1.5rem] shadow-xl lg:mx-0">
+          <div className="relative mx-auto aspect-10/9 w-full max-w-130 overflow-hidden rounded-3xl shadow-xl lg:mx-0">
             <Image
               src="/our-vision-telescope.png"
               alt="Telescope overlooking mountain ranges at sunrise, representing ACE Certification's vision"
@@ -160,17 +160,17 @@ export default async function AboutPage() {
           </div>
 
           <div className="relative grid grid-cols-1 gap-12 md:grid-cols-3 md:gap-8">
-            <div className="pointer-events-none absolute left-[16%] right-[16%] top-[4.25rem] hidden h-px bg-gradient-to-r from-red-200 via-blue-200 to-red-200 md:block" />
+            <div className="pointer-events-none absolute left-[16%] right-[16%] top-17 hidden h-px bg-linear-to-r from-red-200 via-blue-200 to-red-200 md:block" />
             {values.items.map((value, index) => {
               const Icon = valueIcons[value.icon] || TrendingUp;
               return (
                 <article key={value.letter} className="group relative flex flex-col items-center text-center">
-                  <div className="relative mb-7 flex h-[8.5rem] w-[8.5rem] items-center justify-center rounded-full border border-slate-200 bg-white shadow-[0_12px_35px_rgba(15,23,42,0.07)] transition-transform duration-300 group-hover:-translate-y-1">
+                  <div className="relative mb-7 flex h-34 w-34 items-center justify-center rounded-full border border-slate-200 bg-white shadow-[0_12px_35px_rgba(15,23,42,0.07)] transition-transform duration-300 group-hover:-translate-y-1">
                     <svg className={`absolute inset-0 h-full w-full -rotate-90 ${index === 1 ? "text-blue-950" : "text-red-600"}`} viewBox="0 0 136 136" fill="none" aria-hidden="true">
                       <circle cx="68" cy="68" r="63" stroke="currentColor" strokeOpacity="0.16" strokeWidth="2" />
                       <circle cx="68" cy="68" r="63" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeDasharray="112 396" />
                     </svg>
-                    <div className={`flex h-[4.5rem] w-[4.5rem] items-center justify-center rounded-full ${index === 1 ? "bg-blue-950" : "bg-red-600"} text-white shadow-lg transition-transform duration-300 group-hover:scale-105`}>
+                    <div className={`flex h-18 w-18 items-center justify-center rounded-full ${index === 1 ? "bg-blue-950" : "bg-red-600"} text-white shadow-lg transition-transform duration-300 group-hover:scale-105`}>
                       <Icon className="h-8 w-8" strokeWidth={1.8} aria-hidden="true" />
                     </div>
                     <span className={`absolute -bottom-2 flex h-8 w-8 items-center justify-center rounded-full border-4 border-white ${index === 1 ? "bg-blue-950" : "bg-red-600"} text-xs font-bold text-white`}>
