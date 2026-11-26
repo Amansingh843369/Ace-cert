@@ -34,14 +34,14 @@ const navigation = [
 ];
 
 const focusClass =
-  "rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FFE34A] focus-visible:ring-offset-2 focus-visible:ring-offset-[#0B1739]";
+  "rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FFE34A] focus-visible:ring-offset-2 focus-visible:ring-offset-red-600";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
     <footer className="bg-white px-2 py-2 font-sans sm:px-4 sm:py-4">
-      <div className="mx-auto max-w-screen-2xl rounded-2xl border border-slate-300 bg-[#0B1739] px-5 py-7 text-white sm:px-8 sm:py-9 lg:px-10 lg:py-10">
+      <div className="mx-auto max-w-screen-2xl rounded-2xl border border-slate-300 bg-red-600 px-5 py-7 text-white sm:px-8 sm:py-9 lg:px-10 lg:py-10">
         <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
           <h2 className="text-2xl font-bold tracking-tight sm:text-3xl">
             Work With Us
