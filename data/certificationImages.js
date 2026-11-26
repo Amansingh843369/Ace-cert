@@ -52,7 +52,7 @@ export const certificationDetailImages = {
   "ISO 20121": "/big images/20121-stadium.png",
   "ISO 21001": "/big images/21001.jpg",
   "ISO 21401": "/big images/21401.jpg",
-  "ISO 22000": "/big images/22000.jpg",
+  "ISO 22000": "/iso-22000-food-production.png",
   "ISO 22301": "/big images/22301.jpg",
   "ISO 22716": "/big images/22716.jpg",
   "ISO 24161": "/big images/24161.jpg",

@@ -94,10 +94,6 @@ export default function Iso22000Layout() {
                   sizes="(max-width: 1024px) 100vw, 520px"
                   className="object-cover transition-transform duration-700 hover:scale-[1.03]"
                 />
-                <figcaption className="absolute bottom-4 left-4 rounded-xl border border-white/70 bg-white/95 px-4 py-3 shadow-lg backdrop-blur-sm">
-                  <p className="text-xs font-semibold uppercase tracking-wider text-red-700">Farm to Fork</p>
-                  <p className="mt-0.5 text-sm font-bold text-slate-900">Safety Assured</p>
-                </figcaption>
               </figure>
             </div>
 
@@ -144,16 +140,13 @@ export default function Iso22000Layout() {
               <figure className="relative aspect-[4/3] w-full max-w-[500px] overflow-hidden rounded-2xl bg-red-50 ring-1 ring-black/5 shadow-[0_16px_45px_rgba(17,24,39,0.10)] sm:rounded-[1.5rem] lg:h-full lg:aspect-auto">
                 {/* IMAGE 2: Food Processing Plant / Factory Line */}
                 <Image
-                  src="https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?auto=format&fit=crop&w=1200&q=85"
+                  src="/iso-22000-food-production.png"
                   alt="Modern food processing plant conveyor belt representing industrial food safety"
                   fill
                   sizes="(max-width: 1024px) 100vw, 500px"
                   className="object-cover"
                   loading="lazy"
                 />
-                <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-950/75 to-transparent px-5 pb-5 pt-16">
-                  <p className="text-sm font-semibold text-white">Safe. Compliant. Trusted.</p>
-                </figcaption>
               </figure>
             </div>
 

@@ -92,12 +92,6 @@ export default function CertificationImportanceSection({
             className="object-cover"
             loading="lazy"
           />
-          {title === 'ISO 9001' && (
-            <figcaption className="absolute bottom-6 left-1/2 -translate-x-1/2 rounded-full border border-red-100 bg-white px-5 py-3 text-center shadow-lg">
-              <span className="block text-lg font-extrabold text-[#1c2448]">ISO 9001</span>
-              <span className="block text-xs font-semibold text-slate-600">Quality Management System</span>
-            </figcaption>
-          )}
         </figure>
       </div>
     </section>

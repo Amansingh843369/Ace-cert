@@ -95,10 +95,6 @@ export default function IsoCertificationLayout() {
                   sizes="(max-width: 1024px) 100vw, 520px"
                   className="object-cover transition-transform duration-700 hover:scale-[1.03]"
                 />
-                <figcaption className="absolute bottom-4 left-4 rounded-xl border border-white/70 bg-white/95 px-4 py-2.5 shadow-lg backdrop-blur-sm">
-                  <p className="text-xs font-semibold uppercase tracking-wider text-red-700">Asset Value</p>
-                  <p className="mt-0.5 text-sm font-bold text-slate-900">Optimized Lifecycle</p>
-                </figcaption>
               </figure>
             </div>
 
