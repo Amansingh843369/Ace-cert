@@ -57,7 +57,7 @@ export default function SeoAnalysisSection() {
 
           {/* Form Content inside Organic Blob */}
           <div className="relative z-20 w-full max-w-md sm:max-w-lg text-white space-y-6">
-            
+                        
             {/* Header Text */}
             <div className="space-y-2">
                
