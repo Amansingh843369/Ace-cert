@@ -19,7 +19,7 @@ export default async function ContactPage() {
     url: 'https://ace-cert.com/contact',
     mainEntity: {
       '@type': 'Organization',
-      name: info.companyName,
+      name: 'ACE-CERT',
       email: info.email,
       address: {
         '@type': 'PostalAddress',
@@ -67,7 +67,6 @@ export default async function ContactPage() {
                 <p className="text-xs font-bold uppercase tracking-[0.16em] text-red-600">{info.eyebrow}</p>
                 <h2 className="mt-2 text-2xl font-extrabold tracking-tight text-[#0B1739] sm:text-3xl">{info.title}</h2>
               </div>
-              <p className="mb-6 text-sm font-semibold leading-relaxed text-slate-600 sm:text-base">{info.companyName}</p>
 
               <div className="mt-6 space-y-6 sm:space-y-7">
                 <ContactInfo icon="location" label={info.addressLabel} text={info.address} />
