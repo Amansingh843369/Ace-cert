@@ -44,7 +44,7 @@ export default function ManagementCertificationDirectory({ initialStandards }) {
           src="/certification-hero.png"
           alt="A framed certificate beside a globe and books"
           width={1600}
-          height={653}
+          height={652}
           sizes="100vw"
           priority
           className="h-auto w-full"
