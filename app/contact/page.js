@@ -60,15 +60,15 @@ export default async function ContactPage() {
       </section>
 
       <section aria-label="Contact ACE-CERT" className="relative z-10 mx-auto max-w-7xl px-4 py-10 sm:px-6 sm:py-14 lg:px-8 lg:py-16">
-        <div className="grid grid-cols-1 items-start gap-6 lg:grid-cols-[0.85fr_1.15fr] lg:gap-8">
-          <aside className="rounded-3xl border border-slate-200 bg-white p-5 shadow-[0_20px_60px_-32px_rgba(11,23,57,0.28)] sm:p-8 lg:p-9">
-            <div>
+        <div className="grid grid-cols-1 items-stretch gap-6 lg:grid-cols-[0.85fr_1.15fr] lg:gap-8">
+          <aside className="rounded-3xl border border-slate-200 bg-white p-5 shadow-[0_20px_60px_-32px_rgba(11,23,57,0.28)] sm:p-8 lg:flex lg:flex-col lg:p-9">
+            <div className="lg:flex lg:flex-1 lg:flex-col">
               <div className="mb-4">
                 <p className="text-xs font-bold uppercase tracking-[0.16em] text-red-600">{info.eyebrow}</p>
                 <h2 className="mt-2 text-2xl font-extrabold tracking-tight text-[#0B1739] sm:text-3xl">{info.title}</h2>
               </div>
 
-              <div className="mt-6 space-y-6 sm:space-y-7">
+              <div className="mt-6 space-y-6 sm:space-y-7 lg:flex lg:flex-1 lg:flex-col lg:justify-between lg:space-y-0">
                 <ContactInfo icon="location" label={info.addressLabel} text={info.address} />
                 <ContactInfo icon="email" label={info.emailLabel}>
                   <a href={`mailto:${info.email}`} className="transition-colors hover:text-red-600">{info.email}</a>
