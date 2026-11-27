@@ -1,6 +1,5 @@
 import AboutSection from "../components/AboutSection";
 import { createPageMetadata } from '../lib/seo';
-import BlogSection from "../components/BlogSection";
 import FeaturesSection from '../components/FeaturesSection'; // Apna exact file path yahan daalein
 import HeroSection from "../components/HeroSection";
 import PurposeSection from "../components/PurposeSection";
@@ -97,7 +96,6 @@ export const metadata = createPageMetadata('/');
       <PurposeSection navy content={content.purpose} alignBenefitsWithText />
      {/* <ExperienceSection />   */}
      <FeaturesSection content={content.features} />
-      <BlogSection content={content.blog} />
       {/* <ContactSection /> */}
     </main>
   );
